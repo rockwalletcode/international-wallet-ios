@@ -262,16 +262,16 @@ extension Presenter where Self: AssetActionResponses,
                 let level1 = ExchangeErrors.overDailyLimit(limit: dailyLimit)
                 error = profile.status == .levelTwo(.levelTwo) ? level2 : level1
                 
-            case _ where fiat > perExchangeLimit:
-                // Over exchange limit
-                
-                error = ExchangeErrors.overExchangeLimit
-                
             case _ where fiat > maximumUsd,
                 _ where minimumUsd > maximumUsd:
                 // Over exchange limit
                 
                 error = ExchangeErrors.tooHigh(amount: maximumUsd, currency: toCode, reason: reason)
+                
+            case _ where fiat > perExchangeLimit:
+                // Over exchange limit
+                
+                error = ExchangeErrors.overExchangeLimit
                 
             case _ where fiat < minimumUsd:
                 // Value below minimum Fiat
