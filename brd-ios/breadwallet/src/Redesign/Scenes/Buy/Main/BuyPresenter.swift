@@ -162,18 +162,18 @@ final class BuyPresenter: NSObject, Presenter, BuyActionResponses {
         let title = actionResponse.paymentMethod == .card ? L10n.Buy.yourBuyLimits : L10n.Buy.yourAchBuyLimits
         let profile = UserManager.shared.profile
         
-        let perTransactionLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowancePerExchange : profile?.achAllowancePerExchange
+        let dailyLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowanceDaily : profile?.achAllowanceDaily
         let weeklyLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowanceWeekly : profile?.achAllowanceWeekly
         let monthlyLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowanceMonthly : profile?.achAllowanceMonthly
         
-        let perTransactionLimitText = ExchangeFormatter.current.string(for: perTransactionLimit) ?? ""
+        let dailyLimitText = ExchangeFormatter.current.string(for: dailyLimit) ?? ""
         let weeklyLimitText = ExchangeFormatter.current.string(for: weeklyLimit) ?? ""
         let monthlyLimitText = ExchangeFormatter.current.string(for: monthlyLimit) ?? ""
         
         let config: WrapperPopupConfiguration<LimitsPopupConfiguration> = .init(wrappedView: .init())
         let wrappedViewModel: LimitsPopupViewModel = .init(title: .text(title),
-                                                           perTransaction: .init(title: .text(L10n.Buy.perTransactionLimit),
-                                                                                 value: .text("$\(perTransactionLimitText) \(Constant.usdCurrencyCode)")),
+                                                           daily: .init(title: .text(L10n.Account.daily),
+                                                                                 value: .text("$\(dailyLimitText) \(Constant.usdCurrencyCode)")),
                                                            weekly: .init(title: .text(L10n.Account.weekly),
                                                                          value: .text("$\(weeklyLimitText) \(Constant.usdCurrencyCode)")),
                                                            monthly: .init(title: .text(L10n.Account.monthly),
@@ -204,14 +204,15 @@ final class BuyPresenter: NSObject, Presenter, BuyActionResponses {
     // MARK: - Additional Helpers
     
     private func isCustomLimits(for paymentMethod: PaymentCard.PaymentType?) -> Bool {
-        guard let limits = UserManager.shared.profile?.limits else { return false }
+        guard let userLimits = UserManager.shared.profile?.limits else { return false }
+        let limits = userLimits.filter { ($0.interval == .daily || $0.interval == .weekly || $0.interval == .monthly) && $0.isCustom == true }
         
         switch paymentMethod {
         case .card:
-            return limits.first(where: { ($0.interval == .weekly || $0.interval == .monthly) && $0.exchangeType == .buyCard })?.isCustom ?? false
+            return !limits.filter({ $0.exchangeType == .buyCard }).isEmpty
             
         case .ach:
-            return limits.first(where: { ($0.interval == .weekly || $0.interval == .monthly) && $0.exchangeType == .buyAch })?.isCustom ?? false
+            return !limits.filter({ $0.exchangeType == .buyAch }).isEmpty
             
         default:
             return false

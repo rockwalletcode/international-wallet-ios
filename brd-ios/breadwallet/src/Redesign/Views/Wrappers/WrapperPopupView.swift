@@ -57,6 +57,7 @@ class WrapperPopupView<T: ViewProtocol & UIView>: UIView,
         let view = UIVisualEffectView(effect: blur)
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return view
+        
     }()
     
     private lazy var headerStackView: UIStackView = {

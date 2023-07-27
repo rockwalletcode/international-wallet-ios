@@ -97,6 +97,8 @@ struct Profile: Model {
         }
     }
     
+    // MARK: Swap limits
+    
     var swapAllowancePerExchange: Decimal {
         return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .swap })?.limit ?? 0
     }
@@ -107,38 +109,14 @@ struct Profile: Model {
         return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .swap })?.limit ?? 0
     }
     
-    var achAllowanceLifetime: Decimal {
-        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .buyAch })?.limit ?? 0
+    // MARK: Buy ACH limits
+    
+    var achAllowancePerExchange: Decimal {
+        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .buyAch })?.limit ?? 0
     }
     var achAllowanceDaily: Decimal {
         return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyAch })?.limit ?? 0
     }
-    var achAllowancePerExchange: Decimal {
-        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .buyAch })?.limit ?? 0
-    }
-    
-    var buyAllowancePerExchange: Decimal {
-        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceDaily: Decimal {
-        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceWeekly: Decimal {
-        return limits.first(where: { $0.interval == .weekly && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceMonthly: Decimal {
-        return limits.first(where: { $0.interval == .monthly && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceDailyMin: Decimal {
-        return limits.first(where: { $0.interval == .minimum && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceDailyMax: Decimal {
-        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceLifetime: Decimal {
-        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    
     var achAllowanceDailyMin: Decimal {
         return limits.first(where: { $0.interval == .minimum && $0.exchangeType == .buyAch })?.limit ?? 0
     }
@@ -151,9 +129,38 @@ struct Profile: Model {
     var achAllowanceMonthly: Decimal {
         return limits.first(where: { $0.interval == .monthly && $0.exchangeType == .buyAch })?.limit ?? 0
     }
+    var achAllowanceLifetime: Decimal {
+        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .buyAch })?.limit ?? 0
+    }
     
-    var sellAllowanceLifetime: Decimal {
-        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .sell })?.limit ?? 0
+    // MARK: Buy card limits
+    
+    var buyAllowancePerExchange: Decimal {
+        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .buyCard })?.limit ?? 0
+    }
+    var buyAllowanceDaily: Decimal {
+        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyCard })?.limit ?? 0
+    }
+    var buyAllowanceDailyMin: Decimal {
+        return limits.first(where: { $0.interval == .minimum && $0.exchangeType == .buyCard })?.limit ?? 0
+    }
+    var buyAllowanceDailyMax: Decimal {
+        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyCard })?.limit ?? 0
+    }
+    var buyAllowanceWeekly: Decimal {
+        return limits.first(where: { $0.interval == .weekly && $0.exchangeType == .buyCard })?.limit ?? 0
+    }
+    var buyAllowanceMonthly: Decimal {
+        return limits.first(where: { $0.interval == .monthly && $0.exchangeType == .buyCard })?.limit ?? 0
+    }
+    var buyAllowanceLifetime: Decimal {
+        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .buyCard })?.limit ?? 0
+    }
+    
+    // MARK: Sell limits
+    
+    var sellAllowancePerExchange: Decimal {
+        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .sell })?.limit ?? 0
     }
     var sellAllowanceDaily: Decimal {
         return limits.first(where: { $0.interval == .daily && $0.exchangeType == .sell })?.limit ?? 0
@@ -161,8 +168,11 @@ struct Profile: Model {
     var sellAllowanceWeekly: Decimal {
         return limits.first(where: { $0.interval == .weekly && $0.exchangeType == .sell })?.limit ?? 0
     }
-    var sellAllowancePerExchange: Decimal {
-        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .sell })?.limit ?? 0
+    var sellAllowanceMonthly: Decimal {
+        return limits.first(where: { $0.interval == .monthly && $0.exchangeType == .sell})?.limit ?? 0
+    }
+    var sellAllowanceLifetime: Decimal {
+        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .sell })?.limit ?? 0
     }
 }
 
