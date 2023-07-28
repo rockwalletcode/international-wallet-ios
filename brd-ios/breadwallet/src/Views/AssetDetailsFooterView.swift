@@ -51,7 +51,7 @@ class AssetDetailsFooterView: UIView, Subscriber {
     }
     
     private func setupToolbarButtons() {
-        let canSend: Bool = (currency.state?.balance?.fiatValue ?? 0) > 0
+        let canSend: Bool = true//(currency.state?.balance?.fiatValue ?? 0) > 0
 
         let bottomButtonModels: [BottomBarItemViewModel] = [
             .init(title: L10n.Button.send, image: Asset.send.image, enabled: canSend, callback: { self.send() }),

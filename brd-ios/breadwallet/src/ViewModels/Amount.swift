@@ -275,6 +275,9 @@ public struct Amount: Hashable {
 
 extension Amount: Equatable, Comparable {
     public static func == (lhs: Amount, rhs: Amount) -> Bool {
+        if(lhs.cryptoAmount != rhs.cryptoAmount){
+            NSLog("what the walletkit?!?")
+        }
         return lhs.cryptoAmount == rhs.cryptoAmount
     }
 
