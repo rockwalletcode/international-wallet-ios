@@ -5335,7 +5335,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -5387,7 +5387,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -5618,7 +5618,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -5659,7 +5659,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app.rockwalletWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international.rockwalletWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG IS_EXTENSION_ENVIRONMENT";
@@ -5692,7 +5692,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app.rockwalletIntentHandler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international.rockwalletIntentHandler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG IS_EXTENSION_ENVIRONMENT";
@@ -5922,7 +5922,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -6049,7 +6049,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app.rockwalletWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international.rockwalletWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = IS_EXTENSION_ENVIRONMENT;
@@ -6080,7 +6080,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app.rockwalletIntentHandler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international.rockwalletIntentHandler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = IS_EXTENSION_ENVIRONMENT;
@@ -6123,7 +6123,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app.rockwalletIntentHandler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international.rockwalletIntentHandler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG IS_EXTENSION_ENVIRONMENT";
@@ -6154,7 +6154,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app.rockwalletIntentHandler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international.rockwalletIntentHandler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = IS_EXTENSION_ENVIRONMENT;
@@ -6191,7 +6191,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app.rockwalletWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international.rockwalletWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG IS_EXTENSION_ENVIRONMENT";
@@ -6226,7 +6226,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.app.rockwalletWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockwallet.international.rockwalletWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = IS_EXTENSION_ENVIRONMENT;

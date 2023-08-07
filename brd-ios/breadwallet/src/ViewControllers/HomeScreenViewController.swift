@@ -97,17 +97,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     // We are not using pullToRefreshControl.isRefreshing because when you trigger reload() it is already refreshing. We need a variable that tracks the real refreshing of the resources.
     private var isRefreshing = false
     
-    private let tabBarButtons = [(L10n.Button.home, Asset.home.image as UIImage, #selector(home)),
-                                 (L10n.HomeScreen.trade, Asset.trade.image as UIImage, #selector(trade)),
-                                 (L10n.Drawer.title, nil, #selector(buy)),
-                                 (L10n.Button.profile, Asset.user.image as UIImage, #selector(profile)),
-                                 (L10n.HomeScreen.menu, Asset.more.image as UIImage, #selector(menu))]
-    
-    private var drawerManager: BottomDrawerManager?
-    private let animationView: LottieAnimationView = {
-        let view = LottieAnimationView(animation: Animations.buyAndSell.animation)
-        return view
-    }()
+    private let tabBarButtons = [
+        (L10n.Button.profile, Asset.user.image as UIImage, #selector(profile)),
+        (L10n.HomeScreen.menu, Asset.more.image as UIImage, #selector(menu))
+    ]
     
     // MARK: - Lifecycle
     
@@ -255,13 +248,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             in self?.didTapDrawerButton()
         }]
         
-        drawerManager = BottomDrawerManager()
-        drawerManager?.setupDrawer(on: self, config: drawerConfig, viewModel: drawerViewModel, callbacks: drawerCallbacks) { [unowned self] drawer in
-            drawer.dismissActionPublisher.sink { [weak self] _ in
-                self?.animationView.play(fromProgress: 1, toProgress: 0)
-            }.store(in: &self.observers)
-        }
-        
         view.addSubview(tabBarContainerView)
         tabBarContainerView.addSubview(tabBar)
         
@@ -275,12 +261,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             make.top.equalToSuperview().offset(Margins.large.rawValue)
             make.leading.trailing.equalToSuperview()
         }
-        
-        view.addSubview(animationView)
-        animationView.snp.makeConstraints { make in
-            make.centerX.equalTo(tabBar.snp.centerX)
-            make.top.equalTo(tabBarContainerView.snp.top).offset(-Margins.small.rawValue)
-        }
     }
     
     private func setInitialData() {
@@ -290,7 +270,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         
         setupToolbar()
         updateTotalAssets()
-        setupAnimationView()
     }
     
     private func setupToolbar() {
@@ -307,11 +286,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         }
         
         tabBar.items = buttons
-    }
-    
-    private func setupAnimationView() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(buy))
-        animationView.addGestureRecognizer(gesture)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -446,42 +420,13 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         } else {
             didTapSell?()
         }
-        
-        animationView.play(fromProgress: 1, toProgress: 0)
-    }
-    
-    private func commonTapAction() {
-        if drawerManager?.drawerIsShown == true {
-            animationView.play(fromProgress: 1, toProgress: 0)
-        }
-        drawerManager?.hideDrawer()
-    }
-    
-    @objc private func home() {
-        commonTapAction()
-    }
-    
-    @objc private func trade() {
-        commonTapAction()
-        didTapTrade?()
-    }
-    
-    @objc private func buy() {
-        if drawerManager?.drawerIsShown == true {
-            animationView.play(fromProgress: 1, toProgress: 0)
-        } else {
-            animationView.play()
-        }
-        drawerManager?.toggleDrawer()
     }
     
     @objc private func profile() {
-        commonTapAction()
         didTapProfile?()
     }
     
     @objc private func menu() {
-        commonTapAction()
         didTapMenu?()
     }
 }

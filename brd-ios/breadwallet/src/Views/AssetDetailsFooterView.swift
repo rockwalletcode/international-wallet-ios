@@ -58,9 +58,7 @@ class AssetDetailsFooterView: UIView, Subscriber {
     private func setupToolbarButtons() {
         let bottomButtonModels: [BottomBarItemViewModel] = [
             .init(title: L10n.Button.send, image: Asset.send.image, enabled: canSend, callback: { self.send() }),
-            .init(title: L10n.Button.receive, image: Asset.receive.image, callback: { self.receive() }),
-            .init(title: L10n.Drawer.title, image: Asset.buySell.image, enabled: isSupported, callback: { self.buy() }),
-            .init(title: L10n.HomeScreen.trade, image: Asset.trade.image, enabled: isSupported, callback: { self.swap() })
+            .init(title: L10n.Button.receive, image: Asset.receive.image, callback: { self.receive() })
         ]
         
         let buttons = bottomButtonModels.compactMap { model -> BottomBarItem in

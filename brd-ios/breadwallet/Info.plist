@@ -2,22 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>PAYMAIL_DOMAIN</key>
-	<string>$(PAYMAIL_DOMAIN)</string>
-	<key>GS_CLIENT_ID</key>
-	<string>$(GS_CLIENT_ID)</string>
-	<key>GS_API_KEY</key>
-	<string>$(GS_API_KEY)</string>
-	<key>GS_GCM_SENDER_ID</key>
-	<string>$(GS_GCM_SENDER_ID)</string>
-	<key>GS_PROJECT_ID</key>
-	<string>$(GS_PROJECT_ID)</string>
-	<key>GS_STORAGE_BUCKET</key>
-	<string>$(GS_STORAGE_BUCKET)</string>
-	<key>GS_GOOGLE_APP_ID</key>
-	<string>$(GS_GOOGLE_APP_ID)</string>
-	<key>LOQATE_KEY</key>
-	<string>$(LOQATE_KEY)</string>
 	<key>API_TOKEN</key>
 	<string>$(API_TOKEN)</string>
 	<key>API_URL</key>
@@ -157,16 +141,30 @@
 	<string>635</string>
 	<key>CHECKOUT_API_TOKEN</key>
 	<string>$(CHECKOUT_API_TOKEN)</string>
-	<key>IS_PRODUCTION</key>
-	<string>$(IS_PRODUCTION)</string>
+	<key>GS_API_KEY</key>
+	<string>$(GS_API_KEY)</string>
+	<key>GS_CLIENT_ID</key>
+	<string>$(GS_CLIENT_ID)</string>
+	<key>GS_GCM_SENDER_ID</key>
+	<string>$(GS_GCM_SENDER_ID)</string>
+	<key>GS_GOOGLE_APP_ID</key>
+	<string>$(GS_GOOGLE_APP_ID)</string>
+	<key>GS_PROJECT_ID</key>
+	<string>$(GS_PROJECT_ID)</string>
+	<key>GS_STORAGE_BUCKET</key>
+	<string>$(GS_STORAGE_BUCKET)</string>
 	<key>IS_DEVELOPMENT</key>
 	<string>$(IS_DEVELOPMENT)</string>
-	<key>IS_STAGING</key>
-	<string>$(IS_STAGING)</string>
 	<key>IS_LDT</key>
 	<string>$(IS_LDT)</string>
+	<key>IS_PRODUCTION</key>
+	<string>$(IS_PRODUCTION)</string>
+	<key>IS_STAGING</key>
+	<string>$(IS_STAGING)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LOQATE_KEY</key>
+	<string>$(LOQATE_KEY)</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSMinimumSystemVersion</key>
@@ -182,12 +180,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to scan barcodes</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Used for KYC authentication</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Used for user authentication</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Used to determine where you are - never recorded or shared with anyone</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used for KYC authentication</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Used to scan barcodes</string>
 	<key>NSUserActivityTypes</key>
@@ -196,6 +194,10 @@
 		<string>AssetListIntent</string>
 		<string>PortfolioIntent</string>
 	</array>
+	<key>PAYMAIL_DOMAIN</key>
+	<string>$(PAYMAIL_DOMAIN)</string>
+	<key>SARDINE_CLIENT_ID</key>
+	<string>$(SARDINE_CLIENT_ID)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Regular.otf</string>
@@ -234,8 +236,6 @@
 	<string>Light</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>SARDINE_CLIENT_ID</key>
-	<string>$(SARDINE_CLIENT_ID)</string>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
