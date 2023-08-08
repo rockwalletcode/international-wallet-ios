@@ -68,7 +68,7 @@ class AssetDetailsFooterView: UIView, Subscriber {
         }
         
         let buttonsView = UIStackView(arrangedSubviews: buttons)
-        buttonsView.spacing = Margins.small.rawValue
+        buttonsView.spacing = ViewSizes.extralarge.rawValue
         buttonsView.distribution = .equalSpacing
         
         let bottomMargin: Margins = UIDevice.current.hasNotch ? .extraHuge : .medium
@@ -77,8 +77,7 @@ class AssetDetailsFooterView: UIView, Subscriber {
         buttonsView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(Margins.medium.rawValue)
             make.height.equalTo(BottomBarItem.defaultheight)
-            make.leading.equalToSuperview().offset(Margins.huge.rawValue)
-            make.trailing.equalToSuperview().offset(-Margins.huge.rawValue)
+            make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(bottomMargin.rawValue)
         }
     }

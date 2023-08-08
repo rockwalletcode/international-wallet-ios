@@ -23,7 +23,6 @@ class DynamicLinksManager {
         case setPassword = "op=password"
         case home
         case profile
-        case swap
     }
     
     var dynamicLinkType: DynamicLinkType?
@@ -39,8 +38,6 @@ class DynamicLinksManager {
             return .home
         } else if url.contains(DynamicLinkType.profile.rawValue) {
             return .profile
-        } else if url.contains(DynamicLinkType.swap.rawValue) {
-            return .swap
         }
         
         return nil
@@ -60,9 +57,6 @@ class DynamicLinksManager {
             
         case .profile:
             DynamicLinksManager.shared.dynamicLinkType = .profile
-            
-        case .swap:
-            DynamicLinksManager.shared.dynamicLinkType = .swap
             
         default:
             break
