@@ -729,14 +729,6 @@ class BaseCoordinator: NSObject, Coordinatable {
         case .profile:
             showProfile()
             
-        case .swap:
-            guard UserManager.shared.profile?.status.hasKYCLevelTwo == true else {
-                self.showVerifyAccount(flow: .swap)
-                return
-            }
-            
-            showSwap(coreSystem: coreSystem, keyStore: keyStore)
-            
         case .setPassword:
             handleUserAccount()
         }
