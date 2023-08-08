@@ -18,4 +18,3 @@ APP_ICON=AppIconLdt
 API_URL=api.ldt.rockwallet.net/
 
 IS_LDT=true
-
