@@ -637,7 +637,7 @@ class ModalPresenter: Subscriber {
             // Tell a friend
             MenuItem(title: L10n.MenuButton.tellFriend, icon: MenuItem.Icon.tellFriend) {
                 let shareItem = [ShareItem(title: L10n.About.AppName.android,
-                                           shareText: L10n.Settings.tellFriendDescription)]
+                                           shareText: L10n.Settings.tellAFriendText)]
                 let activityViewController = UIActivityViewController(activityItems: shareItem, applicationActivities: nil)
                 
                 menuNav.present(activityViewController, animated: true)

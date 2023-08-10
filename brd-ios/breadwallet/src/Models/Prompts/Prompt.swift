@@ -66,9 +66,9 @@ enum PromptType: Int {
         case .paperKey: return L10n.Prompts.PaperKey.body
         case .upgradePin: return L10n.Prompts.UpgradePin.body
         case .noPasscode: return L10n.Prompts.NoPasscode.body
-        case .kyc: return L10n.Prompts.VerifyAccount.body
+        case .kyc: return L10n.Prompts.VerifyAccount.description
         case .twoStep: return L10n.Prompts.TwoStep.body
-        case .noAccount: return L10n.Prompts.CreateAccount.body
+        case .noAccount: return L10n.Prompts.CreateAccount.description
         case .limitsAuthentication: return L10n.Prompts.LimitsAuthentication.body
         default: return ""
         }

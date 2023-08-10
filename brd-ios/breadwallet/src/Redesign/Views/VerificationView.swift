@@ -106,7 +106,7 @@ enum VerificationStatus: Hashable {
             return InfoViewModel(kyc: .levelOne, headerTitle: .text(L10n.VerifyAccount.verifyYourIdentity),
                                  headerTrailing: .init(image: Asset.info.image),
                                  status: VerificationStatus.none,
-                                 description: .text(L10n.VerifyAccount.verifyIdentityDescription),
+                                 description: .text(L10n.VerifyAccount.verifyIdentityText),
                                  button: .init(title: L10n.VerifyAccount.verifyMyIdentity, isUnderlined: true),
                                  dismissType: .persistent)
             

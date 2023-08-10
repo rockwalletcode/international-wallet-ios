@@ -98,6 +98,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     private var isRefreshing = false
     
     private let tabBarButtons = [
+        (L10n.Button.home, Asset.home.image as UIImage, #selector(home)),
         (L10n.Button.profile, Asset.user.image as UIImage, #selector(profile)),
         (L10n.HomeScreen.menu, Asset.more.image as UIImage, #selector(menu))
     ]
@@ -230,23 +231,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
                 assetListTableView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 assetListTableView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
         })
-        
-        let drawerConfig = DrawerConfiguration(buttons: [Presets.Button.primary,
-                                                         Presets.Button.primary,
-                                                         Presets.Button.whiteBorderless])
-        let drawerViewModel = DrawerViewModel(title: .text(L10n.Drawer.title),
-                                              buttons: [.init(title: L10n.Buy.buyWithCard, image: Asset.card.image),
-                                                        .init(title: L10n.Buy.buyWithAch, image: Asset.bank.image),
-                                                        .init(title: L10n.Button.sell, image: Asset.remove.image)],
-                                              onView: view,
-                                              bottomInset: BottomDrawer.bottomToolbarHeight)
-        let drawerCallbacks: [(() -> Void)] = [ { [weak self] in
-            self?.didTapDrawerButton(.card)
-        }, { [weak self] in
-            self?.didTapDrawerButton(.ach)
-        }, { [weak self]
-            in self?.didTapDrawerButton()
-        }]
         
         view.addSubview(tabBarContainerView)
         tabBarContainerView.addSubview(tabBar)
@@ -414,13 +398,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     // MARK: Actions
     
-    private func didTapDrawerButton(_ type: PaymentCard.PaymentType? = nil) {
-        if let type {
-            didTapBuy?(type)
-        } else {
-            didTapSell?()
-        }
-    }
+    @objc private func home() {}
     
     @objc private func profile() {
         didTapProfile?()

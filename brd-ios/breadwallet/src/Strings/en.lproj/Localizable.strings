@@ -59,6 +59,8 @@
 
 "Account.BlockedAccount.Title" = "Your RockWallet account is currently disabled.";
 
+"Account.BuyLimitsPerPayment" = "Buy limits (per payment method)";
+
 /* Change your email title on registration flow */
 "Account.ChangeEmail" = "Change your email";
 
@@ -214,6 +216,8 @@
 "Account.SelectCountry" = "Select country";
 
 "Account.SelectState" = "Select state";
+
+"Account.SellLimits" = "Sell limits";
 
 "Account.SignIn" = "Sign in";
 
@@ -830,7 +834,7 @@
 
 "Buy.Ach.Instant.Fee.Alternative.Title" = "Instant ACH fee";
 
-"Buy.Ach.Instant.Fee.Title" = "Instant Buy fee";
+"Buy.Ach.Instant.Fee.Title" = "Instant ACH fee";
 
 "Buy.Ach.Instant.HybridConfirmationDrawer" = "With Instant buy, %@ (%@) will show in your account instantly. The remaining %@ (%@) will arrive in 3-5 days.";
 
@@ -1313,6 +1317,8 @@
 /* Accepts 3 parameters:, - currency code, - current balance, - (same) currency code */
 "ErrorMessages.balanceTooLow" = "You need %@ %@ in your wallet to cover network fees. Please add more %@ to your wallet.";
 
+"ErrorMessages.cardRequiresPurchase" = "Prior to initiating any withdrawals to your visa debit, please complete a purchase with this card for validation purposes. Buy with card";
+
 /* Check your internet connection message */
 "ErrorMessages.CheckInternet" = "Please check your internet connection and try again later.";
 
@@ -1372,13 +1378,15 @@
 
 "ErrorMessages.notEnoughBalance" = "You don’t have enough %@ in your wallet in order to transfer this type of token.";
 
-"ErrorMessages.overDailyLimit" = "The amount is higher than your daily limit of %@ USD. Please upgrade your account or enter a lower amount.";
+"ErrorMessages.notEnoughBalanceXRP" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
+
+"ErrorMessages.overDailyLimit" = "The amount is higher than your weekly limit of %@ USD. Please upgrade your account or enter a lower amount.";
 
 "ErrorMessages.overExchangeLimit" = "Over exchange limit.";
 
 "ErrorMessages.overLifetimeLimit" = "The amount is higher than your lifetime limit of %@ USD. Please upgrade your account or enter a lower amount.";
 
-"ErrorMessages.overLifetimeLimitLevel2" = "The amount is higher than your daily limit of %@ USD. Please enter a lower amount.";
+"ErrorMessages.overLifetimeLimitLevel2" = "The amount is higher than your weekly limit of %@ USD. Please enter a lower amount.";
 
 "ErrorMessages.PaymailAlreadyTaken" = "This Paymail is already taken";
 
@@ -1805,6 +1813,8 @@
 /* Onboarding screen 'Buy some coin' button */
 "Onboarding.buyCoin" = "Buy some coin";
 
+"Onboarding.Description" = "Empowering you to navigate the digital asset economy easily and securely";
+
 /* Onboarding screen 'Get started' (create new wallet) button */
 "Onboarding.getStarted" = "Get started";
 
@@ -1931,6 +1941,8 @@
 
 "Prompts.CreateAccount.body" = "With your RockWallet account you’ll be able to Swap and Buy seamlessly.";
 
+"Prompts.CreateAccount.description" = "With your RockWallet account, you’ll be able to Store and Manage your digital assets seamlessly.";
+
 "Prompts.CreateAccount.title" = "Create your RockWallet account";
 
 /* Body text for a prompt that asks the user to subscribe to email updates to find out product updates. */
@@ -2028,6 +2040,8 @@
 "Prompts.UpgradePin.title" = "Upgrade PIN";
 
 "Prompts.VerifyAccount.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
+
+"Prompts.VerifyAccount.description" = "One more step, and you´ll unlock all RockWallet features.";
 
 "Prompts.VerifyAccount.title" = "Verify your account";
 
@@ -2423,6 +2437,8 @@
 
 "Sell.disclaimer" = "Minimum withdrawal is %@ and maximum is %@ per day. At the moment your lifetime limit is %@ USD.\n\nACH Withdrawals will be processed within 3-5 business days.withdrawal";
 
+"Sell.InvalidCardNumber" = "Only Visa Debit is supported for withdrawals";
+
 "Sell.iReceive" = "I receive";
 
 "Sell.NotAvailableBody" = "This feature is not available in your region. We will notify you when it becomes available.\n\nYou can still Swap, Store, Send and Receive digital assets in your RockWallet.";
@@ -2437,7 +2453,7 @@
 
 "Sell.SellLimits2" = "Your withdrawal will reach your bank account in the next 3-5 business days.";
 
-"Sell.SsnInput.Disclaimer" = "To enable selling and ACH withdrawals, we require your Social Security Numbers (SSN). It is a standard procedure to comply with financial regulations. Rest assured, your data is fully encrypted with the industry's latest encryption algorithms";
+"Sell.SsnInput.Disclaimer" = "To enable selling and withdrawals, we require your Social Security Numbers (SSN). It is a standard procedure to comply with financial regulations.\nRest assured, your data is fully encrypted with the industry’s latest encryption algorithms.";
 
 "Sell.SsnInput.Title.AdditionalInfo" = "We need additional info";
 
@@ -2448,6 +2464,10 @@
 "Sell.title" = "Sell & Withdraw funds";
 
 "Sell.tryAgain" = "Please try again";
+
+"Sell.visaDebit" = "Visa Debit";
+
+"Sell.visaDebitSupport" = "Unfortunately, currently only Visa Debit is supported for withdrawals";
 
 "Sell.widrawToBank" = "Withdraw to";
 
@@ -2728,6 +2748,8 @@
 
 /* Sync blockchain label */
 "Settings.sync" = "Sync Blockchain";
+
+"Settings.TellAFriendText" = "Hey, I use RockWallet to store and manage my crypto. It’s really easy to use. Give it a try. https://rockwallet.com/";
 
 "Settings.TellFriendDescription" = "Hey, I use RockWallet to send, receive, store, buy and trade crypto. It’s really easy to use. Give it a try. https://rockwallet.com/";
 
@@ -3161,7 +3183,9 @@
 /* Pending swap label in transaction view */
 "Transaction.PendingSwap" = "Pending swap";
 
-"Transaction.PendingWithdrawWithAch" = "Pending withdraw with ACH";
+"Transaction.pendingWithdrawalWithCard" = "Pending withdrawal with card";
+
+"Transaction.PendingWithdrawWithAch" = "Pending withdrawal with ACH";
 
 "Transaction.PendingWithdrawWithInstantBuy" = "Pending purchase with Instant Buy";
 
@@ -3221,9 +3245,13 @@
 /* Waiting to be confirmed string */
 "Transaction.waiting" = "Waiting to be confirmed. Some merchants require confirmation to complete a transaction. Estimated time: 1-2 hours.";
 
+"Transaction.withdarwalWithCardComplete" = "Withdrawal to card successful";
+
 "Transaction.WithdrawalComplete" = "Withdrawn to bank account";
 
 "Transaction.WithdrawalFailed" = "Withdrawal failed";
+
+"Transaction.withdrawalWithCardFailed" = "Withdrawal to card unsuccessful";
 
 "Transaction.WithdrawFailedWithAch" = "Withdrawal unsuccessful";
 
@@ -3628,6 +3656,8 @@
 "VerifyAccount.Button" = "Verify your account";
 
 "VerifyAccount.VerifyIdentityDescription" = "Verify your identity before you can start buying and swapping.";
+
+"VerifyAccount.VerifyIdentityText" = "Verify your identity to enjoy all RockWallet features.";
 
 "VerifyAccount.VerifyMyIdentity" = "Verify my identity";
 
