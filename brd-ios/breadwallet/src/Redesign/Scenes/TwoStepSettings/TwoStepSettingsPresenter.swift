@@ -26,11 +26,6 @@ final class TwoStepSettingsPresenter: NSObject, Presenter, TwoStepSettingsAction
             .settings
         ]
         
-        sending = IconTitleSubtitleToggleViewModel(title: .text(L10n.TwoStep.sendingFunds),
-                                                   checkmarkToggleState: settings.sending)
-        buy = IconTitleSubtitleToggleViewModel(title: .text(L10n.TwoStep.buyTransactions),
-                                               checkmarkToggleState: settings.buy)
-        
         let mandatoryCheckmark = Asset.checkboxSelectedCircle.image
         let sectionRows: [Models.Section: [any Hashable]] = [
             .description: [LabelViewModel.text(L10n.TwoStep.preferredSettings)],
@@ -44,8 +39,8 @@ final class TwoStepSettingsPresenter: NSObject, Presenter, TwoStepSettingsAction
                 IconTitleSubtitleToggleViewModel(title: .text(L10n.TwoStep.twoStepPeriod),
                                                  subtitle: .text(L10n.TwoStep.mandatory),
                                                  checkmark: .image(mandatoryCheckmark)),
-                sending,
-                buy
+                IconTitleSubtitleToggleViewModel(title: .text(L10n.TwoStep.sendingFunds),
+                                                 checkmarkToggleState: settings.sending)
             ]
         ]
         
