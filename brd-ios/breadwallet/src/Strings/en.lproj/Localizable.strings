@@ -36,6 +36,8 @@
 /* Account limits title in profile view */
 "Account.AccountLimits" = "Account limits";
 
+"Account.AccountStatus" = "Account status";
+
 /* Account Verification screen title */
 "Account.AccountVerification" = "Account Verification";
 

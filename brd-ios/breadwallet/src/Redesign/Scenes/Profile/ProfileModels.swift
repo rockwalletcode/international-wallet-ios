@@ -21,7 +21,6 @@ enum ProfileModels {
     }
     
     enum NavigationItems: String, CaseIterable {
-        case paymentMethods
         case security
         case preferences
         case logout
@@ -39,11 +38,9 @@ enum ProfileModels {
         }
         struct ActionResponse {
             var index: Int
-            var paymentCards: [PaymentCard]?
         }
         struct ResponseDisplay {
             var item: NavigationItems
-            var paymentCards: [PaymentCard]?
         }
     }
     
@@ -77,11 +74,6 @@ enum ProfileModels {
 extension ProfileModels.NavigationItems {
     var model: NavigationViewModel {
         switch self {
-        case .paymentMethods:
-            return .init(image: .image(Asset.card.image),
-                         label: .text(L10n.Buy.paymentMethods),
-                         button: .init(image: nil))
-            
         case .security:
             return .init(image: .image(Asset.lockClosed.image),
                          label: .text(L10n.MenuButton.security),

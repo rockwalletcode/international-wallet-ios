@@ -59,6 +59,8 @@ internal enum L10n {
   internal enum Account {
     /// Account limits title in profile view
     internal static let accountLimits = L10n.tr("Localizable", "Account.AccountLimits", fallback: "Account limits")
+    /// Account status
+    internal static let accountStatus = L10n.tr("Localizable", "Account.AccountStatus", fallback: "Account status")
     /// Account Verification screen title
     internal static let accountVerification = L10n.tr("Localizable", "Account.AccountVerification", fallback: "Account Verification")
     /// Daily (ACH)

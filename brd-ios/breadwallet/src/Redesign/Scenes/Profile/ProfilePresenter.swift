@@ -26,9 +26,6 @@ final class ProfilePresenter: NSObject, Presenter, ProfileActionResponses {
         ]
         
         var navigationItems = Models.NavigationItems.allCases
-        if !profile.status.hasKYCLevelTwo {
-            navigationItems = navigationItems.filter { $0 != .paymentMethods }
-        }
         let navigationModel = navigationItems.compactMap { $0.model }
         
         let sectionRows: [Models.Section: [any Hashable]] = [
@@ -44,14 +41,6 @@ final class ProfilePresenter: NSObject, Presenter, ProfileActionResponses {
         viewController?.displayData(responseDisplay: .init(sections: sections, sectionRows: sectionRows))
     }
     
-    func presentPaymentCards(actionResponse: ProfileModels.PaymentCards.ActionResponse) {
-        var paymentMethodsModel = Models.NavigationItems.paymentMethods.model
-        let problematicPaymentMethods = actionResponse.allPaymentCards.filter { $0.paymentMethodStatus.isProblematic == true }
-        paymentMethodsModel.showError = !problematicPaymentMethods.isEmpty
-        
-        viewController?.displayPaymentCards(responseDisplay: .init(model: paymentMethodsModel))
-    }
-    
     func presentVerificationInfo(actionResponse: ProfileModels.VerificationInfo.ActionResponse) {
         let title = actionResponse.verified ? L10n.Account.verifiedAccountTitle : L10n.Account.whyVerify
         let body = actionResponse.verified ? L10n.Account.verifiedAccountText : L10n.Account.verifyAccountText
@@ -64,7 +53,7 @@ final class ProfilePresenter: NSObject, Presenter, ProfileActionResponses {
     
     func presentNavigation(actionResponse: ProfileModels.Navigate.ActionResponse) {
         let item = Models.NavigationItems.allCases[actionResponse.index]
-        viewController?.displayNavigation(responseDisplay: .init(item: item, paymentCards: actionResponse.paymentCards))
+        viewController?.displayNavigation(responseDisplay: .init(item: item))
     }
     
     func presentLogout(actionResponse: ProfileModels.Logout.ActionResponse) {

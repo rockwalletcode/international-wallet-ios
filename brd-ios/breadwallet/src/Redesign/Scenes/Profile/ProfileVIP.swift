@@ -21,19 +21,16 @@ protocol ProfileViewActions: BaseViewActions, FetchViewActions {
 protocol ProfileActionResponses: BaseActionResponses, FetchActionResponses {
     func presentVerificationInfo(actionResponse: ProfileModels.VerificationInfo.ActionResponse)
     func presentNavigation(actionResponse: ProfileModels.Navigate.ActionResponse)
-    func presentPaymentCards(actionResponse: ProfileModels.PaymentCards.ActionResponse)
     func presentLogout(actionResponse: ProfileModels.Logout.ActionResponse)
 }
 
 protocol ProfileResponseDisplays: BaseResponseDisplays, FetchResponseDisplays {
     func displayVerificationInfo(responseDisplay: ProfileModels.VerificationInfo.ResponseDisplay)
     func displayNavigation(responseDisplay: ProfileModels.Navigate.ResponseDisplay)
-    func displayPaymentCards(responseDisplay: ProfileModels.PaymentCards.ResponseDisplay)
     func displayLogout(responseDisplay: ProfileModels.Logout.ResponseDisplay)
 }
 
 protocol ProfileDataStore: BaseDataStore, FetchDataStore {
-    var paymentCards: [PaymentCard]? { get set }
 }
 
 protocol ProfileDataPassing {

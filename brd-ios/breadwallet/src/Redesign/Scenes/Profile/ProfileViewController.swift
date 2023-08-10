@@ -122,8 +122,7 @@ class ProfileViewController: BaseTableViewController<ProfileCoordinator,
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch dataSource?.sectionIdentifier(for: indexPath.section) as? Models.Section {
         case .navigation:
-            let indexPath = UserManager.shared.profile?.status.hasKYCLevelTwo == true ? indexPath.row : indexPath.row + 1
-            interactor?.navigate(viewAction: .init(index: indexPath))
+            interactor?.navigate(viewAction: .init(index: indexPath.row))
             
         default:
             return
@@ -140,10 +139,6 @@ class ProfileViewController: BaseTableViewController<ProfileCoordinator,
     
     func displayNavigation(responseDisplay: ProfileModels.Navigate.ResponseDisplay) {
         switch responseDisplay.item {
-        case .paymentMethods:
-            guard let paymentCards = responseDisplay.paymentCards else { return }
-            coordinator?.showCardSelector(cards: paymentCards, selected: nil, isFromBuy: false)
-            
         case .preferences:
             coordinator?.showPreferences()
             
@@ -156,16 +151,6 @@ class ProfileViewController: BaseTableViewController<ProfileCoordinator,
             interactor?.logout(viewAction: .init())
             
         }
-    }
-    
-    func displayPaymentCards(responseDisplay: ProfileModels.PaymentCards.ResponseDisplay) {
-        guard let section = sections.firstIndex(where: { $0.hashValue == Models.Section.navigation.hashValue }),
-              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<NavigationItemView> else {
-            return
-        }
-        
-        cell.wrappedView.setup(with: responseDisplay.model)
-        tableView.invalidateTableViewIntrinsicContentSize()
     }
     
     func displayLogout(responseDisplay: ProfileModels.Logout.ResponseDisplay) {

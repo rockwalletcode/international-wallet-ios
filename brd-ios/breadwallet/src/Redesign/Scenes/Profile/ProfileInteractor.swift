@@ -22,9 +22,6 @@ class ProfileInteractor: NSObject, Interactor, ProfileViewActions {
             case .success:
                 self?.presenter?.presentData(actionResponse: .init(item: Models.Item()))
                 
-                guard UserManager.shared.profile?.status.hasKYCLevelTwo ?? false else { return }
-                self?.fetchCards()
-                
             case .failure(let error):
                 self?.presenter?.presentError(actionResponse: .init(error: error))
                 
@@ -52,23 +49,8 @@ class ProfileInteractor: NSObject, Interactor, ProfileViewActions {
     }
     
     func navigate(viewAction: ProfileModels.Navigate.ViewAction) {
-        let paymentCards = dataStore?.paymentCards
-        presenter?.presentNavigation(actionResponse: .init(index: viewAction.index, paymentCards: paymentCards))
+        presenter?.presentNavigation(actionResponse: .init(index: viewAction.index))
     }
     
     // MARK: - Additional helpers
-    private func fetchCards() {
-        PaymentCardsWorker().execute(requestData: PaymentCardsRequestData()) { [weak self] result in
-            switch result {
-            case .success(let data):
-                let paymentCards = data?.filter { $0.type == .card }
-                self?.dataStore?.paymentCards = paymentCards
-                
-                self?.presenter?.presentPaymentCards(actionResponse: .init(allPaymentCards: paymentCards ?? []))
-                
-            case .failure(let error):
-                self?.presenter?.presentError(actionResponse: .init(error: error))
-            }
-        }
-    }
 }
