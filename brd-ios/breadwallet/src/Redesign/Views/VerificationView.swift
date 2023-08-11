@@ -106,7 +106,7 @@ enum VerificationStatus: Hashable {
             return InfoViewModel(kyc: .levelOne, headerTitle: .text(L10n.VerifyAccount.verifyYourIdentity),
                                  headerTrailing: .init(image: Asset.info.image),
                                  status: VerificationStatus.none,
-                                 description: .text(L10n.VerifyAccount.verifyIdentityDescription),
+                                 description: .text(L10n.VerifyAccount.verifyIdentityText),
                                  button: .init(title: L10n.VerifyAccount.verifyMyIdentity, isUnderlined: true),
                                  dismissType: .persistent)
             
@@ -117,19 +117,11 @@ enum VerificationStatus: Hashable {
                                  description: .text(L10n.Account.verifiedAccountMessage),
                                  dismissType: .persistent)
         case .levelTwo(.levelTwo), .levelTwo(.kycWithSsn), .levelTwo(.kycWithoutSsn):
-            return InfoViewModel(kyc: .levelTwo, headerTitle: .text(L10n.Account.accountLimits),
+            return InfoViewModel(kyc: .levelTwo,
+                                 headerTitle: .text(L10n.Account.accountStatus),
                                  headerTrailing: .init(image: Asset.info.image),
                                  status: VerificationStatus.levelTwo(.levelTwo),
-                                 swapLimits: .text(L10n.Swap.swapLimit),
-                                 buyLimits: .text(L10n.Buy.buyLimit),
-                                 swapLimitsValue: .init(title: .text(L10n.Account.daily),
-                                                        value: .text("\(swapAllowanceDaily) \(Constant.usdCurrencyCode)")),
-                                 buyDailyLimitsView: .init(title: .text("\(L10n.Account.daily) (\(L10n.Buy.card))"),
-                                                           value: .text("\(buyAllowanceDaily) \(Constant.usdCurrencyCode)")),
-                                 buyAchDailyLimitsView: .init(title: .text(L10n.Account.achDailyLimits),
-                                                              value: .text("\(achAllowanceDaily) \(Constant.usdCurrencyCode)")),
-                                 dismissType: .persistent,
-                                 canUseAch: canUseAch)
+                                 dismissType: .persistent)
         case .levelTwo(.expired), .levelTwo(.resubmit):
             return InfoViewModel(kyc: .levelTwo, headerTitle: .text(L10n.Account.accountLimits),
                                  headerTrailing: .init(image: Asset.info.image),

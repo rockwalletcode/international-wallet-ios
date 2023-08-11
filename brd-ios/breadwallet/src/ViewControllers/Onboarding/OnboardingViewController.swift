@@ -229,7 +229,7 @@ class OnboardingViewController: UIViewController {
     }
     
     private func setUpPages() {
-        pages.append(OnboardingPage(heading: L10n.OnboardingPageOne.titleOne,
+        pages.append(OnboardingPage(heading: L10n.Onboarding.description,
                                     subheading: ""))
         
         pages.append(OnboardingPage(heading: L10n.OnboardingPageTwo.title,

@@ -176,7 +176,7 @@ extension Presets {
 extension Presets {
     struct InfoView {
         static var verification = InfoViewConfiguration(headerLeadingImage: BackgroundConfiguration(tintColor: LightColors.Contrast.two),
-                                                        headerTitle: .init(font: Fonts.Subtitle.three, textColor: LightColors.Contrast.one),
+                                                        headerTitle: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.three),
                                                         headerTrailing: .init(normalConfiguration: .init(tintColor: LightColors.Text.three),
                                                                               selectedConfiguration: .init(tintColor: LightColors.Text.two),
                                                                               disabledConfiguration: .init(tintColor: LightColors.Disabled.two)),
