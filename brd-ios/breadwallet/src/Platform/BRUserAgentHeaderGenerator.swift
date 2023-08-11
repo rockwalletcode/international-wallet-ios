@@ -50,11 +50,7 @@ public class BRUserAgentHeaderGenerator {
     }
     
     private static func appNameString() -> String {
-        guard let info = Bundle.main.infoDictionary as NSDictionary?,
-              let name = info["CFBundleDisplayName"] as? String else {
-            return "null_name"
-        }
-        return name.lowercased()
+        return "rwintl"
     }
     
     private static func cfNetworkVersionString() -> String {
