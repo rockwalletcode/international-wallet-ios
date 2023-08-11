@@ -77,7 +77,7 @@ class ExchangeCoordinator: BaseCoordinator, SellRoutes, BuyRoutes, SwapRoutes, O
                 vc.coordinator?.dismissFlow()
             }
             
-            vc.didTapSecondayButton = {
+            vc.didTapSecondaryButton = {
                 (vc.coordinator as? ExchangeCoordinator)?.showExchangeDetails(with: vc.dataStore?.id, type: .swap)
             }
         }

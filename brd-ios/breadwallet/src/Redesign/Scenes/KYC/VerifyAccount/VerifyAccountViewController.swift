@@ -26,7 +26,7 @@ class VerifyAccountViewController: BaseInfoViewController {
                     self?.didTapMainButton?()
                 }),
                 .init(title: L10n.ComingSoon.Buttons.contactSupport, isUnderlined: true, callback: { [weak self] in
-                    self?.didTapSecondayButton?()
+                    self?.didTapSecondaryButton?()
                 })
             ]
             
@@ -40,7 +40,7 @@ class VerifyAccountViewController: BaseInfoViewController {
                 .init(title: L10n.Button.maybeLater, isUnderlined: true, callback: { [weak self] in
                     self?.shouldDismiss = true
                     
-                    self?.didTapSecondayButton?()
+                    self?.didTapSecondaryButton?()
                 })
             ]
             
