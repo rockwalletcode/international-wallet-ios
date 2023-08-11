@@ -88,8 +88,7 @@ class ApplicationController: Subscriber {
         
         mainSetup()
         setupKeyboard()
-        // TODO: temp solution till we create a new account for the international app
-//        setupFirebase()
+        setupFirebase()
         
         Reachability.addDidChangeCallback({ isReachable in
             self.isReachable = isReachable
