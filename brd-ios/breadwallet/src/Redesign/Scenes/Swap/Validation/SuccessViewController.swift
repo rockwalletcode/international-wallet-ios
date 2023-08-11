@@ -37,7 +37,7 @@ class SuccessViewController: BaseInfoViewController {
             .init(title: reason?.secondButtonTitle, isUnderlined: reason?.secondButtonUnderlined ?? true, callback: { [weak self] in
                 self?.shouldDismiss = true
                 
-                self?.didTapSecondayButton?()
+                self?.didTapSecondaryButton?()
                 
             }),
             .init(title: reason?.thirdButtonTitle, isUnderlined: reason?.thirdButtoUnderlined ?? true, callback: { [weak self] in

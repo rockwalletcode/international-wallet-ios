@@ -45,7 +45,7 @@ class FailureViewController: BaseInfoViewController {
             .init(title: reason?.secondButtonTitle, isUnderlined: true, callback: { [weak self] in
                 self?.shouldDismiss = true
                 
-                self?.didTapSecondayButton?()
+                self?.didTapSecondaryButton?()
             })
         ]
     }

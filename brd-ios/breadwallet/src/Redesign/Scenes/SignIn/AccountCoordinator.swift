@@ -92,7 +92,7 @@ class AccountCoordinator: ExchangeCoordinator, SignInRoutes, SignUpRoutes, Forgo
                 self?.dismissFlow()
             }
             
-            vc.didTapSecondayButton = { [weak self] in
+            vc.didTapSecondaryButton = { [weak self] in
                 self?.showSupport()
             }
         }

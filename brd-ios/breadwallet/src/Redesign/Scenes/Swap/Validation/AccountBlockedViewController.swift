@@ -26,7 +26,7 @@ class AccountBlockedViewController: BaseInfoViewController {
             .init(title: L10n.UpdatePin.contactSupport, isUnderlined: true, callback: { [weak self] in
                 self?.shouldDismiss = true
                 
-                self?.didTapSecondayButton?()
+                self?.didTapSecondaryButton?()
             })
         ]
     }

@@ -505,7 +505,7 @@ class BaseCoordinator: NSObject, Coordinatable {
             }
         }
         
-        vc.didTapSecondayButton = { [weak self] in
+        vc.didTapSecondaryButton = { [weak self] in
             switch flow {
             case .buy, .swap:
                 self?.showSupport()
@@ -585,16 +585,15 @@ class BaseCoordinator: NSObject, Coordinatable {
         vc.didTapMainButton = {
             switch vc.reason {
             case .documentVerification, .limitsAuthentication:
-                vc.coordinator?.showBuy(type: .card,
-                                        coreSystem: vc.dataStore?.coreSystem,
-                                        keyStore: vc.dataStore?.keyStore)
+                LoadingView.show()
+                vc.interactor?.getAssetSelectionData(viewModel: .init(type: .card))
                 
             default:
                 vc.coordinator?.dismissFlow()
             }
         }
         
-        vc.didTapSecondayButton = {
+        vc.didTapSecondaryButton = {
             switch vc.reason {
             case .documentVerification:
                 LoadingView.show()
@@ -672,7 +671,7 @@ class BaseCoordinator: NSObject, Coordinatable {
             }
         }
         
-        vc.didTapSecondayButton = {
+        vc.didTapSecondaryButton = {
             switch vc.reason {
             case .swap:
                 vc.coordinator?.dismissFlow()

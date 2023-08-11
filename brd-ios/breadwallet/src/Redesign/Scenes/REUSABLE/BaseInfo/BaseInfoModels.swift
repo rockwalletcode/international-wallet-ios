@@ -107,8 +107,11 @@ enum BaseInfoModels {
         
         var firstButtonTitle: String? {
             switch self {
-            case .documentVerification, .limitsAuthentication:
+            case .limitsAuthentication:
                 return L10n.Button.buyDigitalAssets
+                
+            case .documentVerification:
+                return L10n.Button.receiveDigitalAssets
                 
             default:
                 return L10n.Button.back
@@ -121,7 +124,7 @@ enum BaseInfoModels {
                 return L10n.Sell.withdrawDetails
                 
             case .documentVerification:
-                return L10n.Button.receiveDigitalAssets
+                return nil
                 
             case .limitsAuthentication:
                 return L10n.Button.back
@@ -132,13 +135,7 @@ enum BaseInfoModels {
         }
         
         var thirdButtonTitle: String? {
-            switch self {
-            case .documentVerification:
-                return L10n.Button.fundWalletWithAch
-                
-            default:
-                return nil
-            }
+            return nil
         }
         
         var secondButtonUnderlined: Bool {

@@ -28,7 +28,7 @@ class BaseInfoViewController: BaseTableViewController<BaseCoordinator,
     var buttonConfigurations: [ButtonConfiguration] { return [] }
     
     var didTapMainButton: (() -> Void)?
-    var didTapSecondayButton: (() -> Void)?
+    var didTapSecondaryButton: (() -> Void)?
     var didTapThirdButton: (() -> Void)?
     
     // MARK: - Overrides
