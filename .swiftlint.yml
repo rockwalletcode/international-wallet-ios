@@ -1,5 +1,5 @@
 included:
-  - brd-ios/breadwallet/
+  - rockwallet/rockwallet/
 
 disabled_rules:
   - trailing_whitespace
@@ -17,10 +17,10 @@ opt_in_rules:
 
 excluded:
   - Modules
-  - breadwalletTests
-  - breadwalletUITests
-  - breadwallet/src/Constants/Strings.swift
-  - breadwallet/src/Constants/Assets.swift
+  - rockwalletTests
+  - rockwalletUITests
+  - rockwallet/src/Constants/Strings.swift
+  - rockwallet/src/Constants/Assets.swift
 
 line_length:
     warning: 170
