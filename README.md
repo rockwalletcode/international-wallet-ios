@@ -43,8 +43,8 @@ Each module contains only code related to a single feature, helping keep the pro
 
 ### Setup
 
-1. Clone this repository `git clone git@github.com:rockwalletcode/wallet-ios.git --recurse-submodules`
-2. Open the `brd-ios/breadwallet.xcworkspace` file in Xcode
+1. Clone this repository `git clone git@github.com:rockwalletcode/international-wallet-ios.git --recurse-submodules`
+2. Open the `rockwallet/rockwallet.xcodeproj` file in Xcode
 
 ### WARNING:
 
