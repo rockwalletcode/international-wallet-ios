@@ -67,7 +67,7 @@ class ConfirmRecoveryKeyViewController: BaseRecoveryKeyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         
         showBackButton()
         showCloseButton()
@@ -135,7 +135,7 @@ class ConfirmRecoveryKeyViewController: BaseRecoveryKeyViewController {
         let titles = [L10n.RecoveryKeyFlow.confirmRecoveryKeyTitle, L10n.RecoveryKeyFlow.confirmRecoveryKeySubtitle]
         let fonts = [Fonts.Title.six,
                      Fonts.Body.two]
-        let colors = [LightColors.Text.three, LightColors.Text.two]
+        let colors = [Colors.Text.three, Colors.Text.two]
         let margin: CGFloat = E.isSmallScreen ? 35 : 55
         
         for (i, label) in [titleLabel, subtitleLabel].enumerated() {
@@ -279,7 +279,7 @@ class RecoveryKeyWordInputView: UIView, UITextFieldDelegate {
     }
     
     var clearInputImage: UIImage? {
-        return Asset.warning.image.tinted(with: LightColors.Error.one)
+        return Asset.warning.image.tinted(with: Colors.Error.one)
     }
     
     var validInput = true {
@@ -369,10 +369,10 @@ class RecoveryKeyWordInputView: UIView, UITextFieldDelegate {
     }
     
     private func setUpMainContainer() {
-        mainContainer.backgroundColor = LightColors.Background.one
+        mainContainer.backgroundColor = Colors.Background.one
         mainContainer.layer.cornerRadius = CornerRadius.common.rawValue
         mainContainer.layer.borderWidth = 1
-        mainContainer.layer.borderColor = (haveError ? LightColors.Error.one : LightColors.Outline.two).cgColor
+        mainContainer.layer.borderColor = (haveError ? Colors.Error.one : Colors.Outline.two).cgColor
         
         addSubview(mainContainer)
         mainContainer.constrain([
@@ -394,7 +394,7 @@ class RecoveryKeyWordInputView: UIView, UITextFieldDelegate {
             errorLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
         errorLabel.isHidden = true
-        errorLabel.textColor = LightColors.Error.one
+        errorLabel.textColor = Colors.Error.one
         errorLabel.font = Fonts.Body.two
         errorLabel.text = L10n.RecoveryKeyFlow.confirmRecoveryInputError
     }
@@ -412,7 +412,7 @@ class RecoveryKeyWordInputView: UIView, UITextFieldDelegate {
     }
     
     private func setUpHintLabel() {
-        hintLabel.textColor = LightColors.Text.two
+        hintLabel.textColor = Colors.Text.two
         hintLabel.font = Fonts.Body.two
         
         mainContainer.addSubview(hintLabel)
@@ -426,7 +426,7 @@ class RecoveryKeyWordInputView: UIView, UITextFieldDelegate {
     }
     
     private func setUpInputField() {
-        input.textColor = LightColors.Text.one
+        input.textColor = Colors.Text.one
         input.font = Fonts.Body.two
         input.backgroundColor = .clear
         input.borderStyle = .none
@@ -466,17 +466,17 @@ class RecoveryKeyWordInputView: UIView, UITextFieldDelegate {
     private func showFocusBar() {
         guard input.isFirstResponder else { return }
         focusBar.isHidden = true
-        mainContainer.layer.borderColor = (haveError ? LightColors.Error.one : LightColors.Outline.two).cgColor
+        mainContainer.layer.borderColor = (haveError ? Colors.Error.one : Colors.Outline.two).cgColor
     }
     
     private func hideFocusBar() {
         focusBar.isHidden = true
-        focusBar.backgroundColor = LightColors.Background.one
+        focusBar.backgroundColor = Colors.Background.one
     }
     
     private func showErrorLabel(_ show: Bool) {
         errorLabel.isHidden = !show
-        mainContainer.layer.borderColor = (haveError ? LightColors.Error.one : LightColors.Outline.two).cgColor
+        mainContainer.layer.borderColor = (haveError ? Colors.Error.one : Colors.Outline.two).cgColor
     }
     
     private func updateClearButton() {

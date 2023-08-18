@@ -11,8 +11,8 @@
 import UIKit
 
 struct TransparentViewConfiguration: Configurable {
-    var background = BackgroundConfiguration(backgroundColor: LightColors.Contrast.two.withAlphaComponent(0.8),
-                                             tintColor: LightColors.Success.one)
+    var background = BackgroundConfiguration(backgroundColor: Colors.Contrast.two.withAlphaComponent(0.8),
+                                             tintColor: Colors.Success.one)
     var title: LabelConfiguration?
 }
 

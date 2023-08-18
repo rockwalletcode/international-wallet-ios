@@ -23,7 +23,7 @@ class TxLabelCell: TxDetailRowCell {
 
     // MARK: - Views
     
-    fileprivate let valueLabel = UILabel(font: Fonts.Body.two, color: LightColors.Text.two)
+    fileprivate let valueLabel = UILabel(font: Fonts.Body.two, color: Colors.Text.two)
     
     // MARK: - Init
     

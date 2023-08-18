@@ -30,7 +30,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         view.layer.masksToBounds = true
         view.layer.cornerRadius = CornerRadius.large.rawValue
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        view.backgroundColor = LightColors.Background.cards
+        view.backgroundColor = Colors.Background.cards
         return view
     }()
     
@@ -41,9 +41,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         let appearance = view.standardAppearance
         appearance.shadowImage = nil
         appearance.shadowColor = nil
-        appearance.backgroundColor = LightColors.Background.cards
+        appearance.backgroundColor = Colors.Background.cards
         view.standardAppearance = appearance
-        view.unselectedItemTintColor = LightColors.Text.two
+        view.unselectedItemTintColor = Colors.Text.two
         return view
     }()
     
@@ -55,13 +55,13 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     }()
     
     private lazy var totalAssetsTitleLabel: UILabel = {
-        let view = UILabel(font: Fonts.Body.two, color: LightColors.Text.three)
+        let view = UILabel(font: Fonts.Body.two, color: Colors.Text.three)
         view.text = L10n.HomeScreen.totalAssets
         return view
     }()
     
     private lazy var totalAssetsAmountLabel: UILabel = {
-        let view = UILabel(font: Fonts.Title.three, color: LightColors.Text.three)
+        let view = UILabel(font: Fonts.Title.three, color: Colors.Text.three)
         view.adjustsFontSizeToFitWidth = true
         view.minimumScaleFactor = 0.5
         view.textAlignment = .right
@@ -249,7 +249,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private func setInitialData() {
         title = ""
-        view.backgroundColor = LightColors.Background.two
+        view.backgroundColor = Colors.Background.two
         navigationItem.titleView = UIView()
         
         setupToolbar()

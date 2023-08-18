@@ -20,13 +20,13 @@ class MenuCell: UITableViewCell {
     func set(item: MenuItem) {
         textLabel?.text = item.title
         textLabel?.font = Fonts.Subtitle.one
-        textLabel?.textColor = item.color ?? LightColors.Text.three
+        textLabel?.textColor = item.color ?? Colors.Text.three
         
         imageView?.image = item.icon
-        imageView?.tintColor = LightColors.Text.three
+        imageView?.tintColor = Colors.Text.three
         
         if let accessoryText = item.accessoryText?() {
-            let label = UILabel(font: Fonts.Subtitle.one, color: LightColors.Text.three)
+            let label = UILabel(font: Fonts.Subtitle.one, color: Colors.Text.three)
             label.text = accessoryText
             label.sizeToFit()
             accessoryView = label
@@ -38,7 +38,7 @@ class MenuCell: UITableViewCell {
         if let subTitle = item.subTitle {
             detailTextLabel?.text = subTitle
             detailTextLabel?.font = Fonts.Subtitle.two
-            detailTextLabel?.textColor = LightColors.Text.three
+            detailTextLabel?.textColor = Colors.Text.three
         } else {
             detailTextLabel?.text = nil
         }

@@ -138,9 +138,9 @@ class SearchHeaderView: UIView {
     private func addSubviews() {
         addSubview(searchBar)
         addSubview(cancel)
-        searchBar.tintColor = LightColors.Text.three
-        cancel.tintColor = LightColors.primary
-        searchBar.searchTextField.textColor = LightColors.Text.one
+        searchBar.tintColor = Colors.Text.three
+        cancel.tintColor = Colors.primary
+        searchBar.searchTextField.textColor = Colors.Text.one
         searchBar.searchTextField.font = Fonts.Body.two
     }
 
@@ -155,7 +155,7 @@ class SearchHeaderView: UIView {
     }
 
     private func setData() {
-        backgroundColor = LightColors.Background.one
+        backgroundColor = Colors.Background.one
         
         searchBar.backgroundImage = UIImage()
         searchBar.delegate = self

@@ -62,7 +62,7 @@ class VerificationInProgressViewController: CheckListViewController {
         switch dataSource?.sectionIdentifier(for: indexPath.section) as? Models.Section {
         case .title:
             cell =  self.tableView(tableView, labelCellForRowAt: indexPath)
-            (cell as? WrapperTableViewCell<FELabel>)?.wrappedView.configure(with: .init(font: Fonts.Title.five, textColor: LightColors.Text.three))
+            (cell as? WrapperTableViewCell<FELabel>)?.wrappedView.configure(with: .init(font: Fonts.Title.five, textColor: Colors.Text.three))
             
         case .checkmarks:
             cell = self.tableView(tableView, checkmarkCellForRowAt: indexPath)
@@ -85,9 +85,9 @@ class VerificationInProgressViewController: CheckListViewController {
         
         var labelConfig: LabelConfiguration {
             if let rowCount = sectionRows[CheckListModels.Section.checkmarks]?.count, indexPath.row == rowCount - 1 {
-                return .init(font: Fonts.Body.one, textColor: LightColors.Text.three)
+                return .init(font: Fonts.Body.one, textColor: Colors.Text.three)
             } else {
-                return .init(font: ThemeManager.shared.font(for: Fonts.Secondary, size: 16), textColor: LightColors.Text.three)
+                return .init(font: ThemeManager.shared.font(for: Fonts.Secondary, size: 16), textColor: Colors.Text.three)
             }
         }
         

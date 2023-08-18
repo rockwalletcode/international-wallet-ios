@@ -48,7 +48,7 @@ final class SignInPresenter: NSObject, Presenter, SignInActionResponses {
                       isEmailEmpty: actionResponse.isEmailEmpty,
                       emailModel: .init(title: L10n.Account.enterEmail,
                                         hint: actionResponse.emailState == .error ? L10n.Account.invalidEmail : nil,
-                                        trailing: actionResponse.emailState == .error ? .image(Asset.warning.image.tinted(with: LightColors.Error.one)) : nil,
+                                        trailing: actionResponse.emailState == .error ? .image(Asset.warning.image.tinted(with: Colors.Error.one)) : nil,
                                         displayState: actionResponse.emailState),
                       isPasswordValid: actionResponse.isPasswordValid,
                       isPasswordEmpty: actionResponse.isPasswordEmpty,

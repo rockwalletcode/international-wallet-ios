@@ -32,7 +32,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
         tableView.register(WrapperTableViewCell<BuyOrderView>.self)
         tableView.register(WrapperTableViewCell<PaymentMethodView>.self)
         
-        view.backgroundColor = LightColors.Background.two
+        view.backgroundColor = Colors.Background.two
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,7 +105,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
         }
         
         cell.setup { view in
-            view.configure(with: .init(font: Fonts.Body.three, textColor: LightColors.Text.one))
+            view.configure(with: .init(font: Fonts.Body.three, textColor: Colors.Text.one))
             view.setup(with: model)
         }
         
@@ -121,8 +121,8 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
         
         cell.setup { view in
             view.configure(with: .init(shadow: Presets.Shadow.light,
-                                       background: .init(backgroundColor: LightColors.Background.one,
-                                                         tintColor: LightColors.Text.one,
+                                       background: .init(backgroundColor: Colors.Background.one,
+                                                         tintColor: Colors.Text.one,
                                                          border: Presets.Border.commonPlain)))
             view.setup(with: model)
             
@@ -147,7 +147,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
         
         cell.setup { view in
             view.configure(with: .init(notice: .init(font: Fonts.Body.three,
-                                                     textColor: LightColors.instantPurple,
+                                                     textColor: Colors.instantPurple,
                                                      textAlignment: model.exceedInstantBuyLimit == true ? .left : .center)))
             view.setup(with: model)
             

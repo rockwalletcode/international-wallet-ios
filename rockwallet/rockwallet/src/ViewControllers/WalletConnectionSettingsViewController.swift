@@ -22,12 +22,12 @@ class WalletConnectionSettingsViewController: UIViewController {
 
     // views
     private let animatedBlockSetLogo = AnimatedBlockSetLogo()
-    private let header = UILabel.wrapping(font: Fonts.Title.three, color: LightColors.Text.one)
+    private let header = UILabel.wrapping(font: Fonts.Title.three, color: Colors.Text.one)
     private let explanationLabel = UITextView()
-    private let footerLabel = UILabel.wrapping(font: Fonts.Body.three, color: LightColors.Text.two)
+    private let footerLabel = UILabel.wrapping(font: Fonts.Body.three, color: Colors.Text.two)
     private let toggleSwitch = UISwitch()
     private let footerLogo = UIImageView(image: Asset.blocksetLogoWhite.image)
-    private let mainBackground = UIView(color: LightColors.primary.withAlphaComponent(0.5))
+    private let mainBackground = UIView(color: Colors.primary.withAlphaComponent(0.5))
     private let footerBackground = UIView(color: .clear)
     
     // MARK: - Lifecycle
@@ -48,7 +48,7 @@ class WalletConnectionSettingsViewController: UIViewController {
     }
 
     private func setUpAppearance() {
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         explanationLabel.textAlignment = .center
         mainBackground.layer.cornerRadius = 4.0
         footerBackground.layer.cornerRadius = 4.0
@@ -122,7 +122,7 @@ class WalletConnectionSettingsViewController: UIViewController {
         title = L10n.WalletConnectionSettings.viewTitle
         header.text = L10n.WalletConnectionSettings.header
         footerLabel.text = L10n.WalletConnectionSettings.footerTitle
-        footerLogo.tintColor = LightColors.primary
+        footerLogo.tintColor = Colors.primary
         
         let selectedMode = walletConnectionSettings.mode(for: currency)
         toggleSwitch.isOn = selectedMode == WalletConnectionMode.api_only
@@ -184,7 +184,7 @@ class WalletConnectionSettingsViewController: UIViewController {
         explanationLabel.isEditable = false
         explanationLabel.backgroundColor = .clear
         explanationLabel.font = Fonts.Body.one
-        explanationLabel.textColor = LightColors.Text.two
+        explanationLabel.textColor = Colors.Text.two
         explanationLabel.textAlignment = .center
         
         //TODO:CYRPTO - is there a way to make this false but also

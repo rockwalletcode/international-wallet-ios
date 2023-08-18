@@ -33,7 +33,7 @@ class VIPViewController<C: CoordinatableRoutes,
         view.font = Fonts.Title.five
         view.textAlignment = .left
         view.numberOfLines = 0
-        view.textColor = LightColors.Text.three
+        view.textColor = Colors.Text.three
         return view
     }()
     
@@ -92,7 +92,7 @@ class VIPViewController<C: CoordinatableRoutes,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         
         setupSubviews()
         localize()

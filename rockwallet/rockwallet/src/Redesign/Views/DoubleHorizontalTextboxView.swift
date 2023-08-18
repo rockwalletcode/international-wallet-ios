@@ -105,8 +105,8 @@ class DoubleHorizontalTextboxView: FEView<DoubleHorizontalTextboxViewConfigurati
     override func configure(with config: DoubleHorizontalTextboxViewConfiguration?) {
         super.configure(with: config)
         
-        mainTitleLabel.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two))
-        secondaryTitleLabel.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two))
+        mainTitleLabel.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two))
+        secondaryTitleLabel.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two))
         primaryTextField.configure(with: Presets.TextField.primary)
         secondaryTextField.configure(with: Presets.TextField.primary)
     }

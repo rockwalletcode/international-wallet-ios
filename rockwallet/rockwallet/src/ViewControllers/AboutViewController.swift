@@ -13,7 +13,7 @@ class AboutViewController: UIViewController {
     }()
     
     private lazy var aboutFooterView: UILabel = {
-        let aboutFooterView = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+        let aboutFooterView = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
         aboutFooterView.translatesAutoresizingMaskIntoConstraints = false
         
         let aboutFooterStyle = NSMutableParagraphStyle()
@@ -40,7 +40,7 @@ class AboutViewController: UIViewController {
         let attributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.underlineStyle: 1,
         NSAttributedString.Key.font: Fonts.Subtitle.two,
-        NSAttributedString.Key.foregroundColor: LightColors.secondary]
+        NSAttributedString.Key.foregroundColor: Colors.secondary]
         
         let attributedString = NSMutableAttributedString(string: L10n.About.privacy, attributes: attributes)
         button.setAttributedTitle(attributedString, for: .normal)
@@ -53,7 +53,7 @@ class AboutViewController: UIViewController {
         let attributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.underlineStyle: 1,
         NSAttributedString.Key.font: Fonts.Subtitle.two,
-        NSAttributedString.Key.foregroundColor: LightColors.secondary]
+        NSAttributedString.Key.foregroundColor: Colors.secondary]
         
         let attributedString = NSMutableAttributedString(string: L10n.About.terms, attributes: attributes)
         button.setAttributedTitle(attributedString, for: .normal)
@@ -70,7 +70,7 @@ class AboutViewController: UIViewController {
         addConstraints()
         setActions()
         
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         
         GoogleAnalytics.logEvent(GoogleAnalytics.About())
     }

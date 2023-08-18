@@ -30,11 +30,11 @@ class ManageCurrencyCell: UITableViewCell {
         return view
     }()
     
-    private let header = UILabel(font: Fonts.Body.one, color: LightColors.Text.one)
+    private let header = UILabel(font: Fonts.Body.one, color: Colors.Text.one)
     private let button = ToggleButton(normalTitle: L10n.TokenList.add,
-                                      normalColor: LightColors.primary,
+                                      normalColor: Colors.primary,
                                       selectedTitle: L10n.TokenList.hide,
-                                      selectedColor: LightColors.Error.one)
+                                      selectedColor: Colors.Error.one)
     private var identifier: CurrencyId = ""
     private var listType: EditWalletType = .add
     private var isCurrencyHidden = false
@@ -94,17 +94,17 @@ class ManageCurrencyCell: UITableViewCell {
         if listType == .add {
             button.setTitle(L10n.TokenList.add.uppercased(), for: .normal)
             button.setTitle(L10n.TokenList.remove.uppercased(), for: .selected)
-            button.setTitleColor(LightColors.primary, for: .normal)
-            button.setTitleColor(LightColors.Error.one, for: .selected)
-            button.setTitleColor(LightColors.primary.withAlphaComponent(0.4), for: .disabled)
-            button.layer.borderColor = LightColors.primary.cgColor
+            button.setTitleColor(Colors.primary, for: .normal)
+            button.setTitleColor(Colors.Error.one, for: .selected)
+            button.setTitleColor(Colors.primary.withAlphaComponent(0.4), for: .disabled)
+            button.layer.borderColor = Colors.primary.cgColor
         } else {
             button.setTitle(L10n.TokenList.remove.uppercased(), for: .normal)
             button.setTitle(L10n.TokenList.remove.uppercased(), for: .selected)
-            button.setTitleColor(LightColors.Error.one, for: .normal)
-            button.setTitleColor(LightColors.Error.one.withAlphaComponent(0.2), for: .selected)
-            button.setTitleColor(LightColors.Error.one.withAlphaComponent(0.4), for: .disabled)
-            button.layer.borderColor = LightColors.Error.one.cgColor
+            button.setTitleColor(Colors.Error.one, for: .normal)
+            button.setTitleColor(Colors.Error.one.withAlphaComponent(0.2), for: .selected)
+            button.setTitleColor(Colors.Error.one.withAlphaComponent(0.4), for: .disabled)
+            button.layer.borderColor = Colors.Error.one.cgColor
         }
         
         button.tap = { [weak self] in

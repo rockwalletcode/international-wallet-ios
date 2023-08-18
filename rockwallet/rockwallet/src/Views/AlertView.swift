@@ -138,7 +138,7 @@ class AlertView: UIView {
     }
 
     private func setupSubviews() {
-        backgroundColor = LightColors.Success.one
+        backgroundColor = Colors.Success.one
         
         addSubview(header)
         addSubview(subheader)
@@ -153,7 +153,7 @@ class AlertView: UIView {
         header.text = type.header
         header.textAlignment = .center
         header.font = Fonts.Title.six
-        header.textColor = LightColors.Contrast.two
+        header.textColor = Colors.Contrast.two
 
         icon.backgroundColor = .clear
         separator.backgroundColor = .clear
@@ -161,7 +161,7 @@ class AlertView: UIView {
         subheader.text = type.subheader
         subheader.textAlignment = .center
         subheader.font = Fonts.Title.six
-        subheader.textColor = LightColors.Contrast.two
+        subheader.textColor = Colors.Contrast.two
     }
 
     private func addConstraints() {

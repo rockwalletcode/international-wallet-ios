@@ -38,7 +38,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
                   navigationItem.rightBarButtonItem?.title != dismissText else { return }
             
             let attributes: [NSAttributedString.Key: Any] = [.font: Fonts.Subtitle.two,
-                                                             .foregroundColor: LightColors.Text.three,
+                                                             .foregroundColor: Colors.Text.three,
                                                              .underlineStyle: NSUnderlineStyle.single.rawValue]
             closeButton = UIBarButtonItem(title: dismissText, style: .plain, target: self, action: closeAction)
             closeButton.setTitleTextAttributes(attributes, for: .normal)
@@ -65,7 +65,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
     override func setupSubviews() {
         super.setupSubviews()
         
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         tableView.backgroundColor = .clear
         
         tableView.registerAccessoryView(WrapperAccessoryView<FELabel>.self)
@@ -177,7 +177,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
 
         view.setup { view in
             view.setup(with: .text(text))
-            view.configure(with: .init(font: Fonts.Body.three, textColor: LightColors.Text.one))
+            view.configure(with: .init(font: Fonts.Body.three, textColor: Colors.Text.one))
         }
 
         return view
@@ -191,7 +191,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
         view.setup { view in
             // TODO: attributed string support
             view.setup(with: .attributedText(text))
-            view.configure(with: .init(font: Fonts.Body.three, textColor: LightColors.Text.one))
+            view.configure(with: .init(font: Fonts.Body.three, textColor: Colors.Text.one))
         }
 
         return view
@@ -305,7 +305,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
         }
         
         cell.setup { view in
-            view.configure(with: .init(font: Fonts.Body.three, textColor: LightColors.Text.two))
+            view.configure(with: .init(font: Fonts.Body.three, textColor: Colors.Text.two))
             view.setup(with: model)
         }
         
@@ -320,7 +320,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
         }
         
         cell.setup { view in
-            view.configure(with: .init(font: Fonts.Title.five, textColor: LightColors.Text.three))
+            view.configure(with: .init(font: Fonts.Title.five, textColor: Colors.Text.three))
             view.setup(with: model)
         }
         
@@ -354,11 +354,11 @@ class BaseTableViewController<C: CoordinatableRoutes,
             view.axis = .vertical
             
             view.configure(with: .init(title: .init(font: Fonts.Subtitle.two,
-                                                    textColor: LightColors.Text.three),
+                                                    textColor: Colors.Text.three),
                                        value: .init(font: Fonts.Body.two,
-                                                    textColor: LightColors.Text.two),
+                                                    textColor: Colors.Text.two),
                                        shadow: Presets.Shadow.light,
-                                       background: .init(backgroundColor: LightColors.Background.one,
+                                       background: .init(backgroundColor: Colors.Background.one,
                                                          border: .init(borderWidth: 0,
                                                                        cornerRadius: .medium))))
             view.setup(with: model)
@@ -377,7 +377,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
         }
         
         cell.setup { view in
-            view.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two))
+            view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two))
             view.setup(with: model)
         }
         
@@ -475,8 +475,8 @@ class BaseTableViewController<C: CoordinatableRoutes,
         else { return UITableViewCell() }
         
         cell.setup { view in
-            view.configure(with: .init(image: .init(tintColor: LightColors.Text.three),
-                                       label: .init(font: Fonts.Subtitle.one, textColor: LightColors.Text.three),
+            view.configure(with: .init(image: .init(tintColor: Colors.Text.three),
+                                       label: .init(font: Fonts.Subtitle.one, textColor: Colors.Text.three),
                                        button: Presets.Button.blackIcon))
             view.setup(with: model)
         }

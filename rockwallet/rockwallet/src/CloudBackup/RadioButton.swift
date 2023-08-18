@@ -15,9 +15,9 @@ struct RadioButton: View {
     
     private var color: Color {
         guard isOn else {
-            return Color(LightColors.secondary)
+            return Color(Colors.secondary)
         }
-        return Color(LightColors.primary)
+        return Color(Colors.primary)
     }
     
     var body: some View {

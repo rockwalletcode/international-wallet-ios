@@ -95,7 +95,7 @@ class BaseInfoViewController: BaseTableViewController<BaseCoordinator,
         }
         
         cell.setup { view in
-            view.configure(with: .init(font: Fonts.Title.six, textColor: LightColors.Text.three, textAlignment: .center))
+            view.configure(with: .init(font: Fonts.Title.six, textColor: Colors.Text.three, textAlignment: .center))
             view.setup(with: model)
         }
         
@@ -109,7 +109,7 @@ class BaseInfoViewController: BaseTableViewController<BaseCoordinator,
         }
         
         cell.setup { view in
-            view.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two, textAlignment: .center))
+            view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two, textAlignment: .center))
             view.setup(with: model)
             view.setupCustomMargins(vertical: .extraHuge, horizontal: .extraHuge)
             view.snp.makeConstraints { make in

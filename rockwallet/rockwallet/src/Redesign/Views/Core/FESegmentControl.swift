@@ -12,8 +12,8 @@ import UIKit
 
 struct SegmentControlConfiguration: Configurable {
     var font: UIFont = Fonts.button
-    var normal: BackgroundConfiguration = .init(backgroundColor: LightColors.Background.cards, tintColor: LightColors.primary)
-    var selected: BackgroundConfiguration = .init(backgroundColor: LightColors.primary, tintColor: LightColors.Contrast.two)
+    var normal: BackgroundConfiguration = .init(backgroundColor: Colors.Background.cards, tintColor: Colors.primary)
+    var selected: BackgroundConfiguration = .init(backgroundColor: Colors.primary, tintColor: Colors.Contrast.two)
 }
 
 struct SegmentControlViewModel: ViewModel {
@@ -43,7 +43,7 @@ class FESegmentControl: UISegmentedControl, ViewProtocol {
         if subviews.indices.contains(selectedSegmentIndex),
             let foregroundImageView = subviews[numberOfSegments] as? UIImageView {
             foregroundImageView.bounds = foregroundImageView.bounds.insetBy(dx: 10, dy: 10)
-            foregroundImageView.image = UIImage.imageForColor(LightColors.primary)
+            foregroundImageView.image = UIImage.imageForColor(Colors.primary)
             foregroundImageView.layer.removeAnimation(forKey: "SelectionBounds")
             foregroundImageView.layer.masksToBounds = true
             foregroundImageView.layer.cornerRadius = foregroundImageView.frame.height / 2

@@ -29,7 +29,7 @@ class RequestAmountViewController: UIViewController {
     private let currency: Currency
     private let amountView: AmountViewController
     private let qrCode = UIImageView()
-    private let address = UILabel(font: Fonts.Body.one, color: LightColors.Text.one)
+    private let address = UILabel(font: Fonts.Body.one, color: Colors.Text.one)
     private let addressPopout = InViewAlert(type: .primary)
     private let share = BRDButton(title: L10n.Receive.share.uppercased(), type: .tertiary, image: Asset.share.image)
     private let border = UIView()
@@ -96,11 +96,11 @@ class RequestAmountViewController: UIViewController {
     }
 
     private func setData() {
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         address.textAlignment = .center
         address.adjustsFontSizeToFitWidth = true
         address.minimumScaleFactor = 0.7
-        border.backgroundColor = LightColors.Outline.one
+        border.backgroundColor = Colors.Outline.one
 
         address.text = receiveAddress
         if let uri = currency.addressURI(receiveAddress),
@@ -129,7 +129,7 @@ class RequestAmountViewController: UIViewController {
     }
 
     private func setupCopiedMessage() {
-        let copiedMessage = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.one)
+        let copiedMessage = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.one)
         copiedMessage.text = L10n.Receive.copied
         copiedMessage.textAlignment = .center
         addressPopout.contentView = copiedMessage

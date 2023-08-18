@@ -36,7 +36,7 @@ class ItemSelectionViewController: BaseTableViewController<ItemSelectionCoordina
         
         tableView.separatorInset = .zero
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = LightColors.Outline.one
+        tableView.separatorColor = Colors.Outline.one
         tableView.register(WrapperTableViewCell<ItemView>.self)
         
         guard isSearchEnabled else { return }

@@ -19,11 +19,21 @@ class ThemeManager {
     init() {
         guard let path = Bundle.main.path(forResource: "theme", ofType: "plist"),
               let dict = NSDictionary(contentsOfFile: path),
-              let colors = dict["colors"] as? [String: String],
+              var colors = dict["colors"] as? [String: String],
               let fonts = dict["fonts"] as? [String: String]
         else {
             fatalError("Theme.plist error")
         }
+        
+        if UserDefaults.isDarkMode {
+            guard let darkColors = dict["darkColors"] as? [String: String]
+            else {
+                fatalError("Theme.plist error")
+            }
+            
+            colors = darkColors
+        }
+        
         self.colors = colors
         self.fonts = fonts
     }

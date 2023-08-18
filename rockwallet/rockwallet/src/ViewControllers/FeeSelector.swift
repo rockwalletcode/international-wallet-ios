@@ -58,10 +58,10 @@ class FeeSelector: UIView {
     var didUpdateFee: ((FeeLevel) -> Void)?
 
     private let currency: Currency
-    private let topBorder = UIView(color: LightColors.Outline.one)
-    private let header = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.two)
-    private let footer = UILabel(font: Fonts.Body.three, color: LightColors.Text.two)
-    private let warning = UILabel.wrapping(font: Fonts.Body.three, color: LightColors.Error.one)
+    private let topBorder = UIView(color: Colors.Outline.one)
+    private let header = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.two)
+    private let footer = UILabel(font: Fonts.Body.three, color: Colors.Text.two)
+    private let warning = UILabel.wrapping(font: Fonts.Body.three, color: Colors.Error.one)
     private let control = UISegmentedControl(items: [L10n.FeeSelector.economy, L10n.FeeSelector.regular, L10n.FeeSelector.priority])
 
     private func setupViews() {
@@ -123,15 +123,15 @@ class FeeSelector: UIView {
     
     private func setupSegmentControl() {
         control.selectedSegmentIndex = 2 // Default to priority (index 2)
-        control.selectedSegmentTintColor = LightColors.Text.two
+        control.selectedSegmentTintColor = Colors.Text.two
         var font: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: Fonts.Body.two,
-            NSAttributedString.Key.foregroundColor: LightColors.Text.two
+            NSAttributedString.Key.foregroundColor: Colors.Text.two
         ]
         control.setTitleTextAttributes(font, for: .normal)
         font = [
             NSAttributedString.Key.font: Fonts.Body.two,
-            NSAttributedString.Key.foregroundColor: LightColors.Contrast.two
+            NSAttributedString.Key.foregroundColor: Colors.Contrast.two
         ]
         control.setTitleTextAttributes(font, for: .selected)
     }

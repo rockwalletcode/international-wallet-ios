@@ -43,7 +43,7 @@ class ExchangeDetailsViewController: BaseTableViewController<BaseCoordinator,
         tableView.register(WrapperTableViewCell<OrderView>.self)
         tableView.register(WrapperTableViewCell<BuyOrderView>.self)
         
-        tableView.backgroundColor = LightColors.Background.two
+        tableView.backgroundColor = Colors.Background.two
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

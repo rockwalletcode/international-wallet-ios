@@ -11,7 +11,7 @@
 import UIKit
 
 struct LimitsPopupConfiguration: Configurable {
-    var title: LabelConfiguration = LabelConfiguration(font: Fonts.Title.six, textColor: LightColors.Text.three, textAlignment: .center)
+    var title: LabelConfiguration = LabelConfiguration(font: Fonts.Title.six, textColor: Colors.Text.three, textAlignment: .center)
     var perTransaction: TitleValueConfiguration = Presets.TitleValue.common
     var weekly: TitleValueConfiguration = Presets.TitleValue.common
     var monthly: TitleValueConfiguration = Presets.TitleValue.common
@@ -55,7 +55,7 @@ class LimitsPopupView: FEView<LimitsPopupConfiguration, LimitsPopupViewModel> {
     
     private lazy var lineView: UIView = {
         let view = UIView()
-        view.backgroundColor = LightColors.Outline.one
+        view.backgroundColor = Colors.Outline.one
         return view
     }()
     

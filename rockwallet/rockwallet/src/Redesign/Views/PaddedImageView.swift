@@ -12,7 +12,7 @@ import UIKit
 
 struct PaddedImageConfiguration: Configurable {
     var background: BackgroundConfiguration = .init(backgroundColor: .clear,
-                                                    border: .init(tintColor: LightColors.Outline.one,
+                                                    border: .init(tintColor: Colors.Outline.one,
                                                                   borderWidth: 1,
                                                                   cornerRadius: CornerRadius.common))
 }
