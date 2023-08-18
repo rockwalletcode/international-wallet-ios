@@ -275,6 +275,7 @@ class BuyOrderView: FEView<BuyOrderConfiguration, BuyOrderViewModel> {
         
         paymentMethodView.setup(with: viewModel?.paymentMethod)
         paymentMethodView.isHidden = viewModel?.paymentMethod == nil
+        paymentLineView.isHidden = viewModel?.paymentMethod == nil
         
         needsUpdateConstraints()
     }

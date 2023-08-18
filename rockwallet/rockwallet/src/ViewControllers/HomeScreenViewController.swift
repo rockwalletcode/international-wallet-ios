@@ -138,6 +138,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         super.viewWillAppear(animated)
         
         pullToRefreshControl.endRefreshing()
+        animationView.animation = Animations.buyAndSell.animation
         
         GoogleAnalytics.logEvent(GoogleAnalytics.Home())
     }
@@ -334,6 +335,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         
         Store.subscribe(self, name: .showSell) { _ in
             self.didTapSell?()
+        }
+        
+        Store.subscribe(self, name: .showBuy) { _ in
+            self.didTapBuy?(.card)
         }
         
         Reachability.addDidChangeCallback({ [weak self] isReachable in

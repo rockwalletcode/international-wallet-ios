@@ -34,6 +34,7 @@ enum ExchangeErrors: FEError {
     case selectAssets
     case authorizationFailed
     case highFees
+    case xrpErrorMessage
     
     var errorType: ServerResponse.ErrorType? {
         switch self {
@@ -124,6 +125,9 @@ enum ExchangeErrors: FEError {
             
         case .highFees:
             return L10n.ErrorMessages.highWidrawalFee
+            
+        case .xrpErrorMessage:
+            return L10n.ErrorMessages.Exchange.xrpMinimumReserve(Constant.xrpMinimumReserve)
         }
     }
 }

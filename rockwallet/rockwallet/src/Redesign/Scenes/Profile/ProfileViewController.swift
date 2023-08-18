@@ -139,6 +139,10 @@ class ProfileViewController: BaseTableViewController<ProfileCoordinator,
     
     func displayNavigation(responseDisplay: ProfileModels.Navigate.ResponseDisplay) {
         switch responseDisplay.item {
+        case .paymentMethods:
+            guard let paymentCards = responseDisplay.paymentCards else { return }
+            coordinator?.showCardSelector(cards: paymentCards, selected: nil)
+            
         case .preferences:
             coordinator?.showPreferences()
             

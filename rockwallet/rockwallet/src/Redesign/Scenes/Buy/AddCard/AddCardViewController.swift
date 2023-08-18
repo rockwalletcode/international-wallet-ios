@@ -10,7 +10,7 @@
 
 import UIKit
 
-class AddCardViewController: BaseTableViewController<ItemSelectionCoordinator,
+class AddCardViewController: BaseTableViewController<ExchangeCoordinator,
                              AddCardInteractor,
                              AddCardPresenter,
                              AddCardStore>,
@@ -18,9 +18,8 @@ class AddCardViewController: BaseTableViewController<ItemSelectionCoordinator,
     typealias Models = AddCardModels
     
     override var isRoundedBackgroundEnabled: Bool { return true }
-    override var sceneTitle: String? {
-        return L10n.Buy.addCard
-    }
+    override var isModalDismissableEnabled: Bool { return false }
+    override var sceneTitle: String? { return L10n.Buy.addCard }
     
     private var isValid = false
 
@@ -90,8 +89,8 @@ class AddCardViewController: BaseTableViewController<ItemSelectionCoordinator,
         
         cell.setup { view in
             view.setup { view in
+                view.configure(with: dataStore?.fromCardWithdrawal == true ? Presets.InfoView.error : Presets.InfoView.verification)
                 view.setup(with: model)
-                view.configure(with: Presets.InfoView.verification)
                 view.setupCustomMargins(all: .large)
             }
         }

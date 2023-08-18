@@ -21,6 +21,8 @@ class AddCardStore: NSObject, BaseDataStore, AddCardDataStore {
     var months: [String] = []
     var years: [String] = []
     
+    var fromCardWithdrawal: Bool = false
+    
     // MARK: - Additional helpers
     var isValid: Bool {
         return FieldValidator.validate(fields: [cardExpDateYear,

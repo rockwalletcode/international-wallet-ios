@@ -100,7 +100,7 @@ class CardSelectionView: FEView<CardSelectionConfiguration, CardSelectionViewMod
         content.addSubview(containerStack)
         containerStack.snp.makeConstraints { make in
             make.edges.equalTo(content.snp.margins)
-            make.height.greaterThanOrEqualTo(ViewSizes.Common.hugeCommon.rawValue)
+            make.height.greaterThanOrEqualTo(ViewSizes.medium.rawValue)
         }
         
         containerStack.addArrangedSubview(mainStack)

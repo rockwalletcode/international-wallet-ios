@@ -82,6 +82,7 @@ class CardDetailsView: FEView<CardDetailsConfiguration, CardDetailsViewModel> {
     
     private lazy var errorLabel: FELabel = {
         let view = FELabel()
+        view.configure(with: .init())
         return view
     }()
     

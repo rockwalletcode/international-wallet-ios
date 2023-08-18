@@ -107,6 +107,8 @@ extension TxDetailViewModel {
         }
         
         let currency = tx.currency
+        self.currency = currency
+        
         //TODO:CRYPTO incoming token transfers have a feeBasis with 0 values
         if let feeBasis = tx.feeBasis,
             (currency.isEthereum || (currency.isEthereumCompatible && tx.direction == .sent)) {

@@ -121,22 +121,32 @@ class BaseCoordinator: NSObject, Coordinatable {
     
     func showSell(selectedCurrency: Currency? = nil, coreSystem: CoreSystem?, keyStore: KeyStore?) {
         decideFlow { [weak self] showScene in
-            guard showScene,
-                  let profile = UserManager.shared.profile,
-                  profile.kycAccessRights.hasAchAccess == true else {
+            let profile = UserManager.shared.profile
+            let hasCardSellAccess = profile?.kycAccessRights.hasCardSellAccess
+            let hasAchSellAccess = profile?.kycAccessRights.hasAchSellAccess
+            
+            guard showScene, hasAchSellAccess == true || hasCardSellAccess == true else {
                 self?.handleUnverifiedOrRestrictedUser(flow: .sell, reason: .sell)
-                
                 return
             }
             
-            guard profile.status == .levelTwo(.kycWithSsn) else {
+            guard profile?.status == .levelTwo(.kycWithSsn) else {
                 self?.openModally(coordinator: ExchangeCoordinator.self, scene: Scenes.SsnAdditionalInfo)
                 return
+            }
+            
+            var paymentMethod: PaymentCard.PaymentType? {
+                switch (hasAchSellAccess, hasCardSellAccess) {
+                case (true, _): return .ach
+                case (false, true): return .card
+                default: return nil
+                }
             }
             
             self?.openModally(coordinator: ExchangeCoordinator.self, scene: Scenes.Sell) { vc in
                 vc?.dataStore?.coreSystem = coreSystem
                 vc?.dataStore?.keyStore = keyStore
+                vc?.dataStore?.paymentMethod = paymentMethod
                 
                 guard let selectedCurrency else { return }
                 vc?.dataStore?.fromAmount = .zero(selectedCurrency)

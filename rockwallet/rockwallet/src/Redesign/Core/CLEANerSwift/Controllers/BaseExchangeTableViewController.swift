@@ -33,11 +33,20 @@ class BaseExchangeTableViewController<C: CoordinatableRoutes,
     override func setupSubviews() {
         super.setupSubviews()
         
+        view.backgroundColor = LightColors.Background.two
+        
         tableView.register(WrapperTableViewCell<MainSwapView>.self)
         tableView.register(WrapperTableViewCell<SwapCurrencyView>.self)
         
         tableView.delaysContentTouches = false
         tableView.backgroundColor = LightColors.Background.two
+        verticalButtons.backgroundColor = LightColors.Background.two
+        
+        tableView.snp.remakeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview().offset(Margins.extraHuge.rawValue)
+            make.bottom.equalTo(verticalButtons.snp.top).offset(-Margins.large.rawValue)
+        }
     }
     
     func tableView(_ tableView: UITableView, timerCellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,6 +127,27 @@ class BaseExchangeTableViewController<C: CoordinatableRoutes,
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, segmentControlCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell: WrapperTableViewCell<FESegmentControl> = tableView.dequeueReusableCell(for: indexPath),
+              let model = dataSource?.itemIdentifier(for: indexPath) as? SegmentControlViewModel else {
+            return UITableViewCell()
+        }
+        
+        cell.setup { view in
+            view.configure(with: .init())
+            view.setup(with: model)
+            
+            view.didChangeValue = { [weak self] segment in
+                self?.view.endEditing(true)
+                self?.setSegment(segment)
+            }
+        }
+        
+        return cell
+    }
+    
+    func setSegment(_ segment: Int) { }
     
     override func setupVerticalButtons() {
         super.setupVerticalButtons()

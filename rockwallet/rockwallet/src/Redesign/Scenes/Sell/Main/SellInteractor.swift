@@ -16,22 +16,14 @@ class SellInteractor: NSObject, Interactor, SellViewActions {
     var presenter: SellPresenter?
     var dataStore: SellStore?
     
-    private var amount: Amount? {
-        get {
-            return dataStore?.fromAmount
-        }
-        set(value) {
-            dataStore?.fromAmount = value
-        }
-    }
-    
     // MARK: - SellViewActions
     
     func getData(viewAction: FetchModels.Get.ViewAction) {
-        let item = AssetModels.Item(type: dataStore?.paymentMethod,
-                                    achEnabled: UserManager.shared.profile?.kycAccessRights.hasAchAccess ?? false)
+        let item = SellModels.Item(type: dataStore?.paymentMethod,
+                                   achSellAccess: dataStore?.hasAchSellAccess ?? false,
+                                   cardSellAccess: dataStore?.hasCardSellAccess ?? false)
         
-        prepareCurrencies(viewAction: item)
+        prepareCurrencies(viewAction: .init(type: dataStore?.paymentMethod, achEnabled: dataStore?.hasAchSellAccess ?? false))
         
         guard !(dataStore?.supportedCurrencies ?? []).isEmpty else {
             presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
@@ -43,22 +35,19 @@ class SellInteractor: NSObject, Interactor, SellViewActions {
         }
         
         getPayments(viewAction: .init()) { [weak self] in
-            self?.dataStore?.selected = self?.dataStore?.ach
-            self?.setAmount(viewAction: .init(currency: self?.amount?.currency.code ?? self?.dataStore?.currencies.first?.code, didFinish: true))
+            self?.setAmount(viewAction: .init(currency: self?.dataStore?.amount?.currency.code ?? self?.dataStore?.currencies.first?.code, didFinish: true))
         }
     }
     
     func prepareFees(viewAction: AssetModels.Fee.ViewAction, completion: (() -> Void)?) {
-        guard let from = amount,
+        guard let from = dataStore?.amount,
               let profile = UserManager.shared.profile else {
             return
         }
         
-        generateSender(viewAction: .init(fromAmountCurrency: amount?.currency))
+        generateSender(viewAction: .init(fromAmountCurrency: dataStore?.amount?.currency))
         
-        getFees(viewAction: .init(fromAmount: from, limit: profile.sellAllowanceLifetime), completion: { [weak self] _ in
-            self?.setPresentAmountData(handleErrors: true)
-            
+        getFees(viewAction: .init(fromAmount: from, limit: profile.sellAchAllowanceLifetime), completion: { _ in
             completion?()
         })
     }
@@ -66,7 +55,7 @@ class SellInteractor: NSObject, Interactor, SellViewActions {
     private func setPresentAmountData(handleErrors: Bool) {
         let isNotZero = !(dataStore?.fromAmount?.tokenValue ?? 0).isZero
         
-        presenter?.presentAmount(actionResponse: .init(fromAmount: amount,
+        presenter?.presentAmount(actionResponse: .init(fromAmount: dataStore?.amount,
                                                        card: dataStore?.selected,
                                                        type: dataStore?.paymentMethod,
                                                        fromFee: dataStore?.fromFeeAmount,
@@ -90,7 +79,7 @@ class SellInteractor: NSObject, Interactor, SellViewActions {
     func setAmount(viewAction: AssetModels.Asset.ViewAction) {
         if let value = viewAction.currency?.lowercased(),
            let currency = dataStore?.currencies.first(where: { $0.code.lowercased() == value }) {
-            amount = .zero(currency)
+            dataStore?.amount = .zero(currency)
             
             prepareFees(viewAction: .init(), completion: {})
             
@@ -112,7 +101,7 @@ class SellInteractor: NSObject, Interactor, SellViewActions {
         }
         
         guard let rate = dataStore?.quote?.exchangeRate,
-              let toCurrency = amount?.currency else {
+              let toCurrency = dataStore?.amount?.currency else {
             setPresentAmountData(handleErrors: true)
             return
         }
@@ -128,7 +117,7 @@ class SellInteractor: NSObject, Interactor, SellViewActions {
             return
         }
         
-        amount = to
+        dataStore?.amount = to
         
         if let xrpErrorMessage = XRPBalanceValidator.validate(balance: dataStore?.fromAmount?.currency.state?.balance,
                                                               amount: dataStore?.fromAmount,

@@ -46,6 +46,7 @@ protocol AssetDataStore: BaseDataStore, FetchDataStore, TwoStepDataStore {
     var isFromBuy: Bool { get set }
     var currencies: [Currency] { get set }
     var supportedCurrencies: [String]? { get set }
+    var amount: Amount? { get set }
 }
 
 extension Interactor where Self: AssetViewActions,
@@ -207,7 +208,8 @@ extension Presenter where Self: AssetActionResponses,
             
         } else if ExchangeManager.shared.canSwap(from.currency) == false && isSwap {
             error = ExchangeErrors.pendingSwap
-            
+        } else if XRPBalanceValidator.validate(balance: from.currency.state?.balance, amount: from, currency: from.currency) != nil {
+            error = ExchangeErrors.xrpErrorMessage
         } else if let profile = UserManager.shared.profile {
             let fiat = from.fiatValue.round(to: 2)
             let token = from.tokenValue
@@ -227,14 +229,14 @@ extension Presenter where Self: AssetActionResponses,
                 perExchangeLimit = profile.buyAllowancePerExchange
                 reason = .buyCard(nil)
             } else if isBuy && actionResponse.type == .ach {
-                lifetimeLimit = profile.achAllowanceLifetime
-                dailyLimit = profile.achAllowanceDaily
-                perExchangeLimit = profile.achAllowancePerExchange
+                lifetimeLimit = profile.buyAchAllowanceLifetime
+                dailyLimit = profile.buyAchAllowanceDaily
+                perExchangeLimit = profile.buyAchAllowancePerExchange
                 reason = .buyAch(nil, nil)
             } else if isSell {
-                lifetimeLimit = profile.sellAllowanceLifetime
-                dailyLimit = profile.sellAllowanceDaily
-                perExchangeLimit = profile.sellAllowancePerExchange
+                lifetimeLimit = profile.sellAchAllowanceLifetime
+                dailyLimit = profile.sellAchAllowanceDaily
+                perExchangeLimit = profile.sellAchAllowancePerExchange
                 reason = .sell
             } else if isSwap {
                 lifetimeLimit = profile.swapAllowanceLifetime

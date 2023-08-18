@@ -523,7 +523,6 @@
 		7EF45F8A284768C100D1F7B0 /* ItemSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F83284768C100D1F7B0 /* ItemSelectionStore.swift */; };
 		7EF45F8B284768C100D1F7B0 /* ItemSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F84284768C100D1F7B0 /* ItemSelectionViewController.swift */; };
 		7EF45F8C284768C100D1F7B0 /* ItemSelectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F85284768C100D1F7B0 /* ItemSelectionModels.swift */; };
-		7EF45F8D284768C100D1F7B0 /* ItemSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F86284768C100D1F7B0 /* ItemSelectionCoordinator.swift */; };
 		7EF45F8E284768EC00D1F7B0 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F7A2846244F00D1F7B0 /* ItemView.swift */; };
 		7EF45F8F284768FE00D1F7B0 /* RegistrationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F7D2847672C00D1F7B0 /* RegistrationWorker.swift */; };
 		7EF45F91284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F90284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift */; };
@@ -1320,7 +1319,6 @@
 		7EF45F83284768C100D1F7B0 /* ItemSelectionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectionStore.swift; sourceTree = "<group>"; };
 		7EF45F84284768C100D1F7B0 /* ItemSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectionViewController.swift; sourceTree = "<group>"; };
 		7EF45F85284768C100D1F7B0 /* ItemSelectionModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectionModels.swift; sourceTree = "<group>"; };
-		7EF45F86284768C100D1F7B0 /* ItemSelectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectionCoordinator.swift; sourceTree = "<group>"; };
 		7EF45F90284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationWorker.swift; sourceTree = "<group>"; };
 		7EF514B428EB5B6D004A31C5 /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		7EF514B528EB5B6D004A31C5 /* staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = staging.xcconfig; sourceTree = "<group>"; };
@@ -2952,7 +2950,6 @@
 				7EF45F85284768C100D1F7B0 /* ItemSelectionModels.swift */,
 				7EF45F84284768C100D1F7B0 /* ItemSelectionViewController.swift */,
 				7EF45F81284768C100D1F7B0 /* ItemSelectionInteractor.swift */,
-				7EF45F86284768C100D1F7B0 /* ItemSelectionCoordinator.swift */,
 			);
 			path = ItemSelection;
 			sourceTree = "<group>";
@@ -4464,7 +4461,6 @@
 				7ED83AF6284F40EB00261565 /* ChecklistItemView.swift in Sources */,
 				7EA9F7B529683A9D000F45B6 /* CountriesAndStatesModels.swift in Sources */,
 				7EF2998A27E3B8C400A2238A /* ApiClient.swift in Sources */,
-				7EF45F8D284768C100D1F7B0 /* ItemSelectionCoordinator.swift in Sources */,
 				7C1931CD2327371A0061DE20 /* CoreDatabase.swift in Sources */,
 				7EF45F582845353100D1F7B0 /* DateView.swift in Sources */,
 				0486949A2A16388D004EDDBA /* TwoStepModels.swift in Sources */,

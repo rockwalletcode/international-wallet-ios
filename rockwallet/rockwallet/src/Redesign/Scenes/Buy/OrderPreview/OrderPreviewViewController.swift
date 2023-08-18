@@ -46,16 +46,17 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
             
         case .payment:
             cell = self.tableView(tableView, paymentMethodCellForRowAt: indexPath)
+            cell.contentView.setupCustomMargins(vertical: .zero, horizontal: .large)
             
         case .termsAndConditions:
-            if let isAchAccount = dataStore?.isAchAccount, isAchAccount {
-                cell = self.tableView(tableView, infoViewCellForRowAt: indexPath)
-            } else {
+            if dataStore?.type == .buy && dataStore?.isAchAccount == false {
                 cell = self.tableView(tableView, labelCellForRowAt: indexPath)
                 
                 let wrappedCell = cell as? WrapperTableViewCell<FELabel>
                 wrappedCell?.isUserInteractionEnabled = true
                 wrappedCell?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(termsAndConditionsTapped(_:))))
+            } else {
+                cell = self.tableView(tableView, infoViewCellForRowAt: indexPath)
             }
             
         case .submit:
@@ -268,7 +269,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
         
         guard let isAch = dataStore?.isAchAccount, let type = dataStore?.type else { return }
         
-        let exchangeType: ExchangeType = isAch ? (type == .sell ? .sell : .buyAch) : .buyCard
+        let exchangeType: ExchangeType = isAch ? (type == .sell ? .sellAch : .buyAch) : .buyCard
         coordinator?.showSuccess(reason: responseDisplay.reason,
                                  itemId: responseDisplay.paymentReference,
                                  exchangeType: exchangeType)

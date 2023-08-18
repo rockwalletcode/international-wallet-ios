@@ -115,26 +115,7 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         return cell
     }
     
-    func tableView(_ tableView: UITableView, segmentControlCellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: WrapperTableViewCell<FESegmentControl> = tableView.dequeueReusableCell(for: indexPath),
-              let model = dataSource?.itemIdentifier(for: indexPath) as? SegmentControlViewModel else {
-            return UITableViewCell()
-        }
-        
-        cell.setup { view in
-            view.configure(with: .init())
-            view.setup(with: model)
-            
-            view.didChangeValue = { [weak self] segment in
-                self?.view.endEditing(true)
-                self?.setSegment(segment)
-            }
-        }
-        
-        return cell
-    }
-    
-    private func setSegment(_ segment: Int) {
+    override func setSegment(_ segment: Int) {
         guard let section = sections.firstIndex(where: { $0.hashValue == Models.Section.segment.hashValue }),
               let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<FESegmentControl> else { return }
         cell.wrappedView.selectSegment(index: segment)
@@ -143,11 +124,7 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         if paymentTypes.count >= segment {
             let paymentType = paymentTypes[segment]
             
-            interactor?.dataStore?.paymentMethod = paymentType
-            interactor?.getPayments(viewAction: .init(setAmount: false), completion: { [weak self] in
-                self?.interactor?.selectPaymentMethod(viewAction: .init(method: paymentType))
-            })
-            
+            interactor?.selectPaymentMethod(viewAction: .init(method: paymentType))
             GoogleAnalytics.logEvent(GoogleAnalytics.Buy(type: paymentType.rawValue))
         }
     }

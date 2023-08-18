@@ -11,14 +11,15 @@
 import Foundation
 import LinkKit
 
-protocol PaymentMethodsViewActions: BaseViewActions, FetchViewActions {
+protocol PaymentMethodsViewActions: BaseViewActions, FetchViewActions, AssetViewActions {
     func getPayments(viewAction: PaymentMethodsModels.Get.ViewAction, completion: (() -> Void)?)
+    func selectPaymentMethod(viewAction: PaymentMethodsModels.PaymentMethod.ViewAction)
     func getPlaidToken(viewAction: PaymentMethodsModels.Link.ViewAction)
     func setPaymentCard(viewAction: PaymentMethodsModels.SetPaymentCard.ViewAction)
     func achSuccessMessage(viewAction: PaymentMethodsModels.Get.ViewAction)
 }
 
-protocol PaymentMethodsActionResponses: BaseActionResponses, FetchActionResponses {
+protocol PaymentMethodsActionResponses: BaseActionResponses, FetchActionResponses, AssetActionResponses {
     var achPaymentModel: CardSelectionViewModel? { get set }
     
     func presentPaymentCards(actionResponse: PaymentMethodsModels.PaymentCards.ActionResponse)
@@ -33,11 +34,12 @@ protocol PaymentMethodsResponseDisplays: BaseResponseDisplays, FetchResponseDisp
     func displayPlaidToken(responseDisplay: PaymentMethodsModels.Link.ResponseDisplay)
 }
 
-protocol PaymentMethodsDataStore: BaseDataStore, FetchDataStore {
+protocol PaymentMethodsDataStore: BaseDataStore, FetchDataStore, AssetDataStore {
     var selected: PaymentCard? { get set }
     var ach: PaymentCard? { get set }
     var cards: [PaymentCard] { get set }
-    var paymentMethod: PaymentCard.PaymentType? { get }
+    var paymentMethod: PaymentCard.PaymentType? { get set }
+    var exchangeType: ExchangeType? { get }
 }
 
 extension Interactor where Self: PaymentMethodsViewActions,
@@ -47,18 +49,28 @@ extension Interactor where Self: PaymentMethodsViewActions,
         var ach: PaymentCard?
         var cards: [PaymentCard] = []
         
-        PaymentCardsWorker().execute(requestData: PaymentCardsRequestData()) { [weak self] result in
+        let worker = (dataStore?.exchangeType == .buyCard || dataStore?.exchangeType == .buyAch) ? PaymentCardsWorker() : SellPaymentCardsWorker()
+        
+        worker.execute(requestData: PaymentCardsRequestData()) { [weak self] result in
             switch result {
             case .success(let data):
                 ach = data?.first(where: { $0.type == .ach })
                 cards = data?.filter { $0.type == .card } ?? []
+                
+                // Card withdrawal only supports visa
+                if self?.dataStore?.exchangeType == .sellCard {
+                    cards = cards.filter { $0.scheme == .visa }
+                }
+                
+                self?.dataStore?.cards = cards
                 
             case .failure(let error):
                 self?.presenter?.presentError(actionResponse: .init(error: error))
             }
             
             if viewAction.openCards == true {
-                self?.presenter?.presentPaymentCards(actionResponse: .init(allPaymentCards: self?.dataStore?.cards ?? []))
+                self?.presenter?.presentPaymentCards(actionResponse: .init(allPaymentCards: self?.dataStore?.cards ?? [],
+                                                                           exchangeType: self?.dataStore?.exchangeType))
             } else {
                 guard let paymentMethod = self?.dataStore?.paymentMethod else { return }
                 
@@ -71,9 +83,13 @@ extension Interactor where Self: PaymentMethodsViewActions,
                     self?.presenter?.presentAch(actionResponse: .init(item: ach))
                     
                 case .card:
-                    let card = cards.contains(where: { $0.id == self?.dataStore?.selected?.id }) ? self?.dataStore?.selected : cards.first
+                    var card = cards.contains(where: { $0.id == self?.dataStore?.selected?.id }) ? self?.dataStore?.selected : cards.first
                     self?.dataStore?.cards = cards
                     self?.dataStore?.ach = nil
+                    
+                    if self?.dataStore?.exchangeType == .sellCard {
+                        card = cards.first(where: { $0.verifiedToSell == true })
+                    }
                     
                     self?.setPaymentCard(viewAction: .init(card: card, setAmount: viewAction.setAmount))
                 }
@@ -83,11 +99,32 @@ extension Interactor where Self: PaymentMethodsViewActions,
         }
     }
     
+    func selectPaymentMethod(viewAction: PaymentMethodsModels.PaymentMethod.ViewAction) {
+        dataStore?.paymentMethod = viewAction.method
+        
+        getPayments(viewAction: .init(setAmount: false), completion: { [weak self] in
+            let item = AssetModels.Item(type: self?.dataStore?.paymentMethod,
+                                        achEnabled: UserManager.shared.profile?.kycAccessRights.hasAchAccess ?? false)
+            self?.prepareCurrencies(viewAction: item)
+            
+            guard let supportedCurrencies = self?.dataStore?.supportedCurrencies, !supportedCurrencies.isEmpty else {
+                self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
+                return
+            }
+            
+            let isSelectedCurencySupported = supportedCurrencies.contains(self?.dataStore?.amount?.currency.code.lowercased() ?? "")
+            guard let currency = isSelectedCurencySupported ? self?.dataStore?.amount?.currency : self?.dataStore?.currencies.first else { return }
+            self?.dataStore?.amount = .zero(currency)
+            
+            self?.setAmount(viewAction: .init(currency: currency.code, didFinish: true))
+        })
+    }
+    
     func setPaymentCard(viewAction: PaymentMethodsModels.SetPaymentCard.ViewAction) {
         dataStore?.selected = viewAction.card
         
         guard viewAction.setAmount else { return }
-        (self as? (any AssetViewActions))?.setAmount(viewAction: .init())
+        setAmount(viewAction: .init())
     }
     
     func getPlaidToken(viewAction: PaymentMethodsModels.Link.ViewAction) {
@@ -169,7 +206,8 @@ extension Interactor where Self: PaymentMethodsViewActions,
 extension Presenter where Self: PaymentMethodsActionResponses,
                           Self.ResponseDisplays: PaymentMethodsResponseDisplays {
     func presentPaymentCards(actionResponse: PaymentMethodsModels.PaymentCards.ActionResponse) {
-        viewController?.displayPaymentCards(responseDisplay: .init(allPaymentCards: actionResponse.allPaymentCards))
+        viewController?.displayPaymentCards(responseDisplay: .init(allPaymentCards: actionResponse.allPaymentCards,
+                                                                   exchangeType: actionResponse.exchangeType))
     }
     
     func presentAch(actionResponse: PaymentMethodsModels.Get.ActionResponse) {
@@ -204,10 +242,12 @@ extension Controller where Self: PaymentMethodsResponseDisplays {
     func displayPaymentCards(responseDisplay: PaymentMethodsModels.PaymentCards.ResponseDisplay) {
         view.endEditing(true)
         
-        (coordinator as? ExchangeCoordinator)?.showCardSelector(cards: responseDisplay.allPaymentCards, selected: { [weak self] selectedCard in
-            guard let selectedCard else { return }
+        let cards = responseDisplay.allPaymentCards
+        let from = responseDisplay.exchangeType
+        
+        (coordinator as? ExchangeCoordinator)?.showCardSelector(cards: cards, from: from) { [weak self] selectedCard in
             (self?.interactor as? (any PaymentMethodsViewActions))?.setPaymentCard(viewAction: .init(card: selectedCard, setAmount: true))
-        })
+        }
     }
     
     func displayPlaidToken(responseDisplay: PaymentMethodsModels.Link.ResponseDisplay) {

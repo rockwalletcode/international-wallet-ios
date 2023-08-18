@@ -51,14 +51,12 @@ protocol SellDataStore: BaseDataStore, FetchDataStore, AssetDataStore, PaymentMe
     // MARK: - SellDataStore
     
     var availablePayments: [PaymentCard.PaymentType] { get set }
-    
     var fromRate: Decimal? { get set }
-    
     var fromAmount: Amount? { get set }
-    
     var exchange: Exchange? { get set }
-    
     var createTransactionModel: CreateTransactionModels.Transaction.ViewAction? { get set }
+    var hasCardSellAccess: Bool { get }
+    var hasAchSellAccess: Bool { get }
 }
 
 protocol SellDataPassing {

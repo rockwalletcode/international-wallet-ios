@@ -40,6 +40,8 @@ struct ProfileResponseData: ModelResponse {
         let hasSwapAccess: Bool
         let hasBuyAccess: Bool
         let hasAchAccess: Bool
+        let hasAchSellAccess: Bool
+        let hasCardSellAccess: Bool
         let restrictionReason: String?
     }
     
@@ -53,7 +55,8 @@ struct ProfileResponseData: ModelResponse {
             case swap = "SWAP"
             case buyCard = "BUY_CARD"
             case buyAch = "BUY_ACH"
-            case sell = "SELL_ACH"
+            case sellCard = "SELL_CARD"
+            case sellAch = "SELL_ACH"
             case instantAch = "INSTANT_ACH"
             
             case unknown
@@ -87,6 +90,8 @@ struct Profile: Model {
         let hasSwapAccess: Bool
         let hasBuyAccess: Bool
         let hasAchAccess: Bool
+        let hasAchSellAccess: Bool
+        let hasCardSellAccess: Bool
         let restrictionReason: RestrictionReason?
         
         enum RestrictionReason: String {
@@ -97,73 +102,43 @@ struct Profile: Model {
         }
     }
     
-    var swapAllowancePerExchange: Decimal {
-        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .swap })?.limit ?? 0
-    }
-    var swapAllowanceDaily: Decimal {
-        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .swap })?.limit ?? 0
-    }
-    var swapAllowanceLifetime: Decimal {
-        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .swap })?.limit ?? 0
-    }
+    // MARK: Swap
     
-    var achAllowanceLifetime: Decimal {
-        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .buyAch })?.limit ?? 0
-    }
-    var achAllowanceDaily: Decimal {
-        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyAch })?.limit ?? 0
-    }
-    var achAllowancePerExchange: Decimal {
-        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .buyAch })?.limit ?? 0
-    }
+    var swapAllowancePerExchange: Decimal { limits.getLimit(interval: .perExchange, exchangeType: .swap) }
+    var swapAllowanceDaily: Decimal { limits.getLimit(interval: .daily, exchangeType: .swap) }
+    var swapAllowanceLifetime: Decimal { limits.getLimit(interval: .lifetime, exchangeType: .swap) }
     
-    var buyAllowancePerExchange: Decimal {
-        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceDaily: Decimal {
-        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceWeekly: Decimal {
-        return limits.first(where: { $0.interval == .weekly && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceMonthly: Decimal {
-        return limits.first(where: { $0.interval == .monthly && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceDailyMin: Decimal {
-        return limits.first(where: { $0.interval == .minimum && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceDailyMax: Decimal {
-        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
-    var buyAllowanceLifetime: Decimal {
-        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .buyCard })?.limit ?? 0
-    }
+    // MARK: Buy ACH
     
-    var achAllowanceDailyMin: Decimal {
-        return limits.first(where: { $0.interval == .minimum && $0.exchangeType == .buyAch })?.limit ?? 0
-    }
-    var achAllowanceDailyMax: Decimal {
-        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .buyAch })?.limit ?? 0
-    }
-    var achAllowanceWeekly: Decimal {
-        return limits.first(where: { $0.interval == .weekly && $0.exchangeType == .buyAch })?.limit ?? 0
-    }
-    var achAllowanceMonthly: Decimal {
-        return limits.first(where: { $0.interval == .monthly && $0.exchangeType == .buyAch })?.limit ?? 0
-    }
+    var buyAchAllowancePerExchange: Decimal { limits.getLimit(interval: .perExchange, exchangeType: .buyAch) }
+    var buyAchAllowanceDaily: Decimal { limits.getLimit(interval: .daily, exchangeType: .buyAch) }
+    var buyAchAllowanceWeekly: Decimal { limits.getLimit(interval: .weekly, exchangeType: .buyAch) }
+    var buyAchAllowanceMonthly: Decimal { limits.getLimit(interval: .monthly, exchangeType: .buyAch) }
+    var buyAchAllowanceLifetime: Decimal { limits.getLimit(interval: .lifetime, exchangeType: .buyAch) }
     
-    var sellAllowanceLifetime: Decimal {
-        return limits.first(where: { $0.interval == .lifetime && $0.exchangeType == .sell })?.limit ?? 0
-    }
-    var sellAllowanceDaily: Decimal {
-        return limits.first(where: { $0.interval == .daily && $0.exchangeType == .sell })?.limit ?? 0
-    }
-    var sellAllowanceWeekly: Decimal {
-        return limits.first(where: { $0.interval == .weekly && $0.exchangeType == .sell })?.limit ?? 0
-    }
-    var sellAllowancePerExchange: Decimal {
-        return limits.first(where: { $0.interval == .perExchange && $0.exchangeType == .sell })?.limit ?? 0
-    }
+    // MARK: Buy card
+    
+    var buyAllowancePerExchange: Decimal { limits.getLimit(interval: .perExchange, exchangeType: .buyCard) }
+    var buyAllowanceDaily: Decimal { limits.getLimit(interval: .daily, exchangeType: .buyCard) }
+    var buyAllowanceWeekly: Decimal { limits.getLimit(interval: .weekly, exchangeType: .buyCard) }
+    var buyAllowanceMonthly: Decimal { limits.getLimit(interval: .monthly, exchangeType: .buyCard) }
+    var buyAllowanceLifetime: Decimal { limits.getLimit(interval: .lifetime, exchangeType: .buyCard) }
+    
+    // MARK: Sell ACH
+    
+    var sellAchAllowancePerExchange: Decimal { limits.getLimit(interval: .perExchange, exchangeType: .sellAch) }
+    var sellAchAllowanceDaily: Decimal { limits.getLimit(interval: .daily, exchangeType: .sellAch) }
+    var sellAchAllowanceWeekly: Decimal { limits.getLimit(interval: .weekly, exchangeType: .sellAch) }
+    var sellAchAllowanceMonthly: Decimal { limits.getLimit(interval: .monthly, exchangeType: .sellAch) }
+    var sellAchAllowanceLifetime: Decimal { limits.getLimit(interval: .lifetime, exchangeType: .sellAch) }
+    
+    // MARK: Sell card
+    
+    var sellAllowancePerExchange: Decimal { limits.getLimit(interval: .perExchange, exchangeType: .sellCard) }
+    var sellAllowanceDaily: Decimal { limits.getLimit(interval: .daily, exchangeType: .sellCard) }
+    var sellAllowanceWeekly: Decimal { limits.getLimit(interval: .weekly, exchangeType: .sellCard) }
+    var sellAllowanceMonthly: Decimal { limits.getLimit(interval: .monthly, exchangeType: .sellCard) }
+    var sellAllowanceLifetime: Decimal { limits.getLimit(interval: .lifetime, exchangeType: .sellCard) }
 }
 
 class ProfileMapper: ModelMapper<ProfileResponseData, Profile> {
@@ -177,6 +152,8 @@ class ProfileMapper: ModelMapper<ProfileResponseData, Profile> {
                        kycAccessRights: .init(hasSwapAccess: response.kycAccessRights?.hasSwapAccess ?? false,
                                               hasBuyAccess: response.kycAccessRights?.hasBuyAccess ?? false,
                                               hasAchAccess: response.kycAccessRights?.hasAchAccess ?? false,
+                                              hasAchSellAccess: response.kycAccessRights?.hasAchSellAccess ?? false,
+                                              hasCardSellAccess: response.kycAccessRights?.hasCardSellAccess ?? false,
                                               restrictionReason: .init(rawValue: response.kycAccessRights?.restrictionReason ?? "")),
                        isMigrated: response.isRegistered ?? false,
                        kycFailureReason: response.kycFailureReason,
@@ -196,5 +173,11 @@ class ProfileWorker: BaseApiWorker<ProfileMapper> {
         } else {
             return APIURLHandler.getUrl(WalletEndpoints.profile)
         }
+    }
+}
+
+extension Array where Element == ProfileResponseData.ExchangeLimit {
+    func getLimit(interval: ProfileResponseData.ExchangeLimit.Interval, exchangeType: ProfileResponseData.ExchangeLimit.ExchangeType) -> Decimal {
+        return self.first(where: { $0.interval == interval && $0.exchangeType == exchangeType })?.limit ?? 0
     }
 }

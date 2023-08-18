@@ -29,7 +29,8 @@ final class AddCardPresenter: NSObject, Presenter, AddCardActionResponses {
             .button
         ]
         
-        let addCardNotificationModel = InfoViewModel(description: .text(L10n.Buy.addCardPrompt), dismissType: .persistent)
+        let bannerModel = item.fromCardWithdrawal ? prepareCardWithdrawalBanner() : LabelViewModel.text(L10n.Buy.addCardPrompt)
+        let addCardNotificationModel = InfoViewModel(description: bannerModel, dismissType: .persistent)
         
         bankCardInputDetailsViewModel = BankCardInputDetailsViewModel(number: .init(leading: .image(Asset.card.image),
                                                                                     title: L10n.Buy.cardNumber,
@@ -78,5 +79,16 @@ final class AddCardPresenter: NSObject, Presenter, AddCardActionResponses {
                                    body: L10n.Buy.securityCodePopup)
         
         viewController?.displayCvvInfoPopup(responseDisplay: .init(model: model))
+    }
+    
+    // MARK: - Additional Helpers
+    
+    private func prepareCardWithdrawalBanner() -> LabelViewModel {
+        let attributedString = NSMutableAttributedString(string: L10n.Sell.visaDebitSupport)
+        
+        let boldRange = attributedString.mutableString.range(of: L10n.Sell.visaDebit)
+        attributedString.addAttribute(.font, value: Fonts.Subtitle.two, range: boldRange)
+        
+        return .attributedText(attributedString)
     }
 }

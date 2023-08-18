@@ -10,7 +10,7 @@
 
 import UIKit
 
-class BillingAddressViewController: BaseTableViewController<ItemSelectionCoordinator,
+class BillingAddressViewController: BaseTableViewController<ExchangeCoordinator,
                                     BillingAddressInteractor,
                                     BillingAddressPresenter,
                                     BillingAddressStore>,
@@ -163,7 +163,7 @@ class BillingAddressViewController: BaseTableViewController<ItemSelectionCoordin
         LoadingView.hideIfNeeded()
         coordinator?.showOverlay(with: .success) { [weak self] in
             Store.trigger(name: .reloadBuy)
-            self?.coordinator?.dismissFlow()
+            self?.coordinator?.popToRoot()
         }
     }
     

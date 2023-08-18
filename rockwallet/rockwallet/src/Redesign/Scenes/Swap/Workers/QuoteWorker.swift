@@ -12,7 +12,7 @@ import Foundation
 
 enum QuoteType: Equatable {
     case swap
-    case sell
+    case sell(PaymentCard.PaymentType?)
     case buy(PaymentCard.PaymentType?)
     
     var value: String {
@@ -28,8 +28,15 @@ enum QuoteType: Equatable {
             default:
                 return ""
             }
-        case .sell:
-            return "SELL_ACH"
+        case .sell(let paymentType):
+            switch paymentType {
+            case .card:
+                return "SELL_CARD"
+            case .ach:
+                return "SELL_ACH"
+            default:
+                return ""
+            }
         }
     }
 }
@@ -134,6 +141,8 @@ class QuoteMapper: ModelMapper<QuoteModelResponse, Quote> {
             toFee = .init(fee: value, feeRate: response.toFeeCurrency?.depositRate ?? 0, currency: currency)
         }
         
+        let buyFee = response.buyFees ?? (response.type == QuoteType.sell(.ach).value ? response.achFees?.achSellFeePercentage : response.achFees?.achFeePercentage)
+        
         return .init(quoteId: response.quoteId,
                      exchangeRate: response.exchangeRate,
                      timestamp: response.timestamp,
@@ -145,7 +154,7 @@ class QuoteMapper: ModelMapper<QuoteModelResponse, Quote> {
                      toFeeRate: response.toFeeCurrency?.rate,
                      fromFee: fromFee,
                      toFee: toFee,
-                     buyFee: response.buyFees ?? (response.type == QuoteType.sell.value ? response.achFees?.achSellFeePercentage : response.achFees?.achFeePercentage),
+                     buyFee: buyFee,
                      buyFeeUsd: response.achFees?.achFeeFixedUsd,
                      isMinimumImpactedByWithdrawal: response.isMinimumImpactedByWithdrawal,
                      instantAch: response.instantAch)
