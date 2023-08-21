@@ -12,7 +12,7 @@ import UIKit
 
 struct SegmentControlConfiguration: Configurable {
     var font: UIFont = Fonts.button
-    var normal: BackgroundConfiguration = .init(backgroundColor: Colors.Background.cards, tintColor: Colors.primary)
+    var normal: BackgroundConfiguration = .init(backgroundColor: Colors.Background.one, tintColor: Colors.primary)
     var selected: BackgroundConfiguration = .init(backgroundColor: Colors.primary, tintColor: Colors.Contrast.two)
 }
 

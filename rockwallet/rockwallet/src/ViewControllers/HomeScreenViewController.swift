@@ -75,6 +75,11 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         return view
     }()
     
+    private lazy var segmentControl: FESegmentControl = {
+        let view = FESegmentControl()
+        return view
+    }()
+    
     var didSelectCurrency: ((Currency) -> Void)?
     var didTapManageWallets: (() -> Void)?
     var didTapBuy: ((PaymentCard.PaymentType) -> Void)?
@@ -162,6 +167,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         setupSubviews()
         setInitialData()
         setupSubscriptions()
+        setupSegmentControl()
         updateTotalAssets()
         
         if !Store.state.isLoginRequired {
@@ -178,6 +184,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         subHeaderView.addSubview(logoImageView)
         subHeaderView.addSubview(totalAssetsTitleLabel)
         subHeaderView.addSubview(totalAssetsAmountLabel)
+        view.addSubview(segmentControl)
         
         let promptContainerScrollView = PromptPresenter.shared.promptContainerScrollView
         let promptContainerStack = PromptPresenter.shared.promptContainerStack
@@ -210,12 +217,18 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             logoImageView.widthAnchor.constraint(equalToConstant: 40),
             logoImageView.heightAnchor.constraint(equalToConstant: 48)])
         
+        segmentControl.constrain([
+            segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
+            segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
+            segmentControl.topAnchor.constraint(equalTo: subHeaderView.bottomAnchor, constant: Margins.medium.rawValue),
+            segmentControl.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
+        
         promptContainerScrollView.constrain([
             promptContainerScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
             promptContainerScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
-            promptContainerScrollView.topAnchor.constraint(equalTo: subHeaderView.bottomAnchor, constant: Margins.medium.rawValue),
+            promptContainerScrollView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: Margins.medium.rawValue),
             promptContainerScrollView.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
-        
+
         promptContainerStack.constrain([
             promptContainerStack.leadingAnchor.constraint(equalTo: promptContainerScrollView.leadingAnchor),
             promptContainerStack.trailingAnchor.constraint(equalTo: promptContainerScrollView.trailingAnchor),
@@ -270,6 +283,14 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         }
         
         tabBar.items = buttons
+    }
+    
+    private func setupSegmentControl() {
+        let segmentControlModel = SegmentControlViewModel(selectedIndex: 0,
+                                                     segments: [.init(image: nil, title: "ROCKWALLET"),
+                                                                .init(image: nil, title: "ROCKWALLET PRO")])
+        segmentControl.configure(with: .init())
+        segmentControl.setup(with: segmentControlModel)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
