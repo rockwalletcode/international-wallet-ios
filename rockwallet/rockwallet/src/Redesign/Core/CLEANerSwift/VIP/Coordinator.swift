@@ -730,6 +730,38 @@ class BaseCoordinator: NSObject, Coordinatable {
             
         case .setPassword:
             handleUserAccount()
+            
+        case .oauth2:
+            let redirectUri = DynamicLinksManager.shared.urlParameters?["redirect_uri"] ?? ""
+            let scope = DynamicLinksManager.shared.urlParameters?["scope"] ?? ""
+            
+            let model: PopupViewModel = .init(body: "Do you permit login to \(redirectUri) using scopes \(scope)")
+            
+            showPopup(on: navigationController,
+                      blurred: false,
+                      with: model,
+                      config: Presets.Popup.whiteCentered,
+                      closeButtonCallback: { [weak self] in
+                self?.getToken()
+            }
+        )}
+    }
+    
+    func getToken() {
+        guard let urlParameters = DynamicLinksManager.shared.urlParameters else { return }
+        
+        let sortedParameters = urlParameters.sorted(by: <).map { "\($0):\($1)" }.joined()
+        
+        let data = Oauth2LoginRequestData(parameters: urlParameters,
+        sortedParameters: sortedParameters)
+        
+        Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
+            switch result {
+            case .success:
+                self?.showInWebView(urlString: DynamicLinksManager.shared.redirectUri ?? "", title: "OAuth 2.0")
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }
