@@ -735,29 +735,29 @@ class BaseCoordinator: NSObject, Coordinatable {
             let redirectUri = DynamicLinksManager.shared.urlParameters?["redirect_uri"] ?? ""
             let scope = DynamicLinksManager.shared.urlParameters?["scope"] ?? ""
             
-            let model: PopupViewModel = .init(body: "Do you permit login to \(redirectUri) using scopes \(scope)")
+            let model: PopupViewModel = .init(body: "Do you permit login to \(redirectUri) using scopes \(scope)",
+                                              buttons: [.init(title: L10n.Button.ok)])
             
             showPopup(on: navigationController,
                       blurred: false,
                       with: model,
-                      config: Presets.Popup.whiteCentered,
-                      closeButtonCallback: { [weak self] in
-                self?.getToken()
-            }
+                      callbacks: [ { [weak self] in
+                self?.getRedirectUri()
+                self?.hidePopup()
+            }]
         )}
     }
     
-    func getToken() {
+    func getRedirectUri() {
         guard let urlParameters = DynamicLinksManager.shared.urlParameters else { return }
         
-        let sortedParameters = urlParameters.sorted(by: <).map { "\($0):\($1)" }.joined()
+        let sortedParameters = urlParameters.sorted(by: <).map { "\($0)=\($1)" }.joined()
         let data = Oauth2LoginRequestData(parameters: urlParameters,
-        sortedParameters: sortedParameters)
-        
+                                          sortedParameters: sortedParameters)
         Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.showInWebView(urlString: response?.redirectUri ?? "", title: "OAuth 2.0")
+                self?.showInWebView(urlString: response?.redirectUri ?? "", title: "OAuth 2.0 login")
             case .failure(let error):
                 print(error)
             }
