@@ -751,14 +751,13 @@ class BaseCoordinator: NSObject, Coordinatable {
         guard let urlParameters = DynamicLinksManager.shared.urlParameters else { return }
         
         let sortedParameters = urlParameters.sorted(by: <).map { "\($0):\($1)" }.joined()
-        
         let data = Oauth2LoginRequestData(parameters: urlParameters,
         sortedParameters: sortedParameters)
         
         Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
             switch result {
-            case .success:
-                self?.showInWebView(urlString: DynamicLinksManager.shared.redirectUri ?? "", title: "OAuth 2.0")
+            case .success(let response):
+                self?.showInWebView(urlString: response?.redirectUri ?? "", title: "OAuth 2.0")
             case .failure(let error):
                 print(error)
             }
