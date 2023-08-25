@@ -560,6 +560,8 @@
 		C4BD1C69284A16E000AFA2A6 /* CountriesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD1C68284A16E000AFA2A6 /* CountriesWorker.swift */; };
 		C4C553D829F677B3002D9A47 /* CopyValueVIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C553D729F677B3002D9A47 /* CopyValueVIP.swift */; };
 		C4C553DA29F677D4002D9A47 /* CopyValueModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C553D929F677D4002D9A47 /* CopyValueModels.swift */; };
+		C4C6FAC52A9498CB0053302C /* Oauth2Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6FAC42A9498CB0053302C /* Oauth2Endpoints.swift */; };
+		C4C6FAC72A94DC9B0053302C /* Oauth2LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6FAC62A94DC9B0053302C /* Oauth2LoginWorker.swift */; };
 		C4C7299F29225CCB00A3CE24 /* PlaidLinkToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C7299E29225CCB00A3CE24 /* PlaidLinkToken.swift */; };
 		C4C729A129225F3A00A3CE24 /* PlaidPublicToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C729A029225F3A00A3CE24 /* PlaidPublicToken.swift */; };
 		C4CCFCE729D43DB600E38B3A /* AuthenticatorAppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CCFCE029D43DB600E38B3A /* AuthenticatorAppStore.swift */; };
@@ -1393,6 +1395,8 @@
 		C4BD1C68284A16E000AFA2A6 /* CountriesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesWorker.swift; sourceTree = "<group>"; };
 		C4C553D729F677B3002D9A47 /* CopyValueVIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyValueVIP.swift; sourceTree = "<group>"; };
 		C4C553D929F677D4002D9A47 /* CopyValueModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyValueModels.swift; sourceTree = "<group>"; };
+		C4C6FAC42A9498CB0053302C /* Oauth2Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oauth2Endpoints.swift; sourceTree = "<group>"; };
+		C4C6FAC62A94DC9B0053302C /* Oauth2LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oauth2LoginWorker.swift; sourceTree = "<group>"; };
 		C4C7299E29225CCB00A3CE24 /* PlaidLinkToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidLinkToken.swift; sourceTree = "<group>"; };
 		C4C729A029225F3A00A3CE24 /* PlaidPublicToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidPublicToken.swift; sourceTree = "<group>"; };
 		C4CCFCE029D43DB600E38B3A /* AuthenticatorAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorAppStore.swift; sourceTree = "<group>"; };
@@ -1670,6 +1674,7 @@
 				0452C93429D42FC600CCC8DA /* WalletEndpoints.swift */,
 				0441E15029CD9FBF003D870E /* TwoStepEndpoints.swift */,
 				C489928329F80105005A987C /* PaymailEndpoints.swift */,
+				C4C6FAC42A9498CB0053302C /* Oauth2Endpoints.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -2229,6 +2234,7 @@
 				7BF5D4E5296BFC8C00942ADB /* SignInInteractor.swift */,
 				7EBC6AEE28488B10000A301F /* AccountCoordinator.swift */,
 				7EF45F7D2847672C00D1F7B0 /* RegistrationWorker.swift */,
+				C4C6FAC62A94DC9B0053302C /* Oauth2LoginWorker.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -4021,6 +4027,7 @@
 				C4CCFCEC29D43DB600E38B3A /* AuthenticatorAppInteractor.swift in Sources */,
 				CE20C8F61DBAF77D00C8397A /* UIViewController+Extensions.swift in Sources */,
 				C47671AA29CD9AF4008A2F94 /* BackupCodesView.swift in Sources */,
+				C4C6FAC72A94DC9B0053302C /* Oauth2LoginWorker.swift in Sources */,
 				7BDB4A092806F4A60031F015 /* HistoryFetcher.swift in Sources */,
 				7E0968B8284A29CE006B4FC2 /* TransparentView.swift in Sources */,
 				7E8F7E45293F6AE50058019B /* SellStore.swift in Sources */,
@@ -4257,6 +4264,7 @@
 				7B54E5A627F4A2B0002DD1E4 /* HTTPRequestHelpers.swift in Sources */,
 				7E5CB38D2835090E00EC787E /* Configurable.swift in Sources */,
 				C491ABFC28A6395D00E79954 /* OrderPreviewViewController.swift in Sources */,
+				C4C6FAC52A9498CB0053302C /* Oauth2Endpoints.swift in Sources */,
 				CEC4CF091F0C84AB00E5C82E /* UIViewController+Alerts.swift in Sources */,
 				7141BB5D2249543600F7ECF2 /* InfoView.swift in Sources */,
 				7EF2188028630E2F006ABCC1 /* UserManager.swift in Sources */,
