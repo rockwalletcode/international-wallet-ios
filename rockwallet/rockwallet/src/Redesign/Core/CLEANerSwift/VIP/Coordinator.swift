@@ -761,6 +761,7 @@ class BaseCoordinator: NSObject, Coordinatable {
             case .success(let response):
                 self?.showInWebView(urlString: response?.redirectUri ?? "", title: "OAuth 2.0 login")
             case .failure(let error):
+                // TODO: Handle error
                 print(error)
             }
         }
