@@ -314,12 +314,17 @@ enum BaseInfoModels {
         case sell
         case restrictedUSState
         case greyListedCountry
+        case rockWalletPro
         
         var iconName: String { Asset.time.name }
         
         var title: String { L10n.Buy.Ach.notAvailableTitle }
         
-        var description: String { L10n.ComingSoon.FeatureUnavailable.subtitle }
+        var description: String {
+            // TODO: Localize strings
+            return self == .rockWalletPro ? "RockWallet Pro isn’t available for you at this point in time. " :
+            L10n.ComingSoon.FeatureUnavailable.subtitle
+        }
         
         var firstButtonTitle: String? { L10n.Swap.backToHome }
         

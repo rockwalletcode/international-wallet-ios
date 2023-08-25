@@ -91,6 +91,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     var didTapCreateAccountFromPrompt: (() -> Void)?
     var didTapLimitsAuthenticationFromPrompt: (() -> Void)?
     var didTapMenu: (() -> Void)?
+    var didTapProSegment: (() -> Void)?
     
     private lazy var pullToRefreshControl: UIRefreshControl = {
         let view = UIRefreshControl()
@@ -286,11 +287,24 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     }
     
     private func setupSegmentControl() {
+        // TODO: Localize strings
         let segmentControlModel = SegmentControlViewModel(selectedIndex: 0,
-                                                     segments: [.init(image: nil, title: "ROCKWALLET"),
-                                                                .init(image: nil, title: "ROCKWALLET PRO")])
+                                                          segments: [.init(image: nil, title: "ROCKWALLET"),
+                                                                     .init(image: nil, title: "ROCKWALLET PRO")])
         segmentControl.configure(with: .init())
         segmentControl.setup(with: segmentControlModel)
+        segmentControl.didChangeValue = { [weak self] segment in
+            self?.setSegment(segment)
+        }
+    }
+    
+    private func setSegment(_ segment: Int) {
+        segmentControl.selectSegment(index: segment)
+        
+        if segment == 1 {
+            tapSegment()
+            segmentControl.selectSegment(index: 0)
+        }
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -427,5 +441,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     @objc private func menu() {
         didTapMenu?()
+    }
+    
+    private func tapSegment() {
+        didTapProSegment?()
     }
 }
