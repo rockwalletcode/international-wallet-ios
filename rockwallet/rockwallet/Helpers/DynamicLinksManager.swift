@@ -30,6 +30,7 @@ class DynamicLinksManager {
     var code: String?
     var email: String?
     var redirectUri: String?
+    var urlScope: String?
     var urlParameters: [String: String]?
     
     static func getDynamicLinkType(from url: URL) -> DynamicLinkType? {
@@ -85,12 +86,14 @@ class DynamicLinksManager {
     
     private static func handleOauth2Login(with url: URL) {
         guard let parameters = url.queryParameters,
-              let redirectUri = parameters["redirect_uri"] else {
+              let redirectUri = parameters["redirect_uri"],
+              let urlScope = parameters["scope"] else {
             return
         }
         
         DynamicLinksManager.shared.dynamicLinkType = .oauth2
         DynamicLinksManager.shared.urlParameters = parameters
         DynamicLinksManager.shared.redirectUri = redirectUri
+        DynamicLinksManager.shared.urlScope = urlScope
     }
 }

@@ -732,9 +732,10 @@ class BaseCoordinator: NSObject, Coordinatable {
             handleUserAccount()
             
         case .oauth2:
-            let redirectUri = DynamicLinksManager.shared.urlParameters?["redirect_uri"] ?? ""
-            let scope = DynamicLinksManager.shared.urlParameters?["scope"] ?? ""
+            let redirectUri = DynamicLinksManager.shared.redirectUri ?? ""
+            let scope = DynamicLinksManager.shared.urlScope ?? ""
             
+            // TODO: Localize strings
             let model: PopupViewModel = .init(body: "Do you permit login to \(redirectUri) using scopes \(scope)",
                                               buttons: [.init(title: L10n.Button.ok)])
             
@@ -754,6 +755,7 @@ class BaseCoordinator: NSObject, Coordinatable {
         let sortedParameters = urlParameters.sorted(by: <).map { "\($0)=\($1)" }.joined()
         let data = Oauth2LoginRequestData(parameters: urlParameters,
                                           sortedParameters: sortedParameters)
+        
         Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
             switch result {
             case .success(let response):
