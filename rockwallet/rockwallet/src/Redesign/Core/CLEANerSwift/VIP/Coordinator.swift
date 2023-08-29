@@ -98,6 +98,33 @@ class BaseCoordinator: NSObject, Coordinatable {
         }
     }
     
+    func handleOauthLogin() {
+        decideFlow { [weak self] showScene in
+            guard showScene,
+                  let profile = UserManager.shared.profile,
+                  profile.kycAccessRights.hasSwapAccess == true else {
+                self?.handleUnverifiedOrRestrictedUser(flow: .swap, reason: .swap)
+                
+                return
+            }
+            
+            let redirectUri = DynamicLinksManager.shared.redirectUri ?? ""
+            let scope = DynamicLinksManager.shared.urlScope ?? ""
+            
+            // TODO: Localize strings
+            let model: PopupViewModel = .init(body: "Do you permit login to \(redirectUri) using scopes \(scope)",
+                                              buttons: [.init(title: L10n.Button.ok)])
+            
+            self?.showPopup(on: self?.navigationController,
+                            blurred: false,
+                            with: model,
+                            callbacks: [ { [weak self] in
+                self?.getRedirectUri()
+                self?.hidePopup()
+            }]
+            )}
+    }
+    
     func showBuy(selectedCurrency: Currency? = nil, type: PaymentCard.PaymentType, coreSystem: CoreSystem?, keyStore: KeyStore?) {
         decideFlow { [weak self] showScene in
             guard showScene,
@@ -732,21 +759,8 @@ class BaseCoordinator: NSObject, Coordinatable {
             handleUserAccount()
             
         case .oauth2:
-            let redirectUri = DynamicLinksManager.shared.redirectUri ?? ""
-            let scope = DynamicLinksManager.shared.urlScope ?? ""
-            
-            // TODO: Localize strings
-            let model: PopupViewModel = .init(body: "Do you permit login to \(redirectUri) using scopes \(scope)",
-                                              buttons: [.init(title: L10n.Button.ok)])
-            
-            showPopup(on: navigationController,
-                      blurred: false,
-                      with: model,
-                      callbacks: [ { [weak self] in
-                self?.getRedirectUri()
-                self?.hidePopup()
-            }]
-        )}
+            handleOauthLogin()
+        }
     }
     
     func getRedirectUri() {
