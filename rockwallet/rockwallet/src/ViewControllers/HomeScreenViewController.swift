@@ -502,11 +502,12 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     }
     
     private func transferFundsTapped() {
+        // TODO: add transfer funds action
     }
     
     private func launchExchangeTapped() {
         // TODO: Localize strings
-        let text = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem. "
+        let text = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem."
         let model = PopupViewModel(body: text,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
