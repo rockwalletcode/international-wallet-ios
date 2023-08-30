@@ -92,15 +92,11 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private lazy var transferFunds: FEButton = {
         let view = FEButton()
-        view.setup(with: .init(title: "TRANSFER FUNDS"))
-        view.configure(with: Presets.Button.secondary)
         return view
     }()
     
     private lazy var launchExchange: FEButton = {
         let view = FEButton()
-        view.setup(with: .init(title: "LAUNCH EXCHANGE"))
-        view.configure(with: Presets.Button.primary)
         return view
     }()
     
@@ -192,7 +188,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         setupSubviews()
         setInitialData()
         setupSubscriptions()
-        setupSegmentControl()
         updateTotalAssets()
         
         if !Store.state.isLoginRequired {
@@ -310,6 +305,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         
         setupToolbar()
         updateTotalAssets()
+        setupSegmentControl()
+        setupProButtons()
     }
     
     private func setupToolbar() {
@@ -351,6 +348,20 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         guard let index = tabBar.items?.firstIndex(where: { $0 == item }) else { return }
         perform(tabBarButtons[index].2)
         tabBar.selectedItem = nil
+    }
+    
+    private func setupProButtons() {
+        transferFunds.configure(with: Presets.Button.secondary)
+        transferFunds.setup(with: .init(title: "TRANSFER FUNDS",
+                                        callback: { [weak self] in
+            self?.transferFundsTapped()
+        }))
+        
+        launchExchange.configure(with: Presets.Button.primary)
+        launchExchange.setup(with: .init(title: "LAUNCH EXCHANGE",
+                                         callback: { [weak self] in
+            self?.launchExchangeTapped()
+        }))
     }
     
     private func setupSubscriptions() {
@@ -485,5 +496,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private func tapSegment() {
         didTapProSegment?()
+    }
+    
+    private func transferFundsTapped() {
+    }
+    
+    private func launchExchangeTapped() {
+        let text = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem. "
+        let model = PopupViewModel(body: text,
+                                   buttons: [.init(title: L10n.Button.gotIt,
+                                                   callback: { [weak self] in
+            // redirect
+        })])
+        
+       showInfoPopup(with: model)
     }
 }
