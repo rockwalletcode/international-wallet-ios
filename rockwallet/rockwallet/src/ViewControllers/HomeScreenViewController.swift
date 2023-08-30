@@ -34,6 +34,16 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         return view
     }()
     
+    private lazy var exchangeButtonsView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fillEqually
+        view.backgroundColor = Colors.Outline.one
+        view.layer.cornerRadius = CornerRadius.large.rawValue
+        view.spacing = Margins.small.rawValue
+        view.isHidden = true
+        return view
+    }()
+    
     private lazy var tabBar: UITabBar = {
         let view = UITabBar()
         view.delegate = self
@@ -77,6 +87,20 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private lazy var segmentControl: FESegmentControl = {
         let view = FESegmentControl()
+        return view
+    }()
+    
+    private lazy var transferFunds: FEButton = {
+        let view = FEButton()
+        view.setup(with: .init(title: "TRANSFER FUNDS"))
+        view.configure(with: Presets.Button.secondary)
+        return view
+    }()
+    
+    private lazy var launchExchange: FEButton = {
+        let view = FEButton()
+        view.setup(with: .init(title: "LAUNCH EXCHANGE"))
+        view.configure(with: Presets.Button.primary)
         return view
     }()
     
@@ -245,6 +269,24 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
                 assetListTableView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 assetListTableView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
         })
+        view.addSubview(exchangeButtonsView)
+        exchangeButtonsView.constrain([
+            exchangeButtonsView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            exchangeButtonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            exchangeButtonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            exchangeButtonsView.heightAnchor.constraint(equalToConstant: ViewSizes.extraExtraHuge.rawValue)])
+        
+        exchangeButtonsView.addSubview(transferFunds)
+        transferFunds.constrain([
+            transferFunds.topAnchor.constraint(equalTo: exchangeButtonsView.topAnchor, constant: Margins.small.rawValue),
+            transferFunds.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.small.rawValue),
+            transferFunds.heightAnchor.constraint(equalToConstant: ViewSizes.Common.defaultCommon.rawValue)])
+        
+        exchangeButtonsView.addSubview(launchExchange)
+        launchExchange.constrain([
+            launchExchange.topAnchor.constraint(equalTo: transferFunds.topAnchor),
+            launchExchange.leadingAnchor.constraint(equalTo: transferFunds.trailingAnchor, constant: Margins.small.rawValue),
+            launchExchange.heightAnchor.constraint(equalToConstant: ViewSizes.Common.defaultCommon.rawValue)])
         
         view.addSubview(tabBarContainerView)
         tabBarContainerView.addSubview(tabBar)
@@ -301,10 +343,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     private func setSegment(_ segment: Int) {
         segmentControl.selectSegment(index: segment)
         
-        if segment == 1 {
-            tapSegment()
-            segmentControl.selectSegment(index: 0)
-        }
+        tabBarContainerView.isHidden = segment == 1
+        exchangeButtonsView.isHidden = segment == 0
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
