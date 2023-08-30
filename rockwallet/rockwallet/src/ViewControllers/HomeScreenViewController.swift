@@ -37,7 +37,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     private lazy var exchangeButtonsView: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
-        view.backgroundColor = Colors.Outline.one
+        view.backgroundColor = Colors.Background.cards
         view.layer.cornerRadius = CornerRadius.large.rawValue
         view.spacing = Margins.small.rawValue
         view.isHidden = true
@@ -351,6 +351,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     }
     
     private func setupProButtons() {
+        // TODO: Localize strings
         transferFunds.configure(with: Presets.Button.secondary)
         transferFunds.setup(with: .init(title: "TRANSFER FUNDS",
                                         callback: { [weak self] in
@@ -502,13 +503,15 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     }
     
     private func launchExchangeTapped() {
+        // TODO: Localize strings
         let text = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem. "
         let model = PopupViewModel(body: text,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
-            // redirect
+            // TODO: Add popup action
+            self?.hidePopup()
         })])
         
-       showInfoPopup(with: model)
+        showInfoPopup(with: model)
     }
 }
