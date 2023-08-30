@@ -165,6 +165,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         
         pullToRefreshControl.endRefreshing()
         
+        segmentControl.isHidden = UserManager.shared.profile == nil
+        
         GoogleAnalytics.logEvent(GoogleAnalytics.Home())
     }
     
@@ -237,11 +239,11 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             logoImageView.widthAnchor.constraint(equalToConstant: 40),
             logoImageView.heightAnchor.constraint(equalToConstant: 48)])
         
-        segmentControl.constrain([
-            segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
-            segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
-            segmentControl.topAnchor.constraint(equalTo: subHeaderView.bottomAnchor, constant: Margins.medium.rawValue),
-            segmentControl.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
+        segmentControl.snp.makeConstraints { make in
+            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
+            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
+            make.height.equalTo(ViewSizes.minimum.rawValue).priority(.low)
+        }
         
         promptContainerScrollView.constrain([
             promptContainerScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
@@ -265,23 +267,23 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
                 assetListTableView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
         })
         view.addSubview(exchangeButtonsView)
-        exchangeButtonsView.constrain([
-            exchangeButtonsView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            exchangeButtonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            exchangeButtonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            exchangeButtonsView.heightAnchor.constraint(equalToConstant: ViewSizes.extraExtraHuge.rawValue)])
+        exchangeButtonsView.snp.makeConstraints { make in
+            make.bottom.leading.trailing.equalToSuperview()
+            make.height.equalTo(ViewSizes.extraExtraHuge.rawValue)
+        }
         
         exchangeButtonsView.addSubview(transferFunds)
-        transferFunds.constrain([
-            transferFunds.topAnchor.constraint(equalTo: exchangeButtonsView.topAnchor, constant: Margins.small.rawValue),
-            transferFunds.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.small.rawValue),
-            transferFunds.heightAnchor.constraint(equalToConstant: ViewSizes.Common.defaultCommon.rawValue)])
+        transferFunds.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().inset(Margins.small.rawValue)
+            make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
+        }
         
         exchangeButtonsView.addSubview(launchExchange)
-        launchExchange.constrain([
-            launchExchange.topAnchor.constraint(equalTo: transferFunds.topAnchor),
-            launchExchange.leadingAnchor.constraint(equalTo: transferFunds.trailingAnchor, constant: Margins.small.rawValue),
-            launchExchange.heightAnchor.constraint(equalToConstant: ViewSizes.Common.defaultCommon.rawValue)])
+        launchExchange.snp.makeConstraints { make in
+            make.top.equalTo(transferFunds.snp.top)
+            make.leading.equalTo(transferFunds.snp.trailing).inset(-Margins.small.rawValue)
+            make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
+        }
         
         view.addSubview(tabBarContainerView)
         tabBarContainerView.addSubview(tabBar)
@@ -508,7 +510,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         let model = PopupViewModel(body: text,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
-            // TODO: Add popup action
+            self?.showInWebView(urlString: Constant.oauth2Link, title: "")
             self?.hidePopup()
         })])
         
