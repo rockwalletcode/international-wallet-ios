@@ -40,10 +40,10 @@ class DynamicLinksManager {
             return .setPassword
         } else if url.contains(DynamicLinkType.home.rawValue) {
             return .home
-        } else if url.contains(DynamicLinkType.profile.rawValue) {
-            return .profile
         } else if url.contains(DynamicLinkType.oauth2.rawValue) {
             return .oauth2
+        } else if url.contains(DynamicLinkType.profile.rawValue) {
+            return .profile
         }
         
         return nil
