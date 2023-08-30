@@ -511,10 +511,29 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         let model = PopupViewModel(body: text,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
-            self?.showInWebView(urlString: Constant.oauth2Link, title: "")
+            DynamicLinksManager.handleDynamicLink(dynamicLink: URL(string: Constant.oauth2DeepLink))
+            self?.getRedirectUri()
             self?.hidePopup()
         })])
         
         showInfoPopup(with: model)
+    }
+    
+    func getRedirectUri() {
+        guard let urlParameters = DynamicLinksManager.shared.urlParameters else { return }
+        
+        let sortedParameters = urlParameters.sorted(by: <).map { "\($0)=\($1)" }.joined()
+        let data = Oauth2LoginRequestData(parameters: urlParameters,
+                                          sortedParameters: sortedParameters)
+        
+        Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.showInWebView(urlString: response?.redirectUri ?? "", title: "")
+            case .failure(let error):
+                // TODO: Handle error
+                print(error)
+            }
+        }
     }
 }
