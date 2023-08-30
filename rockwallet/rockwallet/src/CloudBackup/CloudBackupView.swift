@@ -47,15 +47,15 @@ struct CloudBackupView: View {
     private func mainStack() -> some View {
         ZStack {
             Rectangle()
-                .fill(Color(LightColors.Background.one))
+                .fill(Color(Colors.Background.one))
             VStack {
                 CloudBackupViewBody()
                 Toggle(isOn: $isBackupOn) {
                     Text(L10n.CloudBackup.mainTitle)
                         .font(Font(Fonts.Body.one))
-                        .foregroundColor(Color(LightColors.Text.three))
+                        .foregroundColor(Color(Colors.Text.three))
                 }
-                .toggleStyle(SwitchToggleStyle(tint: Color(LightColors.primary)))
+                .toggleStyle(SwitchToggleStyle(tint: Color(Colors.primary)))
                 .onReceive(Just(isBackupOn), perform: self.onToggleChange)
                 .padding([.leading, .trailing])
                 .padding(.bottom, Margins.extraExtraHuge.rawValue)
@@ -63,8 +63,8 @@ struct CloudBackupView: View {
                 HStack {
                     Image("warning")
                         .frame(width: ViewSizes.medium.rawValue, height: ViewSizes.medium.rawValue)
-                        .foregroundColor(Color(LightColors.Error.one))
-                        .background(Color(LightColors.Background.one))
+                        .foregroundColor(Color(Colors.Error.one))
+                        .background(Color(Colors.Background.one))
                         .cornerRadius(ViewSizes.medium.rawValue * CornerRadius.fullRadius.rawValue)
                         .padding(.leading)
                     BodyText(L10n.CloudBackup.mainWarning, style: .seconday)
@@ -72,7 +72,7 @@ struct CloudBackupView: View {
                         .padding(.trailing, 40)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(nil)
-                }.background(Color(LightColors.Background.three))
+                }.background(Color(Colors.Background.three))
                     .cornerRadius(CornerRadius.common.rawValue)
                     .padding([.leading, .trailing], Margins.large.rawValue)
                 if self.synchronizer.context == .onboarding {
@@ -85,10 +85,10 @@ struct CloudBackupView: View {
                     }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 4.0)
-                                .fill(Color(LightColors.primary))
+                                .fill(Color(Colors.primary))
                             Text(L10n.Button.continueAction)
                                 .font(Font(Fonts.button))
-                                .foregroundColor(Color(LightColors.Contrast.two))
+                                .foregroundColor(Color(Colors.Contrast.two))
                         }
                     })
                     .frame(height: 44.0)
@@ -126,7 +126,7 @@ struct CloudBackupView: View {
             .navigationBarItems(trailing:
                 Button(action: { self.synchronizer.skipBackup() },
                        label: { BodyText(L10n.Button.skip, style: .primary)
-                    .foregroundColor(Color(LightColors.Contrast.two))
+                    .foregroundColor(Color(Colors.Contrast.two))
                         }))
     }
     
@@ -183,13 +183,13 @@ struct CloudBackupViewBody: View {
                 .padding(.bottom, Margins.extraHuge.rawValue)
             Text(L10n.CloudBackup.mainTitle)
                 .font(Font(Fonts.Title.six))
-                .foregroundColor(Color(LightColors.Text.three))
+                .foregroundColor(Color(Colors.Text.three))
                 .padding(.bottom, Margins.large.rawValue)
             Text(L10n.CloudBackup.mainBody)
                 .fixedSize(horizontal: false, vertical: true)
                 .lineLimit(nil)
                 .font(Font(Fonts.Body.two))
-                .foregroundColor(Color(LightColors.Text.two))
+                .foregroundColor(Color(Colors.Text.two))
             // uncommon padding :shrug
                 .padding(.leading, 40)
                 .padding(.trailing, 40)
@@ -212,7 +212,7 @@ struct CloudBackupIcon: View {
     }
     
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(LightColors.primary), Color(LightColors.primary.withAlphaComponent(0.5))]),
+        LinearGradient(gradient: Gradient(colors: [Color(Colors.primary), Color(Colors.primary.withAlphaComponent(0.5))]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
             .mask(Image(systemName: style.rawValue)

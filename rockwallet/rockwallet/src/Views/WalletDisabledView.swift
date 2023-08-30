@@ -48,7 +48,7 @@ class WalletDisabledView: UIView {
     
     var didCompleteWipeGesture: (() -> Void)?
 
-    private let timeLabel = UILabel(font: Fonts.Body.two, color: LightColors.Text.two)
+    private let timeLabel = UILabel(font: Fonts.Body.two, color: Colors.Text.two)
     private let blur: UIVisualEffectView
     private let reset = BRDButton(title: L10n.UnlockScreen.resetPin.uppercased(), type: .secondary)
     private let effect = UIBlurEffect(style: .regular)
@@ -58,7 +58,7 @@ class WalletDisabledView: UIView {
     
     private lazy var faq: UIButton = {
         let faq = UIButton()
-        faq.tintColor = LightColors.Text.one
+        faq.tintColor = Colors.Text.one
         faq.setBackgroundImage(Asset.help.image, for: .normal)
         
         return faq
@@ -66,7 +66,7 @@ class WalletDisabledView: UIView {
     
     private lazy var title: UILabel = {
         let header = UILabel()
-        header.textColor = LightColors.Text.three
+        header.textColor = Colors.Text.three
         header.font = Fonts.Title.six
         header.textAlignment = .center
         header.text = L10n.UnlockScreen.walletDisabled
@@ -83,7 +83,7 @@ class WalletDisabledView: UIView {
     
     private lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.textColor = LightColors.Text.two
+        descriptionLabel.textColor = Colors.Text.two
         descriptionLabel.font = Fonts.Body.two
         descriptionLabel.textAlignment = .center
         descriptionLabel.text = L10n.UnlockScreen.walletDisabledDescription

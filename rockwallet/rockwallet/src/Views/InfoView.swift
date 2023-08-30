@@ -35,19 +35,19 @@ class InfoView: UIView {
     }
     
     private func setUp() {
-        backgroundColor = LightColors.Background.three
+        backgroundColor = Colors.Background.three
         layer.cornerRadius = CornerRadius.common.rawValue
         
         infoLabel.numberOfLines = 0
-        infoLabel.textColor = LightColors.Text.one
+        infoLabel.textColor = Colors.Text.one
         infoLabel.font = Fonts.Body.two
         infoLabel.adjustsFontSizeToFitWidth = true
         infoLabel.minimumScaleFactor = 0.5
         
         infoImageView.image = Asset.warning.image
         infoImageView.contentMode = .center
-        infoImageView.tintColor = LightColors.Error.one
-        infoImageView.backgroundColor = LightColors.Background.cards
+        infoImageView.tintColor = Colors.Error.one
+        infoImageView.backgroundColor = Colors.Background.cards
         infoImageView.layer.borderWidth = 0
         infoImageView.layer.masksToBounds = true
 

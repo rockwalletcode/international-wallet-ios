@@ -11,9 +11,9 @@
 import UIKit
 
 struct TitleButtonConfiguration: Configurable {
-    var background: BackgroundConfiguration = .init(backgroundColor: LightColors.Background.two, tintColor: LightColors.Background.two,
+    var background: BackgroundConfiguration = .init(backgroundColor: Colors.Background.two, tintColor: Colors.Background.two,
                                                     border: Presets.Border.commonPlain)
-    var title: LabelConfiguration? = .init(font: Fonts.Body.two, textColor: LightColors.Text.one)
+    var title: LabelConfiguration? = .init(font: Fonts.Body.two, textColor: Colors.Text.one)
     var button: ButtonConfiguration = Presets.Button.noBorders
 }
 

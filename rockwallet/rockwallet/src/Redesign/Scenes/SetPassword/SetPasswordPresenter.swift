@@ -41,7 +41,7 @@ final class SetPasswordPresenter: NSObject, Presenter, SetPasswordActionResponse
         actionResponse.isPasswordAgainValid &&
         actionResponse.passwordsMatch
         
-        let textColor = (actionResponse.passwordState == .error || actionResponse.passwordAgainState == .error) && !isValid ? LightColors.Error.one : LightColors.Text.two
+        let textColor = (actionResponse.passwordState == .error || actionResponse.passwordAgainState == .error) && !isValid ? Colors.Error.one : Colors.Text.two
         
         let noticeConfiguration = LabelConfiguration(font: Fonts.Body.three, textColor: textColor)
         

@@ -106,10 +106,10 @@ class PaymailAddressViewController: BaseTableViewController<AccountCoordinator,
         
         cell.setup { view in
             let config = CardSelectionConfiguration(subtitle: .init(font: Fonts.Title.six,
-                                                                    textColor: LightColors.Text.three,
+                                                                    textColor: Colors.Text.three,
                                                                     textAlignment: .center,
                                                                     numberOfLines: 1),
-                                                    arrow: .init(tintColor: LightColors.primary))
+                                                    arrow: .init(tintColor: Colors.primary))
             view.configure(with: config)
             view.setup(with: model)
             

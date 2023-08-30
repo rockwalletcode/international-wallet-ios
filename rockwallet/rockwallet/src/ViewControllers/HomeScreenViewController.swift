@@ -30,7 +30,17 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         view.layer.masksToBounds = true
         view.layer.cornerRadius = CornerRadius.large.rawValue
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        view.backgroundColor = LightColors.Background.cards
+        view.backgroundColor = Colors.Background.cards
+        return view
+    }()
+    
+    private lazy var exchangeButtonsView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fillEqually
+        view.backgroundColor = Colors.Background.cards
+        view.layer.cornerRadius = CornerRadius.large.rawValue
+        view.spacing = Margins.small.rawValue
+        view.isHidden = true
         return view
     }()
     
@@ -41,9 +51,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         let appearance = view.standardAppearance
         appearance.shadowImage = nil
         appearance.shadowColor = nil
-        appearance.backgroundColor = LightColors.Background.cards
+        appearance.backgroundColor = Colors.Background.cards
         view.standardAppearance = appearance
-        view.unselectedItemTintColor = LightColors.Text.two
+        view.unselectedItemTintColor = Colors.Text.two
         return view
     }()
     
@@ -55,13 +65,13 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     }()
     
     private lazy var totalAssetsTitleLabel: UILabel = {
-        let view = UILabel(font: Fonts.Body.two, color: LightColors.Text.three)
+        let view = UILabel(font: Fonts.Body.two, color: Colors.Text.three)
         view.text = L10n.HomeScreen.totalAssets
         return view
     }()
     
     private lazy var totalAssetsAmountLabel: UILabel = {
-        let view = UILabel(font: Fonts.Title.three, color: LightColors.Text.three)
+        let view = UILabel(font: Fonts.Title.three, color: Colors.Text.three)
         view.adjustsFontSizeToFitWidth = true
         view.minimumScaleFactor = 0.5
         view.textAlignment = .right
@@ -72,6 +82,21 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.image = Asset.logoIcon.image
+        return view
+    }()
+    
+    private lazy var segmentControl: FESegmentControl = {
+        let view = FESegmentControl()
+        return view
+    }()
+    
+    private lazy var transferFunds: FEButton = {
+        let view = FEButton()
+        return view
+    }()
+    
+    private lazy var launchExchange: FEButton = {
+        let view = FEButton()
         return view
     }()
     
@@ -86,6 +111,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     var didTapCreateAccountFromPrompt: (() -> Void)?
     var didTapLimitsAuthenticationFromPrompt: (() -> Void)?
     var didTapMenu: (() -> Void)?
+    var didTapProSegment: (() -> Void)?
     
     private lazy var pullToRefreshControl: UIRefreshControl = {
         let view = UIRefreshControl()
@@ -139,6 +165,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         
         pullToRefreshControl.endRefreshing()
         
+        segmentControl.isHidden = UserManager.shared.profile == nil
+        
         GoogleAnalytics.logEvent(GoogleAnalytics.Home())
     }
     
@@ -178,6 +206,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         subHeaderView.addSubview(logoImageView)
         subHeaderView.addSubview(totalAssetsTitleLabel)
         subHeaderView.addSubview(totalAssetsAmountLabel)
+        view.addSubview(segmentControl)
         
         let promptContainerScrollView = PromptPresenter.shared.promptContainerScrollView
         let promptContainerStack = PromptPresenter.shared.promptContainerStack
@@ -210,12 +239,18 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             logoImageView.widthAnchor.constraint(equalToConstant: 40),
             logoImageView.heightAnchor.constraint(equalToConstant: 48)])
         
+        segmentControl.snp.makeConstraints { make in
+            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
+            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
+            make.height.equalTo(ViewSizes.minimum.rawValue).priority(.low)
+        }
+        
         promptContainerScrollView.constrain([
             promptContainerScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
             promptContainerScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
-            promptContainerScrollView.topAnchor.constraint(equalTo: subHeaderView.bottomAnchor, constant: Margins.medium.rawValue),
+            promptContainerScrollView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: Margins.medium.rawValue),
             promptContainerScrollView.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
-        
+
         promptContainerStack.constrain([
             promptContainerStack.leadingAnchor.constraint(equalTo: promptContainerScrollView.leadingAnchor),
             promptContainerStack.trailingAnchor.constraint(equalTo: promptContainerScrollView.trailingAnchor),
@@ -231,6 +266,24 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
                 assetListTableView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 assetListTableView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
         })
+        view.addSubview(exchangeButtonsView)
+        exchangeButtonsView.snp.makeConstraints { make in
+            make.bottom.leading.trailing.equalToSuperview()
+            make.height.equalTo(ViewSizes.extraExtraHuge.rawValue)
+        }
+        
+        exchangeButtonsView.addSubview(transferFunds)
+        transferFunds.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().inset(Margins.small.rawValue)
+            make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
+        }
+        
+        exchangeButtonsView.addSubview(launchExchange)
+        launchExchange.snp.makeConstraints { make in
+            make.top.equalTo(transferFunds.snp.top)
+            make.leading.equalTo(transferFunds.snp.trailing).inset(-Margins.small.rawValue)
+            make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
+        }
         
         view.addSubview(tabBarContainerView)
         tabBarContainerView.addSubview(tabBar)
@@ -249,11 +302,13 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private func setInitialData() {
         title = ""
-        view.backgroundColor = LightColors.Background.two
+        view.backgroundColor = Colors.Background.two
         navigationItem.titleView = UIView()
         
         setupToolbar()
         updateTotalAssets()
+        setupSegmentControl()
+        setupProButtons()
     }
     
     private func setupToolbar() {
@@ -272,10 +327,44 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         tabBar.items = buttons
     }
     
+    private func setupSegmentControl() {
+        // TODO: Localize strings
+        let segmentControlModel = SegmentControlViewModel(selectedIndex: 0,
+                                                          segments: [.init(image: nil, title: "ROCKWALLET"),
+                                                                     .init(image: nil, title: "ROCKWALLET PRO")])
+        segmentControl.configure(with: .init())
+        segmentControl.setup(with: segmentControlModel)
+        segmentControl.didChangeValue = { [weak self] segment in
+            self?.setSegment(segment)
+        }
+    }
+    
+    private func setSegment(_ segment: Int) {
+        segmentControl.selectSegment(index: segment)
+        
+        tabBarContainerView.isHidden = segment == 1
+        exchangeButtonsView.isHidden = segment == 0
+    }
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.firstIndex(where: { $0 == item }) else { return }
         perform(tabBarButtons[index].2)
         tabBar.selectedItem = nil
+    }
+    
+    private func setupProButtons() {
+        // TODO: Localize strings
+        transferFunds.configure(with: Presets.Button.secondary)
+        transferFunds.setup(with: .init(title: "TRANSFER FUNDS",
+                                        callback: { [weak self] in
+            self?.transferFundsTapped()
+        }))
+        
+        launchExchange.configure(with: Presets.Button.primary)
+        launchExchange.setup(with: .init(title: "LAUNCH EXCHANGE",
+                                         callback: { [weak self] in
+            self?.launchExchangeTapped()
+        }))
     }
     
     private func setupSubscriptions() {
@@ -406,5 +495,26 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     @objc private func menu() {
         didTapMenu?()
+    }
+    
+    private func tapSegment() {
+        didTapProSegment?()
+    }
+    
+    private func transferFundsTapped() {
+        // TODO: add transfer funds action
+    }
+    
+    private func launchExchangeTapped() {
+        // TODO: Localize strings
+        let text = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem."
+        let model = PopupViewModel(body: text,
+                                   buttons: [.init(title: L10n.Button.gotIt,
+                                                   callback: { [weak self] in
+            self?.showInWebView(urlString: Constant.oauth2Link, title: "")
+            self?.hidePopup()
+        })])
+        
+        showInfoPopup(with: model)
     }
 }

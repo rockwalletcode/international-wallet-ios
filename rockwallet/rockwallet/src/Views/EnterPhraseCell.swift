@@ -17,7 +17,7 @@ class EnterPhraseCell: UICollectionViewCell {
     }
     
     private func cellPlaceHolder(_ index: Int) -> NSAttributedString {
-        return NSAttributedString(string: "\(index + 1)", attributes: [NSAttributedString.Key.foregroundColor: LightColors.Text.three])
+        return NSAttributedString(string: "\(index + 1)", attributes: [NSAttributedString.Key.foregroundColor: Colors.Text.three])
     }
     
     func updatePlaceholder() {
@@ -32,7 +32,7 @@ class EnterPhraseCell: UICollectionViewCell {
     }
     var hideBorder: Bool = false {
         didSet {
-            contentView.layer.borderColor = hideBorder ? nil : LightColors.Text.two.cgColor
+            contentView.layer.borderColor = hideBorder ? nil : Colors.Text.two.cgColor
             contentView.layer.borderWidth = hideBorder ? 0 : 1
         }
     }
@@ -73,12 +73,12 @@ class EnterPhraseCell: UICollectionViewCell {
     }
     
     func disablePreviousButton() {
-        previousField.tintColor = LightColors.Disabled.one
+        previousField.tintColor = Colors.Disabled.one
         previousField.isEnabled = false
     }
     
     func disableNextButton() {
-        nextField.tintColor = LightColors.Disabled.one
+        nextField.tintColor = Colors.Disabled.one
         nextField.isEnabled = false
     }
     
@@ -87,11 +87,11 @@ class EnterPhraseCell: UICollectionViewCell {
     private let nextField = UIButton.icon(image: Asset.rightArrow.image, accessibilityLabel: L10n.RecoverWallet.rightArrow, position: .middle)
     private let previousField = UIButton.icon(image: Asset.leftArrow.image, accessibilityLabel: L10n.RecoverWallet.leftArrow, position: .middle)
     private let done = UIButton(type: .system)
-    fileprivate let focusBar = UIView(color: LightColors.primary)
+    fileprivate let focusBar = UIView(color: Colors.primary)
     fileprivate var hasDisplayedInvalidState = false
     
     private func setup() {
-        contentView.layer.borderColor = hideBorder ? nil : LightColors.Text.two.cgColor
+        contentView.layer.borderColor = hideBorder ? nil : Colors.Text.two.cgColor
         contentView.layer.borderWidth = 1
         
         contentView.layer.cornerRadius = CornerRadius.extraSmall.rawValue
@@ -131,16 +131,16 @@ class EnterPhraseCell: UICollectionViewCell {
         textField.setAccessoryView(with: accessoryView)
         textField.delegate = self
         textField.valueChanged = textChanged(textField:)
-        previousField.tintColor = LightColors.Text.one
-        nextField.tintColor = LightColors.Text.one
+        previousField.tintColor = Colors.Text.one
+        nextField.tintColor = Colors.Text.one
         done.setTitle(L10n.RecoverWallet.done, for: .normal)
-        done.setTitleColor(LightColors.primary, for: .normal)
+        done.setTitleColor(Colors.primary, for: .normal)
     }
     
     private var accessoryView: UIView {
-        let view = UIView(color: LightColors.Background.one)
+        let view = UIView(color: Colors.Background.one)
         view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 44)
-        let topBorder = UIView(color: LightColors.Outline.one)
+        let topBorder = UIView(color: Colors.Outline.one)
         view.addSubview(topBorder)
         view.addSubview(previousField)
         view.addSubview(nextField)
@@ -216,11 +216,11 @@ extension EnterPhraseCell: UITextFieldDelegate {
         guard let isWordValid = isWordValid else { return }
         guard let word = textField.text else { return }
         if isWordValid(word) || word.isEmpty {
-            textField.textColor = LightColors.Text.one
-            focusBar.backgroundColor = LightColors.primary
-            contentView.layer.borderColor = LightColors.Text.two.cgColor
+            textField.textColor = Colors.Text.one
+            focusBar.backgroundColor = Colors.primary
+            contentView.layer.borderColor = Colors.Text.two.cgColor
         } else {
-            contentView.layer.borderColor = LightColors.Error.one.cgColor
+            contentView.layer.borderColor = Colors.Error.one.cgColor
             hasDisplayedInvalidState = true
         }
     }

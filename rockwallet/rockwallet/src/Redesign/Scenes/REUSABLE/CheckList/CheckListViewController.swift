@@ -26,7 +26,7 @@ class CheckListViewController: BaseTableViewController<BaseCoordinator,
     lazy var header: FELabel = {
         let label = FELabel()
         label.configure(with: .init(font: Fonts.Body.two,
-                                    textColor: LightColors.Text.two,
+                                    textColor: Colors.Text.two,
                                     numberOfLines: 2))
         return label
     }()
@@ -34,7 +34,7 @@ class CheckListViewController: BaseTableViewController<BaseCoordinator,
     lazy var footer: FELabel = {
         let label = FELabel()
         label.configure(with: .init(font: Fonts.Body.two,
-                                    textColor: LightColors.Text.two,
+                                    textColor: Colors.Text.two,
                                     textAlignment: .center,
                                     numberOfLines: 2))
         return label
@@ -112,7 +112,7 @@ class CheckListViewController: BaseTableViewController<BaseCoordinator,
         switch dataSource?.sectionIdentifier(for: indexPath.section) as? Models.Section {
         case .title:
             cell =  self.tableView(tableView, labelCellForRowAt: indexPath)
-            (cell as? WrapperTableViewCell<FELabel>)?.wrappedView.configure(with: .init(font: Fonts.Title.five, textColor: LightColors.Text.three))
+            (cell as? WrapperTableViewCell<FELabel>)?.wrappedView.configure(with: .init(font: Fonts.Title.five, textColor: Colors.Text.three))
             
         case .checkmarks:
             cell = self.tableView(tableView, checkmarkCellForRowAt: indexPath)

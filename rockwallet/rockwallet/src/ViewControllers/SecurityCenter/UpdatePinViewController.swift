@@ -44,17 +44,17 @@ class UpdatePinViewController: UIViewController, Subscriber {
     }
 
     // MARK: - Private
-    private let header = UILabel.wrapping(font: Fonts.Title.six, color: LightColors.Text.three)
-    private let instruction = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+    private let header = UILabel.wrapping(font: Fonts.Title.six, color: Colors.Text.three)
+    private let instruction = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
     private let caption: UILabel = {
-        let label = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+        let label = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
         label.textAlignment = .center
         return label
     }()
         
-    private let warning = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+    private let warning = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
     private var pinView: PinView
-    private let pinPadBackground = UIView(color: LightColors.Text.one)
+    private let pinPadBackground = UIView(color: Colors.Text.one)
     private let pinPad = PinPadViewController(style: .clear, keyboardType: .pinPad, maxDigits: 0, shouldShowBiometrics: false)
     private let spacer = UIView()
     private let keyMaster: KeyMaster
@@ -193,7 +193,7 @@ class UpdatePinViewController: UIViewController, Subscriber {
     }
 
     private func setData() {
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         pinPad.ouputDidUpdate = { [weak self] text in
             guard let step = self?.step else { return }
             switch step {
@@ -240,7 +240,7 @@ class UpdatePinViewController: UIViewController, Subscriber {
                                    style: .plain,
                                    target: self,
                                    action: #selector(backButtonPressed))
-        back.tintColor = LightColors.Text.three
+        back.tintColor = Colors.Text.three
         navigationItem.leftBarButtonItem = back
     }
     

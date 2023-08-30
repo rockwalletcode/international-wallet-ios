@@ -63,7 +63,7 @@ class ScanViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-        toolbar.backgroundColor = LightColors.Background.one
+        toolbar.backgroundColor = Colors.Background.one
         toolbar.distribution = .fillEqually
         
         view.addSubview(toolbar)

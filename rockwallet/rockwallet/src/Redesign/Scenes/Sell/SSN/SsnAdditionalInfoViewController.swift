@@ -30,7 +30,7 @@ class SsnAdditionalInfoViewController: BaseTableViewController<ExchangeCoordinat
         tableView.register(WrapperTableViewCell<SsnInputView>.self)
         
         tableView.delaysContentTouches = false
-        tableView.backgroundColor = LightColors.Background.two
+        tableView.backgroundColor = Colors.Background.two
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

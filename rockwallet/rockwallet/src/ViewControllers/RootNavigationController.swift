@@ -37,8 +37,8 @@ class RootNavigationController: UINavigationController, UINavigationControllerDe
     
     func decideInterface(for viewController: UIViewController?) {
         guard let viewController = viewController else {
-            backgroundColor = LightColors.Contrast.one
-            tintColor = LightColors.Contrast.one
+            backgroundColor = Colors.Contrast.one
+            tintColor = Colors.Contrast.one
             
             setNormalNavigationBar()
             return
@@ -49,15 +49,15 @@ class RootNavigationController: UINavigationController, UINavigationControllerDe
             is HomeScreenViewController,
             is SimpleWebViewController:
             backgroundColor = .clear
-            tintColor = LightColors.Text.three
+            tintColor = Colors.Text.three
             
         case is OnboardingViewController:
             backgroundColor = .clear
-            tintColor = LightColors.Background.two
+            tintColor = Colors.Background.two
             
         case is ImportKeyViewController:
-            backgroundColor = LightColors.primary
-            tintColor = LightColors.Contrast.two
+            backgroundColor = Colors.primary
+            tintColor = Colors.Contrast.two
             
         case is BuyViewController,
             is SwapViewController,
@@ -65,12 +65,12 @@ class RootNavigationController: UINavigationController, UINavigationControllerDe
             is ExchangeDetailsViewController,
             is OrderPreviewViewController,
             is SsnAdditionalInfoViewController:
-            backgroundColor = LightColors.Background.two
-            tintColor = LightColors.Text.three
+            backgroundColor = Colors.Background.two
+            tintColor = Colors.Text.three
             
         default:
-            backgroundColor = LightColors.Background.one
-            tintColor = LightColors.Text.three
+            backgroundColor = Colors.Background.one
+            tintColor = Colors.Text.three
         }
         
         let item = SimpleBackBarButtonItem(title: "", style: .plain, target: nil, action: nil)

@@ -126,7 +126,7 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         view.addSubview(addressCell)
         view.addSubview(memoCell)
         view.addSubview(sendButton)
@@ -407,20 +407,20 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
         
         let balanceLabelattributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: Fonts.Body.two,
-            NSAttributedString.Key.foregroundColor: LightColors.Text.two
+            NSAttributedString.Key.foregroundColor: Colors.Text.two
         ]
         
         var balanceAttributes: [NSAttributedString.Key: Any] = [ NSAttributedString.Key.font: Fonts.Subtitle.two ]
         if isSendingMax || maximum == nil {
-            balanceAttributes[NSAttributedString.Key.foregroundColor] = LightColors.Text.two
+            balanceAttributes[NSAttributedString.Key.foregroundColor] = Colors.Text.two
         } else {
             balanceAttributes[NSAttributedString.Key.underlineStyle] = NSUnderlineStyle.single.rawValue
-            balanceAttributes[NSAttributedString.Key.foregroundColor] = LightColors.Text.two
+            balanceAttributes[NSAttributedString.Key.foregroundColor] = Colors.Text.two
         }
         
         let feeAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: Fonts.Body.two,
-            NSAttributedString.Key.foregroundColor: LightColors.Text.two
+            NSAttributedString.Key.foregroundColor: Colors.Text.two
         ]
         
         let balanceOutput = NSMutableAttributedString()

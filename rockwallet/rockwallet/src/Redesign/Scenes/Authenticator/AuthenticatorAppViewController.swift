@@ -52,14 +52,14 @@ class AuthenticatorAppViewController: BaseTableViewController<AccountCoordinator
             cell = self.tableView(tableView, labelCellForRowAt: indexPath)
             
             (cell as? WrapperTableViewCell<FELabel>)?.wrappedView.configure(with: .init(font: Fonts.Subtitle.two,
-                                                                                        textColor: LightColors.Text.three,
+                                                                                        textColor: Colors.Text.three,
                                                                                         textAlignment: .center))
             
         case .instructions:
             cell = self.tableView(tableView, descriptionLabelCellForRowAt: indexPath)
             
             (cell as? WrapperTableViewCell<FELabel>)?.wrappedView.configure(with: .init(font: Fonts.Body.two,
-                                                                                        textColor: LightColors.Text.three))
+                                                                                        textColor: Colors.Text.three))
             
         case .qrCode:
             cell = self.tableView(tableView, paddedImageViewCellForRowAt: indexPath)

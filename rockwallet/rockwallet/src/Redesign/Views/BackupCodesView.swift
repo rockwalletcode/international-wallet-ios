@@ -12,7 +12,7 @@ import UIKit
 
 struct BackupCodesViewConfiguration: Configurable {
     var backupCode: LabelConfiguration = .init(font: Fonts.Title.five,
-                                               textColor: LightColors.Text.three,
+                                               textColor: Colors.Text.three,
                                                textAlignment: .center)
 }
 

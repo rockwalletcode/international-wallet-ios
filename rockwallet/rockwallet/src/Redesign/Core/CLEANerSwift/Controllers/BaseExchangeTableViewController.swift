@@ -37,7 +37,7 @@ class BaseExchangeTableViewController<C: CoordinatableRoutes,
         tableView.register(WrapperTableViewCell<SwapCurrencyView>.self)
         
         tableView.delaysContentTouches = false
-        tableView.backgroundColor = LightColors.Background.two
+        tableView.backgroundColor = Colors.Background.two
     }
     
     func tableView(_ tableView: UITableView, timerCellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -112,7 +112,7 @@ class BaseExchangeTableViewController<C: CoordinatableRoutes,
         
         cell.setup { view in
             view.configure(with: .init(font: Fonts.Body.three,
-                                       textColor: LightColors.Text.two))
+                                       textColor: Colors.Text.two))
             view.setup(with: model)
         }
         

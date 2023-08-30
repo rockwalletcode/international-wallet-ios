@@ -11,12 +11,12 @@
 import UIKit
 
 struct SsnInputConfiguration: Configurable {
-    var messageConfig: LabelConfiguration? = .init(font: Fonts.Body.three, textColor: LightColors.Text.two)
+    var messageConfig: LabelConfiguration? = .init(font: Fonts.Body.three, textColor: Colors.Text.two)
     var textFieldConfig: TextFieldConfiguration = Presets.TextField.primary
     var buttonConfig: ButtonConfiguration = Presets.Button.primary
     var shadow: ShadowConfiguration? = Presets.Shadow.light
-    var background: BackgroundConfiguration? = .init(backgroundColor: LightColors.Background.one,
-                                                     tintColor: LightColors.Text.one,
+    var background: BackgroundConfiguration? = .init(backgroundColor: Colors.Background.one,
+                                                     tintColor: Colors.Text.one,
                                                      border: Presets.Border.mediumPlain)
 }
 

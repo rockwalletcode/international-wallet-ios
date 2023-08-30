@@ -215,7 +215,7 @@ class VerificationView: FEView<VerificationConfiguration, VerificationViewModel>
     private lazy var statusImageView: WrapperView<FEImageView> = {
         let view = WrapperView<FEImageView>()
         view.wrappedView.setup(with: .init(.image(Asset.selected.image)))
-        view.tintColor = LightColors.primary
+        view.tintColor = Colors.primary
         return view
     }()
     
@@ -356,6 +356,6 @@ class VerificationView: FEView<VerificationConfiguration, VerificationViewModel>
         statusImageView.wrappedView.backgroundColor = .clear
         
         guard let isActive = viewModel.isActive else { return }
-        arrowImageView.tintColor = isActive ? LightColors.Text.two : LightColors.Disabled.one
+        arrowImageView.tintColor = isActive ? Colors.Text.two : Colors.Disabled.one
     }
 }

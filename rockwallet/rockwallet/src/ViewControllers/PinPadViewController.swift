@@ -120,7 +120,7 @@ class PinPadViewController: UICollectionViewController {
     override func viewDidLoad() {
         haptics.prepare()
         
-        collectionView?.backgroundColor = LightColors.Background.one
+        collectionView?.backgroundColor = Colors.Background.one
         
         switch keyboardType {
         case .decimalPad:

@@ -31,9 +31,9 @@ class GiftViewController: BaseSendViewController {
     private let gradientView = UIView()
     private let headerView = GiftHeaderView()
     private let qr = UIImageView(image: Asset.empty.image)
-    private let header = UILabel.wrapping(font: Fonts.Title.one, color: LightColors.Contrast.two)
-    private let subHeader = UILabel.wrapping(font: Fonts.Body.one, color: LightColors.Contrast.two.withAlphaComponent(0.85))
-    private let amountHeader = UILabel(font: Fonts.Body.three, color: LightColors.Contrast.two)
+    private let header = UILabel.wrapping(font: Fonts.Title.one, color: Colors.Contrast.two)
+    private let subHeader = UILabel.wrapping(font: Fonts.Body.one, color: Colors.Contrast.two.withAlphaComponent(0.85))
+    private let amountHeader = UILabel(font: Fonts.Body.three, color: Colors.Contrast.two)
     private let name = BorderedTextInput(placeholder: "Recipient's Name", keyboardType: .default)
     private let bottomBorder = UIView(color: .white)
     private let createButton: UIButton = {

@@ -119,14 +119,14 @@ class OnboardingViewController: UIViewController {
     }()
     
     private let restoreWalletTitle: UILabel = {
-        let label = UILabel.wrapping(font: Fonts.Title.four, color: LightColors.Contrast.two)
+        let label = UILabel.wrapping(font: Fonts.Title.four, color: Colors.Contrast.two)
         label.text = L10n.Onboarding.restoreYourWallet
         label.textAlignment = .center
         return label
     }()
     
     private let restoreWalletDescription: UILabel = {
-        let label = UILabel.wrapping(font: Fonts.Body.one, color: LightColors.Contrast.two)
+        let label = UILabel.wrapping(font: Fonts.Body.one, color: Colors.Contrast.two)
         label.text = L10n.Onboarding.restoreYourWalletDescription
         label.textAlignment = .center
         return label
@@ -171,7 +171,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = LightColors.Contrast.one
+        view.backgroundColor = Colors.Contrast.one
         
         setUpLogo()
         setUpPages()
@@ -259,7 +259,7 @@ class OnboardingViewController: UIViewController {
             // create the headings
             let headingLabel = makeHeadingLabel(text: page.heading, 
                                                 font: Fonts.Title.six,
-                                                color: LightColors.Contrast.two)
+                                                color: Colors.Contrast.two)
             view.addSubview(headingLabel)
             
             let offset: CGFloat = (index == 0) ? 0 : -(self.headingLabelAnimationOffset)
@@ -280,7 +280,7 @@ class OnboardingViewController: UIViewController {
             // create the subheadings
             let subheadingLabel = makeHeadingLabel(text: page.subheading, 
                                                    font: Fonts.Subtitle.two,
-                                                   color: LightColors.Contrast.two)
+                                                   color: Colors.Contrast.two)
             view.addSubview(subheadingLabel)
             
             animationConstraint = subheadingLabel.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, 

@@ -83,7 +83,7 @@ struct ExchangeFormatter {
         attributedString.addAttributes([
             .paragraphStyle: style,
             .underlineStyle: NSUnderlineStyle.single.rawValue,
-            .underlineColor: LightColors.Outline.two],
+            .underlineColor: Colors.Outline.two],
                                        range: NSRange(location: 0, length: attributedString.length))
         
         return attributedString

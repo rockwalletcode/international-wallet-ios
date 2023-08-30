@@ -479,6 +479,10 @@ class ApplicationController: Subscriber {
             self?.coordinator?.showProfile()
         }
         
+        homeScreen.didTapProSegment = { [weak self] in
+            self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
+        }
+        
         homeScreen.didTapProfileFromPrompt = { [unowned self] in
             switch UserManager.shared.profileResult {
             case .success:

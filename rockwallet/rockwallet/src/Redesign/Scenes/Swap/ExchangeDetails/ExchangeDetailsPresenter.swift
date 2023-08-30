@@ -113,7 +113,7 @@ final class ExchangeDetailsPresenter: NSObject, Presenter, ExchangeDetailsAction
                                topRightText: "\(formattedCurrencyAmountString) / \(formattedUsdAmountString) \(currencyCode)")
             ],
             Models.Section.image: [
-                ImageViewModel.image(Asset.arrowDown.image.tinted(with: LightColors.Text.three))
+                ImageViewModel.image(Asset.arrowDown.image.tinted(with: Colors.Text.three))
             ],
             Models.Section.toCurrency: [
                 toCurrencyAssetViewModel
