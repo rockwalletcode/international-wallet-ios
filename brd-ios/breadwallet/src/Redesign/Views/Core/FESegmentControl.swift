@@ -14,6 +14,7 @@ struct SegmentControlConfiguration: Configurable {
     var font: UIFont = Fonts.button
     var normal: BackgroundConfiguration = .init(backgroundColor: LightColors.Background.cards, tintColor: LightColors.primary)
     var selected: BackgroundConfiguration = .init(backgroundColor: LightColors.primary, tintColor: LightColors.Contrast.two)
+    var inset: CGPoint = CGPoint(x: 10, y: 10)
 }
 
 struct SegmentControlViewModel: ViewModel {
@@ -49,6 +50,7 @@ class SegmentControl: FEView<SegmentControlConfiguration, SegmentControlViewMode
         
         segmentedControl.backgroundColor = config.normal.backgroundColor
         segmentedControl.selectedSegmentTintColor = config.selected.backgroundColor
+        segmentedControl.config = config
         
         segmentedControl.setTitleTextAttributes([
             .font: config.font,
@@ -101,6 +103,7 @@ class SegmentControl: FEView<SegmentControlConfiguration, SegmentControlViewMode
 
 private final class FESegmentControl: UISegmentedControl {
     var didChangeValue: ((Int) -> Void)?
+    var config: SegmentControlConfiguration?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -111,8 +114,8 @@ private final class FESegmentControl: UISegmentedControl {
         
         if subviews.indices.contains(selectedSegmentIndex),
            let foregroundImageView = subviews[numberOfSegments] as? UIImageView {
-            foregroundImageView.bounds = foregroundImageView.bounds.insetBy(dx: 10, dy: 10)
-            foregroundImageView.image = UIImage.imageForColor(LightColors.primary)
+            foregroundImageView.bounds = foregroundImageView.bounds.insetBy(dx: config?.inset.x ?? 0, dy: config?.inset.y ?? 0)
+            foregroundImageView.image = UIImage.imageForColor(config?.selected.backgroundColor ?? .clear)
             foregroundImageView.layer.removeAnimation(forKey: "SelectionBounds")
             foregroundImageView.layer.masksToBounds = true
             foregroundImageView.layer.cornerRadius = foregroundImageView.frame.height / 2
