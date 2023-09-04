@@ -71,6 +71,44 @@ struct ProfileResponseData: ModelResponse {
             case minimum = "MINIMUM"
             
             case unknown
+            
+            var title: String {
+                switch self {
+                case .daily:
+                    return L10n.Account.daily
+                    
+                case .weekly:
+                    return L10n.Account.weekly
+                    
+                case .monthly:
+                    return L10n.Account.monthly
+                    
+                case .lifetime:
+                    return L10n.Account.lifetime
+                    
+                case .perExchange:
+                    return L10n.Account.perExchange
+                    
+                case .minimum:
+                    return L10n.Account.minimum
+                    
+                case .unknown:
+                    return ""
+                }
+            }
+            
+            /// Check the order from this link: https://bayes.atlassian.net/browse/RWDO-409
+            var priorityOrder: Int {
+                switch self {
+                case .daily: return 3
+                case .weekly: return 2
+                case .monthly: return 1
+                case .lifetime: return 6
+                case .perExchange: return 4
+                case .minimum: return 5
+                case .unknown: return 7
+                }
+            }
         }
     }
 }
