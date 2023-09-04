@@ -15,20 +15,16 @@ enum ExchangeErrors: FEError {
     /// Param 1: amount, param 2 currency symbol
     case tooLow(amount: Decimal, currency: String, reason: BaseInfoModels.FailureReason)
     /// Param 1: amount, param 2 currency symbol
-    case tooHigh(amount: Decimal, currency: String, reason: BaseInfoModels.FailureReason)
+    case tooHigh(interval: ProfileResponseData.ExchangeLimit.Interval, amount: Decimal, currency: String, reason: BaseInfoModels.FailureReason)
     /// Param 1: amount, param 2 currency symbol
     case balanceTooLow(balance: Decimal, currency: String)
     case insufficientGasERC20(currency: String, balance: Decimal)
     case insufficientFunds(currency: String)
-    case overDailyLimit(limit: Decimal, currency: String)
-    case overLifetimeLimit(limit: Decimal)
-    case overDailyLimitLevel2(limit: Decimal)
     case notEnoughEthForFee(balance: Decimal, currency: String)
     case failed(error: Error?)
     case supportedCurrencies(error: Error?)
     case noFees
     case networkFee
-    case overExchangeLimit
     case pinConfirmation
     case pendingSwap
     case selectAssets
@@ -70,31 +66,22 @@ enum ExchangeErrors: FEError {
                 return ""
             }
             
-        case .tooHigh(let amount, let currency, let reason):
+        case .tooHigh(let interval, let amount, let currency, let reason):
             switch reason {
             case .buyCard, .buyAch, .sell:
-                return L10n.ErrorMessages.amountTooHigh(L10n.Account.weekly.lowercased(),
+                return L10n.ErrorMessages.amountTooHigh(interval.title.lowercased(),
                                                         ExchangeFormatter.fiat.string(for: amount.doubleValue) ?? "",
                                                         currency)
                 
             case .swap:
-                return L10n.ErrorMessages.swapAmountTooHigh(ExchangeFormatter.current.string(for: amount) ?? "", currency)
+                return L10n.ErrorMessages.amountTooHigh(interval.title.lowercased(),
+                                                        ExchangeFormatter.current.string(for: amount.doubleValue) ?? "",
+                                                        currency)
                 
             default:
                 return ""
                 
             }
-        case .overDailyLimit(let limit, let currency):
-            return L10n.ErrorMessages.overDailyLimit(L10n.Account.weekly.lowercased(),
-                                                     ExchangeFormatter.fiat.string(for: limit) ?? "",
-                                                     currency)
-            
-        case .overLifetimeLimit(let limit):
-            return L10n.ErrorMessages.overLifetimeLimit(ExchangeFormatter.fiat.string(for: limit) ?? "")
-            
-        case .overDailyLimitLevel2(let limit):
-            return L10n.ErrorMessages.overLifetimeLimitLevel2(ExchangeFormatter.fiat.string(for: limit) ?? "")
-            
         case .noFees:
             return L10n.ErrorMessages.noFees
             
@@ -105,9 +92,6 @@ enum ExchangeErrors: FEError {
             let from = from ?? "/"
             let to = to ?? "/"
             return L10n.ErrorMessages.noQuoteForPair(from, to)
-            
-        case .overExchangeLimit:
-            return L10n.ErrorMessages.overExchangeLimit
             
         case  .pinConfirmation:
             return L10n.ErrorMessages.pinConfirmationFailed

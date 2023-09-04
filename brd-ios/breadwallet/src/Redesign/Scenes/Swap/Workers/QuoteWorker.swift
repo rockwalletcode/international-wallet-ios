@@ -70,6 +70,7 @@ struct QuoteModelResponse: ModelResponse {
     var maximumValue: Decimal
     var minimumValueUsd: Decimal
     var maximumValueUsd: Decimal
+    var currentExchangeLimits: [ProfileResponseData.ExchangeLimit]?
     
     struct Fee: Codable {
         var feeCurrency: String?
@@ -113,6 +114,7 @@ struct Quote {
     var buyFeeUsd: Decimal?
     var isMinimumImpactedByWithdrawal: Bool?
     var instantAch: InstantAchQuote?
+    var currentExchangeLimits: [ProfileResponseData.ExchangeLimit]?
 }
 
 struct InstantAchQuote: Codable {
@@ -160,7 +162,8 @@ class QuoteMapper: ModelMapper<QuoteModelResponse, Quote> {
                      buyFee: buyFee,
                      buyFeeUsd: response.achFees?.achFeeFixedUsd,
                      isMinimumImpactedByWithdrawal: response.isMinimumImpactedByWithdrawal,
-                     instantAch: response.instantAch)
+                     instantAch: response.instantAch,
+                     currentExchangeLimits: response.currentExchangeLimits)
     }
 }
 

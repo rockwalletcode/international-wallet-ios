@@ -70,7 +70,7 @@ final class OrderPreviewPresenter: NSObject, Presenter, OrderPreviewActionRespon
             sections.insert(.achSegment, at: 0)
             
         default:
-            return
+            break
         }
         
         let selectedSegment = Models.AchDeliveryType.allCases.firstIndex(where: { $0.hashValue == item.achDeliveryType?.hashValue })

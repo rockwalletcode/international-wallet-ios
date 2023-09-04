@@ -157,6 +157,8 @@
 
 "Account.LetsGetVerified" = "Let’s get you verified";
 
+"Account.Lifetime" = "Lifetime";
+
 /* Loading Wallet Message */
 "Account.loadingMessage" = "Wallet wird geladen";
 
@@ -168,6 +170,8 @@
 
 /* Verify your account to get full access to the wallet message */
 "Account.MessageVerifyAccount" = "Verify your account to get full access to your RockWallet!";
+
+"Account.Minimum" = "Minimum";
 
 "Account.MissingDataPromptText" = "Please fill in the missing information  to use your RockWallet seamlessly.";
 
@@ -1392,14 +1396,6 @@
 
 "ErrorMessages.notEnoughBalanceXRP" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
-"ErrorMessages.overDailyLimit" = "The amount is higher than your daily limit of %@ USD. Please upgrade your account or enter a lower amount.";
-
-"ErrorMessages.overExchangeLimit" = "Over exchange limit.";
-
-"ErrorMessages.overLifetimeLimit" = "The amount is higher than your lifetime limit of %@ USD. Please upgrade your account or enter a lower amount.";
-
-"ErrorMessages.overLifetimeLimitLevel2" = "The amount is higher than your daily limit of %@ USD. Please enter a lower amount.";
-
 "ErrorMessages.PaymailAlreadyTaken" = "This Paymail is already taken";
 
 "ErrorMessages.PaymailTaken" = "Paymail already taken";
@@ -1418,9 +1414,6 @@
 
 /* Something went wrong message */
 "ErrorMessages.SomethingWentWrong" = "Oops! Something went wrong, please try again later.";
-
-/* Two parameters:, - maximum amount, - currency code */
-"ErrorMessages.swapAmountTooHigh" = "The amount is higher than the swap maximum of %@ %@.";
 
 "ErrorMessages.temporaryNetworkIssues" = "We are having temporary issues connecting to our network. Please try again later.";
 
@@ -2490,6 +2483,8 @@
 "Sell.WithdrawalSuccessTitle" = "Your withdrawal is being processed";
 
 "Sell.WithdrawDetails" = "Sell and withdraw details";
+
+"Sell.YourAchSellLimits" = "Your ACH sell limits";
 
 "Sell.yourOrder" = "You sell:";
 

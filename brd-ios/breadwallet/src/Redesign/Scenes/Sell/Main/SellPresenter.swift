@@ -162,7 +162,7 @@ final class SellPresenter: NSObject, Presenter, SellActionResponses {
     }
     
     func presentLimitsInfo(actionResponse: SellModels.LimitsInfo.ActionResponse) {
-        let title = actionResponse.paymentMethod == .card ? L10n.Buy.yourBuyLimits : L10n.Buy.yourAchBuyLimits
+        let title = actionResponse.paymentMethod == .card ? L10n.Sell.yourSellLimits : L10n.Sell.yourAchSellLimits
         let profile = UserManager.shared.profile
         
         let perTransactionLimit = actionResponse.paymentMethod == .card ? profile?.sellAllowancePerExchange : profile?.sellAchAllowancePerExchange

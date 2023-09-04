@@ -161,6 +161,8 @@ internal enum L10n {
     internal static let invalidEmail = L10n.tr("Localizable", "Account.InvalidEmail", fallback: "Please enter a valid Email Address")
     /// Let’s get you verified
     internal static let letsGetVerified = L10n.tr("Localizable", "Account.LetsGetVerified", fallback: "Let’s get you verified")
+    /// Lifetime
+    internal static let lifetime = L10n.tr("Localizable", "Account.Lifetime", fallback: "Lifetime")
     /// Loading Wallet Message
     internal static let loadingMessage = L10n.tr("Localizable", "Account.loadingMessage", fallback: "Loading Wallet")
     /// Log out
@@ -171,6 +173,8 @@ internal enum L10n {
     internal static let mandatoryFields = L10n.tr("Localizable", "Account.MandatoryFields", fallback: "(*)Mandatory Fields")
     /// Verify your account to get full access to the wallet message
     internal static let messageVerifyAccount = L10n.tr("Localizable", "Account.MessageVerifyAccount", fallback: "Verify your account to get full access to your RockWallet!")
+    /// Minimum
+    internal static let minimum = L10n.tr("Localizable", "Account.Minimum", fallback: "Minimum")
     /// Please fill in the missing information to use your RockWallet seamlessly.
     internal static let missingDataPromptText = L10n.tr("Localizable", "Account.MissingDataPromptText", fallback: "Please fill in the missing information to use your RockWallet seamlessly.")
     /// Add the missing information
@@ -1333,7 +1337,7 @@ internal enum L10n {
     internal static let accessDenied = L10n.tr("Localizable", "ErrorMessages.accessDenied", fallback: "You cannot purchase assets without completing Level 2 account verification. Upgrade your limits on the Profile screen.")
     /// The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code
     internal static func amountTooHigh(_ p1: Any, _ p2: Any, _ p3: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.AmountTooHigh", String(describing: p1), String(describing: p2), String(describing: p3), fallback: "The amount is higher than your %@ limit of %@ %@. Please enter a lower amount.")
+      return L10n.tr("Localizable", "ErrorMessages.AmountTooHigh", String(describing: p1), String(describing: p2), String(describing: p3), fallback: "The amount is higher than your remaining %@ limit of %@ %@. Please enter a lower amount.")
     }
     /// The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code
     internal static func amountTooLow(_ p1: Any, _ p2: Any) -> String {
@@ -1403,20 +1407,6 @@ internal enum L10n {
     internal static func notEnoughBalanceXRP(_ p1: Any) -> String {
       return L10n.tr("Localizable", "ErrorMessages.notEnoughBalanceXRP", String(describing: p1), fallback: "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.")
     }
-    /// The amount is higher than your %@ limit of %@ %@. Please upgrade your account or enter a lower amount.
-    internal static func overDailyLimit(_ p1: Any, _ p2: Any, _ p3: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.overDailyLimit", String(describing: p1), String(describing: p2), String(describing: p3), fallback: "The amount is higher than your %@ limit of %@ %@. Please upgrade your account or enter a lower amount.")
-    }
-    /// Over exchange limit.
-    internal static let overExchangeLimit = L10n.tr("Localizable", "ErrorMessages.overExchangeLimit", fallback: "Over exchange limit.")
-    /// The amount is higher than your lifetime limit of %@ USD. Please upgrade your account or enter a lower amount.
-    internal static func overLifetimeLimit(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.overLifetimeLimit", String(describing: p1), fallback: "The amount is higher than your lifetime limit of %@ USD. Please upgrade your account or enter a lower amount.")
-    }
-    /// The amount is higher than your weekly limit of %@ USD. Please enter a lower amount.
-    internal static func overLifetimeLimitLevel2(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.overLifetimeLimitLevel2", String(describing: p1), fallback: "The amount is higher than your weekly limit of %@ USD. Please enter a lower amount.")
-    }
     /// This Paymail is already taken
     internal static let paymailAlreadyTaken = L10n.tr("Localizable", "ErrorMessages.PaymailAlreadyTaken", fallback: "This Paymail is already taken")
     /// Paymail already taken
@@ -1431,10 +1421,6 @@ internal enum L10n {
     internal static let selectAssets = L10n.tr("Localizable", "ErrorMessages.selectAssets", fallback: "In order to successfully perform a swap, make sure you have two or more of our supported swap assets (BSV, BTC, ETH, BCH, SHIB, USDT) activated and funded within your wallet.")
     /// Something went wrong message
     internal static let somethingWentWrong = L10n.tr("Localizable", "ErrorMessages.SomethingWentWrong", fallback: "Oops! Something went wrong, please try again later.")
-    /// Two parameters:, - maximum amount, - currency code
-    internal static func swapAmountTooHigh(_ p1: Any, _ p2: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.swapAmountTooHigh", String(describing: p1), String(describing: p2), fallback: "The amount is higher than the swap maximum of %@ %@.")
-    }
     /// We are having temporary issues connecting to our network. Please try again later.
     internal static let temporaryNetworkIssues = L10n.tr("Localizable", "ErrorMessages.temporaryNetworkIssues", fallback: "We are having temporary issues connecting to our network. Please try again later.")
     /// Try again later
@@ -2368,15 +2354,15 @@ internal enum L10n {
   }
   internal enum Search {
     /// Complete filter label
-    internal static let complete = L10n.tr("Localizable", "Search.complete", fallback: "complete")
+    internal static let complete = L10n.tr("Localizable", "Search.complete", fallback: "Complete")
     /// Pending filter label
-    internal static let pending = L10n.tr("Localizable", "Search.pending", fallback: "pending")
+    internal static let pending = L10n.tr("Localizable", "Search.pending", fallback: "Pending")
     /// Received filter label
-    internal static let received = L10n.tr("Localizable", "Search.received", fallback: "received")
+    internal static let received = L10n.tr("Localizable", "Search.received", fallback: "Received")
     /// [Click here to] search
     internal static let search = L10n.tr("Localizable", "Search.search", fallback: "Search")
     /// Sent filter label
-    internal static let sent = L10n.tr("Localizable", "Search.sent", fallback: "sent")
+    internal static let sent = L10n.tr("Localizable", "Search.sent", fallback: "Sent")
   }
   internal enum SecurityCenter {
     /// Face ID button title
@@ -2475,6 +2461,8 @@ internal enum L10n {
     internal static let withdrawalSuccessTitle = L10n.tr("Localizable", "Sell.WithdrawalSuccessTitle", fallback: "Your withdrawal is being processed")
     /// Sell and Withdraw details
     internal static let withdrawDetails = L10n.tr("Localizable", "Sell.WithdrawDetails", fallback: "Sell and Withdraw details")
+    /// Your ACH sell limits
+    internal static let yourAchSellLimits = L10n.tr("Localizable", "Sell.YourAchSellLimits", fallback: "Your ACH sell limits")
     /// You sell:
     internal static let yourOrder = L10n.tr("Localizable", "Sell.yourOrder", fallback: "You sell:")
     /// Your sell limits

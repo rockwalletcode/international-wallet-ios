@@ -157,6 +157,8 @@
 
 "Account.LetsGetVerified" = "Let’s get you verified";
 
+"Account.Lifetime" = "Lifetime";
+
 /* Loading Wallet Message */
 "Account.loadingMessage" = "Chargement du portefeuille";
 
@@ -168,6 +170,8 @@
 
 /* Verify your account to get full access to the wallet message */
 "Account.MessageVerifyAccount" = "Faites vérifier votre compte pour accéder à l'intégralité de votre portefeuille RockWallet !";
+
+"Account.Minimum" = "Minimum";
 
 "Account.MissingDataPromptText" = "Please fill in the missing information  to use your RockWallet seamlessly.";
 
@@ -1392,14 +1396,6 @@
 
 "ErrorMessages.notEnoughBalanceXRP" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
-"ErrorMessages.overDailyLimit" = "Le montant est supérieur à votre limite quotidienne de %@ USD. Veuillez mettre à niveau votre compte ou indiquer un montant inférieur.";
-
-"ErrorMessages.overExchangeLimit" = "Dépassement de la limite d'échange.";
-
-"ErrorMessages.overLifetimeLimit" = "Le montant est supérieur à votre limite à vie de %@ USD. Veuillez mettre à niveau votre compte ou indiquer un montant inférieur.";
-
-"ErrorMessages.overLifetimeLimitLevel2" = "Le montant est supérieur à votre limite quotidienne de %@ USD. Veuillez indiquer un montant inférieur.";
-
 "ErrorMessages.PaymailAlreadyTaken" = "This Paymail is already taken";
 
 "ErrorMessages.PaymailTaken" = "Paymail already taken";
@@ -1418,9 +1414,6 @@
 
 /* Something went wrong message */
 "ErrorMessages.SomethingWentWrong" = "Oups ! Une erreur s'est produite, veuillez réessayer plus tard.";
-
-/* Two parameters:, - maximum amount, - currency code */
-"ErrorMessages.swapAmountTooHigh" = "Le montant est supérieur à votre montant d'échange maximum de %@ %@.";
 
 "ErrorMessages.temporaryNetworkIssues" = "Nous rencontrons temporairement des problèmes de connexion à notre réseau. Veuillez réessayer plus tard.";
 
@@ -2490,6 +2483,8 @@
 "Sell.WithdrawalSuccessTitle" = "Your withdrawal is being processed";
 
 "Sell.WithdrawDetails" = "Sell and withdraw details";
+
+"Sell.YourAchSellLimits" = "Your ACH sell limits";
 
 "Sell.yourOrder" = "You sell:";
 
