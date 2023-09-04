@@ -101,7 +101,7 @@ class SegmentControl: FEView<SegmentControlConfiguration, SegmentControlViewMode
 
 private final class FESegmentControl: UISegmentedControl {
     var didChangeValue: ((Int) -> Void)?
-    private var has = false
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
