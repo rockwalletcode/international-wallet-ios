@@ -117,7 +117,7 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
     
     override func setSegment(_ segment: Int) {
         guard let section = sections.firstIndex(where: { $0.hashValue == Models.Section.segment.hashValue }),
-              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<FESegmentControl> else { return }
+              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<SegmentControl> else { return }
         cell.wrappedView.selectSegment(index: segment)
         
         let paymentTypes = PaymentCard.PaymentType.allCases

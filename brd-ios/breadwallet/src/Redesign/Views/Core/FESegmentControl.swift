@@ -1,5 +1,5 @@
 // 
-//  FESegmentControl.swift
+//  SegmentControl.swift
 //  breadwallet
 //
 //  Created by Rok on 05/07/2022.
@@ -27,12 +27,81 @@ struct SegmentControlViewModel: ViewModel {
     }
 }
 
-class FESegmentControl: UISegmentedControl, ViewProtocol {
-    var config: SegmentControlConfiguration?
-    var viewModel: SegmentControlViewModel?
-    
+class SegmentControl: FEView<SegmentControlConfiguration, SegmentControlViewModel> {
     var didChangeValue: ((Int) -> Void)?
+    private var segmentedControl = FESegmentControl()
     
+    override func setupSubviews() {
+        super.setupSubviews()
+        
+        content.setupCustomMargins(vertical: .zero, horizontal: .zero)
+        
+        content.addSubview(segmentedControl)
+        segmentedControl.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+            make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
+        }
+    }
+    
+    override func configure(with config: SegmentControlConfiguration?) {
+        guard let config = config else { return }
+        super.configure(with: config)
+        
+        segmentedControl.backgroundColor = config.normal.backgroundColor
+        segmentedControl.selectedSegmentTintColor = config.selected.backgroundColor
+        
+        segmentedControl.setTitleTextAttributes([
+            .font: config.font,
+            .foregroundColor: config.normal.tintColor
+        ], for: .normal)
+        
+        segmentedControl.setTitleTextAttributes([
+            .font: config.font,
+            .foregroundColor: config.selected.tintColor
+        ], for: .selected)
+        
+        segmentedControl.didChangeValue = { [weak self] value in
+            self?.didChangeValue?(value)
+        }
+    }
+    
+    override func setup(with viewModel: SegmentControlViewModel?) {
+        guard let viewModel = viewModel else { return }
+        super.setup(with: viewModel)
+        
+        UIView.setAnimationsEnabled(false)
+        
+        segmentedControl.removeAllSegments()
+        for (index, element) in (viewModel.segments).enumerated() {
+            if let image = element.image, let title = element.title {
+                let image = UIImage.textEmbeded(image: image,
+                                                string: title,
+                                                isImageBeforeText: true)
+                segmentedControl.insertSegment(with: image, at: index, animated: true)
+            } else if let title = element.title {
+                segmentedControl.insertSegment(withTitle: title, at: index, animated: true)
+            }
+        }
+        
+        UIView.setAnimationsEnabled(true)
+        
+        selectSegment(index: viewModel.selectedIndex)
+    }
+    
+    func selectSegment(index: Int?) {
+        if let index = index {
+            viewModel?.selectedIndex = index
+            segmentedControl.selectedSegmentIndex = index
+        } else {
+            viewModel?.selectedIndex = nil
+            segmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
+        }
+    }
+}
+
+private final class FESegmentControl: UISegmentedControl {
+    var didChangeValue: ((Int) -> Void)?
+    private var has = false
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -41,7 +110,7 @@ class FESegmentControl: UISegmentedControl, ViewProtocol {
         clipsToBounds = true
         
         if subviews.indices.contains(selectedSegmentIndex),
-            let foregroundImageView = subviews[numberOfSegments] as? UIImageView {
+           let foregroundImageView = subviews[numberOfSegments] as? UIImageView {
             foregroundImageView.bounds = foregroundImageView.bounds.insetBy(dx: 10, dy: 10)
             foregroundImageView.image = UIImage.imageForColor(LightColors.primary)
             foregroundImageView.layer.removeAnimation(forKey: "SelectionBounds")
@@ -55,63 +124,27 @@ class FESegmentControl: UISegmentedControl, ViewProtocol {
         }
     }
     
-    func configure(with config: SegmentControlConfiguration?) {
-        guard let config = config else { return }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        self.config = config
-        
-        snp.makeConstraints { make in
-            make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
-        }
-        
-        backgroundColor = config.normal.backgroundColor
-        selectedSegmentTintColor = config.selected.backgroundColor
-        
-        setTitleTextAttributes([
-            .font: config.font,
-            .foregroundColor: config.normal.tintColor
-        ], for: .normal)
-        
-        setTitleTextAttributes([
-            .font: config.font,
-            .foregroundColor: config.selected.tintColor
-        ], for: .selected)
-        
-        valueChanged = { [weak self] in
-            guard let selectedSegmentIndex = self?.selectedSegmentIndex, selectedSegmentIndex >= 0 else { return }
-            self?.didChangeValue?(selectedSegmentIndex)
-        }
+        addTarget(self, action: #selector(indexChanged), for: .valueChanged)
     }
     
-    func setup(with viewModel: SegmentControlViewModel?) {
-        self.viewModel = viewModel
-        
-        UIView.setAnimationsEnabled(false)
-        
-        removeAllSegments()
-        for (index, element) in (viewModel?.segments ?? []).enumerated() {
-            if let image = element.image, let title = element.title {
-                let image = UIImage.textEmbeded(image: image,
-                                                string: title,
-                                                isImageBeforeText: true)
-                insertSegment(with: image, at: index, animated: true)
-            } else if let title = element.title {
-                insertSegment(withTitle: title, at: index, animated: true)
-            }
-        }
-        
-        UIView.setAnimationsEnabled(true)
-        
-        selectSegment(index: viewModel?.selectedIndex)
+    // TODO: Improve this, make it reusable and also refactor VerifyPhoneNumberInteractor debounce logic and TouchSpamPreventer if needed.
+    @objc func indexChanged(_ sender: UISegmentedControl) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        perform(#selector(changeValue), with: self, afterDelay: Presets.Delay.short.rawValue)
     }
     
-    func selectSegment(index: Int?) {
-        if let index = index {
-            viewModel?.selectedIndex = index
-            selectedSegmentIndex = index
-        } else {
-            viewModel?.selectedIndex = nil
-            selectedSegmentIndex = UISegmentedControl.noSegment
-        }
+    @objc private func changeValue() {
+        didChangeValue?(selectedSegmentIndex)
+    }
+    
+    override init(items: [Any]?) {
+        super.init(items: items)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

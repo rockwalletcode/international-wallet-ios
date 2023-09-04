@@ -129,7 +129,7 @@ class BaseExchangeTableViewController<C: CoordinatableRoutes,
     }
     
     func tableView(_ tableView: UITableView, segmentControlCellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: WrapperTableViewCell<FESegmentControl> = tableView.dequeueReusableCell(for: indexPath),
+        guard let cell: WrapperTableViewCell<SegmentControl> = tableView.dequeueReusableCell(for: indexPath),
               let model = dataSource?.itemIdentifier(for: indexPath) as? SegmentControlViewModel else {
             return UITableViewCell()
         }
