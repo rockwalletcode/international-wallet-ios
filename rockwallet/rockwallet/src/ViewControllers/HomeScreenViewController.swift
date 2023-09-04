@@ -10,8 +10,9 @@ import Combine
 import UIKit
 import SnapKit
 import Lottie
+import WebKit
 
-class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
+class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, WKNavigationDelegate {
     private let walletAuthenticator: WalletAuthenticator
     private let notificationHandler = NotificationHandler()
     private let coreSystem: CoreSystem
@@ -97,6 +98,11 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private lazy var launchExchange: FEButton = {
         let view = FEButton()
+        return view
+    }()
+    
+    private lazy var webView: WKWebView = {
+        let view = WKWebView()
         return view
     }()
     
@@ -250,7 +256,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             promptContainerScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
             promptContainerScrollView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: Margins.medium.rawValue),
             promptContainerScrollView.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
-
+        
         promptContainerStack.constrain([
             promptContainerStack.leadingAnchor.constraint(equalTo: promptContainerScrollView.leadingAnchor),
             promptContainerStack.trailingAnchor.constraint(equalTo: promptContainerScrollView.trailingAnchor),
@@ -465,7 +471,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
                                 rate: rate)
             return amount.fiatValue
         }.reduce(0.0, +)
-
+        
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
         totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
@@ -511,8 +517,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         let model = PopupViewModel(body: text,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
-            DynamicLinksManager.handleDynamicLink(dynamicLink: URL(string: Constant.oauth2DeepLink))
-            self?.getRedirectUri()
+            self?.handleWebViewRedirects()
             self?.hidePopup()
         })])
         
@@ -535,5 +540,27 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
                 print(error)
             }
         }
+    }
+    func handleWebViewRedirects() {
+        webView.navigationDelegate = self
+        guard let url = URL(string: Constant.tradeSignInLink) else { return }
+        
+        webView.load(URLRequest(url: url))
+        LoadingView.show()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation) {
+        guard webView.url?.absoluteString == Constant.tradeSignInLink else {
+            LoadingView.hideIfNeeded()
+            DynamicLinksManager.handleDynamicLink(dynamicLink: webView.url)
+            getRedirectUri()
+            return
+        }
+        // make auto tap on web view login button
+        let scriptSource = "document.getElementsByTagName('button')[0].click()"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + Presets.Delay.long.rawValue, execute: {
+            webView.evaluateJavaScript(scriptSource, completionHandler: nil)
+        })
     }
 }
