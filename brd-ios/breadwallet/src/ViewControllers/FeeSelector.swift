@@ -127,7 +127,8 @@ class FeeSelector: UIView {
     private func setupSegmentControl() {
         control.configure(with: .init(font: Fonts.Body.two,
                                       normal: .init(backgroundColor: LightColors.Background.two, tintColor: LightColors.Text.two, border: nil),
-                                      selected: .init(backgroundColor: LightColors.Text.two, tintColor: LightColors.Contrast.two, border: nil)))
+                                      selected: .init(backgroundColor: LightColors.Text.two, tintColor: LightColors.Contrast.two, border: nil),
+                                      inset: .init(x: Margins.small.rawValue, y: Margins.small.rawValue)))
         control.setup(with: .init(selectedIndex: defaultPriority,
                                   segments: [.init(image: nil, title: L10n.FeeSelector.economy),
                                              .init(image: nil, title: L10n.FeeSelector.regular),
