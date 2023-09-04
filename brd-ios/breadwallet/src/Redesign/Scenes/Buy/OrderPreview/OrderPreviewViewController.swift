@@ -78,7 +78,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
     }
     
     func tableView(_ tableView: UITableView, segmentControlCellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: WrapperTableViewCell<FESegmentControl> = tableView.dequeueReusableCell(for: indexPath),
+        guard let cell: WrapperTableViewCell<SegmentControl> = tableView.dequeueReusableCell(for: indexPath),
               let model = dataSource?.itemIdentifier(for: indexPath) as? SegmentControlViewModel else {
             return UITableViewCell()
         }
@@ -97,7 +97,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
     
     private func setSegment(_ segment: Int) {
         guard let section = sections.firstIndex(where: { $0.hashValue == Models.Section.achSegment.hashValue }),
-              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<FESegmentControl> else { return }
+              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<SegmentControl> else { return }
         cell.wrappedView.selectSegment(index: segment)
         
         interactor?.changeAchDeliveryType(viewAction: .init(achDeliveryType: Models.AchDeliveryType.allCases[segment]))
