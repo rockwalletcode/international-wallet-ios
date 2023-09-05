@@ -21,3 +21,23 @@ class Debounce<T: Equatable> {
         }
     }
 }
+
+class DebouncePerformRequests: NSObject {
+    static let shared = DebouncePerformRequests()
+    
+    typealias Completion = () -> Void
+    private var action: Completion?
+    
+    private override init() {}
+    
+    func input(target: Any, completion: (() -> Void)?) {
+        self.action = completion
+        
+        NSObject.cancelPreviousPerformRequests(withTarget: target)
+        perform(#selector(didAction), with: target, afterDelay: Presets.Delay.short.rawValue)
+    }
+    
+    @objc func didAction() {
+        self.action?()
+    }
+}
