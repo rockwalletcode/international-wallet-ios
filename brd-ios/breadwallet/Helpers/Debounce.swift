@@ -26,18 +26,18 @@ class DebouncePerformRequests: NSObject {
     static let shared = DebouncePerformRequests()
     
     typealias Completion = () -> Void
-    private var action: Completion?
+    private var completion: Completion?
     
     private override init() {}
     
     func input(target: Any, completion: (() -> Void)?) {
-        self.action = completion
+        self.completion = completion
         
         NSObject.cancelPreviousPerformRequests(withTarget: target)
         perform(#selector(didAction), with: target, afterDelay: Presets.Delay.short.rawValue)
     }
     
     @objc func didAction() {
-        self.action?()
+        self.completion?()
     }
 }
