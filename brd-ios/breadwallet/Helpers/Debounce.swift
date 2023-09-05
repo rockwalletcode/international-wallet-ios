@@ -9,7 +9,7 @@
 //
 
 import Foundation
-
+ 
 class Debounce<T: Equatable> {
     private init() {}
     
