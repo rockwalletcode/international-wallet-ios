@@ -17,8 +17,6 @@ class VerifyPhoneNumberInteractor: NSObject, Interactor, VerifyPhoneNumberViewAc
     var presenter: VerifyPhoneNumberPresenter?
     var dataStore: VerifyPhoneNumberStore?
     
-    private var debounceTimer: Timer?
-    
     // MARK: - VerifyPhoneNumberViewActions
     
     func getData(viewAction: FetchModels.Get.ViewAction) {
@@ -35,10 +33,9 @@ class VerifyPhoneNumberInteractor: NSObject, Interactor, VerifyPhoneNumberViewAc
         let phoneNumberKit = PhoneNumberKit()
         let isValid = phoneNumberKit.isValidPhoneNumber((dataStore?.country?.areaCode ?? "") + (dataStore?.phoneNumber ?? ""))
         
-        debounceTimer?.invalidate()
-        debounceTimer = Timer.scheduledTimer(withTimeInterval: Presets.Delay.long.rawValue, repeats: false) { [weak self] _ in
+        Debounce<String>.input(dataStore?.phoneNumber ?? "", comparedAgainst: self.dataStore?.phoneNumber ?? "") { [weak self] _ in
             guard !isValid && self?.dataStore?.phoneNumber.isNilOrEmpty == false else { return }
-            self?.presenter?.presentError(actionResponse: .init(error: GeneralError(errorMessage: "Please enter a valid phone number")))
+            self?.presenter?.presentError(actionResponse: .init(error: GeneralError(errorMessage: L10n.VerifyPhoneNumber.Number.invalid)))
         }
         
         presenter?.presentValidate(actionResponse: .init(isValid: isValid))
