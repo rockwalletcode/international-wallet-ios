@@ -130,14 +130,10 @@ private final class FESegmentControl: UISegmentedControl {
         addTarget(self, action: #selector(indexChanged), for: .valueChanged)
     }
     
-    // TODO: Improve this, make it reusable and also refactor VerifyPhoneNumberInteractor debounce logic and TouchSpamPreventer if needed.
     @objc func indexChanged(_ sender: UISegmentedControl) {
-        NSObject.cancelPreviousPerformRequests(withTarget: self)
-        perform(#selector(changeValue), with: self, afterDelay: Presets.Delay.short.rawValue)
-    }
-    
-    @objc private func changeValue() {
-        didChangeValue?(selectedSegmentIndex)
+        DebouncePerformRequests.shared.input(target: self, completion: { [weak self] in
+            self?.didChangeValue?(self?.selectedSegmentIndex ?? 0)
+        })
     }
     
     override init(items: [Any]?) {

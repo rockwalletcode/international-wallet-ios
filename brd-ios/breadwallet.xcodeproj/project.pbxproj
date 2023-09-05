@@ -64,6 +64,7 @@
 		0452C93E29D4310100CCC8DA /* VeriffKYCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452C93D29D4310100CCC8DA /* VeriffKYCManager.swift */; };
 		0453B0BC29D22BF100BBE246 /* GoogleTagManager in Frameworks */ = {isa = PBXBuildFile; productRef = 0453B0BB29D22BF100BBE246 /* GoogleTagManager */; };
 		0453B0C029D2DEB100BBE246 /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453B0BF29D2DEB100BBE246 /* GoogleAnalytics.swift */; };
+		04575B862AA71A2A0057E42A /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04575B852AA71A2A0057E42A /* Debounce.swift */; };
 		045B5EF829B099CE00C25CB8 /* BiometricStatusWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B5EF729B099CE00C25CB8 /* BiometricStatusWorker.swift */; };
 		0486949A2A16388D004EDDBA /* TwoStepModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048694992A16388D004EDDBA /* TwoStepModels.swift */; };
 		0486949C2A1638E5004EDDBA /* TwoStepVIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486949B2A1638E5004EDDBA /* TwoStepVIP.swift */; };
@@ -950,6 +951,7 @@
 		0452C93429D42FC600CCC8DA /* WalletEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletEndpoints.swift; sourceTree = "<group>"; };
 		0452C93D29D4310100CCC8DA /* VeriffKYCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeriffKYCManager.swift; sourceTree = "<group>"; };
 		0453B0BF29D2DEB100BBE246 /* GoogleAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalytics.swift; sourceTree = "<group>"; };
+		04575B852AA71A2A0057E42A /* Debounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
 		045B5EF729B099CE00C25CB8 /* BiometricStatusWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricStatusWorker.swift; sourceTree = "<group>"; };
 		048694992A16388D004EDDBA /* TwoStepModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoStepModels.swift; sourceTree = "<group>"; };
 		0486949B2A1638E5004EDDBA /* TwoStepVIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoStepVIP.swift; sourceTree = "<group>"; };
@@ -2837,6 +2839,7 @@
 				CE8CD8DC1E2D9EF200785E02 /* Sender.swift */,
 				7B54E57327F4A2B0002DD1E4 /* Shadowable.swift */,
 				7B8FAF00299B898D002EB972 /* TouchSpamPreventer.swift */,
+				04575B852AA71A2A0057E42A /* Debounce.swift */,
 				0453B0BF29D2DEB100BBE246 /* GoogleAnalytics.swift */,
 				7B62ACFA28B3BDA000CE81E7 /* String+Chunk.swift */,
 				7ECCA99628742E1700F99368 /* UIApplication+ActiveWindow.swift */,
@@ -4324,6 +4327,7 @@
 				7B39478A297000ED007D405E /* ForgotPasswordInteractor.swift in Sources */,
 				C46C2902287EBF4F0035C843 /* BaseInfoViewController.swift in Sources */,
 				CE5E6C961EB8CCF500A476DB /* SimpleWebViewController.swift in Sources */,
+				04575B862AA71A2A0057E42A /* Debounce.swift in Sources */,
 				7E5CB3A42835090E00EC787E /* StateDisplayable.swift in Sources */,
 				044D09A529C8561A00C510DC /* PhoneNumberView.swift in Sources */,
 				CE4B6C1A1E219CA600CF935B /* RescanCoordinator.swift in Sources */,

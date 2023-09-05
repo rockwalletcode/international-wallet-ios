@@ -3672,6 +3672,8 @@
 
 "VerifyPhoneNumber.instructions" = "We take security seriously. Providing a valid phone number lets us send you verification codes and account alerts to keep your wallet safe.";
 
+"VerifyPhoneNumber.Number.invalid" = "Please enter a valid phone number";
+
 "VerifyPhoneNumber.phoneNumber.title" = "Phone number";
 
 "VerifyPhoneNumber.sms.changeNumber" = "Change my phone number";
