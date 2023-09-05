@@ -6331,7 +6331,7 @@
 			repositoryURL = "https://github.com/rockwalletcode/sardine-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.2;
+				version = 1.0.25;
 			};
 		};
 		044D098029C3352400C510DC /* XCRemoteSwiftPackageReference "frames-ios" */ = {

@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rockwalletcode/sardine-ios.git",
       "state" : {
-        "revision" : "77f943e9a7c2b0b855ecd6d9b4907315bf2942d8",
-        "version" : "1.0.2"
+        "revision" : "9e3d6f7c68e3df9d617681fd3f7753f4b80f64d1",
+        "version" : "1.0.25"
       }
     },
     {
