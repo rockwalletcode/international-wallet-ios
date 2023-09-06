@@ -43,7 +43,7 @@ final class ProfilePresenter: NSObject, Presenter, ProfileActionResponses {
     
     func presentVerificationInfo(actionResponse: ProfileModels.VerificationInfo.ActionResponse) {
         let title = actionResponse.verified ? L10n.Account.verifiedAccountTitle : L10n.Account.whyVerify
-        let body = actionResponse.verified ? L10n.Account.verifiedAccountText : L10n.Account.verifyAccountText
+        let body = actionResponse.verified ? L10n.Account.verifiedAccountTextInternational : L10n.Account.verifyAccountTextInternational
         
         let model = PopupViewModel(title: .text(title),
                                    body: body)

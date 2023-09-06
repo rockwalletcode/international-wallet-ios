@@ -276,12 +276,16 @@
 
 "Account.VerifiedAccountText" = "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
+"Account.VerifiedAccountTextInternational" = "You now have access to: ↩︎ \n・Unlimited deposits ↩︎ \n・Enhanced security ↩︎ \n・Full asset support";
+
 "Account.VerifiedAccountTitle" = "Your account is verified!";
 
 "Account.VerifyAccountDescription" = "Verification helps keep your funds and information secure and ensures we comply with regulations.";
 
 /* Verify account text in popup */
 "Account.VerifyAccountText" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
+
+"Account.VerifyAccountTextInternational" = "If you verify your identity, you are given access to: ↩︎ \n・Unlimited deposits ↩︎ \n・Enhanced security ↩︎ \n・Full asset support";
 
 "Account.VerifyAccountTitle" = "Verify your identity to get full access to your RockWallet!";
 

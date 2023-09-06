@@ -5,7 +5,7 @@
 "About.blog" = "블로그";
 
 /* About screen footer */
-"About.footer" = "글로벌 BRD 팀 제작. 버전 %s 빌드 %s";
+"About.footer" = "글로벌 BRD 팀 제작. 버전 %@ 빌드 %@";
 
 /* Privay Policy button label */
 "About.privacy" = "개인정보 보호정책";
@@ -128,7 +128,7 @@
 "Account.EnterYourPhoneNumberSubtitle" = "To ensure that you can access all the features of our app, we need to collect your phone number. We\'ll keep your information safe and won\'t share it with anyone";
 
 /* $10000 per BTC */
-"Account.exchangeRate" = "%s 당 %s";
+"Account.exchangeRate" = "%@ 당 %@";
 
 "Account.explanationSSN" = "We are required to verify the identity of all our users to comply with regulations.\n\nThat is why we need to collect your Social Security Number (SSN). We take the security and privacy of your personal information seriously, and use it only for the purposes of identity verification and compliance. This process will have no impact on your credit score.";
 
@@ -253,7 +253,7 @@
 
 "Account.VeriffPrivacyPolicy" = "Veriff’s Privacy Policy";
 
-"Account.VeriffTerms" = "Your session audio and video may be recorded.\nRead more from %s";
+"Account.VeriffTerms" = "Your session audio and video may be recorded.\nRead more from %@";
 
 /* You need to be at least 18 years old to complete Level 1 verification label in verify account */
 "Account.Verification" = "You need to be at least 18 years old to complete Level 1 verification";
@@ -276,6 +276,8 @@
 
 "Account.VerifiedAccountText" = "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
+"Account.VerifiedAccountTextInternational" = "You now have access to: ↩︎ \n・Unlimited deposits ↩︎ \n・Enhanced security ↩︎ \n・Full asset support";
+
 "Account.VerifiedAccountTitle" = "Your account is verified!";
 
 "Account.VerifyAccountDescription" = "Verification helps keep your funds and information secure and ensures we comply with regulations.Verify your account by clicking 'Profile' then 'Verification'.";
@@ -283,12 +285,14 @@
 /* Verify account text in popup */
 "Account.VerifyAccountText" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
+"Account.VerifyAccountTextInternational" = "If you verify your identity, you are given access to: ↩︎ \n・Unlimited deposits ↩︎ \n・Enhanced security ↩︎ \n・Full asset support";
+
 "Account.VerifyAccountTitle" = "To start using 'Swap' or 'Buy', your wallet must be verified.";
 
 /* Enter and verify your email address for your account label in registration flow */
 "Account.VerifyEmail" = "Enter and verify your new email address for your RockWallet account.";
 
-"Account.VerifyIdentity" = "We need to verify your identity before you can %s assets.";
+"Account.VerifyIdentity" = "We need to verify your identity before you can %@ assets.";
 
 "Account.VerifyIdentityByVeriff" = "RockWallet would like to confirm your identity, a process is powered by Veriff.";
 
@@ -329,7 +333,7 @@
 "AccountCreation.creating" = "계정 만들기";
 
 /* Enter the code message in create account flow */
-"AccountCreation.EnterCode" = "Enter the code we\’ve sent to:\n%s";
+"AccountCreation.EnterCode" = "Enter the code we\’ve sent to:\n%@";
 
 "AccountCreation.EnterCode.android" = "Enter the code we\’ve sent to:\n%@";
 
@@ -396,7 +400,7 @@
 "AccountKYCLevelTwo.BiometricsVerified" = "Biometrics verified";
 
 /* Buy limits on KYC2 account */
-"AccountKYCLevelTwo.BuyLimits" = "Buy limits: $%s USD/day, no lifetime limit";
+"AccountKYCLevelTwo.BuyLimits" = "Buy limits: $%@ USD/day, no lifetime limit";
 
 /* Capture back page of the document text */
 "AccountKYCLevelTwo.CaptureBackPage" = "Make sure to capture the entire back page of the document.";
@@ -450,7 +454,7 @@
 "AccountKYCLevelTwo.LevelTwo" = "Level 2";
 
 /* Swap limits on KYC2 account */
-"AccountKYCLevelTwo.Limits" = "Swap limits: $%s USD/day, no lifetime limit";
+"AccountKYCLevelTwo.Limits" = "Swap limits: $%@ USD/day, no lifetime limit";
 
 /* Make sure before photo label in KYC2 */
 "AccountKYCLevelTwo.MakeSure" = "Make sure you are in a well-lit room";
@@ -650,10 +654,10 @@
 "BackupCodes.Title" = "Backup codes";
 
 /* Send BCH view body. */
-"BCH.body" = "아래의 목적지 BCH 주소를 입력하세요. 분기 시점(%s)에 귀하의 월렛에 있는 모든 BCH를 보냅니다.";
+"BCH.body" = "아래의 목적지 BCH 주소를 입력하세요. 분기 시점(%@)에 귀하의 월렛에 있는 모든 BCH를 보냅니다.";
 
 /* Confirm sending <$5.00> to <address>? */
-"BCH.confirmationMessage" = "%s를 %s(으)로 보내기를 확인";
+"BCH.confirmationMessage" = "%@를 %@(으)로 보내기를 확인";
 
 /* Confirmation alert title */
 "BCH.confirmationTitle" = "확정";
@@ -691,7 +695,7 @@
 "BitID.approve" = "승인";
 
 /* <sitename> is requesting authentication using your bitcoin wallet */
-"BitID.authenticationRequest" = "%s(이)가 귀하의 비트코인 월렛 이용에 대한 인증을 요청하고 있습니다.";
+"BitID.authenticationRequest" = "%@(이)가 귀하의 비트코인 월렛 이용에 대한 인증을 요청하고 있습니다.";
 
 /* Deny button label */
 "BitID.deny" = "거부";
@@ -834,7 +838,7 @@
 
 "Buy.Ach.Instant.ConfirmationDrawer.ConfirmAction" = "Confirm purchase";
 
-"Buy.Ach.Instant.ConfirmationDrawer.Description" = "$%s assets will settle immediately.";
+"Buy.Ach.Instant.ConfirmationDrawer.Description" = "$%@ assets will settle immediately.";
 
 "Buy.Ach.Instant.ConfirmationDrawer.Notice" = "Instant purchase";
 
@@ -844,13 +848,13 @@
 
 "Buy.Ach.Instant.Fee.Title" = "Instant Buy fee";
 
-"Buy.Ach.Instant.HybridConfirmationDrawer" = "With Instant buy, %s (%s) will show in your account instantly. The remaining %s (%s) will arrive in 3-5 days.";
+"Buy.Ach.Instant.HybridConfirmationDrawer" = "With Instant buy, %@ (%@) will show in your account instantly. The remaining %@ (%@) will arrive in 3-5 days.";
 
-"Buy.Ach.Instant.InfoButtonTitle" = "Receive up to %s instantly";
+"Buy.Ach.Instant.InfoButtonTitle" = "Receive up to %@ instantly";
 
-"Buy.Ach.Instant.OrderPreview.HybridNotice" = "With Instant Buy, %s will be settled immediately. Remaining %s will settle in 3-5 days.";
+"Buy.Ach.Instant.OrderPreview.HybridNotice" = "With Instant Buy, %@ will be settled immediately. Remaining %@ will settle in 3-5 days.";
 
-"Buy.Ach.Instant.OrderPreview.Notice" = "With Instant Buy, %s will be settled immediately.";
+"Buy.Ach.Instant.OrderPreview.Notice" = "With Instant Buy, %@ will be settled immediately.";
 
 "Buy.Ach.Instant.PopupContent" = "Instant Buy via ACH is a fast and convenient way to purchase digital assets using funds from your bank account. The instant portion of your transaction will show in your account within seconds!";
 
@@ -864,9 +868,9 @@
 
 "Buy.Ach.NotAvailableTitle" = "Sorry! This feature is unavailable";
 
-"Buy.Ach.WalletDisabled" = "%s needs to be enabled in your wallet first. Kindly enable it %s, or by selecting 'Manage assets' on the home screen.";
+"Buy.Ach.WalletDisabled" = "%@ needs to be enabled in your wallet first. Kindly enable it %@, or by selecting 'Manage assets' on the home screen.";
 
-"Buy.Ach.WalletDisabled.android" = "%s needs to be enabled in your wallet first. You can enable it %s, or by selecting %s on the home screen.";
+"Buy.Ach.WalletDisabled.android" = "%@ needs to be enabled in your wallet first. You can enable it %@, or by selecting %@ on the home screen.";
 
 "Buy.Ach.WalletDisabled.Link" = "here";
 
@@ -876,7 +880,7 @@
 
 "Buy.achFee" = "ACH fee (%@)";
 
-"Buy.achLimits" = "Currently, minimum for buying with ACH is %s USD and maximum is %s USD per day. At the moment lifetime limit is %s USD.";
+"Buy.achLimits" = "Currently, minimum for buying with ACH is %@ USD and maximum is %@ USD per day. At the moment lifetime limit is %@ USD.";
 
 "Buy.achPaymentDurationWarning" = "ACH payments usually take 3-5 days. Funds may take a few days to be debited from your account.";
 
@@ -917,9 +921,9 @@
 "Buy.BuyLimits.android" = "Currently, minimum for Buy is $30.00 USD and maximum is $500.00 USD per day.";
 
 /* Buy min and max limit text */
-"Buy.BuyLimits.description" = "Currently, minimum for Buy is %s USD and maximum is %s USD per day.  %s";
+"Buy.BuyLimits.description" = "Currently, minimum for Buy is %@ USD and maximum is %@ USD per day.  %@";
 
-"Buy.BuyLimits.description.android" = "Minimum for Buy is %s per transaction and your weekly limit is %s.";
+"Buy.BuyLimits.description.android" = "Minimum for Buy is %@ per transaction and your weekly limit is %@.";
 
 "Buy.BuyLimits.Increase" = "Click on increase your limits button below if you would like to further increase your limits.";
 
@@ -1041,7 +1045,7 @@
 
 "Buy.relinkBankAccount" = "Re-link bank account";
 
-"Buy.RemoveCard" = "Are you sure you want to remove card ending in %s?";
+"Buy.RemoveCard" = "Are you sure you want to remove card ending in %@?";
 
 /* You will no longer be able to use it to buy assets description on removing card dialog */
 "Buy.RemoveCardOption" = "You will no longer be able to use it to buy assets.";
@@ -1065,7 +1069,7 @@
 
 "Buy.switchedToDebitCard" = "Payment method switched to Debit card!";
 
-"Buy.Terms.description" = "By placing this order you agree to our %s";
+"Buy.Terms.description" = "By placing this order you agree to our %@";
 
 "Buy.TransactionError" = "Transaction error";
 
@@ -1074,7 +1078,7 @@
 /* Try a different payment method button title in failure buy screen */
 "Buy.TryAnotherPayment" = "Try a different payment method";
 
-"Buy.txHashHeader" = "%s Transaction ID";
+"Buy.txHashHeader" = "%@ Transaction ID";
 
 "Buy.understandAndAgree" = "I understand and agree";
 
@@ -1140,7 +1144,7 @@
 
 "CloudBackup.mainWarningConfirmation" = "iCloud 백업을 비활성화 하시겠습니까? 모든 장치에서 백업이 삭제됩니다.";
 
-"CloudBackup.pinAttempts" = "백업을 지우기 전에 남은 시도 : %s";
+"CloudBackup.pinAttempts" = "백업을 지우기 전에 남은 시도 : %@";
 
 "CloudBackup.recoverButton" = "복구 키에서 복원";
 
@@ -1162,7 +1166,7 @@
 
 "CloudBackup.understandText" = "iCloud 키 체인이 활성화되지 않으면이 기능이 작동하지 않음을 이해합니다.";
 
-"CloudBackup.warningBody" = "잘못된 PIN 시도를 %s 더 시도하면 iCloud 백업이 삭제됩니다.";
+"CloudBackup.warningBody" = "잘못된 PIN 시도를 %@ 더 시도하면 iCloud 백업이 삭제됩니다.";
 
 "ComingSoon.body" = "Buy and Swap aren't currently available in your state. We'll notify you when you can use these features.\n\nYou can still safely send and receive digital assets to your wallet in the meantime.";
 
@@ -1203,9 +1207,9 @@
 "Confirmation.hederaMemo" = "헤 데라 메모";
 
 /* eg. Processing time: This transaction is predicted to complete in [10-60 minutes]. */
-"Confirmation.processingTime" = "처리 시간: 이 거래는 %s에 완료될 것으로 예상됩니다.";
+"Confirmation.processingTime" = "처리 시간: 이 거래는 %@에 완료될 것으로 예상됩니다.";
 
-"Confirmation.processingTime.android" = "Estimated delivery time: %s";
+"Confirmation.processingTime.android" = "Estimated delivery time: %@";
 
 /* Label for "send" button on final confirmation screen */
 "Confirmation.send" = "보내기";
@@ -1235,7 +1239,7 @@
 "ConfirmPaperPhrase.label" = "모든 것이 올바르게 기록되었는지 확인하려면 복구 문구에서 다음 단어를 입력하십시오.";
 
 /* Word label eg. Word #1, Word #2 */
-"ConfirmPaperPhrase.word" = "단어 #%s";
+"ConfirmPaperPhrase.word" = "단어 #%@";
 
 "ConfirmPaperPhrase.word.android" = "Word %1$s%2$s";
 
@@ -1297,16 +1301,16 @@
 "Drawer.title" = "Buy / Sell";
 
 /* Share address by e-mail subject */
-"Email.address_subject" = "%s 주소";
+"Email.address_subject" = "%@ 주소";
 
 /* Service capabilities description */
-"EME.permissions.accountRequest" = "%s 계정 정보를 요청합니다";
+"EME.permissions.accountRequest" = "%@ 계정 정보를 요청합니다";
 
 /* Service capabilities description */
-"EME.permissions.callRequest" = "%s 스마트계약 콜을 요청합니다";
+"EME.permissions.callRequest" = "%@ 스마트계약 콜을 요청합니다";
 
 /* Service capabilities description */
-"EME.permissions.paymentRequest" = "%s 계정 정보를 요청합니다";
+"EME.permissions.paymentRequest" = "%@ 계정 정보를 요청합니다";
 
 "ErrorMessages.accessDenied" = "You cannot purchase assets without completing Level 2 account verification. Upgrade your limits on the Profile screen.";
 
@@ -1319,17 +1323,17 @@
 "ErrorMessages.Ach.InsufficientFunds" = "Unfortunately the transaction could not be completed due to insufficient funds in your bank account. Please try again later";
 
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
-"ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %s %s. Please enter a lower amount.";
+"ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
 
 /* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
-"ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %s %s. Please enter a higher amount.";
+"ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %@ %@. Please enter a higher amount.";
 
 "ErrorMessages.appNotInstalled" = "You don\'t have an app installed to complete this action.";
 
 "ErrorMessages.authorizationFailed" = "Card authorization failed. Please contact your credit card issuer/bank or try another card.";
 
 /* Accepts 3 parameters:, - currency code, - current balance, - (same) currency code */
-"ErrorMessages.balanceTooLow" = "You need %s %s in your wallet to cover network fees. Please add more %s to your wallet.";
+"ErrorMessages.balanceTooLow" = "You need %@ %@ in your wallet to cover network fees. Please add more %@ to your wallet.";
 
 "ErrorMessages.cardRequiresPurchase" = "Prior to initiating any withdrawals to your visa debit, please complete a purchase with this card for validation purposes. Buy with card";
 
@@ -1345,14 +1349,14 @@
 "ErrorMessages.emailUnavailableTitle" = "이메일 사용불가";
 
 /* Not enough ETH for transaction fee */
-"ErrorMessages.ethBalanceLowAddEth" = "%s is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
+"ErrorMessages.ethBalanceLowAddEth" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
 
 /* Not enough ETH for transaction fee */
-"ErrorMessages.ethBalanceLowAddEthWithAmount" = "%s is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
+"ErrorMessages.ethBalanceLowAddEthWithAmount" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
 
 "ErrorMessages.Exchange.xrpMinimumReserve" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
-"ErrorMessages.exchangeFailed" = "Swap failed. Reason: %s.";
+"ErrorMessages.exchangeFailed" = "Swap failed. Reason: %@.";
 
 "ErrorMessages.ExchangeQuoteFailed" = "We are currently having issues making a swap between this pair of coins. Please try again later.";
 
@@ -1390,9 +1394,9 @@
 "ErrorMessages.noFees" = "Failed to fetch network fees. Please try again later.";
 
 /* Accepts 2 parameters:, - first currency code, - second currency code */
-"ErrorMessages.noQuoteForPair" = "No quote for currency pair %s-%s.";
+"ErrorMessages.noQuoteForPair" = "No quote for currency pair %@-%@.";
 
-"ErrorMessages.notEnoughBalance" = "You don’t have enough %s in your wallet in order to transfer this type of token.";
+"ErrorMessages.notEnoughBalance" = "You don’t have enough %@ in your wallet in order to transfer this type of token.";
 
 "ErrorMessages.notEnoughBalanceXRP" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
@@ -1453,7 +1457,7 @@
 "ExportTransfers.header" = "수출 거래?";
 
 /* You can customize your Face ID Spending Limit from the [menu] */
-"FaceIDSettings.customizeText" = "%s에서 페이스 ID 지출 한도를 사용자 설정할 수 있습니다.";
+"FaceIDSettings.customizeText" = "%@에서 페이스 ID 지출 한도를 사용자 설정할 수 있습니다.";
 
 /* Text describing the purpose of the Face ID settings in the BRD app. */
 "FaceIDSettings.explanatoryText" = "페이스 아이디로 BRD 앱을 잠금 해제하고 송금하세요.";
@@ -1497,12 +1501,12 @@
 "FeeSelector.economyWarning" = "이 옵션은 시간에 민감한 거래에는 추천하지 않습니다.";
 
 /* E.g. Estimated delivery: 10-60 minutes */
-"FeeSelector.estimatedDeliver" = "예상 배송 시간: %s";
+"FeeSelector.estimatedDeliver" = "예상 배송 시간: %@";
 
 /* [This transaction will complete in] 2-5 minutes */
 "FeeSelector.ethTime" = "2-5분";
 
-"FeeSelector.lessThanMinutes" = "<%s 분";
+"FeeSelector.lessThanMinutes" = "<%@ 분";
 
 /* Priority fee */
 "FeeSelector.priority" = "우선 순위";
@@ -1569,7 +1573,7 @@
 "Import.checking" = "개인 열쇠 잔고 확인 중...";
 
 /* Sweep private key confirmation message */
-"Import.confirm" = "이 개인 열쇠로부터 귀하의 지갑으로 %s 를 보낼까요? 비트코인 네트워크가 %s의 수수료를 받게 됩니다.";
+"Import.confirm" = "이 개인 열쇠로부터 귀하의 지갑으로 %@ 를 보낼까요? 비트코인 네트워크가 %@의 수수료를 받게 됩니다.";
 
 /* Duplicate key error message */
 "Import.Error.duplicate" = "이 개인 열쇠가 이미 귀하의 지갑에 있습니다.";
@@ -1691,10 +1695,10 @@
 /* No permissions for location services */
 "LocationPlugin.notAuthorized" = "BRD가 위치 서비스 접속 권한이 없습니다.";
 
-"LoginController.invalidPinError" = "Incorrect PIN. The wallet will get disabled after %d more failed %s.";
+"LoginController.invalidPinError" = "Incorrect PIN. The wallet will get disabled after %d more failed %@.";
 
 /* Wallet creation date prefix */
-"ManageWallet.creationDatePrefix" = "귀하께서는 %s 에 지갑을 만들었습니다";
+"ManageWallet.creationDatePrefix" = "귀하께서는 %@ 에 지갑을 만들었습니다";
 
 /* Manage wallet description text */
 "ManageWallet.description" = "귀하의 지갑 이름은 귀하 계정의 거래 기록에서만 나타나며 다른 사람은 볼 수 없습니다.";
@@ -1858,7 +1862,7 @@
 /* Onboarding screen Page 2 title */
 "OnboardingPageTwo.title" = "BRD를 신뢰하는 전 세계 수백만 명과 함께 하십시오.";
 
-"PaymailAddress.CopyMessage" = "Paymail address %s copied to clipboard";
+"PaymailAddress.CopyMessage" = "Paymail address %@ copied to clipboard";
 
 "PaymailAddress.createAddressDescription" = "To enable quick BSV transfers you can create your unique Paymail address.";
 
@@ -1885,7 +1889,7 @@
 "PaymailAddress.yourPaymailAddress" = "Your Paymail address:";
 
 /* Eg. Send 1.0Eth to purchase CCC */
-"PaymentConfirmation.amountText" = "%s 구매를 위해 %s 전송";
+"PaymentConfirmation.amountText" = "%@ 구매를 위해 %@ 전송";
 
 /* Payment expired message */
 "PaymentConfirmation.PaymentExpired" = "The payment has expired due to inactivity. Please try again with the same card, or use a different card.";
@@ -1921,10 +1925,10 @@
 "PaymentProtocol.Errors.smallOutputError" = "결제를 할 수 없습니다";
 
 /* Amount too small error message */
-"PaymentProtocol.Errors.smallPayment" = "비트코인 결제는 %s 보다 작을 수 없습니다.";
+"PaymentProtocol.Errors.smallPayment" = "비트코인 결제는 %@ 보다 작을 수 없습니다.";
 
 /* Output too small error message. */
-"PaymentProtocol.Errors.smallTransaction" = "비트코인 거래 출력들은 %s보다 작을 수 없습니다.";
+"PaymentProtocol.Errors.smallTransaction" = "비트코인 거래 출력들은 %@보다 작을 수 없습니다.";
 
 /* Unsupported signature type payment protocol error message */
 "PaymentProtocol.Errors.unsupportedSignatureType" = "지원되지 않는 서명 형태";
@@ -2201,7 +2205,7 @@
 "RecoveryKeyFlow.HelpPopup.title" = "What is “Recovery Phrase”?";
 
 /* Hint text for recovery key intro page, e.g., Step 2 */
-"RecoveryKeyFlow.howItWorksStep" = "작동 원리 - %s 단계";
+"RecoveryKeyFlow.howItWorksStep" = "작동 원리 - %@ 단계";
 
 /* Error text displayed when the user enters an incorrect recovery phrase */
 "RecoveryKeyFlow.invalidPhrase" = "입력 한 단어 중 일부가 복구 문구와 일치하지 않습니다. 다시 시도하십시오.";
@@ -2285,7 +2289,7 @@
 "RecoveryKeyFlow.writeKeyScreenTitle" = "복구 문구";
 
 /* Title for the step number when the user pages through the recovery words */
-"RecoveryKeyFlow.writeKeyStepTitle" = "%s 중 %s";
+"RecoveryKeyFlow.writeKeyStepTitle" = "%@ 중 %@";
 
 "RecoveryKeyFlow.WritePhrase.subtitle" = "Save your 12 word Recovery Phrase generated  in the next step.";
 
@@ -2365,7 +2369,7 @@
 "Scanner.noCamera" = "No camera found";
 
 /* (alert dialog message) Would you like to send a [Bitcoin / Bitcoin Cash / Ethereum] payment to this address?") */
-"Scanner.paymentPromptMessage" = "이 주소로 %s 지불금을 보내시겠습니까?";
+"Scanner.paymentPromptMessage" = "이 주소로 %@ 지불금을 보내시겠습니까?";
 
 /* alert dialog title */
 "Scanner.paymentPromptTitle" = "지불 보내기";
@@ -2440,7 +2444,7 @@
 
 "Sell.details" = "Sell & Withdraw details";
 
-"Sell.disclaimer" = "Minimum withdrawal is %s and maximum is %s per day. At the moment your lifetime limit is %s USD.\n\nACH Withdrawals will be processed within 3-5 business days.withdrawal";
+"Sell.disclaimer" = "Minimum withdrawal is %@ and maximum is %@ per day. At the moment your lifetime limit is %@ USD.\n\nACH Withdrawals will be processed within 3-5 business days.withdrawal";
 
 "Sell.InvalidCardNumber" = "Only Visa Debit is supported for withdrawals";
 
@@ -2498,7 +2502,7 @@
 "Send.amountLabel" = "금액";
 
 /* Balance: $4.00 */
-"Send.balance" = "잔액: %s";
+"Send.balance" = "잔액: %@";
 
 /* Balance: $4.00 for iOS, the balance can't have a parameter */
 "Send.balanceString" = "잔액:";
@@ -2553,11 +2557,11 @@
 "Send.ethSendSelf" = "자신에게는 보낼 수 없습니다.";
 
 /* Network Fee: $0.01 */
-"Send.fee" = "네트워크 비용: %s";
+"Send.fee" = "네트워크 비용: %@";
 
 "Send.fio_invalid" = "잘못된 FIO 주소입니다.";
 
-"Send.fio_noAddress" = "이 FIO 주소와 연결된 %s 주소가 없습니다.";
+"Send.fio_noAddress" = "이 FIO 주소와 연결된 %@ 주소가 없습니다.";
 
 "Send.fio_retrievalError" = "이 FIO 주소에 대한 주소를 검색하는 중에 오류가 발생했습니다. 나중에 다시 시도하십시오.";
 
@@ -2570,16 +2574,16 @@
 /* Insufficient gas error */
 "Send.insufficientGas" = "Insufficient gas.";
 
-"Send.insufficientGasMessage" = "You must have at least %s in your wallet in order to send this digital asset. Please add more %s to your wallet and try again.";
+"Send.insufficientGasMessage" = "You must have at least %@ in your wallet in order to send this digital asset. Please add more %@ to your wallet and try again.";
 
 /* Your balance is insufficient to complete this action. */
-"Send.insufficientGasTitle" = "Insufficient %s Balance";
+"Send.insufficientGasTitle" = "Insufficient %@ Balance";
 
 /* e.g. The destination is not a valid (bitcoin) address. */
-"Send.invalidAddressMessage" = "해당 수취인 주소는 %s에서 유효하지 않은 주소입니다.";
+"Send.invalidAddressMessage" = "해당 수취인 주소는 %@에서 유효하지 않은 주소입니다.";
 
 /* Invalid address on pasteboard message */
-"Send.invalidAddressOnPasteboard" = "클립보드가 유효한 %s 주소를 가지고 있지 않습니다";
+"Send.invalidAddressOnPasteboard" = "클립보드가 유효한 %@ 주소를 가지고 있지 않습니다";
 
 /* Invalid address alert title */
 "Send.invalidAddressTitle" = "유효하지 않은 주소입니다";
@@ -2618,7 +2622,7 @@
 "Send.payId_invalid" = "잘못된 PayID입니다.";
 
 /* Error message for no address associated with a PayID for a given currency */
-"Send.payId_noAddress" = "이 PayID와 연결된 %s 주소가 없습니다.";
+"Send.payId_noAddress" = "이 PayID와 연결된 %@ 주소가 없습니다.";
 
 /* Error message for error in retrieving the address from the PayID endpoint */
 "Send.payId_retrievalError" = "이 PayID의 주소를 검색하는 중에 오류가 발생했습니다. 나중에 다시 시도하십시오.";
@@ -2698,7 +2702,7 @@
 "Settings.currency" = "통화 보기";
 
 /* e.g. "USD Settings" (settings for how USD is handled) */
-"Settings.currencyPageTitle" = "%s 설정";
+"Settings.currencyPageTitle" = "%@ 설정";
 
 /* Section title for a collection of different settings screens, one for each currency */
 "Settings.currencySettings" = "통화 설정";
@@ -2818,7 +2822,7 @@
 /* Baker cell: Fee field header */
 "Staking.feeHeader" = "회비:";
 
-"Staking.feePct" = "Fee: %s";
+"Staking.feePct" = "Fee: %@";
 
 "Staking.loadingBakerError" = "An error occurred while loading baker information. Please try again later.";
 
@@ -2848,7 +2852,7 @@
 /* Staking banner title */
 "Staking.stakingTitle" = "스테이 킹";
 
-"Staking.stakingTo" = "%s 스테이 킹";
+"Staking.stakingTo" = "%@ 스테이 킹";
 
 "Staking.statusPending" = "보류 중";
 
@@ -2865,7 +2869,7 @@
 /* Tezos XTZ baker asset type */
 "Staking.tezosOnly" = "Tezos 전용";
 
-"Staking.title" = "%s 지분";
+"Staking.title" = "%@ 지분";
 
 "Staking.unstake" = "언 스테이크";
 
@@ -2884,7 +2888,7 @@
 "StartPaperPhrase.buttonTitle" = "복구 문구 기록";
 
 /* Argument is date; date should be on a new line */
-"StartPaperPhrase.date" = "마지막 기록 \n %s";
+"StartPaperPhrase.date" = "마지막 기록 \n %@";
 
 /* button label */
 "StartViewController.createButton" = "새 지갑 생성하기";
@@ -2914,7 +2918,7 @@
 "Swap.BackToHome" = "Back to Home";
 
 /* Balance text on swap */
-"Swap.Balance" = "I have %s %s";
+"Swap.Balance" = "I have %@ %@";
 
 "Swap.CardFee" = "Card fee:";
 
@@ -2976,12 +2980,12 @@
 "Swap.SwapLimit" = "Swap limits";
 
 /* Swap min and max limit text */
-"Swap.SwapLimits" = "Currently, minimum for Swap is %s USD and maximum is %s USD/day.";
+"Swap.SwapLimits" = "Currently, minimum for Swap is %@ USD and maximum is %@ USD/day.";
 
-"Swap.Swapping" = "Swapping %s to %s";
+"Swap.Swapping" = "Swapping %@ to %@";
 
 /* Swap status message on swap flow */
-"Swap.SwapStatus" = "Your %s is estimated to arrive in 30 minutes. You can continue to use your wallet. We'll let you know when your swap has finished.";
+"Swap.SwapStatus" = "Your %@ is estimated to arrive in 30 minutes. You can continue to use your wallet. We'll let you know when your swap has finished.";
 
 "Swap.temporarilyUnavailable" = "Swap is temporarily unavailable";
 
@@ -2991,14 +2995,14 @@
 /* Total label in swap details screen */
 "Swap.Total" = "Total:";
 
-"Swap.transactionFrom" = "From %s";
+"Swap.transactionFrom" = "From %@";
 
 /* Transaction ID label in swap details screen */
 "Swap.TransactionID" = "RockWallet Transaction ID";
 
 "Swap.transactionInEthereumNetwork" = "It seems that your transaction takes place in the Ethereum network, please keep in mind that network fees will be charged in ETH";
 
-"Swap.transactionTo" = "To %s";
+"Swap.transactionTo" = "To %@";
 
 "Swap.youReceive" = "You'll receive";
 
@@ -3020,22 +3024,22 @@
 "SyncingView.retry" = "다시 시도";
 
 /* "eg. Synced through <Jan 12, 2015> */
-"SyncingView.syncedThrough" = "%s 전 동기화 됨";
+"SyncingView.syncedThrough" = "%@ 전 동기화 됨";
 
 /* Syncing view syncing state header text */
 "SyncingView.syncing" = "동기화 중";
 
 /* 6 d (6 days) */
-"TimeSince.days" = "%s 일";
+"TimeSince.days" = "%@ 일";
 
 /* 6 h (6 hours) */
-"TimeSince.hours" = "%s 시";
+"TimeSince.hours" = "%@ 시";
 
 /* 6 m (6 minutes) */
-"TimeSince.minutes" = "%s 분";
+"TimeSince.minutes" = "%@ 분";
 
 /* 6 s (6 seconds) */
-"TimeSince.seconds" = "%s 초";
+"TimeSince.seconds" = "%@ 초";
 
 "Title.AutoEnterPin" = "Auto-enter PIN";
 
@@ -3077,7 +3081,7 @@
 "TokenList.show" = "보기";
 
 /* You can customize your Touch ID Spending Limit from the [TouchIdSettings.linkText gets added here as a button] */
-"TouchIdSettings.customizeText" = "%s에서 ???????????.";
+"TouchIdSettings.customizeText" = "%@에서 ???????????.";
 
 /* Fingerprint enabling description body */
 "TouchIdSettings.customizeText.android" = "지문 본인확인 시간 제한 화면에서 귀하의 지문 본인확인 사용 한계를 설정하실 수 있습니다";
@@ -3098,7 +3102,7 @@
 "TouchIdSettings.linkText" = "터치 ID 지불 한도 화면";
 
 /* Spending Limit: b100,000 ($100) */
-"TouchIdSettings.spendingLimit" = "지불 한도: %s (%s)";
+"TouchIdSettings.spendingLimit" = "지불 한도: %@ (%@)";
 
 /* Touch id switch label. */
 "TouchIdSettings.switchLabel" = "브레드에서";
@@ -3146,7 +3150,7 @@
 "Transaction.confirming" = "진행 중";
 
 /* eg. Ending balance: $50.00 */
-"Transaction.ending" = "기말 잔액: %s";
+"Transaction.ending" = "기말 잔액: %@";
 
 /* Exchange rate on date header */
 "Transaction.exchangeOnDayReceived" = "받을 때의 환율:";
@@ -3165,9 +3169,9 @@
 "Transaction.FailedWithdrawWithInstantBuy" = "Failed purchase with Instant Buy";
 
 /* (b600 fee) */
-"Transaction.fee" = "(%s 수수료)";
+"Transaction.fee" = "(%@ 수수료)";
 
-"Transaction.HybridPart" = "- %s/2";
+"Transaction.HybridPart" = "- %@/2";
 
 /* Invalid transaction */
 "Transaction.invalid" = "무효";
@@ -3211,43 +3215,43 @@
 "Transaction.PurchaseFailedWithInstantAch" = "Purchase with Instant Buy failed";
 
 /* Receive status text: 'In progress: 20%' */
-"Transaction.receivedStatus" = "진행 중: %s";
+"Transaction.receivedStatus" = "진행 중: %@";
 
 "Transaction.refunded" = "Refunded";
 
 /* Send status text: 'In progress: 20%' */
-"Transaction.sendingStatus" = "진행 중: %s";
+"Transaction.sendingStatus" = "진행 중: %@";
 
 /* sending to <address> */
-"Transaction.sendingTo" = "%s으로 보내기";
+"Transaction.sendingTo" = "%@으로 보내기";
 
 /* sent to <address> */
-"Transaction.sentTo" = "%s으로 전송되었습니다";
+"Transaction.sentTo" = "%@으로 전송되었습니다";
 
-"Transaction.stakingTo" = "%s 스테이 킹";
+"Transaction.stakingTo" = "%@ 스테이 킹";
 
 /* eg. Starting balance: $50.00 */
-"Transaction.starting" = "기초 잔액: %s";
+"Transaction.starting" = "기초 잔액: %@";
 
-"Transaction.swapFromFailed" = "Swap from %s failed";
+"Transaction.swapFromFailed" = "Swap from %@ failed";
 
 /* Swapped transaction label */
 "Transaction.Swapped" = "Swapped";
 
-"Transaction.swappedFrom" = "Swapped from %s";
+"Transaction.swappedFrom" = "Swapped from %@";
 
-"Transaction.swappedTo" = "Swapped to %s";
+"Transaction.swappedTo" = "Swapped to %@";
 
-"Transaction.swappingFrom" = "Swapping from %s";
+"Transaction.swappingFrom" = "Swapping from %@";
 
-"Transaction.swappingTo" = "Swapping to %s";
+"Transaction.swappingTo" = "Swapping to %@";
 
-"Transaction.swapToFailed" = "Swap to %s failed";
+"Transaction.swapToFailed" = "Swap to %@ failed";
 
 /* e.g. "[The money you paid was a] Fee for token transfer: BRD" (BRD is the token that was transfered) */
-"Transaction.tokenTransfer" = "토큰 송금 수수료: %s";
+"Transaction.tokenTransfer" = "토큰 송금 수수료: %@";
 
-"Transaction.toRecipient" = "%s";
+"Transaction.toRecipient" = "%@";
 
 /* Waiting to be confirmed string */
 "Transaction.waiting" = "확인 대기 중. 일부 판매자는 트랜잭션을 완료하기 위해 확인을 요구합니다. 예상 소요 시간: 1~2시간.";
@@ -3280,10 +3284,10 @@
 "TransactionDetails.amountHeader" = "금액";
 
 /* "(it was worth) $100 when sent, (and it is worth) $200 now" */
-"TransactionDetails.amountWhenReceived" = "받았을 때 %s, 지금은 %s";
+"TransactionDetails.amountWhenReceived" = "받았을 때 %@, 지금은 %@";
 
 /* "(it was worth) $100 when sent, (and it is worth) $200 now" */
-"TransactionDetails.amountWhenSent" = "전송 시 %s, 현재 %s";
+"TransactionDetails.amountWhenSent" = "전송 시 %@, 현재 %@";
 
 /* Block height label */
 "TransactionDetails.blockHeightLabel" = "차단 확인";
@@ -3317,7 +3321,7 @@
 "TransactionDetails.feeHeader" = "비용 합계";
 
 /* "Received [$5] at [which of my addresses]" => This is the "at [which of my addresses]" part. */
-"TransactionDetails.from" = "%s에서";
+"TransactionDetails.from" = "%@에서";
 
 /* Tx detail field header */
 "TransactionDetails.gasLimitHeader" = "Gas Limit";
@@ -3327,7 +3331,7 @@
 
 "TransactionDetails.gift" = "선물";
 
-"TransactionDetails.giftedTo" = "%s 에게 선물 함";
+"TransactionDetails.giftedTo" = "%@ 에게 선물 함";
 
 /* Label for Hedera Memo field on transaction details screen */
 "TransactionDetails.hederaMemo" = "헤 데라 메모";
@@ -3342,41 +3346,41 @@
 "TransactionDetails.more" = "그 이상...";
 
 /* Moved $5.00 (as in "I moved $5 to another location") */
-"TransactionDetails.moved" = "%s 이동함";
+"TransactionDetails.moved" = "%@ 이동함";
 
 /* Moved $5.00 */
-"TransactionDetails.movedAmountDescription" = "<b>%s</b> 이동됨";
+"TransactionDetails.movedAmountDescription" = "<b>%@</b> 이동됨";
 
 /* eg. Confirmed in Block: Not Confirmed */
 "TransactionDetails.notConfirmedBlockHeightLabel" = "확인되지 않음";
 
 /* "Received [$5] at [which of my addresses]" => This is the "Received [$5]" part. */
-"TransactionDetails.received" = "%s 받음";
+"TransactionDetails.received" = "%@ 받음";
 
 /* Received $5.00 */
-"TransactionDetails.receivedAmountDescription" = "<b>%s</b> 수신됨";
+"TransactionDetails.receivedAmountDescription" = "<b>%@</b> 수신됨";
 
 /* received from <address> */
-"TransactionDetails.receivedFrom" = "%s(으)로부터 받음";
+"TransactionDetails.receivedFrom" = "%@(으)로부터 받음";
 
 /* received via <address> */
-"TransactionDetails.receivedVia" = "%s으로 수취 됨";
+"TransactionDetails.receivedVia" = "%@으로 수취 됨";
 
 /* receiving from <address> */
-"TransactionDetails.receivingFrom" = "%s(으)로부터 받는 중";
+"TransactionDetails.receivingFrom" = "%@(으)로부터 받는 중";
 
 /* receiving via <address> */
-"TransactionDetails.receivingVia" = "%s으로 수취 중";
+"TransactionDetails.receivingVia" = "%@으로 수취 중";
 
 "TransactionDetails.reclaim" = "개심";
 
 "TransactionDetails.resend" = "재전송";
 
 /* "Sent [$5] to [address]" => This is the "Sent [$5]" part. */
-"TransactionDetails.sent" = "%s 보냄";
+"TransactionDetails.sent" = "%@ 보냄";
 
 /* Sent $5.00 */
-"TransactionDetails.sentAmountDescription" = "<b>%s</b> 전송됨";
+"TransactionDetails.sentAmountDescription" = "<b>%@</b> 전송됨";
 
 /* Show Details button */
 "TransactionDetails.showDetails" = "세부 정보 보이기";
@@ -3409,7 +3413,7 @@
 "TransactionDetails.titleSent" = "전송됨";
 
 /* "Sent [$5] to [address]" => This is the "to [address]" part. */
-"TransactionDetails.to" = "%s에게";
+"TransactionDetails.to" = "%@에게";
 
 /* Tx detail field header */
 "TransactionDetails.totalHeader" = "합계";
@@ -3459,9 +3463,9 @@
 
 "TwoStep.Email.Confirmation.Title" = "We’ve sent you a code";
 
-"TwoStep.Error.Attempt" = "Invalid code. You have %s more attempt, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
+"TwoStep.Error.Attempt" = "Invalid code. You have %@ more attempt, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
 
-"TwoStep.Error.Attempts" = "Invalid code. You have %s more attempts, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
+"TwoStep.Error.Attempts" = "Invalid code. You have %@ more attempts, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
 
 "TwoStep.getBackupCodesTitle" = "";
 
@@ -3518,7 +3522,7 @@
 "UDomains.invalid" = "Invalid address.";
 
 /* Disabled until date */
-"UnlockScreen.disabled" = "다음 기간까지 비활성화됨: %s";
+"UnlockScreen.disabled" = "다음 기간까지 비활성화됨: %@";
 
 /* Unlock with FaceID accessibility label */
 "UnlockScreen.faceIdText" = "페이스 ID로 잠금 해제";
@@ -3678,7 +3682,7 @@
 
 "VerifyPhoneNumber.sms.changeNumber" = "Change my phone number";
 
-"VerifyPhoneNumber.sms.instructions" = "Enter the security code we’ve sent to:\n%s";
+"VerifyPhoneNumber.sms.instructions" = "Enter the security code we’ve sent to:\n%@";
 
 "VerifyPhoneNumber.sms.title" = "We’ve sent you an SMS";
 
@@ -3893,7 +3897,7 @@
 "WritePaperPhrase.previous" = "이전";
 
 /* 1 of 3 */
-"WritePaperPhrase.step" = "%s의 %s";
+"WritePaperPhrase.step" = "%@의 %@";
 
 "WritePaperPhrase.warning" = "For security purposes, do not screenshot or email these words.";
 
