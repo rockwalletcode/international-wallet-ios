@@ -28,9 +28,9 @@ struct InfoViewConfiguration: Configurable {
     var title: LabelConfiguration?
     var description: LabelConfiguration?
     
-    var swapLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: LightColors.Text.two)
-    var buyLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: LightColors.Text.two)
-    var sellLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: LightColors.Text.two)
+    var swapLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: Colors.Text.two)
+    var buyLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: Colors.Text.two)
+    var sellLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: Colors.Text.two)
     
     var swapLimitsValue: TitleValueConfiguration = Presets.TitleValue.bold
     var buyDailyLimitsView: TitleValueConfiguration = Presets.TitleValue.bold

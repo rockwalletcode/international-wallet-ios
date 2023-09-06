@@ -411,14 +411,14 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
         }
         
         let balanceLabelattributes: [NSAttributedString.Key: Any] = [.font: Fonts.Body.two,
-                                                                     .foregroundColor: LightColors.Text.two
+                                                                     .foregroundColor: Colors.Text.two
         ]
         
         var balanceAttributes: [NSAttributedString.Key: Any] = [.font: Fonts.Subtitle.two,
-                                                                .foregroundColor: LightColors.Text.two]
+                                                                .foregroundColor: Colors.Text.two]
         
         let feeAttributes: [NSAttributedString.Key: Any] = [.font: Fonts.Body.two,
-                                                            .foregroundColor: LightColors.Text.two
+                                                            .foregroundColor: Colors.Text.two
         ]
         
         let balanceOutput = NSMutableAttributedString()

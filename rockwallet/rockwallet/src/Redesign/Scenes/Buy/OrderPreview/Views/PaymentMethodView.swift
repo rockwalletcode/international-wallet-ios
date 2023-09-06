@@ -11,7 +11,7 @@
 import UIKit
 
 struct PaymentMethodConfiguration: Configurable {
-    var title: LabelConfiguration? = .init(font: Fonts.Body.two, textColor: LightColors.Text.two)
+    var title: LabelConfiguration? = .init(font: Fonts.Body.two, textColor: Colors.Text.two)
     var cvvTitle: TitleValueConfiguration? = Presets.TitleValue.small
     var shadow: ShadowConfiguration?
     var background: BackgroundConfiguration?

@@ -12,8 +12,8 @@ import UIKit
 
 struct SegmentControlConfiguration: Configurable {
     var font: UIFont = Fonts.button
-    var normal: BackgroundConfiguration = .init(backgroundColor: LightColors.Background.cards, tintColor: LightColors.primary)
-    var selected: BackgroundConfiguration = .init(backgroundColor: LightColors.primary, tintColor: LightColors.Contrast.two)
+    var normal: BackgroundConfiguration = .init(backgroundColor: Colors.Background.cards, tintColor: Colors.primary)
+    var selected: BackgroundConfiguration = .init(backgroundColor: Colors.primary, tintColor: Colors.Contrast.two)
     var inset: CGPoint = CGPoint(x: 10, y: 10)
 }
 

@@ -63,7 +63,7 @@ final class AddCardPresenter: NSObject, Presenter, AddCardActionResponses {
             let visaCheck = fromCardWithdrawal && input.first != "4"
             bankCardInputDetailsViewModel.number?.hint = visaCheck ? L10n.Sell.invalidCardNumber : nil
             bankCardInputDetailsViewModel.number?.displayState = visaCheck ? .error : .selected
-            bankCardInputDetailsViewModel.number?.trailing = visaCheck ? .image(Asset.warning.image.tinted(with: LightColors.Error.one)) : nil
+            bankCardInputDetailsViewModel.number?.trailing = visaCheck ? .image(Asset.warning.image.tinted(with: Colors.Error.one)) : nil
         } else {
             bankCardInputDetailsViewModel.number?.hint = nil
             bankCardInputDetailsViewModel.number?.displayState = .normal

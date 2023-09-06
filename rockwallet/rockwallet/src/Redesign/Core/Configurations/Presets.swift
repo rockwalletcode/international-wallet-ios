@@ -201,11 +201,11 @@ extension Presets {
                                                                    border: Presets.Border.mediumPlain),
                                                  shadow: Presets.Shadow.zero)
         
-        static var tickbox = InfoViewConfiguration(title: .init(font: Fonts.Subtitle.three, textColor: LightColors.Text.one),
-                                                   description: .init(font: Fonts.Body.two, textColor: LightColors.Text.one),
+        static var tickbox = InfoViewConfiguration(title: .init(font: Fonts.Subtitle.three, textColor: Colors.Text.one),
+                                                   description: .init(font: Fonts.Body.two, textColor: Colors.Text.one),
                                                    button: Presets.Button.noBorders,
-                                                   tickboxItem: .init(title: .init(font: Fonts.Body.two, textColor: LightColors.Text.three)),
-                                                   background: .init(backgroundColor: LightColors.Background.three,
+                                                   tickboxItem: .init(title: .init(font: Fonts.Body.two, textColor: Colors.Text.three)),
+                                                   background: .init(backgroundColor: Colors.Background.three,
                                                                      border: Presets.Border.commonPlain),
                                                    shadow: Presets.Shadow.zero)
     }

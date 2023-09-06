@@ -58,10 +58,10 @@ class FeeSelector: UIView {
     var didUpdateFee: ((FeeLevel) -> Void)?
 
     private let currency: Currency
-    private let topBorder = UIView(color: LightColors.Outline.one)
-    private let header = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.two)
-    private let footer = UILabel(font: Fonts.Body.three, color: LightColors.Text.two)
-    private let warning = UILabel.wrapping(font: Fonts.Body.three, color: LightColors.Error.one)
+    private let topBorder = UIView(color: Colors.Outline.one)
+    private let header = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.two)
+    private let footer = UILabel(font: Fonts.Body.three, color: Colors.Text.two)
+    private let warning = UILabel.wrapping(font: Fonts.Body.three, color: Colors.Error.one)
     private let control = SegmentControl()
     
     private func setupViews() {
@@ -126,8 +126,8 @@ class FeeSelector: UIView {
     
     private func setupSegmentControl() {
         control.configure(with: .init(font: Fonts.Body.two,
-                                      normal: .init(backgroundColor: LightColors.Background.two, tintColor: LightColors.Text.two, border: nil),
-                                      selected: .init(backgroundColor: LightColors.Text.two, tintColor: LightColors.Contrast.two, border: nil),
+                                      normal: .init(backgroundColor: Colors.Background.two, tintColor: Colors.Text.two, border: nil),
+                                      selected: .init(backgroundColor: Colors.Text.two, tintColor: Colors.Contrast.two, border: nil),
                                       inset: .init(x: Margins.small.rawValue, y: Margins.small.rawValue)))
         control.setup(with: .init(selectedIndex: defaultPriority,
                                   segments: [.init(image: nil, title: L10n.FeeSelector.economy),

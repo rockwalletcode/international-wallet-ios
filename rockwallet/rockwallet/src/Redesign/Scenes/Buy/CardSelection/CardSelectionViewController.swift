@@ -114,7 +114,7 @@ class CardSelectionViewController: ItemSelectionViewController {
             
             let maxRange = NSRange(location: 0, length: unverifiedCardText.mutableString.length)
             unverifiedCardText.addAttribute(.font, value: Fonts.Body.three, range: maxRange)
-            unverifiedCardText.addAttribute(.foregroundColor, value: LightColors.Error.one, range: maxRange)
+            unverifiedCardText.addAttribute(.foregroundColor, value: Colors.Error.one, range: maxRange)
             
             let boldRange = unverifiedCardText.mutableString.range(of: L10n.Buy.buyWithCard.capitalizingFirstLetter())
             unverifiedCardText.addAttribute(.font, value: Fonts.Subtitle.three, range: boldRange)

@@ -85,8 +85,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         return view
     }()
     
-    private lazy var segmentControl: FESegmentControl = {
-        let view = FESegmentControl()
+    private lazy var segmentControl: SegmentControl = {
+        let view = SegmentControl()
         return view
     }()
     
@@ -164,7 +164,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         super.viewWillAppear(animated)
         
         pullToRefreshControl.endRefreshing()
-        animationView.animation = Animations.buyAndSell.animation
         
         segmentControl.isHidden = UserManager.shared.profile == nil
         
