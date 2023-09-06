@@ -1,35 +1,35 @@
 /* App name */
-"About.appName.android" = "RockWallet";
+"About.appName.android" = "BRD";
 
 /* About screen blog label */
-"About.blog" = "Blog";
+"About.blog" = "ブログ";
 
 /* About screen footer */
-"About.footer" = "Made by the global RockWallet team.\nVersion %@ Build %@";
+"About.footer" = "グローバルブレッドチームによって開発されました。バージョン %@ビルド%@";
 
 /* Privay Policy button label */
-"About.privacy" = "Privacy Policy";
+"About.privacy" = "プライバシーポリシー";
 
 /* About screen reddit label */
-"About.reddit" = "Reddit";
+"About.reddit" = "Reddit（レディット）";
 
 /* Terms of Use button label */
-"About.terms" = "Terms And Conditions";
+"About.terms" = "利用規約";
 
 /* About screen title */
-"About.title" = "About";
+"About.title" = "概要";
 
 /* About screen twitter label */
 "About.twitter" = "Twitter";
 
 /* About screen wallet ID label */
-"About.walletID" = "RockWallet Rewards ID";
+"About.walletID" = "BRDリワードID";
 
 /* Close modal button accessibility label */
-"AccessibilityLabels.close" = "Close";
+"AccessibilityLabels.close" = "閉じる";
 
 /* Support center accessibiliy label */
-"AccessibilityLabels.faq" = "Support Center";
+"AccessibilityLabels.faq" = "サポートセンター";
 
 "Account.2FA.pasteFollowingCodeInAuthApp" = "Paste the following code in your authenticator app.";
 
@@ -52,7 +52,7 @@
 "Account.Attempts" = "attempts";
 
 /* Account balance */
-"Account.balance" = "Your balance";
+"Account.balance" = "残高";
 
 /* Before confirm photo label in create account screen */
 "Account.BeforeConfirm" = "Before you confirm, please:";
@@ -128,7 +128,7 @@
 "Account.EnterYourPhoneNumberSubtitle" = "To ensure that you can access all the features of our app, we need to collect your phone number. We\'ll keep your information safe and won\'t share it with anyone";
 
 /* $10000 per BTC */
-"Account.exchangeRate" = "%@ per %@";
+"Account.exchangeRate" = "%@あたり%@";
 
 "Account.explanationSSN" = "We are required to verify the identity of all our users to comply with regulations.\n\nThat is why we need to collect your Social Security Number (SSN). We take the security and privacy of your personal information seriously, and use it only for the purposes of identity verification and compliance. This process will have no impact on your credit score.";
 
@@ -160,11 +160,11 @@
 "Account.Lifetime" = "Lifetime";
 
 /* Loading Wallet Message */
-"Account.loadingMessage" = "Loading Wallet";
+"Account.loadingMessage" = "ウォレット読み込み中";
 
 "Account.Logout" = "Log out";
 
-"Account.LogoutMessage" = "You’ve been successfully logged out of your RockWallet account. Your self-custodial wallet is still linked to this device.";
+"Account.LogoutMessage" = "You’ve been successfully logged out you RockWallet account. Your self-custodial wallet is still linked to this device.";
 
 "Account.MandatoryFields" = "(*)Mandatory Fields";
 
@@ -173,7 +173,7 @@
 
 "Account.Minimum" = "Minimum";
 
-"Account.MissingDataPromptText" = "Please fill in the missing information to use your RockWallet seamlessly.";
+"Account.MissingDataPromptText" = "Please fill in the missing information  to use your RockWallet seamlessly.";
 
 "Account.MissingDataPromptTitle" = "Add the missing information";
 
@@ -199,7 +199,7 @@
 "Account.PostalCode" = "Postal Code*";
 
 /* Promotion and offers label when registering account */
-"Account.Promotion" = "I'm ok with receiving future promotion, offers and communications";
+"Account.Promotion" = "I'm ok with receiving future promotion, offers, and communications";
 
 "Account.PromotionsTickbox" = "I’m ok with receiving future promotion, offers and communications";
 
@@ -231,7 +231,7 @@
 
 "Account.SocialSecurityNumber" = "Social Security Number";
 
-"Account.SocialSecurityNumberRequired" = "Social Security Number*";
+"Account.SocialSecurityNumberRequired" = "Social security number*";
 
 "Account.StartUsingWallet" = "Now let’s start with using your RockWallet.";
 
@@ -267,7 +267,7 @@
 
 "Account.VerificationUnsuccessful" = "We're sorry, your verification was unsuccessful";
 
-"Account.VerificationUnsuccessful.description" = "Please try your verification again, while keeping the following in mind:\n\n・ Please ensure the area is well-lit\n・ Please ensure you are centered in the frame";
+"Account.VerificationUnsuccessful.description" = "Please try your verification again, while keeping the following in mind:\n\n- Please ensure the area is well-lit\n- Please ensure you are centered in the frame";
 
 "Account.Verified" = "Verified";
 
@@ -280,14 +280,14 @@
 
 "Account.VerifiedAccountTitle" = "Your account is verified!";
 
-"Account.VerifyAccountDescription" = "Verification helps keep your funds and information secure and ensures we comply with regulations.";
+"Account.VerifyAccountDescription" = "Verification helps keep your funds and information secure and ensures we comply with regulations.Verify your account by clicking 'Profile' then 'Verification'.";
 
 /* Verify account text in popup */
 "Account.VerifyAccountText" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
 "Account.VerifyAccountTextInternational" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support";
 
-"Account.VerifyAccountTitle" = "Verify your identity to get full access to your RockWallet!";
+"Account.VerifyAccountTitle" = "To start using 'Swap' or 'Buy', your wallet must be verified.";
 
 /* Enter and verify your email address for your account label in registration flow */
 "Account.VerifyEmail" = "Enter and verify your new email address for your RockWallet account.";
@@ -318,7 +318,7 @@
 "Account.WriteYourName" = "Write your name as it appears on your ID";
 
 /* Confirm Account Creation mesage body */
-"AccountCreation.body" = "Only create a Hedera account if you intend on storing HBAR in your wallet.";
+"AccountCreation.body" = "HBARをウォレットに保管する場合にのみ、Hederaアカウントを作成してください。";
 
 /* Change my email label */
 "AccountCreation.ChangeEmail" = "Change my email";
@@ -327,30 +327,30 @@
 "AccountCreation.CodeSent" = "Verification code sent.";
 
 /* Create Account button label */
-"AccountCreation.create" = "Create Account";
+"AccountCreation.create" = "アカウントを作成する";
 
 /* Creating Account progress Label */
-"AccountCreation.creating" = "Creating Account";
+"AccountCreation.creating" = "アカウントを作成する";
 
 /* Enter the code message in create account flow */
-"AccountCreation.EnterCode" = "Please enter the code we’ve sent to";
+"AccountCreation.EnterCode" = "Enter the code we\’ve sent to:\n%@";
 
 "AccountCreation.EnterCode.android" = "Enter the code we\’ve sent to:\n%@";
 
 /* Creating Account progress Label */
-"AccountCreation.error" = "An error occurred during account creation. Please try again later.";
+"AccountCreation.error" = "アカウントの作成中にエラーが発生しました。後でもう一度やり直してください。";
 
 /* Not Now button label. */
-"AccountCreation.notNow" = "Not Now";
+"AccountCreation.notNow" = "今はやめろ";
 
 /* Re-send my code label */
 "AccountCreation.ResendCode" = "Resend my code";
 
 /* Creating Account progress Label */
-"AccountCreation.timeout" = "The Request timed out. Please try again later.";
+"AccountCreation.timeout" = "要求がタイムアウトしました。後でもう一度やり直してください。";
 
 /* Confirm Account Creation Title */
-"AccountCreation.title" = "Confirm Account Creation";
+"AccountCreation.title" = "アカウント作成の確認";
 
 /* Verify your email label */
 "AccountCreation.VerifyEmail" = "Verify your email";
@@ -377,13 +377,13 @@
 "AccountDelete.ExplanationThree" = "-Your private keys are still yours, keep your Recovery Phrase in a safe place in case you need to restore your wallet.";
 
 /* Delete account explanation part two */
-"AccountDelete.ExplanationTwo" = "-You will no longer be able to use your KYC and registration status";
+"AccountDelete.ExplanationTwo" = "-You will no longer be able to user your KYC and registration status";
 
 /* Recover wallet text after deleting account */
 "AccountDelete.RecoverWallet" = "I understand that the only way to recover my wallet is by entering my Recovery Phrase";
 
 /* Default wallet name */
-"AccountHeader.defaultWalletName" = "My RockWallet";
+"AccountHeader.defaultWalletName" = "マイブレッド";
 
 /* Level one title on account screen */
 "AccountKYCLevelOne.LevelOne" = "Level 1";
@@ -457,7 +457,7 @@
 "AccountKYCLevelTwo.Limits" = "Swap limits: $%@ USD/day, no lifetime limit";
 
 /* Make sure before photo label in KYC2 */
-"AccountKYCLevelTwo.MakeSure" = "Make sure you are in a well-lit room.";
+"AccountKYCLevelTwo.MakeSure" = "Make sure you are in a well-lit room";
 
 "AccountKYCLevelTwo.NationalIdCard" = "National ID card";
 
@@ -518,10 +518,10 @@
 "Alert.AccountRestorediCloud" = "Account succesfully restored from Cloud backup";
 
 /* Third party keyboard warning */
-"Alert.customKeyboard.android" = "It looks like you are using a third-party keyboard, which can record what you type and steal your Recovery Phrase. Please switch to the default Android keyboard for extra protection.";
+"Alert.customKeyboard.android" = "サードパーティのキーボードを使用しているようです。キーボードを使用すると、入力内容を記録し、回復フレーズを盗むことができます。保護を強化するには、デフォルトのAndroidキーボードに切り替えてください。";
 
 /* Error alert title */
-"Alert.error" = "Error";
+"Alert.error" = "エラー";
 
 /* Hedera Account succesfully created header alert view */
 "Alert.HederaAccount" = "Hedera Account succesfully created.";
@@ -529,75 +529,75 @@
 "Alert.Important" = "Important note";
 
 /* Keystore error */
-"Alert.keystore.generic.android" = "There is a problem with your Android OS keystore, please contact support@rockwallet.com";
+"Alert.keystore.generic.android" = "Android OSのKeystoreに問題があります。support@rockwallet.com にお問い合わせください。";
 
 /* KeyStore error, keys are invalidated */
-"Alert.keystore.invalidated.android" = "Your RockWallet encrypted data was recently invalidated because your Android lock screen was disabled.";
+"Alert.keystore.invalidated.android" = "お使いのAndroidロック画面が無効にされたため、暗号化されたブレッドのデータはつい最近無効になりました。";
 
 /* Warn user key store data has been invalidate because the user changed their security settings. The user must uninstall. */
-"Alert.keystore.invalidated.uninstall.android" = "We can't proceed because your screen lock settings have been changed (e.g. password was disabled, fingerprints were changed). For security purposes, Android has permanently locked your key store. Therefore, your RockWallet app data must be wiped by uninstalling.\n\nDon’t worry, your funds are still secure! Reinstall the app and recover your wallet using your Recovery Phrase.";
+"Alert.keystore.invalidated.uninstall.android" = "画面ロックの設定が変更されたため、続行できません（例：パスワードが無効になっている、指紋が変更されている）。セキュリティ上の理由から、Androidはキーストアを完全にロックしています。したがって、BRDアプリのデータはアンインストールによってワイプする必要があります。 \n\n心配しないでください、あなたの資金はまだ安全です！アプリを再インストールし、回復フレーズを使用してウォレットを回復します。";
 
 /* Warn user key store data has been invalidate because the user changed their security settings. The user must wipe their app data. */
-"Alert.keystore.invalidated.wipe.android" = "We can't proceed because your screen lock settings have been changed (e.g. password was disabled, fingerprints were changed). For security purposes, Android has permanently locked your key store. Therefore, your RockWallet app data must be wiped.\n\nDon’t worry, your funds are still secure! Recover your wallet using your Recovery Phrase.";
+"Alert.keystore.invalidated.wipe.android" = "画面ロックの設定が変更されたため、続行できません（例：パスワードが無効になっている、指紋が変更されている）。セキュリティ上の理由から、Androidはキーストアを完全にロックしています。したがって、BRDアプリのデータをワイプする必要があります。 \n\n心配しないでください、あなたの資金はまだ安全です！回復フレーズを使用してウォレットを回復します。";
 
 /* Keystore error title */
-"Alert.keystore.title.android" = "Android Key Store Error";
+"Alert.keystore.title.android" = "Android KeyStoreエラー";
 
 /* No internet alert message */
-"Alert.noInternet" = "No internet connection found. Check your connection and try again.";
+"Alert.noInternet" = "インターネット接続が見つかりません。接続を確認してから、もう一度お試しください。";
 
 "Alert.PermissionCamera" = "KYCCamera doesn't have permission to use the camera, please change privacy settings";
 
 /* General error message */
-"Alert.somethingWentWrong" = "Something went wrong. Please try again.";
+"Alert.somethingWentWrong" = "何か問題が生じました。再度お試しください。";
 
 /* Request timed out error message */
-"Alert.timedOut" = "Request timed out. Check your connection and try again.";
+"Alert.timedOut" = "リクエストはタイムアウトしました。接続を確認して、もう一度お試しください。";
 
 "Alert.UnableCapture" = "Unable to capture media";
 
 /* Warning alert title */
-"Alert.warning" = "Warning";
+"Alert.warning" = "警告";
 
 /* 'the addresses were copied'' Alert title */
-"Alerts.copiedAddressesHeader" = "Addresses Copied";
+"Alerts.copiedAddressesHeader" = "アドレスがコピーされました";
 
 /* Addresses Copied Alert sub header */
-"Alerts.copiedAddressesSubheader" = "All wallet addresses successfully copied.";
+"Alerts.copiedAddressesSubheader" = "すべてのウォレットアドレスが正常にコピーされました。";
 
 "Alerts.emailSent" = "Email sent!";
 
 /* Alert Header Label (the paper key was set) */
-"Alerts.paperKeySet" = "Recovery Key Set";
+"Alerts.paperKeySet" = "リカバリフレーズセット";
 
 /* Alert Subheader label (playfully positive) */
-"Alerts.paperKeySetSubheader" = "Awesome!";
+"Alerts.paperKeySetSubheader" = "いいね！";
 
 "Alerts.passwordUpdated" = "Password updated";
 
 "Alerts.phraseConfirmed" = "Success!";
 
 /* Alert Header label (the PIN was set) */
-"Alerts.pinSet" = "PIN successfully set";
+"Alerts.pinSet" = "PINコードのセット";
 
 "Alerts.pinUpdated" = "PIN successfully updated";
 
 /* Send failure alert header label (the send failed to happen) */
-"Alerts.sendFailure" = "Send failed";
+"Alerts.sendFailure" = "送金に失敗しました";
 
 /* Send success alert header label (confirmation that the send happened) */
-"Alerts.sendSuccess" = "Send Confirmation";
+"Alerts.sendSuccess" = "送金のご確認";
 
 /* Send success alert subheader label (e.g. the money was sent) */
-"Alerts.sendSuccessSubheader" = "Money Sent!";
+"Alerts.sendSuccessSubheader" = "送金しました!";
 
 /* Fingerprint was recognized by the scanner */
-"Alerts.touchIdSucceeded.android" = "Fingerprint recognized";
+"Alerts.touchIdSucceeded.android" = "指紋が認識されました";
 
 "Alerts.walletRestored" = "Recovery Phrase correct";
 
 /* Error label on XRP send amount screen */
-"Amount.MinXRPAmount" = "The minimum required amount is 10 XRP.";
+"Amount.MinXRPAmount" = "The minimum required amount is %d XRP.";
 
 "Amount.MinXRPAmount.android" = "The minimum required amount is %d XRP.";
 
@@ -608,25 +608,25 @@
 "Amount.RippleBalanceText" = "Ripple requires each wallet to have a minimum balance of 10 XRP, so the balance displayed here is always 10 XRP less than your actual balance.";
 
 /* Tell the user where they can enable permissions to access device storage. */
-"Android.allowFileSystemAccess" = "Please enable storage permissions in your device settings: \"Settings\" > \"Apps\" > \"RockWallet\" > \"Permissions\".";
+"Android.allowFileSystemAccess" = "お使いのデバイスの設定でストレージの使用を許可して下さい: 「設定」>「アプリ」>「BRD」>「許可」。";
 
 /* The "home" screen is the name of the top level menu for the app. */
-"Android.BCH.welcome.message" = "Any BCH in your wallet can be accessed through the home screen.";
+"Android.BCH.welcome.message" = "お使いのウォレットのBCHには、ホーム画面からアクセスすることができます。";
 
 /* Warning about using apps that can alter the screen */
-"Android.screenAlteringMessage" = "We've detected an app that is incompatible with RockWallet running on your device. For security reasons, please disable any screen altering or light filtering apps to proceed.";
+"Android.screenAlteringMessage" = "画面変更アプリ(例: Twilight) が無効になっていなければ、BRDは正常に動作しません。";
 
 /* An app that alters the screen ("screen-altering app") has been detected. */
-"Android.screenAlteringTitle" = "Screen Altering App Detected";
+"Android.screenAlteringTitle" = "画面変更アプリが検出されました";
 
 /* JSON Serialization error message */
-"ApiClient.jsonError" = "JSON Serialization Error";
+"ApiClient.jsonError" = "JSONシリアル化エラー";
 
 /* Wallet not ready error message */
-"ApiClient.notReady" = "Wallet not ready";
+"ApiClient.notReady" = "ウォレットの準備ができていません";
 
 /* API Token error message */
-"ApiClient.tokenError" = "Unable to retrieve API token";
+"ApiClient.tokenError" = "APIトークンを取得できません";
 
 /* ATM Cash Locatios View Title */
 "ATMMapView.title" = "ATM Cash Locations Map";
@@ -649,18 +649,18 @@
 
 "BackupCodes.getNewCodes" = "Get new codes";
 
-"BackupCodes.instructions" = "Download your backup codes and store them securely. You can use each backup code once, if you’ve already used most of them, you can request a new set of codes.";
+"BackupCodes.instructions" = "Save your backup codes in a secure place. These might be the only way to access your account if you are unable to access your phone or you can’t use your security method";
 
 "BackupCodes.Title" = "Backup codes";
 
 /* Send BCH view body. */
-"BCH.body" = "Enter a destination BCH address below. All BCH in your wallet at the time of the fork (%@) will be sent.";
+"BCH.body" = "送金先のBCHアドレスを入力してください。フォーク時（%@）にウォレット内にあった全てのBCHが送られます。";
 
 /* Confirm sending <$5.00> to <address>? */
-"BCH.confirmationMessage" = "Confirm sending %@ to %@";
+"BCH.confirmationMessage" = "%@を%@に送金することを確認する";
 
 /* Confirmation alert title */
-"BCH.confirmationTitle" = "Confirmation";
+"BCH.confirmationTitle" = "承認";
 
 "BCH.conversionMessage" = "The legacy BCH address has been converted to Cashaddr format.";
 
@@ -671,75 +671,75 @@
 "BCH.errorMessage" = "The BCH address must be in Cashaddr format to send.";
 
 /* Generic bch erorr message */
-"BCH.genericError" = "Your account does not contain any BCH, or you received BCH after the fork.";
+"BCH.genericError" = "アカウントにBCHがない、またはフォークの後にBCHを受け取っています。";
 
 /* Transaction ID copied message */
-"BCH.hashCopiedMessage" = "Transaction ID copied";
+"BCH.hashCopiedMessage" = "トランザクションIDをコピー済み";
 
 /* No address error message */
-"BCH.noAddressError" = "Please enter an address";
+"BCH.noAddressError" = "アドレスを入力してください";
 
 /* Attempted to scan unsupported qr code error message. */
-"BCH.paymentProtocolError" = "Payment Protocol Requests are not supported for BCH transactions";
+"BCH.paymentProtocolError" = "BCHのトランザクションでペイメントプロトコルリクエストはサポートされていません。";
 
 /* BCH successfully sent alert message */
-"BCH.successMessage" = "BCH was successfully sent.";
+"BCH.successMessage" = "BCHの送金に成功しました。";
 
 /* Widthdraw BCH view title */
-"BCH.title" = "Withdraw BCH";
+"BCH.title" = "BCHを引き出す";
 
 /* Tx Hash button header */
-"BCH.txHashHeader" = "BCH Transaction ID";
+"BCH.txHashHeader" = "BCHのトランザクションID";
 
 /* Approve button label */
-"BitID.approve" = "Approve";
+"BitID.approve" = "承認する";
 
 /* <sitename> is requesting authentication using your bitcoin wallet */
-"BitID.authenticationRequest" = "%@ is requesting authentication using your bitcoin wallet";
+"BitID.authenticationRequest" = "%@がビットコインウォレットを使っての認証を求めています";
 
 /* Deny button label */
-"BitID.deny" = "Deny";
+"BitID.deny" = "拒否する";
 
 /* BitID error alert title */
-"BitID.error" = "Authentication Error";
+"BitID.error" = "認証エラー";
 
 /* BitID error alert messaage (The payment service you are trying to use isn't working. Please contact them, as you may need to try again) */
-"BitID.errorMessage" = "Please check with the service. You may need to try again.";
+"BitID.errorMessage" = "決済サービスの確認をしてください。再試行しなければいけない可能性もあります。";
 
 /* BitID success alert title */
-"BitID.success" = "Successfully Authenticated";
+"BitID.success" = "認証成功";
 
 /* BitID Authentication Request alert view title */
-"BitID.title" = "BitID Authentication Request";
+"BitID.title" = "BitID認証リクエスト";
 
 "Button.Back" = "Back";
 
 /* As in "(tap here to) buy (bitcoin)" */
-"Button.buy" = "Buy";
+"Button.buy" = "購入する";
 
 "Button.BuyDigitalAssets" = "Buy digital assets";
 
 /* Cancel button label */
-"Button.cancel" = "Cancel";
+"Button.cancel" = "キャンセル";
 
 /* Close button */
 "Button.close" = "Close";
 
 /* Confirm button title */
-"Button.confirm" = "Confirm";
+"Button.confirm" = "確認";
 
 /* prompt continue button */
-"Button.continueAction" = "Continue";
+"Button.continueAction" = "続行する";
 
 "Button.Convert" = "Convert";
 
 "Button.copy" = "Copy";
 
 /* prompt dismiss button */
-"Button.dismiss" = "Dismiss";
+"Button.dismiss" = "却下する";
 
 /* Done button title */
-"Button.done" = "DONE";
+"Button.done" = "終了";
 
 "Button.Download" = "DOWNLOAD";
 
@@ -754,10 +754,10 @@
 "Button.GoToDashboard" = "Go to dashboard";
 
 /* Button to return to the "home" screen (the home screen is the top menu). */
-"Button.Home" = "Home";
+"Button.Home" = "ホーム";
 
 /* Ignore button label */
-"Button.ignore" = "Ignore";
+"Button.ignore" = "無視する";
 
 "Button.iUnderstand" = "I understand";
 
@@ -769,32 +769,32 @@
 "Button.map" = "Map";
 
 /* Maybe Later button label */
-"Button.maybeLater" = "Maybe Later";
+"Button.maybeLater" = "また後で";
 
 /* menu button */
-"Button.menu" = "Menu";
+"Button.menu" = "メニュー";
 
 /* More information button */
-"Button.moreInfo" = "More info";
+"Button.moreInfo" = "さらなる情報";
 
 "Button.moreLimits" = "More limits";
 
 "Button.next" = "Next";
 
 /* No button */
-"Button.no" = "No";
+"Button.no" = "いいえ";
 
 /* OK button label */
 "Button.ok" = "OK";
 
 /* Open Settings button */
-"Button.openSettings" = "Open Settings";
+"Button.openSettings" = "設定を開く";
 
 /* Profile button title on tab bar */
 "Button.Profile" = "Profile";
 
 /* receive button */
-"Button.receive" = "Receive";
+"Button.receive" = "受取";
 
 "Button.ReceiveDigitalAssets" = "Receive digital assets";
 
@@ -804,34 +804,34 @@
 "Button.search" = "Search";
 
 /* Click this button to sell an asset */
-"Button.sell" = "Sell";
+"Button.sell" = "売る";
 
 /* send button */
-"Button.send" = "Send";
+"Button.send" = "送金する";
 
 /* Settings button label */
-"Button.settings" = "Settings";
+"Button.settings" = "設定";
 
 /* Setup button label */
-"Button.setup" = "Set Up";
+"Button.setup" = "セットアップ";
 
 /* Skip button title */
-"Button.skip" = "Skip";
+"Button.skip" = "スキップ";
 
 /* Settings button label */
-"Button.submit" = "Submit";
+"Button.submit" = "確認";
 
 "Button.TransferFunds" = "TRANSFER FUNDS";
 
 "Button.TryLater" = "Try later";
 
 /* Button label to uninstall the app. */
-"Button.uninstall.android" = "Uninstall";
+"Button.uninstall.android" = "アンインストール";
 
 "Button.Verify" = "Verify";
 
 /* Yes button */
-"Button.yes" = "Yes";
+"Button.yes" = "はい";
 
 /* 3D Secure label on buy flow */
 "Buy.3DSecure" = "3D Secure";
@@ -842,15 +842,15 @@
 
 "Buy.Ach.Instant.ConfirmationDrawer.ConfirmAction" = "Confirm purchase";
 
-"Buy.Ach.Instant.ConfirmationDrawer.Description" = "%@ (%@) assets will settle immediately.";
+"Buy.Ach.Instant.ConfirmationDrawer.Description" = "$%@ assets will settle immediately.";
 
 "Buy.Ach.Instant.ConfirmationDrawer.Notice" = "Instant purchase";
 
-"Buy.Ach.Instant.ConfirmationDrawer.Title" = "Purchase with Instant Buy";
+"Buy.Ach.Instant.ConfirmationDrawer.Title" = "Puchase with Instant Buy";
 
 "Buy.Ach.Instant.Fee.Alternative.Title" = "Instant ACH fee";
 
-"Buy.Ach.Instant.Fee.Title" = "Instant ACH fee";
+"Buy.Ach.Instant.Fee.Title" = "Instant Buy fee";
 
 "Buy.Ach.Instant.HybridConfirmationDrawer" = "With Instant buy, %@ (%@) will show in your account instantly. The remaining %@ (%@) will arrive in 3-5 days.";
 
@@ -884,7 +884,7 @@
 
 "Buy.achFee" = "ACH fee (%@)";
 
-"Buy.achLimits" = "Currently, minimum for buying with ACH is %@ and maximum is %@ per day.";
+"Buy.achLimits" = "Currently, minimum for buying with ACH is %@ USD and maximum is %@ USD per day. At the moment lifetime limit is %@ USD.";
 
 "Buy.achPaymentDurationWarning" = "ACH payments usually take 3-5 days. Funds may take a few days to be debited from your account.";
 
@@ -922,10 +922,10 @@
 
 "Buy.BuyLimits.AchDescription" = "It currently takes 3-5 days to process a purchase with ACH.";
 
-"Buy.BuyLimits.android" = "Currently, minimum for Buy is %@ and maximum is %@ per day.";
+"Buy.BuyLimits.android" = "Currently, minimum for Buy is $30.00 USD and maximum is $500.00 USD per day.";
 
 /* Buy min and max limit text */
-"Buy.BuyLimits.description" = "Minimum for Buy is %@ %@ per transaction and your weekly limit is %@ %@.";
+"Buy.BuyLimits.description" = "Currently, minimum for Buy is %@ USD and maximum is %@ USD per day.  %@";
 
 "Buy.BuyLimits.description.android" = "Minimum for Buy is %@ per transaction and your weekly limit is %@.";
 
@@ -1064,7 +1064,7 @@
 "Buy.SecurityCodePopup" = "Please enter the 3 digit CVV number as it appears on the back of your card";
 
 /* Select a payment method button title in buy flow */
-"Buy.SelectPaymentMethod" = "Select payment method";
+"Buy.SelectPaymentMethod" = "Select a payment method";
 
 /* State/Province label in billing address view on buy flow */
 "Buy.StateProvince" = "State/Province";
@@ -1073,7 +1073,7 @@
 
 "Buy.switchedToDebitCard" = "Payment method switched to Debit card!";
 
-"Buy.Terms.description" = "By placing this order you agree to our";
+"Buy.Terms.description" = "By placing this order you agree to our %@";
 
 "Buy.TransactionError" = "Transaction error";
 
@@ -1097,7 +1097,7 @@
 "Buy.ZIPPostalCode" = "ZIP/Postal Code";
 
 /* Camera plugin instruction */
-"CameraPlugin.centerInstruction" = "Center your ID in the box";
+"CameraPlugin.centerInstruction" = "ご自身のIDをこのボックス内の中央に配置してください";
 
 /* Cash Token Action Instructions */
 "CashToken.actionInstructions" = "Please send bitcoin to this address to withdraw at the ATM. Scan QR code or copy and paste to send bitcoin. Note that it may take a few minutes for the transfer to be confirmed.";
@@ -1120,59 +1120,59 @@
 /* Cash Token Please Verify */
 "CashToken.pleaseVerify" = "Please Verify";
 
-"CloudBackup.backupDeleted" = "Backup Erased";
+"CloudBackup.backupDeleted" = "バックアップが消去されました";
 
-"CloudBackup.backupDeletedMessage" = "Your iCloud backup has been erased after too many failed PIN attempts. The app will now restart.";
+"CloudBackup.backupDeletedMessage" = "PINの試行が何度も失敗した後、iCloudバックアップが消去されました。アプリが再起動します。";
 
-"CloudBackup.backupMenuTitle" = "iCloud Backup";
+"CloudBackup.backupMenuTitle" = "iCloudバックアップ";
 
-"CloudBackup.createButton" = "CREATE NEW WALLET";
+"CloudBackup.createButton" = "新しいウォレットを作成する";
 
-"CloudBackup.createWarning" = "A previously backed up wallet has been detected. Using this backup is recomended. Are you sure you want to proceeed with creating a new wallet?";
+"CloudBackup.createWarning" = "以前にバックアップされたウォレットが検出されました。このバックアップを使用することをお勧めします。新しいウォレットを作成してよろしいですか？";
 
-"CloudBackup.enableBody1" = "iCloud Keychain must be turned on for this feature to work.";
+"CloudBackup.enableBody1" = "この機能を使用するには、iCloudキーチェーンをオンにする必要があります。";
 
-"CloudBackup.enableBody2" = "It should look like the following:";
+"CloudBackup.enableBody2" = "次のようになります。";
 
-"CloudBackup.enableButton" = "I HAVE TURNED ON ICLOUD KEYCHAIN";
+"CloudBackup.enableButton" = "iCloudキーチェーンをオンにしました";
 
-"CloudBackup.enableTitle" = "Enable Keychain";
+"CloudBackup.enableTitle" = "キーチェーンを有効にする";
 
-"CloudBackup.encryptBackupMessage" = "Enter pin to encrypt backup";
+"CloudBackup.encryptBackupMessage" = "バックアップを暗号化するにはPINを入力してください";
 
-"CloudBackup.mainBody" = "Please note, iCloud backup is only as secure as your iCloud account. We still recommend writing down your Recovery Phrase in the following step and keeping it secure. The Recovery Phrase is the only way to recover your wallet if you can no longer access iCloud.";
+"CloudBackup.mainBody" = "iCloudバックアップは、iCloudアカウントと同じくらい安全です。次の手順でリカバリフレーズを書き留めて、安全に保管することをお勧めします。回復フレーズは、iCloudにアクセスできなくなった場合にウォレットを回復する唯一の方法です。";
 
-"CloudBackup.mainTitle" = "iCloud Recovery Backup";
+"CloudBackup.mainTitle" = "iCloudリカバリバックアップ";
 
-"CloudBackup.mainWarning" = "iCloud Keychain must be turned on in the iOS Settings app for this feature to work";
+"CloudBackup.mainWarning" = "この機能を使用するには、iOS設定アプリでiCloudキーチェーンをオンにする必要があります";
 
-"CloudBackup.mainWarningConfirmation" = "Are you sure you want to disable iCloud Backup? This will delete your backup from all devices.";
+"CloudBackup.mainWarningConfirmation" = "iCloudバックアップを無効にしてもよろしいですか？これにより、すべてのデバイスからバックアップが削除されます。";
 
-"CloudBackup.pinAttempts" = "Attempts remaining before erasing backup: %@";
+"CloudBackup.pinAttempts" = "バックアップを消去する前に残っている試行： %@";
 
-"CloudBackup.recoverButton" = "Restore with Recovery Phrase";
+"CloudBackup.recoverButton" = "回復キーから復元";
 
-"CloudBackup.recoverHeader" = "Enter PIN to unlock iCloud backup";
+"CloudBackup.recoverHeader" = "PINを入力してiCloudバックアップのロックを解除します";
 
 "CloudBackup.recoverWarning" = "A previously backed up wallet has been detected. Using this backup is recommended. Are you sure you want to proceeed with restoring from a Recovery Phrase?";
 
-"CloudBackup.restoreButton" = "Restore with iCloud Backup";
+"CloudBackup.restoreButton" = "iCloudバックアップから復元";
 
-"CloudBackup.selectTitle" = "Choose Backup";
+"CloudBackup.selectTitle" = "バックアップを選択";
 
-"CloudBackup.step1" = "Launch the Settings app.";
+"CloudBackup.step1" = "設定アプリを起動します。";
 
-"CloudBackup.step2" = "Tap your Apple ID name.";
+"CloudBackup.step2" = "Apple ID名をタップします。";
 
-"CloudBackup.step3" = "Tap iCloud.";
+"CloudBackup.step3" = "iCloudをタップします。";
 
-"CloudBackup.step4" = "Verify that iCloud Keychain is ON";
+"CloudBackup.step4" = "iCloudキーチェーンがオンになっていることを確認する";
 
-"CloudBackup.understandText" = "I understand that this feature will not work unless iCloud Keychain is enabled.";
+"CloudBackup.understandText" = "この機能はiCloudキーチェーンが有効になっていないと機能しないことを理解しています。";
 
-"CloudBackup.warningBody" = "Your iCloud backup will be erased after %@ more incorrect PIN attempts.";
+"CloudBackup.warningBody" = "あなたのiCloudバックアップは、あと%@回の間違ったPIN試行の後に消去されます。";
 
-"ComingSoon.body" = "Buy, Swap and Sell are not available in your state. We will notify you when they become available. \n\nYou can still Store, Send and Receive digital assets in your RockWallet.";
+"ComingSoon.body" = "Buy and Swap aren't currently available in your state. We'll notify you when you can use these features.\n\nYou can still safely send and receive digital assets to your wallet in the meantime.";
 
 "ComingSoon.BodyWithoutSell" = "Buy and Swap are not available in your state. We will notify you when they become available. \n\nYou can still Store, Send and Receive digital assets in your RockWallet.";
 
@@ -1195,109 +1195,109 @@
 "CommonString.Or.label" = "Or";
 
 /* Amount to Send: ($1.00) */
-"Confirmation.amountLabel" = "Amount to send";
+"Confirmation.amountLabel" = "送る金額：";
 
-"Confirmation.destinationTag" = "Destination Tag";
+"Confirmation.destinationTag" = "宛先タグ";
 
-"Confirmation.destinationTag_EmptyHint" = "(empty)";
+"Confirmation.destinationTag_EmptyHint" = "(空)";
 
 /* Network Fee: ($1.00) */
-"Confirmation.feeLabel" = "Network fee";
+"Confirmation.feeLabel" = "ネットワーク手数料：";
 
 /* Network Fee: (ETH) */
-"Confirmation.feeLabelETH" = "Network Fee (ETH):";
+"Confirmation.feeLabelETH" = "ネットワーク料金（ETH）:";
 
 /* Label for Hedera Memo field on transaction confirmation screen */
-"Confirmation.hederaMemo" = "Hedera Memo";
+"Confirmation.hederaMemo" = "ヘデラメモ";
 
 /* eg. Processing time: This transaction is predicted to complete in [10-60 minutes]. */
-"Confirmation.processingTime" = "Processing time: This transaction is predicted to complete in %@.";
+"Confirmation.processingTime" = "処理時間: この取引は%@で完了する見込みです。";
 
 "Confirmation.processingTime.android" = "Estimated delivery time: %@";
 
 /* Label for "send" button on final confirmation screen */
-"Confirmation.send" = "Send";
+"Confirmation.send" = "送金する";
 
 /* Confirmation Screen title */
-"Confirmation.title" = "Confirmation";
+"Confirmation.title" = "承認";
 
 /* To: (address) */
-"Confirmation.to" = "To";
+"Confirmation.to" = "送金先";
 
 /* Total Cost: ($5.00) */
-"Confirmation.totalLabel" = "Total Cost:";
+"Confirmation.totalLabel" = "費用合計：";
 
 "Confirmation.totalLabel.android" = "You'll receive";
 
 /* Validator address label on  confirmation screen */
 "Confirmation.ValidatorAddress" = "Validator Address";
 
-"ConfirmGift.paperWalletAmount" = "Paper Wallet Amount";
+"ConfirmGift.paperWalletAmount" = "紙の財布の金額";
 
-"ConfirmGift.processingTime" = "Validating this paper wallet on the network may take up to 60 minutes";
+"ConfirmGift.processingTime" = "ネットワーク上でこの紙のウォレットを検証するには、最大60分かかる場合があります";
 
 /* Confirm paper phrase error message */
-"ConfirmPaperPhrase.error" = "The words entered do not match your Recovery Phrase. Please try again.";
+"ConfirmPaperPhrase.error" = "入力した単語は、回復フレーズと一致しません。もう一度お試しください。";
 
 /* Confirm paper phrase view label. */
-"ConfirmPaperPhrase.label" = "To make sure everything was written down correctly, please enter the following words from your Recovery Phrase.";
+"ConfirmPaperPhrase.label" = "すべてが正しく記述されていることを確認するには、回復フレーズから次の単語を入力してください。";
 
 /* Word label eg. Word #1, Word #2 */
-"ConfirmPaperPhrase.word" = "Word %02i";
+"ConfirmPaperPhrase.word" = "フレーズ #%@";
 
 "ConfirmPaperPhrase.word.android" = "Word %1$s%2$s";
 
-"CreateGift.amountLabel" = "Choose amount ($USD)";
+"CreateGift.amountLabel" = "金額を選択（$ USD）";
 
-"CreateGift.create" = "Create";
+"CreateGift.create" = "作成する";
 
-"CreateGift.customAmountHint" = "Custom amount ($500 max)";
+"CreateGift.customAmountHint" = "カスタム金額（最大$ 500）";
 
-"CreateGift.description" = "We'll create what's called a \"paper wallet\" with a qr code and instructions for installing RockWallet that you can email or text to friends and family.";
+"CreateGift.description" = "と呼ばれるものを作成します";
 
-"CreateGift.inputAmountError" = "You must select a gift amount.";
+"CreateGift.inputAmountError" = "ギフトの金額を選択する必要があります。";
 
-"CreateGift.inputRecipientNameError" = "You must enter the name of the recipient.";
+"CreateGift.inputRecipientNameError" = "受信者の名前を入力する必要があります。";
 
-"CreateGift.insufficientBalanceError" = "You have insufficient funds to send a gift.";
+"CreateGift.insufficientBalanceError" = "贈り物を送るのに十分な資金がありません。";
 
-"CreateGift.insufficientBalanceForAmountError" = "You have insufficient funds to send a gift of this amount.";
+"CreateGift.insufficientBalanceForAmountError" = "この金額のギフトを送るのに十分な資金がありません。";
 
-"CreateGift.recipientName" = "Recipient's name";
+"CreateGift.recipientName" = "受取人の氏名";
 
-"CreateGift.serverError" = "A server error occurred. Please try again later.";
+"CreateGift.serverError" = "サーバーエラーが発生しました。後でもう一度やり直してください。";
 
-"CreateGift.subtitle" = "Send bitcoin to someone even if they don't have a wallet.";
+"CreateGift.subtitle" = "財布を持っていなくてもビットコインを誰かに送ってください。";
 
-"CreateGift.title" = "Give the Gift of Bitcoin";
+"CreateGift.title" = "ビットコインのギフトを贈る";
 
-"CreateGift.unexpectedError" = "An unexpected error occurred. Please contact support.";
+"CreateGift.unexpectedError" = "予期しないエラーが発生しました。サポートにお問い合わせください。";
 
 /* Agree to legal terms button */
-"Crowdsale.agree" = "Agree";
+"Crowdsale.agree" = "同意する";
 
 /* As in "(tap here to) buy (some) tokens" */
-"Crowdsale.buyButton" = "Buy Tokens";
+"Crowdsale.buyButton" = "トークンを購入する";
 
 /* Decline to legal terms button */
-"Crowdsale.decline" = "Decline";
+"Crowdsale.decline" = "拒否する";
 
 /* Resume Idnetify verification button */
-"Crowdsale.resume" = "Resume Verification";
+"Crowdsale.resume" = "認証を再開する";
 
 /* Retry Identity verification button */
-"Crowdsale.retry" = "Retry";
+"Crowdsale.retry" = "再試行する";
 
 /* Bitcoin denomination picker label */
-"DefaultCurrency.bitcoinLabel" = "Bitcoin Display Unit";
+"DefaultCurrency.bitcoinLabel" = "ビットコインの表示単位";
 
 /* Exchange rate label */
-"DefaultCurrency.rateLabel" = "Exchange Rate";
+"DefaultCurrency.rateLabel" = "為替レート";
 
 "Disabled.disabledUntil" = "Disabled until";
 
 /* The wallet is disabled. */
-"Disabled.title" = "Wallet disabled";
+"Disabled.title" = "ウォレットが無効になっています";
 
 "Drawer.button.buy_with_sell" = "SELL & WITHDRAW";
 
@@ -1305,16 +1305,16 @@
 "Drawer.title" = "Buy / Sell";
 
 /* Share address by e-mail subject */
-"Email.address_subject" = "%@ Address";
+"Email.address_subject" = "%@住所";
 
 /* Service capabilities description */
-"EME.permissions.accountRequest" = "Request %@ account information";
+"EME.permissions.accountRequest" = "%@ のアカウント情報をリクエスト";
 
 /* Service capabilities description */
-"EME.permissions.callRequest" = "Request %@ smart contract call";
+"EME.permissions.callRequest" = "%@ のスマートコントラクトのコールをリクエスト";
 
 /* Service capabilities description */
-"EME.permissions.paymentRequest" = "Request %@ payment";
+"EME.permissions.paymentRequest" = "%@ のアカウント情報をリクエスト";
 
 "ErrorMessages.accessDenied" = "You cannot purchase assets without completing Level 2 account verification. Upgrade your limits on the Profile screen.";
 
@@ -1327,7 +1327,7 @@
 "ErrorMessages.Ach.InsufficientFunds" = "Unfortunately the transaction could not be completed due to insufficient funds in your bank account. Please try again later";
 
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
-"ErrorMessages.AmountTooHigh" = "The amount is higher than your remaining %@ limit of %@ %@. Please enter a lower amount.";
+"ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
 
 /* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
 "ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %@ %@. Please enter a higher amount.";
@@ -1347,16 +1347,16 @@
 "ErrorMessages.default" = "Something went wrong! Try again later.";
 
 /* Email unavailable alert title */
-"ErrorMessages.emailUnavailableMessage" = "This device isn't configured to send email with the iOS mail app.";
+"ErrorMessages.emailUnavailableMessage" = "この端末は、iOSのメールアプリを使用してメールを送信する設定がされていません。";
 
 /* Email unavailable alert title */
-"ErrorMessages.emailUnavailableTitle" = "Email Unavailable";
+"ErrorMessages.emailUnavailableTitle" = "メールが利用できません";
 
 /* Not enough ETH for transaction fee */
 "ErrorMessages.ethBalanceLowAddEth" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
 
 /* Not enough ETH for transaction fee */
-"ErrorMessages.ethBalanceLowAddEthWithAmount" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add %@ ETH to your wallet.";
+"ErrorMessages.ethBalanceLowAddEthWithAmount" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
 
 "ErrorMessages.Exchange.xrpMinimumReserve" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
@@ -1379,13 +1379,13 @@
 "ErrorMessages.LivenessCheckLimit.errorMessage" = "Biometric authentication attempts reached";
 
 /* Message that gets shown when we've detected the user has encountered the looping lock-screen bug. (preserve [ ] characters) */
-"ErrorMessages.loopingLockScreen.android" = "RockWallet can not be authenticated due to a bug in your version of Android. [Please tap here for more information.]";
+"ErrorMessages.loopingLockScreen.android" = "BRDは、お使いのAndroidのバージョンに不具合があるため認証できません。 [詳しい情報はこちらをタップしてご覧ください。]";
 
 /* Messaging unavailable alert title */
-"ErrorMessages.messagingUnavailableMessage" = "This device isn't configured to send messages.";
+"ErrorMessages.messagingUnavailableMessage" = "この端末からメッセージを送信するための設定がされていません。";
 
 /* Messaging unavailable alert title */
-"ErrorMessages.messagingUnavailableTitle" = "Messaging Unavailable";
+"ErrorMessages.messagingUnavailableTitle" = "メッセージの送受信ができません";
 
 "ErrorMessages.networkFee" = "This swap doesn't cover the included network fee. Please add more funds to your wallet or change the amount you're swapping.";
 
@@ -1414,7 +1414,7 @@
 
 "ErrorMessages.PlaidLinkToken" = "Unfortunately, an error occurred while linking the bank account. Please contact us for further support.";
 
-"ErrorMessages.selectAssets" = "In order to successfully perform a swap, make sure you have two or more of our supported swap assets (BSV, BTC, ETH, BCH, SHIB, USDT) activated and funded within your wallet.";
+"ErrorMessages.selectAssets" = "In order to succesfully perform a swap, make sure you have two or more of our supported swap assets (BSV, BTC, ETH, BCH, SHIB, USDT) activated and funded within your wallet.";
 
 "ErrorMessages.Sell.LimitExceeded" = "You have exceeded your sell limits, please try again later.";
 
@@ -1426,7 +1426,7 @@
 "ErrorMessages.temporaryNetworkIssues" = "We are having temporary issues connecting to our network. Please try again later.";
 
 /* Fingerprint was not recognized by the scanner, please try scanning again */
-"ErrorMessages.touchIdFailed.android" = "Fingerprint not recognized. Please try again.";
+"ErrorMessages.touchIdFailed.android" = "指紋が認識されませんでした。もう一度やり直してください。";
 
 "ErrorMessages.TryAgainLater" = "Try again later";
 
@@ -1437,112 +1437,112 @@
 
 "Exchange.PopupText" = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem.";
 
-"ExportConfirmation.cancel" = "Cancel";
+"ExportConfirmation.cancel" = "キャンセル";
 
-"ExportConfirmation.continue" = "";
+"ExportConfirmation.continue" = "継続する";
 
 "ExportConfirmation.continueAction" = "Continue";
 
-"ExportConfirmation.message" = "This will generate a CSV file including all completed transactions from all enabled wallets.";
+"ExportConfirmation.message" = "これにより、有効なすべてのウォレットから完了したすべてのトランザクションを含むCSVファイルが生成されます。";
 
-"ExportConfirmation.title" = "Export transactions?";
+"ExportConfirmation.title" = "輸出取引？";
 
 /* "Export transfers body" */
-"ExportTransfers.body" = "This will generate a CSV file including all completed transactions from all enabled wallets.";
+"ExportTransfers.body" = "これにより、有効なすべてのウォレットから完了したすべてのトランザクションを含むCSVファイルが生成されます。";
 
 /* "Export transfers button" */
-"ExportTransfers.confirmExport" = "Export";
+"ExportTransfers.confirmExport" = "エクスポート転送";
 
 /* "Export dialog error message" */
-"ExportTransfers.exportFailedBody" = "Failed to export CSV file, please try again.";
+"ExportTransfers.exportFailedBody" = "CSVファイルのエクスポートに失敗しました。再試行してください。";
 
 /* "Export dialog error title" */
-"ExportTransfers.exportFailedTitle" = "Export Failed";
+"ExportTransfers.exportFailedTitle" = "エクスポートに失敗しました";
 
 /* "Export transfers header" */
-"ExportTransfers.header" = "Export transactions?";
+"ExportTransfers.header" = "輸出取引？";
 
 /* You can customize your Face ID Spending Limit from the [menu] */
-"FaceIDSettings.customizeText" = "You can customize your Face ID spending limit from the %@.";
+"FaceIDSettings.customizeText" = "%@からFace ID使用限度額をカスタマイズすることができます。";
 
 /* Text describing the purpose of the Face ID settings in the BRD app. */
-"FaceIDSettings.explanatoryText" = "Use Face ID to unlock your RockWallet app and send money.";
+"FaceIDSettings.explanatoryText" = "Face IDを使用してBRDアプリのロックを解除し、送金してください。";
 
 /* Face Id screen label */
-"FaceIDSettings.label" = "Use your face to unlock your RockWallet and send money up to a set limit.";
+"FaceIDSettings.label" = "自分の顔を使って、ブレッドのロックを解除して、設定された使用限度額までお金を送金しましょう。";
 
 /* Title of the screen for setting the Face ID Spending Limit */
-"FaceIDSettings.linkText" = "Face ID Spending Limit Screen";
+"FaceIDSettings.linkText" = "Face ID使用限度額画面";
 
 /* Setting to turn on Face ID for BRD */
-"FaceIDSettings.switchLabel" = "Enable Face ID for RockWallet";
+"FaceIDSettings.switchLabel" = "ブレッド利用時にFace IDを有効にする";
 
 /* Face ID settings view title */
 "FaceIDSettings.title" = "Face ID";
 
 /* Text label for a toggle that enables Face ID for sending money. */
-"FaceIDSettings.transactionsTitleText" = "Enable Face ID to send money";
+"FaceIDSettings.transactionsTitleText" = "Face IDを有効にして送金する";
 
 /* Instructions on how to turn on face id on the iPhone. Please ensure the name of the menu in this string matches the wording Apple uses in the iPhone menu. */
-"FaceIDSettings.unavailableAlertMessage" = "You have not set up Face ID on this device. Go to Settings->Face ID & Passcode to set it up now.";
+"FaceIDSettings.unavailableAlertMessage" = "このデバイスではFace IDのセットアップが完了していません。設定->Face IDとパスコードに移動して、今すぐセットアップしましょう。";
 
 /* Face ID unavailable alert title */
-"FaceIDSettings.unavailableAlertTitle" = "Face ID Not Set Up";
+"FaceIDSettings.unavailableAlertTitle" = "Face IDがセットアップされていません";
 
 /* Text label for a toggle that enables Face ID for unlocking the BRD app. */
-"FaceIDSettings.unlockTitleText" = "Enable Face ID to unlock RockWallet";
+"FaceIDSettings.unlockTitleText" = "Face IDを有効にしてBRDのロックを解除する";
 
 /* Face Id spending limit screen title */
-"FaceIDSpendingLimit.title" = "Face ID Spending Limit";
+"FaceIDSpendingLimit.title" = "Face ID使用限度額";
 
 "Feedback.noEmailClient" = "Email client not found";
 
 /* Economy fee */
-"FeeSelector.economy" = "Economy";
+"FeeSelector.economy" = "エコノミー";
 
 /* E.g. [This transaction is predicted to complete in] 1-24 hours */
-"FeeSelector.economyTime" = "1-24 hours";
+"FeeSelector.economyTime" = "1～24時間";
 
 /* Warning message for economy fee */
-"FeeSelector.economyWarning" = "This option is not recommended for time-sensitive transactions.";
+"FeeSelector.economyWarning" = "このオプションは早く送金を済ませたい方にはお勧めしません。";
 
 /* E.g. Estimated delivery: 10-60 minutes */
-"FeeSelector.estimatedDeliver" = "Estimated Delivery: %@";
+"FeeSelector.estimatedDeliver" = "推定送金時間: %@";
 
 /* [This transaction will complete in] 2-5 minutes */
-"FeeSelector.ethTime" = "2-5 minutes";
+"FeeSelector.ethTime" = "2〜5分";
 
-"FeeSelector.lessThanMinutes" = "<%@ minutes";
+"FeeSelector.lessThanMinutes" = "<%@ 分";
 
 /* Priority fee */
-"FeeSelector.priority" = "Priority";
+"FeeSelector.priority" = "優先度";
 
 /* E.g. [This transaction is predicted to complete in] 10-30 minutes */
-"FeeSelector.priorityTime" = "10-30 minutes";
+"FeeSelector.priorityTime" = "10～30分";
 
 /* Regular fee */
-"FeeSelector.regular" = "Regular";
+"FeeSelector.regular" = "レギュラー";
 
 /* E.g. [This transaction is predicted to complete in] 10-60 minutes */
-"FeeSelector.regularTime" = "10-60 minutes";
+"FeeSelector.regularTime" = "10～60分";
 
 /* Fee Selector title */
-"FeeSelector.title" = "Processing Speed";
+"FeeSelector.title" = "処理速度";
 
 /* Label for the Android file chooser when we need to prompt the user to select an image file. */
-"FileChooser.selectImageSource.android" = "Select Image Source";
+"FileChooser.selectImageSource.android" = "画像ソースを選択";
 
 /* Fingerprint authentication settings screen description */
-"FingerprintSettings.description" = "Use your fingerprint to unlock your RockWallet app and send transactions.";
+"FingerprintSettings.description" = "設定された限度額以下の送金を行う場合には、指紋認証でご自身のブレッドのロックを解除できます。";
 
 /* Switch label to enable fingerprint authentication to send money */
-"FingerprintSettings.sendMoney" = "Use fingerprint to send money";
+"FingerprintSettings.sendMoney" = "指紋を使用して送金する";
 
 /* Fingerprint authentication settings sceen title */
-"FingerprintSettings.title" = "Fingerprint";
+"FingerprintSettings.title" = "指紋";
 
 /* Switch label to enable fingerprint authentication to unlock BRD app */
-"FingerprintSettings.unlockApp" = "Use fingerprint to unlock RockWallet";
+"FingerprintSettings.unlockApp" = "指紋を使用してBRDのロックを解除する";
 
 "HomeScreen.accountDataUpdatedToastMessage" = "Your account data has been updated.";
 
@@ -1550,51 +1550,51 @@
 "HomeScreen.activity" = "Activity";
 
 /* This is the section that allows administration of the user's wallet */
-"HomeScreen.admin" = "Admin";
+"HomeScreen.admin" = "管理";
 
 /* Home screen menu button to buy some bitcoin */
-"HomeScreen.buy" = "Buy";
+"HomeScreen.buy" = "購入する";
 
 /* home screen toolbar 'Buy & Sell' button */
-"HomeScreen.buyAndSell" = "Buy & Sell";
+"HomeScreen.buyAndSell" = "売買";
 
 "HomeScreen.home" = "Home";
 
 /* Menu button on the home screen toolbar */
-"HomeScreen.menu" = "Menu";
+"HomeScreen.menu" = "メニュー";
 
 /* This section lists the users wallets */
-"HomeScreen.portfolio" = "Wallets";
+"HomeScreen.portfolio" = "ウォレット";
 
 /* Pull to refresh control on Home Screen */
 "HomeScreen.PullToRefresh" = "Pull to refresh";
 
 /* Label for the total balance of all the user's assets (style is all lower case if your language permits) */
-"HomeScreen.totalAssets" = "Balance";
+"HomeScreen.totalAssets" = "総資産";
 
 /* (Tap here to) trade (your assets for other assets) */
-"HomeScreen.trade" = "Swap";
+"HomeScreen.trade" = "取引";
 
 /* Checking private key balance progress view text */
-"Import.checking" = "Checking private key balance...";
+"Import.checking" = "秘密鍵の残高確認中...";
 
 /* Sweep private key confirmation message */
-"Import.confirm" = "You are importing %@ from this private key into your RockWallet. There will be a network fee of %@.";
+"Import.confirm" = "この秘密鍵からウォレットに%@を送信しますか? ビットコインネットワークは手数料%@を頂戴します。";
 
 /* Duplicate key error message */
-"Import.Error.duplicate" = "This private key is already in your wallet.";
+"Import.Error.duplicate" = "この秘密鍵はすでにあなたのウォレットに存在しています。";
 
 /* empty private key error message */
-"Import.Error.empty" = "This private key is empty.";
+"Import.Error.empty" = "この秘密鍵には何も入っていません。";
 
 /* Failed to submit transaction error message */
 "Import.Error.failedSubmit" = "Failed to submit transaction.";
 
 /* High fees error message */
-"Import.Error.highFees" = "Transaction fees would cost more than the funds available on this private key.";
+"Import.Error.highFees" = "トランザクション手数料がこのプライベートキーのアカウントにある残高を上回っています。";
 
 /* Not a valid private key error message */
-"Import.Error.notValid" = "Not a valid private key";
+"Import.Error.notValid" = "有効な秘密鍵ではありません";
 
 /* Service error error message */
 "Import.Error.serviceError" = "Service Error";
@@ -1603,7 +1603,7 @@
 "Import.Error.serviceUnavailable" = "Service Unavailable";
 
 /* Import signing error message */
-"Import.Error.signing" = "Error signing transaction";
+"Import.Error.signing" = "トランザクションへのサイン中にエラーが発生しました";
 
 /* Unable to sweep wallet error message */
 "Import.Error.sweepError" = "Unable to sweep wallet";
@@ -1612,119 +1612,119 @@
 "Import.Error.unsupportedCurrency" = "Unsupported Currency";
 
 /* [Redeem] the funds stored on this private key. */
-"Import.importButton" = "Sweep";
+"Import.importButton" = "取り出す";
 
 /* Importing wallet progress view label */
-"Import.importing" = "Sweeping a wallet";
+"Import.importing" = "秘密鍵から取り出し中";
 
 /* Caption for graphics */
-"Import.leftCaption" = "Wallet to be imported";
+"Import.leftCaption" = "秘密鍵";
 
 /* Import wallet intro screen message */
-"Import.message" = "Sweeping a wallet transfers all the money from your other wallet into your RockWallet using a single transaction.";
+"Import.message" = "秘密鍵は通常QRコードとして紙に印刷され、オフラインでの資金保管に使用されています。秘密鍵からの引き出しをすると秘密鍵が管理する資金全額を1回の取引でお使いのBRDに送金します。";
 
 /* Enter password alert view title */
-"Import.password" = "This private key is password protected.";
+"Import.password" = "この秘密鍵はパスワードで保護されています。";
 
 /* password textfield placeholder */
-"Import.passwordPlaceholder" = "password";
+"Import.passwordPlaceholder" = "パスワード";
 
 /* Caption for graphics */
-"Import.rightCaption" = "Your RockWallet";
+"Import.rightCaption" = "あなたの\nブレッドの\nウォレット";
 
 /* Scan Private key button label */
-"Import.scan" = "SCAN PRIVATE KEY";
+"Import.scan" = "秘密鍵をスキャン";
 
 /* Import wallet success alert title */
-"Import.success" = "Success";
+"Import.success" = "成功";
 
 /* Successfully imported wallet message body */
-"Import.SuccessBody" = "Successfully imported wallet.";
+"Import.SuccessBody" = "正常に秘密鍵からの資金引き出しが行われました。";
 
 /* Import Wallet screen title */
-"Import.title" = "Sweep Wallet";
+"Import.title" = "秘密鍵からの引き出し";
 
 /* Unlocking Private key activity view message. */
-"Import.unlockingActivity" = "Unlocking Key";
+"Import.unlockingActivity" = "鍵のロックを解除中です";
 
 /* Import wallet intro warning message */
-"Import.warning" = "Sweeping a wallet does not include transaction history or other details.";
+"Import.warning" = "秘密鍵から資金を引き出しても、取引履歴やその他の詳細はインポートされません。";
 
 /* Wrong password alert message */
-"Import.wrongPassword" = "Wrong password, please try again.";
+"Import.wrongPassword" = "パスワードが違います。もう一度お試しください。";
 
 /* Input view invalid code */
 "InputView.InvalidCode" = "Invalid code";
 
 /* Close app button */
-"JailbreakWarnings.close" = "Close";
+"JailbreakWarnings.close" = "閉じる";
 
 /* Ignore jailbreak warning button */
-"JailbreakWarnings.ignore" = "Ignore";
+"JailbreakWarnings.ignore" = "無視する";
 
 /* Jailbreak warning message */
-"JailbreakWarnings.messageWithBalance" = "DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access RockWallet's keychain data and steal your bitcoin! Wipe this wallet immediately and restore on a secure device.";
+"JailbreakWarnings.messageWithBalance" = "端末がセキュリティの危険にさらされている可能性があります\n 「脱獄」アプリはブレッドのキーチェーンデータにアクセスし、あなたのビットコインを盗む恐れがあります!  直ちにこのウォレットを完全削除して、安全な端末で復元して下さい。";
 
 /* Jailbreak warning message */
-"JailbreakWarnings.messageWithoutBalance" = "DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access RockWallet's keychain data and steal your bitcoin. Please only use RockWallet on a non-jailbroken device.";
+"JailbreakWarnings.messageWithoutBalance" = "端末がセキュリティの危険にさらされている可能性があります\n「脱獄」アプリはブレッドのキーチェーンデータにアクセスし、あなたのビットコインを盗む恐れがあります!  ブレッドは必ず脱獄端末以外で利用してください。";
 
 /* Jailbreak warning title */
-"JailbreakWarnings.title" = "WARNING";
+"JailbreakWarnings.title" = "警告";
 
 /* Wipe wallet button */
-"JailbreakWarnings.wipe" = "Wipe";
+"JailbreakWarnings.wipe" = "完全削除";
 
 /* Approve link wallet button label */
-"LinkWallet.approve" = "Approve";
+"LinkWallet.approve" = "承認する";
 
 /* Decline link wallet button label */
-"LinkWallet.decline" = "Decline";
+"LinkWallet.decline" = "拒否する";
 
 /* Link Wallet view dislaimer footer */
-"LinkWallet.disclaimer" = "External apps cannot send money without approval from this device";
+"LinkWallet.disclaimer" = "外部のアプリは,このデバイスの承認がないと送金できません";
 
 /* Link Wallet view title above domain list */
-"LinkWallet.domainTitle" = "Note: ONLY interact with this app when on one of the following domains";
+"LinkWallet.domainTitle" = "ご注意:以下のいずれかのドメインに属している場合は,このアプリとのみ情報をやり取りしてください";
 
 /* Link wallet logo footer text */
-"LinkWallet.logoFooter" = "Secure Checkout";
+"LinkWallet.logoFooter" = "安全なチェックアウト";
 
 /* Link Wallet view title above permissions list */
-"LinkWallet.permissionsTitle" = "This app will be able to:";
+"LinkWallet.permissionsTitle" = "このアプリでできること:";
 
 /* Link Wallet view title */
-"LinkWallet.title" = "Link Wallet";
+"LinkWallet.title" = "リンクウォレット";
 
 /* Location services disabled error */
-"LocationPlugin.disabled" = "Location services are disabled.";
+"LocationPlugin.disabled" = "位置情報サービスが無効化されています。";
 
 /* No permissions for location services */
-"LocationPlugin.notAuthorized" = "RockWallet does not have permission to access location services.";
+"LocationPlugin.notAuthorized" = "ブレッドは位置情報サービスへのアクセスが許可されていません。";
 
 "LoginController.invalidPinError" = "Incorrect PIN. The wallet will get disabled after %d more failed %@.";
 
 /* Wallet creation date prefix */
-"ManageWallet.creationDatePrefix" = "You created your wallet on %@";
+"ManageWallet.creationDatePrefix" = "あなたは%@にご自身のウォレットを作成しました";
 
 /* Manage wallet description text */
-"ManageWallet.description" = "Your wallet name only appears in your account transaction history and cannot be seen by anyone else.";
+"ManageWallet.description" = "あなたのウォレットの名前はご自身のアカウントの取引履歴上でのみ表示され、あなた以外誰も閲覧することができません。";
 
 /* Change Wallet name textfield label */
-"ManageWallet.textFeildLabel" = "Wallet Name";
+"ManageWallet.textFeildLabel" = "ウォレットの名前";
 
 /* Manage wallet modal title */
-"ManageWallet.title" = "Manage Wallet";
+"ManageWallet.title" = "ウォレットを管理";
 
-"MarketData.high24h" = "24h High";
+"MarketData.high24h" = "24時間高";
 
-"MarketData.low24h" = "24h Low";
+"MarketData.low24h" = "24時間低";
 
-"MarketData.marketCap" = "Market cap";
+"MarketData.marketCap" = "時価総額";
 
-"MarketData.volume" = "Trading Volume";
+"MarketData.volume" = "取引量";
 
 /* "Add [a] Wallet [to the home screen]" */
-"MenuButton.addWallet" = "Add Wallet";
+"MenuButton.addWallet" = "ウォレットの追加";
 
 /* Menu button title */
 "MenuButton.atmCashRedemption" = "ATM Cash Redemption";
@@ -1733,86 +1733,86 @@
 "MenuButton.feedback" = "Feedback";
 
 /* Menu button title */
-"MenuButton.lock" = "Lock Wallet";
+"MenuButton.lock" = "ウォレットにロックを設定する";
 
 /* (Click here to) manage (your list of) wallets */
 "MenuButton.manageAssets" = "Manage Assets";
 
 /* (Click here to) manage (your list of) wallets */
-"MenuButton.manageWallets" = "Manage Wallets";
+"MenuButton.manageWallets" = "ウォレットの管理";
 
 /* (press here to) scan (a) QR code */
-"MenuButton.scan" = "Scan QR Code";
+"MenuButton.scan" = "QRコードの読み込み";
 
 /* Menu button title */
-"MenuButton.security" = "Security Settings";
+"MenuButton.security" = "セキュリティ";
 
 /* Menu button title */
-"MenuButton.settings" = "Settings";
+"MenuButton.settings" = "設定";
 
 /* Menu button title */
-"MenuButton.support" = "Support";
+"MenuButton.support" = "サポート";
 
 "MenuButton.TellFriend" = "Tell a friend";
 
 /* button label */
-"MenuViewController.createButton" = "Create New Wallet";
+"MenuViewController.createButton" = "新規ウォレットを作成";
 
 /* Menu modal title */
-"MenuViewController.modalTitle" = "Menu";
+"MenuViewController.modalTitle" = "メニュー";
 
 /* button label */
-"MenuViewController.recoverButton" = "Recover Wallet";
+"MenuViewController.recoverButton" = "ウォレットを復元";
 
 /* Paper Key Skip modal body (Android-version) */
-"Modal.PaperKeySkip.Body.Android" = "Your Recovery Phrase is required to open your wallet if you change the security settings on your phone.\n\nAre you sure you want to set up your Recovery Phrase later?";
+"Modal.PaperKeySkip.Body.Android" = "スマートフォンのセキュリティ設定を変更した場合、ウォレットを開くにはリカバリフレーズが必要です。 \n\n後でリカバリフレーズを設定してもよろしいですか？";
 
 /* Paper Key Skip modal Continue Set Up button */
-"Modal.PaperKeySkip.Button.ContinueSetUp" = "Continue Set Up";
+"Modal.PaperKeySkip.Button.ContinueSetUp" = "セットアップを続けます";
 
 /* Paper Key Skip modal I'll do it later button */
-"Modal.PaperKeySkip.Button.IllDoItLater" = "I'll do it later";
+"Modal.PaperKeySkip.Button.IllDoItLater" = "後で行います";
 
 /* Paper Key Skip modal title */
-"Modal.PaperKeySkip.Title" = "Attention";
+"Modal.PaperKeySkip.Title" = "注意";
 
 "NFCReaderUsageDescription" = "RockWallet uses the NFC reader to verify nfc-enabled passports.";
 
 /* Node selection mode is automatic */
-"NodeSelector.automatic" = "Automatic";
+"NodeSelector.automatic" = "自動";
 
 /* Switch to automatic mode button label */
-"NodeSelector.automaticButton" = "Switch to Automatic Mode";
+"NodeSelector.automaticButton" = "自動モードに切り替える";
 
 /* Node is connected label */
-"NodeSelector.connected" = "Connected";
+"NodeSelector.connected" = "接続中";
 
 /* Node is connecting label */
-"NodeSelector.connecting" = "Connecting";
+"NodeSelector.connecting" = "接続中";
 
 /* Enter node ip address view body */
-"NodeSelector.enterBody" = "Enter Node IP address and port (optional)";
+"NodeSelector.enterBody" = "ノードのIPアドレスとポートを入力する（任意）";
 
 /* Enter Node ip address view title */
-"NodeSelector.enterTitle" = "Enter Node";
+"NodeSelector.enterTitle" = "ノードを入力する";
 
 /* Entered invalid node address at the node selection screen */
-"NodeSelector.invalid" = "Invalid Node";
+"NodeSelector.invalid" = "無効なノード";
 
 /* Switch to manual mode button label */
-"NodeSelector.manualButton" = "Switch to Manual Mode";
+"NodeSelector.manualButton" = "マニュアルモードに切り替える";
 
 /* Node address label */
-"NodeSelector.nodeLabel" = "Current Primary Node";
+"NodeSelector.nodeLabel" = "現在のプライマリーノード";
 
 /* Node is not connected label */
-"NodeSelector.notConnected" = "Not Connected";
+"NodeSelector.notConnected" = "未接続";
 
 /* Node status label */
-"NodeSelector.statusLabel" = "Node Connection Status";
+"NodeSelector.statusLabel" = "ノードの接続状況";
 
 /* Node Selector view title */
-"NodeSelector.title" = "Bitcoin Nodes";
+"NodeSelector.title" = "ビットコインノード";
 
 "NoInternet.Body" = "We couldn’t connect to the server. Please check your internet connection and try again.";
 
@@ -1823,50 +1823,50 @@
 "NSMicrophoneUsageDescription" = "RockWallet utilizes the Microphone and Camera to capture a live video during the identify verification process.";
 
 /* Onboarding screen 'I'll browse first' button */
-"Onboarding.browseFirst" = "I'll browse first";
+"Onboarding.browseFirst" = "まずは閲覧";
 
 /* Onboarding screen 'Buy some coin' button */
-"Onboarding.buyCoin" = "Buy some coin";
+"Onboarding.buyCoin" = "コインを購入";
 
 "Onboarding.Description" = "Empowering you to navigate the digital asset economy easily and securely";
 
 /* Onboarding screen 'Get started' (create new wallet) button */
-"Onboarding.getStarted" = "Get started";
+"Onboarding.getStarted" = "開始";
 
 /* Onboarding screen 'Next' button */
-"Onboarding.next" = "NEXT";
+"Onboarding.next" = "次へ";
 
 /* Onboarding screen restore an existing wallet. */
-"Onboarding.restoreWallet" = "Restore with Recovery Phrase";
+"Onboarding.restoreWallet" = "ウォレットを復元する";
 
 "Onboarding.RestoreYourWallet" = "Restore your wallet";
 
 "Onboarding.RestoreYourWalletDescription" = "You can restore your wallet with your recovery phrase or iCloud.";
 
 /* Onboarding screen Skip button title that allows the user to exit the onboarding process. */
-"Onboarding.skip" = "Skip";
+"Onboarding.skip" = "スキップ";
 
 "Onboarding.SkipPhrase" = "SKIP AND SAVE LATER";
 
 /* Onboarding screen Page 4 title */
-"OnboardingPageFour.title" = "Start investing today with as little as $50!";
+"OnboardingPageFour.title" = "最低50ドルから,今すぐ投資を始めましょう！";
 
 /* Onboarding screen Page 1 title */
-"OnboardingPageOne.title" = "Empowering you to navigate the digital asset economy easily and securely";
+"OnboardingPageOne.title" = "新しいデジタルアセットウォレットへようこそ！";
 
 "OnboardingPageOne.titleOne" = "Buy, swap, use, and store top cryptocurrencies for low fees";
 
 /* Onboarding screen Page 3 subtitle */
-"OnboardingPageThree.subtitle" = "Invest and diversify with RockWallet, easily and securely.";
+"OnboardingPageThree.subtitle" = "BRDで容易に安全に投資して多様化しましょう。";
 
 /* Onboarding screen Page 3 title */
-"OnboardingPageThree.title" = "Buy and swap bitcoin, tokens, and other digital currencies.";
+"OnboardingPageThree.title" = "ビットコイン,トークン,その他のデジタル通貨を購入・取引しましょう。";
 
 /* Onboarding screen Page 2 subtitle */
-"OnboardingPageTwo.subtitle" = "We have over $6 billion USD worth of assets under protection.";
+"OnboardingPageTwo.subtitle" = "当社の保護下には,60億USドル超相当の資産があります。";
 
 /* Onboarding screen Page 2 title */
-"OnboardingPageTwo.title" = "Join people around the world who trust RockWallet.";
+"OnboardingPageTwo.title" = "世界中で何百万もの人々がBRDを利用しています。あなたもぜひ。";
 
 "PaymailAddress.CopyMessage" = "Paymail address %@ copied to clipboard";
 
@@ -1876,7 +1876,7 @@
 
 "PaymailAddress.createPaymailAddress" = "Create paymail address";
 
-"PaymailAddress.description" = "Your Paymail address is set up. Share your Paymail address instead of your wallet address to receive funds seamlessly.";
+"PaymailAddress.description" = "Your Paymail address is setted up. Share your Paymail address instead of your wallet address to receive funds seamlessly.";
 
 "PaymailAddress.InappropriateWordsMessage" = "Sorry. Inappropriate language detected. Please choose a different paymail address.";
 
@@ -1895,7 +1895,7 @@
 "PaymailAddress.yourPaymailAddress" = "Your Paymail address:";
 
 /* Eg. Send 1.0Eth to purchase CCC */
-"PaymentConfirmation.amountText" = "Send %@ to purchase %@";
+"PaymentConfirmation.amountText" = "%@を購入するために%@を送金する";
 
 /* Payment expired message */
 "PaymentConfirmation.PaymentExpired" = "The payment has expired due to inactivity. Please try again with the same card, or use a different card.";
@@ -1904,7 +1904,7 @@
 "PaymentConfirmation.PaymentTimeout" = "Payment verification timeout";
 
 /* Payment confirmation view title */
-"PaymentConfirmation.title" = "Confirmation";
+"PaymentConfirmation.title" = "確認";
 
 /* Try again button title in payment view */
 "PaymentConfirmation.TryAgain" = "Try again";
@@ -1916,31 +1916,31 @@
 "PaymentMethod.Unavailable" = "Temporarily unavailable, please contact support";
 
 /* Bad Payment request alert title */
-"PaymentProtocol.Errors.badPaymentRequest" = "Your transaction request couldn’t be completed. Please try again.";
+"PaymentProtocol.Errors.badPaymentRequest" = "不正な支払い要求";
 
 /* Error opening payment protocol file message */
-"PaymentProtocol.Errors.corruptedDocument" = "Unsupported or corrupted document";
+"PaymentProtocol.Errors.corruptedDocument" = "ドキュメントがサポートされていないか、またはドキュメントが破損しています";
 
 /* Missing certificate payment protocol error message */
-"PaymentProtocol.Errors.missingCertificate" = "missing certificate";
+"PaymentProtocol.Errors.missingCertificate" = "証明書が不足しています";
 
 /* Request expired payment protocol error message */
-"PaymentProtocol.Errors.requestExpired" = "request expired";
+"PaymentProtocol.Errors.requestExpired" = "期限切れのリクエスト";
 
 /* Payment too small alert title */
-"PaymentProtocol.Errors.smallOutputError" = "Couldn't make payment";
+"PaymentProtocol.Errors.smallOutputError" = "支払いが行えませんでした";
 
 /* Amount too small error message */
-"PaymentProtocol.Errors.smallPayment" = "Payment can’t be less than %@. Bitcoin transaction fees are more than the amount of this transaction. Please increase the amount and try again.";
+"PaymentProtocol.Errors.smallPayment" = "%@未満のビットコインの支払いは行えません。";
 
 /* Output too small error message. */
-"PaymentProtocol.Errors.smallTransaction" = "Bitcoin transaction outputs can't be less than %@.";
+"PaymentProtocol.Errors.smallTransaction" = "ビットコインの送金額は%@以上である必要があります。";
 
 /* Unsupported signature type payment protocol error message */
-"PaymentProtocol.Errors.unsupportedSignatureType" = "unsupported signature type";
+"PaymentProtocol.Errors.unsupportedSignatureType" = "サポートされていないタイプの署名です";
 
 /* Untrusted certificate payment protocol error message */
-"PaymentProtocol.Errors.untrustedCertificate" = "untrusted certificate";
+"PaymentProtocol.Errors.untrustedCertificate" = "信頼できない証明書";
 
 "PersonalInformation.Day" = "DD";
 
@@ -1948,7 +1948,7 @@
 
 "PersonalInformation.Year" = "YYYY";
 
-"Platform.transaction_cancelled" = "Transaction Cancelled";
+"Platform.transaction_cancelled" = "キャンセルされた取引";
 
 "Profile.PaymentMethods" = "Payment methods";
 
@@ -1979,80 +1979,80 @@
 "Prompts.Email.title" = "Get in the loop";
 
 /* Body text for a prompt that asks the user to subscribe to email updates to find out product updates., Placeholder text for an email address text field., Body text that is shown when the user successfully subscribes to email updates., Text that is displayed as a footnote when the user successfully subscribes to email updates., Title that is shown when the user successfully subscribes to email updates., Title for a prompt that asks the user to subscribe to email updates to find out product updates., Enable face ID prompt body */
-"Prompts.FaceId.body" = "Tap continue to enable Face ID";
+"Prompts.FaceId.body" = "Face IDを有効にするには続行をタップして下さい";
 
 /* Enable face ID prompt title */
-"Prompts.FaceId.title" = "Enable Face ID";
+"Prompts.FaceId.title" = "Face IDを有効にする";
 
 "Prompts.LimitsAuthentication.body" = "Just one more small step, and you'll be able to enjoy your new limits.";
 
 "Prompts.LimitsAuthentication.title" = "Finish setting up your new Buy limits.";
 
 /* No passcode set warning body */
-"Prompts.NoPasscode.body" = "A device passcode is needed to safeguard your wallet. Go to settings and turn passcode on.";
+"Prompts.NoPasscode.body" = "ウォレットを保護するためには端末のパスコードが必要です。設定画面にてパスコードをオンにしてください。";
 
 /* No Passcode set warning title */
-"Prompts.NoPasscode.title" = "Turn device passcode on";
+"Prompts.NoPasscode.title" = "端末のパスコードをオンにする";
 
 /* Instructions on how to enable screen lock settings */
-"Prompts.NoScreenLock.body.android" = "A device screen lock is needed to safeguard your wallet. Enable screen lock in your settings to continue.";
+"Prompts.NoScreenLock.body.android" = "ウォレットを守るため機器の画面をロックする必要があります。「設定」 > 「セキュリティ」 > 「画面ロック」で有効にしてから続行してください。";
 
 /* Device encryption prompt title */
-"Prompts.NoScreenLock.title.android" = "Screen lock disabled";
+"Prompts.NoScreenLock.title.android" = "画面ロックが無効になっています";
 
 "Prompts.PaperKey.Body" = "Set up your Recovery Phrase in case you ever lose or replace your phone. Your key is also required if you change your phone\'s security settings.";
 
 /* An action is required (You must do this action). */
-"Prompts.PaperKey.title" = "Action Required";
+"Prompts.PaperKey.title" = "アクションが要求されました";
 
-"Prompts.RateApp.dontShow" = "Don't ask again";
+"Prompts.RateApp.dontShow" = "もう聞かないで";
 
-"Prompts.RateApp.enjoyingBrd" = "Enjoying RockWallet?";
+"Prompts.RateApp.enjoyingBrd" = "BRDを楽しんでいますか？";
 
 "Prompts.RateApp.enjoyingRockWallet" = "Enjoying RockWallet?";
 
-"Prompts.RateApp.googlePlayReview" = "Your review helps grow the RockWallet community.";
+"Prompts.RateApp.googlePlayReview" = "あなたのレビューは、BRDコミュニティの成長に役立ちます。";
 
-"Prompts.RateApp.noThanks" = "No thanks";
+"Prompts.RateApp.noThanks" = "結構です";
 
-"Prompts.RateApp.rateUs" = "Review us";
+"Prompts.RateApp.rateUs" = "私たちをレビュー";
 
 /* Transaction rejected prompt body */
-"Prompts.RecommendRescan.body" = "Your wallet may be out of sync. This can often be fixed by pulling down this screen to refresh.";
+"Prompts.RecommendRescan.body" = "あなたのウォレットは同期されていない可能性があります。ブロックチェーンを再スキャンすることで修復できる可能性があります。";
 
 /* Transaction rejected prompt title */
-"Prompts.RecommendRescan.title" = "Transaction Rejected";
+"Prompts.RecommendRescan.title" = "トランザクションが拒否されました";
 
 /* Share data prompt body */
-"Prompts.ShareData.body" = "Help improve RockWallet by sharing your anonymous data with us";
+"Prompts.ShareData.body" = "匿名のデータを共有してBRDの機能向上に役立てる";
 
 /* Share data prompt title */
-"Prompts.ShareData.title" = "Share Anonymous Data";
+"Prompts.ShareData.title" = "匿名のデータを共有する";
 
 /* Enable touch ID prompt body */
-"Prompts.TouchId.body" = "Tap continue to enable Fingerprint authentication.";
+"Prompts.TouchId.body" = "Touch IDを有効にするにはこちらをタップしてください";
 
 /* Enable Fingerprint prompt body */
-"Prompts.TouchId.body.android" = "Tap here to enable fingerprint authentication";
+"Prompts.TouchId.body.android" = "こちらをタップして指紋認証を有効にしてください";
 
 /* Enable touch ID prompt title */
-"Prompts.TouchId.title" = "Enable Touch ID";
+"Prompts.TouchId.title" = "Touch IDを有効化する";
 
 /* Enable Fingerprint prompt title */
-"Prompts.TouchId.title.android" = "Enable Fingerprint Authentication";
+"Prompts.TouchId.title.android" = "指紋認証を有効にする";
 
 /* Button on fingerprint prompt so the user can enter their PIN instead */
 "Prompts.TouchId.usePin.android" = "PIN";
 
-"Prompts.TwoStep.body" = "Secure your wallet with Two Factor Authentication.";
+"Prompts.TwoStep.body" = "Secure your wallet with two factor authentication.";
 
 "Prompts.TwoStep.title" = "Enable 2FA";
 
 /* Upgrade PIN prompt body. */
-"Prompts.UpgradePin.body" = "RockWallet has upgraded to using a 6-digit PIN. Tap Continue to upgrade.";
+"Prompts.UpgradePin.body" = "ブレッドのPINコードは6桁にアップグレードされました。こちらをタップして更新してください。";
 
 /* Upgrade PIN prompt title. */
-"Prompts.UpgradePin.title" = "Upgrade PIN";
+"Prompts.UpgradePin.title" = "PINコードを更新する";
 
 "Prompts.VerifyAccount.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
 
@@ -2061,110 +2061,110 @@
 "Prompts.VerifyAccount.title" = "Verify your account";
 
 /* Body text for the push notifications prompt. */
-"PushNotifications.body" = "Turn on push notifications and be the first to hear about new features and special offers.";
+"PushNotifications.body" = "プッシュ通知をオンにして、新機能や特別オファーについての情報を誰よりも早くに入手しよう。";
 
 /* Push notifications are disabled alert title" */
-"PushNotifications.disabled" = "Notifications Disabled";
+"PushNotifications.disabled" = "通知が無効になっています";
 
 /* Body text when push notifications are disabled. */
-"PushNotifications.disabledBody" = "Turn on notifications to receive special offers and updates from RockWallet.";
+"PushNotifications.disabledBody" = "BRDから特別オファーやアップデートを受信するには、通知を有効にします。";
 
 /* Body text when push notifications are enabled. */
-"PushNotifications.enabledBody" = "You’re receiving special offers and updates from RockWallet.";
+"PushNotifications.enabledBody" = "BRDから特別オファーや最新情報を受信します。";
 
 /* Instructions to enable push notifications for BRD in the phone's system settings. */
-"PushNotifications.enableInstructions" = "Looks like notifications are turned off. Please go to Settings to enable notifications from RockWallet.";
+"PushNotifications.enableInstructions" = "通知がオフになっている可能性があります。[設定] に移動して、BRDからの通知を有効にしてください。";
 
 /* Push notifications toggle switch label */
-"PushNotifications.label" = "Receive Push Notifications";
+"PushNotifications.label" = "プッシュ通知を受信";
 
 /* Push notifications are off label */
-"PushNotifications.off" = "Off";
+"PushNotifications.off" = "オフ";
 
 /* Push notifications are on label */
-"PushNotifications.on" = "On";
+"PushNotifications.on" = "オン";
 
 /* Push notifications settings view title label */
-"PushNotifications.title" = "Stay in the Loop";
+"PushNotifications.title" = "情報の輪からそのまま離れないで";
 
 /* Push notifications settings failed to update settings on the back end */
-"PushNotifications.updateFailed" = "Failed to update push notifications settings";
+"PushNotifications.updateFailed" = "プッシュ通知設定を更新できませんでした";
 
 /* Google play review prompt body */
-"RateAppPrompt.Body.Android" = "If you love our app, please take a moment to rate it and give us a review.";
+"RateAppPrompt.Body.Android" = "当社のアプリをとても気に入っているなら、少しお時間をいただき評価とレビューをお願いします。";
 
 /* Google play review prompt, revivew button */
-"RateAppPrompt.Button.Dismiss.Android" = "No Thanks";
+"RateAppPrompt.Button.Dismiss.Android" = "結構です";
 
 /* Google play review prompt, dismiss button */
-"RateAppPrompt.Button.RateApp.Android" = "Rate RockWallet";
+"RateAppPrompt.Button.RateApp.Android" = "BRDを評価する";
 
 /* Google play review prompt title */
-"RateAppPrompt.Title.Android" = "Rate RockWallet";
+"RateAppPrompt.Title.Android" = "BRDを評価する";
 
 /* Address copied message. */
-"Receive.copied" = "Copied to clipboard";
+"Receive.copied" = "クリップボードにコピーされました。";
 
 /* Share via email button label */
-"Receive.emailButton" = "Email";
+"Receive.emailButton" = "メール";
 
 /* Request button label */
-"Receive.request" = "Request an Amount";
+"Receive.request" = "金額のリクエスト";
 
 "Receive.SelectAsset" = "Select asset";
 
 /* Share button label */
-"Receive.share" = "Share";
+"Receive.share" = "シェアする";
 
 /* Share via text message (SMS) */
-"Receive.textButton" = "Text Message";
+"Receive.textButton" = "テキストメッセージ";
 
 /* Receive modal title */
-"Receive.title" = "Receive";
+"Receive.title" = "受け取る";
 
 "RecoverWallet.description" = "Type your 12 Word Phrase";
 
 /* Done button text */
-"RecoverWallet.done" = "DONE";
+"RecoverWallet.done" = "終了";
 
 /* Enter recovery phrase label to delete the wallet */
 "RecoverWallet.EnterRecoveryPhrase" = "Please enter your Recovery Phrase to delete this wallet from your device.";
 
 /* Recover wallet header */
-"RecoverWallet.header" = "Recover Wallet";
+"RecoverWallet.header" = "ウォレットを復元";
 
 /* Reset PIN with paper key: header */
-"RecoverWallet.header_reset_pin" = "Reset your PIN";
+"RecoverWallet.header_reset_pin" = "PINコードをリセット";
 
 /* Enter paper key instruction */
-"RecoverWallet.instruction" = "Enter Recovery Phrase";
+"RecoverWallet.instruction" = "回復フレーズを入力してください";
 
 /* Recover wallet intro */
-"RecoverWallet.intro" = "Recover your RockWallet with your Recovery Phrase.";
+"RecoverWallet.intro" = "回復フレーズを使用してBRDを回復します。";
 
 /* Invalid paper key message */
-"RecoverWallet.invalid" = "The Recovery Phrase you entered is invalid. Please double-check each word and try again.";
+"RecoverWallet.invalid" = "入力したリカバリフレーズは無効です。各単語を再確認して、もう一度お試しください。";
 
 /* Previous button accessibility label */
-"RecoverWallet.leftArrow" = "Left Arrow";
+"RecoverWallet.leftArrow" = "左矢印";
 
 /* Next button label */
-"RecoverWallet.next" = "NEXT";
+"RecoverWallet.next" = "次へ";
 
 /* What Is recovery phrase text popup */
 "RecoverWallet.RecoveryPhrasePopup" = "A Recovery Phrase consists of 12 randomly generated words. The app creates the Recovery Phrase for you automatically when you start a new wallet. The Recovery Phrase is critically important and should be written down and stored in a safe location. In the event of phone theft, destruction, or loss, the Recovery Phrase can be used to load your wallet onto a new phone. The key is also required when upgrading your current phone to a new one.";
 
 /* Reset PIN with paper key: more information button. */
-"RecoverWallet.reset_pin_more_info" = "Tap here for more information.";
+"RecoverWallet.reset_pin_more_info" = "詳しくはこちらをタップしてください。";
 
 /* Next button accessibility label */
-"RecoverWallet.rightArrow" = "Right Arrow";
+"RecoverWallet.rightArrow" = "右矢印";
 
 /* Recover wallet sub-header */
-"RecoverWallet.subheader" = "Enter the Recovery Phrase for the wallet you want to recover.";
+"RecoverWallet.subheader" = "回復するウォレットの回復フレーズを入力します。";
 
 /* Reset PIN with paper key: sub-header */
-"RecoverWallet.subheader_reset_pin" = "To reset your PIN, enter the words from your Recovery Phrase into the boxes below.";
+"RecoverWallet.subheader_reset_pin" = "PINをリセットするには、リカバリフレーズの単語を下のボックスに入力します。";
 
 "RecoverWallet.Subheader.DeleteAccount" = "Please enter your Recovery Phrase to delete your account and unlink your wallet";
 
@@ -2174,130 +2174,130 @@
 "RecoverWallet.WhatIsRecoveryPhrase" = "What is “Recovery Phrase”?";
 
 /* Instructs the user to enter words from the set of recovery key words. */
-"RecoveryKeyFlow.confirmRecoveryInputError" = "The word you entered is incorrect. Please try again.";
+"RecoveryKeyFlow.confirmRecoveryInputError" = "入力した単語は正しくありません。もう一度入力してください。";
 
 /* Instructs the user to enter words from the set of recovery phrase words. */
-"RecoveryKeyFlow.confirmRecoveryKeySubtitle" = "Enter the following words from your Recovery Phrase";
+"RecoveryKeyFlow.confirmRecoveryKeySubtitle" = "ほぼ完了しました！回復フレーズから次の単語を入力します。";
 
 /* Title for the confirmation step of the recovery phrase flow. */
-"RecoveryKeyFlow.confirmRecoveryKeyTitle" = "Confirm your Recovery Phrase";
+"RecoveryKeyFlow.confirmRecoveryKeyTitle" = "回復フレーズの確認";
 
 /* Title displayed when the user starts the process of entering a recovery phrase */
-"RecoveryKeyFlow.enterRecoveryKey" = "Enter your Recovery Phrase";
+"RecoveryKeyFlow.enterRecoveryKey" = "回復フレーズを入力してください";
 
 /* Subtitle displayed when the user starts the process of entering a recovery phrase */
-"RecoveryKeyFlow.enterRecoveryKeySubtitle" = "Please enter the Recovery Phrase in order to delete your account and unlink the wallet.";
+"RecoveryKeyFlow.enterRecoveryKeySubtitle" = "デバイスからこのウォレットのリンクを解除するには、リカバリフレーズを入力してください。";
 
 /* Body text for an alert dialog asking the user whether to set up the recovery phrase later */
-"RecoveryKeyFlow.exitRecoveryKeyPromptBody" = "Are you sure you want to set up your Recovery Phrase later?";
+"RecoveryKeyFlow.exitRecoveryKeyPromptBody" = "後でリカバリフレーズを設定してもよろしいですか？";
 
 /* Title for an alert dialog asking the user whether to set up the recovery key later */
-"RecoveryKeyFlow.exitRecoveryKeyPromptTitle" = "Set Up Later";
+"RecoveryKeyFlow.exitRecoveryKeyPromptTitle" = "後から行う";
 
 /* Button text for the 'Generate Recovery Phrase' button */
-"RecoveryKeyFlow.generateKeyButton" = "GOT IT";
+"RecoveryKeyFlow.generateKeyButton" = "回復フレーズの生成";
 
 /* Subtext for the recovery key landing page. */
-"RecoveryKeyFlow.generateKeyExplanation" = "This is required to restore your wallet if you upgrade or lose your phone.";
+"RecoveryKeyFlow.generateKeyExplanation" = "携帯のアップグレードや紛失の際に,保有資金を復元するためにこのキーが必要です。";
 
 /* Default title for the recovery phrase landing page */
-"RecoveryKeyFlow.generateKeyTitle" = "Generate your private Recovery Phrase";
+"RecoveryKeyFlow.generateKeyTitle" = "プライベートな回復フレーズを生成する";
 
 /* Title for a button that takes the user to the wallet after setting up the recovery key. */
-"RecoveryKeyFlow.goToWalletButtonTitle" = "GO TO WALLET";
+"RecoveryKeyFlow.goToWalletButtonTitle" = "ウォレットへ";
 
 "RecoveryKeyFlow.HelpPopup.content" = "Your Recovery Phrase consists of 12 randomly generated words that the wallet creates for you automatically when you start a new wallet.\n\nThe Recovery Phrase is critically important and should be written down and stored in a safe location. In the event of phone theft, destruction or loss, the Recovery Phrase can be used to load your wallet onto a new phone. The Recovery Phrase is also required when upgrading your current phone to a new one.";
 
 "RecoveryKeyFlow.HelpPopup.title" = "What is “Recovery Phrase”?";
 
 /* Hint text for recovery key intro page, e.g., Step 2 */
-"RecoveryKeyFlow.howItWorksStep" = "How it works - Step %@";
+"RecoveryKeyFlow.howItWorksStep" = "使い方 - ステップ%@";
 
 /* Error text displayed when the user enters an incorrect recovery phrase */
-"RecoveryKeyFlow.invalidPhrase" = "Some of the words you entered do not match your Recovery Phrase. Please try again.";
+"RecoveryKeyFlow.invalidPhrase" = "入力した単語の一部が回復フレーズと一致しません。もう一度お試しください。";
 
 "RecoveryKeyFlow.KeepPhrasePrivate.subtitle" = "Remember that anyone with your Recovery Phrase can access your Assets.";
 
 "RecoveryKeyFlow.KeepPhrasePrivate.title" = "Keep it private";
 
 /* Title for recovery key intro page */
-"RecoveryKeyFlow.keepSecure" = "Write down your Recovery Phrase";
+"RecoveryKeyFlow.keepSecure" = "安全に保管";
 
 /* Informs the user that the recovery is only required for recovering a wallet. */
-"RecoveryKeyFlow.keyUseHint" = "Your key is only needed for recovery, not for everyday wallet access.";
+"RecoveryKeyFlow.keyUseHint" = "キーは復元時にのみ必要です。通常のウォレットへのアクセスには必要ありません。";
 
 /* Reminds the user not to take screenshots or email the recovery key words */
-"RecoveryKeyFlow.noScreenshotsOrEmailWarning" = "For security purposes, do not screenshot or email these words";
+"RecoveryKeyFlow.noScreenshotsOrEmailWarning" = "安全上の観点から,これらの単語のスクリーンショットやメール送信はおやめください";
 
 /* Recommends that the user avoids capturing the paper key with a screenshot */
-"RecoveryKeyFlow.noScreenshotsRecommendation" = "This is required to restore your wallet if you upgrade or lose your phone.";
+"RecoveryKeyFlow.noScreenshotsRecommendation" = "キーは紙にメモして,確認してください。安全上の理由からスクリーンショットでの保管はお勧めできません。";
 
 /* Title displayed when the user starts the process of recovering a wallet */
-"RecoveryKeyFlow.recoveryYourWallet" = "Restore Your Wallet";
+"RecoveryKeyFlow.recoveryYourWallet" = "ウォレットの復元";
 
 /* Subtitle displayed when the user starts the process of recovering a wallet */
-"RecoveryKeyFlow.recoveryYourWalletSubtitle" = "Please enter the Recovery Phrase of the wallet you want to restore";
+"RecoveryKeyFlow.recoveryYourWalletSubtitle" = "回復するウォレットの回復フレーズを入力してください。";
 
 /* Title for recovery key intro page */
-"RecoveryKeyFlow.relaxBuyTrade" = "Keep your Recovery Phrase in a secure location";
+"RecoveryKeyFlow.relaxBuyTrade" = "安心の購入と取引";
 
 /* Reminds the user to write down the recovery key words. */
-"RecoveryKeyFlow.rememberToWriteDownReminder" = "Remember to write these words down. Swipe back if you forgot.";
+"RecoveryKeyFlow.rememberToWriteDownReminder" = "単語はメモしましたか。忘れていたら,スワイプして戻ってください。";
 
 /* Instruction displayed when the user is resetting the PIN, which requires the recovery phrase to be entered */
-"RecoveryKeyFlow.resetPINInstruction" = "Please enter your Recovery Phrase to reset your PIN.";
+"RecoveryKeyFlow.resetPINInstruction" = "PINをリセットするには、回復フレーズを入力してください。";
 
 /* Assures the user that BRD will keep the user's funds secure. */
-"RecoveryKeyFlow.securityAssurance" = "Remember that this is the only way to restore your wallet. RockWallet does not keep a copy.";
+"RecoveryKeyFlow.securityAssurance" = "お客様の資産は最も安全に個人情報を守りながら保護されていますので,安心して購入や取引ができます。";
 
 "RecoveryKeyFlow.StorePhraseSecurely.subtitle" = "This is the only way you’ll be able to recover your funds. RockWallet does not keep a copy.";
 
 "RecoveryKeyFlow.StorePhraseSecurely.title" = "Store it securely";
 
 /* Recommends that the user stores the recovery key in a secure location */
-"RecoveryKeyFlow.storeSecurelyRecommendation" = "For security reasons, screenshots are not recommended, as anyone with your Recovery Phrase can access your funds.";
+"RecoveryKeyFlow.storeSecurelyRecommendation" = "キーは安全な場所に保管してください。ウォレットを復元できるのはこのキーだけです。BRD はキーを保存していません。";
 
 /* Title for the success page after the recovery phrase has been set up */
-"RecoveryKeyFlow.successHeading" = "Congratulations! You completed your Recovery Phrase setup.";
+"RecoveryKeyFlow.successHeading" = "おめでとう！回復フレーズの設定が完了しました。";
 
 /* Subtitle for the success page after the recovery key has been set up */
-"RecoveryKeyFlow.successSubheading" = "You're all set to deposit, swap, and buy crypto from your RockWallet.";
+"RecoveryKeyFlow.successSubheading" = "BRD ウォレットで仮想通貨を保管・購入・取引をする準備ができました。";
 
 "RecoveryKeyFlow.tickbox.value" = "I understand the importance of the Recovery Phrase.";
 
 "RecoveryKeyFlow.Title" = "Secure your wallet with your Recovery Phrase";
 
 /* Title displayed to the user on the intro screen when unlinking a wallet */
-"RecoveryKeyFlow.unlinkWallet" = "Unlink your wallet from this device.";
+"RecoveryKeyFlow.unlinkWallet" = "端末からウォレットを解除する。";
 
 /* Subtitle displayed to the user on the intro screen when unlinking a wallet. */
-"RecoveryKeyFlow.unlinkWalletSubtext" = "Start a new wallet by unlinking your device from the currently-installed wallet.";
+"RecoveryKeyFlow.unlinkWalletSubtext" = "端末から現在インストールされているウォレットを解除し,新しいウォレットを始めます。";
 
 /* Warning displayed when the user starts the process of unlinking a wallet */
-"RecoveryKeyFlow.unlinkWalletWarning" = "Wallet must be recovered to regain access.";
+"RecoveryKeyFlow.unlinkWalletWarning" = "ウォレットは再アクセスのために復元を開始します。";
 
 /* Title displayed to the user on the intro screen when wiping a wallet */
-"RecoveryKeyFlow.wipeWallet" = "Wipe your wallet from this device.";
+"RecoveryKeyFlow.wipeWallet" = "端末からウォレットを解除する。";
 
 /* Subtitle displayed to the user on the intro screen when wiping a wallet. */
-"RecoveryKeyFlow.wipeWalletSubtext" = "Start a new wallet by wiping the current wallet from your device.";
+"RecoveryKeyFlow.wipeWalletSubtext" = "デバイスから現在のウォレットを消去して、新しいウォレットを開始します。";
 
 /* Title for recovery key intro page */
-"RecoveryKeyFlow.writeItDown" = "Generate your private Recovery Phrase";
+"RecoveryKeyFlow.writeItDown" = "復元キーをメモする";
 
 /* Title for the recovery phrase landing page if the key has already been generated. */
-"RecoveryKeyFlow.writeKeyAgain" = "Write down your Recovery Phrase again";
+"RecoveryKeyFlow.writeKeyAgain" = "回復フレーズをもう一度書き留めます";
 
 /* Subtitle for the write recovery key screen */
-"RecoveryKeyFlow.writeKeyScreenSubtitle" = "Write down the following words in order.";
+"RecoveryKeyFlow.writeKeyScreenSubtitle" = "以下の単語を順番通りにメモしてください。";
 
 /* Title for the write recovery phrase screen */
-"RecoveryKeyFlow.writeKeyScreenTitle" = "Recovery Phrase";
+"RecoveryKeyFlow.writeKeyScreenTitle" = "あなたの回復フレーズ";
 
 /* Title for the step number when the user pages through the recovery words */
-"RecoveryKeyFlow.writeKeyStepTitle" = "%@ of %@";
+"RecoveryKeyFlow.writeKeyStepTitle" = "%@の%@";
 
-"RecoveryKeyFlow.WritePhrase.subtitle" = "Save your 12 word Recovery Phrase generated in the next step.";
+"RecoveryKeyFlow.WritePhrase.subtitle" = "Save your 12 word Recovery Phrase generated  in the next step.";
 
 "RecoveryKeyFlow.WritePhrase.title" = "Write it down";
 
@@ -2314,43 +2314,43 @@
 "RecoveryKeyOnboarding.titlePage1" = "Generate your private Recovery Phrase";
 
 /* No amount entered error message. */
-"RequestAnAmount.noAmount" = "Please enter an amount first.";
+"RequestAnAmount.noAmount" = "はじめに金額を入力してください。";
 
 /* Request a specific amount of bitcoin */
-"RequestAnAmount.title" = "Request an Amount";
+"RequestAnAmount.title" = "金額のリクエスト";
 
 /* Alert action button label */
-"ReScan.alertAction" = "Sync";
+"ReScan.alertAction" = "同期";
 
 /* Alert message body */
-"ReScan.alertMessage" = "You will not be able to send money while syncing.";
+"ReScan.alertMessage" = "同期中は送金することができません。";
 
 /* Alert message title */
-"ReScan.alertTitle" = "Sync with Blockchain?";
+"ReScan.alertTitle" = "ブロックチェーンの同期をしますか?";
 
 /* extimated time */
-"ReScan.body1" = "20-45 minutes";
+"ReScan.body1" = "20〜45分";
 
 /* Syncing explanation */
-"ReScan.body2" = "If a transaction shows as completed on the network but not in your RockWallet.";
+"ReScan.body2" = "ビットコインネットワークでトランザクションが完了したと表示されているが、BRD上では完了と表示されない場合。";
 
 /* Syncing explanation */
-"ReScan.body3" = "You repeatedly get an error saying your transaction was rejected.";
+"ReScan.body3" = "送金しているが、拒否され続けている場合。";
 
 /* Start Sync button label */
-"ReScan.buttonTitle" = "Start Sync";
+"ReScan.buttonTitle" = "同期を開始する";
 
 /* Sync blockchain view footer */
-"ReScan.footer" = "You will not be able to send money while syncing with the blockchain.";
+"ReScan.footer" = "ブロックチェーンの同期中は送金できません。";
 
 /* Sync Blockchain view header */
-"ReScan.header" = "Sync Blockchain";
+"ReScan.header" = "ブロックチェーン同期";
 
 /* Subheader label */
-"ReScan.subheader1" = "Estimated time";
+"ReScan.subheader1" = "推定時間";
 
 /* Subheader label */
-"ReScan.subheader2" = "When to Sync?";
+"ReScan.subheader2" = "いつ同期しますか?";
 
 "ResetPin.description" = "Your PIN will be used to unlock your RockWallet and send money";
 
@@ -2361,63 +2361,63 @@
 "ResetPin.Title" = "Reset PIN";
 
 /* Rewards view expanded body. */
-"RewardsView.expandedBody" = "Learn how you can save on trading fees and unlock future rewards";
+"RewardsView.expandedBody" = "取引手数料を節約して今後のリワードをアンロックする方法を学びましょう。";
 
 /* Rewards view expanded title. */
-"RewardsView.expandedTitle" = "Introducing RockWallet Rewards.";
+"RewardsView.expandedTitle" = "BRDリワードについて。";
 
 /* Rewards view title */
-"RewardsView.normalTitle" = "Rewards";
+"RewardsView.normalTitle" = "リワード";
 
 /* Scan bitcoin address camera flash toggle */
-"Scanner.flashButtonLabel" = "Camera Flash";
+"Scanner.flashButtonLabel" = "カメラのフラッシュ";
 
 "Scanner.noCamera" = "No camera found";
 
 /* (alert dialog message) Would you like to send a [Bitcoin / Bitcoin Cash / Ethereum] payment to this address?") */
-"Scanner.paymentPromptMessage" = "Would you like to send a %@ payment to this address?";
+"Scanner.paymentPromptMessage" = "この住所に %@ の支払いを送信しますか?";
 
 /* alert dialog title */
-"Scanner.paymentPromptTitle" = "Send Payment";
+"Scanner.paymentPromptTitle" = "支払いを送る";
 
 /* Complete filter label */
-"Search.complete" = "Complete";
+"Search.complete" = "完了";
 
 /* Pending filter label */
-"Search.pending" = "Pending";
+"Search.pending" = "保留中";
 
 /* Received filter label */
-"Search.received" = "Received";
+"Search.received" = "受取済";
 
 /* [Click here to] search */
-"Search.search" = "Search";
+"Search.search" = "検索";
 
 /* Sent filter label */
-"Search.sent" = "Sent";
+"Search.sent" = "送信済";
 
 /* Face ID button title */
 "SecurityCenter.faceIdTitle" = "Face ID";
 
 /* Paper Key button description */
-"SecurityCenter.paperKeyDescription" = "The only way to access your assets if you lose or upgrade your phone.";
+"SecurityCenter.paperKeyDescription" = "あなたが携帯電話を紛失したり、アップグレードした場合にご自身のビットコインへアクセスできる唯一の方法です。";
 
 /* Recovery Phrase button title. This used to be called 'paper key', so leaving the string key as `paperKeyTitle` in order, * to not break existing client code. */
-"SecurityCenter.paperKeyTitle" = "Recovery Phrase";
+"SecurityCenter.paperKeyTitle" = "回復フレーズ";
 
 /* PIN button description */
-"SecurityCenter.pinDescription" = "Protects your RockWallet from unauthorized users.";
+"SecurityCenter.pinDescription" = "アクセス権限のないユーザーからあなたのブレッドを守ります。";
 
 /* PIN button title */
-"SecurityCenter.pinTitle" = "6-Digit PIN";
+"SecurityCenter.pinTitle" = "6桁のPINコード";
 
 /* Touch ID button description */
-"SecurityCenter.touchIdDescription" = "Conveniently unlock your RockWallet and send money up to a set limit.";
+"SecurityCenter.touchIdDescription" = "BRDロック解除の他、設定した限度額までの送金も指紋認証で出来ます。";
 
 /* Touch ID button title */
 "SecurityCenter.touchIdTitle" = "Touch ID";
 
 /* Security center fingerprint authentication button */
-"SecurityCenter.touchIdTitle.android" = "Fingerprint Authentication";
+"SecurityCenter.touchIdTitle.android" = "指紋認証";
 
 "Segment.RockWalletPro" = "ROCKWALLET PRO";
 
@@ -2425,24 +2425,24 @@
 "Segwit.ConfirmationConfirmationBody" = "Thank you for helping move bitcoin forward!";
 
 /* Segwit enabled confirmation title */
-"Segwit.ConfirmationConfirmationTitle" = "You have enabled SegWit!";
+"Segwit.ConfirmationConfirmationTitle" = "SegWitを有効化しました！";
 
 /* Segwit enabled confirmation description */
-"Segwit.ConfirmationInstructionsDescription" = "";
+"Segwit.ConfirmationInstructionsDescription" = "Bitcoinの前進にご協力いただきありがとうございます。";
 
 /* Segwit instructions */
-"Segwit.ConfirmationInstructionsInstructions" = "SegWit support is still a beta feature.\n\nOnce SegWit is enabled, it will not be possible\nto disable it. You will be able to find the legacy address under Settings. \n\nSome third-party services, including crypto trading, may be unavailable to users who have enabled SegWit. In case of emergency, you will be able to generate a legacy address from Preferences > BTC Settings. \n\nSegWit will automatically be enabled for all\nusers in a future update.";
+"Segwit.ConfirmationInstructionsInstructions" = "SegWit対応はまだベータ版の機能です。\n一度SegWitが有効化されると取り消しはできません。設定画面の下でレガシーアドレスをご確認いただけます。\nSegWitを有効化したユーザーは,第三者のサービス（仮想通貨取引を含む）を利用できない場合があります。緊急の場合は,プリファレンス > Bitcoin設定から,レガシーアドレスを作成することができます。\n将来のアップデートでは,全ユーザーに対して自動的にSegWitが有効化されます。";
 
 /* Segwit extra confirmation title. */
-"Segwit.ConfirmChoiceLayout" = "Enabling SegWit is an irreversible feature. Are you sure you want to continue?";
+"Segwit.ConfirmChoiceLayout" = "「SegWitの有効化」は取り消しできない機能です。継続してよろしいですか？";
 
 /* Segwit enableButton */
-"Segwit.Enable" = "Enable";
+"Segwit.Enable" = "有効化する";
 
 /* Segwit button label that takes the user back to the home screen once SegWit is enabled. */
-"Segwit.HomeButton" = "Proceed";
+"Segwit.HomeButton" = "月へ";
 
-"Sell.achDurationWarning" = "ACH withdrawal will take 3–5 business days to reach your bank account.";
+"Sell.achDurationWarning" = "ACH withdrawal will be processed within 3-5 business days.";
 
 "Sell.achFee" = "ACH fee";
 
@@ -2458,7 +2458,7 @@
 
 "Sell.iReceive" = "I receive";
 
-"Sell.NotAvailableBody" = "This feature is not available in your region. We will notify you when it becomes available.\n\nYou can still Swap, Store, Send and Receive digital assets in your RockWallet.";
+"Sell.NotAvailableBody" = "Sell & Withdraw isn't available in your region. We'll notify you when this feature is released. You can always swap to convert digital assets.";
 
 "Sell.OrderPreview" = "Withdrawal preview";
 
@@ -2490,53 +2490,53 @@
 
 "Sell.WithdrawalErrorText" = "Please try again and if the issue persists, please contact customer support";
 
-"Sell.WithdrawalSuccessText" = "The funds should reach your selected bank account with 3–5 business days.";
+"Sell.WithdrawalSuccessText" = "Your funds should be deposited into your account within 3-5 business days. In rare cases, withdrawals may take up to 7 business days.";
 
 "Sell.WithdrawalSuccessTitle" = "Your withdrawal is being processed";
 
-"Sell.WithdrawDetails" = "Sell and Withdraw details";
+"Sell.WithdrawDetails" = "Sell and withdraw details";
 
 "Sell.YourAchSellLimits" = "Your ACH withdrawal limits";
 
 "Sell.yourOrder" = "You sell:";
 
-"Sell.YourSellLimits" = "Your card withdrawal limits";
+"Sell.YourSellLimits" = "Your sell limits";
 
 "Sell.YouWillReceive" = "You’ll receive";
 
 "Send_fio_toLabel" = "FIO";
 
 /* Send money amount label */
-"Send.amountLabel" = "Amount";
+"Send.amountLabel" = "金額";
 
 /* Balance: $4.00 */
-"Send.balance" = "Balance: %@";
+"Send.balance" = "残高: %@";
 
 /* Balance: $4.00 for iOS, the balance can't have a parameter */
-"Send.balanceString" = "Balance:";
+"Send.balanceString" = "残高:";
 
 "Send.BCHConverter.ErrorToast" = "The BCH address could not be converted.";
 
 /* Instructions how to allow the camera access for the app */
-"Send.cameraUnavailabeMessage.android" = "Allow camera access in \"Settings\" > \"Apps\" > \"RockWallet\" > \"Permissions\"";
+"Send.cameraUnavailabeMessage.android" = "「設定」 > 「アプリ」 > 「ブレッド」 > 「許可」でカメラへのアクセスを許可してください";
 
 /* Permission required to access camera */
-"Send.cameraUnavailabeTitle.android" = "RockWallet is not allowed to access the camera";
+"Send.cameraUnavailabeTitle.android" = "ブレッドはカメラへのアクセスを許可されていません";
 
 /* Camera not allowed message */
-"Send.cameraunavailableMessage" = "Go to Settings to allow camera access.";
+"Send.cameraunavailableMessage" = "設定画面へ移動し、カメラへのアクセス許可をしてください。";
 
 /* Camera not allowed alert title */
-"Send.cameraUnavailableTitle" = "RockWallet is not allowed to access the camera";
+"Send.cameraUnavailableTitle" = "ブレッドはカメラへのアクセスが許可されていません";
 
 /* Warning when sending to self. */
-"Send.containsAddress" = "The destination is your own address. You cannot send to yourself.";
+"Send.containsAddress" = "送金先がご自身のアドレスになっています。自分宛てには送金できません。";
 
 /* Could not create transaction alert title */
-"Send.creatTransactionError" = "Could not create transaction.";
+"Send.creatTransactionError" = "トランザクションの作成ができませんでした。";
 
 /* Description for sending money label */
-"Send.descriptionLabel" = "Memo";
+"Send.descriptionLabel" = "メモ";
 
 /* Destination tag is too long error message in send view */
 "Send.DestinationTag" = "Destination tag is too long.";
@@ -2545,15 +2545,15 @@
 "Send.destinationTag_optional" = "Destination Tag";
 
 /* Required Destination Tag label */
-"Send.destinationTag_required" = "Destination Tag (Required)";
+"Send.destinationTag_required" = "宛先タグ（必須）";
 
-"Send.destinationTag_required_error" = "A valid Destination Tag is required for the target address.";
+"Send.destinationTag_required_error" = "ターゲットアドレスには有効な宛先タグが必要です。";
 
 /* Destination Tag text explanation popup in send view */
 "Send.DestinationTagText" = "Some receiving addresses (exchanges usually) require additional identifying information provided with a Destination Tag.\n\nIf the recipient's address is accompanied by a destination tag, make sure to include it.\nAlso, we strongly suggest you send a small amount of cryptocurrency as a test before attempting to send a significant amount.";
 
 /* Emtpy pasteboard error message */
-"Send.emptyPasteboard" = "Pasteboard is empty";
+"Send.emptyPasteboard" = "ペーストボードが空です";
 
 /* Sending error message */
 "Send.Error.authenticationError" = "Authentication Error";
@@ -2562,22 +2562,22 @@
 "Send.Error.maxError" = "Could not calculate maximum";
 
 /* "(you) can't send (to your)self" */
-"Send.ethSendSelf" = "Can't send to self.";
+"Send.ethSendSelf" = "自分に送金することはできません。";
 
 /* Network Fee: $0.01 */
-"Send.fee" = "Network Fee: %@";
+"Send.fee" = "ネットワーク手数料: %@";
 
-"Send.fio_invalid" = "Invalid FIO address.";
+"Send.fio_invalid" = "無効なFIOアドレス。";
 
-"Send.fio_noAddress" = "There is no %@ address associated with this FIO address.";
+"Send.fio_noAddress" = "このFIOアドレスに関連付けられている%@アドレスはありません。";
 
-"Send.fio_retrievalError" = "There was an error retrieving the address for this FIO address. Please try again later.";
+"Send.fio_retrievalError" = "このFIOアドレスのアドレスの取得中にエラーが発生しました。後でもう一度やり直してください。";
 
 /* Payee identity not certified alert title. */
-"Send.identityNotCertified" = "Payee identity isn't certified.";
+"Send.identityNotCertified" = "受取人の本人確認が行われていません。";
 
 /* Insufficient funds error */
-"Send.insufficientFunds" = "Insufficient Funds";
+"Send.insufficientFunds" = "残高不足";
 
 /* Insufficient gas error */
 "Send.insufficientGas" = "Insufficient gas.";
@@ -2588,98 +2588,98 @@
 "Send.insufficientGasTitle" = "Insufficient %@ Balance";
 
 /* e.g. The destination is not a valid (bitcoin) address. */
-"Send.invalidAddressMessage" = "The destination address is not a valid %@ address.";
+"Send.invalidAddressMessage" = "送金先のアドレスが無効な%@アドレスです。";
 
 /* Invalid address on pasteboard message */
-"Send.invalidAddressOnPasteboard" = "Pasteboard does not contain a valid %@ address.";
+"Send.invalidAddressOnPasteboard" = "ペーストボードに有効な%@アドレスが入っていません。";
 
 /* Invalid address alert title */
-"Send.invalidAddressTitle" = "Invalid Address";
+"Send.invalidAddressTitle" = "無効なアドレスです";
 
 /* Is rescanning error message */
-"Send.isRescanning" = "Sending is disabled during a full rescan.";
+"Send.isRescanning" = "再スキャンを行っている間は送金できません。";
 
 /* Warning when the user is trying to send bitcoin cash to a legacy bitcoin address (possible, but probably not what the user wants to do) */
-"Send.legacyAddressWarning" = "Warning: this is a legacy bitcoin address. Are you sure you want to send Bitcoin Cash to it?";
+"Send.legacyAddressWarning" = "警告: これはレガシービットコインアドレスです。本当にビットコインキャッシュを送金しますか?";
 
 /* We are loading the request (now) */
-"Send.loadingRequest" = "Loading Request";
+"Send.loadingRequest" = "リクエストをロード中";
 
 /* Hedera Memo Tag Label */
-"Send.memoTag_optional" = "Hedera Memo (Optional)";
+"Send.memoTag_optional" = "Hedera Memo（オプション）";
 
 /* Transaction fee could not be be caluculated error. */
-"Send.nilFeeError" = "Insufficient funds to cover the transaction fee.";
+"Send.nilFeeError" = "残高不足で取引手数料を支払うことができません。";
 
 /* Empty address alert message */
-"Send.noAddress" = "Please enter the recipient's address.";
+"Send.noAddress" = "受取人のアドレスを入力してください。";
 
 /* Emtpy amount alert message */
-"Send.noAmount" = "Please enter an amount to send.";
+"Send.noAmount" = "送金金額を入力してください。";
 
 /* No fee estimate error on send view */
 "Send.NoFeeEstimate" = "No fee estimate";
 
 /* No Fees error */
-"Send.noFeesError" = "Network Fee conditions are being downloaded. Please try again.";
+"Send.noFeesError" = "ネットワーク手数料の諸条件のダウンロード中です。もう一度お試し下さい。";
 
 /* Paste button label */
-"Send.pasteLabel" = "Paste";
+"Send.pasteLabel" = "貼り付け";
 
 /* Error message for invalid PayID */
-"Send.payId_invalid" = "Invalid PayString.";
+"Send.payId_invalid" = "PayIDが無効です。";
 
 /* Error message for no address associated with a PayID for a given currency */
-"Send.payId_noAddress" = "There is no %@ address associated with this PayString.";
+"Send.payId_noAddress" = "このPayIDに関連付けられている%@アドレスはありません。";
 
 /* Error message for error in retrieving the address from the PayID endpoint */
-"Send.payId_retrievalError" = "There was an error retrieving the address for this PayString. Please try again later.";
+"Send.payId_retrievalError" = "このPayIDの住所の取得中にエラーが発生しました。後でもう一度やり直してください。";
 
 /* PayID label */
-"Send.payId_toLabel" = "PayString";
+"Send.payId_toLabel" = "PayID";
 
 "Send.placeholderText" = "Enter wallet address or Paymail";
 
 "Send.placeholderTextWithoutPaymail" = "Enter wallet address";
 
 /* Could not publish transaction alert title */
-"Send.publishTransactionError" = "Your transaction request couldn’t be completed. Please try again.";
+"Send.publishTransactionError" = "取引を実行できませんでした。";
 
 /* Could not load remote request error message */
-"Send.remoteRequestError" = "Your payment attempt couldn’t be completed. Please try again.";
+"Send.remoteRequestError" = "支払い要求がロードできませんでした";
 
 /* Scan button label */
-"Send.scanLabel" = "Scan";
+"Send.scanLabel" = "スキャン";
 
 /* Title for error when send request times out and we are not sure weather it succesfull or not. */
 "Send.sendError" = "Send Error";
 
 /* Sending Max: $4.00 for iOS, the balance can't have a parameter */
-"Send.sendingMax" = "Sending Max:";
+"Send.sendingMax" = "最大送信：";
 
 /* Send button label (the action, "press here to send") */
-"Send.sendLabel" = "Send";
+"Send.sendLabel" = "送金する";
 
 /* Send button label (for special case where the user specified send amount is too high and does not leave a balance to cover fees.) */
-"Send.sendMaximum" = "Send maximum amount?";
+"Send.sendMaximum" = "限度額を送金しますか？";
 
 /* Error message when send request times out and we are not sure weather it succesfull or not. */
 "Send.timeOutBody" = "Timed out waiting for network response. Please wait 60 seconds for confirmation before retrying.";
 
 /* Send screen title (as in "this is the screen for sending money") */
-"Send.title" = "Send";
+"Send.title" = "送金";
 
 /* Send money to label */
-"Send.toLabel" = "To";
+"Send.toLabel" = "宛先";
 
 /* Adress already used alert message - first part */
-"Send.UsedAddress.firstLine" = "Bitcoin addresses are intended for single use only.";
+"Send.UsedAddress.firstLine" = "ビットコインアドレスは、個人利用のみを想定しています。";
 
 /* Adress already used alert message - second part */
-"Send.UsedAddress.secondLIne" = "Re-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn't directly control the address.";
+"Send.UsedAddress.secondLIne" = "再利用は、送金側と受取側の両方のプライバシーの侵害につながるおそれがあり、受取人がアドレスを直接管理しない場合、損害につながるおそれもあります。";
 
 /* Adress already used alert title */
-"Send.UsedAddress.title" = "Address Already Used";
+"Send.UsedAddress.title" = "アドレスはすでに使用されています";
 
 /* What is a destination tag title in popup in send view */
 "Send.WhatIsDestinationTag" = "What is a destination tag?";
@@ -2689,31 +2689,31 @@
 "SetPin.descriptionConfirm" = "Please re-enter your PIN";
 
 /* Section header for "other settings". */
-"Settings.other" = "Other";
+"Settings.other" = "その他";
 
 /* About label */
-"Settings.about" = "About";
+"Settings.about" = "概要";
 
 /* Advanced settings header */
-"Settings.advanced" = "Advanced";
+"Settings.advanced" = "詳細";
 
 /* Advanced Settings title */
-"Settings.advancedTitle" = "Advanced Settings";
+"Settings.advancedTitle" = "詳細設定";
 
 /* ATM map menu item title explaining that it's a feature only available in the USA */
-"Settings.atmMapMenuItemSubtitle" = "Available in the USA only";
+"Settings.atmMapMenuItemSubtitle" = "アメリカでのみ利用可能";
 
 /* ATM map menu item title */
-"Settings.atmMapMenuItemTitle" = "Crypto ATM Map";
+"Settings.atmMapMenuItemTitle" = "暗号ATMマップ";
 
 /* i.e. the currency which will be displayed */
-"Settings.currency" = "Display Currency";
+"Settings.currency" = "表示される通貨";
 
 /* e.g. "USD Settings" (settings for how USD is handled) */
-"Settings.currencyPageTitle" = "%@ Settings";
+"Settings.currencyPageTitle" = "%@設定";
 
 /* Section title for a collection of different settings screens, one for each currency */
-"Settings.currencySettings" = "Currency Settings";
+"Settings.currencySettings" = "通貨設定";
 
 /* Debug crash */
 "Settings.DebugCrash" = "Debug crash";
@@ -2721,199 +2721,199 @@
 "Settings.DeveloperOptions" = "Developer Options";
 
 /* Join Early access label */
-"Settings.earlyAccess" = "Join Early Access";
+"Settings.earlyAccess" = "早期アクセスに参加";
 
 /* Enable segwit. */
-"Settings.EnableSegwit" = "Enable Segwit";
+"Settings.EnableSegwit" = "Segwitを有効にする";
 
 /* Are you enjoying bread alert message body */
-"Settings.enjoying" = "Are you enjoying RockWallet?";
+"Settings.enjoying" = "ブレッドをお楽しみいただいていますか?";
 
 /* Export transaction history menu item */
-"Settings.exportTransfers" = "Export transaction history to CSV";
+"Settings.exportTransfers" = "トランザクション履歴をCSVにエクスポート";
 
 /* Face ID spending limit label */
-"Settings.faceIdLimit" = "Face ID Spending Limit";
+"Settings.faceIdLimit" = "Face ID使用限度額";
 
 /* Redeem the funds stored on this private key. */
-"Settings.importTitle" = "Sweep Wallet";
+"Settings.importTitle" = "秘密鍵から引き出し";
 
 /* Manage settings section header */
-"Settings.manage" = "Manage";
+"Settings.manage" = "管理";
 
 /* No log files found error message */
 "Settings.noLogsFound" = "No Log files found. Please try again later.";
 
 /* Notifications label */
-"Settings.notifications" = "Notifications";
+"Settings.notifications" = "通知";
 
 /* Preferences settings section header */
-"Settings.preferences" = "Preferences";
+"Settings.preferences" = "設定";
 
 /* Tap here to reset the list of currencies to the default settings. */
-"Settings.resetCurrencies" = "Reset to Default Currencies";
+"Settings.resetCurrencies" = "デフォルトの通貨に戻す";
 
 /* Leave review button label */
-"Settings.review" = "Leave us a Review";
+"Settings.review" = "レビューを書く";
 
 /* Rewards menu item */
-"Settings.rewards" = "Rewards";
+"Settings.rewards" = "リワード";
 
 /* Share anonymous data label */
-"Settings.shareData" = "Share Anonymous Data";
+"Settings.shareData" = "匿名データをシェアする";
 
 /* "Enables sharing balance to widget" */
-"Settings.shareWithWidget" = "Share portfolio data with widgets";
+"Settings.shareWithWidget" = "ポートフォリオデータをウィジェットと共有する";
 
 /* Sync blockchain label */
-"Settings.sync" = "Sync Blockchain";
+"Settings.sync" = "ブロックチェーン同期";
 
 "Settings.TellAFriendText" = "Hey, I use RockWallet to store and manage my crypto. It’s really easy to use. Give it a try. https://rockwallet.com/";
 
 "Settings.TellFriendDescription" = "Hey, I use RockWallet to send, receive, store, buy and trade crypto. It’s really easy to use. Give it a try. https://rockwallet.com/";
 
 /* Settings title */
-"Settings.title" = "Menu";
+"Settings.title" = "設定";
 
 /* Touch ID spending limit label */
-"Settings.touchIdLimit" = "Touch ID Spending Limit";
+"Settings.touchIdLimit" = "Touch IDの利用限度額";
 
 /* The fingerprint spending limit */
-"Settings.touchIdLimit.android" = "Fingerprint Authentication Spending Limit";
+"Settings.touchIdLimit.android" = "指紋認証利用上限";
 
 /* View legacy address (old format). */
-"Settings.ViewLegacyAddress" = "View Legacy Receive Address";
+"Settings.ViewLegacyAddress" = "受取用レガシーアドレスを表示";
 
 /* Receive Bitcoin instructions */
-"Settings.ViewLegacyAddressReceiveDescription" = "Only send Bitcoin (BTC) to this address. Any other asset sent to this address will be lost permanently.";
+"Settings.ViewLegacyAddressReceiveDescription" = "このアドレスにはBitcoin（BTC）だけを送信してください。このアドレスに送信された他の資産は,いかなるものも永久に失われます。";
 
 /* Receive Bitcoin */
-"Settings.ViewLegacyAddressReceiveTitle" = "Receive Bitcoin";
+"Settings.ViewLegacyAddressReceiveTitle" = "Bitcoinを受け取りましょう";
 
 /* Wallet Settings section header */
-"Settings.wallet" = "Wallets";
+"Settings.wallet" = "ウォレット";
 
 "Settings.WebDebugUrl" = "Web Platform Debug URL";
 
 /* Wipe/delete your wallet from the current device. */
-"Settings.wipe" = "Unlink from this device";
+"Settings.wipe" = "端末からウォレットを解除する。";
 
 /* Share data view body */
-"ShareData.body" = "Help improve RockWallet by sharing your anonymous data with us. This does not include any financial information. We respect your financial privacy.";
+"ShareData.body" = "匿名データをシェアして、ブレッドの改善にご協力ください。これにはいかなる財務情報も含まれません。私たちはあなたの財務プライバシーを尊重しています。";
 
 /* Share data header */
-"ShareData.header" = "Share Data?";
+"ShareData.header" = "データを共有しますか?";
 
 /* Share data switch label. */
-"ShareData.toggleLabel" = "Share Anonymous Data?";
+"ShareData.toggleLabel" = "匿名データをシェアしますか?";
 
-"ShareGift.approximateTotal" = "Approximate Total";
+"ShareGift.approximateTotal" = "おおよその合計";
 
-"ShareGift.footerMessage1" = "A network fee will be deducted from the total when claimed.\nActual value depends on current price of bitcoin.";
+"ShareGift.footerMessage1" = "ネットワーク料金は、請求時に合計から差し引かれます。\n実際の値はビットコインの現在の価格によって異なります。";
 
-"ShareGift.footerMessage2" = "Download the RockWallet app for iPhone or Android.\nFor more information visit RockWallet.com/gift";
+"ShareGift.footerMessage2" = "iPhoneまたはAndroid用のBRDアプリをダウンロードします。\n詳細については、brd.com / giftをご覧ください。";
 
-"ShareGift.tagLine" = "Someone gifted you bitcoin!";
+"ShareGift.tagLine" = "誰かがあなたにビットコインをプレゼントしました！";
 
-"ShareGift.walletName" = "Bitcoin";
+"ShareGift.walletName" = "ビットコイン";
 
 /* Button label: select a baker */
-"Staking.add" = "+ Select Baker";
+"Staking.add" = "+ベイカーを選択";
 
 /* Baker cell: Free Space field header */
-"Staking.cellFreeSpaceHeader" = "Free Space";
+"Staking.cellFreeSpaceHeader" = "フリースペース";
 
-"Staking.changeValidator" = "Change";
+"Staking.changeValidator" = "変化する";
 
-"Staking.descriptionTezos" = "Delegate your Tezos account to a validator to earn a reward while keeping full security and control of your coins.";
+"Staking.descriptionTezos" = "Tezosアカウントをバリデーターに委任して、コインの完全なセキュリティと制御を維持しながら報酬を獲得します。";
 
 /* Baker cell: Fee field header */
-"Staking.feeHeader" = "Fee:";
+"Staking.feeHeader" = "費用：";
 
 "Staking.feePct" = "Fee: %@";
 
 "Staking.loadingBakerError" = "An error occurred while loading baker information. Please try again later.";
 
 /* Status label: current staking transaction is pending */
-"Staking.pendingTransaction" = "Transaction pending...";
+"Staking.pendingTransaction" = "トランザクション保留中...";
 
 /* Button label: remove selected baker */
-"Staking.remove" = "Remove";
+"Staking.remove" = "削除する";
 
 /* Baker cell: ROI field header */
-"Staking.roiHeader" = "Est. ROI";
+"Staking.roiHeader" = "EST（東部基準時。 ROI";
 
 /* Modal title: Select Baker modal */
-"Staking.selectBakerTitle" = "Select XTZ Delegate";
+"Staking.selectBakerTitle" = "XTZデリゲートを選択します";
 
-"Staking.stake" = "Stake";
-
-/* UI flag showing state of Tezos staking */
-"Staking.stakingActiveFlag" = "ACTIVE";
+"Staking.stake" = "ステーク";
 
 /* UI flag showing state of Tezos staking */
-"Staking.stakingInactiveFlag" = "INACTIVE";
+"Staking.stakingActiveFlag" = "アクティブ";
 
 /* UI flag showing state of Tezos staking */
-"Staking.stakingPendingFlag" = "PENDING";
+"Staking.stakingInactiveFlag" = "非活性";
+
+/* UI flag showing state of Tezos staking */
+"Staking.stakingPendingFlag" = "保留中";
 
 /* Staking banner title */
-"Staking.stakingTitle" = "Staking";
+"Staking.stakingTitle" = "ステーキング";
 
-"Staking.stakingTo" = "staking to %@";
+"Staking.stakingTo" = "%@へのステーキング";
 
-"Staking.statusPending" = "Pending";
+"Staking.statusPending" = "保留中";
 
-"Staking.statusStaked" = "Staked!";
+"Staking.statusStaked" = "賭けた！";
 
-"Staking.subTitle" = "Earn money while holding";
-
-/* Tezos XTZ baker asset type */
-"Staking.tezosDune" = "Tezos & Dune";
+"Staking.subTitle" = "持ちながらお金を稼ぐ";
 
 /* Tezos XTZ baker asset type */
-"Staking.tezosMultiasset" = "Multiasset Pool";
+"Staking.tezosDune" = "テゾス＆デューン";
 
 /* Tezos XTZ baker asset type */
-"Staking.tezosOnly" = "Tezos-only";
+"Staking.tezosMultiasset" = "マルチアセットプール";
 
-"Staking.title" = "Stake %@";
+/* Tezos XTZ baker asset type */
+"Staking.tezosOnly" = "テゾスのみ";
 
-"Staking.unstake" = "Unstake";
+"Staking.title" = "ステーク%@";
 
-"Staking.validatorHint" = "Enter Validator Address";
+"Staking.unstake" = "アンステーク";
+
+"Staking.validatorHint" = "バリデーターアドレスを入力してください";
 
 /* button label */
-"StartPaperPhrase.againButtonTitle" = "Write Down Recovery Phrase Again";
+"StartPaperPhrase.againButtonTitle" = "回復フレーズを書き留めます";
 
 /* Paper key explanation text. */
-"StartPaperPhrase.body" = "Your Recovery Phrase is the only way to restore your RockWallet if your phone is lost, stolen, broken, or upgraded.\n\nWe will show you a list of words to write down on a piece of paper and keep safe.";
+"StartPaperPhrase.body" = "スマートフォンが紛失、盗難、破損、またはアップグレードされた場合にリカバリフレーズを使用することで、BRDを復元できます。 \n\n一枚の紙に書き留めて安全を保つための単語のリストをお見せします。";
 
 /* Paper key explanation text (Android-version) */
-"StartPaperPhrase.Body.Android" = "Your Recovery Phrase is the only way to restore your RockWallet if your phone is lost, stolen, broken, or upgraded.\n\nYour Recovery Phrase is also required if you change the security settings on your device.\n\nWe will show you a list of words to write down on a piece of paper and keep safe.";
+"StartPaperPhrase.Body.Android" = "スマートフォンが紛失、盗難、破損、またはアップグレードされた場合にリカバリフレーズを使用することで、BRDを復元できます。 \n\nデバイスのセキュリティ設定を変更する場合も、リカバリフレーズが必要です。 \n\n一枚の紙に書き留めて安全を保つための単語のリストをお見せします。";
 
 /* button label */
-"StartPaperPhrase.buttonTitle" = "Write Down Recovery Phrase";
+"StartPaperPhrase.buttonTitle" = "回復フレーズを書き留めます";
 
 /* Argument is date; date should be on a new line */
-"StartPaperPhrase.date" = "Last written down on\n %@";
+"StartPaperPhrase.date" = "最後に書き留めた\n %@";
 
 /* button label */
-"StartViewController.createButton" = "Create New Wallet";
+"StartViewController.createButton" = "新しいウォレットを作成する";
 
 /* Start view message */
-"StartViewController.message" = "Moving money forward.";
+"StartViewController.message" = "最も安全にビットコインを使う手段。";
 
 /* Recover your wallet from a backup */
-"StartViewController.recoverButton" = "Recover Wallet";
+"StartViewController.recoverButton" = "ウォレットを復元する";
 
-"SupportForm.feedbackAppreciated" = "We would love your feedback";
+"SupportForm.feedbackAppreciated" = "フィードバックをお待ちしています";
 
-"SupportForm.helpUsImprove" = "Help us improve";
+"SupportForm.helpUsImprove" = "改善にご協力ください";
 
-"SupportForm.notNow" = "Not now";
+"SupportForm.notNow" = "今はやめろ";
 
-"SupportForm.pleaseDescribe" = "Please describe your experience";
+"SupportForm.pleaseDescribe" = "あなたの経験を教えてください";
 
 /* Add item label in swap flow */
 "Swap.AddItem" = "Add item!";
@@ -2928,7 +2928,7 @@
 /* Balance text on swap */
 "Swap.Balance" = "I have %@ %@";
 
-"Swap.CardFee" = "Card fee";
+"Swap.CardFee" = "Card fee:";
 
 /* Title on check your assets popup */
 "Swap.CheckAssets" = "Check your assets!";
@@ -2988,7 +2988,7 @@
 "Swap.SwapLimit" = "Swap limits";
 
 /* Swap min and max limit text */
-"Swap.SwapLimits" = "Currently, minimum for Swap is %@ and maximum is %@ per day.";
+"Swap.SwapLimits" = "Currently, minimum for Swap is %@ USD and maximum is %@ USD/day.";
 
 "Swap.Swapping" = "Swapping %@ to %@";
 
@@ -3017,37 +3017,37 @@
 "Swap.youSend" = "You send";
 
 /* Syncing view done syncing state header text */
-"SyncingView.activity" = "Activity";
+"SyncingView.activity" = "アクティビティ";
 
 /* Syncing view connectiong state header text */
-"SyncingView.connecting" = "Connecting";
+"SyncingView.connecting" = "接続中";
 
 /* The sync has failed (to complete) */
-"SyncingView.failed" = "Sync Failed";
+"SyncingView.failed" = "同期に失敗しました";
 
 /* Syncing view header text */
-"SyncingView.header" = "Syncing";
+"SyncingView.header" = "同期中";
 
 /* Retry button label */
-"SyncingView.retry" = "Retry";
+"SyncingView.retry" = "再試行";
 
 /* "eg. Synced through <Jan 12, 2015> */
-"SyncingView.syncedThrough" = "Synced through %@";
+"SyncingView.syncedThrough" = "%@まで同期完了";
 
 /* Syncing view syncing state header text */
-"SyncingView.syncing" = "Syncing";
+"SyncingView.syncing" = "同期中";
 
 /* 6 d (6 days) */
-"TimeSince.days" = "%@ d";
+"TimeSince.days" = "%@日";
 
 /* 6 h (6 hours) */
-"TimeSince.hours" = "%@ h";
+"TimeSince.hours" = "%@時間";
 
 /* 6 m (6 minutes) */
-"TimeSince.minutes" = "%@ m";
+"TimeSince.minutes" = "%@分";
 
 /* 6 s (6 seconds) */
-"TimeSince.seconds" = "%@ s";
+"TimeSince.seconds" = "%@秒";
 
 "Title.AutoEnterPin" = "Auto-enter PIN";
 
@@ -3071,103 +3071,103 @@
 "Title.UnlinkWalletNoPrompt" = "Unlink Wallet (no prompt)";
 
 /* Add [this item to the list] */
-"TokenList.add" = "Add";
+"TokenList.add" = "追加する";
 
 /* Add Wallets  [to your home screen] */
-"TokenList.addTitle" = "Add Assets";
+"TokenList.addTitle" = "ウォレットを追加する";
 
 /* Hide [this token from view] */
-"TokenList.hide" = "Hide";
+"TokenList.hide" = "非表示にする";
 
 /* [click here to] Manage [your] Wallets */
-"TokenList.manageTitle" = "Manage Assets";
+"TokenList.manageTitle" = "ウォレットを管理する";
 
 /* Remove [this item from the list] */
-"TokenList.remove" = "Remove";
+"TokenList.remove" = "削除する";
 
 /* Show [this item on your home screen] */
-"TokenList.show" = "Show";
+"TokenList.show" = "表示する";
 
 /* You can customize your Touch ID Spending Limit from the [TouchIdSettings.linkText gets added here as a button] */
-"TouchIdSettings.customizeText" = "You can customize your Touch ID spending limit from the %@.";
+"TouchIdSettings.customizeText" = "%@からTouch ID利用限度額を変更できます。";
 
 /* Fingerprint enabling description body */
-"TouchIdSettings.customizeText.android" = "You can customize your Fingerprint Authentication Spending Limit from the Fingerprint Authorization Spending Limit screen";
+"TouchIdSettings.customizeText.android" = "指紋認証利用上限は指紋認証利用上限画面でカスタマイズできます";
 
 /* Instruction for the fingerprint setup */
-"TouchIdSettings.disabledWarning.body.android" = "You have not enabled fingerprint authentication on this device. Go to Settings -> Security to set up fingerprint authentication.";
+"TouchIdSettings.disabledWarning.body.android" = "この機器は指紋認証が有効化されていません。設定 -> セキュリティに移動して指紋認証を設定してください。";
 
 /* Fingerprint Is Not Setup */
-"TouchIdSettings.disabledWarning.title.android" = "Fingerprint Authentication Not Enabled";
+"TouchIdSettings.disabledWarning.title.android" = "指紋認証が有効ではありません";
 
 /* Text that describes the purpose of the Touch ID settings in the BRD app. */
-"TouchIdSettings.explanatoryText" = "Use Touch ID to unlock your RockWallet app and send money.";
+"TouchIdSettings.explanatoryText" = "Touch IDを使用してBRDアプリのロックを解除し、送金してください。";
 
 /* Touch Id screen label */
-"TouchIdSettings.label" = "Use your fingerprint to unlock your RockWallet and send money up to a set limit.";
+"TouchIdSettings.label" = "設定された限度額以下の送金を行う場合には、指紋認証でご自身のブレッドのロックを解除できます。";
 
 /* Link Text (see TouchIdSettings.customizeText) */
-"TouchIdSettings.linkText" = "Touch ID Spending Limit Screen";
+"TouchIdSettings.linkText" = "Touch ID利用限度額画面";
 
 /* Spending Limit: b100,000 ($100) */
-"TouchIdSettings.spendingLimit" = "Spending limit: %@ (%@)";
+"TouchIdSettings.spendingLimit" = "利用限度: %@ (%@)";
 
 /* Touch id switch label. */
-"TouchIdSettings.switchLabel" = "Enable Touch ID for RockWallet";
+"TouchIdSettings.switchLabel" = "ブレッドでTouch IDの有効化";
 
 /* Enable fingerprint for this wallet called Bread */
-"TouchIdSettings.switchLabel.android" = "Enable Fingerprint Authentication";
+"TouchIdSettings.switchLabel.android" = "指紋認証を有効にする";
 
 /* Touch ID settings view title */
 "TouchIdSettings.title" = "Touch ID";
 
 /* Fingerprint authentication label */
-"TouchIdSettings.title.android" = "Fingerprint Authentication";
+"TouchIdSettings.title.android" = "指紋認証";
 
 /* Text label for a toggle that enables Touch ID for sending money. */
-"TouchIdSettings.transactionsTitleText" = "Enable Touch ID to send money";
+"TouchIdSettings.transactionsTitleText" = "Touch IDを有効にして送金する";
 
 /* Touch ID unavailable alert message */
-"TouchIdSettings.unavailableAlertMessage" = "You have not set up Touch ID on this device. Go to Settings->Touch ID & Passcode to set it up now.";
+"TouchIdSettings.unavailableAlertMessage" = "あなたはこの端末でTouch IDの利用設定をしていません。設定->Touch IDとパスコードに移動し、今すぐ設定してください。";
 
 /* Touch ID unavailable alert title */
-"TouchIdSettings.unavailableAlertTitle" = "Touch ID Not Set Up";
+"TouchIdSettings.unavailableAlertTitle" = "Touch IDが設定されていません";
 
 /* Text label for the toggle that enables Touch ID for unlocking the BRD app. */
-"TouchIdSettings.unlockTitleText" = "Enable Touch ID to unlock RockWallet";
+"TouchIdSettings.unlockTitleText" = "Touch IDを有効にしてBRDのロックを解除する";
 
 /* Always require passcode option */
-"TouchIdSpendingLimit" = "Always require passcode";
+"TouchIdSpendingLimit" = "常にパスコードを要求する";
 
 /* Touch ID spending limit screen body */
-"TouchIdSpendingLimit.body" = "You will be asked to enter your 6-digit PIN to send any transaction over your spending limit, and every 48 hours since the last time you entered your 6-digit PIN.";
+"TouchIdSpendingLimit.body" = "限度額を超える金額の送金を行う場合や、最後に6桁のPINコードを入力してから48時間経過した場合は6桁のPINコードの入力が求められます。";
 
 /* Touch Id spending limit screen title */
-"TouchIdSpendingLimit.title" = "Touch ID Spending Limit";
+"TouchIdSpendingLimit.title" = "Touch IDの利用限度額";
 
 /* name of spending limit when using fingerprint authorization */
-"TouchIdSpendingLimit.title.android" = "Fingerprint Authorization Spending Limit";
+"TouchIdSpendingLimit.title.android" = "指紋認証利用上限";
 
 /* Availability status text */
-"Transaction.available" = "Available to Spend";
+"Transaction.available" = "利用可能";
 
 /* Transaction complete label */
-"Transaction.complete" = "Complete";
+"Transaction.complete" = "完了";
 
 /* Transaction is confirming status text */
-"Transaction.confirming" = "In Progress";
+"Transaction.confirming" = "進行中";
 
 /* eg. Ending balance: $50.00 */
-"Transaction.ending" = "Ending balance: %@";
+"Transaction.ending" = "期末残高: %@";
 
 /* Exchange rate on date header */
-"Transaction.exchangeOnDayReceived" = "Exchange rate when received:";
+"Transaction.exchangeOnDayReceived" = "受け取り時の為替レート：";
 
 /* Exchange rate on date header */
-"Transaction.exchangeOnDaySent" = "Exchange rate when sent:";
+"Transaction.exchangeOnDaySent" = "送金時の為替レート：";
 
 /* Transaction failed status text */
-"Transaction.failed" = "Failed";
+"Transaction.failed" = "失敗";
 
 "Transaction.FailedPurchaseWithInstantBuy" = "Failed purchase with Instant Buy";
 
@@ -3177,20 +3177,20 @@
 "Transaction.FailedWithdrawWithInstantBuy" = "Failed purchase with Instant Buy";
 
 /* (b600 fee) */
-"Transaction.fee" = "(%@ fee)";
+"Transaction.fee" = "(%@ 手数料)";
 
 "Transaction.HybridPart" = "- %@/2";
 
 /* Invalid transaction */
-"Transaction.invalid" = "INVALID";
+"Transaction.invalid" = "無効";
 
 /* Timestamp label for event that just happened */
-"Transaction.justNow" = "just now";
+"Transaction.justNow" = "たった今";
 
 "Transaction.ManuallySettled" = "Manually settled";
 
 /* Transaction is pending status text */
-"Transaction.pending" = "Pending";
+"Transaction.pending" = "保留中";
 
 /* Pending purchase label in transaction view */
 "Transaction.PendingPurchase" = "Pending purchase";
@@ -3204,7 +3204,7 @@
 
 "Transaction.pendingWithdrawalWithCard" = "Pending withdrawal with card";
 
-"Transaction.PendingWithdrawWithAch" = "Pending withdrawal with ACH";
+"Transaction.PendingWithdrawWithAch" = "Pending withdraw with ACH";
 
 "Transaction.PendingWithdrawWithInstantBuy" = "Pending purchase with Instant Buy";
 
@@ -3223,23 +3223,23 @@
 "Transaction.PurchaseFailedWithInstantAch" = "Purchase with Instant Buy failed";
 
 /* Receive status text: 'In progress: 20%' */
-"Transaction.receivedStatus" = "In progress: %@";
+"Transaction.receivedStatus" = "進行中: %@";
 
 "Transaction.refunded" = "Refunded";
 
 /* Send status text: 'In progress: 20%' */
-"Transaction.sendingStatus" = "In progress: %@";
+"Transaction.sendingStatus" = "進行中: %@";
 
 /* sending to <address> */
-"Transaction.sendingTo" = "Sending to %@";
+"Transaction.sendingTo" = "%@に送金中";
 
 /* sent to <address> */
-"Transaction.sentTo" = "Sent to %@";
+"Transaction.sentTo" = "%@に送金済み";
 
-"Transaction.stakingTo" = "staking to %@";
+"Transaction.stakingTo" = "%@へのステーキング";
 
 /* eg. Starting balance: $50.00 */
-"Transaction.starting" = "Starting balance: %@";
+"Transaction.starting" = "期首残高: %@";
 
 "Transaction.swapFromFailed" = "Swap from %@ failed";
 
@@ -3257,12 +3257,12 @@
 "Transaction.swapToFailed" = "Swap to %@ failed";
 
 /* e.g. "[The money you paid was a] Fee for token transfer: BRD" (BRD is the token that was transfered) */
-"Transaction.tokenTransfer" = "Fee for token transfer: %@";
+"Transaction.tokenTransfer" = "トークン送金の手数料: %@";
 
-"Transaction.toRecipient" = "to %@";
+"Transaction.toRecipient" = "〜 %@";
 
 /* Waiting to be confirmed string */
-"Transaction.waiting" = "Waiting to be confirmed. Some merchants require confirmation to complete a transaction. Estimated time: 1-2 hours.";
+"Transaction.waiting" = "承認を待っています。トランザクションの完了には承認が必要となる場合があります。推定時間: 1-2時間。";
 
 "Transaction.withdarwalWithCardComplete" = "Withdrawal to card successful";
 
@@ -3272,168 +3272,168 @@
 
 "Transaction.withdrawalWithCardFailed" = "Withdrawal to card unsuccessful";
 
-"Transaction.WithdrawFailedWithAch" = "Withdrawal unsuccessful";
+"Transaction.WithdrawFailedWithAch" = "Withdraw with ACH failed";
 
-"Transaction.WithdrawWithAch" = "Withdrawal successful";
+"Transaction.WithdrawWithAch" = "Withdrew with ACH";
 
 /* e.g. I received money from an account. */
-"TransactionDetails.account" = "account";
+"TransactionDetails.account" = "アカウント";
 
 /* Address received from header */
-"TransactionDetails.addressFromHeader" = "From";
+"TransactionDetails.addressFromHeader" = "送金元";
 
 /* Address sent to header */
-"TransactionDetails.addressToHeader" = "To";
+"TransactionDetails.addressToHeader" = "送金先";
 
 /* e.g. "(this was received) via (address #1)" via = by way of */
-"TransactionDetails.addressViaHeader" = "From";
+"TransactionDetails.addressViaHeader" = "経由";
 
 /* Amount section header */
-"TransactionDetails.amountHeader" = "Amount";
+"TransactionDetails.amountHeader" = "金額";
 
 /* "(it was worth) $100 when sent, (and it is worth) $200 now" */
-"TransactionDetails.amountWhenReceived" = "%@ when received, %@ now";
+"TransactionDetails.amountWhenReceived" = "%@ を受領したので、%@ になります";
 
 /* "(it was worth) $100 when sent, (and it is worth) $200 now" */
-"TransactionDetails.amountWhenSent" = "%@ when sent, %@ now";
+"TransactionDetails.amountWhenSent" = "送金時%@、現在%@";
 
 /* Block height label */
-"TransactionDetails.blockHeightLabel" = "Confirmed in Block";
+"TransactionDetails.blockHeightLabel" = "ブロックチェーンで承認済み";
 
 /* Memo section header */
-"TransactionDetails.commentsHeader" = "Memo";
+"TransactionDetails.commentsHeader" = "メモ";
 
 /* Memo field placeholder */
-"TransactionDetails.commentsPlaceholder" = "Add memo...";
+"TransactionDetails.commentsPlaceholder" = "メモを追加する...";
 
 /* Timestamp section header for complete tx */
-"TransactionDetails.completeTimestampHeader" = "Complete";
+"TransactionDetails.completeTimestampHeader" = "完了";
 
 /* Block height and confirmations label, eg. 182930 (45061 confirmations) */
-"TransactionDetails.confirmationsLabel" = "Confirmations";
+"TransactionDetails.confirmationsLabel" = "確認";
 
-"TransactionDetails.destinationTag" = "Destination Tag";
+"TransactionDetails.destinationTag" = "宛先タグ";
 
-"TransactionDetails.destinationTag_EmptyHint" = "(empty)";
+"TransactionDetails.destinationTag_EmptyHint" = "(空)";
 
 /* Empty transaction list message. */
-"TransactionDetails.emptyMessage" = "Your transactions will appear here.";
+"TransactionDetails.emptyMessage" = "あなたの取引はこちらに表示されます。";
 
 /* e.g. the users balance after the transaction was compeleted */
-"TransactionDetails.endingBalanceHeader" = "Ending Balance";
+"TransactionDetails.endingBalanceHeader" = "終了後残高";
 
 /* Exchange rate section header */
-"TransactionDetails.exchangeRateHeader" = "Exchange Rate";
+"TransactionDetails.exchangeRateHeader" = "為替レート";
 
 /* Tx detail field header */
-"TransactionDetails.feeHeader" = "Total Fee";
+"TransactionDetails.feeHeader" = "総手数料";
 
 /* "Received [$5] at [which of my addresses]" => This is the "at [which of my addresses]" part. */
-"TransactionDetails.from" = "at %@";
+"TransactionDetails.from" = "%@で";
 
 /* Tx detail field header */
-"TransactionDetails.gasLimitHeader" = "Gas Limit";
+"TransactionDetails.gasLimitHeader" = "ガソリン上限";
 
 /* Tx detail field header */
-"TransactionDetails.gasPriceHeader" = "Gas Price";
+"TransactionDetails.gasPriceHeader" = "ガソリン価格";
 
-"TransactionDetails.gift" = "Gift";
+"TransactionDetails.gift" = "贈り物";
 
-"TransactionDetails.giftedTo" = "Gifted to %@";
+"TransactionDetails.giftedTo" = "%@贈られました";
 
 /* Label for Hedera Memo field on transaction details screen */
-"TransactionDetails.hederaMemo" = "Hedera Memo";
+"TransactionDetails.hederaMemo" = "ヘデラメモ";
 
 /* Hide Details button */
-"TransactionDetails.hideDetails" = "Hide Details";
+"TransactionDetails.hideDetails" = "詳細を隠す";
 
 /* Label showing the transaction was started (initialized) */
-"TransactionDetails.initializedTimestampHeader" = "Initialized";
+"TransactionDetails.initializedTimestampHeader" = "初期化済み";
 
 /* More button title */
-"TransactionDetails.more" = "More...";
+"TransactionDetails.more" = "もっと見る...";
 
 /* Moved $5.00 (as in "I moved $5 to another location") */
-"TransactionDetails.moved" = "Moved %@";
+"TransactionDetails.moved" = "%@を移動させました";
 
 /* Moved $5.00 */
-"TransactionDetails.movedAmountDescription" = "Moved <b>%@</b>";
+"TransactionDetails.movedAmountDescription" = "<b>%@</b>を移動させました";
 
 /* eg. Confirmed in Block: Not Confirmed */
-"TransactionDetails.notConfirmedBlockHeightLabel" = "Not Confirmed";
+"TransactionDetails.notConfirmedBlockHeightLabel" = "未承認";
 
 /* "Received [$5] at [which of my addresses]" => This is the "Received [$5]" part. */
-"TransactionDetails.received" = "Received %@";
+"TransactionDetails.received" = "%@を受け取りました";
 
 /* Received $5.00 */
-"TransactionDetails.receivedAmountDescription" = "Received <b>%@</b>";
+"TransactionDetails.receivedAmountDescription" = "<b>%@</b>を受け取りました";
 
 /* received from <address> */
-"TransactionDetails.receivedFrom" = "Received from %@";
+"TransactionDetails.receivedFrom" = "%@から受け取りました";
 
 /* received via <address> */
-"TransactionDetails.receivedVia" = "Received via %@";
+"TransactionDetails.receivedVia" = "%@経由で受け取り済み";
 
 /* receiving from <address> */
-"TransactionDetails.receivingFrom" = "Receiving from %@";
+"TransactionDetails.receivingFrom" = "%@から受け取っています";
 
 /* receiving via <address> */
-"TransactionDetails.receivingVia" = "Receiving via %@";
+"TransactionDetails.receivingVia" = "%@経由で受け取り中";
 
-"TransactionDetails.reclaim" = "Reclaim";
+"TransactionDetails.reclaim" = "再利用";
 
-"TransactionDetails.resend" = "Resend";
+"TransactionDetails.resend" = "再送信";
 
 /* "Sent [$5] to [address]" => This is the "Sent [$5]" part. */
-"TransactionDetails.sent" = "Sent %@";
+"TransactionDetails.sent" = "%@を送金しました";
 
 /* Sent $5.00 */
-"TransactionDetails.sentAmountDescription" = "Sent <b>%@</b>";
+"TransactionDetails.sentAmountDescription" = "<b>%@</b>を送金しました";
 
 /* Show Details button */
-"TransactionDetails.showDetails" = "Show Details";
+"TransactionDetails.showDetails" = "詳細を表示する";
 
 /* The balance the user started with before the transaction completed */
-"TransactionDetails.startingBalanceHeader" = "Starting Balance";
+"TransactionDetails.startingBalanceHeader" = "開始時残高";
 
 /* Status section header */
-"TransactionDetails.statusHeader" = "Status";
+"TransactionDetails.statusHeader" = "ステータス";
 
 /* Transaction Details Title */
-"TransactionDetails.title" = "Transaction Details";
+"TransactionDetails.title" = "取引詳細";
 
 /* Transaction Details Title - Failed */
-"TransactionDetails.titleFailed" = "Failed";
+"TransactionDetails.titleFailed" = "詳細を隠す";
 
 /* Transaction Details Title - Internal */
-"TransactionDetails.titleInternal" = "Internal";
+"TransactionDetails.titleInternal" = "内部";
 
 /* Transaction Details Title - Received */
-"TransactionDetails.titleReceived" = "Received";
+"TransactionDetails.titleReceived" = "受け取り済み";
 
 /* Transaction Details Title - Receiving */
-"TransactionDetails.titleReceiving" = "Receiving";
+"TransactionDetails.titleReceiving" = "受け取り中";
 
 /* Transaction Details Title - Sending */
-"TransactionDetails.titleSending" = "Sending";
+"TransactionDetails.titleSending" = "送金中";
 
 /* Transaction Details Title - Sent */
-"TransactionDetails.titleSent" = "Sent";
+"TransactionDetails.titleSent" = "送金済み";
 
 /* "Sent [$5] to [address]" => This is the "to [address]" part. */
-"TransactionDetails.to" = "to %@";
+"TransactionDetails.to" = "%@に";
 
 /* Tx detail field header */
-"TransactionDetails.totalHeader" = "Total";
+"TransactionDetails.totalHeader" = "トータル";
 
 /* Transaction ID header */
-"TransactionDetails.txHashHeader" = "Transaction ID";
+"TransactionDetails.txHashHeader" = "取引詳細";
 
 /* (this transaction was) Received at this address: */
-"TransactionDirection.address" = "Received at this Address";
+"TransactionDirection.address" = "このアドレスで受け取りました";
 
 /* (this transaction was) Sent to this address: */
-"TransactionDirection.to" = "Sent to this Address";
+"TransactionDirection.to" = "このアドレスに送金しました";
 
 "TwoStep.additionalMethodsTitle" = "";
 
@@ -3477,9 +3477,9 @@
 
 "TwoStep.getBackupCodesTitle" = "";
 
-"TwoStep.mainInstructions" = "Two Factor Authentication is enabled with the phone number ending in";
+"TwoStep.mainInstructions" = "Two Factor Authentication in enabled with the phone number ending in";
 
-"TwoStep.mainTitle" = "Two Factor Authentication";
+"TwoStep.mainTitle" = "Two factor authentication";
 
 "TwoStep.Mandatory" = "(Mandatory)";
 
@@ -3493,7 +3493,7 @@
 
 "TwoStep.methods.additionalTitle" = "Additional methods";
 
-"TwoStep.methods.authApp.title" = "Authenticator app";
+"TwoStep.methods.authApp.title" = "Authentication app";
 
 "TwoStep.methods.phone.subtitle" = "Change Phone Number";
 
@@ -3532,40 +3532,40 @@
 "UnavailableScreen.ProDescription" = "RockWallet Pro isn’t available for you at this point in time.";
 
 /* Disabled until date */
-"UnlockScreen.disabled" = "Disabled until: %@";
+"UnlockScreen.disabled" = "以下まで無効: %@";
 
 /* Unlock with FaceID accessibility label */
-"UnlockScreen.faceIdText" = "Unlock with FaceID";
+"UnlockScreen.faceIdText" = "FaceIDでロックを解除する";
 
 /* My Address button title */
-"UnlockScreen.myAddress" = "My Address";
+"UnlockScreen.myAddress" = "マイアドレス";
 
 /* Reset PIN with Paper Key button label. */
-"UnlockScreen.resetPin" = "Reset your PIN";
+"UnlockScreen.resetPin" = "PINコードをリセット";
 
 /* Scan button title */
-"UnlockScreen.scan" = "Scan";
+"UnlockScreen.scan" = "スキャン";
 
 /* Instruction to touch the sensor for fingerprint authentication */
-"UnlockScreen.touchIdInstructions.android" = "Touch Sensor";
+"UnlockScreen.touchIdInstructions.android" = "タッチセンサー";
 
 /* TouchID prompt text */
-"UnlockScreen.touchIdPrompt" = "Unlock your RockWallet.";
+"UnlockScreen.touchIdPrompt" = "ブレッドのロックを解除してください。";
 
 /* Device authentication body */
-"UnlockScreen.touchIdPrompt.android" = "Please unlock your Android device to continue.";
+"UnlockScreen.touchIdPrompt.android" = "続行するためAndroid機器のロックを解除 してください";
 
 /* Unlock with TouchID accessibility label */
-"UnlockScreen.touchIdText" = "Unlock with TouchID";
+"UnlockScreen.touchIdText" = "Touch IDでロックを解除する";
 
 /* Device authentication title */
-"UnlockScreen.touchIdTitle.android" = "Authentication required";
+"UnlockScreen.touchIdTitle.android" = "認証が必要です";
 
 /* Wallet disabled header */
 "UnlockScreen.walletDisabled" = "Wallet disabled";
 
 /* Wallet disabled description */
-"UnlockScreen.walletDisabledDescription" = "You will need your Recovery Phrase to reset PIN.";
+"UnlockScreen.walletDisabledDescription" = "You will need your Recovery Phrases to reset PIN.";
 
 /* Wipe wallet prompt */
 "UnlockScreen.wipePrompt" = "Are you sure you would like to wipe this wallet?";
@@ -3577,28 +3577,28 @@
 "UpdatePin.bottomSheetMsg" = "PIN updated successfully";
 
 /* Update PIN caption text */
-"UpdatePin.caption" = "Remember this PIN. If you forget it, you won't be able to access your assets";
+"UpdatePin.caption" = "このPINコードは覚えておいてください。忘れた場合、ご自身のビットコインへアクセスできなくなります。";
 
 /* Contact Support button on update pin view */
 "UpdatePin.ContactSupport" = "Contact Support";
 
 /* PIN creation info. */
-"UpdatePin.createInstruction" = "Your PIN will be used to unlock your wallet";
+"UpdatePin.createInstruction" = "あなたのPINコードはご自身のブレッドのロックを解除したり、送金する時に利用します。";
 
 /* Update PIN title */
-"UpdatePin.createTitle" = "Set PIN";
+"UpdatePin.createTitle" = "PINコードの設定";
 
 /* Update PIN title */
-"UpdatePin.createTitleConfirm" = "Confirm your new PIN";
+"UpdatePin.createTitleConfirm" = "PINコードを再入力してください";
 
 /* Disabled until text on disabled wallet view */
 "UpdatePin.DisabledUntil" = "Disabled until:";
 
 /* Enter current PIN instruction */
-"UpdatePin.enterCurrent" = "Enter your current PIN";
+"UpdatePin.enterCurrent" = "現在のPINコードを入力してください。";
 
 /* Enter new PIN instruction */
-"UpdatePin.enterNew" = "Enter your new PIN";
+"UpdatePin.enterNew" = "新しいPINコードを入力してください。";
 
 /* Enter your PIN label to finish the transaction */
 "UpdatePin.EnterPin" = "Please enter your PIN to confirm the transaction";
@@ -3615,7 +3615,7 @@
 "UpdatePin.pinDoesntMatch" = "Your PIN doesn’t match, please try again.";
 
 /* Re-Enter new PIN instruction */
-"UpdatePin.reEnterNew" = "Re-enter your new PIN";
+"UpdatePin.reEnterNew" = "新しいPINコードを再入力してください。";
 
 /* Attempts remaining on pin entry screen */
 "UpdatePin.RemainingAttempts" = "Attempts remaining:";
@@ -3630,10 +3630,10 @@
 "UpdatePin.setNewPinTitle" = "Set your PIN";
 
 /* Update PIN failure error message. */
-"UpdatePin.setPinError" = "Something went wrong updating your PIN. Please try again.";
+"UpdatePin.setPinError" = "申し訳ありませんが、PINコードが更新できませんでした。";
 
 /* Update PIN failure alert view title */
-"UpdatePin.setPinErrorTitle" = "Update PIN Error";
+"UpdatePin.setPinErrorTitle" = "PINコード更新エラー";
 
 /* Number of attempts left on pin entry screen */
 "UpdatePin.TwoAttempts" = "2 more failed attempts.";
@@ -3642,22 +3642,22 @@
 "UpdatePin.UpdatePinPopup" = "The RockWallet app requires you to set a PIN to secure your wallet, separate from your device passcode.  \n\nYou will be required to enter the PIN to view your balance or send money, which keeps your wallet private even if you let someone use your phone or if your phone is stolen by someone who knows your device passcode.\n            \nDo not forget your wallet PIN! It can only be reset by using your Recovery Phrase. If you forget your PIN and lose your Recovery Phrase, your wallet will be lost.";
 
 /* Update PIN title */
-"UpdatePin.updateTitle" = "Update PIN";
+"UpdatePin.updateTitle" = "PINコードを更新する";
 
 /* Why do I need a PIN title explanation popup */
 "UpdatePin.WhyPIN" = "Why do I need a PIN?";
 
 /* Authorize to copy wallet addresses alert message */
-"URLHandling.addressaddressListAlertMessage" = "Copy wallet addresses to clipboard?";
+"URLHandling.addressaddressListAlertMessage" = "ウォレットアドレスをクリップボードにコピーしますか?";
 
 /* Authorize to copy wallet address PIN view prompt. */
-"URLHandling.addressList" = "Authorize to copy wallet address to clipboard";
+"URLHandling.addressList" = "ウォレットアドレスのクリップボードへのコピーを認証";
 
 /* Authorize to copy wallet address alert title */
-"URLHandling.addressListAlertTitle" = "Copy Wallet Addresses";
+"URLHandling.addressListAlertTitle" = "ウォレットアドレスをコピーします";
 
 /* Copy wallet addresses alert button label */
-"URLHandling.copy" = "Copy";
+"URLHandling.copy" = "コピー";
 
 /* Verification Code Action Instructions */
 "VerificationCode.actionInstructions" = "Check your phone for the confirmation token we sent you. It may take a couple of minutes.";
@@ -3699,16 +3699,16 @@
 "VerifyPhoneNumber.title" = "Verify your phone number";
 
 /* Verify PIN for transaction view body */
-"VerifyPin.authorize" = "Please enter your PIN to authorize this transaction.";
+"VerifyPin.authorize" = "このトランザクションを認証するためにはPINを入力してください。";
 
 /* Verify PIN view body */
-"VerifyPin.continueBody" = "Please enter your PIN to continue.";
+"VerifyPin.continueBody" = "続けるにはPINコードを入力してください。";
 
 /* Verify PIN view title */
-"VerifyPin.title" = "PIN Required";
+"VerifyPin.title" = "PINコードが必要です";
 
 /* Authorize transaction with touch id message */
-"VerifyPin.touchIdMessage" = "Authorize this transaction";
+"VerifyPin.touchIdMessage" = "このトランザクションを認証する";
 
 "view_coroutine_scope" = "view_scope";
 
@@ -3721,193 +3721,193 @@
 /* Limited assets message in add wallets popup */
 "Wallet.LimitedAssetsMessage" = "We currently only support the assets that are listed here. You cannot access other assets through this wallet at the moment.";
 
-"Wallet.one_day" = "1D";
+"Wallet.one_day" = "1d";
 
-"Wallet.one_month" = "1M";
+"Wallet.one_month" = "1m";
 
-"Wallet.one_week" = "1W";
+"Wallet.one_week" = "1w";
 
-"Wallet.one_year" = "1Y";
+"Wallet.one_year" = "1y";
 
-"Wallet.stakingTitle" = "Staking";
+"Wallet.stakingTitle" = "ステーキング";
 
-"Wallet.three_months" = "3M";
+"Wallet.three_months" = "3m";
 
-"Wallet.three_years" = "3Y";
+"Wallet.three_years" = "3y";
 
 /* Turn off fast sync confirmation question */
-"WalletConnectionSettings.confirmation" = "Are you sure you want to turn off Fastsync?";
+"WalletConnectionSettings.confirmation" = "Fastsyncをオフにしてもよろしいですか？";
 
 /* Explanation for wallet connection setting */
-"WalletConnectionSettings.explanatoryText" = "Make syncing your bitcoin wallet practically instant. Learn more about how it works here.";
+"WalletConnectionSettings.explanatoryText" = "ビットコインウォレットの同期を実質的に瞬時にします。仕組みの詳細については、こちらをご覧ください。";
 
 /* Connection mode switch label. */
-"WalletConnectionSettings.footerTitle" = "Powered by";
+"WalletConnectionSettings.footerTitle" = "搭載";
 
 /* Wallet connection settings view title */
-"WalletConnectionSettings.header" = "Fastsync (pilot)";
+"WalletConnectionSettings.header" = "Fastsync（パイロット）";
 
 /* Link text in explanatoryText This NB: This should exactly match the last word of WalletConnectionSettings.explanatoryText */
-"WalletConnectionSettings.link" = "here";
+"WalletConnectionSettings.link" = "ここに";
 
 /* WalletConnectionSettiongs, Wallet connection settings menu item title. */
-"WalletConnectionSettings.menuTitle" = "Connection Mode";
+"WalletConnectionSettings.menuTitle" = "接続モード";
 
 /* Turn off fast sync button label */
-"WalletConnectionSettings.turnOff" = "Turn Off";
+"WalletConnectionSettings.turnOff" = "消す";
 
 /* Wallet connection settings view title */
 "WalletConnectionSettings.viewTitle" = "Fastsync";
 
 /* 'No wallet' warning for watch app */
-"Watch.noWalletWarning" = "Open the RockWallet iPhone app to set up your wallet.";
+"Watch.noWalletWarning" = "BRDのiPhoneアプリを開き、ウォレットをセットアップする";
 
 /* Dismiss button label */
-"Webview.dismiss" = "Dismiss";
+"Webview.dismiss" = "解除";
 
 /* Webview loading error message */
-"Webview.errorMessage" = "There was an error loading the content. Please try again.";
+"Webview.errorMessage" = "このコンテンツの読み込み中にエラーが発生しました。もう一度お試しください。";
 
 /* Updating webview message */
-"Webview.updating" = "Updating...";
+"Webview.updating" = "更新中...";
 
 /* Welcome screen text. (?) will be replaced with the help icon users should look for. */
-"Welcome.body" = "Breadwallet has changed its name to RockWallet, with a brand new look and some new features.\n\nIf you need help, look for the (?) in the top right of most screens.";
+"Welcome.body" = "Breadwalletは新しい機能や見た目を備えて、BRDという名前に生まれ変わりました。\n\nヘルプをご覧になるには、画面右上にある(?)からお探しください。";
 
 /* Top title of welcome screen */
-"Welcome.title" = "Welcome to RockWallet!";
+"Welcome.title" = "BRDへようこそ！";
 
 /* Single asset widget description */
-"Widget.assetDescription" = "Stay up to date with your favorite crypto asset";
+"Widget.assetDescription" = "お気に入りの暗号資産を最新の状態に保つ";
 
 /* Asset list widget description */
-"Widget.assetListDescription" = "Stay up to date with your favorite crypto assets";
+"Widget.assetListDescription" = "お気に入りの暗号資産を最新の状態に保つ";
 
 /* Asset list widget title */
-"Widget.assetListTitle" = "Asset list";
+"Widget.assetListTitle" = "資産リスト";
 
 /* Single asset widget title */
-"Widget.assetTitle" = "Asset";
+"Widget.assetTitle" = "資産";
 
 /* Name of color based on os theme light/dark */
-"Widget.Color.autoLightDark" = "System Auto Light / Dark";
+"Widget.Color.autoLightDark" = "システムオートライト/ダーク";
 
 /* Name of color - Black */
-"Widget.Color.black" = "Black";
+"Widget.Color.black" = "ブラック";
 
 /* Name of color - Blue */
-"Widget.Color.blue" = "Blue";
+"Widget.Color.blue" = "青い";
 
 /* Name of color - Gray */
-"Widget.Color.gray" = "Gray";
+"Widget.Color.gray" = "グレー";
 
 /* Name of color - Green */
-"Widget.Color.green" = "Green";
+"Widget.Color.green" = "緑";
 
 /* Name of color - Orange */
-"Widget.Color.orange" = "Orange";
+"Widget.Color.orange" = "オレンジ";
 
 /* Name of color - Pink */
-"Widget.Color.pink" = "Pink";
+"Widget.Color.pink" = "ピンク";
 
 /* Name of color - Primary Background */
-"Widget.Color.primaryBackground" = "Primary";
+"Widget.Color.primaryBackground" = "プライマリ";
 
 /* Name of color - Primary Text */
-"Widget.Color.primaryText" = "Primary";
+"Widget.Color.primaryText" = "プライマリ";
 
 /* Name of color - Purple */
-"Widget.Color.purple" = "Purple";
+"Widget.Color.purple" = "紫の";
 
 /* Name of color - Red */
-"Widget.Color.red" = "Red";
+"Widget.Color.red" = "赤";
 
 /* Name of color - Secondary Background */
-"Widget.Color.secondaryBackground" = "Secondary";
+"Widget.Color.secondaryBackground" = "二次";
 
 /* Name of color - Secondary Text */
-"Widget.Color.secondaryText" = "Secondary";
+"Widget.Color.secondaryText" = "二次";
 
 /* Name of color - Tertiary Background */
-"Widget.Color.tertiaryBackground" = "Tertiary";
+"Widget.Color.tertiaryBackground" = "三次";
 
 /* Name of color - Tertiary Text */
-"Widget.Color.tertiaryText" = "Tertiary";
+"Widget.Color.tertiaryText" = "三次";
 
 /* Name of color - White */
-"Widget.Color.white" = "White";
+"Widget.Color.white" = "白い";
 
 /* Name of color - Yellow */
-"Widget.Color.yellow" = "Yellow";
+"Widget.Color.yellow" = "黄";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionBackground" = "Theme Background Colors";
+"Widget.colorSectionBackground" = "テーマの背景色";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionBasic" = "Basic Colors";
+"Widget.colorSectionBasic" = "基本色";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionCurrency" = "Currency Colors";
+"Widget.colorSectionCurrency" = "通貨の色";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionSystem" = "System Colors";
+"Widget.colorSectionSystem" = "システムカラー";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionText" = "Theme Text Colors";
+"Widget.colorSectionText" = "テーマのテキストの色";
 
 /* Portfolio widget description if data sharing is disabled */
-"Widget.enablePortfolio" = "Enable in app\npreferences";
+"Widget.enablePortfolio" = "アプリで有効にする\n環境設定";
 
 /* Portfolio description */
-"Widget.portfolioDescription" = "Stay up to date with your portfolio";
+"Widget.portfolioDescription" = "ポートフォリオを最新の状態に保つ";
 
 /* Portfolio widget description if data sharing is enabled */
-"Widget.portfolioSummary" = "Portfolio\nSummary";
+"Widget.portfolioSummary" = "ポートフォリオ\n概要";
 
 /* Portfolio widget title */
-"Widget.portfolioTitle" = "Portfolio";
+"Widget.portfolioTitle" = "ポートフォリオ";
 
 /* Wipe wallet alert message */
-"WipeWallet.alertMessage" = "Are you sure you want to wipe this wallet from this device?";
+"WipeWallet.alertMessage" = "本当にこのウォレットを削除しますか？";
 
 /* Wipe wallet alert title */
-"WipeWallet.alertTitle" = "Unlink Wallet?";
+"WipeWallet.alertTitle" = "ウォレットを消去しますか？";
 
 /* Failed wipe wallet alert message */
-"WipeWallet.failedMessage" = "Failed to wipe wallet.";
+"WipeWallet.failedMessage" = "ウォレットを消去できませんでした。";
 
 /* Failed wipe wallet alert title */
-"WipeWallet.failedTitle" = "Failed";
+"WipeWallet.failedTitle" = "失敗しました";
 
 /* Enter phrase to wipe wallet instruction. (Important to explain it is the CURRENT [this wallet's] paper key that needs to be entered). */
-"WipeWallet.instruction" = "Please enter your Recovery Phrase to wipe this wallet from your device.";
+"WipeWallet.instruction" = "デバイスからこのウォレットをワイプするには、リカバリフレーズを入力してください。";
 
 /* Instructions for unlinking the wallet */
-"WipeWallet.startMessage" = "Starting or recovering another wallet allows you to access and manage a different RockWallet on this device.";
+"WipeWallet.startMessage" = "ご利用ウォレットのリンクを解除してこの機器から解除してください。このウォレットのリンクが解除されると、この機器で新しいウォレットを起動したり、別のウォレット再び利用できるようになります。";
 
 /* Start wipe wallet view warning */
-"WipeWallet.startWarning" = "Your current wallet will be removed from this device. If you wish to restore it in the future, you will need to enter your Recovery Phrase.";
+"WipeWallet.startWarning" = "現在のウォレットはこのデバイスから削除されます。後で復元する場合は、リカバリフレーズを入力する必要があります。";
 
 /* Unlink this wallet from this device. */
-"WipeWallet.title" = "Start or Recover Another Wallet";
+"WipeWallet.title" = "ウォレットのリンクを解除";
 
 /* Wipe wallet button title */
-"WipeWallet.wipe" = "Wipe";
+"WipeWallet.wipe" = "消去";
 
 /* Wiping activity message */
-"WipeWallet.wiping" = "Wiping...";
+"WipeWallet.wiping" = "消去中...";
 
 /* Paper key instructions. */
-"WritePaperPhrase.instruction" = "Write down the following words in order";
+"WritePaperPhrase.instruction" = "単語は順番通りに書き留めて、安全な場所に保管しておいてください。";
 
 /* button label */
-"WritePaperPhrase.next" = "NEXT";
+"WritePaperPhrase.next" = "次へ";
 
 /* button label */
-"WritePaperPhrase.previous" = "Previous";
+"WritePaperPhrase.previous" = "前へ";
 
 /* 1 of 3 */
-"WritePaperPhrase.step" = "%@ of %@";
+"WritePaperPhrase.step" = "%@の%@";
 
 "WritePaperPhrase.warning" = "For security purposes, do not screenshot or email these words.";
 

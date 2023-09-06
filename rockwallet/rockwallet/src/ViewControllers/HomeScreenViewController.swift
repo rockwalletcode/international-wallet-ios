@@ -334,10 +334,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func setupSegmentControl() {
-        // TODO: Localize strings
         let segmentControlModel = SegmentControlViewModel(selectedIndex: 0,
-                                                          segments: [.init(image: nil, title: "ROCKWALLET"),
-                                                                     .init(image: nil, title: "ROCKWALLET PRO")])
+                                                          segments: [.init(image: nil, title: L10n.About.AppName.android.uppercased()),
+                                                                     .init(image: nil, title: L10n.Segment.rockWalletPro)])
         segmentControl.configure(with: .init())
         segmentControl.setup(with: segmentControlModel)
         segmentControl.didChangeValue = { [weak self] segment in
@@ -359,15 +358,14 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func setupProButtons() {
-        // TODO: Localize strings
         transferFunds.configure(with: Presets.Button.secondary)
-        transferFunds.setup(with: .init(title: "TRANSFER FUNDS",
+        transferFunds.setup(with: .init(title: L10n.Button.transferFunds,
                                         callback: { [weak self] in
             self?.transferFundsTapped()
         }))
         
         launchExchange.configure(with: Presets.Button.primary)
-        launchExchange.setup(with: .init(title: "LAUNCH EXCHANGE",
+        launchExchange.setup(with: .init(title: L10n.Button.launchExchange,
                                          callback: { [weak self] in
             self?.launchExchangeTapped()
         }))
@@ -512,9 +510,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func launchExchangeTapped() {
-        // TODO: Localize strings
-        let text = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem."
-        let model = PopupViewModel(body: text,
+        let model = PopupViewModel(body: L10n.Exchange.popupText,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
             self?.handleWebViewRedirects()

@@ -5,31 +5,31 @@
 "About.blog" = "Blog";
 
 /* About screen footer */
-"About.footer" = "Made by the global RockWallet team.\nVersion %@ Build %@";
+"About.footer" = "Gemaakt door het globale RockWallet team. Versie %@ Bouw %@";
 
 /* Privay Policy button label */
-"About.privacy" = "Privacy Policy";
+"About.privacy" = "Privacyverklaring";
 
 /* About screen reddit label */
 "About.reddit" = "Reddit";
 
 /* Terms of Use button label */
-"About.terms" = "Terms And Conditions";
+"About.terms" = "Gebruikersvoorwaarden";
 
 /* About screen title */
-"About.title" = "About";
+"About.title" = "Over";
 
 /* About screen twitter label */
 "About.twitter" = "Twitter";
 
 /* About screen wallet ID label */
-"About.walletID" = "RockWallet Rewards ID";
+"About.walletID" = "RockWallet-beloningenidentificatie";
 
 /* Close modal button accessibility label */
-"AccessibilityLabels.close" = "Close";
+"AccessibilityLabels.close" = "Sluiten";
 
 /* Support center accessibiliy label */
-"AccessibilityLabels.faq" = "Support Center";
+"AccessibilityLabels.faq" = "Ondersteuningscentrum";
 
 "Account.2FA.pasteFollowingCodeInAuthApp" = "Paste the following code in your authenticator app.";
 
@@ -52,7 +52,7 @@
 "Account.Attempts" = "attempts";
 
 /* Account balance */
-"Account.balance" = "Your balance";
+"Account.balance" = "Balans";
 
 /* Before confirm photo label in create account screen */
 "Account.BeforeConfirm" = "Before you confirm, please:";
@@ -160,11 +160,11 @@
 "Account.Lifetime" = "Lifetime";
 
 /* Loading Wallet Message */
-"Account.loadingMessage" = "Loading Wallet";
+"Account.loadingMessage" = "Portemonnee laden";
 
 "Account.Logout" = "Log out";
 
-"Account.LogoutMessage" = "You’ve been successfully logged out of your RockWallet account. Your self-custodial wallet is still linked to this device.";
+"Account.LogoutMessage" = "You’ve been successfully logged out you RockWallet account. Your self-custodial wallet is still linked to this device.";
 
 "Account.MandatoryFields" = "(*)Mandatory Fields";
 
@@ -173,7 +173,7 @@
 
 "Account.Minimum" = "Minimum";
 
-"Account.MissingDataPromptText" = "Please fill in the missing information to use your RockWallet seamlessly.";
+"Account.MissingDataPromptText" = "Please fill in the missing information  to use your RockWallet seamlessly.";
 
 "Account.MissingDataPromptTitle" = "Add the missing information";
 
@@ -199,7 +199,7 @@
 "Account.PostalCode" = "Postal Code*";
 
 /* Promotion and offers label when registering account */
-"Account.Promotion" = "I'm ok with receiving future promotion, offers and communications";
+"Account.Promotion" = "I'm ok with receiving future promotion, offers, and communications";
 
 "Account.PromotionsTickbox" = "I’m ok with receiving future promotion, offers and communications";
 
@@ -231,7 +231,7 @@
 
 "Account.SocialSecurityNumber" = "Social Security Number";
 
-"Account.SocialSecurityNumberRequired" = "Social Security Number*";
+"Account.SocialSecurityNumberRequired" = "Social security number*";
 
 "Account.StartUsingWallet" = "Now let’s start with using your RockWallet.";
 
@@ -267,7 +267,7 @@
 
 "Account.VerificationUnsuccessful" = "We're sorry, your verification was unsuccessful";
 
-"Account.VerificationUnsuccessful.description" = "Please try your verification again, while keeping the following in mind:\n\n・ Please ensure the area is well-lit\n・ Please ensure you are centered in the frame";
+"Account.VerificationUnsuccessful.description" = "Please try your verification again, while keeping the following in mind:\n\n- Please ensure the area is well-lit\n- Please ensure you are centered in the frame";
 
 "Account.Verified" = "Verified";
 
@@ -280,14 +280,14 @@
 
 "Account.VerifiedAccountTitle" = "Your account is verified!";
 
-"Account.VerifyAccountDescription" = "Verification helps keep your funds and information secure and ensures we comply with regulations.";
+"Account.VerifyAccountDescription" = "Verification helps keep your funds and information secure and ensures we comply with regulations.Verify your account by clicking 'Profile' then 'Verification'.";
 
 /* Verify account text in popup */
 "Account.VerifyAccountText" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
 "Account.VerifyAccountTextInternational" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support";
 
-"Account.VerifyAccountTitle" = "Verify your identity to get full access to your RockWallet!";
+"Account.VerifyAccountTitle" = "To start using 'Swap' or 'Buy', your wallet must be verified.";
 
 /* Enter and verify your email address for your account label in registration flow */
 "Account.VerifyEmail" = "Enter and verify your new email address for your RockWallet account.";
@@ -318,7 +318,7 @@
 "Account.WriteYourName" = "Write your name as it appears on your ID";
 
 /* Confirm Account Creation mesage body */
-"AccountCreation.body" = "Only create a Hedera account if you intend on storing HBAR in your wallet.";
+"AccountCreation.body" = "Maak alleen een Hedera-account aan als u van plan bent HBAR in uw portemonnee op te slaan.";
 
 /* Change my email label */
 "AccountCreation.ChangeEmail" = "Change my email";
@@ -327,30 +327,30 @@
 "AccountCreation.CodeSent" = "Verification code sent.";
 
 /* Create Account button label */
-"AccountCreation.create" = "Create Account";
+"AccountCreation.create" = "Account maken";
 
 /* Creating Account progress Label */
-"AccountCreation.creating" = "Creating Account";
+"AccountCreation.creating" = "Account maken";
 
 /* Enter the code message in create account flow */
-"AccountCreation.EnterCode" = "Please enter the code we’ve sent to";
+"AccountCreation.EnterCode" = "Enter the code we\’ve sent to:\n%@";
 
 "AccountCreation.EnterCode.android" = "Enter the code we\’ve sent to:\n%@";
 
 /* Creating Account progress Label */
-"AccountCreation.error" = "An error occurred during account creation. Please try again later.";
+"AccountCreation.error" = "Er is een fout opgetreden tijdens het maken van een account. Probeer het later opnieuw.";
 
 /* Not Now button label. */
-"AccountCreation.notNow" = "Not Now";
+"AccountCreation.notNow" = "Niet nu";
 
 /* Re-send my code label */
 "AccountCreation.ResendCode" = "Resend my code";
 
 /* Creating Account progress Label */
-"AccountCreation.timeout" = "The Request timed out. Please try again later.";
+"AccountCreation.timeout" = "Er is een time-out ophet verzoek. Probeer het later opnieuw.";
 
 /* Confirm Account Creation Title */
-"AccountCreation.title" = "Confirm Account Creation";
+"AccountCreation.title" = "Account aanmaken bevestigen";
 
 /* Verify your email label */
 "AccountCreation.VerifyEmail" = "Verify your email";
@@ -377,13 +377,13 @@
 "AccountDelete.ExplanationThree" = "-Your private keys are still yours, keep your Recovery Phrase in a safe place in case you need to restore your wallet.";
 
 /* Delete account explanation part two */
-"AccountDelete.ExplanationTwo" = "-You will no longer be able to use your KYC and registration status";
+"AccountDelete.ExplanationTwo" = "-You will no longer be able to user your KYC and registration status";
 
 /* Recover wallet text after deleting account */
 "AccountDelete.RecoverWallet" = "I understand that the only way to recover my wallet is by entering my Recovery Phrase";
 
 /* Default wallet name */
-"AccountHeader.defaultWalletName" = "My RockWallet";
+"AccountHeader.defaultWalletName" = "Mijn RockWallet";
 
 /* Level one title on account screen */
 "AccountKYCLevelOne.LevelOne" = "Level 1";
@@ -457,7 +457,7 @@
 "AccountKYCLevelTwo.Limits" = "Swap limits: $%@ USD/day, no lifetime limit";
 
 /* Make sure before photo label in KYC2 */
-"AccountKYCLevelTwo.MakeSure" = "Make sure you are in a well-lit room.";
+"AccountKYCLevelTwo.MakeSure" = "Make sure you are in a well-lit room";
 
 "AccountKYCLevelTwo.NationalIdCard" = "National ID card";
 
@@ -518,7 +518,7 @@
 "Alert.AccountRestorediCloud" = "Account succesfully restored from Cloud backup";
 
 /* Third party keyboard warning */
-"Alert.customKeyboard.android" = "It looks like you are using a third-party keyboard, which can record what you type and steal your Recovery Phrase. Please switch to the default Android keyboard for extra protection.";
+"Alert.customKeyboard.android" = "Het lijkt erop dat u een toetsenbord van een derde gebruikt. Deze kan bijhouden wat u typt en eventueel uw sleutel stelen. Schakel alstublieft over naar het standaard Android toetsenbord voor extra veiligheid.";
 
 /* Error alert title */
 "Alert.error" = "Error";
@@ -529,75 +529,75 @@
 "Alert.Important" = "Important note";
 
 /* Keystore error */
-"Alert.keystore.generic.android" = "There is a problem with your Android OS keystore, please contact support@rockwallet.com";
+"Alert.keystore.generic.android" = "Er is een probleem met uw Android OS keystore, neem alstublieft contact op met support@rockwallet.com";
 
 /* KeyStore error, keys are invalidated */
-"Alert.keystore.invalidated.android" = "Your RockWallet encrypted data was recently invalidated because your Android lock screen was disabled.";
+"Alert.keystore.invalidated.android" = "Uw door RockWallet geëncrypteerde data is onlangs ongeldig gemaakt omdat uw Android schermvergrendeling is uitgeschakeld.";
 
 /* Warn user key store data has been invalidate because the user changed their security settings. The user must uninstall. */
-"Alert.keystore.invalidated.uninstall.android" = "We can't proceed because your screen lock settings have been changed (e.g. password was disabled, fingerprints were changed). For security purposes, Android has permanently locked your key store. Therefore, your RockWallet app data must be wiped by uninstalling.\n\nDon’t worry, your funds are still secure! Reinstall the app and recover your wallet using your Recovery Phrase.";
+"Alert.keystore.invalidated.uninstall.android" = "We kunnen niet doorgaan omdat uw instellingen voor schermvergrendeling zijn gewijzigd (bijv. wachtwoord was uitgeschakeld, vingerafdrukken waren gewijzigd). Om veiligheidsredenen heeft Android uw sleutelarchief permanent gesloten. Daarom moeten uw RockWallet-app-gegevens worden gewist door de installatie ongedaan te maken.\n\nGeen zorgen, uw geld is nog steeds veilig! Installeer de app opnieuw en herstel uw portemonnee met behulp van uw papieren sleutel.";
 
 /* Warn user key store data has been invalidate because the user changed their security settings. The user must wipe their app data. */
-"Alert.keystore.invalidated.wipe.android" = "We can't proceed because your screen lock settings have been changed (e.g. password was disabled, fingerprints were changed). For security purposes, Android has permanently locked your key store. Therefore, your RockWallet app data must be wiped.\n\nDon’t worry, your funds are still secure! Recover your wallet using your Recovery Phrase.";
+"Alert.keystore.invalidated.wipe.android" = "We kunnen niet doorgaan omdat uw instellingen voor schermvergrendeling zijn gewijzigd (bijv. wachtwoord was uitgeschakeld, vingerafdrukken waren gewijzigd). Om veiligheidsredenen heeft Android uw sleutelarchief permanent gesloten. Daarom moeten uw RockWallet-app-gegevens worden gewist.\n\nGeen zorgen, uw geld is nog steeds veilig! Herstel uw portemonnee met behulp van uw papieren sleutel.";
 
 /* Keystore error title */
-"Alert.keystore.title.android" = "Android Key Store Error";
+"Alert.keystore.title.android" = "Android KeyStore fout";
 
 /* No internet alert message */
-"Alert.noInternet" = "No internet connection found. Check your connection and try again.";
+"Alert.noInternet" = "Er is geen internetconnectie gevonden. Controleer je connectie en probeer opnieuw.";
 
 "Alert.PermissionCamera" = "KYCCamera doesn't have permission to use the camera, please change privacy settings";
 
 /* General error message */
-"Alert.somethingWentWrong" = "Something went wrong. Please try again.";
+"Alert.somethingWentWrong" = "Er is iets misgegaan. Probeer het alstublieft opnieuw.";
 
 /* Request timed out error message */
-"Alert.timedOut" = "Request timed out. Check your connection and try again.";
+"Alert.timedOut" = "Verzoek loopt af. Controleer uw verbinding en probeer het opnieuw.";
 
 "Alert.UnableCapture" = "Unable to capture media";
 
 /* Warning alert title */
-"Alert.warning" = "Warning";
+"Alert.warning" = "Waarschuwing";
 
 /* 'the addresses were copied'' Alert title */
-"Alerts.copiedAddressesHeader" = "Addresses Copied";
+"Alerts.copiedAddressesHeader" = "Adressen gekopieerd";
 
 /* Addresses Copied Alert sub header */
-"Alerts.copiedAddressesSubheader" = "All wallet addresses successfully copied.";
+"Alerts.copiedAddressesSubheader" = "Alle wallet-adressen zijn succesvol gekopieerd.";
 
 "Alerts.emailSent" = "Email sent!";
 
 /* Alert Header Label (the paper key was set) */
-"Alerts.paperKeySet" = "Recovery Key Set";
+"Alerts.paperKeySet" = "Paper key set";
 
 /* Alert Subheader label (playfully positive) */
-"Alerts.paperKeySetSubheader" = "Awesome!";
+"Alerts.paperKeySetSubheader" = "Geweldig!";
 
 "Alerts.passwordUpdated" = "Password updated";
 
 "Alerts.phraseConfirmed" = "Success!";
 
 /* Alert Header label (the PIN was set) */
-"Alerts.pinSet" = "PIN successfully set";
+"Alerts.pinSet" = "PIN Set.";
 
 "Alerts.pinUpdated" = "PIN successfully updated";
 
 /* Send failure alert header label (the send failed to happen) */
-"Alerts.sendFailure" = "Send failed";
+"Alerts.sendFailure" = "Zending mislukt";
 
 /* Send success alert header label (confirmation that the send happened) */
-"Alerts.sendSuccess" = "Send Confirmation";
+"Alerts.sendSuccess" = "Verstuursbevestiging";
 
 /* Send success alert subheader label (e.g. the money was sent) */
-"Alerts.sendSuccessSubheader" = "Money Sent!";
+"Alerts.sendSuccessSubheader" = "Geld Verstuurd!";
 
 /* Fingerprint was recognized by the scanner */
-"Alerts.touchIdSucceeded.android" = "Fingerprint recognized";
+"Alerts.touchIdSucceeded.android" = "Vingerafdruk geaccepteerd";
 
 "Alerts.walletRestored" = "Recovery Phrase correct";
 
 /* Error label on XRP send amount screen */
-"Amount.MinXRPAmount" = "The minimum required amount is 10 XRP.";
+"Amount.MinXRPAmount" = "The minimum required amount is %d XRP.";
 
 "Amount.MinXRPAmount.android" = "The minimum required amount is %d XRP.";
 
@@ -608,25 +608,25 @@
 "Amount.RippleBalanceText" = "Ripple requires each wallet to have a minimum balance of 10 XRP, so the balance displayed here is always 10 XRP less than your actual balance.";
 
 /* Tell the user where they can enable permissions to access device storage. */
-"Android.allowFileSystemAccess" = "Please enable storage permissions in your device settings: \"Settings\" > \"Apps\" > \"RockWallet\" > \"Permissions\".";
+"Android.allowFileSystemAccess" = "Schakel opslagtoestemmingen in uw apparaatinstellingen in: \"Instellingen\"> \"Apps\"> \"RockWallet\"> \"Toestemmingen\".";
 
 /* The "home" screen is the name of the top level menu for the app. */
-"Android.BCH.welcome.message" = "Any BCH in your wallet can be accessed through the home screen.";
+"Android.BCH.welcome.message" = "Elke BCH in uw wallet is toegankelijk via het startscherm.";
 
 /* Warning about using apps that can alter the screen */
-"Android.screenAlteringMessage" = "We've detected an app that is incompatible with RockWallet running on your device. For security reasons, please disable any screen altering or light filtering apps to proceed.";
+"Android.screenAlteringMessage" = "RockWallet zal niet goed werken tenzij schermveranderende apps (zoals Twilight) zijn uitgeschakeld.";
 
 /* An app that alters the screen ("screen-altering app") has been detected. */
-"Android.screenAlteringTitle" = "Screen Altering App Detected";
+"Android.screenAlteringTitle" = "Schermveranderende app gedetecteerd";
 
 /* JSON Serialization error message */
-"ApiClient.jsonError" = "JSON Serialization Error";
+"ApiClient.jsonError" = "JSON Serialisatie Error";
 
 /* Wallet not ready error message */
-"ApiClient.notReady" = "Wallet not ready";
+"ApiClient.notReady" = "Wallet niet gereed";
 
 /* API Token error message */
-"ApiClient.tokenError" = "Unable to retrieve API token";
+"ApiClient.tokenError" = "Niet in staat op API teken te vinden";
 
 /* ATM Cash Locatios View Title */
 "ATMMapView.title" = "ATM Cash Locations Map";
@@ -649,18 +649,18 @@
 
 "BackupCodes.getNewCodes" = "Get new codes";
 
-"BackupCodes.instructions" = "Download your backup codes and store them securely. You can use each backup code once, if you’ve already used most of them, you can request a new set of codes.";
+"BackupCodes.instructions" = "Save your backup codes in a secure place. These might be the only way to access your account if you are unable to access your phone or you can’t use your security method";
 
 "BackupCodes.Title" = "Backup codes";
 
 /* Send BCH view body. */
-"BCH.body" = "Enter a destination BCH address below. All BCH in your wallet at the time of the fork (%@) will be sent.";
+"BCH.body" = "Voer hieronder een BCH adres in. Alle BCH die op het moment van de fork  (%@) in in je wallet zitten, zullen worden gestuurd.";
 
 /* Confirm sending <$5.00> to <address>? */
-"BCH.confirmationMessage" = "Confirm sending %@ to %@";
+"BCH.confirmationMessage" = "Sturen van %@ naar %@ bevestigen";
 
 /* Confirmation alert title */
-"BCH.confirmationTitle" = "Confirmation";
+"BCH.confirmationTitle" = "Bevestiging";
 
 "BCH.conversionMessage" = "The legacy BCH address has been converted to Cashaddr format.";
 
@@ -671,75 +671,75 @@
 "BCH.errorMessage" = "The BCH address must be in Cashaddr format to send.";
 
 /* Generic bch erorr message */
-"BCH.genericError" = "Your account does not contain any BCH, or you received BCH after the fork.";
+"BCH.genericError" = "Je account bevat geen BCH of je hebt BCH ontvangen na de fork.";
 
 /* Transaction ID copied message */
-"BCH.hashCopiedMessage" = "Transaction ID copied";
+"BCH.hashCopiedMessage" = "Transactie-ID gekopieerd";
 
 /* No address error message */
-"BCH.noAddressError" = "Please enter an address";
+"BCH.noAddressError" = "Voer alstublieft een adres in";
 
 /* Attempted to scan unsupported qr code error message. */
-"BCH.paymentProtocolError" = "Payment Protocol Requests are not supported for BCH transactions";
+"BCH.paymentProtocolError" = "Een aanvraag voor een betalingsprotocol wordt niet ondersteund voor transacties met BCH";
 
 /* BCH successfully sent alert message */
-"BCH.successMessage" = "BCH was successfully sent.";
+"BCH.successMessage" = "BCH succesvol verstuurd.";
 
 /* Widthdraw BCH view title */
-"BCH.title" = "Withdraw BCH";
+"BCH.title" = "BCH opnemen";
 
 /* Tx Hash button header */
-"BCH.txHashHeader" = "BCH Transaction ID";
+"BCH.txHashHeader" = "BCH Transactie-ID.";
 
 /* Approve button label */
-"BitID.approve" = "Approve";
+"BitID.approve" = "Goedkeuren";
 
 /* <sitename> is requesting authentication using your bitcoin wallet */
-"BitID.authenticationRequest" = "%@ is requesting authentication using your bitcoin wallet";
+"BitID.authenticationRequest" = "%@ vraagt om authenticatie om je bitcoin-portemonnee te gebruiken";
 
 /* Deny button label */
-"BitID.deny" = "Deny";
+"BitID.deny" = "Weigeren";
 
 /* BitID error alert title */
-"BitID.error" = "Authentication Error";
+"BitID.error" = "Authenticatie Fout";
 
 /* BitID error alert messaage (The payment service you are trying to use isn't working. Please contact them, as you may need to try again) */
-"BitID.errorMessage" = "Please check with the service. You may need to try again.";
+"BitID.errorMessage" = "Vraag het na bij de service. Je moet het mogelijk opnieuw proberen.";
 
 /* BitID success alert title */
-"BitID.success" = "Successfully Authenticated";
+"BitID.success" = "Succesvol geïdentificeerd";
 
 /* BitID Authentication Request alert view title */
-"BitID.title" = "BitID Authentication Request";
+"BitID.title" = "BitID Authenticatieverzoek";
 
 "Button.Back" = "Back";
 
 /* As in "(tap here to) buy (bitcoin)" */
-"Button.buy" = "Buy";
+"Button.buy" = "Kopen";
 
 "Button.BuyDigitalAssets" = "Buy digital assets";
 
 /* Cancel button label */
-"Button.cancel" = "Cancel";
+"Button.cancel" = "Annuleren";
 
 /* Close button */
 "Button.close" = "Close";
 
 /* Confirm button title */
-"Button.confirm" = "Confirm";
+"Button.confirm" = "Bevestigen";
 
 /* prompt continue button */
-"Button.continueAction" = "Continue";
+"Button.continueAction" = "Doorgaan";
 
 "Button.Convert" = "Convert";
 
 "Button.copy" = "Copy";
 
 /* prompt dismiss button */
-"Button.dismiss" = "Dismiss";
+"Button.dismiss" = "Verwerpen";
 
 /* Done button title */
-"Button.done" = "DONE";
+"Button.done" = "Voltooid";
 
 "Button.Download" = "DOWNLOAD";
 
@@ -754,10 +754,10 @@
 "Button.GoToDashboard" = "Go to dashboard";
 
 /* Button to return to the "home" screen (the home screen is the top menu). */
-"Button.Home" = "Home";
+"Button.Home" = "Startpagina";
 
 /* Ignore button label */
-"Button.ignore" = "Ignore";
+"Button.ignore" = "Negeren";
 
 "Button.iUnderstand" = "I understand";
 
@@ -769,32 +769,32 @@
 "Button.map" = "Map";
 
 /* Maybe Later button label */
-"Button.maybeLater" = "Maybe Later";
+"Button.maybeLater" = "Misschien later";
 
 /* menu button */
 "Button.menu" = "Menu";
 
 /* More information button */
-"Button.moreInfo" = "More info";
+"Button.moreInfo" = "Meer info";
 
 "Button.moreLimits" = "More limits";
 
 "Button.next" = "Next";
 
 /* No button */
-"Button.no" = "No";
+"Button.no" = "Nee";
 
 /* OK button label */
 "Button.ok" = "OK";
 
 /* Open Settings button */
-"Button.openSettings" = "Open Settings";
+"Button.openSettings" = "Instellingen openen";
 
 /* Profile button title on tab bar */
 "Button.Profile" = "Profile";
 
 /* receive button */
-"Button.receive" = "Receive";
+"Button.receive" = "Ontvangen";
 
 "Button.ReceiveDigitalAssets" = "Receive digital assets";
 
@@ -804,34 +804,34 @@
 "Button.search" = "Search";
 
 /* Click this button to sell an asset */
-"Button.sell" = "Sell";
+"Button.sell" = "Verkoop";
 
 /* send button */
-"Button.send" = "Send";
+"Button.send" = "versturen";
 
 /* Settings button label */
-"Button.settings" = "Settings";
+"Button.settings" = "Instellingen";
 
 /* Setup button label */
-"Button.setup" = "Set Up";
+"Button.setup" = "Instellen";
 
 /* Skip button title */
-"Button.skip" = "Skip";
+"Button.skip" = "Overslaan";
 
 /* Settings button label */
-"Button.submit" = "Submit";
+"Button.submit" = "Indienen";
 
 "Button.TransferFunds" = "TRANSFER FUNDS";
 
 "Button.TryLater" = "Try later";
 
 /* Button label to uninstall the app. */
-"Button.uninstall.android" = "Uninstall";
+"Button.uninstall.android" = "Verwijderen";
 
 "Button.Verify" = "Verify";
 
 /* Yes button */
-"Button.yes" = "Yes";
+"Button.yes" = "Ja";
 
 /* 3D Secure label on buy flow */
 "Buy.3DSecure" = "3D Secure";
@@ -842,15 +842,15 @@
 
 "Buy.Ach.Instant.ConfirmationDrawer.ConfirmAction" = "Confirm purchase";
 
-"Buy.Ach.Instant.ConfirmationDrawer.Description" = "%@ (%@) assets will settle immediately.";
+"Buy.Ach.Instant.ConfirmationDrawer.Description" = "$%@ assets will settle immediately.";
 
 "Buy.Ach.Instant.ConfirmationDrawer.Notice" = "Instant purchase";
 
-"Buy.Ach.Instant.ConfirmationDrawer.Title" = "Purchase with Instant Buy";
+"Buy.Ach.Instant.ConfirmationDrawer.Title" = "Puchase with Instant Buy";
 
 "Buy.Ach.Instant.Fee.Alternative.Title" = "Instant ACH fee";
 
-"Buy.Ach.Instant.Fee.Title" = "Instant ACH fee";
+"Buy.Ach.Instant.Fee.Title" = "Instant Buy fee";
 
 "Buy.Ach.Instant.HybridConfirmationDrawer" = "With Instant buy, %@ (%@) will show in your account instantly. The remaining %@ (%@) will arrive in 3-5 days.";
 
@@ -884,7 +884,7 @@
 
 "Buy.achFee" = "ACH fee (%@)";
 
-"Buy.achLimits" = "Currently, minimum for buying with ACH is %@ and maximum is %@ per day.";
+"Buy.achLimits" = "Currently, minimum for buying with ACH is %@ USD and maximum is %@ USD per day. At the moment lifetime limit is %@ USD.";
 
 "Buy.achPaymentDurationWarning" = "ACH payments usually take 3-5 days. Funds may take a few days to be debited from your account.";
 
@@ -922,10 +922,10 @@
 
 "Buy.BuyLimits.AchDescription" = "It currently takes 3-5 days to process a purchase with ACH.";
 
-"Buy.BuyLimits.android" = "Currently, minimum for Buy is %@ and maximum is %@ per day.";
+"Buy.BuyLimits.android" = "Currently, minimum for Buy is $30.00 USD and maximum is $500.00 USD per day.";
 
 /* Buy min and max limit text */
-"Buy.BuyLimits.description" = "Minimum for Buy is %@ %@ per transaction and your weekly limit is %@ %@.";
+"Buy.BuyLimits.description" = "Currently, minimum for Buy is %@ USD and maximum is %@ USD per day.  %@";
 
 "Buy.BuyLimits.description.android" = "Minimum for Buy is %@ per transaction and your weekly limit is %@.";
 
@@ -1064,7 +1064,7 @@
 "Buy.SecurityCodePopup" = "Please enter the 3 digit CVV number as it appears on the back of your card";
 
 /* Select a payment method button title in buy flow */
-"Buy.SelectPaymentMethod" = "Select payment method";
+"Buy.SelectPaymentMethod" = "Select a payment method";
 
 /* State/Province label in billing address view on buy flow */
 "Buy.StateProvince" = "State/Province";
@@ -1073,7 +1073,7 @@
 
 "Buy.switchedToDebitCard" = "Payment method switched to Debit card!";
 
-"Buy.Terms.description" = "By placing this order you agree to our";
+"Buy.Terms.description" = "By placing this order you agree to our %@";
 
 "Buy.TransactionError" = "Transaction error";
 
@@ -1097,7 +1097,7 @@
 "Buy.ZIPPostalCode" = "ZIP/Postal Code";
 
 /* Camera plugin instruction */
-"CameraPlugin.centerInstruction" = "Center your ID in the box";
+"CameraPlugin.centerInstruction" = "Centreer je ID in het daarvoor bestemde vak";
 
 /* Cash Token Action Instructions */
 "CashToken.actionInstructions" = "Please send bitcoin to this address to withdraw at the ATM. Scan QR code or copy and paste to send bitcoin. Note that it may take a few minutes for the transfer to be confirmed.";
@@ -1120,59 +1120,59 @@
 /* Cash Token Please Verify */
 "CashToken.pleaseVerify" = "Please Verify";
 
-"CloudBackup.backupDeleted" = "Backup Erased";
+"CloudBackup.backupDeleted" = "Back-up gewist";
 
-"CloudBackup.backupDeletedMessage" = "Your iCloud backup has been erased after too many failed PIN attempts. The app will now restart.";
+"CloudBackup.backupDeletedMessage" = "Uw iCloud-back-up is gewist na te veel mislukte PIN-pogingen. De app zal nu opnieuw opstarten.";
 
-"CloudBackup.backupMenuTitle" = "iCloud Backup";
+"CloudBackup.backupMenuTitle" = "iCloud-back-up";
 
-"CloudBackup.createButton" = "CREATE NEW WALLET";
+"CloudBackup.createButton" = "Nieuwe wallet maken";
 
-"CloudBackup.createWarning" = "A previously backed up wallet has been detected. Using this backup is recomended. Are you sure you want to proceeed with creating a new wallet?";
+"CloudBackup.createWarning" = "Er is een portemonnee gedetecteerd waarvan eerder een back-up is gemaakt. Het gebruik van deze back-up wordt aanbevolen. Weet u zeker dat u wilt doorgaan met het aanmaken van een nieuwe portemonnee?";
 
-"CloudBackup.enableBody1" = "iCloud Keychain must be turned on for this feature to work.";
+"CloudBackup.enableBody1" = "iCloud Keychain moet ingeschakeld zijn om deze functie te laten werken.";
 
-"CloudBackup.enableBody2" = "It should look like the following:";
+"CloudBackup.enableBody2" = "Het zou er als volgt uit moeten zien:";
 
-"CloudBackup.enableButton" = "I HAVE TURNED ON ICLOUD KEYCHAIN";
+"CloudBackup.enableButton" = "Ik heb iCloud-sleutelhanger ingeschakeld";
 
-"CloudBackup.enableTitle" = "Enable Keychain";
+"CloudBackup.enableTitle" = "Schakel Keychain in";
 
-"CloudBackup.encryptBackupMessage" = "Enter pin to encrypt backup";
+"CloudBackup.encryptBackupMessage" = "Voer een pincode in om de back-up te versleutelen";
 
-"CloudBackup.mainBody" = "Please note, iCloud backup is only as secure as your iCloud account. We still recommend writing down your Recovery Phrase in the following step and keeping it secure. The Recovery Phrase is the only way to recover your wallet if you can no longer access iCloud.";
+"CloudBackup.mainBody" = "Houd er rekening mee dat iCloud-back-up slechts zo veilig is als uw iCloud-account. We raden u toch aan om uw herstelzin in de volgende stap op te schrijven en veilig te bewaren. De herstelzin is de enige manier om uw portemonnee te herstellen als u geen toegang meer hebt tot iCloud.";
 
-"CloudBackup.mainTitle" = "iCloud Recovery Backup";
+"CloudBackup.mainTitle" = "iCloud-herstelback-up";
 
-"CloudBackup.mainWarning" = "iCloud Keychain must be turned on in the iOS Settings app for this feature to work";
+"CloudBackup.mainWarning" = "iCloud-sleutelhanger moet zijn ingeschakeld in de app iOS-instellingen om deze functie te laten werken";
 
-"CloudBackup.mainWarningConfirmation" = "Are you sure you want to disable iCloud Backup? This will delete your backup from all devices.";
+"CloudBackup.mainWarningConfirmation" = "Weet u zeker dat u iCloud-back-up wilt uitschakelen? Hiermee wordt uw back-up van alle apparaten verwijderd.";
 
-"CloudBackup.pinAttempts" = "Attempts remaining before erasing backup: %@";
+"CloudBackup.pinAttempts" = "Pogingen blijven voordat back-up wordt gewist: %@";
 
-"CloudBackup.recoverButton" = "Restore with Recovery Phrase";
+"CloudBackup.recoverButton" = "Herstellen vanaf herstelsleutel";
 
-"CloudBackup.recoverHeader" = "Enter PIN to unlock iCloud backup";
+"CloudBackup.recoverHeader" = "Voer de PIN-code in om een iCloud-back-up te ontgrendelen";
 
-"CloudBackup.recoverWarning" = "A previously backed up wallet has been detected. Using this backup is recommended. Are you sure you want to proceeed with restoring from a Recovery Phrase?";
+"CloudBackup.recoverWarning" = "A previously backed up wallet has been detected. Using this backup is recommended. Are you sure you want to proceeed with restoring from a recovery phrase?";
 
-"CloudBackup.restoreButton" = "Restore with iCloud Backup";
+"CloudBackup.restoreButton" = "Herstellen van iCloud Backup";
 
-"CloudBackup.selectTitle" = "Choose Backup";
+"CloudBackup.selectTitle" = "Kies Back-up";
 
-"CloudBackup.step1" = "Launch the Settings app.";
+"CloudBackup.step1" = "Start de app Instellingen.";
 
-"CloudBackup.step2" = "Tap your Apple ID name.";
+"CloudBackup.step2" = "Tik op uw Apple ID-naam.";
 
-"CloudBackup.step3" = "Tap iCloud.";
+"CloudBackup.step3" = "Tik op iCloud.";
 
-"CloudBackup.step4" = "Verify that iCloud Keychain is ON";
+"CloudBackup.step4" = "Controleer of iCloud-sleutelhanger is ingeschakeld";
 
-"CloudBackup.understandText" = "I understand that this feature will not work unless iCloud Keychain is enabled.";
+"CloudBackup.understandText" = "Ik begrijp dat deze functie alleen werkt als iCloud-sleutelhanger is ingeschakeld.";
 
-"CloudBackup.warningBody" = "Your iCloud backup will be erased after %@ more incorrect PIN attempts.";
+"CloudBackup.warningBody" = "Uw iCloud-back-up wordt gewist na nog %@ onjuiste pincode-pogingen.";
 
-"ComingSoon.body" = "Buy, Swap and Sell are not available in your state. We will notify you when they become available. \n\nYou can still Store, Send and Receive digital assets in your RockWallet.";
+"ComingSoon.body" = "Buy and Swap aren't currently available in your state. We'll notify you when you can use these features.\n\nYou can still safely send and receive digital assets to your wallet in the meantime.";
 
 "ComingSoon.BodyWithoutSell" = "Buy and Swap are not available in your state. We will notify you when they become available. \n\nYou can still Store, Send and Receive digital assets in your RockWallet.";
 
@@ -1195,109 +1195,109 @@
 "CommonString.Or.label" = "Or";
 
 /* Amount to Send: ($1.00) */
-"Confirmation.amountLabel" = "Amount to send";
+"Confirmation.amountLabel" = "Bedrag om te versturen:";
 
-"Confirmation.destinationTag" = "Destination Tag";
+"Confirmation.destinationTag" = "Bestemmingstag";
 
-"Confirmation.destinationTag_EmptyHint" = "(empty)";
+"Confirmation.destinationTag_EmptyHint" = "(leeg)";
 
 /* Network Fee: ($1.00) */
-"Confirmation.feeLabel" = "Network fee";
+"Confirmation.feeLabel" = "Netwerk fee:";
 
 /* Network Fee: (ETH) */
-"Confirmation.feeLabelETH" = "Network Fee (ETH):";
+"Confirmation.feeLabelETH" = "Netwerkkosten (ETH):";
 
 /* Label for Hedera Memo field on transaction confirmation screen */
 "Confirmation.hederaMemo" = "Hedera Memo";
 
 /* eg. Processing time: This transaction is predicted to complete in [10-60 minutes]. */
-"Confirmation.processingTime" = "Processing time: This transaction is predicted to complete in %@.";
+"Confirmation.processingTime" = "Verwerkingstijd: deze transactie wordt voltooid in %@.";
 
 "Confirmation.processingTime.android" = "Estimated delivery time: %@";
 
 /* Label for "send" button on final confirmation screen */
-"Confirmation.send" = "Send";
+"Confirmation.send" = "Versturen";
 
 /* Confirmation Screen title */
-"Confirmation.title" = "Confirmation";
+"Confirmation.title" = "Bevestiging";
 
 /* To: (address) */
-"Confirmation.to" = "To";
+"Confirmation.to" = "Naar";
 
 /* Total Cost: ($5.00) */
-"Confirmation.totalLabel" = "Total Cost:";
+"Confirmation.totalLabel" = "Totale Prijs:";
 
 "Confirmation.totalLabel.android" = "You'll receive";
 
 /* Validator address label on  confirmation screen */
 "Confirmation.ValidatorAddress" = "Validator Address";
 
-"ConfirmGift.paperWalletAmount" = "Paper Wallet Amount";
+"ConfirmGift.paperWalletAmount" = "Hoeveelheid papieren portemonnee";
 
-"ConfirmGift.processingTime" = "Validating this paper wallet on the network may take up to 60 minutes";
+"ConfirmGift.processingTime" = "Het valideren van deze papieren portemonnee op het netwerk kan tot 60 minuten duren";
 
 /* Confirm paper phrase error message */
-"ConfirmPaperPhrase.error" = "The words entered do not match your Recovery Phrase. Please try again.";
+"ConfirmPaperPhrase.error" = "De ingevulde woorden komen niet overeen met uw paper key. Probeer het opnieuw.";
 
 /* Confirm paper phrase view label. */
-"ConfirmPaperPhrase.label" = "To make sure everything was written down correctly, please enter the following words from your Recovery Phrase.";
+"ConfirmPaperPhrase.label" = "Voer de volgende woorden in van je papieren sleutel om te verzekeren dat alles correct is opgeschreven.";
 
 /* Word label eg. Word #1, Word #2 */
-"ConfirmPaperPhrase.word" = "Word %02i";
+"ConfirmPaperPhrase.word" = "Woord #%@";
 
 "ConfirmPaperPhrase.word.android" = "Word %1$s%2$s";
 
-"CreateGift.amountLabel" = "Choose amount ($USD)";
+"CreateGift.amountLabel" = "Kies bedrag ($ USD)";
 
-"CreateGift.create" = "Create";
+"CreateGift.create" = "Creëer";
 
-"CreateGift.customAmountHint" = "Custom amount ($500 max)";
+"CreateGift.customAmountHint" = "Aangepast bedrag (maximaal $ 500)";
 
-"CreateGift.description" = "We'll create what's called a \"paper wallet\" with a qr code and instructions for installing RockWallet that you can email or text to friends and family.";
+"CreateGift.description" = "We maken een zogeheten";
 
-"CreateGift.inputAmountError" = "You must select a gift amount.";
+"CreateGift.inputAmountError" = "U moet een geschenkbedrag selecteren.";
 
-"CreateGift.inputRecipientNameError" = "You must enter the name of the recipient.";
+"CreateGift.inputRecipientNameError" = "U moet de naam van de ontvanger invoeren.";
 
-"CreateGift.insufficientBalanceError" = "You have insufficient funds to send a gift.";
+"CreateGift.insufficientBalanceError" = "Je hebt onvoldoende saldo om een cadeau te sturen.";
 
-"CreateGift.insufficientBalanceForAmountError" = "You have insufficient funds to send a gift of this amount.";
+"CreateGift.insufficientBalanceForAmountError" = "U heeft onvoldoende saldo om dit bedrag te schenken.";
 
-"CreateGift.recipientName" = "Recipient's name";
+"CreateGift.recipientName" = "Naam ontvanger";
 
-"CreateGift.serverError" = "A server error occurred. Please try again later.";
+"CreateGift.serverError" = "Er is een serverfout opgetreden. Probeer het later nog eens.";
 
-"CreateGift.subtitle" = "Send bitcoin to someone even if they don't have a wallet.";
+"CreateGift.subtitle" = "Stuur bitcoin naar iemand, zelfs als ze geen portemonnee hebben.";
 
-"CreateGift.title" = "Give the Gift of Bitcoin";
+"CreateGift.title" = "Geef Bitcoin cadeau";
 
-"CreateGift.unexpectedError" = "An unexpected error occurred. Please contact support.";
+"CreateGift.unexpectedError" = "Er is een onverwachte fout opgetreden. Neem dan contact op met ondersteuning.";
 
 /* Agree to legal terms button */
-"Crowdsale.agree" = "Agree";
+"Crowdsale.agree" = "Akkoord";
 
 /* As in "(tap here to) buy (some) tokens" */
-"Crowdsale.buyButton" = "Buy Tokens";
+"Crowdsale.buyButton" = "Koop Tokens";
 
 /* Decline to legal terms button */
-"Crowdsale.decline" = "Decline";
+"Crowdsale.decline" = "Afwijzen";
 
 /* Resume Idnetify verification button */
-"Crowdsale.resume" = "Resume Verification";
+"Crowdsale.resume" = "Verificatie Voortzetten";
 
 /* Retry Identity verification button */
-"Crowdsale.retry" = "Retry";
+"Crowdsale.retry" = "Opnieuw proberen";
 
 /* Bitcoin denomination picker label */
-"DefaultCurrency.bitcoinLabel" = "Bitcoin Display Unit";
+"DefaultCurrency.bitcoinLabel" = "Bitcoin-eenheid";
 
 /* Exchange rate label */
-"DefaultCurrency.rateLabel" = "Exchange Rate";
+"DefaultCurrency.rateLabel" = "Wisselkoers";
 
 "Disabled.disabledUntil" = "Disabled until";
 
 /* The wallet is disabled. */
-"Disabled.title" = "Wallet disabled";
+"Disabled.title" = "Wallet uitgeschakeld";
 
 "Drawer.button.buy_with_sell" = "SELL & WITHDRAW";
 
@@ -1305,16 +1305,16 @@
 "Drawer.title" = "Buy / Sell";
 
 /* Share address by e-mail subject */
-"Email.address_subject" = "%@ Address";
+"Email.address_subject" = "%@ adres";
 
 /* Service capabilities description */
-"EME.permissions.accountRequest" = "Request %@ account information";
+"EME.permissions.accountRequest" = "Vraag %@ accountgegevens aan";
 
 /* Service capabilities description */
-"EME.permissions.callRequest" = "Request %@ smart contract call";
+"EME.permissions.callRequest" = "Verzoek %@ smart contract oproep";
 
 /* Service capabilities description */
-"EME.permissions.paymentRequest" = "Request %@ payment";
+"EME.permissions.paymentRequest" = "Verzoek %@ betaling";
 
 "ErrorMessages.accessDenied" = "You cannot purchase assets without completing Level 2 account verification. Upgrade your limits on the Profile screen.";
 
@@ -1327,7 +1327,7 @@
 "ErrorMessages.Ach.InsufficientFunds" = "Unfortunately the transaction could not be completed due to insufficient funds in your bank account. Please try again later";
 
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
-"ErrorMessages.AmountTooHigh" = "The amount is higher than your remaining %@ limit of %@ %@. Please enter a lower amount.";
+"ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
 
 /* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
 "ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %@ %@. Please enter a higher amount.";
@@ -1347,16 +1347,16 @@
 "ErrorMessages.default" = "Something went wrong! Try again later.";
 
 /* Email unavailable alert title */
-"ErrorMessages.emailUnavailableMessage" = "This device isn't configured to send email with the iOS mail app.";
+"ErrorMessages.emailUnavailableMessage" = "Dit apparaat is niet geconfigureerd om e-mails te sturen via de iOS Mail app.";
 
 /* Email unavailable alert title */
-"ErrorMessages.emailUnavailableTitle" = "Email Unavailable";
+"ErrorMessages.emailUnavailableTitle" = "E-mail niet beschikbaar";
 
 /* Not enough ETH for transaction fee */
-"ErrorMessages.ethBalanceLowAddEth" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
+"ErrorMessages.ethBalanceLowAddEth" = "Insufficient Ethereum balance in your wallet to transfer this type of token.";
 
 /* Not enough ETH for transaction fee */
-"ErrorMessages.ethBalanceLowAddEthWithAmount" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add %@ ETH to your wallet.";
+"ErrorMessages.ethBalanceLowAddEthWithAmount" = "Insufficient Ethereum balance in your wallet to transfer this type of token.";
 
 "ErrorMessages.Exchange.xrpMinimumReserve" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
@@ -1379,13 +1379,13 @@
 "ErrorMessages.LivenessCheckLimit.errorMessage" = "Biometric authentication attempts reached";
 
 /* Message that gets shown when we've detected the user has encountered the looping lock-screen bug. (preserve [ ] characters) */
-"ErrorMessages.loopingLockScreen.android" = "RockWallet can not be authenticated due to a bug in your version of Android. [Please tap here for more information.]";
+"ErrorMessages.loopingLockScreen.android" = "RockWallet kan niet gewaarmerkt worden vanwege een fout in uw versie van Android. [Klik hier voor meer informatie.]";
 
 /* Messaging unavailable alert title */
-"ErrorMessages.messagingUnavailableMessage" = "This device isn't configured to send messages.";
+"ErrorMessages.messagingUnavailableMessage" = "Dit apparaat is niet geconfigureerd om berichten te sturen.";
 
 /* Messaging unavailable alert title */
-"ErrorMessages.messagingUnavailableTitle" = "Messaging Unavailable";
+"ErrorMessages.messagingUnavailableTitle" = "Bericht versturen niet beschikbaar";
 
 "ErrorMessages.networkFee" = "This swap doesn't cover the included network fee. Please add more funds to your wallet or change the amount you're swapping.";
 
@@ -1414,7 +1414,7 @@
 
 "ErrorMessages.PlaidLinkToken" = "Unfortunately, an error occurred while linking the bank account. Please contact us for further support.";
 
-"ErrorMessages.selectAssets" = "In order to successfully perform a swap, make sure you have two or more of our supported swap assets (BSV, BTC, ETH, BCH, SHIB, USDT) activated and funded within your wallet.";
+"ErrorMessages.selectAssets" = "In order to succesfully perform a swap, make sure you have two or more of our supported swap assets (BSV, BTC, ETH, BCH, SHIB, USDT) activated and funded within your wallet.";
 
 "ErrorMessages.Sell.LimitExceeded" = "You have exceeded your sell limits, please try again later.";
 
@@ -1426,7 +1426,7 @@
 "ErrorMessages.temporaryNetworkIssues" = "We are having temporary issues connecting to our network. Please try again later.";
 
 /* Fingerprint was not recognized by the scanner, please try scanning again */
-"ErrorMessages.touchIdFailed.android" = "Fingerprint not recognized. Please try again.";
+"ErrorMessages.touchIdFailed.android" = "Vingerafdruk niet herkend. Probeer het alstublieft opnieuw.";
 
 "ErrorMessages.TryAgainLater" = "Try again later";
 
@@ -1437,112 +1437,112 @@
 
 "Exchange.PopupText" = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem.";
 
-"ExportConfirmation.cancel" = "Cancel";
+"ExportConfirmation.cancel" = "annuleren";
 
 "ExportConfirmation.continue" = "";
 
-"ExportConfirmation.continueAction" = "Continue";
+"ExportConfirmation.continueAction" = "Doorgaan met";
 
-"ExportConfirmation.message" = "This will generate a CSV file including all completed transactions from all enabled wallets.";
+"ExportConfirmation.message" = "Dit genereert een CSV-bestand met alle voltooide transacties van alle ingeschakelde wallets.";
 
-"ExportConfirmation.title" = "Export transactions?";
+"ExportConfirmation.title" = "Transacties exporteren?";
 
 /* "Export transfers body" */
-"ExportTransfers.body" = "This will generate a CSV file including all completed transactions from all enabled wallets.";
+"ExportTransfers.body" = "Dit genereert een CSV-bestand met alle voltooide transacties van alle ingeschakelde wallets.";
 
 /* "Export transfers button" */
-"ExportTransfers.confirmExport" = "Export";
+"ExportTransfers.confirmExport" = "Overboekingen exporteren";
 
 /* "Export dialog error message" */
-"ExportTransfers.exportFailedBody" = "Failed to export CSV file, please try again.";
+"ExportTransfers.exportFailedBody" = "Het exporteren van CSV-bestand is mislukt. Probeer het opnieuw.";
 
 /* "Export dialog error title" */
-"ExportTransfers.exportFailedTitle" = "Export Failed";
+"ExportTransfers.exportFailedTitle" = "Export mislukt";
 
 /* "Export transfers header" */
-"ExportTransfers.header" = "Export transactions?";
+"ExportTransfers.header" = "Transacties exporteren?";
 
 /* You can customize your Face ID Spending Limit from the [menu] */
-"FaceIDSettings.customizeText" = "You can customize your Face ID spending limit from the %@.";
+"FaceIDSettings.customizeText" = "Je kunt de bestedingslimiet van je Face-ID aanpassen vanuit het %@.";
 
 /* Text describing the purpose of the Face ID settings in the BRD app. */
-"FaceIDSettings.explanatoryText" = "Use Face ID to unlock your RockWallet app and send money.";
+"FaceIDSettings.explanatoryText" = "Gebruik Face ID om uw RockWallet-app te ontgrendelen en geld te verzenden.";
 
 /* Face Id screen label */
-"FaceIDSettings.label" = "Use your face to unlock your RockWallet and send money up to a set limit.";
+"FaceIDSettings.label" = "Gebruik uw gezicht om uw RockWallet te ontgrendelen en verstuur geld tot een vastgestelde limiet.";
 
 /* Title of the screen for setting the Face ID Spending Limit */
-"FaceIDSettings.linkText" = "Face ID Spending Limit Screen";
+"FaceIDSettings.linkText" = "Scherm bestedingslimiet Face-ID";
 
 /* Setting to turn on Face ID for BRD */
-"FaceIDSettings.switchLabel" = "Enable Face ID for RockWallet";
+"FaceIDSettings.switchLabel" = "Face-ID voor RockWallet inschakelen";
 
 /* Face ID settings view title */
-"FaceIDSettings.title" = "Face ID";
+"FaceIDSettings.title" = "Face-ID";
 
 /* Text label for a toggle that enables Face ID for sending money. */
-"FaceIDSettings.transactionsTitleText" = "Enable Face ID to send money";
+"FaceIDSettings.transactionsTitleText" = "Schakel Face ID in om geld te verzenden";
 
 /* Instructions on how to turn on face id on the iPhone. Please ensure the name of the menu in this string matches the wording Apple uses in the iPhone menu. */
-"FaceIDSettings.unavailableAlertMessage" = "You have not set up Face ID on this device. Go to Settings->Face ID & Passcode to set it up now.";
+"FaceIDSettings.unavailableAlertMessage" = "Je hebt op dit apparaat geen Face-ID ingesteld. Ga naar Instellingen->Face-ID en Wachtwoord om dit nu in te stellen.";
 
 /* Face ID unavailable alert title */
-"FaceIDSettings.unavailableAlertTitle" = "Face ID Not Set Up";
+"FaceIDSettings.unavailableAlertTitle" = "Face-ID niet ingesteld";
 
 /* Text label for a toggle that enables Face ID for unlocking the BRD app. */
-"FaceIDSettings.unlockTitleText" = "Enable Face ID to unlock RockWallet";
+"FaceIDSettings.unlockTitleText" = "Schakel Face ID in om RockWallet te ontgrendelen";
 
 /* Face Id spending limit screen title */
-"FaceIDSpendingLimit.title" = "Face ID Spending Limit";
+"FaceIDSpendingLimit.title" = "Bestedingslimiet Face-ID";
 
 "Feedback.noEmailClient" = "Email client not found";
 
 /* Economy fee */
-"FeeSelector.economy" = "Economy";
+"FeeSelector.economy" = "Enonomy";
 
 /* E.g. [This transaction is predicted to complete in] 1-24 hours */
-"FeeSelector.economyTime" = "1-24 hours";
+"FeeSelector.economyTime" = "1-24 uur";
 
 /* Warning message for economy fee */
-"FeeSelector.economyWarning" = "This option is not recommended for time-sensitive transactions.";
+"FeeSelector.economyWarning" = "Deze optie wordt niet aangeraden voor tijdgevoelige transacties.";
 
 /* E.g. Estimated delivery: 10-60 minutes */
-"FeeSelector.estimatedDeliver" = "Estimated Delivery: %@";
+"FeeSelector.estimatedDeliver" = "Geschatte levering: %@";
 
 /* [This transaction will complete in] 2-5 minutes */
-"FeeSelector.ethTime" = "2-5 minutes";
+"FeeSelector.ethTime" = "2 tot 5 minuten";
 
-"FeeSelector.lessThanMinutes" = "<%@ minutes";
+"FeeSelector.lessThanMinutes" = "<%@ minuten";
 
 /* Priority fee */
-"FeeSelector.priority" = "Priority";
+"FeeSelector.priority" = "Voorrang";
 
 /* E.g. [This transaction is predicted to complete in] 10-30 minutes */
-"FeeSelector.priorityTime" = "10-30 minutes";
+"FeeSelector.priorityTime" = "10-30 minuten";
 
 /* Regular fee */
-"FeeSelector.regular" = "Regular";
+"FeeSelector.regular" = "Normaal";
 
 /* E.g. [This transaction is predicted to complete in] 10-60 minutes */
-"FeeSelector.regularTime" = "10-60 minutes";
+"FeeSelector.regularTime" = "10-60 minuten";
 
 /* Fee Selector title */
-"FeeSelector.title" = "Processing Speed";
+"FeeSelector.title" = "Verwerkingssnelheid";
 
 /* Label for the Android file chooser when we need to prompt the user to select an image file. */
-"FileChooser.selectImageSource.android" = "Select Image Source";
+"FileChooser.selectImageSource.android" = "Selecteer Afbeeldingsbron";
 
 /* Fingerprint authentication settings screen description */
-"FingerprintSettings.description" = "Use your fingerprint to unlock your RockWallet app and send transactions.";
+"FingerprintSettings.description" = "Gebruik je vingerafdruk om je Bread te ontgrendelen en geld tot een ingestelde limiet te versturen.";
 
 /* Switch label to enable fingerprint authentication to send money */
-"FingerprintSettings.sendMoney" = "Use fingerprint to send money";
+"FingerprintSettings.sendMoney" = "Gebruik vingerafdruk om geld te verzenden";
 
 /* Fingerprint authentication settings sceen title */
-"FingerprintSettings.title" = "Fingerprint";
+"FingerprintSettings.title" = "Vingerafdruk";
 
 /* Switch label to enable fingerprint authentication to unlock BRD app */
-"FingerprintSettings.unlockApp" = "Use fingerprint to unlock RockWallet";
+"FingerprintSettings.unlockApp" = "Gebruik de vingerafdruk om RockWallet te ontgrendelen";
 
 "HomeScreen.accountDataUpdatedToastMessage" = "Your account data has been updated.";
 
@@ -1550,13 +1550,13 @@
 "HomeScreen.activity" = "Activity";
 
 /* This is the section that allows administration of the user's wallet */
-"HomeScreen.admin" = "Admin";
+"HomeScreen.admin" = "Beheerder";
 
 /* Home screen menu button to buy some bitcoin */
-"HomeScreen.buy" = "Buy";
+"HomeScreen.buy" = "Kopen";
 
 /* home screen toolbar 'Buy & Sell' button */
-"HomeScreen.buyAndSell" = "Buy & Sell";
+"HomeScreen.buyAndSell" = "Kopen & Verkopen";
 
 "HomeScreen.home" = "Home";
 
@@ -1570,31 +1570,31 @@
 "HomeScreen.PullToRefresh" = "Pull to refresh";
 
 /* Label for the total balance of all the user's assets (style is all lower case if your language permits) */
-"HomeScreen.totalAssets" = "Balance";
+"HomeScreen.totalAssets" = "Totale Prijs:";
 
 /* (Tap here to) trade (your assets for other assets) */
-"HomeScreen.trade" = "Swap";
+"HomeScreen.trade" = "Handel";
 
 /* Checking private key balance progress view text */
-"Import.checking" = "Checking private key balance...";
+"Import.checking" = "Private key balans checken...";
 
 /* Sweep private key confirmation message */
-"Import.confirm" = "You are importing %@ from this private key into your RockWallet. There will be a network fee of %@.";
+"Import.confirm" = "%@ van deze private key naar je wallet sturen? Het Bitcoinnetwerk zal een fee ontvangen van %@.";
 
 /* Duplicate key error message */
-"Import.Error.duplicate" = "This private key is already in your wallet.";
+"Import.Error.duplicate" = "Deze private key zit al in je portemonnee.";
 
 /* empty private key error message */
-"Import.Error.empty" = "This private key is empty.";
+"Import.Error.empty" = "Deze private key is leeg.";
 
 /* Failed to submit transaction error message */
 "Import.Error.failedSubmit" = "Failed to submit transaction.";
 
 /* High fees error message */
-"Import.Error.highFees" = "Transaction fees would cost more than the funds available on this private key.";
+"Import.Error.highFees" = "Transactiekosten zouden hoger zijn dan de fondsen die op deze private key aanwezig zijn.";
 
 /* Not a valid private key error message */
-"Import.Error.notValid" = "Not a valid private key";
+"Import.Error.notValid" = "Geen geldige private key";
 
 /* Service error error message */
 "Import.Error.serviceError" = "Service Error";
@@ -1603,7 +1603,7 @@
 "Import.Error.serviceUnavailable" = "Service Unavailable";
 
 /* Import signing error message */
-"Import.Error.signing" = "Error signing transaction";
+"Import.Error.signing" = "Error bij transactie ondertekenen";
 
 /* Unable to sweep wallet error message */
 "Import.Error.sweepError" = "Unable to sweep wallet";
@@ -1612,207 +1612,207 @@
 "Import.Error.unsupportedCurrency" = "Unsupported Currency";
 
 /* [Redeem] the funds stored on this private key. */
-"Import.importButton" = "Sweep";
+"Import.importButton" = "Import";
 
 /* Importing wallet progress view label */
-"Import.importing" = "Sweeping a wallet";
+"Import.importing" = "Private key importeren";
 
 /* Caption for graphics */
-"Import.leftCaption" = "Wallet to be imported";
+"Import.leftCaption" = "Wallet om te importeren";
 
 /* Import wallet intro screen message */
-"Import.message" = "Sweeping a wallet transfers all the money from your other wallet into your RockWallet using a single transaction.";
+"Import.message" = "Private keys worden vaak afgedrukt op papier als een QR-code en gebruikt om middelen online op te slaan. Wissel een persoonlijke sleutel in om al het geld dat het beheert over te schrijven naar je RockWallet via een enkele transactie.";
 
 /* Enter password alert view title */
-"Import.password" = "This private key is password protected.";
+"Import.password" = "Deze private key is beveiligd met een wachtwoord.";
 
 /* password textfield placeholder */
-"Import.passwordPlaceholder" = "password";
+"Import.passwordPlaceholder" = "wachtwoord";
 
 /* Caption for graphics */
-"Import.rightCaption" = "Your RockWallet";
+"Import.rightCaption" = "Jouw RockWallet Portemonnee";
 
 /* Scan Private key button label */
-"Import.scan" = "SCAN PRIVATE KEY";
+"Import.scan" = "Scan private key";
 
 /* Import wallet success alert title */
-"Import.success" = "Success";
+"Import.success" = "Succes";
 
 /* Successfully imported wallet message body */
-"Import.SuccessBody" = "Successfully imported wallet.";
+"Import.SuccessBody" = "Persoonlijke sleutel met succes ingewisseld.";
 
 /* Import Wallet screen title */
-"Import.title" = "Sweep Wallet";
+"Import.title" = "Persoonlijke Sleutel Inwisselen";
 
 /* Unlocking Private key activity view message. */
-"Import.unlockingActivity" = "Unlocking Key";
+"Import.unlockingActivity" = "Sleutel Ontgrendelen";
 
 /* Import wallet intro warning message */
-"Import.warning" = "Sweeping a wallet does not include transaction history or other details.";
+"Import.warning" = "Het inwisselen van een persoonlijke sleutel zal geen transactiegeschiedenis of andere details importeren.";
 
 /* Wrong password alert message */
-"Import.wrongPassword" = "Wrong password, please try again.";
+"Import.wrongPassword" = "Verkeerd wachtwoord, probeer alstublieft opnieuw.";
 
 /* Input view invalid code */
 "InputView.InvalidCode" = "Invalid code";
 
 /* Close app button */
-"JailbreakWarnings.close" = "Close";
+"JailbreakWarnings.close" = "Sluiten";
 
 /* Ignore jailbreak warning button */
-"JailbreakWarnings.ignore" = "Ignore";
+"JailbreakWarnings.ignore" = "Negeren";
 
 /* Jailbreak warning message */
-"JailbreakWarnings.messageWithBalance" = "DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access RockWallet's keychain data and steal your bitcoin! Wipe this wallet immediately and restore on a secure device.";
+"JailbreakWarnings.messageWithBalance" = "APPARAAT BEVEILIGING BESCHADIGD\nElke 'jailbreak' app heeft toegang tot de sleutelhanger data van RockWallet en kan hiermee je Bitcoins stelen! Wis deze portemonnee direct en herstel het op een veilig apparaat.";
 
 /* Jailbreak warning message */
-"JailbreakWarnings.messageWithoutBalance" = "DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access RockWallet's keychain data and steal your bitcoin. Please only use RockWallet on a non-jailbroken device.";
+"JailbreakWarnings.messageWithoutBalance" = "APPARAAT BEVEILIGING BESCHADIGD\nElke 'jailbreak' app heeft toegang tot de sleutelhanger data van RockWallet en kan hiermee je Bitcoins stelen. Gebruik RockWallet a.u.b. alleen op een niet-gejailbreakt apparaat.";
 
 /* Jailbreak warning title */
-"JailbreakWarnings.title" = "WARNING";
+"JailbreakWarnings.title" = "WAARSCHUWING";
 
 /* Wipe wallet button */
-"JailbreakWarnings.wipe" = "Wipe";
+"JailbreakWarnings.wipe" = "Wissen";
 
 /* Approve link wallet button label */
-"LinkWallet.approve" = "Approve";
+"LinkWallet.approve" = "Goedkeuren";
 
 /* Decline link wallet button label */
-"LinkWallet.decline" = "Decline";
+"LinkWallet.decline" = "Afwijzen";
 
 /* Link Wallet view dislaimer footer */
-"LinkWallet.disclaimer" = "External apps cannot send money without approval from this device";
+"LinkWallet.disclaimer" = "Externe apps kunnen geen geld versturen zonder goedkeuring vanaf dit toestel";
 
 /* Link Wallet view title above domain list */
-"LinkWallet.domainTitle" = "Note: ONLY interact with this app when on one of the following domains";
+"LinkWallet.domainTitle" = "Let op: werk alleen met deze app wanneer je je op één van de volgende domeinen bevind";
 
 /* Link wallet logo footer text */
-"LinkWallet.logoFooter" = "Secure Checkout";
+"LinkWallet.logoFooter" = "Beveiligde Betalingspagina";
 
 /* Link Wallet view title above permissions list */
-"LinkWallet.permissionsTitle" = "This app will be able to:";
+"LinkWallet.permissionsTitle" = "Deze app zal in staat zijn om:";
 
 /* Link Wallet view title */
-"LinkWallet.title" = "Link Wallet";
+"LinkWallet.title" = "Portefeuille Koppelen";
 
 /* Location services disabled error */
-"LocationPlugin.disabled" = "Location services are disabled.";
+"LocationPlugin.disabled" = "Locatievoorzieningen zijn uitgeschakeld.";
 
 /* No permissions for location services */
-"LocationPlugin.notAuthorized" = "RockWallet does not have permission to access location services.";
+"LocationPlugin.notAuthorized" = "RockWallet heeft geen toestemming om locatievoorzieningen te gebruiken.";
 
 "LoginController.invalidPinError" = "Incorrect PIN. The wallet will get disabled after %d more failed %@.";
 
 /* Wallet creation date prefix */
-"ManageWallet.creationDatePrefix" = "You created your wallet on %@";
+"ManageWallet.creationDatePrefix" = "Je hebt je portemonnee gecreëerd op %@";
 
 /* Manage wallet description text */
-"ManageWallet.description" = "Your wallet name only appears in your account transaction history and cannot be seen by anyone else.";
+"ManageWallet.description" = "Jouw portemonnee naam zal alleen verschijnen in je account transactie geschiedenis en kan door niemand anders worden gezien.";
 
 /* Change Wallet name textfield label */
-"ManageWallet.textFeildLabel" = "Wallet Name";
+"ManageWallet.textFeildLabel" = "Portemonnee Naam";
 
 /* Manage wallet modal title */
-"ManageWallet.title" = "Manage Wallet";
+"ManageWallet.title" = "Portemonnee Beheren";
 
-"MarketData.high24h" = "24h High";
+"MarketData.high24h" = "24u hoog";
 
-"MarketData.low24h" = "24h Low";
+"MarketData.low24h" = "24u laag";
 
-"MarketData.marketCap" = "Market cap";
+"MarketData.marketCap" = "Marktkapitalisatie";
 
-"MarketData.volume" = "Trading Volume";
+"MarketData.volume" = "Handelsvolume";
 
 /* "Add [a] Wallet [to the home screen]" */
-"MenuButton.addWallet" = "Add Wallet";
+"MenuButton.addWallet" = "Voeg Wallet toe";
 
 /* Menu button title */
 "MenuButton.atmCashRedemption" = "ATM Cash Redemption";
 
 /* Feedback menu button title */
-"MenuButton.feedback" = "Feedback";
+"MenuButton.feedback" = "Support";
 
 /* Menu button title */
-"MenuButton.lock" = "Lock Wallet";
+"MenuButton.lock" = "Portemonnee Vergrendelen";
 
 /* (Click here to) manage (your list of) wallets */
 "MenuButton.manageAssets" = "Manage Assets";
 
 /* (Click here to) manage (your list of) wallets */
-"MenuButton.manageWallets" = "Manage Wallets";
+"MenuButton.manageWallets" = "Beheer wallets";
 
 /* (press here to) scan (a) QR code */
-"MenuButton.scan" = "Scan QR Code";
+"MenuButton.scan" = "Scan QR-code";
 
 /* Menu button title */
-"MenuButton.security" = "Security Settings";
+"MenuButton.security" = "Veiligheidscentrum";
 
 /* Menu button title */
-"MenuButton.settings" = "Settings";
+"MenuButton.settings" = "Instellingen";
 
 /* Menu button title */
-"MenuButton.support" = "Support";
+"MenuButton.support" = "Ondersteuning";
 
 "MenuButton.TellFriend" = "Tell a friend";
 
 /* button label */
-"MenuViewController.createButton" = "Create New Wallet";
+"MenuViewController.createButton" = "Nieuwe Portemonnee Creëren";
 
 /* Menu modal title */
 "MenuViewController.modalTitle" = "Menu";
 
 /* button label */
-"MenuViewController.recoverButton" = "Recover Wallet";
+"MenuViewController.recoverButton" = "Portemonnee Herstellen";
 
 /* Paper Key Skip modal body (Android-version) */
-"Modal.PaperKeySkip.Body.Android" = "Your Recovery Phrase is required to open your wallet if you change the security settings on your phone.\n\nAre you sure you want to set up your Recovery Phrase later?";
+"Modal.PaperKeySkip.Body.Android" = "U heeft uw papieren sleutel nodig om uw wallet te openen als u uw beveiligingsinstellingen op uw telefoon wijzigt.\n\nWeet u zeker dat u uw papieren sleutel later wilt instellen?";
 
 /* Paper Key Skip modal Continue Set Up button */
-"Modal.PaperKeySkip.Button.ContinueSetUp" = "Continue Set Up";
+"Modal.PaperKeySkip.Button.ContinueSetUp" = "Doorgaan met instellen";
 
 /* Paper Key Skip modal I'll do it later button */
-"Modal.PaperKeySkip.Button.IllDoItLater" = "I'll do it later";
+"Modal.PaperKeySkip.Button.IllDoItLater" = "Ik doe dit later";
 
 /* Paper Key Skip modal title */
-"Modal.PaperKeySkip.Title" = "Attention";
+"Modal.PaperKeySkip.Title" = "Attentie";
 
 "NFCReaderUsageDescription" = "RockWallet uses the NFC reader to verify nfc-enabled passports.";
 
 /* Node selection mode is automatic */
-"NodeSelector.automatic" = "Automatic";
+"NodeSelector.automatic" = "Automatisch";
 
 /* Switch to automatic mode button label */
-"NodeSelector.automaticButton" = "Switch to Automatic Mode";
+"NodeSelector.automaticButton" = "Omschakelen naar automatische modus";
 
 /* Node is connected label */
-"NodeSelector.connected" = "Connected";
+"NodeSelector.connected" = "Verbonden";
 
 /* Node is connecting label */
-"NodeSelector.connecting" = "Connecting";
+"NodeSelector.connecting" = "Verbinden";
 
 /* Enter node ip address view body */
-"NodeSelector.enterBody" = "Enter Node IP address and port (optional)";
+"NodeSelector.enterBody" = "Voer het IP-adres en de poort (optioneel) van de node in";
 
 /* Enter Node ip address view title */
-"NodeSelector.enterTitle" = "Enter Node";
+"NodeSelector.enterTitle" = "Node invoeren";
 
 /* Entered invalid node address at the node selection screen */
-"NodeSelector.invalid" = "Invalid Node";
+"NodeSelector.invalid" = "Ongeldige knoop";
 
 /* Switch to manual mode button label */
-"NodeSelector.manualButton" = "Switch to Manual Mode";
+"NodeSelector.manualButton" = "Omschakelen naar handmatige modus";
 
 /* Node address label */
-"NodeSelector.nodeLabel" = "Current Primary Node";
+"NodeSelector.nodeLabel" = "Huidige primaire node";
 
 /* Node is not connected label */
-"NodeSelector.notConnected" = "Not Connected";
+"NodeSelector.notConnected" = "Niet Verbonden";
 
 /* Node status label */
-"NodeSelector.statusLabel" = "Node Connection Status";
+"NodeSelector.statusLabel" = "Connectiestatus van de node";
 
 /* Node Selector view title */
-"NodeSelector.title" = "Bitcoin Nodes";
+"NodeSelector.title" = "Bitcoin-nodes";
 
 "NoInternet.Body" = "We couldn’t connect to the server. Please check your internet connection and try again.";
 
@@ -1823,50 +1823,50 @@
 "NSMicrophoneUsageDescription" = "RockWallet utilizes the Microphone and Camera to capture a live video during the identify verification process.";
 
 /* Onboarding screen 'I'll browse first' button */
-"Onboarding.browseFirst" = "I'll browse first";
+"Onboarding.browseFirst" = "Ik kijk eerst even rond";
 
 /* Onboarding screen 'Buy some coin' button */
-"Onboarding.buyCoin" = "Buy some coin";
+"Onboarding.buyCoin" = "Koop wat munten";
 
 "Onboarding.Description" = "Empowering you to navigate the digital asset economy easily and securely";
 
 /* Onboarding screen 'Get started' (create new wallet) button */
-"Onboarding.getStarted" = "Get started";
+"Onboarding.getStarted" = "Ga aan de slag";
 
 /* Onboarding screen 'Next' button */
-"Onboarding.next" = "NEXT";
+"Onboarding.next" = "Volgende";
 
 /* Onboarding screen restore an existing wallet. */
-"Onboarding.restoreWallet" = "Restore with Recovery Phrase";
+"Onboarding.restoreWallet" = "Herstel portemonnee";
 
 "Onboarding.RestoreYourWallet" = "Restore your wallet";
 
 "Onboarding.RestoreYourWalletDescription" = "You can restore your wallet with your recovery phrase or iCloud.";
 
 /* Onboarding screen Skip button title that allows the user to exit the onboarding process. */
-"Onboarding.skip" = "Skip";
+"Onboarding.skip" = "Overslaan";
 
 "Onboarding.SkipPhrase" = "SKIP AND SAVE LATER";
 
 /* Onboarding screen Page 4 title */
-"OnboardingPageFour.title" = "Start investing today with as little as $50!";
+"OnboardingPageFour.title" = "Begin vandaag met investeren vanaf slechts $50!";
 
 /* Onboarding screen Page 1 title */
-"OnboardingPageOne.title" = "Empowering you to navigate the digital asset economy easily and securely";
+"OnboardingPageOne.title" = "Welkom bij uw nieuwe wereldwijde portemonnee!";
 
 "OnboardingPageOne.titleOne" = "Buy, swap, use, and store top cryptocurrencies for low fees";
 
 /* Onboarding screen Page 3 subtitle */
-"OnboardingPageThree.subtitle" = "Invest and diversify with RockWallet, easily and securely.";
+"OnboardingPageThree.subtitle" = "Investeer en diversifieer met RockWallet, snel en veilig.";
 
 /* Onboarding screen Page 3 title */
-"OnboardingPageThree.title" = "Buy and swap bitcoin, tokens, and other digital currencies.";
+"OnboardingPageThree.title" = "Koop en handel in bitcoin, tokens en andere digitale valuta.";
 
 /* Onboarding screen Page 2 subtitle */
-"OnboardingPageTwo.subtitle" = "We have over $6 billion USD worth of assets under protection.";
+"OnboardingPageTwo.subtitle" = "We hebben meer dan $6 miljard USD waard aan aandelen onder onze bescherming.";
 
 /* Onboarding screen Page 2 title */
-"OnboardingPageTwo.title" = "Join people around the world who trust RockWallet.";
+"OnboardingPageTwo.title" = "Sluit je aan bij miljoenen mensen over de hele wereld die op RockWallet vertrouwen.";
 
 "PaymailAddress.CopyMessage" = "Paymail address %@ copied to clipboard";
 
@@ -1876,7 +1876,7 @@
 
 "PaymailAddress.createPaymailAddress" = "Create paymail address";
 
-"PaymailAddress.description" = "Your Paymail address is set up. Share your Paymail address instead of your wallet address to receive funds seamlessly.";
+"PaymailAddress.description" = "Your Paymail address is setted up. Share your Paymail address instead of your wallet address to receive funds seamlessly.";
 
 "PaymailAddress.InappropriateWordsMessage" = "Sorry. Inappropriate language detected. Please choose a different paymail address.";
 
@@ -1895,7 +1895,7 @@
 "PaymailAddress.yourPaymailAddress" = "Your Paymail address:";
 
 /* Eg. Send 1.0Eth to purchase CCC */
-"PaymentConfirmation.amountText" = "Send %@ to purchase %@";
+"PaymentConfirmation.amountText" = "%@ versturen om %@ te kopen";
 
 /* Payment expired message */
 "PaymentConfirmation.PaymentExpired" = "The payment has expired due to inactivity. Please try again with the same card, or use a different card.";
@@ -1904,7 +1904,7 @@
 "PaymentConfirmation.PaymentTimeout" = "Payment verification timeout";
 
 /* Payment confirmation view title */
-"PaymentConfirmation.title" = "Confirmation";
+"PaymentConfirmation.title" = "Bevestiging";
 
 /* Try again button title in payment view */
 "PaymentConfirmation.TryAgain" = "Try again";
@@ -1916,31 +1916,31 @@
 "PaymentMethod.Unavailable" = "Temporarily unavailable, please contact support";
 
 /* Bad Payment request alert title */
-"PaymentProtocol.Errors.badPaymentRequest" = "Your transaction request couldn’t be completed. Please try again.";
+"PaymentProtocol.Errors.badPaymentRequest" = "Slecht Betalingsverzoek";
 
 /* Error opening payment protocol file message */
-"PaymentProtocol.Errors.corruptedDocument" = "Unsupported or corrupted document";
+"PaymentProtocol.Errors.corruptedDocument" = "Niet-ondersteund of beschadigd document";
 
 /* Missing certificate payment protocol error message */
-"PaymentProtocol.Errors.missingCertificate" = "missing certificate";
+"PaymentProtocol.Errors.missingCertificate" = "missend certificaat";
 
 /* Request expired payment protocol error message */
-"PaymentProtocol.Errors.requestExpired" = "request expired";
+"PaymentProtocol.Errors.requestExpired" = "verzoek verlopen";
 
 /* Payment too small alert title */
-"PaymentProtocol.Errors.smallOutputError" = "Couldn't make payment";
+"PaymentProtocol.Errors.smallOutputError" = "Kon de betaling niet uitvoeren";
 
 /* Amount too small error message */
-"PaymentProtocol.Errors.smallPayment" = "Payment can’t be less than %@. Bitcoin transaction fees are more than the amount of this transaction. Please increase the amount and try again.";
+"PaymentProtocol.Errors.smallPayment" = "Bitcoin betalingen kunnen niet minder zijn dan %@.";
 
 /* Output too small error message. */
-"PaymentProtocol.Errors.smallTransaction" = "Bitcoin transaction outputs can't be less than %@.";
+"PaymentProtocol.Errors.smallTransaction" = "Bitcoin transactie outputs kunnen niet minder zijn dan %@.";
 
 /* Unsupported signature type payment protocol error message */
-"PaymentProtocol.Errors.unsupportedSignatureType" = "unsupported signature type";
+"PaymentProtocol.Errors.unsupportedSignatureType" = "niet-ondersteund handtekening type";
 
 /* Untrusted certificate payment protocol error message */
-"PaymentProtocol.Errors.untrustedCertificate" = "untrusted certificate";
+"PaymentProtocol.Errors.untrustedCertificate" = "niet-vertrouwd certificaat";
 
 "PersonalInformation.Day" = "DD";
 
@@ -1948,7 +1948,7 @@
 
 "PersonalInformation.Year" = "YYYY";
 
-"Platform.transaction_cancelled" = "Transaction Cancelled";
+"Platform.transaction_cancelled" = "Transactie geannuleerd";
 
 "Profile.PaymentMethods" = "Payment methods";
 
@@ -1961,98 +1961,98 @@
 "Prompts.CreateAccount.title" = "Create your RockWallet account";
 
 /* Body text for a prompt that asks the user to subscribe to email updates to find out product updates. */
-"Prompts.Email.body" = "Be the first to receive important support and product updates";
+"Prompts.Email.body" = "Wees de eerste om belangrijke support- en productupdates te ontvangen";
 
 /* Placeholder text for an email address text field. */
-"Prompts.Email.placeholder" = "enter your email";
+"Prompts.Email.placeholder" = "voer uw e-mailadres in";
 
 /* Body text that is shown when the user successfully subscribes to email updates. */
-"Prompts.Email.successBody" = "You have successfully subscribed to receive updates";
+"Prompts.Email.successBody" = "U hebt zich succesvol ingeschreven voor het ontvangen van onze updates";
 
 /* Text that is displayed as a footnote when the user successfully subscribes to email updates. */
-"Prompts.Email.successFootnote" = "We appreciate your continued support";
+"Prompts.Email.successFootnote" = "We waarderen uw constante support";
 
 /* Title that is shown when the user successfully subscribes to email updates. */
-"Prompts.Email.successTitle" = "Thank you!";
+"Prompts.Email.successTitle" = "Bedankt!";
 
 /* Title for a prompt that asks the user to subscribe to email updates to find out product updates. */
-"Prompts.Email.title" = "Get in the loop";
+"Prompts.Email.title" = "Blijf op de hoogte";
 
 /* Body text for a prompt that asks the user to subscribe to email updates to find out product updates., Placeholder text for an email address text field., Body text that is shown when the user successfully subscribes to email updates., Text that is displayed as a footnote when the user successfully subscribes to email updates., Title that is shown when the user successfully subscribes to email updates., Title for a prompt that asks the user to subscribe to email updates to find out product updates., Enable face ID prompt body */
-"Prompts.FaceId.body" = "Tap continue to enable Face ID";
+"Prompts.FaceId.body" = "Tik op Doorgaan om Face-ID in te schakelen";
 
 /* Enable face ID prompt title */
-"Prompts.FaceId.title" = "Enable Face ID";
+"Prompts.FaceId.title" = "Face-ID inschakelen";
 
 "Prompts.LimitsAuthentication.body" = "Just one more small step, and you'll be able to enjoy your new limits.";
 
 "Prompts.LimitsAuthentication.title" = "Finish setting up your new Buy limits.";
 
 /* No passcode set warning body */
-"Prompts.NoPasscode.body" = "A device passcode is needed to safeguard your wallet. Go to settings and turn passcode on.";
+"Prompts.NoPasscode.body" = "Er is een apparaat-pascode nodig om je portomonnee te beschermen. Ga naar de instellingen en zet je pascode aan.";
 
 /* No Passcode set warning title */
-"Prompts.NoPasscode.title" = "Turn device passcode on";
+"Prompts.NoPasscode.title" = "Zet pascode voor apparaat aan";
 
 /* Instructions on how to enable screen lock settings */
-"Prompts.NoScreenLock.body.android" = "A device screen lock is needed to safeguard your wallet. Enable screen lock in your settings to continue.";
+"Prompts.NoScreenLock.body.android" = "Een schermvergrendeling voor uw apparaat is nodig om uw portemonnee te beveiligen. Ga naar \"Instellingen\" > \"Beveiliging\" > \"Schermvergrendeling\" en stel in om door te gaan.";
 
 /* Device encryption prompt title */
-"Prompts.NoScreenLock.title.android" = "Screen lock disabled";
+"Prompts.NoScreenLock.title.android" = "Schermvergrendeling uitgeschakeld";
 
 "Prompts.PaperKey.Body" = "Set up your Recovery Phrase in case you ever lose or replace your phone. Your key is also required if you change your phone\'s security settings.";
 
 /* An action is required (You must do this action). */
-"Prompts.PaperKey.title" = "Action Required";
+"Prompts.PaperKey.title" = "Actie Vereist";
 
-"Prompts.RateApp.dontShow" = "Don't ask again";
+"Prompts.RateApp.dontShow" = "Vraag het niet nog eens";
 
-"Prompts.RateApp.enjoyingBrd" = "Enjoying RockWallet?";
+"Prompts.RateApp.enjoyingBrd" = "Genieten van BRD?";
 
-"Prompts.RateApp.enjoyingRockWallet" = "Enjoying RockWallet?";
+"Prompts.RateApp.enjoyingRockWallet" = "Genieten van RockWallet?";
 
-"Prompts.RateApp.googlePlayReview" = "Your review helps grow the RockWallet community.";
+"Prompts.RateApp.googlePlayReview" = "Uw beoordeling helpt de RockWallet-gemeenschap te laten groeien.";
 
-"Prompts.RateApp.noThanks" = "No thanks";
+"Prompts.RateApp.noThanks" = "Nee bedankt";
 
-"Prompts.RateApp.rateUs" = "Review us";
+"Prompts.RateApp.rateUs" = "Beoordeel ons";
 
 /* Transaction rejected prompt body */
-"Prompts.RecommendRescan.body" = "Your wallet may be out of sync. This can often be fixed by pulling down this screen to refresh.";
+"Prompts.RecommendRescan.body" = "Je portemonnee is misschien niet gesynchroniseerd. Dit kan vaak worden verholpen door de blokketen opnieuw te scannen.";
 
 /* Transaction rejected prompt title */
-"Prompts.RecommendRescan.title" = "Transaction Rejected";
+"Prompts.RecommendRescan.title" = "Transactie Geweigerd";
 
 /* Share data prompt body */
-"Prompts.ShareData.body" = "Help improve RockWallet by sharing your anonymous data with us";
+"Prompts.ShareData.body" = "Help ons bij het verbeteren van RockWallet door je anonieme data met ons te delen";
 
 /* Share data prompt title */
-"Prompts.ShareData.title" = "Share Anonymous Data";
+"Prompts.ShareData.title" = "Deel Anonieme Data";
 
 /* Enable touch ID prompt body */
-"Prompts.TouchId.body" = "Tap continue to enable Fingerprint authentication.";
+"Prompts.TouchId.body" = "Tik hier om Touch ID in te schakelen";
 
 /* Enable Fingerprint prompt body */
-"Prompts.TouchId.body.android" = "Tap here to enable fingerprint authentication";
+"Prompts.TouchId.body.android" = "Klik hier om authenticatie met vingerafdruk in te stellen";
 
 /* Enable touch ID prompt title */
-"Prompts.TouchId.title" = "Enable Touch ID";
+"Prompts.TouchId.title" = "Touch ID Inschakelen";
 
 /* Enable Fingerprint prompt title */
-"Prompts.TouchId.title.android" = "Enable Fingerprint Authentication";
+"Prompts.TouchId.title.android" = "Stel authenticatie met vingerafdruk in";
 
 /* Button on fingerprint prompt so the user can enter their PIN instead */
 "Prompts.TouchId.usePin.android" = "PIN";
 
-"Prompts.TwoStep.body" = "Secure your wallet with Two Factor Authentication.";
+"Prompts.TwoStep.body" = "Secure your wallet with two factor authentication.";
 
 "Prompts.TwoStep.title" = "Enable 2FA";
 
 /* Upgrade PIN prompt body. */
-"Prompts.UpgradePin.body" = "RockWallet has upgraded to using a 6-digit PIN. Tap Continue to upgrade.";
+"Prompts.UpgradePin.body" = "RockWallet is geüpgrade naar een 6-cijferige PIN. Tik hier om te upgraden.";
 
 /* Upgrade PIN prompt title. */
-"Prompts.UpgradePin.title" = "Upgrade PIN";
+"Prompts.UpgradePin.title" = "PIN Upgraden";
 
 "Prompts.VerifyAccount.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
 
@@ -2061,110 +2061,110 @@
 "Prompts.VerifyAccount.title" = "Verify your account";
 
 /* Body text for the push notifications prompt. */
-"PushNotifications.body" = "Turn on push notifications and be the first to hear about new features and special offers.";
+"PushNotifications.body" = "Schakel pushmeldingen in en hoor als eerste over nieuwe functies en speciale aanbiedingen.";
 
 /* Push notifications are disabled alert title" */
-"PushNotifications.disabled" = "Notifications Disabled";
+"PushNotifications.disabled" = "Meldingen Uitgeschakeld";
 
 /* Body text when push notifications are disabled. */
-"PushNotifications.disabledBody" = "Turn on notifications to receive special offers and updates from RockWallet.";
+"PushNotifications.disabledBody" = "Schakel meldingen in om speciale aanbiedingen en updates van RockWallet te ontvangen.";
 
 /* Body text when push notifications are enabled. */
-"PushNotifications.enabledBody" = "You’re receiving special offers and updates from RockWallet.";
+"PushNotifications.enabledBody" = "U ontvangt speciale aanbiedingen en updates van RockWallet.";
 
 /* Instructions to enable push notifications for BRD in the phone's system settings. */
-"PushNotifications.enableInstructions" = "Looks like notifications are turned off. Please go to Settings to enable notifications from RockWallet.";
+"PushNotifications.enableInstructions" = "U ontvangt speciale aanbiedingen en updates van RockWallet. Ga naar Instellingen van RockWallet i om meldingen in te schakelen.";
 
 /* Push notifications toggle switch label */
-"PushNotifications.label" = "Receive Push Notifications";
+"PushNotifications.label" = "Pushmeldingen ontvangen";
 
 /* Push notifications are off label */
-"PushNotifications.off" = "Off";
+"PushNotifications.off" = "Uit";
 
 /* Push notifications are on label */
-"PushNotifications.on" = "On";
+"PushNotifications.on" = "Aan";
 
 /* Push notifications settings view title label */
-"PushNotifications.title" = "Stay in the Loop";
+"PushNotifications.title" = "Blijf op de hoogte";
 
 /* Push notifications settings failed to update settings on the back end */
-"PushNotifications.updateFailed" = "Failed to update push notifications settings";
+"PushNotifications.updateFailed" = "Bijwerken van instellingen voor pushmeldingen is mislukt";
 
 /* Google play review prompt body */
-"RateAppPrompt.Body.Android" = "If you love our app, please take a moment to rate it and give us a review.";
+"RateAppPrompt.Body.Android" = "Als u van onze app houdt, neem dan even de tijd om deze te beoordelen en ons een beoordeling te geven.";
 
 /* Google play review prompt, revivew button */
-"RateAppPrompt.Button.Dismiss.Android" = "No Thanks";
+"RateAppPrompt.Button.Dismiss.Android" = "Nee bedankt";
 
 /* Google play review prompt, dismiss button */
-"RateAppPrompt.Button.RateApp.Android" = "Rate RockWallet";
+"RateAppPrompt.Button.RateApp.Android" = "Beoordeel RockWallet";
 
 /* Google play review prompt title */
-"RateAppPrompt.Title.Android" = "Rate RockWallet";
+"RateAppPrompt.Title.Android" = "Beoordeel RockWallet";
 
 /* Address copied message. */
-"Receive.copied" = "Copied to clipboard";
+"Receive.copied" = "Gekopieerd naar plakbord.";
 
 /* Share via email button label */
-"Receive.emailButton" = "Email";
+"Receive.emailButton" = "E-mail";
 
 /* Request button label */
-"Receive.request" = "Request an Amount";
+"Receive.request" = "Een bedrag aanvragen";
 
 "Receive.SelectAsset" = "Select asset";
 
 /* Share button label */
-"Receive.share" = "Share";
+"Receive.share" = "Delen";
 
 /* Share via text message (SMS) */
-"Receive.textButton" = "Text Message";
+"Receive.textButton" = "Bericht";
 
 /* Receive modal title */
-"Receive.title" = "Receive";
+"Receive.title" = "Ontvangen";
 
 "RecoverWallet.description" = "Type your 12 Word Phrase";
 
 /* Done button text */
-"RecoverWallet.done" = "DONE";
+"RecoverWallet.done" = "Voltooid";
 
 /* Enter recovery phrase label to delete the wallet */
 "RecoverWallet.EnterRecoveryPhrase" = "Please enter your Recovery Phrase to delete this wallet from your device.";
 
 /* Recover wallet header */
-"RecoverWallet.header" = "Recover Wallet";
+"RecoverWallet.header" = "Portemonnee Herstellen";
 
 /* Reset PIN with paper key: header */
-"RecoverWallet.header_reset_pin" = "Reset your PIN";
+"RecoverWallet.header_reset_pin" = "PIN Resetten";
 
 /* Enter paper key instruction */
-"RecoverWallet.instruction" = "Enter Recovery Phrase";
+"RecoverWallet.instruction" = "Papieren Sleutel Invoeren";
 
 /* Recover wallet intro */
-"RecoverWallet.intro" = "Recover your RockWallet with your Recovery Phrase.";
+"RecoverWallet.intro" = "Herstel je RockWallet met je papieren sleutel.";
 
 /* Invalid paper key message */
-"RecoverWallet.invalid" = "The Recovery Phrase you entered is invalid. Please double-check each word and try again.";
+"RecoverWallet.invalid" = "De papieren sleutel die je hebt ingevoerd is ongeldig. Check ieder woord a.u.b. en probeer het opnieuw.";
 
 /* Previous button accessibility label */
-"RecoverWallet.leftArrow" = "Left Arrow";
+"RecoverWallet.leftArrow" = "Linker Pijl";
 
 /* Next button label */
-"RecoverWallet.next" = "NEXT";
+"RecoverWallet.next" = "Volgende";
 
 /* What Is recovery phrase text popup */
 "RecoverWallet.RecoveryPhrasePopup" = "A Recovery Phrase consists of 12 randomly generated words. The app creates the Recovery Phrase for you automatically when you start a new wallet. The Recovery Phrase is critically important and should be written down and stored in a safe location. In the event of phone theft, destruction, or loss, the Recovery Phrase can be used to load your wallet onto a new phone. The key is also required when upgrading your current phone to a new one.";
 
 /* Reset PIN with paper key: more information button. */
-"RecoverWallet.reset_pin_more_info" = "Tap here for more information.";
+"RecoverWallet.reset_pin_more_info" = "Tik hier voor meer informatie.";
 
 /* Next button accessibility label */
-"RecoverWallet.rightArrow" = "Right Arrow";
+"RecoverWallet.rightArrow" = "Rechter Pijl";
 
 /* Recover wallet sub-header */
-"RecoverWallet.subheader" = "Enter the Recovery Phrase for the wallet you want to recover.";
+"RecoverWallet.subheader" = "Voer de papieren sleutel in voor de portemonnee die je wilt herstellen.";
 
 /* Reset PIN with paper key: sub-header */
-"RecoverWallet.subheader_reset_pin" = "To reset your PIN, enter the words from your Recovery Phrase into the boxes below.";
+"RecoverWallet.subheader_reset_pin" = "Om je PIN te resetten moet je de woorden van je papieren sleutel in onderstaande velden invoeren.";
 
 "RecoverWallet.Subheader.DeleteAccount" = "Please enter your Recovery Phrase to delete your account and unlink your wallet";
 
@@ -2174,130 +2174,130 @@
 "RecoverWallet.WhatIsRecoveryPhrase" = "What is “Recovery Phrase”?";
 
 /* Instructs the user to enter words from the set of recovery key words. */
-"RecoveryKeyFlow.confirmRecoveryInputError" = "The word you entered is incorrect. Please try again.";
+"RecoveryKeyFlow.confirmRecoveryInputError" = "Het woord dat u ingevoerd heeft is niet juist. Probeer het nogmaals.";
 
 /* Instructs the user to enter words from the set of recovery phrase words. */
-"RecoveryKeyFlow.confirmRecoveryKeySubtitle" = "Enter the following words from your Recovery Phrase";
+"RecoveryKeyFlow.confirmRecoveryKeySubtitle" = "Bijna klaar! Voer de volgende woorden in van uw herstelcode.";
 
 /* Title for the confirmation step of the recovery phrase flow. */
-"RecoveryKeyFlow.confirmRecoveryKeyTitle" = "Confirm your Recovery Phrase";
+"RecoveryKeyFlow.confirmRecoveryKeyTitle" = "Bevestig herstelcode";
 
 /* Title displayed when the user starts the process of entering a recovery phrase */
-"RecoveryKeyFlow.enterRecoveryKey" = "Enter your Recovery Phrase";
+"RecoveryKeyFlow.enterRecoveryKey" = "Voer herstelcode in";
 
 /* Subtitle displayed when the user starts the process of entering a recovery phrase */
-"RecoveryKeyFlow.enterRecoveryKeySubtitle" = "Please enter the Recovery Phrase in order to delete your account and unlink the wallet.";
+"RecoveryKeyFlow.enterRecoveryKeySubtitle" = "Voer uw herstelcode in om deze wallet van uw apparaat te ontkoppelen.";
 
 /* Body text for an alert dialog asking the user whether to set up the recovery phrase later */
-"RecoveryKeyFlow.exitRecoveryKeyPromptBody" = "Are you sure you want to set up your Recovery Phrase later?";
+"RecoveryKeyFlow.exitRecoveryKeyPromptBody" = "Weet u zeker dat u uw herstelcode later in wilt stellen?";
 
 /* Title for an alert dialog asking the user whether to set up the recovery key later */
-"RecoveryKeyFlow.exitRecoveryKeyPromptTitle" = "Set Up Later";
+"RecoveryKeyFlow.exitRecoveryKeyPromptTitle" = "Later instellen";
 
 /* Button text for the 'Generate Recovery Phrase' button */
-"RecoveryKeyFlow.generateKeyButton" = "GOT IT";
+"RecoveryKeyFlow.generateKeyButton" = "Herstelcode aanmaken";
 
 /* Subtext for the recovery key landing page. */
-"RecoveryKeyFlow.generateKeyExplanation" = "This is required to restore your wallet if you upgrade or lose your phone.";
+"RecoveryKeyFlow.generateKeyExplanation" = "De code is vereist om uw geld terug te krijgen als u een upgrade uitvoert of uw telefoon verliest.";
 
 /* Default title for the recovery phrase landing page */
-"RecoveryKeyFlow.generateKeyTitle" = "Generate your private Recovery Phrase";
+"RecoveryKeyFlow.generateKeyTitle" = "Maak uw persoonlijke herstelcode aan";
 
 /* Title for a button that takes the user to the wallet after setting up the recovery key. */
-"RecoveryKeyFlow.goToWalletButtonTitle" = "GO TO WALLET";
+"RecoveryKeyFlow.goToWalletButtonTitle" = "Ga naar Wallet";
 
 "RecoveryKeyFlow.HelpPopup.content" = "Your Recovery Phrase consists of 12 randomly generated words that the wallet creates for you automatically when you start a new wallet.\n\nThe Recovery Phrase is critically important and should be written down and stored in a safe location. In the event of phone theft, destruction or loss, the Recovery Phrase can be used to load your wallet onto a new phone. The Recovery Phrase is also required when upgrading your current phone to a new one.";
 
 "RecoveryKeyFlow.HelpPopup.title" = "What is “Recovery Phrase”?";
 
 /* Hint text for recovery key intro page, e.g., Step 2 */
-"RecoveryKeyFlow.howItWorksStep" = "How it works - Step %@";
+"RecoveryKeyFlow.howItWorksStep" = "Hoe werkt het - Stap %@";
 
 /* Error text displayed when the user enters an incorrect recovery phrase */
-"RecoveryKeyFlow.invalidPhrase" = "Some of the words you entered do not match your Recovery Phrase. Please try again.";
+"RecoveryKeyFlow.invalidPhrase" = "Enkele van de woorden die u heeft ingevoerd komen niet overeen met uw herstelcode. Probeer het nogmaals.";
 
 "RecoveryKeyFlow.KeepPhrasePrivate.subtitle" = "Remember that anyone with your Recovery Phrase can access your Assets.";
 
 "RecoveryKeyFlow.KeepPhrasePrivate.title" = "Keep it private";
 
 /* Title for recovery key intro page */
-"RecoveryKeyFlow.keepSecure" = "Write down your Recovery Phrase";
+"RecoveryKeyFlow.keepSecure" = "Houd het veilig";
 
 /* Informs the user that the recovery is only required for recovering a wallet. */
-"RecoveryKeyFlow.keyUseHint" = "Your key is only needed for recovery, not for everyday wallet access.";
+"RecoveryKeyFlow.keyUseHint" = "Uw code is alleen nodig voor herstel, niet voor dagelijkse toegang tot uw wallet.";
 
 /* Reminds the user not to take screenshots or email the recovery key words */
-"RecoveryKeyFlow.noScreenshotsOrEmailWarning" = "For security purposes, do not screenshot or email these words";
+"RecoveryKeyFlow.noScreenshotsOrEmailWarning" = "Maak om veiligheidsredenen geen screenshot van deze woorden en verstuur ze niet per e-mail";
 
 /* Recommends that the user avoids capturing the paper key with a screenshot */
-"RecoveryKeyFlow.noScreenshotsRecommendation" = "This is required to restore your wallet if you upgrade or lose your phone.";
+"RecoveryKeyFlow.noScreenshotsRecommendation" = "Noteer uw code op papier en bevestig hem. Screenshots worden om veiligheidsredenen niet aangeraden.";
 
 /* Title displayed when the user starts the process of recovering a wallet */
-"RecoveryKeyFlow.recoveryYourWallet" = "Restore Your Wallet";
+"RecoveryKeyFlow.recoveryYourWallet" = "Herstel uw wallet";
 
 /* Subtitle displayed when the user starts the process of recovering a wallet */
-"RecoveryKeyFlow.recoveryYourWalletSubtitle" = "Please enter the Recovery Phrase of the wallet you want to restore";
+"RecoveryKeyFlow.recoveryYourWalletSubtitle" = "Voer de herstelcode in van de wallet die u wilt herstellen.";
 
 /* Title for recovery key intro page */
-"RecoveryKeyFlow.relaxBuyTrade" = "Keep your Recovery Phrase in a secure location";
+"RecoveryKeyFlow.relaxBuyTrade" = "Ontspan, koop en handel";
 
 /* Reminds the user to write down the recovery key words. */
-"RecoveryKeyFlow.rememberToWriteDownReminder" = "Remember to write these words down. Swipe back if you forgot.";
+"RecoveryKeyFlow.rememberToWriteDownReminder" = "Vergeet niet om deze woorden op te schrijven. Veeg terug als u het vergeten bent.";
 
 /* Instruction displayed when the user is resetting the PIN, which requires the recovery phrase to be entered */
-"RecoveryKeyFlow.resetPINInstruction" = "Please enter your Recovery Phrase to reset your PIN.";
+"RecoveryKeyFlow.resetPINInstruction" = "Voer uw herstelcode in om uw PIN opnieuw in te stellen.";
 
 /* Assures the user that BRD will keep the user's funds secure. */
-"RecoveryKeyFlow.securityAssurance" = "Remember that this is the only way to restore your wallet. RockWallet does not keep a copy.";
+"RecoveryKeyFlow.securityAssurance" = "Koop en handel in de wetenschap dat uw fondsen beschermd zijn met de beste veiligheid en privacy die er zijn.";
 
 "RecoveryKeyFlow.StorePhraseSecurely.subtitle" = "This is the only way you’ll be able to recover your funds. RockWallet does not keep a copy.";
 
 "RecoveryKeyFlow.StorePhraseSecurely.title" = "Store it securely";
 
 /* Recommends that the user stores the recovery key in a secure location */
-"RecoveryKeyFlow.storeSecurelyRecommendation" = "For security reasons, screenshots are not recommended, as anyone with your Recovery Phrase can access your funds.";
+"RecoveryKeyFlow.storeSecurelyRecommendation" = "Bewaar uw code op een veilige plek. Dit is de enige manier om uw wallet terug te krijgen. RockWallet bewaart geen kopie.";
 
 /* Title for the success page after the recovery phrase has been set up */
-"RecoveryKeyFlow.successHeading" = "Congratulations! You completed your Recovery Phrase setup.";
+"RecoveryKeyFlow.successHeading" = "Gefeliciteerd! U heeft de instellingen van uw herstelcode voltooid.";
 
 /* Subtitle for the success page after the recovery key has been set up */
-"RecoveryKeyFlow.successSubheading" = "You're all set to deposit, swap, and buy crypto from your RockWallet.";
+"RecoveryKeyFlow.successSubheading" = "U bent nu klaar om te storten, handelen en crypto van uw RockWallet-wallet te kopen.";
 
 "RecoveryKeyFlow.tickbox.value" = "I understand the importance of the Recovery Phrase.";
 
 "RecoveryKeyFlow.Title" = "Secure your wallet with your Recovery Phrase";
 
 /* Title displayed to the user on the intro screen when unlinking a wallet */
-"RecoveryKeyFlow.unlinkWallet" = "Unlink your wallet from this device.";
+"RecoveryKeyFlow.unlinkWallet" = "Ontkoppel uw wallet van dit apparaat.";
 
 /* Subtitle displayed to the user on the intro screen when unlinking a wallet. */
-"RecoveryKeyFlow.unlinkWalletSubtext" = "Start a new wallet by unlinking your device from the currently-installed wallet.";
+"RecoveryKeyFlow.unlinkWalletSubtext" = "Begin met een nieuwe wallet door uw apparaat te ontkoppelen van de momenteel geïnstalleerde wallet.";
 
 /* Warning displayed when the user starts the process of unlinking a wallet */
-"RecoveryKeyFlow.unlinkWalletWarning" = "Wallet must be recovered to regain access.";
+"RecoveryKeyFlow.unlinkWalletWarning" = "Wallet moet hersteld worden om toegang te verkrijgen.";
 
 /* Title displayed to the user on the intro screen when wiping a wallet */
-"RecoveryKeyFlow.wipeWallet" = "Wipe your wallet from this device.";
+"RecoveryKeyFlow.wipeWallet" = "Ontkoppel uw wallet van dit apparaat.";
 
 /* Subtitle displayed to the user on the intro screen when wiping a wallet. */
-"RecoveryKeyFlow.wipeWalletSubtext" = "Start a new wallet by wiping the current wallet from your device.";
+"RecoveryKeyFlow.wipeWalletSubtext" = "Start een nieuwe portefeuille door de huidige portefeuille van uw apparaat te wissen.";
 
 /* Title for recovery key intro page */
-"RecoveryKeyFlow.writeItDown" = "Generate your private Recovery Phrase";
+"RecoveryKeyFlow.writeItDown" = "Noteer uw code";
 
 /* Title for the recovery phrase landing page if the key has already been generated. */
-"RecoveryKeyFlow.writeKeyAgain" = "Write down your Recovery Phrase again";
+"RecoveryKeyFlow.writeKeyAgain" = "Noteer nogmaals uw herstelcode";
 
 /* Subtitle for the write recovery key screen */
-"RecoveryKeyFlow.writeKeyScreenSubtitle" = "Write down the following words in order.";
+"RecoveryKeyFlow.writeKeyScreenSubtitle" = "Noteer de volgende woorden op volgorde.";
 
 /* Title for the write recovery phrase screen */
-"RecoveryKeyFlow.writeKeyScreenTitle" = "Recovery Phrase";
+"RecoveryKeyFlow.writeKeyScreenTitle" = "Uw herstelcode";
 
 /* Title for the step number when the user pages through the recovery words */
-"RecoveryKeyFlow.writeKeyStepTitle" = "%@ of %@";
+"RecoveryKeyFlow.writeKeyStepTitle" = "%@ van %@";
 
-"RecoveryKeyFlow.WritePhrase.subtitle" = "Save your 12 word Recovery Phrase generated in the next step.";
+"RecoveryKeyFlow.WritePhrase.subtitle" = "Save your 12 word Recovery Phrase generated  in the next step.";
 
 "RecoveryKeyFlow.WritePhrase.title" = "Write it down";
 
@@ -2314,43 +2314,43 @@
 "RecoveryKeyOnboarding.titlePage1" = "Generate your private Recovery Phrase";
 
 /* No amount entered error message. */
-"RequestAnAmount.noAmount" = "Please enter an amount first.";
+"RequestAnAmount.noAmount" = "Vul alstublieft eerst een bedrag in.";
 
 /* Request a specific amount of bitcoin */
-"RequestAnAmount.title" = "Request an Amount";
+"RequestAnAmount.title" = "Een bedrag aanvragen";
 
 /* Alert action button label */
-"ReScan.alertAction" = "Sync";
+"ReScan.alertAction" = "Synchroniseren";
 
 /* Alert message body */
-"ReScan.alertMessage" = "You will not be able to send money while syncing.";
+"ReScan.alertMessage" = "Je zult niet in staat zijn om geld te versturen wanneer je aan het synchroniseren bent.";
 
 /* Alert message title */
-"ReScan.alertTitle" = "Sync with Blockchain?";
+"ReScan.alertTitle" = "Synchroniseren met Blockchain?";
 
 /* extimated time */
-"ReScan.body1" = "20-45 minutes";
+"ReScan.body1" = "20-45 minuten";
 
 /* Syncing explanation */
-"ReScan.body2" = "If a transaction shows as completed on the network but not in your RockWallet.";
+"ReScan.body2" = "Als een transactie als voltooid staat op het Bitcoin netwerk maar niet in je RockWallet.";
 
 /* Syncing explanation */
-"ReScan.body3" = "You repeatedly get an error saying your transaction was rejected.";
+"ReScan.body3" = "Je kreeg herhaaldelijk een foutmelding die zei dat je transactie werd afgewezen.";
 
 /* Start Sync button label */
-"ReScan.buttonTitle" = "Start Sync";
+"ReScan.buttonTitle" = "Start Synchronisatie";
 
 /* Sync blockchain view footer */
-"ReScan.footer" = "You will not be able to send money while syncing with the blockchain.";
+"ReScan.footer" = "Je zult niet in staat zijn om geld te versturen wanneer je aan het synchroniseren bent met de blokketen.";
 
 /* Sync Blockchain view header */
-"ReScan.header" = "Sync Blockchain";
+"ReScan.header" = "Synchroniseer Blockchain";
 
 /* Subheader label */
-"ReScan.subheader1" = "Estimated time";
+"ReScan.subheader1" = "Geschatte tijd";
 
 /* Subheader label */
-"ReScan.subheader2" = "When to Sync?";
+"ReScan.subheader2" = "Wanneer Synchroniseren?";
 
 "ResetPin.description" = "Your PIN will be used to unlock your RockWallet and send money";
 
@@ -2361,63 +2361,63 @@
 "ResetPin.Title" = "Reset PIN";
 
 /* Rewards view expanded body. */
-"RewardsView.expandedBody" = "Learn how you can save on trading fees and unlock future rewards";
+"RewardsView.expandedBody" = "Leer hoe je kan besparen op handelskosten en toekomstige beloningen vrijspeelt.";
 
 /* Rewards view expanded title. */
-"RewardsView.expandedTitle" = "Introducing RockWallet Rewards.";
+"RewardsView.expandedTitle" = "Introductie van RockWallet-beloningen.";
 
 /* Rewards view title */
-"RewardsView.normalTitle" = "Rewards";
+"RewardsView.normalTitle" = "Beloningen";
 
 /* Scan bitcoin address camera flash toggle */
-"Scanner.flashButtonLabel" = "Camera Flash";
+"Scanner.flashButtonLabel" = "Camera Flits";
 
 "Scanner.noCamera" = "No camera found";
 
 /* (alert dialog message) Would you like to send a [Bitcoin / Bitcoin Cash / Ethereum] payment to this address?") */
-"Scanner.paymentPromptMessage" = "Would you like to send a %@ payment to this address?";
+"Scanner.paymentPromptMessage" = "Wilt u een betaling van %@ naar dit adres sturen?";
 
 /* alert dialog title */
-"Scanner.paymentPromptTitle" = "Send Payment";
+"Scanner.paymentPromptTitle" = "Betaling verzenden";
 
 /* Complete filter label */
-"Search.complete" = "Complete";
+"Search.complete" = "complete";
 
 /* Pending filter label */
-"Search.pending" = "Pending";
+"Search.pending" = "in afwachting van";
 
 /* Received filter label */
-"Search.received" = "Received";
+"Search.received" = "ontvangen";
 
 /* [Click here to] search */
-"Search.search" = "Search";
+"Search.search" = "Zoeken";
 
 /* Sent filter label */
-"Search.sent" = "Sent";
+"Search.sent" = "verstuurd";
 
 /* Face ID button title */
-"SecurityCenter.faceIdTitle" = "Face ID";
+"SecurityCenter.faceIdTitle" = "Face-ID";
 
 /* Paper Key button description */
-"SecurityCenter.paperKeyDescription" = "The only way to access your assets if you lose or upgrade your phone.";
+"SecurityCenter.paperKeyDescription" = "De enige manier om toegang te hebben tot je Bitcoins is als je je telefoon verliest of upgrade.";
 
 /* Recovery Phrase button title. This used to be called 'paper key', so leaving the string key as `paperKeyTitle` in order, * to not break existing client code. */
-"SecurityCenter.paperKeyTitle" = "Recovery Phrase";
+"SecurityCenter.paperKeyTitle" = "Papieren Sleutel";
 
 /* PIN button description */
-"SecurityCenter.pinDescription" = "Protects your RockWallet from unauthorized users.";
+"SecurityCenter.pinDescription" = "Beschermt je RockWallet van ongeautoriseerde gebruikers.";
 
 /* PIN button title */
-"SecurityCenter.pinTitle" = "6-Digit PIN";
+"SecurityCenter.pinTitle" = "6-cijferige PIN";
 
 /* Touch ID button description */
-"SecurityCenter.touchIdDescription" = "Conveniently unlock your RockWallet and send money up to a set limit.";
+"SecurityCenter.touchIdDescription" = "Ontgrendel je RockWallet handig en stuur geld tot een bepaalde ingestelde limiet.";
 
 /* Touch ID button title */
 "SecurityCenter.touchIdTitle" = "Touch ID";
 
 /* Security center fingerprint authentication button */
-"SecurityCenter.touchIdTitle.android" = "Fingerprint Authentication";
+"SecurityCenter.touchIdTitle.android" = "Authenticatie met vingerafdruk";
 
 "Segment.RockWalletPro" = "ROCKWALLET PRO";
 
@@ -2425,24 +2425,24 @@
 "Segwit.ConfirmationConfirmationBody" = "Thank you for helping move bitcoin forward!";
 
 /* Segwit enabled confirmation title */
-"Segwit.ConfirmationConfirmationTitle" = "You have enabled SegWit!";
+"Segwit.ConfirmationConfirmationTitle" = "U hebt SegWit geactiveerd!";
 
 /* Segwit enabled confirmation description */
 "Segwit.ConfirmationInstructionsDescription" = "";
 
 /* Segwit instructions */
-"Segwit.ConfirmationInstructionsInstructions" = "SegWit support is still a beta feature.\n\nOnce SegWit is enabled, it will not be possible\nto disable it. You will be able to find the legacy address under Settings. \n\nSome third-party services, including crypto trading, may be unavailable to users who have enabled SegWit. In case of emergency, you will be able to generate a legacy address from Preferences > BTC Settings. \n\nSegWit will automatically be enabled for all\nusers in a future update.";
+"Segwit.ConfirmationInstructionsInstructions" = "SegWit-support is nog een bèta-functie.\nZodra SegWit is geactiveerd, zal het niet langer mogelijk zijn om de functie te deactiveren. U kunt de het legacyadres vinden onder Instellingen.\nSommige externe diensten, waaronder de cryptotrade, zijn mogelijk niet beschikbaar voor gebruikers die SegWit hebben geactiveerd. In geval van nood kunt u een legacyadres genereren via Voorkeuren > BTC-instellingen.\nSegWit zal automatisch worden geactiveerd voor alle gebruikers in een toekomstige update.";
 
 /* Segwit extra confirmation title. */
-"Segwit.ConfirmChoiceLayout" = "Enabling SegWit is an irreversible feature. Are you sure you want to continue?";
+"Segwit.ConfirmChoiceLayout" = "Het activeren van SegWit is een onomkeerbaar proces. Weet u zeker dat u verder wilt gaan?";
 
 /* Segwit enableButton */
-"Segwit.Enable" = "Enable";
+"Segwit.Enable" = "Activeer";
 
 /* Segwit button label that takes the user back to the home screen once SegWit is enabled. */
-"Segwit.HomeButton" = "Proceed";
+"Segwit.HomeButton" = "Naar de maan";
 
-"Sell.achDurationWarning" = "ACH withdrawal will take 3–5 business days to reach your bank account.";
+"Sell.achDurationWarning" = "ACH withdrawal will be processed within 3-5 business days.";
 
 "Sell.achFee" = "ACH fee";
 
@@ -2458,7 +2458,7 @@
 
 "Sell.iReceive" = "I receive";
 
-"Sell.NotAvailableBody" = "This feature is not available in your region. We will notify you when it becomes available.\n\nYou can still Swap, Store, Send and Receive digital assets in your RockWallet.";
+"Sell.NotAvailableBody" = "Sell & Withdraw isn't available in your region. We'll notify you when this feature is released. You can always swap to convert digital assets.";
 
 "Sell.OrderPreview" = "Withdrawal preview";
 
@@ -2490,50 +2490,50 @@
 
 "Sell.WithdrawalErrorText" = "Please try again and if the issue persists, please contact customer support";
 
-"Sell.WithdrawalSuccessText" = "The funds should reach your selected bank account with 3–5 business days.";
+"Sell.WithdrawalSuccessText" = "Your funds should be deposited into your account within 3-5 business days. In rare cases, withdrawals may take up to 7 business days.";
 
 "Sell.WithdrawalSuccessTitle" = "Your withdrawal is being processed";
 
-"Sell.WithdrawDetails" = "Sell and Withdraw details";
+"Sell.WithdrawDetails" = "Sell and withdraw details";
 
 "Sell.YourAchSellLimits" = "Your ACH withdrawal limits";
 
 "Sell.yourOrder" = "You sell:";
 
-"Sell.YourSellLimits" = "Your card withdrawal limits";
+"Sell.YourSellLimits" = "Your sell limits";
 
 "Sell.YouWillReceive" = "You’ll receive";
 
 "Send_fio_toLabel" = "FIO";
 
 /* Send money amount label */
-"Send.amountLabel" = "Amount";
+"Send.amountLabel" = "Bedrag";
 
 /* Balance: $4.00 */
-"Send.balance" = "Balance: %@";
+"Send.balance" = "Balans: %@";
 
 /* Balance: $4.00 for iOS, the balance can't have a parameter */
-"Send.balanceString" = "Balance:";
+"Send.balanceString" = "Balans:";
 
 "Send.BCHConverter.ErrorToast" = "The BCH address could not be converted.";
 
 /* Instructions how to allow the camera access for the app */
-"Send.cameraUnavailabeMessage.android" = "Allow camera access in \"Settings\" > \"Apps\" > \"RockWallet\" > \"Permissions\"";
+"Send.cameraUnavailabeMessage.android" = "Sta cameratoegang toe via \"Instellingen\" > \"Apps\" > \"RockWallet\" > \"Toestemmingen\"";
 
 /* Permission required to access camera */
-"Send.cameraUnavailabeTitle.android" = "RockWallet is not allowed to access the camera";
+"Send.cameraUnavailabeTitle.android" = "RockWallet heeft geen toegang tot de camera";
 
 /* Camera not allowed message */
-"Send.cameraunavailableMessage" = "Go to Settings to allow camera access.";
+"Send.cameraunavailableMessage" = "Ga naar Instellingen om camera gebruik toe te staan.";
 
 /* Camera not allowed alert title */
-"Send.cameraUnavailableTitle" = "RockWallet is not allowed to access the camera";
+"Send.cameraUnavailableTitle" = "RockWallet heeft geen toestemming voor het gebruik van de camera";
 
 /* Warning when sending to self. */
-"Send.containsAddress" = "The destination is your own address. You cannot send to yourself.";
+"Send.containsAddress" = "De bestemming is je eigen adres. Je kunt het niet naar jezelf sturen.";
 
 /* Could not create transaction alert title */
-"Send.creatTransactionError" = "Could not create transaction.";
+"Send.creatTransactionError" = "Kon de transactie niet creëren.";
 
 /* Description for sending money label */
 "Send.descriptionLabel" = "Memo";
@@ -2542,18 +2542,18 @@
 "Send.DestinationTag" = "Destination tag is too long.";
 
 /* Optional Destination Tag label */
-"Send.destinationTag_optional" = "Destination Tag";
+"Send.destinationTag_optional" = "Bestemmingstag (optioneel)";
 
 /* Required Destination Tag label */
-"Send.destinationTag_required" = "Destination Tag (Required)";
+"Send.destinationTag_required" = "Bestemmingstag (verplicht)";
 
-"Send.destinationTag_required_error" = "A valid Destination Tag is required for the target address.";
+"Send.destinationTag_required_error" = "Een geldige Destination Tag is vereist voor het doeladres.";
 
 /* Destination Tag text explanation popup in send view */
 "Send.DestinationTagText" = "Some receiving addresses (exchanges usually) require additional identifying information provided with a Destination Tag.\n\nIf the recipient's address is accompanied by a destination tag, make sure to include it.\nAlso, we strongly suggest you send a small amount of cryptocurrency as a test before attempting to send a significant amount.";
 
 /* Emtpy pasteboard error message */
-"Send.emptyPasteboard" = "Pasteboard is empty";
+"Send.emptyPasteboard" = "Plakbord is leeg";
 
 /* Sending error message */
 "Send.Error.authenticationError" = "Authentication Error";
@@ -2562,22 +2562,22 @@
 "Send.Error.maxError" = "Could not calculate maximum";
 
 /* "(you) can't send (to your)self" */
-"Send.ethSendSelf" = "Can't send to self.";
+"Send.ethSendSelf" = "Kan niet naar jezelf sturen.";
 
 /* Network Fee: $0.01 */
-"Send.fee" = "Network Fee: %@";
+"Send.fee" = "Netwerkkosten: %@";
 
-"Send.fio_invalid" = "Invalid FIO address.";
+"Send.fio_invalid" = "Ongeldig FIO-adres.";
 
-"Send.fio_noAddress" = "There is no %@ address associated with this FIO address.";
+"Send.fio_noAddress" = "Er is geen %@ adres gekoppeld aan dit FIO-adres.";
 
-"Send.fio_retrievalError" = "There was an error retrieving the address for this FIO address. Please try again later.";
+"Send.fio_retrievalError" = "Er is een fout opgetreden bij het ophalen van het adres voor dit FIO-adres. Probeer het later opnieuw.";
 
 /* Payee identity not certified alert title. */
-"Send.identityNotCertified" = "Payee identity isn't certified.";
+"Send.identityNotCertified" = "Begunstigde is niet gecertifcieerd.";
 
 /* Insufficient funds error */
-"Send.insufficientFunds" = "Insufficient Funds";
+"Send.insufficientFunds" = "Onvoldoende middelen";
 
 /* Insufficient gas error */
 "Send.insufficientGas" = "Insufficient gas.";
@@ -2588,98 +2588,98 @@
 "Send.insufficientGasTitle" = "Insufficient %@ Balance";
 
 /* e.g. The destination is not a valid (bitcoin) address. */
-"Send.invalidAddressMessage" = "The destination address is not a valid %@ address.";
+"Send.invalidAddressMessage" = "Het bestemmingsadres is geen geldig %@-adres.";
 
 /* Invalid address on pasteboard message */
-"Send.invalidAddressOnPasteboard" = "Pasteboard does not contain a valid %@ address.";
+"Send.invalidAddressOnPasteboard" = "Plakbord bevat geen geldig %@ adres.";
 
 /* Invalid address alert title */
-"Send.invalidAddressTitle" = "Invalid Address";
+"Send.invalidAddressTitle" = "Ongeldig Adres";
 
 /* Is rescanning error message */
-"Send.isRescanning" = "Sending is disabled during a full rescan.";
+"Send.isRescanning" = "Zenden is uitgeschakeld tijdens volledig opnieuw scannen";
 
 /* Warning when the user is trying to send bitcoin cash to a legacy bitcoin address (possible, but probably not what the user wants to do) */
-"Send.legacyAddressWarning" = "Warning: this is a legacy bitcoin address. Are you sure you want to send Bitcoin Cash to it?";
+"Send.legacyAddressWarning" = "Waarschuwing: dit is een verouderd bitcoinadres. Weet je zeker dat je er bitcoincash naartoe wilt sturen?";
 
 /* We are loading the request (now) */
-"Send.loadingRequest" = "Loading Request";
+"Send.loadingRequest" = "Verzoek aan het laden";
 
 /* Hedera Memo Tag Label */
-"Send.memoTag_optional" = "Hedera Memo (Optional)";
+"Send.memoTag_optional" = "Hedera Memo (optioneel)";
 
 /* Transaction fee could not be be caluculated error. */
-"Send.nilFeeError" = "Insufficient funds to cover the transaction fee.";
+"Send.nilFeeError" = "Onvoldoende middelen om de transactiekosten te betalen.";
 
 /* Empty address alert message */
-"Send.noAddress" = "Please enter the recipient's address.";
+"Send.noAddress" = "Voer a.u.b. het adres van de begunstigde in.";
 
 /* Emtpy amount alert message */
-"Send.noAmount" = "Please enter an amount to send.";
+"Send.noAmount" = "Voer a.u.b. een bedrag in om te versturen.";
 
 /* No fee estimate error on send view */
 "Send.NoFeeEstimate" = "No fee estimate";
 
 /* No Fees error */
-"Send.noFeesError" = "Network Fee conditions are being downloaded. Please try again.";
+"Send.noFeesError" = "Voorwaarden voor Netwerkkosten worden gedownload. Probeer het opnieuw.";
 
 /* Paste button label */
-"Send.pasteLabel" = "Paste";
+"Send.pasteLabel" = "Plakken";
 
 /* Error message for invalid PayID */
-"Send.payId_invalid" = "Invalid PayString.";
+"Send.payId_invalid" = "Ongeldige PayID.";
 
 /* Error message for no address associated with a PayID for a given currency */
-"Send.payId_noAddress" = "There is no %@ address associated with this PayString.";
+"Send.payId_noAddress" = "Er is geen %@ adres gekoppeld aan deze PayID.";
 
 /* Error message for error in retrieving the address from the PayID endpoint */
-"Send.payId_retrievalError" = "There was an error retrieving the address for this PayString. Please try again later.";
+"Send.payId_retrievalError" = "Er is een fout opgetreden bij het ophalen van het adres voor deze PayID. Probeer het later opnieuw.";
 
 /* PayID label */
-"Send.payId_toLabel" = "PayString";
+"Send.payId_toLabel" = "PayID";
 
 "Send.placeholderText" = "Enter wallet address or Paymail";
 
 "Send.placeholderTextWithoutPaymail" = "Enter wallet address";
 
 /* Could not publish transaction alert title */
-"Send.publishTransactionError" = "Your transaction request couldn’t be completed. Please try again.";
+"Send.publishTransactionError" = "Kon de transactie niet publiceren.";
 
 /* Could not load remote request error message */
-"Send.remoteRequestError" = "Your payment attempt couldn’t be completed. Please try again.";
+"Send.remoteRequestError" = "Kon de betalingsaanvraag niet laden";
 
 /* Scan button label */
-"Send.scanLabel" = "Scan";
+"Send.scanLabel" = "Scannen";
 
 /* Title for error when send request times out and we are not sure weather it succesfull or not. */
 "Send.sendError" = "Send Error";
 
 /* Sending Max: $4.00 for iOS, the balance can't have a parameter */
-"Send.sendingMax" = "Sending Max:";
+"Send.sendingMax" = "Max verzenden:";
 
 /* Send button label (the action, "press here to send") */
-"Send.sendLabel" = "Send";
+"Send.sendLabel" = "Versturen";
 
 /* Send button label (for special case where the user specified send amount is too high and does not leave a balance to cover fees.) */
-"Send.sendMaximum" = "Send maximum amount?";
+"Send.sendMaximum" = "Verstuur maximum bedrag?";
 
 /* Error message when send request times out and we are not sure weather it succesfull or not. */
-"Send.timeOutBody" = "Timed out waiting for network response. Please wait 60 seconds for confirmation before retrying.";
+"Send.timeOutBody" = "Timed out waiting for network response. Please wait 30 minutes for confirmation before retrying.";
 
 /* Send screen title (as in "this is the screen for sending money") */
-"Send.title" = "Send";
+"Send.title" = "Versturen";
 
 /* Send money to label */
-"Send.toLabel" = "To";
+"Send.toLabel" = "Naar";
 
 /* Adress already used alert message - first part */
-"Send.UsedAddress.firstLine" = "Bitcoin addresses are intended for single use only.";
+"Send.UsedAddress.firstLine" = "Bitcoin adressen zijn alleen bedoeld voor enkel gebruik.";
 
 /* Adress already used alert message - second part */
-"Send.UsedAddress.secondLIne" = "Re-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn't directly control the address.";
+"Send.UsedAddress.secondLIne" = "Hergebruikt vermindert privacy voor zowel jou en de ontvanger en kan resulteren in verlies als de ontvanger niet direct het adres beheert.";
 
 /* Adress already used alert title */
-"Send.UsedAddress.title" = "Address Already Used";
+"Send.UsedAddress.title" = "Adres Al Gebruikt";
 
 /* What is a destination tag title in popup in send view */
 "Send.WhatIsDestinationTag" = "What is a destination tag?";
@@ -2689,31 +2689,31 @@
 "SetPin.descriptionConfirm" = "Please re-enter your PIN";
 
 /* Section header for "other settings". */
-"Settings.other" = "Other";
+"Settings.other" = "Andere";
 
 /* About label */
-"Settings.about" = "About";
+"Settings.about" = "Over";
 
 /* Advanced settings header */
-"Settings.advanced" = "Advanced";
+"Settings.advanced" = "Geavanceerd";
 
 /* Advanced Settings title */
-"Settings.advancedTitle" = "Advanced Settings";
+"Settings.advancedTitle" = "Geavanceerde instellingen";
 
 /* ATM map menu item title explaining that it's a feature only available in the USA */
-"Settings.atmMapMenuItemSubtitle" = "Available in the USA only";
+"Settings.atmMapMenuItemSubtitle" = "Alleen beschikbaar in de VS";
 
 /* ATM map menu item title */
-"Settings.atmMapMenuItemTitle" = "Crypto ATM Map";
+"Settings.atmMapMenuItemTitle" = "Crypto ATM-kaart";
 
 /* i.e. the currency which will be displayed */
-"Settings.currency" = "Display Currency";
+"Settings.currency" = "Toon valuta";
 
 /* e.g. "USD Settings" (settings for how USD is handled) */
-"Settings.currencyPageTitle" = "%@ Settings";
+"Settings.currencyPageTitle" = "%@ Instellingen";
 
 /* Section title for a collection of different settings screens, one for each currency */
-"Settings.currencySettings" = "Currency Settings";
+"Settings.currencySettings" = "Valuta-instellingen";
 
 /* Debug crash */
 "Settings.DebugCrash" = "Debug crash";
@@ -2721,199 +2721,199 @@
 "Settings.DeveloperOptions" = "Developer Options";
 
 /* Join Early access label */
-"Settings.earlyAccess" = "Join Early Access";
+"Settings.earlyAccess" = "Doe Mee aan Early Access";
 
 /* Enable segwit. */
-"Settings.EnableSegwit" = "Enable Segwit";
+"Settings.EnableSegwit" = "Activeer SegWit";
 
 /* Are you enjoying bread alert message body */
-"Settings.enjoying" = "Are you enjoying RockWallet?";
+"Settings.enjoying" = "Vind je RockWallet leuk?";
 
 /* Export transaction history menu item */
-"Settings.exportTransfers" = "Export transaction history to CSV";
+"Settings.exportTransfers" = "Exporteer transactiegeschiedenis naar CSV";
 
 /* Face ID spending limit label */
-"Settings.faceIdLimit" = "Face ID Spending Limit";
+"Settings.faceIdLimit" = "Bestedingslimiet Face-ID";
 
 /* Redeem the funds stored on this private key. */
-"Settings.importTitle" = "Sweep Wallet";
+"Settings.importTitle" = "Persoonlijke Sleutel Inwisselen";
 
 /* Manage settings section header */
-"Settings.manage" = "Manage";
+"Settings.manage" = "Beheer";
 
 /* No log files found error message */
 "Settings.noLogsFound" = "No Log files found. Please try again later.";
 
 /* Notifications label */
-"Settings.notifications" = "Notifications";
+"Settings.notifications" = "Notificaties";
 
 /* Preferences settings section header */
-"Settings.preferences" = "Preferences";
+"Settings.preferences" = "Voorkeuren";
 
 /* Tap here to reset the list of currencies to the default settings. */
-"Settings.resetCurrencies" = "Reset to Default Currencies";
+"Settings.resetCurrencies" = "Opnieuw instellen naar standaard valuta's";
 
 /* Leave review button label */
-"Settings.review" = "Leave us a Review";
+"Settings.review" = "Laat een review achter";
 
 /* Rewards menu item */
-"Settings.rewards" = "Rewards";
+"Settings.rewards" = "Beloningen";
 
 /* Share anonymous data label */
-"Settings.shareData" = "Share Anonymous Data";
+"Settings.shareData" = "Deel Anonieme Data";
 
 /* "Enables sharing balance to widget" */
-"Settings.shareWithWidget" = "Share portfolio data with widgets";
+"Settings.shareWithWidget" = "Deel portfoliogegevens met widgets";
 
 /* Sync blockchain label */
-"Settings.sync" = "Sync Blockchain";
+"Settings.sync" = "Synchroniseer Blockchain";
 
 "Settings.TellAFriendText" = "Hey, I use RockWallet to store and manage my crypto. It’s really easy to use. Give it a try. https://rockwallet.com/";
 
 "Settings.TellFriendDescription" = "Hey, I use RockWallet to send, receive, store, buy and trade crypto. It’s really easy to use. Give it a try. https://rockwallet.com/";
 
 /* Settings title */
-"Settings.title" = "Menu";
+"Settings.title" = "Instellingen";
 
 /* Touch ID spending limit label */
-"Settings.touchIdLimit" = "Touch ID Spending Limit";
+"Settings.touchIdLimit" = "Touch ID Bestedingslimiet";
 
 /* The fingerprint spending limit */
-"Settings.touchIdLimit.android" = "Fingerprint Authentication Spending Limit";
+"Settings.touchIdLimit.android" = "Uitgavelimiet voor authenticatie met vingerafdruk";
 
 /* View legacy address (old format). */
-"Settings.ViewLegacyAddress" = "View Legacy Receive Address";
+"Settings.ViewLegacyAddress" = "Bekijk Legacyontvangstadres";
 
 /* Receive Bitcoin instructions */
-"Settings.ViewLegacyAddressReceiveDescription" = "Only send Bitcoin (BTC) to this address. Any other asset sent to this address will be lost permanently.";
+"Settings.ViewLegacyAddressReceiveDescription" = "Verzend enkel Bitcoin (BTC) naar dit adres. Elk ander activum dat naar dit adres wordt verzonden, zal permanent verloren gaan.";
 
 /* Receive Bitcoin */
-"Settings.ViewLegacyAddressReceiveTitle" = "Receive Bitcoin";
+"Settings.ViewLegacyAddressReceiveTitle" = "Ontvang Bitcoin";
 
 /* Wallet Settings section header */
-"Settings.wallet" = "Wallets";
+"Settings.wallet" = "Portemonnee";
 
 "Settings.WebDebugUrl" = "Web Platform Debug URL";
 
 /* Wipe/delete your wallet from the current device. */
-"Settings.wipe" = "Unlink from this device";
+"Settings.wipe" = "Ontkoppel uw wallet van dit apparaat.";
 
 /* Share data view body */
-"ShareData.body" = "Help improve RockWallet by sharing your anonymous data with us. This does not include any financial information. We respect your financial privacy.";
+"ShareData.body" = "Help om RockWallet te verbeteren door je anonieme data met ons te delen. Dit bevat geen financiële informatie. We respecteren je financiële privacy.";
 
 /* Share data header */
-"ShareData.header" = "Share Data?";
+"ShareData.header" = "Data Delen?";
 
 /* Share data switch label. */
-"ShareData.toggleLabel" = "Share Anonymous Data?";
+"ShareData.toggleLabel" = "Anonieme Data Delen?";
 
-"ShareGift.approximateTotal" = "Approximate Total";
+"ShareGift.approximateTotal" = "Totaal bij benadering";
 
-"ShareGift.footerMessage1" = "A network fee will be deducted from the total when claimed.\nActual value depends on current price of bitcoin.";
+"ShareGift.footerMessage1" = "Bij het claimen wordt een netwerkvergoeding van het totaalbedrag afgetrokken.\n De werkelijke waarde is afhankelijk van de huidige prijs van bitcoin.";
 
-"ShareGift.footerMessage2" = "Download the RockWallet app for iPhone or Android.\nFor more information visit RockWallet.com/gift";
+"ShareGift.footerMessage2" = "Download de RockWallet-app voor iPhone of Android.\n Ga voor meer informatie naar rockwallet.com/gift";
 
-"ShareGift.tagLine" = "Someone gifted you bitcoin!";
+"ShareGift.tagLine" = "Iemand heeft je bitcoin cadeau gedaan!";
 
 "ShareGift.walletName" = "Bitcoin";
 
 /* Button label: select a baker */
-"Staking.add" = "+ Select Baker";
+"Staking.add" = "+ Selecteer Baker";
 
 /* Baker cell: Free Space field header */
-"Staking.cellFreeSpaceHeader" = "Free Space";
+"Staking.cellFreeSpaceHeader" = "Vrije ruimte";
 
-"Staking.changeValidator" = "Change";
+"Staking.changeValidator" = "Verandering";
 
-"Staking.descriptionTezos" = "Delegate your Tezos account to a validator to earn a reward while keeping full security and control of your coins.";
+"Staking.descriptionTezos" = "Delegeer uw Tezos-account aan een validator om een beloning te verdienen terwijl u de volledige veiligheid en controle over uw munten behoudt.";
 
 /* Baker cell: Fee field header */
-"Staking.feeHeader" = "Fee:";
+"Staking.feeHeader" = "Vergoeding:";
 
 "Staking.feePct" = "Fee: %@";
 
 "Staking.loadingBakerError" = "An error occurred while loading baker information. Please try again later.";
 
 /* Status label: current staking transaction is pending */
-"Staking.pendingTransaction" = "Transaction pending...";
+"Staking.pendingTransaction" = "Transactie in behandeling ...";
 
 /* Button label: remove selected baker */
-"Staking.remove" = "Remove";
+"Staking.remove" = "Verwijderen";
 
 /* Baker cell: ROI field header */
 "Staking.roiHeader" = "Est. ROI";
 
 /* Modal title: Select Baker modal */
-"Staking.selectBakerTitle" = "Select XTZ Delegate";
+"Staking.selectBakerTitle" = "Selecteer XTZ Delegate";
 
-"Staking.stake" = "Stake";
-
-/* UI flag showing state of Tezos staking */
-"Staking.stakingActiveFlag" = "ACTIVE";
+"Staking.stake" = "Inzet";
 
 /* UI flag showing state of Tezos staking */
-"Staking.stakingInactiveFlag" = "INACTIVE";
+"Staking.stakingActiveFlag" = "ACTIEF";
 
 /* UI flag showing state of Tezos staking */
-"Staking.stakingPendingFlag" = "PENDING";
+"Staking.stakingInactiveFlag" = "INACTIEF";
+
+/* UI flag showing state of Tezos staking */
+"Staking.stakingPendingFlag" = "IN AFWACHTING";
 
 /* Staking banner title */
-"Staking.stakingTitle" = "Staking";
+"Staking.stakingTitle" = "Uitzetten";
 
-"Staking.stakingTo" = "staking to %@";
+"Staking.stakingTo" = "uitzetten naar %@";
 
-"Staking.statusPending" = "Pending";
+"Staking.statusPending" = "In Afwachting";
 
-"Staking.statusStaked" = "Staked!";
+"Staking.statusStaked" = "Uitgezet!";
 
-"Staking.subTitle" = "Earn money while holding";
+"Staking.subTitle" = "Verdien geld terwijl je vasthoudt";
 
 /* Tezos XTZ baker asset type */
 "Staking.tezosDune" = "Tezos & Dune";
 
 /* Tezos XTZ baker asset type */
-"Staking.tezosMultiasset" = "Multiasset Pool";
+"Staking.tezosMultiasset" = "Multiasset-zwembad";
 
 /* Tezos XTZ baker asset type */
-"Staking.tezosOnly" = "Tezos-only";
+"Staking.tezosOnly" = "Alleen Tezos";
 
-"Staking.title" = "Stake %@";
+"Staking.title" = "%@ inzetten";
 
-"Staking.unstake" = "Unstake";
+"Staking.unstake" = "Ongedaan maken";
 
-"Staking.validatorHint" = "Enter Validator Address";
+"Staking.validatorHint" = "Voer Validator-adres in";
 
 /* button label */
-"StartPaperPhrase.againButtonTitle" = "Write Down Recovery Phrase Again";
+"StartPaperPhrase.againButtonTitle" = "Schrijf Papieren Sleutel Opnieuw Op";
 
 /* Paper key explanation text. */
-"StartPaperPhrase.body" = "Your Recovery Phrase is the only way to restore your RockWallet if your phone is lost, stolen, broken, or upgraded.\n\nWe will show you a list of words to write down on a piece of paper and keep safe.";
+"StartPaperPhrase.body" = "Je papieren sleutel is de enige manier om je RockWallet te herstellen als je telefoon verloren, gestolen, kapot of geüpgrade is.\n\nWe zullen je een lijst met woorden laten zie die je op een papiertje moet schrijven en veilig moet bewaren.";
 
 /* Paper key explanation text (Android-version) */
-"StartPaperPhrase.Body.Android" = "Your Recovery Phrase is the only way to restore your RockWallet if your phone is lost, stolen, broken, or upgraded.\n\nYour Recovery Phrase is also required if you change the security settings on your device.\n\nWe will show you a list of words to write down on a piece of paper and keep safe.";
+"StartPaperPhrase.Body.Android" = "Uw papieren sleutel is de enige manier om uw RockWallet te herstellen indien u uw telefoon kwijtraakt of als deze gestolen of geüpgraded wordt. \n\nU heeft uw papieren sleutel tevens nodig indien u de beveiligingsinstellingen van uw apparaat aanpast.\n\nWe tonen u een lijst met woorden die u op een stuk papier kunt opschrijven en veilig dient te bewaren.";
 
 /* button label */
-"StartPaperPhrase.buttonTitle" = "Write Down Recovery Phrase";
+"StartPaperPhrase.buttonTitle" = "Schrijf Papieren Sleutel Op";
 
 /* Argument is date; date should be on a new line */
-"StartPaperPhrase.date" = "Last written down on\n %@";
+"StartPaperPhrase.date" = "Je hebt voor het laatst je papieren sleutel opgeschreven op \n%@";
 
 /* button label */
-"StartViewController.createButton" = "Create New Wallet";
+"StartViewController.createButton" = "Nieuwe wallet maken";
 
 /* Start view message */
-"StartViewController.message" = "Moving money forward.";
+"StartViewController.message" = "De veiligste en betrouwbaarste manier om bitcoin te gebruiken.";
 
 /* Recover your wallet from a backup */
-"StartViewController.recoverButton" = "Recover Wallet";
+"StartViewController.recoverButton" = "Wallet herstellen";
 
-"SupportForm.feedbackAppreciated" = "We would love your feedback";
+"SupportForm.feedbackAppreciated" = "We zijn benieuwd naar uw feedback";
 
-"SupportForm.helpUsImprove" = "Help us improve";
+"SupportForm.helpUsImprove" = "Help ons verbeteren";
 
-"SupportForm.notNow" = "Not now";
+"SupportForm.notNow" = "Niet nu";
 
-"SupportForm.pleaseDescribe" = "Please describe your experience";
+"SupportForm.pleaseDescribe" = "Beschrijf uw ervaring";
 
 /* Add item label in swap flow */
 "Swap.AddItem" = "Add item!";
@@ -2928,7 +2928,7 @@
 /* Balance text on swap */
 "Swap.Balance" = "I have %@ %@";
 
-"Swap.CardFee" = "Card fee";
+"Swap.CardFee" = "Card fee:";
 
 /* Title on check your assets popup */
 "Swap.CheckAssets" = "Check your assets!";
@@ -2988,7 +2988,7 @@
 "Swap.SwapLimit" = "Swap limits";
 
 /* Swap min and max limit text */
-"Swap.SwapLimits" = "Currently, minimum for Swap is %@ and maximum is %@ per day.";
+"Swap.SwapLimits" = "Currently, minimum for Swap is %@ USD and maximum is %@ USD/day.";
 
 "Swap.Swapping" = "Swapping %@ to %@";
 
@@ -3017,25 +3017,25 @@
 "Swap.youSend" = "You send";
 
 /* Syncing view done syncing state header text */
-"SyncingView.activity" = "Activity";
+"SyncingView.activity" = "Activiteit";
 
 /* Syncing view connectiong state header text */
-"SyncingView.connecting" = "Connecting";
+"SyncingView.connecting" = "Aan het verbinden";
 
 /* The sync has failed (to complete) */
-"SyncingView.failed" = "Sync Failed";
+"SyncingView.failed" = "Synchronisatie mislukt";
 
 /* Syncing view header text */
-"SyncingView.header" = "Syncing";
+"SyncingView.header" = "Synchroniseren";
 
 /* Retry button label */
-"SyncingView.retry" = "Retry";
+"SyncingView.retry" = "Opnieuw proberen";
 
 /* "eg. Synced through <Jan 12, 2015> */
-"SyncingView.syncedThrough" = "Synced through %@";
+"SyncingView.syncedThrough" = "Gesynchroniseerd via %@";
 
 /* Syncing view syncing state header text */
-"SyncingView.syncing" = "Syncing";
+"SyncingView.syncing" = "Aan het synchroniseren";
 
 /* 6 d (6 days) */
 "TimeSince.days" = "%@ d";
@@ -3071,103 +3071,103 @@
 "Title.UnlinkWalletNoPrompt" = "Unlink Wallet (no prompt)";
 
 /* Add [this item to the list] */
-"TokenList.add" = "Add";
+"TokenList.add" = "Toevoegen";
 
 /* Add Wallets  [to your home screen] */
-"TokenList.addTitle" = "Add Assets";
+"TokenList.addTitle" = "Voeg Wallets toe";
 
 /* Hide [this token from view] */
-"TokenList.hide" = "Hide";
+"TokenList.hide" = "Verbergen";
 
 /* [click here to] Manage [your] Wallets */
-"TokenList.manageTitle" = "Manage Assets";
+"TokenList.manageTitle" = "Beheer Wallets";
 
 /* Remove [this item from the list] */
-"TokenList.remove" = "Remove";
+"TokenList.remove" = "Verwijderen";
 
 /* Show [this item on your home screen] */
-"TokenList.show" = "Show";
+"TokenList.show" = "Laat zien";
 
 /* You can customize your Touch ID Spending Limit from the [TouchIdSettings.linkText gets added here as a button] */
-"TouchIdSettings.customizeText" = "You can customize your Touch ID spending limit from the %@.";
+"TouchIdSettings.customizeText" = "Je kunt je Touch-ID uitgavenlimiet aanpassen van de %@.";
 
 /* Fingerprint enabling description body */
-"TouchIdSettings.customizeText.android" = "You can customize your Fingerprint Authentication Spending Limit from the Fingerprint Authorization Spending Limit screen";
+"TouchIdSettings.customizeText.android" = "U kunt uw uitgavelimiet voor authenticatie met vingerafdruk aanpassen in het scherm voor de uitgavelimiet voor authenticatie met vingerafdruk";
 
 /* Instruction for the fingerprint setup */
-"TouchIdSettings.disabledWarning.body.android" = "You have not enabled fingerprint authentication on this device. Go to Settings -> Security to set up fingerprint authentication.";
+"TouchIdSettings.disabledWarning.body.android" = "U heeft authenticatie met vingerafdruk niet ingesteld op dit apparaat. Ga naar Instellingen -> Beveiliging om dit in te stellen.";
 
 /* Fingerprint Is Not Setup */
-"TouchIdSettings.disabledWarning.title.android" = "Fingerprint Authentication Not Enabled";
+"TouchIdSettings.disabledWarning.title.android" = "Authenticatie met vingerafdruk niet ingesteld";
 
 /* Text that describes the purpose of the Touch ID settings in the BRD app. */
-"TouchIdSettings.explanatoryText" = "Use Touch ID to unlock your RockWallet app and send money.";
+"TouchIdSettings.explanatoryText" = "Gebruik Touch ID om uw RockWallet-app te ontgrendelen en geld te verzenden.";
 
 /* Touch Id screen label */
-"TouchIdSettings.label" = "Use your fingerprint to unlock your RockWallet and send money up to a set limit.";
+"TouchIdSettings.label" = "Gebruik je vingerafdruk om je RockWallet te ontgrendelen en geld tot een ingestelde limiet te versturen.";
 
 /* Link Text (see TouchIdSettings.customizeText) */
-"TouchIdSettings.linkText" = "Touch ID Spending Limit Screen";
+"TouchIdSettings.linkText" = "Touch-ID uitgavenlimietscherm";
 
 /* Spending Limit: b100,000 ($100) */
-"TouchIdSettings.spendingLimit" = "Spending limit: %@ (%@)";
+"TouchIdSettings.spendingLimit" = "Bestedingslimiet: %@ (%@)";
 
 /* Touch id switch label. */
-"TouchIdSettings.switchLabel" = "Enable Touch ID for RockWallet";
+"TouchIdSettings.switchLabel" = "Schakel Touch ID in voor RockWallet";
 
 /* Enable fingerprint for this wallet called Bread */
-"TouchIdSettings.switchLabel.android" = "Enable Fingerprint Authentication";
+"TouchIdSettings.switchLabel.android" = "Stel authenticatie met vingerafdruk";
 
 /* Touch ID settings view title */
 "TouchIdSettings.title" = "Touch ID";
 
 /* Fingerprint authentication label */
-"TouchIdSettings.title.android" = "Fingerprint Authentication";
+"TouchIdSettings.title.android" = "Authenticatie met vingerafdruk";
 
 /* Text label for a toggle that enables Touch ID for sending money. */
-"TouchIdSettings.transactionsTitleText" = "Enable Touch ID to send money";
+"TouchIdSettings.transactionsTitleText" = "Schakel Touch ID in om geld te verzenden";
 
 /* Touch ID unavailable alert message */
-"TouchIdSettings.unavailableAlertMessage" = "You have not set up Touch ID on this device. Go to Settings->Touch ID & Passcode to set it up now.";
+"TouchIdSettings.unavailableAlertMessage" = "Je hebt je Touch ID niet ingesteld op dit apparaat. Ga naar Instellingen -> Touch ID & Wachtwoord om het nu in te stellen.";
 
 /* Touch ID unavailable alert title */
-"TouchIdSettings.unavailableAlertTitle" = "Touch ID Not Set Up";
+"TouchIdSettings.unavailableAlertTitle" = "Touch ID Niet Ingesteld";
 
 /* Text label for the toggle that enables Touch ID for unlocking the BRD app. */
-"TouchIdSettings.unlockTitleText" = "Enable Touch ID to unlock RockWallet";
+"TouchIdSettings.unlockTitleText" = "Schakel Touch ID in om RockWallet te ontgrendelen";
 
 /* Always require passcode option */
-"TouchIdSpendingLimit" = "Always require passcode";
+"TouchIdSpendingLimit" = "Vraag altijd naar wachtwoord";
 
 /* Touch ID spending limit screen body */
-"TouchIdSpendingLimit.body" = "You will be asked to enter your 6-digit PIN to send any transaction over your spending limit, and every 48 hours since the last time you entered your 6-digit PIN.";
+"TouchIdSpendingLimit.body" = "Je zal gevraagd worden om je 6-cijferige PIN in te voeren om elke transactie boven je bestedingslimiet te versturen, en elke 48 uur sinds de laatste keer dat je je 6-cijferige PIN hebt ingevoerd.";
 
 /* Touch Id spending limit screen title */
-"TouchIdSpendingLimit.title" = "Touch ID Spending Limit";
+"TouchIdSpendingLimit.title" = "Touch ID Bestedingslimiet";
 
 /* name of spending limit when using fingerprint authorization */
-"TouchIdSpendingLimit.title.android" = "Fingerprint Authorization Spending Limit";
+"TouchIdSpendingLimit.title.android" = "Uitgavelimiet voor authenticatie met vingerafdruk";
 
 /* Availability status text */
-"Transaction.available" = "Available to Spend";
+"Transaction.available" = "Beschikbaar om te besteden";
 
 /* Transaction complete label */
-"Transaction.complete" = "Complete";
+"Transaction.complete" = "Compleet";
 
 /* Transaction is confirming status text */
-"Transaction.confirming" = "In Progress";
+"Transaction.confirming" = "In Voortgang";
 
 /* eg. Ending balance: $50.00 */
-"Transaction.ending" = "Ending balance: %@";
+"Transaction.ending" = "Eindbalans: %@";
 
 /* Exchange rate on date header */
-"Transaction.exchangeOnDayReceived" = "Exchange rate when received:";
+"Transaction.exchangeOnDayReceived" = "Wisselkoers bij ontvangst:";
 
 /* Exchange rate on date header */
-"Transaction.exchangeOnDaySent" = "Exchange rate when sent:";
+"Transaction.exchangeOnDaySent" = "Wisselkoers bij verzending:";
 
 /* Transaction failed status text */
-"Transaction.failed" = "Failed";
+"Transaction.failed" = "Mislukt";
 
 "Transaction.FailedPurchaseWithInstantBuy" = "Failed purchase with Instant Buy";
 
@@ -3182,15 +3182,15 @@
 "Transaction.HybridPart" = "- %@/2";
 
 /* Invalid transaction */
-"Transaction.invalid" = "INVALID";
+"Transaction.invalid" = "ONGELDIG";
 
 /* Timestamp label for event that just happened */
-"Transaction.justNow" = "just now";
+"Transaction.justNow" = "zojuist";
 
 "Transaction.ManuallySettled" = "Manually settled";
 
 /* Transaction is pending status text */
-"Transaction.pending" = "Pending";
+"Transaction.pending" = "In Afwachting";
 
 /* Pending purchase label in transaction view */
 "Transaction.PendingPurchase" = "Pending purchase";
@@ -3204,7 +3204,7 @@
 
 "Transaction.pendingWithdrawalWithCard" = "Pending withdrawal with card";
 
-"Transaction.PendingWithdrawWithAch" = "Pending withdrawal with ACH";
+"Transaction.PendingWithdrawWithAch" = "Pending withdraw with ACH";
 
 "Transaction.PendingWithdrawWithInstantBuy" = "Pending purchase with Instant Buy";
 
@@ -3223,23 +3223,23 @@
 "Transaction.PurchaseFailedWithInstantAch" = "Purchase with Instant Buy failed";
 
 /* Receive status text: 'In progress: 20%' */
-"Transaction.receivedStatus" = "In progress: %@";
+"Transaction.receivedStatus" = "In uitvoering: %@";
 
 "Transaction.refunded" = "Refunded";
 
 /* Send status text: 'In progress: 20%' */
-"Transaction.sendingStatus" = "In progress: %@";
+"Transaction.sendingStatus" = "In uitvoering: %@";
 
 /* sending to <address> */
-"Transaction.sendingTo" = "Sending to %@";
+"Transaction.sendingTo" = "versturen naar %@";
 
 /* sent to <address> */
-"Transaction.sentTo" = "Sent to %@";
+"Transaction.sentTo" = "verstuurd naar %@";
 
-"Transaction.stakingTo" = "staking to %@";
+"Transaction.stakingTo" = "uitzetten naar %@";
 
 /* eg. Starting balance: $50.00 */
-"Transaction.starting" = "Starting balance: %@";
+"Transaction.starting" = "Startbalans: %@";
 
 "Transaction.swapFromFailed" = "Swap from %@ failed";
 
@@ -3257,12 +3257,12 @@
 "Transaction.swapToFailed" = "Swap to %@ failed";
 
 /* e.g. "[The money you paid was a] Fee for token transfer: BRD" (BRD is the token that was transfered) */
-"Transaction.tokenTransfer" = "Fee for token transfer: %@";
+"Transaction.tokenTransfer" = "Fee voor token verzending: %@";
 
-"Transaction.toRecipient" = "to %@";
+"Transaction.toRecipient" = "naar %@";
 
 /* Waiting to be confirmed string */
-"Transaction.waiting" = "Waiting to be confirmed. Some merchants require confirmation to complete a transaction. Estimated time: 1-2 hours.";
+"Transaction.waiting" = "Wachtend op bevestiging. Sommige handelaren willen bevestiging om een transactie af te roden. Geschatte tijd: 1-2 uur.";
 
 "Transaction.withdarwalWithCardComplete" = "Withdrawal to card successful";
 
@@ -3272,168 +3272,168 @@
 
 "Transaction.withdrawalWithCardFailed" = "Withdrawal to card unsuccessful";
 
-"Transaction.WithdrawFailedWithAch" = "Withdrawal unsuccessful";
+"Transaction.WithdrawFailedWithAch" = "Withdraw with ACH failed";
 
-"Transaction.WithdrawWithAch" = "Withdrawal successful";
+"Transaction.WithdrawWithAch" = "Withdrew with ACH";
 
 /* e.g. I received money from an account. */
 "TransactionDetails.account" = "account";
 
 /* Address received from header */
-"TransactionDetails.addressFromHeader" = "From";
+"TransactionDetails.addressFromHeader" = "Van";
 
 /* Address sent to header */
-"TransactionDetails.addressToHeader" = "To";
+"TransactionDetails.addressToHeader" = "Naar";
 
 /* e.g. "(this was received) via (address #1)" via = by way of */
-"TransactionDetails.addressViaHeader" = "From";
+"TransactionDetails.addressViaHeader" = "Via";
 
 /* Amount section header */
-"TransactionDetails.amountHeader" = "Amount";
+"TransactionDetails.amountHeader" = "Bedrag";
 
 /* "(it was worth) $100 when sent, (and it is worth) $200 now" */
-"TransactionDetails.amountWhenReceived" = "%@ when received, %@ now";
+"TransactionDetails.amountWhenReceived" = "%@ wanneer ontvangen, %@ nu";
 
 /* "(it was worth) $100 when sent, (and it is worth) $200 now" */
-"TransactionDetails.amountWhenSent" = "%@ when sent, %@ now";
+"TransactionDetails.amountWhenSent" = "%@ tijdens versturen, %@ nu";
 
 /* Block height label */
-"TransactionDetails.blockHeightLabel" = "Confirmed in Block";
+"TransactionDetails.blockHeightLabel" = "Bevestigd in block";
 
 /* Memo section header */
 "TransactionDetails.commentsHeader" = "Memo";
 
 /* Memo field placeholder */
-"TransactionDetails.commentsPlaceholder" = "Add memo...";
+"TransactionDetails.commentsPlaceholder" = "Voeg memo toe...";
 
 /* Timestamp section header for complete tx */
-"TransactionDetails.completeTimestampHeader" = "Complete";
+"TransactionDetails.completeTimestampHeader" = "Voltooid";
 
 /* Block height and confirmations label, eg. 182930 (45061 confirmations) */
-"TransactionDetails.confirmationsLabel" = "Confirmations";
+"TransactionDetails.confirmationsLabel" = "Bevestigingen";
 
-"TransactionDetails.destinationTag" = "Destination Tag";
+"TransactionDetails.destinationTag" = "Bestemmingstag";
 
-"TransactionDetails.destinationTag_EmptyHint" = "(empty)";
+"TransactionDetails.destinationTag_EmptyHint" = "(leeg)";
 
 /* Empty transaction list message. */
-"TransactionDetails.emptyMessage" = "Your transactions will appear here.";
+"TransactionDetails.emptyMessage" = "Je transacties zullen hier verschijnen.";
 
 /* e.g. the users balance after the transaction was compeleted */
-"TransactionDetails.endingBalanceHeader" = "Ending Balance";
+"TransactionDetails.endingBalanceHeader" = "Eindsaldo";
 
 /* Exchange rate section header */
-"TransactionDetails.exchangeRateHeader" = "Exchange Rate";
+"TransactionDetails.exchangeRateHeader" = "Wisselkoers";
 
 /* Tx detail field header */
-"TransactionDetails.feeHeader" = "Total Fee";
+"TransactionDetails.feeHeader" = "Totale vergoeding";
 
 /* "Received [$5] at [which of my addresses]" => This is the "at [which of my addresses]" part. */
-"TransactionDetails.from" = "at %@";
+"TransactionDetails.from" = "op %@";
 
 /* Tx detail field header */
-"TransactionDetails.gasLimitHeader" = "Gas Limit";
+"TransactionDetails.gasLimitHeader" = "Gaslimiet";
 
 /* Tx detail field header */
-"TransactionDetails.gasPriceHeader" = "Gas Price";
+"TransactionDetails.gasPriceHeader" = "Gasprijs";
 
-"TransactionDetails.gift" = "Gift";
+"TransactionDetails.gift" = "Geschenk";
 
-"TransactionDetails.giftedTo" = "Gifted to %@";
+"TransactionDetails.giftedTo" = "Geschonken aan %@";
 
 /* Label for Hedera Memo field on transaction details screen */
 "TransactionDetails.hederaMemo" = "Hedera Memo";
 
 /* Hide Details button */
-"TransactionDetails.hideDetails" = "Hide Details";
+"TransactionDetails.hideDetails" = "Details verbergen";
 
 /* Label showing the transaction was started (initialized) */
-"TransactionDetails.initializedTimestampHeader" = "Initialized";
+"TransactionDetails.initializedTimestampHeader" = "Gestart";
 
 /* More button title */
-"TransactionDetails.more" = "More...";
+"TransactionDetails.more" = "Meer...";
 
 /* Moved $5.00 (as in "I moved $5 to another location") */
-"TransactionDetails.moved" = "Moved %@";
+"TransactionDetails.moved" = "%@ verplaatst";
 
 /* Moved $5.00 */
-"TransactionDetails.movedAmountDescription" = "Moved <b>%@</b>";
+"TransactionDetails.movedAmountDescription" = "<b>%@</b> verplaatst";
 
 /* eg. Confirmed in Block: Not Confirmed */
-"TransactionDetails.notConfirmedBlockHeightLabel" = "Not Confirmed";
+"TransactionDetails.notConfirmedBlockHeightLabel" = "Niet bevestigd";
 
 /* "Received [$5] at [which of my addresses]" => This is the "Received [$5]" part. */
-"TransactionDetails.received" = "Received %@";
+"TransactionDetails.received" = "Ontvangen %@";
 
 /* Received $5.00 */
-"TransactionDetails.receivedAmountDescription" = "Received <b>%@</b>";
+"TransactionDetails.receivedAmountDescription" = "Ontvangen <b>%@</b>";
 
 /* received from <address> */
-"TransactionDetails.receivedFrom" = "Received from %@";
+"TransactionDetails.receivedFrom" = "ontvangen van %@";
 
 /* received via <address> */
-"TransactionDetails.receivedVia" = "Received via %@";
+"TransactionDetails.receivedVia" = "ontvangen via %@";
 
 /* receiving from <address> */
-"TransactionDetails.receivingFrom" = "Receiving from %@";
+"TransactionDetails.receivingFrom" = "ontvangen van %@";
 
 /* receiving via <address> */
-"TransactionDetails.receivingVia" = "Receiving via %@";
+"TransactionDetails.receivingVia" = "ontvangen via %@";
 
 "TransactionDetails.reclaim" = "Reclaim";
 
-"TransactionDetails.resend" = "Resend";
+"TransactionDetails.resend" = "Opnieuw verzenden";
 
 /* "Sent [$5] to [address]" => This is the "Sent [$5]" part. */
-"TransactionDetails.sent" = "Sent %@";
+"TransactionDetails.sent" = "Verstuurd %@";
 
 /* Sent $5.00 */
-"TransactionDetails.sentAmountDescription" = "Sent <b>%@</b>";
+"TransactionDetails.sentAmountDescription" = "Verstuurd <b>%@</b>";
 
 /* Show Details button */
-"TransactionDetails.showDetails" = "Show Details";
+"TransactionDetails.showDetails" = "Details weergeven";
 
 /* The balance the user started with before the transaction completed */
-"TransactionDetails.startingBalanceHeader" = "Starting Balance";
+"TransactionDetails.startingBalanceHeader" = "Beginsaldo";
 
 /* Status section header */
 "TransactionDetails.statusHeader" = "Status";
 
 /* Transaction Details Title */
-"TransactionDetails.title" = "Transaction Details";
+"TransactionDetails.title" = "Transactie Details";
 
 /* Transaction Details Title - Failed */
-"TransactionDetails.titleFailed" = "Failed";
+"TransactionDetails.titleFailed" = "Details verbergen";
 
 /* Transaction Details Title - Internal */
-"TransactionDetails.titleInternal" = "Internal";
+"TransactionDetails.titleInternal" = "Intern";
 
 /* Transaction Details Title - Received */
-"TransactionDetails.titleReceived" = "Received";
+"TransactionDetails.titleReceived" = "Ontvangen";
 
 /* Transaction Details Title - Receiving */
-"TransactionDetails.titleReceiving" = "Receiving";
+"TransactionDetails.titleReceiving" = "Ontvangen";
 
 /* Transaction Details Title - Sending */
-"TransactionDetails.titleSending" = "Sending";
+"TransactionDetails.titleSending" = "Versturen";
 
 /* Transaction Details Title - Sent */
-"TransactionDetails.titleSent" = "Sent";
+"TransactionDetails.titleSent" = "Verstuurd";
 
 /* "Sent [$5] to [address]" => This is the "to [address]" part. */
-"TransactionDetails.to" = "to %@";
+"TransactionDetails.to" = "aan %@";
 
 /* Tx detail field header */
-"TransactionDetails.totalHeader" = "Total";
+"TransactionDetails.totalHeader" = "Totaal";
 
 /* Transaction ID header */
-"TransactionDetails.txHashHeader" = "Transaction ID";
+"TransactionDetails.txHashHeader" = "Transactie-ID";
 
 /* (this transaction was) Received at this address: */
-"TransactionDirection.address" = "Received at this Address";
+"TransactionDirection.address" = "Ontvangen op dit adres";
 
 /* (this transaction was) Sent to this address: */
-"TransactionDirection.to" = "Sent to this Address";
+"TransactionDirection.to" = "Verstuurd naar dit adres";
 
 "TwoStep.additionalMethodsTitle" = "";
 
@@ -3477,9 +3477,9 @@
 
 "TwoStep.getBackupCodesTitle" = "";
 
-"TwoStep.mainInstructions" = "Two Factor Authentication is enabled with the phone number ending in";
+"TwoStep.mainInstructions" = "Two Factor Authentication in enabled with the phone number ending in";
 
-"TwoStep.mainTitle" = "Two Factor Authentication";
+"TwoStep.mainTitle" = "Two factor authentication";
 
 "TwoStep.Mandatory" = "(Mandatory)";
 
@@ -3493,7 +3493,7 @@
 
 "TwoStep.methods.additionalTitle" = "Additional methods";
 
-"TwoStep.methods.authApp.title" = "Authenticator app";
+"TwoStep.methods.authApp.title" = "Authentication app";
 
 "TwoStep.methods.phone.subtitle" = "Change Phone Number";
 
@@ -3532,40 +3532,40 @@
 "UnavailableScreen.ProDescription" = "RockWallet Pro isn’t available for you at this point in time.";
 
 /* Disabled until date */
-"UnlockScreen.disabled" = "Disabled until: %@";
+"UnlockScreen.disabled" = "Uitgeschakeld tot: %@";
 
 /* Unlock with FaceID accessibility label */
-"UnlockScreen.faceIdText" = "Unlock with FaceID";
+"UnlockScreen.faceIdText" = "Ontgrendelen met Face-ID";
 
 /* My Address button title */
-"UnlockScreen.myAddress" = "My Address";
+"UnlockScreen.myAddress" = "Mijn Adres";
 
 /* Reset PIN with Paper Key button label. */
-"UnlockScreen.resetPin" = "Reset your PIN";
+"UnlockScreen.resetPin" = "PIN Resetten";
 
 /* Scan button title */
-"UnlockScreen.scan" = "Scan";
+"UnlockScreen.scan" = "Scannen";
 
 /* Instruction to touch the sensor for fingerprint authentication */
-"UnlockScreen.touchIdInstructions.android" = "Touch Sensor";
+"UnlockScreen.touchIdInstructions.android" = "Aanraaksensor";
 
 /* TouchID prompt text */
-"UnlockScreen.touchIdPrompt" = "Unlock your RockWallet.";
+"UnlockScreen.touchIdPrompt" = "Ontgrendel je RockWallet.";
 
 /* Device authentication body */
-"UnlockScreen.touchIdPrompt.android" = "Please unlock your Android device to continue.";
+"UnlockScreen.touchIdPrompt.android" = "Ontgrendel alstublieft uw Android-apparaat om door te gaan.";
 
 /* Unlock with TouchID accessibility label */
-"UnlockScreen.touchIdText" = "Unlock with TouchID";
+"UnlockScreen.touchIdText" = "Ontgrendel met Touch ID";
 
 /* Device authentication title */
-"UnlockScreen.touchIdTitle.android" = "Authentication required";
+"UnlockScreen.touchIdTitle.android" = "Authenticatie vereist";
 
 /* Wallet disabled header */
 "UnlockScreen.walletDisabled" = "Wallet disabled";
 
 /* Wallet disabled description */
-"UnlockScreen.walletDisabledDescription" = "You will need your Recovery Phrase to reset PIN.";
+"UnlockScreen.walletDisabledDescription" = "You will need your recovery phrases to reset PIN.";
 
 /* Wipe wallet prompt */
 "UnlockScreen.wipePrompt" = "Are you sure you would like to wipe this wallet?";
@@ -3577,28 +3577,28 @@
 "UpdatePin.bottomSheetMsg" = "PIN updated successfully";
 
 /* Update PIN caption text */
-"UpdatePin.caption" = "Remember this PIN. If you forget it, you won't be able to access your assets";
+"UpdatePin.caption" = "Onthoud deze PIN. Als je deze vergeet, zul je niet in staat zijn om bij je Bitcoins te kunnen.";
 
 /* Contact Support button on update pin view */
 "UpdatePin.ContactSupport" = "Contact Support";
 
 /* PIN creation info. */
-"UpdatePin.createInstruction" = "Your PIN will be used to unlock your wallet";
+"UpdatePin.createInstruction" = "Je PIN zal worden gebruikt om je RockWallet te ontgrendelen en geld te versturen.";
 
 /* Update PIN title */
-"UpdatePin.createTitle" = "Set PIN";
+"UpdatePin.createTitle" = "PIN Instellen";
 
 /* Update PIN title */
-"UpdatePin.createTitleConfirm" = "Confirm your new PIN";
+"UpdatePin.createTitleConfirm" = "Voer PIN opnieuw in";
 
 /* Disabled until text on disabled wallet view */
 "UpdatePin.DisabledUntil" = "Disabled until:";
 
 /* Enter current PIN instruction */
-"UpdatePin.enterCurrent" = "Enter your current PIN";
+"UpdatePin.enterCurrent" = "Voer je huidige PIN in.";
 
 /* Enter new PIN instruction */
-"UpdatePin.enterNew" = "Enter your new PIN";
+"UpdatePin.enterNew" = "Voer je nieuwe PIN in.";
 
 /* Enter your PIN label to finish the transaction */
 "UpdatePin.EnterPin" = "Please enter your PIN to confirm the transaction";
@@ -3615,7 +3615,7 @@
 "UpdatePin.pinDoesntMatch" = "Your PIN doesn’t match, please try again.";
 
 /* Re-Enter new PIN instruction */
-"UpdatePin.reEnterNew" = "Re-enter your new PIN";
+"UpdatePin.reEnterNew" = "Voer je nieuwe PIN opnieuw in.";
 
 /* Attempts remaining on pin entry screen */
 "UpdatePin.RemainingAttempts" = "Attempts remaining:";
@@ -3627,10 +3627,10 @@
 "UpdatePin.securedWallet" = "Secured wallet";
 
 /* Update PIN title */
-"UpdatePin.setNewPinTitle" = "Set your PIN";
+"UpdatePin.setNewPinTitle" = "Set your new PIN";
 
 /* Update PIN failure error message. */
-"UpdatePin.setPinError" = "Something went wrong updating your PIN. Please try again.";
+"UpdatePin.setPinError" = "Sorry, we konden je PIN niet updaten.";
 
 /* Update PIN failure alert view title */
 "UpdatePin.setPinErrorTitle" = "Update PIN Error";
@@ -3648,16 +3648,16 @@
 "UpdatePin.WhyPIN" = "Why do I need a PIN?";
 
 /* Authorize to copy wallet addresses alert message */
-"URLHandling.addressaddressListAlertMessage" = "Copy wallet addresses to clipboard?";
+"URLHandling.addressaddressListAlertMessage" = "Portemonnee adressen naar plakbord kopiëren?";
 
 /* Authorize to copy wallet address PIN view prompt. */
-"URLHandling.addressList" = "Authorize to copy wallet address to clipboard";
+"URLHandling.addressList" = "Autoriseer om portemonnee adres naar plakbord te kopiëren";
 
 /* Authorize to copy wallet address alert title */
-"URLHandling.addressListAlertTitle" = "Copy Wallet Addresses";
+"URLHandling.addressListAlertTitle" = "Kopieer Portemonnee Adressen";
 
 /* Copy wallet addresses alert button label */
-"URLHandling.copy" = "Copy";
+"URLHandling.copy" = "Kopiëren";
 
 /* Verification Code Action Instructions */
 "VerificationCode.actionInstructions" = "Check your phone for the confirmation token we sent you. It may take a couple of minutes.";
@@ -3699,16 +3699,16 @@
 "VerifyPhoneNumber.title" = "Verify your phone number";
 
 /* Verify PIN for transaction view body */
-"VerifyPin.authorize" = "Please enter your PIN to authorize this transaction.";
+"VerifyPin.authorize" = "Voer alstublieft uw PIN in om deze transactie te autoriseren.";
 
 /* Verify PIN view body */
-"VerifyPin.continueBody" = "Please enter your PIN to continue.";
+"VerifyPin.continueBody" = "Voer a.u.b. je PIN in om verder te gaan.";
 
 /* Verify PIN view title */
-"VerifyPin.title" = "PIN Required";
+"VerifyPin.title" = "PIN Vereist";
 
 /* Authorize transaction with touch id message */
-"VerifyPin.touchIdMessage" = "Authorize this transaction";
+"VerifyPin.touchIdMessage" = "Autoriseer deze transactie";
 
 "view_coroutine_scope" = "view_scope";
 
@@ -3721,193 +3721,193 @@
 /* Limited assets message in add wallets popup */
 "Wallet.LimitedAssetsMessage" = "We currently only support the assets that are listed here. You cannot access other assets through this wallet at the moment.";
 
-"Wallet.one_day" = "1D";
+"Wallet.one_day" = "1d";
 
-"Wallet.one_month" = "1M";
+"Wallet.one_month" = "1m";
 
-"Wallet.one_week" = "1W";
+"Wallet.one_week" = "1w";
 
-"Wallet.one_year" = "1Y";
+"Wallet.one_year" = "1y";
 
-"Wallet.stakingTitle" = "Staking";
+"Wallet.stakingTitle" = "Uitzetten";
 
-"Wallet.three_months" = "3M";
+"Wallet.three_months" = "3m";
 
-"Wallet.three_years" = "3Y";
+"Wallet.three_years" = "3y";
 
 /* Turn off fast sync confirmation question */
-"WalletConnectionSettings.confirmation" = "Are you sure you want to turn off Fastsync?";
+"WalletConnectionSettings.confirmation" = "Weet u zeker dat u Fastsync wilt uitschakelen?";
 
 /* Explanation for wallet connection setting */
-"WalletConnectionSettings.explanatoryText" = "Make syncing your bitcoin wallet practically instant. Learn more about how it works here.";
+"WalletConnectionSettings.explanatoryText" = "Maak het synchroniseren van uw bitcoin portemonnee vrijwel direct mogelijk. Lees hier meer over hoe het werkt.";
 
 /* Connection mode switch label. */
-"WalletConnectionSettings.footerTitle" = "Powered by";
+"WalletConnectionSettings.footerTitle" = "Aangedreven door";
 
 /* Wallet connection settings view title */
-"WalletConnectionSettings.header" = "Fastsync (pilot)";
+"WalletConnectionSettings.header" = "Fastsync (piloot)";
 
 /* Link text in explanatoryText This NB: This should exactly match the last word of WalletConnectionSettings.explanatoryText */
-"WalletConnectionSettings.link" = "here";
+"WalletConnectionSettings.link" = "hier";
 
 /* WalletConnectionSettiongs, Wallet connection settings menu item title. */
-"WalletConnectionSettings.menuTitle" = "Connection Mode";
+"WalletConnectionSettings.menuTitle" = "Verbindingsmodus";
 
 /* Turn off fast sync button label */
-"WalletConnectionSettings.turnOff" = "Turn Off";
+"WalletConnectionSettings.turnOff" = "Uitschakelen";
 
 /* Wallet connection settings view title */
 "WalletConnectionSettings.viewTitle" = "Fastsync";
 
 /* 'No wallet' warning for watch app */
-"Watch.noWalletWarning" = "Open the RockWallet iPhone app to set up your wallet.";
+"Watch.noWalletWarning" = "Open de RockWallet iPhone app om je portemonnee in te stellen.";
 
 /* Dismiss button label */
-"Webview.dismiss" = "Dismiss";
+"Webview.dismiss" = "Verwerpen";
 
 /* Webview loading error message */
-"Webview.errorMessage" = "There was an error loading the content. Please try again.";
+"Webview.errorMessage" = "Er was een error bij het laden van de inhoud. Probeer a.u.b. opnieuw.";
 
 /* Updating webview message */
-"Webview.updating" = "Updating...";
+"Webview.updating" = "Updaten...";
 
 /* Welcome screen text. (?) will be replaced with the help icon users should look for. */
-"Welcome.body" = "Breadwallet has changed its name to RockWallet, with a brand new look and some new features.\n\nIf you need help, look for the (?) in the top right of most screens.";
+"Welcome.body" = "Breadwallet is omgedoopt tot RockWallet, met een gloednieuw uiterlijk en enkele nieuwe functies.\n\nAls u hulp nodig hebt, zoek naar de (?) rechtsboven in de meeste schermen.";
 
 /* Top title of welcome screen */
-"Welcome.title" = "Welcome to RockWallet!";
+"Welcome.title" = "Welkom bij RockWallet!";
 
 /* Single asset widget description */
-"Widget.assetDescription" = "Stay up to date with your favorite crypto asset";
+"Widget.assetDescription" = "Blijf op de hoogte van uw favoriete cryptovaluta";
 
 /* Asset list widget description */
-"Widget.assetListDescription" = "Stay up to date with your favorite crypto assets";
+"Widget.assetListDescription" = "Blijf op de hoogte van uw favoriete cryptovaluta";
 
 /* Asset list widget title */
-"Widget.assetListTitle" = "Asset list";
+"Widget.assetListTitle" = "Asset lijst";
 
 /* Single asset widget title */
-"Widget.assetTitle" = "Asset";
+"Widget.assetTitle" = "Bedrijfsmiddel";
 
 /* Name of color based on os theme light/dark */
-"Widget.Color.autoLightDark" = "System Auto Light / Dark";
+"Widget.Color.autoLightDark" = "Systeem Auto Licht / Donker";
 
 /* Name of color - Black */
-"Widget.Color.black" = "Black";
+"Widget.Color.black" = "Zwart";
 
 /* Name of color - Blue */
-"Widget.Color.blue" = "Blue";
+"Widget.Color.blue" = "Blauw";
 
 /* Name of color - Gray */
-"Widget.Color.gray" = "Gray";
+"Widget.Color.gray" = "Grijs";
 
 /* Name of color - Green */
-"Widget.Color.green" = "Green";
+"Widget.Color.green" = "Groen";
 
 /* Name of color - Orange */
-"Widget.Color.orange" = "Orange";
+"Widget.Color.orange" = "Oranje";
 
 /* Name of color - Pink */
-"Widget.Color.pink" = "Pink";
+"Widget.Color.pink" = "Roze";
 
 /* Name of color - Primary Background */
-"Widget.Color.primaryBackground" = "Primary";
+"Widget.Color.primaryBackground" = "Primair";
 
 /* Name of color - Primary Text */
-"Widget.Color.primaryText" = "Primary";
+"Widget.Color.primaryText" = "Primair";
 
 /* Name of color - Purple */
-"Widget.Color.purple" = "Purple";
+"Widget.Color.purple" = "Purper";
 
 /* Name of color - Red */
-"Widget.Color.red" = "Red";
+"Widget.Color.red" = "Rood";
 
 /* Name of color - Secondary Background */
-"Widget.Color.secondaryBackground" = "Secondary";
+"Widget.Color.secondaryBackground" = "Ondergeschikt";
 
 /* Name of color - Secondary Text */
-"Widget.Color.secondaryText" = "Secondary";
+"Widget.Color.secondaryText" = "Ondergeschikt";
 
 /* Name of color - Tertiary Background */
-"Widget.Color.tertiaryBackground" = "Tertiary";
+"Widget.Color.tertiaryBackground" = "Tertiair";
 
 /* Name of color - Tertiary Text */
-"Widget.Color.tertiaryText" = "Tertiary";
+"Widget.Color.tertiaryText" = "Tertiair";
 
 /* Name of color - White */
-"Widget.Color.white" = "White";
+"Widget.Color.white" = "Wit";
 
 /* Name of color - Yellow */
-"Widget.Color.yellow" = "Yellow";
+"Widget.Color.yellow" = "Geel";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionBackground" = "Theme Background Colors";
+"Widget.colorSectionBackground" = "Thema achtergrondkleuren";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionBasic" = "Basic Colors";
+"Widget.colorSectionBasic" = "Basiskleuren";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionCurrency" = "Currency Colors";
+"Widget.colorSectionCurrency" = "Valutakleuren";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionSystem" = "System Colors";
+"Widget.colorSectionSystem" = "Systeemkleuren";
 
 /* Title of color grouping in widget color picker */
-"Widget.colorSectionText" = "Theme Text Colors";
+"Widget.colorSectionText" = "Thema Tekstkleuren";
 
 /* Portfolio widget description if data sharing is disabled */
-"Widget.enablePortfolio" = "Enable in app\npreferences";
+"Widget.enablePortfolio" = "Schakel in app\n voorkeuren";
 
 /* Portfolio description */
-"Widget.portfolioDescription" = "Stay up to date with your portfolio";
+"Widget.portfolioDescription" = "Blijf op de hoogte van uw portfolio";
 
 /* Portfolio widget description if data sharing is enabled */
-"Widget.portfolioSummary" = "Portfolio\nSummary";
+"Widget.portfolioSummary" = "Portefeuille\n Overzicht";
 
 /* Portfolio widget title */
-"Widget.portfolioTitle" = "Portfolio";
+"Widget.portfolioTitle" = "Portefeuille";
 
 /* Wipe wallet alert message */
-"WipeWallet.alertMessage" = "Are you sure you want to wipe this wallet from this device?";
+"WipeWallet.alertMessage" = "Weet je zeker dat je deze portomonnee wilt verwijderen?";
 
 /* Wipe wallet alert title */
-"WipeWallet.alertTitle" = "Unlink Wallet?";
+"WipeWallet.alertTitle" = "Portomonnee wissen?";
 
 /* Failed wipe wallet alert message */
-"WipeWallet.failedMessage" = "Failed to wipe wallet.";
+"WipeWallet.failedMessage" = "Wissen van portomonnee niet gelukt";
 
 /* Failed wipe wallet alert title */
-"WipeWallet.failedTitle" = "Failed";
+"WipeWallet.failedTitle" = "Mislukt";
 
 /* Enter phrase to wipe wallet instruction. (Important to explain it is the CURRENT [this wallet's] paper key that needs to be entered). */
-"WipeWallet.instruction" = "Please enter your Recovery Phrase to wipe this wallet from your device.";
+"WipeWallet.instruction" = "Om een nieuwe portemonnee te beginnen of een bestaande te laden, moet u eerst de portemonnee die momenteel geïnstalleerd is ontkoppelen. Voer de Papieren Sleutel van de huidige portemonnee in om door te gaan.";
 
 /* Instructions for unlinking the wallet */
-"WipeWallet.startMessage" = "Starting or recovering another wallet allows you to access and manage a different RockWallet on this device.";
+"WipeWallet.startMessage" = "Ontkoppel je portemonnee om het te verwijderen van dit toestel. Wanneer deze portemonnee ontkoppeld is kunt u een nieuwe portemonnee beginnen of een andere portemonnee laden op dit toestel.";
 
 /* Start wipe wallet view warning */
-"WipeWallet.startWarning" = "Your current wallet will be removed from this device. If you wish to restore it in the future, you will need to enter your Recovery Phrase.";
+"WipeWallet.startWarning" = "U zal niet langer uw huidige RockWallet portemonnee kunnen bereiken vanaf dit apparaat. Uw saldo zal hetzelfde blijven.";
 
 /* Unlink this wallet from this device. */
-"WipeWallet.title" = "Start or Recover Another Wallet";
+"WipeWallet.title" = "Portemonnee Ontkoppelen";
 
 /* Wipe wallet button title */
-"WipeWallet.wipe" = "Wipe";
+"WipeWallet.wipe" = "Wissen";
 
 /* Wiping activity message */
-"WipeWallet.wiping" = "Wiping...";
+"WipeWallet.wiping" = "Aan het wissen...";
 
 /* Paper key instructions. */
-"WritePaperPhrase.instruction" = "Write down the following words in order";
+"WritePaperPhrase.instruction" = "Schrijf elk woord in de juiste volgorde op en bewaar het op een veilige plek.";
 
 /* button label */
-"WritePaperPhrase.next" = "NEXT";
+"WritePaperPhrase.next" = "Volgende";
 
 /* button label */
-"WritePaperPhrase.previous" = "Previous";
+"WritePaperPhrase.previous" = "Vorige";
 
 /* 1 of 3 */
-"WritePaperPhrase.step" = "%@ of %@";
+"WritePaperPhrase.step" = "%@ van %@";
 
 "WritePaperPhrase.warning" = "For security purposes, do not screenshot or email these words.";
 
