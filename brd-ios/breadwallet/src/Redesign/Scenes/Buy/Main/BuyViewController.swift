@@ -124,6 +124,7 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         if paymentTypes.count >= segment {
             let paymentType = paymentTypes[segment]
             
+            LoadingView.show()
             interactor?.selectPaymentMethod(viewAction: .init(method: paymentType))
             GoogleAnalytics.logEvent(GoogleAnalytics.Buy(type: paymentType.rawValue))
         }
@@ -177,6 +178,8 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
     }
     
     func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
+        LoadingView.hideIfNeeded()
+        
         guard let fromSection = sections.firstIndex(where: { $0.hashValue == Models.Section.swapCard.hashValue }),
               let toSection = sections.firstIndex(where: { $0.hashValue == Models.Section.paymentMethod.hashValue }),
               let limitActionsSection = sections.firstIndex(where: { $0.hashValue == Models.Section.limitActions.hashValue }),
