@@ -33,6 +33,7 @@ protocol ItemSelectionDataStore: BaseDataStore, FetchDataStore {
     var isAddingEnabled: Bool? { get set }
     var instrumentID: String? { get set }
     var sceneTitle: String { get set }
+    var fromCardWithdrawal: Bool { get set }
 }
 
 protocol ItemSelectionDataPassing {

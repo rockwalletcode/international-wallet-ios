@@ -11,19 +11,22 @@
 import Foundation
 import LinkKit
 
-protocol PaymentMethodsViewActions: BaseViewActions, FetchViewActions {
+protocol PaymentMethodsViewActions: BaseViewActions, FetchViewActions, AssetViewActions {
     func getPayments(viewAction: PaymentMethodsModels.Get.ViewAction, completion: (() -> Void)?)
+    func selectPaymentMethod(viewAction: PaymentMethodsModels.PaymentMethod.ViewAction)
     func getPlaidToken(viewAction: PaymentMethodsModels.Link.ViewAction)
     func setPaymentCard(viewAction: PaymentMethodsModels.SetPaymentCard.ViewAction)
     func achSuccessMessage(viewAction: PaymentMethodsModels.Get.ViewAction)
+    func showPlaidLinkedPopup(viewAction: PaymentMethodsModels.PlaidLinked.ViewAction)
 }
 
-protocol PaymentMethodsActionResponses: BaseActionResponses, FetchActionResponses {
+protocol PaymentMethodsActionResponses: BaseActionResponses, FetchActionResponses, AssetActionResponses {
     var achPaymentModel: CardSelectionViewModel? { get set }
     
     func presentPaymentCards(actionResponse: PaymentMethodsModels.PaymentCards.ActionResponse)
     func presentAch(actionResponse: PaymentMethodsModels.Get.ActionResponse)
     func presentPlaidToken(actionResponse: PaymentMethodsModels.Link.ActionResponse)
+    func presentPlaidLinkedPopup(actionResponse: PaymentMethodsModels.PlaidLinked.ActionResponse)
 }
 
 protocol PaymentMethodsResponseDisplays: BaseResponseDisplays, FetchResponseDisplays, AssetResponseDisplays {
@@ -31,13 +34,15 @@ protocol PaymentMethodsResponseDisplays: BaseResponseDisplays, FetchResponseDisp
     
     func displayPaymentCards(responseDisplay: PaymentMethodsModels.PaymentCards.ResponseDisplay)
     func displayPlaidToken(responseDisplay: PaymentMethodsModels.Link.ResponseDisplay)
+    func displayPlaidLinkedPopup(responseDisplay: PaymentMethodsModels.PlaidLinked.ResponseDisplay)
 }
 
-protocol PaymentMethodsDataStore: BaseDataStore, FetchDataStore {
+protocol PaymentMethodsDataStore: BaseDataStore, FetchDataStore, AssetDataStore {
     var selected: PaymentCard? { get set }
     var ach: PaymentCard? { get set }
     var cards: [PaymentCard] { get set }
-    var paymentMethod: PaymentCard.PaymentType? { get }
+    var paymentMethod: PaymentCard.PaymentType? { get set }
+    var exchangeType: ExchangeType? { get }
 }
 
 extension Interactor where Self: PaymentMethodsViewActions,
@@ -47,47 +52,83 @@ extension Interactor where Self: PaymentMethodsViewActions,
         var ach: PaymentCard?
         var cards: [PaymentCard] = []
         
-        PaymentCardsWorker().execute(requestData: PaymentCardsRequestData()) { [weak self] result in
+        let worker = (dataStore?.exchangeType == .buyCard || dataStore?.exchangeType == .buyAch) ? PaymentCardsWorker() : SellPaymentCardsWorker()
+        
+        guard !viewAction.openCards else {
+            self.presenter?.presentPaymentCards(actionResponse: .init(allPaymentCards: self.dataStore?.cards ?? [],
+                                                                      exchangeType: self.dataStore?.exchangeType))
+            return
+        }
+        
+        worker.execute(requestData: PaymentCardsRequestData()) { [weak self] result in
             switch result {
             case .success(let data):
                 ach = data?.first(where: { $0.type == .ach })
                 cards = data?.filter { $0.type == .card } ?? []
                 
+                // Card withdrawal only supports visa
+                if self?.dataStore?.exchangeType == .sellCard {
+                    cards = cards.filter { $0.scheme == .visa }
+                }
+                
+                self?.dataStore?.cards = cards
+                
             case .failure(let error):
                 self?.presenter?.presentError(actionResponse: .init(error: error))
             }
             
-            if viewAction.openCards == true {
-                self?.presenter?.presentPaymentCards(actionResponse: .init(allPaymentCards: self?.dataStore?.cards ?? []))
-            } else {
-                guard let paymentMethod = self?.dataStore?.paymentMethod else { return }
+            guard let paymentMethod = self?.dataStore?.paymentMethod else { return }
+            
+            switch paymentMethod {
+            case .ach:
+                self?.dataStore?.ach = ach
+                self?.dataStore?.cards = []
                 
-                switch paymentMethod {
-                case .ach:
-                    self?.dataStore?.ach = ach
-                    self?.dataStore?.cards = []
-                    
-                    self?.setPaymentCard(viewAction: .init(card: ach, setAmount: viewAction.setAmount))
-                    self?.presenter?.presentAch(actionResponse: .init(item: ach))
-                    
-                case .card:
-                    let card = cards.contains(where: { $0.id == self?.dataStore?.selected?.id }) ? self?.dataStore?.selected : cards.first
-                    self?.dataStore?.cards = cards
-                    self?.dataStore?.ach = nil
-                    
-                    self?.setPaymentCard(viewAction: .init(card: card, setAmount: viewAction.setAmount))
+                self?.setPaymentCard(viewAction: .init(card: ach, setAmount: viewAction.setAmount))
+                self?.presenter?.presentAch(actionResponse: .init(item: ach))
+                
+            case .card:
+                var card = cards.contains(where: { $0.id == self?.dataStore?.selected?.id }) ? self?.dataStore?.selected : cards.first
+                self?.dataStore?.cards = cards
+                self?.dataStore?.ach = nil
+                
+                if self?.dataStore?.exchangeType == .sellCard {
+                    card = cards.first(where: { $0.verifiedToSell == true })
                 }
                 
-                completion?()
+                self?.setPaymentCard(viewAction: .init(card: card, setAmount: viewAction.setAmount))
             }
+            
+            completion?()
         }
+    }
+    
+    func selectPaymentMethod(viewAction: PaymentMethodsModels.PaymentMethod.ViewAction) {
+        dataStore?.paymentMethod = viewAction.method
+        
+        getPayments(viewAction: .init(setAmount: false), completion: { [weak self] in
+            let item = AssetModels.Item(type: self?.dataStore?.paymentMethod,
+                                        achEnabled: UserManager.shared.profile?.kycAccessRights.hasAchAccess ?? false)
+            self?.prepareCurrencies(viewAction: item)
+            
+            guard let supportedCurrencies = self?.dataStore?.supportedCurrencies, !supportedCurrencies.isEmpty else {
+                self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
+                return
+            }
+            
+            let isSelectedCurencySupported = supportedCurrencies.contains(self?.dataStore?.amount?.currency.code.lowercased() ?? "")
+            guard let currency = isSelectedCurencySupported ? self?.dataStore?.amount?.currency : self?.dataStore?.currencies.first else { return }
+            self?.dataStore?.amount = .zero(currency)
+            
+            self?.setAmount(viewAction: .init(currency: currency.code, didFinish: true))
+        })
     }
     
     func setPaymentCard(viewAction: PaymentMethodsModels.SetPaymentCard.ViewAction) {
         dataStore?.selected = viewAction.card
         
         guard viewAction.setAmount else { return }
-        (self as? (any AssetViewActions))?.setAmount(viewAction: .init())
+        setAmount(viewAction: .init())
     }
     
     func getPlaidToken(viewAction: PaymentMethodsModels.Link.ViewAction) {
@@ -164,12 +205,17 @@ extension Interactor where Self: PaymentMethodsViewActions,
         )
         return dictionary.compactMapValues { $0 }
     }
+    
+    func showPlaidLinkedPopup(viewAction: PaymentMethodsModels.PlaidLinked.ViewAction) {
+        presenter?.presentPlaidLinkedPopup(actionResponse: .init())
+    }
 }
 
 extension Presenter where Self: PaymentMethodsActionResponses,
                           Self.ResponseDisplays: PaymentMethodsResponseDisplays {
     func presentPaymentCards(actionResponse: PaymentMethodsModels.PaymentCards.ActionResponse) {
-        viewController?.displayPaymentCards(responseDisplay: .init(allPaymentCards: actionResponse.allPaymentCards))
+        viewController?.displayPaymentCards(responseDisplay: .init(allPaymentCards: actionResponse.allPaymentCards,
+                                                                   exchangeType: actionResponse.exchangeType))
     }
     
     func presentAch(actionResponse: PaymentMethodsModels.Get.ActionResponse) {
@@ -198,20 +244,39 @@ extension Presenter where Self: PaymentMethodsActionResponses,
     func presentPlaidToken(actionResponse: PaymentMethodsModels.Link.ActionResponse) {
         viewController?.displayPlaidToken(responseDisplay: .init(plaidHandler: actionResponse.plaidHandler))
     }
+    
+    func presentPlaidLinkedPopup(actionResponse: PaymentMethodsModels.PlaidLinked.ActionResponse) {
+        let model = PopupViewModel(title: .text(L10n.Buy.plaidAccountLinkingTitle),
+                                   body: L10n.Buy.plaidAccountLinkingDescription,
+                                   buttons: [.init(title: L10n.Button.gotIt), .init(title: L10n.Account.contactUs)])
+        
+        viewController?.displayPlaidLinkedPopup(responseDisplay: .init(model: model))
+    }
 }
 
 extension Controller where Self: PaymentMethodsResponseDisplays {
     func displayPaymentCards(responseDisplay: PaymentMethodsModels.PaymentCards.ResponseDisplay) {
         view.endEditing(true)
         
-        (coordinator as? ExchangeCoordinator)?.showCardSelector(cards: responseDisplay.allPaymentCards, selected: { [weak self] selectedCard in
-            guard let selectedCard else { return }
+        let cards = responseDisplay.allPaymentCards
+        let from = responseDisplay.exchangeType
+        
+        (coordinator as? ExchangeCoordinator)?.showCardSelector(cards: cards, from: from) { [weak self] selectedCard in
             (self?.interactor as? (any PaymentMethodsViewActions))?.setPaymentCard(viewAction: .init(card: selectedCard, setAmount: true))
-        })
+        }
     }
     
     func displayPlaidToken(responseDisplay: PaymentMethodsModels.Link.ResponseDisplay) {
         plaidHandler = responseDisplay.plaidHandler
         plaidHandler?.open(presentUsing: .viewController(self))
+    }
+    
+    func displayPlaidLinkedPopup(responseDisplay: PaymentMethodsModels.PlaidLinked.ResponseDisplay) {
+        (coordinator as? ExchangeCoordinator)?.showPopup(with: responseDisplay.model, callbacks: [ {[weak self] in
+                (self?.coordinator as? ExchangeCoordinator)?.hidePopup()
+            }, { [weak self] in
+                (self?.coordinator as? ExchangeCoordinator)?.hidePopup()
+                (self?.coordinator as? ExchangeCoordinator)?.showSupport()}
+        ])
     }
 }

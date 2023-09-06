@@ -23,6 +23,7 @@ enum ExchangeEndpoints: String, URLType {
     case details = "v2/exchange/%@"
     case history = "v2/exchanges"
     case paymentInstruments = "v2/payment-instruments"
+    case sellPaymentInstruments = "sell-payment-instruments"
     case paymentInstrument = "payment-instrument"
     case paymentInstrumentId = "payment-instrument?instrument_id=%@"
     case paymentStatus = "payment-status?reference=%@"

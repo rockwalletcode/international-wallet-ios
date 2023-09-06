@@ -33,6 +33,9 @@ class SellViewController: BaseExchangeTableViewController<ExchangeCoordinator,
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
         switch dataSource?.sectionIdentifier(for: indexPath.section) as? Models.Section {
+        case .segment:
+            cell = self.tableView(tableView, segmentControlCellForRowAt: indexPath)
+            
         case .rateAndTimer:
             cell = self.tableView(tableView, timerCellForRowAt: indexPath)
             cell.contentView.setupCustomMargins(top: .small, leading: .large, bottom: .extraSmall, trailing: .large)
@@ -90,8 +93,6 @@ class SellViewController: BaseExchangeTableViewController<ExchangeCoordinator,
             view.didTapFromAssetsSelection = { [weak self] in
                 self?.interactor?.navigateAssetSelector(viewAction: .init())
             }
-            
-            view.setupCustomMargins(top: .zero, leading: .zero, bottom: .medium, trailing: .zero)
         }
         
         return cell
@@ -117,6 +118,10 @@ class SellViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         coordinator?.showPaymentMethodSupport()
     }
     
+    override func showPlaidAccountPopup() {
+        interactor?.showPlaidLinkedPopup(viewAction: .init())
+    }
+    
     // MARK: - SellResponseDisplay
     
     func displayNavigateAssetSelector(responseDisplay: SellModels.AssetSelector.ResponseDisplay) {
@@ -140,7 +145,9 @@ class SellViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         coordinator?.showToastMessage(model: responseDisplay.model, configuration: responseDisplay.config)
     }
     
-    func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
+    override func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
+        super.displayAmount(responseDisplay: responseDisplay)
+        
         guard let fromSection = sections.firstIndex(where: { $0.hashValue == Models.Section.swapCard.hashValue }),
               let toSection = sections.firstIndex(where: { $0.hashValue == Models.Section.paymentMethod.hashValue }),
               let limitActionsSection = sections.firstIndex(where: { $0.hashValue == Models.Section.limitActions.hashValue }),
@@ -180,7 +187,7 @@ class SellViewController: BaseExchangeTableViewController<ExchangeCoordinator,
                                       to: dataStore?.fromAmount,
                                       from: dataStore?.toAmount,
                                       fromFeeBasis: dataStore?.fromFeeBasis,
-                                      card: dataStore?.ach,
+                                      card: dataStore?.selected,
                                       quote: dataStore?.quote,
                                       availablePayments: responseDisplay.availablePayments,
                                       createTransactionModel: dataStore?.createTransactionModel)

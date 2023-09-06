@@ -35,10 +35,12 @@ enum PaymentMethodsModels {
         
         struct ActionResponse {
             var allPaymentCards: [PaymentCard]
+            var exchangeType: ExchangeType?
         }
         
         struct ResponseDisplay {
             var allPaymentCards: [PaymentCard]
+            var exchangeType: ExchangeType?
         }
     }
     
@@ -51,6 +53,24 @@ enum PaymentMethodsModels {
         
         struct ResponseDisplay {
             var plaidHandler: PlaidLinkKitHandler
+        }
+    }
+    
+    struct PaymentMethod {
+        struct ViewAction {
+            let method: PaymentCard.PaymentType
+        }
+        
+        struct ActionResponse {}
+        
+        struct ResponseDisplay {}
+    }
+    
+    struct PlaidLinked {
+        struct ViewAction {}
+        struct ActionResponse {}
+        struct ResponseDisplay {
+            let model: PopupViewModel
         }
     }
 }

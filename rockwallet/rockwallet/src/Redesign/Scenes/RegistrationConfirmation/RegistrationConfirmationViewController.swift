@@ -149,11 +149,11 @@ class RegistrationConfirmationViewController: BaseTableViewController<AccountCoo
                 self.coordinator?.showVerifyPhoneNumber()
                 
             case .twoStepAccountEmailSettings, .twoStepEmail:
-                self.coordinator?.popToRoot(completion: { [weak self] in
+                self.coordinator?.popViewController { [weak self] in
                     self?.coordinator?.showToastMessage(model: InfoViewModel(description: .text(L10n.TwoStep.Success.message),
                                                                              dismissType: .auto),
                                                         configuration: Presets.InfoView.warning)
-                })
+                }
                 
             case .twoStepAccountAppSettings:
                 self.coordinator?.showAuthenticatorApp(setTwoStepAppModel: self.dataStore?.setTwoStepAppModel)

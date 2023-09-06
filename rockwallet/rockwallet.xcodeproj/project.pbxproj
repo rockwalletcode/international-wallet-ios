@@ -57,6 +57,7 @@
 		0452C93C29D42FC600CCC8DA /* WalletEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452C93429D42FC600CCC8DA /* WalletEndpoints.swift */; };
 		0452C93E29D4310100CCC8DA /* VeriffKYCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452C93D29D4310100CCC8DA /* VeriffKYCManager.swift */; };
 		0453B0C029D2DEB100BBE246 /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453B0BF29D2DEB100BBE246 /* GoogleAnalytics.swift */; };
+		04575B862AA71A2A0057E42A /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04575B852AA71A2A0057E42A /* Debounce.swift */; };
 		045B5EF829B099CE00C25CB8 /* BiometricStatusWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B5EF729B099CE00C25CB8 /* BiometricStatusWorker.swift */; };
 		0486949A2A16388D004EDDBA /* TwoStepModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048694992A16388D004EDDBA /* TwoStepModels.swift */; };
 		0486949C2A1638E5004EDDBA /* TwoStepVIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486949B2A1638E5004EDDBA /* TwoStepVIP.swift */; };
@@ -523,7 +524,6 @@
 		7EF45F8A284768C100D1F7B0 /* ItemSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F83284768C100D1F7B0 /* ItemSelectionStore.swift */; };
 		7EF45F8B284768C100D1F7B0 /* ItemSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F84284768C100D1F7B0 /* ItemSelectionViewController.swift */; };
 		7EF45F8C284768C100D1F7B0 /* ItemSelectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F85284768C100D1F7B0 /* ItemSelectionModels.swift */; };
-		7EF45F8D284768C100D1F7B0 /* ItemSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F86284768C100D1F7B0 /* ItemSelectionCoordinator.swift */; };
 		7EF45F8E284768EC00D1F7B0 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F7A2846244F00D1F7B0 /* ItemView.swift */; };
 		7EF45F8F284768FE00D1F7B0 /* RegistrationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F7D2847672C00D1F7B0 /* RegistrationWorker.swift */; };
 		7EF45F91284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F90284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift */; };
@@ -846,6 +846,7 @@
 		0452C93429D42FC600CCC8DA /* WalletEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletEndpoints.swift; sourceTree = "<group>"; };
 		0452C93D29D4310100CCC8DA /* VeriffKYCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeriffKYCManager.swift; sourceTree = "<group>"; };
 		0453B0BF29D2DEB100BBE246 /* GoogleAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalytics.swift; sourceTree = "<group>"; };
+		04575B852AA71A2A0057E42A /* Debounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
 		045B5EF729B099CE00C25CB8 /* BiometricStatusWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricStatusWorker.swift; sourceTree = "<group>"; };
 		048694992A16388D004EDDBA /* TwoStepModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoStepModels.swift; sourceTree = "<group>"; };
 		0486949B2A1638E5004EDDBA /* TwoStepVIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoStepVIP.swift; sourceTree = "<group>"; };
@@ -1322,7 +1323,6 @@
 		7EF45F83284768C100D1F7B0 /* ItemSelectionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectionStore.swift; sourceTree = "<group>"; };
 		7EF45F84284768C100D1F7B0 /* ItemSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectionViewController.swift; sourceTree = "<group>"; };
 		7EF45F85284768C100D1F7B0 /* ItemSelectionModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectionModels.swift; sourceTree = "<group>"; };
-		7EF45F86284768C100D1F7B0 /* ItemSelectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSelectionCoordinator.swift; sourceTree = "<group>"; };
 		7EF45F90284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationWorker.swift; sourceTree = "<group>"; };
 		7EF514B428EB5B6D004A31C5 /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		7EF514B528EB5B6D004A31C5 /* staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = staging.xcconfig; sourceTree = "<group>"; };
@@ -2684,6 +2684,7 @@
 				CE8CD8DC1E2D9EF200785E02 /* Sender.swift */,
 				7B54E57327F4A2B0002DD1E4 /* Shadowable.swift */,
 				7B8FAF00299B898D002EB972 /* TouchSpamPreventer.swift */,
+				04575B852AA71A2A0057E42A /* Debounce.swift */,
 				0453B0BF29D2DEB100BBE246 /* GoogleAnalytics.swift */,
 				7B62ACFA28B3BDA000CE81E7 /* String+Chunk.swift */,
 				7ECCA99628742E1700F99368 /* UIApplication+ActiveWindow.swift */,
@@ -2958,7 +2959,6 @@
 				7EF45F85284768C100D1F7B0 /* ItemSelectionModels.swift */,
 				7EF45F84284768C100D1F7B0 /* ItemSelectionViewController.swift */,
 				7EF45F81284768C100D1F7B0 /* ItemSelectionInteractor.swift */,
-				7EF45F86284768C100D1F7B0 /* ItemSelectionCoordinator.swift */,
 			);
 			path = ItemSelection;
 			sourceTree = "<group>";
@@ -3727,9 +3727,10 @@
 		75A2A7881DA5934300A983D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				CLASSPREFIX = RW;
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "RockWallet, LLC";
 				TargetAttributes = {
 					22A9A9951DF63426000F0016 = {
@@ -4089,6 +4090,7 @@
 				7B39478A297000ED007D405E /* ForgotPasswordInteractor.swift in Sources */,
 				C46C2902287EBF4F0035C843 /* BaseInfoViewController.swift in Sources */,
 				CE5E6C961EB8CCF500A476DB /* SimpleWebViewController.swift in Sources */,
+				04575B862AA71A2A0057E42A /* Debounce.swift in Sources */,
 				7E5CB3A42835090E00EC787E /* StateDisplayable.swift in Sources */,
 				044D09A529C8561A00C510DC /* PhoneNumberView.swift in Sources */,
 				CE4B6C1A1E219CA600CF935B /* RescanCoordinator.swift in Sources */,
@@ -4472,7 +4474,6 @@
 				7ED83AF6284F40EB00261565 /* ChecklistItemView.swift in Sources */,
 				7EA9F7B529683A9D000F45B6 /* CountriesAndStatesModels.swift in Sources */,
 				7EF2998A27E3B8C400A2238A /* ApiClient.swift in Sources */,
-				7EF45F8D284768C100D1F7B0 /* ItemSelectionCoordinator.swift in Sources */,
 				7C1931CD2327371A0061DE20 /* CoreDatabase.swift in Sources */,
 				7EF45F582845353100D1F7B0 /* DateView.swift in Sources */,
 				0486949A2A16388D004EDDBA /* TwoStepModels.swift in Sources */,
@@ -4855,7 +4856,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INCLUDE_PATHS = "$(SDK_DIR)/usr/include $(SRCROOT)/Modules $(SRCROOT)/breadwallet/src/Platform $(SRCROOT)/Modules/breadwallet-core/Swift/Core";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -4918,7 +4918,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
-				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_INCLUDE_PATHS = "$(SDK_DIR)/usr/include $(SRCROOT)/Modules $(SRCROOT)/breadwallet/src/Platform $(SRCROOT)/Modules/breadwallet-core/Swift/Core";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -5200,7 +5199,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INCLUDE_PATHS = "$(SDK_DIR)/usr/include $(SRCROOT)/Modules $(SRCROOT)/breadwallet/src/Platform $(SRCROOT)/Modules/breadwallet-core/Swift/Core";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -5432,7 +5430,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
-				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_INCLUDE_PATHS = "$(SDK_DIR)/usr/include $(SRCROOT)/Modules $(SRCROOT)/breadwallet/src/Platform $(SRCROOT)/Modules/breadwallet-core/Swift/Core";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -5669,7 +5666,7 @@
 			repositoryURL = "https://github.com/rockwalletcode/sardine-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.2;
+				version = 1.0.25;
 			};
 		};
 		044D098029C3352400C510DC /* XCRemoteSwiftPackageReference "frames-ios" */ = {
@@ -5749,7 +5746,7 @@
 			repositoryURL = "https://github.com/rockwalletcode/wallet-kit-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = 5.0.26;
+				version = 5.0.27;
 			};
 		};
 		7E5CB32B2834E63400EC787E /* XCRemoteSwiftPackageReference "cosmos" */ = {

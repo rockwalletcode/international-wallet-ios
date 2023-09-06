@@ -28,12 +28,13 @@ struct InfoViewConfiguration: Configurable {
     var title: LabelConfiguration?
     var description: LabelConfiguration?
     
-    var swapLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: Colors.Text.two)
-    var buyLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: Colors.Text.two)
+    var swapLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: LightColors.Text.two)
+    var buyLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: LightColors.Text.two)
+    var sellLimits: LabelConfiguration? = .init(font: Fonts.Subtitle.three, textColor: LightColors.Text.two)
     
     var swapLimitsValue: TitleValueConfiguration = Presets.TitleValue.bold
     var buyDailyLimitsView: TitleValueConfiguration = Presets.TitleValue.bold
-    var buyAchDailyLimitsView: TitleValueConfiguration = Presets.TitleValue.bold
+    var sellLimitsView: TitleValueConfiguration = Presets.TitleValue.bold
     
     var button: ButtonConfiguration?
     var tickboxItem: TickboxItemConfiguration?
@@ -54,10 +55,11 @@ struct InfoViewModel: ViewModel {
     
     var swapLimits: LabelViewModel?
     var buyLimits: LabelViewModel?
+    var sellLimits: LabelViewModel?
     
     var swapLimitsValue: TitleValueViewModel?
     var buyDailyLimitsView: TitleValueViewModel?
-    var buyAchDailyLimitsView: TitleValueViewModel?
+    var sellLimitsView: TitleValueViewModel?
     
     var button: ButtonViewModel?
     var tickbox: TickboxItemViewModel?
@@ -155,7 +157,17 @@ class FEInfoView: FEView<InfoViewConfiguration, InfoViewModel> {
         return view
     }()
     
-    private lazy var buyAchDailyLimitsView: TitleValueView = {
+    private lazy var spacerViewSell: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    private lazy var sellLimitsLabel: FELabel = {
+        let label = FELabel()
+        return label
+    }()
+    
+    private lazy var sellLimitsView: TitleValueView = {
         let view = TitleValueView()
         return view
     }()
@@ -232,8 +244,15 @@ class FEInfoView: FEView<InfoViewConfiguration, InfoViewModel> {
         buyDailyLimitsView.snp.makeConstraints { make in
             make.height.equalTo(ViewSizes.extraSmall.rawValue)
         }
-        verticalStackView.addArrangedSubview(buyAchDailyLimitsView)
-        buyAchDailyLimitsView.snp.makeConstraints { make in
+        
+        verticalStackView.addArrangedSubview(spacerViewSell)
+        spacerViewSell.snp.makeConstraints { make in
+            make.width.equalTo(spacerView.snp.width)
+        }
+        
+        verticalStackView.addArrangedSubview(sellLimitsLabel)
+        verticalStackView.addArrangedSubview(sellLimitsView)
+        sellLimitsView.snp.makeConstraints { make in
             make.height.equalTo(ViewSizes.extraSmall.rawValue)
         }
         
@@ -275,7 +294,8 @@ class FEInfoView: FEView<InfoViewConfiguration, InfoViewModel> {
         swapLimitsView.configure(with: config.swapLimitsValue)
         buyLimitsLabel.configure(with: config.buyLimits)
         buyDailyLimitsView.configure(with: config.buyDailyLimitsView)
-        buyAchDailyLimitsView.configure(with: config.buyAchDailyLimitsView)
+        sellLimitsLabel.configure(with: config.sellLimits)
+        sellLimitsView.configure(with: config.sellLimitsView)
         
         bottomButton.configure(with: config.button)
         tickboxItemView.configure(with: config.tickboxItem)
@@ -322,8 +342,12 @@ class FEInfoView: FEView<InfoViewConfiguration, InfoViewModel> {
         buyDailyLimitsView.setup(with: viewModel.buyDailyLimitsView)
         buyDailyLimitsView.isHidden = viewModel.buyDailyLimitsView == nil
         
-        buyAchDailyLimitsView.setup(with: viewModel.buyAchDailyLimitsView)
-        buyAchDailyLimitsView.isHidden = !viewModel.canUseAch
+        sellLimitsView.setup(with: viewModel.sellLimitsView)
+        sellLimitsView.isHidden = viewModel.sellLimitsView == nil
+        spacerViewSell.isHidden = viewModel.sellLimitsView == nil
+        
+        sellLimitsLabel.setup(with: viewModel.sellLimits)
+        sellLimitsLabel.isHidden = viewModel.sellLimitsView == nil
         
         bottomButton.setup(with: viewModel.button)
         buttonsStackView.isHidden = viewModel.button == nil
@@ -342,8 +366,6 @@ class FEInfoView: FEView<InfoViewConfiguration, InfoViewModel> {
         guard headerLeadingView.isHidden,
               headerTitleLabel.isHidden,
               headerTrailingButton.isHidden else {
-            layoutIfNeeded()
-            
             return
         }
         
@@ -352,8 +374,6 @@ class FEInfoView: FEView<InfoViewConfiguration, InfoViewModel> {
         tickboxItemView.didToggleTickbox = { [weak self] value in
             self?.tickboxTapped(value: value)
         }
-        
-        layoutIfNeeded()
     }
     
     @objc private func headerButtonTapped(_ sender: UIButton?) {

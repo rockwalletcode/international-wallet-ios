@@ -41,12 +41,14 @@ public class BRUserAgentHeaderGenerator {
               let build = info["CFBundleVersion"] as? String,
               let majorString = version.components(separatedBy: ".").first,
               let minorString = version.components(separatedBy: ".").dropFirst().first,
+              let engineeringString = version.components(separatedBy: ".").last,
               let majorVersion =  Int(majorString),
-              let minorVersion = Int(minorString) else { return "null_version" }
+              let minorVersion = Int(minorString),
+              let engineeringVersion = Int(engineeringString) else { return "null_version" }
         
         let buildString = build.components(separatedBy: ".").joined(separator: "")
         
-        return String(format: "%d0", majorVersion) + String(format: "%d0", minorVersion) + buildString
+        return String(format: "%d", majorVersion) + String(format: "%d", minorVersion) + String(format: "%d", engineeringVersion) + buildString
     }
     
     private static func appNameString() -> String {

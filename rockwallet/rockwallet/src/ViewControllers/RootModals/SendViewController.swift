@@ -49,7 +49,12 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
     private let addressCell: AddressCell
     private let attributeCell: AttributeCell?
     private let memoCell = DescriptionSendCell(placeholder: L10n.Send.descriptionLabel)
-    private let sendButton = BRDButton(title: L10n.Send.sendLabel, type: .secondary)
+    private lazy var sendButton: FEButton = {
+        let button = FEButton()
+        button.configure(with: Presets.Button.primary)
+        button.setup(with: .init(title: L10n.Send.sendLabel))
+        return button
+    }()
     private var attributeCellHeight: NSLayoutConstraint?
     private let confirmTransitioningDelegate = PinTransitioningDelegate()
     private let currency: Currency
@@ -405,26 +410,20 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
             feeOutput = L10n.Send.fee(feeText)
         }
         
-        let balanceLabelattributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: Fonts.Body.two,
-            NSAttributedString.Key.foregroundColor: Colors.Text.two
+        let balanceLabelattributes: [NSAttributedString.Key: Any] = [.font: Fonts.Body.two,
+                                                                     .foregroundColor: LightColors.Text.two
         ]
         
-        var balanceAttributes: [NSAttributedString.Key: Any] = [ NSAttributedString.Key.font: Fonts.Subtitle.two ]
-        if isSendingMax || maximum == nil {
-            balanceAttributes[NSAttributedString.Key.foregroundColor] = Colors.Text.two
-        } else {
-            balanceAttributes[NSAttributedString.Key.underlineStyle] = NSUnderlineStyle.single.rawValue
-            balanceAttributes[NSAttributedString.Key.foregroundColor] = Colors.Text.two
-        }
+        var balanceAttributes: [NSAttributedString.Key: Any] = [.font: Fonts.Subtitle.two,
+                                                                .foregroundColor: LightColors.Text.two]
         
-        let feeAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: Fonts.Body.two,
-            NSAttributedString.Key.foregroundColor: Colors.Text.two
+        let feeAttributes: [NSAttributedString.Key: Any] = [.font: Fonts.Body.two,
+                                                            .foregroundColor: LightColors.Text.two
         ]
         
         let balanceOutput = NSMutableAttributedString()
         balanceOutput.append(NSAttributedString(string: isSendingMax ? L10n.Send.sendingMax : L10n.Send.balanceString, attributes: balanceLabelattributes))
+        balanceOutput.append(NSAttributedString(string: " "))
         balanceOutput.append(NSAttributedString(string: balanceAmount.description, attributes: balanceAttributes))
         return (balanceOutput, NSAttributedString(string: feeOutput, attributes: feeAttributes), !isSendingMax)
     }

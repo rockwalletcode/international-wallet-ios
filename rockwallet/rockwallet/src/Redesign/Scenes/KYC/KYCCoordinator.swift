@@ -33,7 +33,7 @@ class KYCCoordinator: BaseCoordinator,
     }
     
     func showCountrySelector(countries: [Country], selected: ((Country?) -> Void)?) {
-        openModally(coordinator: ItemSelectionCoordinator.self,
+        openModally(coordinator: ExchangeCoordinator.self,
                     scene: Scenes.ItemSelection,
                     presentationStyle: .formSheet) { vc in
             vc?.dataStore?.items = countries
@@ -45,7 +45,7 @@ class KYCCoordinator: BaseCoordinator,
     }
     
     func showStateSelector(states: [Place], selected: ((Place?) -> Void)?) {
-        openModally(coordinator: ItemSelectionCoordinator.self,
+        openModally(coordinator: ExchangeCoordinator.self,
                     scene: Scenes.ItemSelection,
                     presentationStyle: .formSheet) { vc in
             vc?.dataStore?.items = states
@@ -57,7 +57,7 @@ class KYCCoordinator: BaseCoordinator,
     }
     
     func showFindAddress(completion: ((ResidentialAddress) -> Void)?) {
-        openModally(coordinator: ItemSelectionCoordinator.self,
+        openModally(coordinator: ExchangeCoordinator.self,
                     scene: Scenes.FindAddress,
                     presentationStyle: .formSheet) { vc in
             vc?.callback = { address in
