@@ -85,8 +85,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         return view
     }()
     
-    private lazy var segmentControl: FESegmentControl = {
-        let view = FESegmentControl()
+    private lazy var segmentControl: SegmentControl = {
+        let view = SegmentControl()
         return view
     }()
     
@@ -421,6 +421,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         
         Store.subscribe(self, name: .showSell) { _ in
             self.didTapSell?()
+        }
+        
+        Store.subscribe(self, name: .showBuy) { _ in
+            self.didTapBuy?(.card)
         }
         
         Reachability.addDidChangeCallback({ [weak self] isReachable in

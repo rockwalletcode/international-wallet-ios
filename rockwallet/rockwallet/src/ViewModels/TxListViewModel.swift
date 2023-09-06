@@ -35,7 +35,7 @@ struct TxListViewModel: TxViewModel, Hashable {
                               rate: showFiatAmounts ? rate : nil,
                               negative: (tx.direction == .sent)).description
             return text
-        } else if let destination = destination,
+        } else if let destination = isSell ? exchange?.source : destination,
                   let currency = Store.state.currencies.first(where: { $0.code.lowercased() == destination.currency.lowercased() }) {
             let amount = Amount(tokenString: destination.currencyAmount.description, currency: currency)
             let formatter = ExchangeFormatter.current
@@ -56,7 +56,7 @@ struct TxListViewModel: TxViewModel, Hashable {
         case .swap:
             return handleSwapTransactions()
             
-        case .sell:
+        case .sellAch, .sellCard:
             return handleSellTransactions()
             
         case .buyAch, .buyCard, .instantAch:
@@ -98,7 +98,6 @@ struct TxListViewModel: TxViewModel, Hashable {
             
         default:
             status = .pending
-            
         }
         
         switch exchangeType {
@@ -144,13 +143,13 @@ struct TxListViewModel: TxViewModel, Hashable {
     private func handleSellTransactions() -> String {
         switch status {
         case .invalid, .failed, .refunded:
-            return L10n.Transaction.withdrawalFailed
+            return exchangeType == .sellCard ? L10n.Transaction.withdrawalWithCardFailed : L10n.Transaction.withdrawalFailed
             
         case .complete, .manuallySettled, .confirmed:
-            return L10n.Transaction.withdrawalComplete
+            return exchangeType == .sellCard ? L10n.Transaction.withdarwalWithCardComplete : L10n.Transaction.withdrawalComplete
             
         default:
-            return L10n.Transaction.pendingWithdrawWithAch
+            return exchangeType == .sellCard ? L10n.Transaction.pendingWithdrawalWithCard : L10n.Transaction.pendingWithdrawWithAch
         }
     }
     

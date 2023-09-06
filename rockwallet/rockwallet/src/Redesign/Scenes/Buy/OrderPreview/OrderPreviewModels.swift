@@ -42,6 +42,7 @@ enum OrderPreviewModels {
     
     enum Section: Sectionable {
         case achSegment
+        case disclaimer
         case orderInfoCard
         case payment
         case termsAndConditions

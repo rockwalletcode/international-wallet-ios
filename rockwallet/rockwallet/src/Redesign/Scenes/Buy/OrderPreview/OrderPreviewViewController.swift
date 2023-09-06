@@ -38,6 +38,11 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
         switch dataSource?.sectionIdentifier(for: indexPath.section) as? Models.Section {
+        case .disclaimer:
+            cell = self.tableView(tableView, infoViewCellForRowAt: indexPath)
+            (cell as? WrapperTableViewCell<FEInfoView>)?.wrappedView.configure(with: Presets.InfoView.warning)
+            cell.contentView.setupCustomMargins(vertical: .zero, horizontal: .large)
+            
         case .achSegment:
             cell = self.tableView(tableView, segmentControlCellForRowAt: indexPath)
             
@@ -46,16 +51,17 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
             
         case .payment:
             cell = self.tableView(tableView, paymentMethodCellForRowAt: indexPath)
+            cell.contentView.setupCustomMargins(vertical: .zero, horizontal: .large)
             
         case .termsAndConditions:
-            if let isAchAccount = dataStore?.isAchAccount, isAchAccount {
-                cell = self.tableView(tableView, infoViewCellForRowAt: indexPath)
-            } else {
+            if dataStore?.type == .buy && dataStore?.isAchAccount == false {
                 cell = self.tableView(tableView, labelCellForRowAt: indexPath)
                 
                 let wrappedCell = cell as? WrapperTableViewCell<FELabel>
                 wrappedCell?.isUserInteractionEnabled = true
                 wrappedCell?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(termsAndConditionsTapped(_:))))
+            } else {
+                cell = self.tableView(tableView, infoViewCellForRowAt: indexPath)
             }
             
         case .submit:
@@ -72,7 +78,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
     }
     
     func tableView(_ tableView: UITableView, segmentControlCellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: WrapperTableViewCell<FESegmentControl> = tableView.dequeueReusableCell(for: indexPath),
+        guard let cell: WrapperTableViewCell<SegmentControl> = tableView.dequeueReusableCell(for: indexPath),
               let model = dataSource?.itemIdentifier(for: indexPath) as? SegmentControlViewModel else {
             return UITableViewCell()
         }
@@ -91,7 +97,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
     
     private func setSegment(_ segment: Int) {
         guard let section = sections.firstIndex(where: { $0.hashValue == Models.Section.achSegment.hashValue }),
-              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<FESegmentControl> else { return }
+              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<SegmentControl> else { return }
         cell.wrappedView.selectSegment(index: segment)
         
         interactor?.changeAchDeliveryType(viewAction: .init(achDeliveryType: Models.AchDeliveryType.allCases[segment]))
@@ -268,7 +274,7 @@ class OrderPreviewViewController: BaseTableViewController<ExchangeCoordinator,
         
         guard let isAch = dataStore?.isAchAccount, let type = dataStore?.type else { return }
         
-        let exchangeType: ExchangeType = isAch ? (type == .sell ? .sell : .buyAch) : .buyCard
+        let exchangeType: ExchangeType = isAch ? (type == .sell ? .sellAch : .buyAch) : .buyCard
         coordinator?.showSuccess(reason: responseDisplay.reason,
                                  itemId: responseDisplay.paymentReference,
                                  exchangeType: exchangeType)

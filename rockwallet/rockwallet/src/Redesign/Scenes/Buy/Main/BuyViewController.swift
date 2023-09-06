@@ -115,43 +115,6 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         return cell
     }
     
-    func tableView(_ tableView: UITableView, segmentControlCellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: WrapperTableViewCell<FESegmentControl> = tableView.dequeueReusableCell(for: indexPath),
-              let model = dataSource?.itemIdentifier(for: indexPath) as? SegmentControlViewModel else {
-            return UITableViewCell()
-        }
-        
-        cell.setup { view in
-            view.configure(with: .init())
-            view.setup(with: model)
-            
-            view.didChangeValue = { [weak self] segment in
-                self?.view.endEditing(true)
-                self?.setSegment(segment)
-            }
-        }
-        
-        return cell
-    }
-    
-    private func setSegment(_ segment: Int) {
-        guard let section = sections.firstIndex(where: { $0.hashValue == Models.Section.segment.hashValue }),
-              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<FESegmentControl> else { return }
-        cell.wrappedView.selectSegment(index: segment)
-        
-        let paymentTypes = PaymentCard.PaymentType.allCases
-        if paymentTypes.count >= segment {
-            let paymentType = paymentTypes[segment]
-            
-            interactor?.dataStore?.paymentMethod = paymentType
-            interactor?.getPayments(viewAction: .init(setAmount: false), completion: { [weak self] in
-                self?.interactor?.selectPaymentMethod(viewAction: .init(method: paymentType))
-            })
-            
-            GoogleAnalytics.logEvent(GoogleAnalytics.Buy(type: paymentType.rawValue))
-        }
-    }
-    
     // MARK: - User Interaction
     
     @objc override func buttonTapped() {
@@ -170,6 +133,10 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
     
     override func onPaymentMethodErrorLinkTapped() {
         coordinator?.showPaymentMethodSupport()
+    }
+    
+    override func showPlaidAccountPopup() {
+        interactor?.showPlaidLinkedPopup(viewAction: .init())
     }
     
     // MARK: - BuyResponseDisplay
@@ -195,7 +162,9 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         coordinator?.showToastMessage(model: responseDisplay.model, configuration: responseDisplay.config)
     }
     
-    func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
+    override func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
+        super.displayAmount(responseDisplay: responseDisplay)
+        
         guard let fromSection = sections.firstIndex(where: { $0.hashValue == Models.Section.swapCard.hashValue }),
               let toSection = sections.firstIndex(where: { $0.hashValue == Models.Section.paymentMethod.hashValue }),
               let limitActionsSection = sections.firstIndex(where: { $0.hashValue == Models.Section.limitActions.hashValue }),

@@ -96,6 +96,7 @@ final class BuyPresenter: NSObject, Presenter, BuyActionResponses {
                                       logo: .image(Asset.bank.image),
                                       cardNumber: .text(paymentCard.displayName),
                                       userInteractionEnabled: false,
+                                      plaidLinked: true,
                                       errorMessage: paymentCard.paymentMethodStatus.isProblematic ? .attributedText(unavailableText) : nil)
                     
                 default:
@@ -162,18 +163,18 @@ final class BuyPresenter: NSObject, Presenter, BuyActionResponses {
         let title = actionResponse.paymentMethod == .card ? L10n.Buy.yourBuyLimits : L10n.Buy.yourAchBuyLimits
         let profile = UserManager.shared.profile
         
-        let perTransactionLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowancePerExchange : profile?.achAllowancePerExchange
-        let weeklyLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowanceWeekly : profile?.achAllowanceWeekly
-        let monthlyLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowanceMonthly : profile?.achAllowanceMonthly
+        let dailyLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowanceDaily : profile?.buyAchAllowanceDaily
+        let weeklyLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowanceWeekly : profile?.buyAchAllowanceWeekly
+        let monthlyLimit = actionResponse.paymentMethod == .card ? profile?.buyAllowanceMonthly : profile?.buyAchAllowanceMonthly
         
-        let perTransactionLimitText = ExchangeFormatter.current.string(for: perTransactionLimit) ?? ""
+        let dailyLimitText = ExchangeFormatter.current.string(for: dailyLimit) ?? ""
         let weeklyLimitText = ExchangeFormatter.current.string(for: weeklyLimit) ?? ""
         let monthlyLimitText = ExchangeFormatter.current.string(for: monthlyLimit) ?? ""
         
         let config: WrapperPopupConfiguration<LimitsPopupConfiguration> = .init(wrappedView: .init())
         let wrappedViewModel: LimitsPopupViewModel = .init(title: .text(title),
-                                                           perTransaction: .init(title: .text(L10n.Buy.perTransactionLimit),
-                                                                                 value: .text("\(perTransactionLimitText) \(Constant.usdCurrencyCode)")),
+                                                           daily: .init(title: .text(L10n.Account.daily),
+                                                                                 value: .text("\(dailyLimitText) \(Constant.usdCurrencyCode)")),
                                                            weekly: .init(title: .text(L10n.Account.weekly),
                                                                          value: .text("\(weeklyLimitText) \(Constant.usdCurrencyCode)")),
                                                            monthly: .init(title: .text(L10n.Account.monthly),
@@ -209,10 +210,10 @@ final class BuyPresenter: NSObject, Presenter, BuyActionResponses {
         
         switch paymentMethod {
         case .card:
-            return !limits.filter({ $0.exchangeType == .buyCard }).isEmpty
+            return !limits.filter { $0.exchangeType == .buyCard }.isEmpty
             
         case .ach:
-            return !limits.filter({ $0.exchangeType == .buyAch }).isEmpty
+            return !limits.filter { $0.exchangeType == .buyAch }.isEmpty
             
         default:
             return false
