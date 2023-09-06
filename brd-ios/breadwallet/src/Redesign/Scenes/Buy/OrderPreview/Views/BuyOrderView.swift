@@ -24,7 +24,7 @@ struct BuyOrderConfiguration: Configurable {
                                                      tintColor: LightColors.Text.one,
                                                      border: Presets.Border.mediumPlain)
     var currencyIconImage = BackgroundConfiguration(border: BorderConfiguration(borderWidth: 0, cornerRadius: .fullRadius))
-    var instantBuyFeeConfig: TitleValueConfiguration? = nil
+    var instantBuyFeeConfig: TitleValueConfiguration?
 }
 
 struct BuyOrderViewModel: ViewModel {

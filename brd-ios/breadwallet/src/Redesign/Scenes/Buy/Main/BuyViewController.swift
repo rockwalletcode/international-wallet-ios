@@ -115,21 +115,6 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         return cell
     }
     
-    override func setSegment(_ segment: Int) {
-        guard let section = sections.firstIndex(where: { $0.hashValue == Models.Section.segment.hashValue }),
-              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<SegmentControl> else { return }
-        cell.wrappedView.selectSegment(index: segment)
-        
-        let paymentTypes = PaymentCard.PaymentType.allCases
-        if paymentTypes.count >= segment {
-            let paymentType = paymentTypes[segment]
-            
-            LoadingView.show()
-            interactor?.selectPaymentMethod(viewAction: .init(method: paymentType))
-            GoogleAnalytics.logEvent(GoogleAnalytics.Buy(type: paymentType.rawValue))
-        }
-    }
-    
     // MARK: - User Interaction
     
     @objc override func buttonTapped() {
@@ -177,8 +162,8 @@ class BuyViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         coordinator?.showToastMessage(model: responseDisplay.model, configuration: responseDisplay.config)
     }
     
-    func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
-        LoadingView.hideIfNeeded()
+    override func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
+        super.displayAmount(responseDisplay: responseDisplay)
         
         guard let fromSection = sections.firstIndex(where: { $0.hashValue == Models.Section.swapCard.hashValue }),
               let toSection = sections.firstIndex(where: { $0.hashValue == Models.Section.paymentMethod.hashValue }),

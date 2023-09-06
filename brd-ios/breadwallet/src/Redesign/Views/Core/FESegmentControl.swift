@@ -134,9 +134,7 @@ private final class FESegmentControl: UISegmentedControl {
     }
     
     @objc func indexChanged(_ sender: UISegmentedControl) {
-        DebouncePerformRequests.shared.input(target: self, completion: { [weak self] in
-            self?.didChangeValue?(self?.selectedSegmentIndex ?? 0)
-        })
+        didChangeValue?(selectedSegmentIndex)
     }
     
     override init(items: [Any]?) {
