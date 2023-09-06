@@ -2484,11 +2484,11 @@
 
 "Sell.WithdrawDetails" = "Sell and Withdraw details";
 
-"Sell.YourAchSellLimits" = "Your ACH sell limits";
+"Sell.YourAchSellLimits" = "Your ACH withdrawal limits";
 
 "Sell.yourOrder" = "You sell:";
 
-"Sell.YourSellLimits" = "Your sell limits";
+"Sell.YourSellLimits" = "Your card withdrawal limits";
 
 "Sell.YouWillReceive" = "You’ll receive";
 
