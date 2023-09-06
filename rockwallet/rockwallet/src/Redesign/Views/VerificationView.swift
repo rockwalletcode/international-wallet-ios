@@ -121,18 +121,7 @@ enum VerificationStatus: Hashable {
                                  headerTitle: .text(L10n.Account.accountStatus),
                                  headerTrailing: .init(image: Asset.info.image),
                                  status: VerificationStatus.levelTwo(.levelTwo),
-                                 swapLimits: .text(L10n.Swap.swapLimit),
-                                 buyLimits: .text(profile?.kycAccessRights.hasAchAccess ?? false ?
-                                                  L10n.Account.buyLimitsPerPayment : L10n.Buy.buyLimit),
-                                 sellLimits: .text(L10n.Account.sellLimits),
-                                 swapLimitsValue: .init(title: .text(L10n.Account.daily),
-                                                        value: .text("\(swapAllowanceDaily) \(Constant.usdCurrencyCode)")),
-                                 buyDailyLimitsView: .init(title: .text(L10n.Account.weekly),
-                                                           value: .text("\(buyAllowanceWeekly) \(Constant.usdCurrencyCode)")),
-                                 sellLimitsView: .init(title: .text(L10n.Account.weekly),
-                                                       value: .text("\(sellAllowanceWeekly) \(Constant.usdCurrencyCode)")),
-                                 dismissType: .persistent,
-                                 canUseAch: canUseAch)
+                                 dismissType: .persistent)
         case .levelTwo(.expired), .levelTwo(.resubmit):
             return InfoViewModel(kyc: .levelTwo, headerTitle: .text(L10n.Account.accountLimits),
                                  headerTrailing: .init(image: Asset.info.image),
