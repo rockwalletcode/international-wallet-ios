@@ -45,7 +45,7 @@ final class SsnAdditionalInfoPresenter: NSObject, Presenter, SsnAdditionalInfoAc
                                                                          displayState: .error),
                                                buttonViewModel: .init(title: L10n.Button.confirm, enabled: false))
         viewController?.displayValidateSsn(responseDisplay: .init(viewModel: inputViewModel))
-        viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(error)),
+        viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(L10n.ErrorMessages.Sell.SsnInput.incorrectSsn)),
                                                               config: Presets.InfoView.error))
     }
 

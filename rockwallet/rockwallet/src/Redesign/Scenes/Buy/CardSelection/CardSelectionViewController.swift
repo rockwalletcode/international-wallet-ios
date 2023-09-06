@@ -17,6 +17,7 @@ extension Scenes {
 class CardSelectionViewController: ItemSelectionViewController {
     override var sceneTitle: String? { return L10n.Buy.paymentMethods }
     override var isSearchEnabled: Bool { return false }
+    override var isModalDismissableEnabled: Bool { return false }
     
     var paymentCardDeleted: (() -> Void)?
     
@@ -38,22 +39,27 @@ class CardSelectionViewController: ItemSelectionViewController {
         }
         
         cell.setup { view in
-            let unavailableText = model.paymentMethodStatus.unavailableText
             view.configure(with: .init())
             view.setup(with: .init(title: nil,
                                    subtitle: nil,
                                    logo: model.displayImage,
                                    cardNumber: .text(model.displayName),
                                    expiration: .text(CardDetailsFormatter.formatExpirationDate(month: model.expiryMonth, year: model.expiryYear)),
-                                   errorMessage: model.paymentMethodStatus.isProblematic ? .attributedText(unavailableText) : nil))
+                                   errorMessage: getCardErrorMessage(model: model)))
             
             view.moreButtonCallback = { [weak self] in
                 self?.interactor?.showActionSheetRemovePayment(viewAction: .init(instrumentId: model.id,
                                                                                  last4: model.last4))
             }
             
-            view.errorLinkCallback = { [weak self] in
-                self?.coordinator?.showPaymentMethodSupport()
+            view.errorLinkCallback = { [weak self] in                
+                if model.paymentMethodStatus.isProblematic {
+                    self?.coordinator?.showPaymentMethodSupport()
+                } else if model.verifiedToSell == false && model.scheme == .visa {
+                    Store.trigger(name: .showBuy)
+                } else {
+                    return
+                }
             }
             
             view.setupCustomMargins(top: .zero, leading: .large, bottom: .zero, trailing: .large)
@@ -76,20 +82,21 @@ class CardSelectionViewController: ItemSelectionViewController {
                                    logo: .image(Asset.card.image),
                                    cardNumber: .text(L10n.Buy.addDebitCreditCard),
                                    expiration: nil,
-                                   userInteractionEnabled: true,
-                                   errorMessage: nil))
+                                   userInteractionEnabled: true))
             
             view.setupCustomMargins(top: .zero, leading: .large, bottom: .zero, trailing: .large)
             
             view.didTapSelectCard = { [weak self] in
                 guard let model else {
-                    self?.coordinator?.open(scene: Scenes.AddCard)
+                    let fromCardWithdrawal = self?.dataStore?.fromCardWithdrawal
+                    self?.coordinator?.open(scene: Scenes.AddCard) { vc in
+                        vc.dataStore?.fromCardWithdrawal = fromCardWithdrawal ?? false
+                    }
                     return
                 }
 
                 guard self?.dataStore?.isSelectingEnabled == true, !model.paymentMethodStatus.isProblematic else { return }
                 self?.itemSelected?(model)
-                self?.coordinator?.dismissFlow()
             }
         }
         
@@ -97,4 +104,25 @@ class CardSelectionViewController: ItemSelectionViewController {
     }
     
     // MARK: - Additional Helpers
+    
+    private func getCardErrorMessage(model: PaymentCard) -> LabelViewModel? {
+        if model.paymentMethodStatus.isProblematic {
+            let unavailableText = model.paymentMethodStatus.unavailableText
+            return .attributedText(unavailableText)
+        } else if model.verifiedToSell == false && model.scheme == .visa {
+            let unverifiedCardText = NSMutableAttributedString(string: L10n.ErrorMessages.cardRequiresPurchase)
+            
+            let maxRange = NSRange(location: 0, length: unverifiedCardText.mutableString.length)
+            unverifiedCardText.addAttribute(.font, value: Fonts.Body.three, range: maxRange)
+            unverifiedCardText.addAttribute(.foregroundColor, value: Colors.Error.one, range: maxRange)
+            
+            let boldRange = unverifiedCardText.mutableString.range(of: L10n.Buy.buyWithCard.capitalizingFirstLetter())
+            unverifiedCardText.addAttribute(.font, value: Fonts.Subtitle.three, range: boldRange)
+            unverifiedCardText.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: boldRange)
+            
+            return .attributedText(unverifiedCardText)
+        } else {
+            return nil
+        }
+    }
 }

@@ -161,15 +161,15 @@ extension ColorOption {
         case .purple:
             return .purple
         case .primaryBackground:
-            return Color(LightColors.Background.one)
+            return Color(Colors.Background.one)
         case .secondaryBackground:
-            return Color(LightColors.Background.two)
+            return Color(Colors.Background.two)
         case .tertiaryBackground:
-            return Color(LightColors.Background.three)
+            return Color(Colors.Background.three)
         case .primaryText:
-            return Color(LightColors.Text.one)
+            return Color(Colors.Text.one)
         case .secondaryText:
-            return Color(LightColors.Text.two)
+            return Color(Colors.Text.two)
         case .tertiaryText:
             return Color(UIColor(hex: "000000"))
         default:

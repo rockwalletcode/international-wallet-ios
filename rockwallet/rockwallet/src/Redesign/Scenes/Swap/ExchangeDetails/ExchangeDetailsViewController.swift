@@ -24,7 +24,7 @@ class ExchangeDetailsViewController: BaseTableViewController<BaseCoordinator,
         case .swap:
             return L10n.Swap.details
             
-        case .sell:
+        case .sellAch, .sellCard:
             return L10n.Sell.details
             
         default:
@@ -106,7 +106,7 @@ class ExchangeDetailsViewController: BaseTableViewController<BaseCoordinator,
         }
         
         cell.setup { view in
-            view.configure(with: .init())
+            view.configure(with: .init(BuyOrderConfiguration(instantBuyFeeConfig: Presets.TitleValue.common)))
             view.setup(with: model)
             
             view.networkFeeInfoTapped = { [weak self] in

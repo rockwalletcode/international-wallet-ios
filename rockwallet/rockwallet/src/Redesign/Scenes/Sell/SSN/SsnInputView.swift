@@ -69,6 +69,9 @@ class SsnInputView: FEView<SsnInputConfiguration, SsnInputViewModel> {
         mainStack.addArrangedSubview(messageLabel)
         mainStack.addArrangedSubview(textField)
         mainStack.addArrangedSubview(button)
+        button.snp.makeConstraints { make in
+            make.height.equalTo(ViewSizes.Common.largeCommon.rawValue)
+        }
     }
     
     override func configure(with config: SsnInputConfiguration?) {

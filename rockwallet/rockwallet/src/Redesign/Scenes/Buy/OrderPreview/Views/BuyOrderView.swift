@@ -24,6 +24,7 @@ struct BuyOrderConfiguration: Configurable {
                                                      tintColor: Colors.Text.one,
                                                      border: Presets.Border.mediumPlain)
     var currencyIconImage = BackgroundConfiguration(border: BorderConfiguration(borderWidth: 0, cornerRadius: .fullRadius))
+    var instantBuyFeeConfig: TitleValueConfiguration?
 }
 
 struct BuyOrderViewModel: ViewModel {
@@ -231,7 +232,7 @@ class BuyOrderView: FEView<BuyOrderConfiguration, BuyOrderViewModel> {
         var instantBuyFeeConfig = config?.common
         instantBuyFeeConfig?.title.textColor = Colors.instantPurple
         instantBuyFeeConfig?.title.font = Fonts.Subtitle.two
-        instantBuyFeeView.configure(with: instantBuyFeeConfig)
+        instantBuyFeeView.configure(with: config?.instantBuyFeeConfig != nil ? config?.instantBuyFeeConfig : instantBuyFeeConfig)
         
         networkFeeView.configure(with: config?.common)
         totalCostView.configure(with: config?.bold)
@@ -275,6 +276,7 @@ class BuyOrderView: FEView<BuyOrderConfiguration, BuyOrderViewModel> {
         
         paymentMethodView.setup(with: viewModel?.paymentMethod)
         paymentMethodView.isHidden = viewModel?.paymentMethod == nil
+        paymentLineView.isHidden = viewModel?.paymentMethod == nil
         
         needsUpdateConstraints()
     }

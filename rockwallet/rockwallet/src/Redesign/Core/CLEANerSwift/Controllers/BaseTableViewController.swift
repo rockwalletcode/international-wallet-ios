@@ -67,6 +67,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
         
         view.backgroundColor = Colors.Background.one
         tableView.backgroundColor = .clear
+        tableView.bounces = false // TODO: Remove when dataSource issues are resolved.
         
         tableView.registerAccessoryView(WrapperAccessoryView<FELabel>.self)
         tableView.registerAccessoryView(WrapperAccessoryView<FEButton>.self)
@@ -82,7 +83,7 @@ class BaseTableViewController<C: CoordinatableRoutes,
         tableView.register(WrapperTableViewCell<MultipleButtonsView>.self)
         tableView.register(WrapperTableViewCell<ChecklistItemView>.self)
         tableView.register(WrapperTableViewCell<TickboxItemView>.self)
-        tableView.register(WrapperTableViewCell<FESegmentControl>.self)
+        tableView.register(WrapperTableViewCell<SegmentControl>.self)
         tableView.register(WrapperTableViewCell<ExchangeRateView>.self)
         tableView.register(WrapperTableViewCell<DateView>.self)
         tableView.register(WrapperTableViewCell<TitleValueView>.self)
@@ -90,8 +91,8 @@ class BaseTableViewController<C: CoordinatableRoutes,
         tableView.register(WrapperTableViewCell<TitleButtonView>.self)
         tableView.register(WrapperTableViewCell<PaddedImageView>.self)
         tableView.register(WrapperTableViewCell<OrderView>.self)
-        tableView.register(WrapperTableViewCell<UIView>.self)
         tableView.register(WrapperTableViewCell<CardSelectionView>.self)
+        tableView.register(WrapperTableViewCell<UIView>.self)
     }
 
     override func prepareData() {

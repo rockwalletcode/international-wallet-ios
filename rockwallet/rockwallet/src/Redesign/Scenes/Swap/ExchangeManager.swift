@@ -45,6 +45,6 @@ class ExchangeManager {
     }
     
     func canSwap(_ currency: Currency?) -> Bool {
-        return exchanges.first(where: { $0.status == .pending && $0.source.currency == currency?.code }) == nil
+        return exchanges.first(where: { $0.type == .swap && $0.status == .pending && $0.source.currency == currency?.code }) == nil
     }
 }

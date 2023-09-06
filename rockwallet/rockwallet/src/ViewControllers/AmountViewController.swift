@@ -357,13 +357,11 @@ class AmountViewController: UIViewController {
             feeLabel.attributedText = fee
             
             if amount != nil || isSendViewSendingMax {
-                balanceLabel.isHidden = false
                 feeLabel.isHidden = false
                 if currency.isXRP && !isRequesting {
                     infoButton.isHidden = false
                 }
             } else {
-                balanceLabel.isHidden = cursor.isHidden
                 feeLabel.isHidden = cursor.isHidden
                 if currency.isXRP && !isRequesting {
                     infoButton.isHidden = cursor.isHidden
@@ -391,7 +389,6 @@ class AmountViewController: UIViewController {
         cursor.isHidden = true
         bottomBorder.isHidden = true
         
-        updateBalanceAndFeeLabels()
         updateBalanceLabel()
     }
     
@@ -407,17 +404,8 @@ class AmountViewController: UIViewController {
         cursor.isHidden = isCollapsed ? false : true
         bottomBorder.isHidden = isCollapsed ? false : true
         
-        updateBalanceAndFeeLabels()
         updateBalanceLabel()
         didChangeFirstResponder?(isCollapsed)
-    }
-
-    private func updateBalanceAndFeeLabels() {
-        if let amount = amount, !amount.isZero {
-            balanceLabel.isHidden = false
-        } else {
-            balanceLabel.isHidden = cursor.isHidden
-        }
     }
 
     private func fullRefresh() {
