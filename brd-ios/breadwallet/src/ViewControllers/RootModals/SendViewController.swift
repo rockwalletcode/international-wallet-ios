@@ -49,7 +49,12 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
     private let addressCell: AddressCell
     private let attributeCell: AttributeCell?
     private let memoCell = DescriptionSendCell(placeholder: L10n.Send.descriptionLabel)
-    private let sendButton = BRDButton(title: L10n.Send.sendLabel, type: .secondary)
+    private lazy var sendButton: FEButton = {
+        let button = FEButton()
+        button.configure(with: Presets.Button.primary)
+        button.setup(with: .init(title: L10n.Send.sendLabel))
+        return button
+    }()
     private var attributeCellHeight: NSLayoutConstraint?
     private let confirmTransitioningDelegate = PinTransitioningDelegate()
     private let currency: Currency
