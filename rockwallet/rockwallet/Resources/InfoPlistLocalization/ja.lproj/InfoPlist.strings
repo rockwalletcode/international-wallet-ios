@@ -276,7 +276,7 @@
 
 "Account.VerifiedAccountText" = "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
-"Account.VerifiedAccountTextInternational" = "You now have access to: ↩︎ \n・Unlimited deposits ↩︎ \n・Enhanced security ↩︎ \n・Full asset support";
+"Account.VerifiedAccountTextInternational" = "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support";
 
 "Account.VerifiedAccountTitle" = "Your account is verified!";
 
@@ -285,7 +285,7 @@
 /* Verify account text in popup */
 "Account.VerifyAccountText" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
-"Account.VerifyAccountTextInternational" = "If you verify your identity, you are given access to: ↩︎ \n・Unlimited deposits ↩︎ \n・Enhanced security ↩︎ \n・Full asset support";
+"Account.VerifyAccountTextInternational" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support";
 
 "Account.VerifyAccountTitle" = "To start using 'Swap' or 'Buy', your wallet must be verified.";
 
@@ -761,6 +761,8 @@
 
 "Button.iUnderstand" = "I understand";
 
+"Button.LaunchExchange" = "LAUNCH EXCHANGE";
+
 "Button.letsGo" = "Let’s go!";
 
 /* Map button */
@@ -818,6 +820,8 @@
 
 /* Settings button label */
 "Button.submit" = "確認";
+
+"Button.TransferFunds" = "TRANSFER FUNDS";
 
 "Button.TryLater" = "Try later";
 
@@ -1430,6 +1434,8 @@
 "ErrorMessages.UnknownError" = "Unknown error.";
 
 "ErrorMessages.VeriffDeclined.Description" = "Please try again and follow the on screen instructions.";
+
+"Exchange.PopupText" = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem.";
 
 "ExportConfirmation.cancel" = "キャンセル";
 
@@ -2412,6 +2418,8 @@
 
 /* Security center fingerprint authentication button */
 "SecurityCenter.touchIdTitle.android" = "指紋認証";
+
+"Segment.RockWalletPro" = "ROCKWALLET PRO";
 
 /* Segwit enabled confirmation body */
 "Segwit.ConfirmationConfirmationBody" = "Thank you for helping move bitcoin forward!";
@@ -3520,6 +3528,8 @@
 "TwoStep.TwoStepPeriod" = "Every 90 days";
 
 "UDomains.invalid" = "Invalid address.";
+
+"UnavailableScreen.ProDescription" = "RockWallet Pro isn’t available for you at this point in time.";
 
 /* Disabled until date */
 "UnlockScreen.disabled" = "以下まで無効: %@";

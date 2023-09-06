@@ -273,22 +273,22 @@ internal enum L10n {
     /// ・Full asset support
     /// ・Buy assets with credit card.
     internal static let verifiedAccountText = L10n.tr("Localizable", "Account.VerifiedAccountText", fallback: "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.")
-    /// You now have access to: ↩︎ 
-    /// ・Unlimited deposits ↩︎ 
-    /// ・Enhanced security ↩︎ 
+    /// You now have access to:
+    /// ・Unlimited deposits
+    /// ・Enhanced security
     /// ・Full asset support
-    internal static let verifiedAccountTextInternational = L10n.tr("Localizable", "Account.VerifiedAccountTextInternational", fallback: "You now have access to: ↩︎ \n・Unlimited deposits ↩︎ \n・Enhanced security ↩︎ \n・Full asset support")
+    internal static let verifiedAccountTextInternational = L10n.tr("Localizable", "Account.VerifiedAccountTextInternational", fallback: "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support")
     /// Your account is verified!
     internal static let verifiedAccountTitle = L10n.tr("Localizable", "Account.VerifiedAccountTitle", fallback: "Your account is verified!")
     /// Verification helps keep your funds and information secure and ensures we comply with regulations.
     internal static let verifyAccountDescription = L10n.tr("Localizable", "Account.VerifyAccountDescription", fallback: "Verification helps keep your funds and information secure and ensures we comply with regulations.")
     /// Verify account text in popup
     internal static let verifyAccountText = L10n.tr("Localizable", "Account.VerifyAccountText", fallback: "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.")
-    /// If you verify your identity, you are given access to: ↩︎ 
-    /// ・Unlimited deposits ↩︎ 
-    /// ・Enhanced security ↩︎ 
+    /// If you verify your identity, you are given access to:
+    /// ・Unlimited deposits
+    /// ・Enhanced security
     /// ・Full asset support
-    internal static let verifyAccountTextInternational = L10n.tr("Localizable", "Account.VerifyAccountTextInternational", fallback: "If you verify your identity, you are given access to: ↩︎ \n・Unlimited deposits ↩︎ \n・Enhanced security ↩︎ \n・Full asset support")
+    internal static let verifyAccountTextInternational = L10n.tr("Localizable", "Account.VerifyAccountTextInternational", fallback: "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support")
     /// Verify your identity to get full access to your RockWallet!
     internal static let verifyAccountTitle = L10n.tr("Localizable", "Account.VerifyAccountTitle", fallback: "Verify your identity to get full access to your RockWallet!")
     /// Enter and verify your email address for your account label in registration flow
@@ -748,6 +748,8 @@ internal enum L10n {
     internal static let ignore = L10n.tr("Localizable", "Button.ignore", fallback: "Ignore")
     /// I understand
     internal static let iUnderstand = L10n.tr("Localizable", "Button.iUnderstand", fallback: "I understand")
+    /// LAUNCH EXCHANGE
+    internal static let launchExchange = L10n.tr("Localizable", "Button.LaunchExchange", fallback: "LAUNCH EXCHANGE")
     /// Let’s go!
     internal static let letsGo = L10n.tr("Localizable", "Button.letsGo", fallback: "Let’s go!")
     /// Map button
@@ -790,6 +792,8 @@ internal enum L10n {
     internal static let skip = L10n.tr("Localizable", "Button.skip", fallback: "Skip")
     /// Settings button label
     internal static let submit = L10n.tr("Localizable", "Button.submit", fallback: "Submit")
+    /// TRANSFER FUNDS
+    internal static let transferFunds = L10n.tr("Localizable", "Button.TransferFunds", fallback: "TRANSFER FUNDS")
     /// Try later
     internal static let tryLater = L10n.tr("Localizable", "Button.TryLater", fallback: "Try later")
     /// Verify
@@ -1483,6 +1487,10 @@ internal enum L10n {
       /// Fingerprint was not recognized by the scanner, please try scanning again
       internal static let android = L10n.tr("Localizable", "ErrorMessages.touchIdFailed.android", fallback: "Fingerprint not recognized. Please try again.")
     }
+  }
+  internal enum Exchange {
+    /// Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem.
+    internal static let popupText = L10n.tr("Localizable", "Exchange.PopupText", fallback: "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem.")
   }
   internal enum ExportConfirmation {
     /// Cancel
@@ -2393,6 +2401,10 @@ internal enum L10n {
       /// Security center fingerprint authentication button
       internal static let android = L10n.tr("Localizable", "SecurityCenter.touchIdTitle.android", fallback: "Fingerprint Authentication")
     }
+  }
+  internal enum Segment {
+    /// ROCKWALLET PRO
+    internal static let rockWalletPro = L10n.tr("Localizable", "Segment.RockWalletPro", fallback: "ROCKWALLET PRO")
   }
   internal enum Segwit {
     /// Segwit enabled confirmation body
@@ -3510,6 +3522,10 @@ internal enum L10n {
     internal static let addressListAlertTitle = L10n.tr("Localizable", "URLHandling.addressListAlertTitle", fallback: "Copy Wallet Addresses")
     /// Copy wallet addresses alert button label
     internal static let copy = L10n.tr("Localizable", "URLHandling.copy", fallback: "Copy")
+  }
+  internal enum UnavailableScreen {
+    /// RockWallet Pro isn’t available for you at this point in time.
+    internal static let proDescription = L10n.tr("Localizable", "UnavailableScreen.ProDescription", fallback: "RockWallet Pro isn’t available for you at this point in time.")
   }
   internal enum UnlockScreen {
     /// Disabled until date

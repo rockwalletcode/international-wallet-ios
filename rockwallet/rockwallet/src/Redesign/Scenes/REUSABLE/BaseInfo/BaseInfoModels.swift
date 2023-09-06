@@ -321,8 +321,7 @@ enum BaseInfoModels {
         var title: String { L10n.Buy.Ach.notAvailableTitle }
         
         var description: String {
-            // TODO: Localize strings
-            return self == .rockWalletPro ? "RockWallet Pro isn’t available for you at this point in time. " :
+            return self == .rockWalletPro ? L10n.UnavailableScreen.proDescription :
             L10n.ComingSoon.FeatureUnavailable.subtitle
         }
         
