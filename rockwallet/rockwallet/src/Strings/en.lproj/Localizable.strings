@@ -157,6 +157,8 @@
 
 "Account.LetsGetVerified" = "Let’s get you verified";
 
+"Account.Lifetime" = "Lifetime";
+
 /* Loading Wallet Message */
 "Account.loadingMessage" = "Loading Wallet";
 
@@ -168,6 +170,8 @@
 
 /* Verify your account to get full access to the wallet message */
 "Account.MessageVerifyAccount" = "Verify your account to get full access to your RockWallet!";
+
+"Account.Minimum" = "Minimum";
 
 "Account.MissingDataPromptText" = "Please fill in the missing information to use your RockWallet seamlessly.";
 
@@ -184,6 +188,8 @@
 "Account.PasswordRequirements" = "Password must be at least 8 characters long and contain 1 lower, 1 upper case letter, 1 numeric character and one special character.";
 
 "Account.Pending" = "Pending";
+
+"Account.PerExchange" = "Per exchange";
 
 /* Account Personal Information title */
 "Account.PersonalInformation" = "Personal Information";
@@ -268,14 +274,14 @@
 /* Verified account message on profile screen */
 "Account.VerifiedAccountMessage" = "We’ll let you know when your account is verified.";
 
-"Account.VerifiedAccountText" = "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support";
+"Account.VerifiedAccountText" = "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
 "Account.VerifiedAccountTitle" = "Your account is verified!";
 
 "Account.VerifyAccountDescription" = "Verification helps keep your funds and information secure and ensures we comply with regulations.";
 
 /* Verify account text in popup */
-"Account.VerifyAccountText" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support";
+"Account.VerifyAccountText" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
 
 "Account.VerifyAccountTitle" = "Verify your identity to get full access to your RockWallet!";
 
@@ -1017,6 +1023,10 @@
 
 "Buy.perTransactionLimit" = "Per Transaction Limit";
 
+"Buy.plaidAccountLinkingDescription" = "For security, we currently support linking just one bank account per user. This ensures safer transactions and a streamlined experience.\nIf you require further assistance, please contact customer support";
+
+"Buy.plaidAccountLinkingTitle" = "Plaid account linking";
+
 "Buy.plaidErrorDescription" = "Please check with your bank or try again later.";
 
 "Buy.plaidErrorTitle" = "There was an error connecting your account via Plaid";
@@ -1166,6 +1176,8 @@
 
 "ComingSoon.FeatureUnavailable.Subtitle" = "This feature is not available in your region. We will notify you when this becomes available.";
 
+"ComingSoon.SellDescription" = "You can continue to Buy, Swap, Store, Send, and Receive digital assets in your RockWallet.";
+
 "ComingSoon.SwapBuyTitle" = "This feature is not available for your account at this time.";
 
 "ComingSoon.SwapDescription" = "You can continue to Buy, Store, Send, and Receive digital assets to your RockWallet.";
@@ -1307,7 +1319,7 @@
 "ErrorMessages.Ach.InsufficientFunds" = "Unfortunately the transaction could not be completed due to insufficient funds in your bank account. Please try again later";
 
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
-"ErrorMessages.AmountTooHigh" = "The amount is higher than your weekly limit of %@ %@. Please enter a lower amount.";
+"ErrorMessages.AmountTooHigh" = "The amount is higher than your remaining %@ limit of %@ %@. Please enter a lower amount.";
 
 /* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
 "ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %@ %@. Please enter a higher amount.";
@@ -1346,6 +1358,8 @@
 
 "ErrorMessages.ExchangesUnavailable" = "We are having temporary network issues. Please try again later.";
 
+"ErrorMessages.FailedToGenerateWallet" = "Failed to generate wallet. Please try again.";
+
 "ErrorMessages.highWidrawalFee" = "Minimum buy/swap amount for this pair is temporarily higher due to higher withdrawal network fees. Try other pairs or try again later.";
 
 "ErrorMessages.InvalidPaymailBSVAddress" = "The Paymail address cannot be found. Please use the BSV address.";
@@ -1382,14 +1396,6 @@
 
 "ErrorMessages.notEnoughBalanceXRP" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
-"ErrorMessages.overDailyLimit" = "The amount is higher than your weekly limit of %@ USD. Please upgrade your account or enter a lower amount.";
-
-"ErrorMessages.overExchangeLimit" = "Over exchange limit.";
-
-"ErrorMessages.overLifetimeLimit" = "The amount is higher than your lifetime limit of %@ USD. Please upgrade your account or enter a lower amount.";
-
-"ErrorMessages.overLifetimeLimitLevel2" = "The amount is higher than your weekly limit of %@ USD. Please enter a lower amount.";
-
 "ErrorMessages.PaymailAlreadyTaken" = "This Paymail is already taken";
 
 "ErrorMessages.PaymailTaken" = "Paymail already taken";
@@ -1408,9 +1414,6 @@
 
 /* Something went wrong message */
 "ErrorMessages.SomethingWentWrong" = "Oops! Something went wrong, please try again later.";
-
-/* Two parameters:, - maximum amount, - currency code */
-"ErrorMessages.swapAmountTooHigh" = "The amount is higher than the swap maximum of %@ %@.";
 
 "ErrorMessages.temporaryNetworkIssues" = "We are having temporary issues connecting to our network. Please try again later.";
 
@@ -2368,19 +2371,19 @@
 "Scanner.paymentPromptTitle" = "Send Payment";
 
 /* Complete filter label */
-"Search.complete" = "complete";
+"Search.complete" = "Complete";
 
 /* Pending filter label */
-"Search.pending" = "pending";
+"Search.pending" = "Pending";
 
 /* Received filter label */
-"Search.received" = "received";
+"Search.received" = "Received";
 
 /* [Click here to] search */
 "Search.search" = "Search";
 
 /* Sent filter label */
-"Search.sent" = "sent";
+"Search.sent" = "Sent";
 
 /* Face ID button title */
 "SecurityCenter.faceIdTitle" = "Face ID";
@@ -2481,9 +2484,11 @@
 
 "Sell.WithdrawDetails" = "Sell and Withdraw details";
 
+"Sell.YourAchSellLimits" = "Your ACH withdrawal limits";
+
 "Sell.yourOrder" = "You sell:";
 
-"Sell.YourSellLimits" = "Your sell limits";
+"Sell.YourSellLimits" = "Your card withdrawal limits";
 
 "Sell.YouWillReceive" = "You’ll receive";
 
@@ -2693,7 +2698,7 @@
 "Settings.currency" = "Display Currency";
 
 /* e.g. "USD Settings" (settings for how USD is handled) */
-"Settings.currencyPageTitle" = "%@ Menu";
+"Settings.currencyPageTitle" = "%@ Settings";
 
 /* Section title for a collection of different settings screens, one for each currency */
 "Settings.currencySettings" = "Currency Settings";
@@ -3666,6 +3671,8 @@
 "VerifyAccount.VerifyYourIdentity" = "Verify your identity";
 
 "VerifyPhoneNumber.instructions" = "We take security seriously. Providing a valid phone number lets us send you verification codes and account alerts to keep your wallet safe.";
+
+"VerifyPhoneNumber.Number.invalid" = "Please enter a valid phone number";
 
 "VerifyPhoneNumber.phoneNumber.title" = "Phone number";
 

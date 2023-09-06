@@ -161,6 +161,8 @@ internal enum L10n {
     internal static let invalidEmail = L10n.tr("Localizable", "Account.InvalidEmail", fallback: "Please enter a valid Email Address")
     /// Let’s get you verified
     internal static let letsGetVerified = L10n.tr("Localizable", "Account.LetsGetVerified", fallback: "Let’s get you verified")
+    /// Lifetime
+    internal static let lifetime = L10n.tr("Localizable", "Account.Lifetime", fallback: "Lifetime")
     /// Loading Wallet Message
     internal static let loadingMessage = L10n.tr("Localizable", "Account.loadingMessage", fallback: "Loading Wallet")
     /// Log out
@@ -171,6 +173,8 @@ internal enum L10n {
     internal static let mandatoryFields = L10n.tr("Localizable", "Account.MandatoryFields", fallback: "(*)Mandatory Fields")
     /// Verify your account to get full access to the wallet message
     internal static let messageVerifyAccount = L10n.tr("Localizable", "Account.MessageVerifyAccount", fallback: "Verify your account to get full access to your RockWallet!")
+    /// Minimum
+    internal static let minimum = L10n.tr("Localizable", "Account.Minimum", fallback: "Minimum")
     /// Please fill in the missing information to use your RockWallet seamlessly.
     internal static let missingDataPromptText = L10n.tr("Localizable", "Account.MissingDataPromptText", fallback: "Please fill in the missing information to use your RockWallet seamlessly.")
     /// Add the missing information
@@ -187,6 +191,8 @@ internal enum L10n {
     internal static let passwordRequirements = L10n.tr("Localizable", "Account.PasswordRequirements", fallback: "Password must be at least 8 characters long and contain 1 lower, 1 upper case letter, 1 numeric character and one special character.")
     /// Pending
     internal static let pending = L10n.tr("Localizable", "Account.Pending", fallback: "Pending")
+    /// Per exchange
+    internal static let perExchange = L10n.tr("Localizable", "Account.PerExchange", fallback: "Per exchange")
     /// Account Personal Information title
     internal static let personalInformation = L10n.tr("Localizable", "Account.PersonalInformation", fallback: "Personal Information")
     /// Please try again.
@@ -265,13 +271,16 @@ internal enum L10n {
     /// ・Unlimited deposits
     /// ・Enhanced security
     /// ・Full asset support
-    internal static let verifiedAccountText = L10n.tr("Localizable", "Account.VerifiedAccountText", fallback: "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support")
+    /// ・Buy assets with credit card.
+    internal static let verifiedAccountText = L10n.tr("Localizable", "Account.VerifiedAccountText", fallback: "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.")
+    /// Verified Account
+    internal static let verifiedAccountText1 = L10n.tr("Localizable", "Account.VerifiedAccountText1", fallback: "Verified Account")
     /// Your account is verified!
     internal static let verifiedAccountTitle = L10n.tr("Localizable", "Account.VerifiedAccountTitle", fallback: "Your account is verified!")
     /// Verification helps keep your funds and information secure and ensures we comply with regulations.
     internal static let verifyAccountDescription = L10n.tr("Localizable", "Account.VerifyAccountDescription", fallback: "Verification helps keep your funds and information secure and ensures we comply with regulations.")
     /// Verify account text in popup
-    internal static let verifyAccountText = L10n.tr("Localizable", "Account.VerifyAccountText", fallback: "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support")
+    internal static let verifyAccountText = L10n.tr("Localizable", "Account.VerifyAccountText", fallback: "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.")
     /// Verify your identity to get full access to your RockWallet!
     internal static let verifyAccountTitle = L10n.tr("Localizable", "Account.VerifyAccountTitle", fallback: "Verify your identity to get full access to your RockWallet!")
     /// Enter and verify your email address for your account label in registration flow
@@ -907,6 +916,11 @@ internal enum L10n {
     internal static let payWith = L10n.tr("Localizable", "Buy.PayWith", fallback: "Pay with")
     /// Per Transaction Limit
     internal static let perTransactionLimit = L10n.tr("Localizable", "Buy.perTransactionLimit", fallback: "Per Transaction Limit")
+    /// For security, we currently support linking just one bank account per user. This ensures safer transactions and a streamlined experience.
+    /// If you require further assistance, please contact customer support
+    internal static let plaidAccountLinkingDescription = L10n.tr("Localizable", "Buy.plaidAccountLinkingDescription", fallback: "For security, we currently support linking just one bank account per user. This ensures safer transactions and a streamlined experience.\nIf you require further assistance, please contact customer support")
+    /// Plaid account linking
+    internal static let plaidAccountLinkingTitle = L10n.tr("Localizable", "Buy.plaidAccountLinkingTitle", fallback: "Plaid account linking")
     /// Please check with your bank or try again later.
     internal static let plaidErrorDescription = L10n.tr("Localizable", "Buy.plaidErrorDescription", fallback: "Please check with your bank or try again later.")
     /// There was an error connecting your account via Plaid
@@ -1153,6 +1167,8 @@ internal enum L10n {
     internal static let bodyWithoutSell = L10n.tr("Localizable", "ComingSoon.BodyWithoutSell", fallback: "Buy and Swap are not available in your state. We will notify you when they become available. \n\nYou can still Store, Send and Receive digital assets in your RockWallet.")
     /// You can continue to Swap, Store, Send, and Receive digital assets to your RockWallet.
     internal static let buyDescription = L10n.tr("Localizable", "ComingSoon.BuyDescription", fallback: "You can continue to Swap, Store, Send, and Receive digital assets to your RockWallet.")
+    /// You can continue to Buy, Swap, Store, Send, and Receive digital assets in your RockWallet.
+    internal static let sellDescription = L10n.tr("Localizable", "ComingSoon.SellDescription", fallback: "You can continue to Buy, Swap, Store, Send, and Receive digital assets in your RockWallet.")
     /// This feature is not available for your account at this time.
     internal static let swapBuyTitle = L10n.tr("Localizable", "ComingSoon.SwapBuyTitle", fallback: "This feature is not available for your account at this time.")
     /// You can continue to Buy, Store, Send, and Receive digital assets to your RockWallet.
@@ -1322,8 +1338,8 @@ internal enum L10n {
     /// You cannot purchase assets without completing Level 2 account verification. Upgrade your limits on the Profile screen.
     internal static let accessDenied = L10n.tr("Localizable", "ErrorMessages.accessDenied", fallback: "You cannot purchase assets without completing Level 2 account verification. Upgrade your limits on the Profile screen.")
     /// The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code
-    internal static func amountTooHigh(_ p1: Any, _ p2: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.AmountTooHigh", String(describing: p1), String(describing: p2), fallback: "The amount is higher than your weekly limit of %@ %@. Please enter a lower amount.")
+    internal static func amountTooHigh(_ p1: Any, _ p2: Any, _ p3: Any) -> String {
+      return L10n.tr("Localizable", "ErrorMessages.AmountTooHigh", String(describing: p1), String(describing: p2), String(describing: p3), fallback: "The amount is higher than your remaining %@ limit of %@ %@. Please enter a lower amount.")
     }
     /// The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code
     internal static func amountTooLow(_ p1: Any, _ p2: Any) -> String {
@@ -1363,6 +1379,8 @@ internal enum L10n {
     internal static let exchangeQuoteFailed = L10n.tr("Localizable", "ErrorMessages.ExchangeQuoteFailed", fallback: "We are currently having issues making a swap between this pair of coins. Please try again later.")
     /// We are having temporary network issues. Please try again later.
     internal static let exchangesUnavailable = L10n.tr("Localizable", "ErrorMessages.ExchangesUnavailable", fallback: "We are having temporary network issues. Please try again later.")
+    /// Failed to generate wallet. Please try again.
+    internal static let failedToGenerateWallet = L10n.tr("Localizable", "ErrorMessages.FailedToGenerateWallet", fallback: "Failed to generate wallet. Please try again.")
     /// Minimum buy/swap amount for this pair is temporarily higher due to higher withdrawal network fees. Try other pairs or try again later.
     internal static let highWidrawalFee = L10n.tr("Localizable", "ErrorMessages.highWidrawalFee", fallback: "Minimum buy/swap amount for this pair is temporarily higher due to higher withdrawal network fees. Try other pairs or try again later.")
     /// The Paymail address cannot be found. Please use the BSV address.
@@ -1391,20 +1409,6 @@ internal enum L10n {
     internal static func notEnoughBalanceXRP(_ p1: Any) -> String {
       return L10n.tr("Localizable", "ErrorMessages.notEnoughBalanceXRP", String(describing: p1), fallback: "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.")
     }
-    /// The amount is higher than your weekly limit of %@ USD. Please upgrade your account or enter a lower amount.
-    internal static func overDailyLimit(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.overDailyLimit", String(describing: p1), fallback: "The amount is higher than your weekly limit of %@ USD. Please upgrade your account or enter a lower amount.")
-    }
-    /// Over exchange limit.
-    internal static let overExchangeLimit = L10n.tr("Localizable", "ErrorMessages.overExchangeLimit", fallback: "Over exchange limit.")
-    /// The amount is higher than your lifetime limit of %@ USD. Please upgrade your account or enter a lower amount.
-    internal static func overLifetimeLimit(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.overLifetimeLimit", String(describing: p1), fallback: "The amount is higher than your lifetime limit of %@ USD. Please upgrade your account or enter a lower amount.")
-    }
-    /// The amount is higher than your weekly limit of %@ USD. Please enter a lower amount.
-    internal static func overLifetimeLimitLevel2(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.overLifetimeLimitLevel2", String(describing: p1), fallback: "The amount is higher than your weekly limit of %@ USD. Please enter a lower amount.")
-    }
     /// This Paymail is already taken
     internal static let paymailAlreadyTaken = L10n.tr("Localizable", "ErrorMessages.PaymailAlreadyTaken", fallback: "This Paymail is already taken")
     /// Paymail already taken
@@ -1419,10 +1423,6 @@ internal enum L10n {
     internal static let selectAssets = L10n.tr("Localizable", "ErrorMessages.selectAssets", fallback: "In order to successfully perform a swap, make sure you have two or more of our supported swap assets (BSV, BTC, ETH, BCH, SHIB, USDT) activated and funded within your wallet.")
     /// Something went wrong message
     internal static let somethingWentWrong = L10n.tr("Localizable", "ErrorMessages.SomethingWentWrong", fallback: "Oops! Something went wrong, please try again later.")
-    /// Two parameters:, - maximum amount, - currency code
-    internal static func swapAmountTooHigh(_ p1: Any, _ p2: Any) -> String {
-      return L10n.tr("Localizable", "ErrorMessages.swapAmountTooHigh", String(describing: p1), String(describing: p2), fallback: "The amount is higher than the swap maximum of %@ %@.")
-    }
     /// We are having temporary issues connecting to our network. Please try again later.
     internal static let temporaryNetworkIssues = L10n.tr("Localizable", "ErrorMessages.temporaryNetworkIssues", fallback: "We are having temporary issues connecting to our network. Please try again later.")
     /// Try again later
@@ -2356,15 +2356,15 @@ internal enum L10n {
   }
   internal enum Search {
     /// Complete filter label
-    internal static let complete = L10n.tr("Localizable", "Search.complete", fallback: "complete")
+    internal static let complete = L10n.tr("Localizable", "Search.complete", fallback: "Complete")
     /// Pending filter label
-    internal static let pending = L10n.tr("Localizable", "Search.pending", fallback: "pending")
+    internal static let pending = L10n.tr("Localizable", "Search.pending", fallback: "Pending")
     /// Received filter label
-    internal static let received = L10n.tr("Localizable", "Search.received", fallback: "received")
+    internal static let received = L10n.tr("Localizable", "Search.received", fallback: "Received")
     /// [Click here to] search
     internal static let search = L10n.tr("Localizable", "Search.search", fallback: "Search")
     /// Sent filter label
-    internal static let sent = L10n.tr("Localizable", "Search.sent", fallback: "sent")
+    internal static let sent = L10n.tr("Localizable", "Search.sent", fallback: "Sent")
   }
   internal enum SecurityCenter {
     /// Face ID button title
@@ -2463,10 +2463,12 @@ internal enum L10n {
     internal static let withdrawalSuccessTitle = L10n.tr("Localizable", "Sell.WithdrawalSuccessTitle", fallback: "Your withdrawal is being processed")
     /// Sell and Withdraw details
     internal static let withdrawDetails = L10n.tr("Localizable", "Sell.WithdrawDetails", fallback: "Sell and Withdraw details")
+    /// Your ACH withdrawal limits
+    internal static let yourAchSellLimits = L10n.tr("Localizable", "Sell.YourAchSellLimits", fallback: "Your ACH withdrawal limits")
     /// You sell:
     internal static let yourOrder = L10n.tr("Localizable", "Sell.yourOrder", fallback: "You sell:")
-    /// Your sell limits
-    internal static let yourSellLimits = L10n.tr("Localizable", "Sell.YourSellLimits", fallback: "Your sell limits")
+    /// Your card withdrawal limits
+    internal static let yourSellLimits = L10n.tr("Localizable", "Sell.YourSellLimits", fallback: "Your card withdrawal limits")
     /// You’ll receive
     internal static let youWillReceive = L10n.tr("Localizable", "Sell.YouWillReceive", fallback: "You’ll receive")
     internal enum SsnInput {
@@ -2656,7 +2658,7 @@ internal enum L10n {
     internal static let currency = L10n.tr("Localizable", "Settings.currency", fallback: "Display Currency")
     /// e.g. "USD Settings" (settings for how USD is handled)
     internal static func currencyPageTitle(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "Settings.currencyPageTitle", String(describing: p1), fallback: "%@ Menu")
+      return L10n.tr("Localizable", "Settings.currencyPageTitle", String(describing: p1), fallback: "%@ Settings")
     }
     /// Section title for a collection of different settings screens, one for each currency
     internal static let currencySettings = L10n.tr("Localizable", "Settings.currencySettings", fallback: "Currency Settings")
@@ -3624,6 +3626,10 @@ internal enum L10n {
     internal static let instructions = L10n.tr("Localizable", "VerifyPhoneNumber.instructions", fallback: "We take security seriously. Providing a valid phone number lets us send you verification codes and account alerts to keep your wallet safe.")
     /// Verify your phone number
     internal static let title = L10n.tr("Localizable", "VerifyPhoneNumber.title", fallback: "Verify your phone number")
+    internal enum Number {
+      /// Please enter a valid phone number
+      internal static let invalid = L10n.tr("Localizable", "VerifyPhoneNumber.Number.invalid", fallback: "Please enter a valid phone number")
+    }
     internal enum PhoneNumber {
       /// Phone number
       internal static let title = L10n.tr("Localizable", "VerifyPhoneNumber.phoneNumber.title", fallback: "Phone number")
