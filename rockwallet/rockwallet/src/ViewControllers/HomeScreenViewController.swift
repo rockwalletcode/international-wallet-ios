@@ -344,6 +344,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         
         guard let profile = UserManager.shared.profile else { return }
         
+        // TODO: update the segment contol indexes
         guard profile.kycAccessRights.hasExchangeAccess else {
             if segment == 1 {
                 didTapProSegment?()
