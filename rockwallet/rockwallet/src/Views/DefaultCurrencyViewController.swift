@@ -36,7 +36,7 @@ class DefaultCurrencyViewController: UITableViewController, Subscriber {
         tableView.estimatedRowHeight = ViewSizes.large.rawValue
         
         tableView.separatorStyle = .none
-        tableView.backgroundColor = LightColors.Background.one
+        tableView.backgroundColor = Colors.Background.one
         
         title = L10n.Settings.currency
         
@@ -68,15 +68,15 @@ class DefaultCurrencyViewController: UITableViewController, Subscriber {
         
         cell.textLabel?.text = "\(currency.code) (\(Rate.symbolMap[currency.code] ?? currency.code)) - \(currency.name)"
         cell.textLabel?.font = Fonts.Subtitle.two
-        cell.textLabel?.textColor = LightColors.Text.three
+        cell.textLabel?.textColor = Colors.Text.three
         
-        cell.contentView.backgroundColor = LightColors.Background.one
-        cell.backgroundColor = LightColors.Background.one
+        cell.contentView.backgroundColor = Colors.Background.one
+        cell.backgroundColor = Colors.Background.one
         cell.accessoryView = nil
         
         if currency.code == selectedCurrencyCode {
             let check = UIImageView(image: Asset.check2Circled.image.withRenderingMode(.alwaysTemplate))
-            check.tintColor = LightColors.primary
+            check.tintColor = Colors.primary
             cell.accessoryView = check
         }
         

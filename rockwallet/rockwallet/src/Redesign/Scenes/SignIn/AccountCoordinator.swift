@@ -14,9 +14,7 @@ class AccountCoordinator: ExchangeCoordinator, SignInRoutes, SignUpRoutes, Forgo
     override func start() {
         let error = UserManager.shared.error as? NetworkingError
         
-        if DynamicLinksManager.shared.code != nil {
-            showSetPassword()
-        } else if UserManager.shared.profile?.status == .emailPending {
+        if UserManager.shared.profile?.status == .emailPending {
             showRegistrationConfirmation(isModalDismissable: true, confirmationType: .account)
         } else if error?.errorType == .twoStepRequired {
             let confirmationType: RegistrationConfirmationModels.ConfirmationType = error == .twoStepAppRequired ? .twoStepAppRequired : .twoStepEmailRequired
@@ -71,11 +69,9 @@ class AccountCoordinator: ExchangeCoordinator, SignInRoutes, SignUpRoutes, Forgo
     }
     
     func showSetPassword() {
-        open(scene: Scenes.SetPassword) { vc in
-            vc.navigationItem.hidesBackButton = true
-            
-            vc.dataStore?.code = DynamicLinksManager.shared.code
-            
+        openModally(coordinator: AccountCoordinator.self, scene: Scenes.SetPassword) { vc in
+            vc?.navigationItem.hidesBackButton = true
+            vc?.dataStore?.code = DynamicLinksManager.shared.code
             DynamicLinksManager.shared.code = nil
         }
     }

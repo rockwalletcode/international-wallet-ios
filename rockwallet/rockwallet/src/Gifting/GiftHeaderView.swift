@@ -13,8 +13,8 @@ import UIKit
 class GiftHeaderView: UIView {
     
     let close = UIButton.buildModernCloseButton(position: .middle)
-    private let titleLabel = UILabel(font: Fonts.Body.one, color: LightColors.Contrast.two)
-    private let border = UIView(color: LightColors.Contrast.two)
+    private let titleLabel = UILabel(font: Fonts.Body.one, color: Colors.Contrast.two)
+    private let border = UIView(color: Colors.Contrast.two)
     
     override init(frame: CGRect) {
         super.init(frame: .zero)

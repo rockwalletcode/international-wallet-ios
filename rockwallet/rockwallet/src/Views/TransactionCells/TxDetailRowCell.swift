@@ -24,8 +24,8 @@ class TxDetailRowCell: UITableViewCell {
     // MARK: - Views
     
     internal let container = UIView()
-    internal let titleLabel = UILabel(font: Fonts.Body.two, color: LightColors.Text.two)
-    internal let separator = UIView(color: LightColors.Outline.one)
+    internal let titleLabel = UILabel(font: Fonts.Body.two, color: Colors.Text.two)
+    internal let separator = UIView(color: Colors.Outline.one)
     
     // MARK: - Init
     

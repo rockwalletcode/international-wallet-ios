@@ -12,7 +12,7 @@ import Foundation
 
 enum QuoteType: Equatable {
     case swap
-    case sell
+    case sell(PaymentCard.PaymentType?)
     case buy(PaymentCard.PaymentType?)
     
     var value: String {
@@ -28,8 +28,15 @@ enum QuoteType: Equatable {
             default:
                 return ""
             }
-        case .sell:
-            return "SELL_ACH"
+        case .sell(let paymentType):
+            switch paymentType {
+            case .card:
+                return "SELL_CARD"
+            case .ach:
+                return "SELL_ACH"
+            default:
+                return ""
+            }
         }
     }
 }
@@ -63,11 +70,13 @@ struct QuoteModelResponse: ModelResponse {
     var maximumValue: Decimal
     var minimumValueUsd: Decimal
     var maximumValueUsd: Decimal
+    var currentExchangeLimits: [ProfileResponseData.ExchangeLimit]?
     
     struct Fee: Codable {
         var feeCurrency: String?
         var rate: Decimal?
         var depositRate: Decimal?
+        var fixedRateThreshold: Decimal?
     }
     
     struct AchFee: Codable {
@@ -97,6 +106,7 @@ struct Quote {
     var minimumUsd: Decimal
     var maximumUsd: Decimal
     var fromFeeRate: Decimal?
+    var fromFeeRateThreshold: Decimal?
     var toFeeRate: Decimal?
     var fromFee: EstimateFee?
     var toFee: EstimateFee?
@@ -104,6 +114,7 @@ struct Quote {
     var buyFeeUsd: Decimal?
     var isMinimumImpactedByWithdrawal: Bool?
     var instantAch: InstantAchQuote?
+    var currentExchangeLimits: [ProfileResponseData.ExchangeLimit]?
 }
 
 struct InstantAchQuote: Codable {
@@ -134,6 +145,8 @@ class QuoteMapper: ModelMapper<QuoteModelResponse, Quote> {
             toFee = .init(fee: value, feeRate: response.toFeeCurrency?.depositRate ?? 0, currency: currency)
         }
         
+        let buyFee = response.buyFees ?? (response.type == QuoteType.sell(.ach).value ? response.achFees?.achSellFeePercentage : response.achFees?.achFeePercentage)
+        
         return .init(quoteId: response.quoteId,
                      exchangeRate: response.exchangeRate,
                      timestamp: response.timestamp,
@@ -142,13 +155,15 @@ class QuoteMapper: ModelMapper<QuoteModelResponse, Quote> {
                      minimumUsd: response.minimumValueUsd,
                      maximumUsd: response.maximumValueUsd,
                      fromFeeRate: response.fromFeeCurrency?.rate,
+                     fromFeeRateThreshold: response.fromFeeCurrency?.fixedRateThreshold,
                      toFeeRate: response.toFeeCurrency?.rate,
                      fromFee: fromFee,
                      toFee: toFee,
-                     buyFee: response.buyFees ?? (response.type == QuoteType.sell.value ? response.achFees?.achSellFeePercentage : response.achFees?.achFeePercentage),
+                     buyFee: buyFee,
                      buyFeeUsd: response.achFees?.achFeeFixedUsd,
                      isMinimumImpactedByWithdrawal: response.isMinimumImpactedByWithdrawal,
-                     instantAch: response.instantAch)
+                     instantAch: response.instantAch,
+                     currentExchangeLimits: response.currentExchangeLimits)
     }
 }
 

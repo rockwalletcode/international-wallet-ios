@@ -88,11 +88,11 @@ final class AuthenticatorAppPresenter: NSObject, Presenter, AuthenticatorAppActi
     
     private func prepareEnterCodeText() -> NSMutableAttributedString {
         let partOneAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: LightColors.Text.three,
+            NSAttributedString.Key.foregroundColor: Colors.Text.three,
             NSAttributedString.Key.backgroundColor: UIColor.clear,
             NSAttributedString.Key.font: Fonts.Subtitle.two]
         let partTwoAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: LightColors.Text.three,
+            NSAttributedString.Key.foregroundColor: Colors.Text.three,
             NSAttributedString.Key.backgroundColor: UIColor.clear,
             NSAttributedString.Key.font: Fonts.Body.two]
         

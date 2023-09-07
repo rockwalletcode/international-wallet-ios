@@ -198,8 +198,8 @@ class SwapViewController: BaseExchangeTableViewController<ExchangeCoordinator,
         }])
     }
     
-    func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
-        LoadingView.hideIfNeeded()
+    override func displayAmount(responseDisplay: AssetModels.Asset.ResponseDisplay) {
+        super.displayAmount(responseDisplay: responseDisplay)
         
         guard let section = sections.firstIndex(where: { $0.hashValue == AssetModels.Section.swapCard.hashValue }),
               let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<MainSwapView> else { return }

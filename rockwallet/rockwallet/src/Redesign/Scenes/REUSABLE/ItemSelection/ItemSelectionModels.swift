@@ -18,9 +18,11 @@ enum ItemSelectionModels: Hashable {
     struct Item {
         var items: [any ItemSelectable]?
         var isAddingEnabled: Bool?
+        var fromCardWithdrawal: Bool
     }
     
     enum Section: Sectionable {
+        case banner
         case addItem
         case items
         

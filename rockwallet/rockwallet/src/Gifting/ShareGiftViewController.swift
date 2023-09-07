@@ -79,7 +79,7 @@ class ShareGiftView: UIView {
         let padding = showButton ? Margins.large.rawValue : 0
         if !showButton {
             blurView.isHidden = true
-            backgroundColor = LightColors.Background.one
+            backgroundColor = Colors.Background.one
         } else {
             top.priority = .defaultLow
         }
@@ -191,7 +191,7 @@ class ShareGiftView: UIView {
         name.numberOfLines = 1
         name.lineBreakMode = .byTruncatingTail
         
-        contentView.backgroundColor = LightColors.Background.one
+        contentView.backgroundColor = Colors.Background.one
         contentView.layer.cornerRadius = 10.0
         contentView.layer.masksToBounds = true
         scrollView.backgroundColor = UIColor.clear

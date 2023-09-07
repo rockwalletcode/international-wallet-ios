@@ -32,7 +32,7 @@ class AssetListTableView: UITableViewController, Subscriber {
     
     private lazy var footerView: UIView = {
         let footerView = UIView()
-        footerView.backgroundColor = LightColors.Background.cards
+        footerView.backgroundColor = Colors.Background.cards
         
         return footerView
     }()
@@ -62,7 +62,7 @@ class AssetListTableView: UITableViewController, Subscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundColor = LightColors.Background.two
+        tableView.backgroundColor = Colors.Background.two
         tableView.register(HomeScreenCell.self, forCellReuseIdentifier: HomeScreenCellIds.regularCell.rawValue)
         tableView.separatorStyle = .none
         tableView.rowHeight = assetHeight

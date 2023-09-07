@@ -88,8 +88,8 @@ final class PaymailAddressPresenter: NSObject, Presenter, PaymailAddressActionRe
                                         value: actionResponse.email,
                                         hint: actionResponse.emailState == .error ? errorMessage : nil,
                                         trailing: actionResponse.emailState == .error ?
-                        .image(Asset.warning.image.tinted(with: LightColors.Error.one)) :
-                            .image(Asset.cancel.image.tinted(with: LightColors.Text.three)),
+                        .image(Asset.warning.image.tinted(with: Colors.Error.one)) :
+                            .image(Asset.cancel.image.tinted(with: Colors.Text.three)),
                                         displayState: actionResponse.emailState),
                       isValid: isValid))
     }

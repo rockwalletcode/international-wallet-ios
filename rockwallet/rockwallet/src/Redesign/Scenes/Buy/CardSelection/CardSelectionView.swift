@@ -11,12 +11,12 @@
 import UIKit
 
 struct CardSelectionConfiguration: Configurable {
-    var title: LabelConfiguration? = .init(font: Fonts.Body.three, textColor: LightColors.Text.two)
-    var subtitle: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.one)
+    var title: LabelConfiguration? = .init(font: Fonts.Body.three, textColor: Colors.Text.two)
+    var subtitle: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: Colors.Text.one)
     var arrow: BackgroundConfiguration? = Presets.Background.Secondary.selected
     var shadow: ShadowConfiguration? = Presets.Shadow.light
-    var background: BackgroundConfiguration? = .init(backgroundColor: LightColors.Background.one,
-                                                     tintColor: LightColors.Text.one,
+    var background: BackgroundConfiguration? = .init(backgroundColor: Colors.Background.one,
+                                                     tintColor: Colors.Text.one,
                                                      border: Presets.Border.mediumPlain)
     var cardDetails: CardDetailsConfiguration? = .init()
 }
@@ -29,6 +29,7 @@ struct CardSelectionViewModel: ViewModel {
     var expiration: LabelViewModel?
     var arrow: ImageViewModel? = .image(Asset.chevronRight.image)
     var userInteractionEnabled = false
+    var plaidLinked = false
     var errorMessage: LabelViewModel?
 }
 
@@ -36,6 +37,7 @@ class CardSelectionView: FEView<CardSelectionConfiguration, CardSelectionViewMod
     
     var moreButtonCallback: (() -> Void)?
     var didTapSelectCard: (() -> Void)?
+    var didTapPlaidAccount: (() -> Void)?
     var errorLinkCallback: (() -> Void)?
      
     private lazy var containerStack: UIStackView = {
@@ -100,7 +102,7 @@ class CardSelectionView: FEView<CardSelectionConfiguration, CardSelectionViewMod
         content.addSubview(containerStack)
         containerStack.snp.makeConstraints { make in
             make.edges.equalTo(content.snp.margins)
-            make.height.greaterThanOrEqualTo(ViewSizes.Common.hugeCommon.rawValue)
+            make.height.greaterThanOrEqualTo(ViewSizes.medium.rawValue)
         }
         
         containerStack.addArrangedSubview(mainStack)
@@ -170,12 +172,21 @@ class CardSelectionView: FEView<CardSelectionConfiguration, CardSelectionViewMod
         
         spacerView.isHidden = arrowImageView.isHidden
         
-        guard viewModel?.userInteractionEnabled == true else {
+        guard viewModel?.userInteractionEnabled == true || viewModel?.plaidLinked == true else {
             gestureRecognizers?.forEach { removeGestureRecognizer($0) }
             return
         }
         
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cardSelectorTapped)))
+        gestureRecognizers?.removeAll()
+        if viewModel?.plaidLinked == true {
+            addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(plaidAccountTapped)))
+        } else {
+            addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cardSelectorTapped)))
+        }
+    }
+    
+    @objc private func plaidAccountTapped() {
+        didTapPlaidAccount?()
     }
     
     @objc private func cardSelectorTapped() {

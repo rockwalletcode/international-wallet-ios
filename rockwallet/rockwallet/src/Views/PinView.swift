@@ -29,8 +29,8 @@ class PinView: UIView {
         self.style = style
         self.length = length
         
-        filled = (0...(length-1)).map { _ in Circle(color: LightColors.primary, style: .filled) }
-        unFilled = (0...(length-1)).map { _ in Circle(color: LightColors.primary, style: .unfilled) }
+        filled = (0...(length-1)).map { _ in Circle(color: Colors.primary, style: .filled) }
+        unFilled = (0...(length-1)).map { _ in Circle(color: Colors.primary, style: .unfilled) }
 
         super.init(frame: CGRect())
         setupSubviews()

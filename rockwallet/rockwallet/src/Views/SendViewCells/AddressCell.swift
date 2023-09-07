@@ -55,11 +55,11 @@ class AddressCell: UIView {
     let textField = UITextField()
     let paste = BRDButton(title: L10n.Send.pasteLabel, type: .tertiary)
     let scan = BRDButton(title: "", type: .tertiary, image: Asset.qr.image)
-    fileprivate let contentLabel = UILabel(font: Fonts.Body.one, color: LightColors.Text.two)
-    private let label = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.two)
+    fileprivate let contentLabel = UILabel(font: Fonts.Body.one, color: Colors.Text.two)
+    private let label = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.two)
     fileprivate let gr = UITapGestureRecognizer()
     fileprivate let tapView = UIView()
-    private let border = UIView(color: LightColors.Outline.one)
+    private let border = UIView(color: Colors.Outline.one)
     private let resolvedAddressLabel = ResolvedAddressLabel()
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
     
@@ -161,7 +161,7 @@ class AddressCell: UIView {
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(string: L10n.Send.placeholderText, attributes: [
-            .foregroundColor: LightColors.Text.two,
+            .foregroundColor: Colors.Text.two,
             .font: Fonts.Body.three
         ])
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
