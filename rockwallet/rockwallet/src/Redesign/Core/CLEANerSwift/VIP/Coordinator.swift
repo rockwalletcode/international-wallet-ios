@@ -774,7 +774,8 @@ class BaseCoordinator: NSObject, Coordinatable {
             }
             
         case .oauth2:
-            handleOauthLogin()
+            // TODO: remove this if we won't use deep linking oauth login
+//            handleOauthLogin()
         }
     }
     
