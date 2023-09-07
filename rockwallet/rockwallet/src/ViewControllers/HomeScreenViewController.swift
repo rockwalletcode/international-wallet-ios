@@ -206,7 +206,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         subHeaderView.addSubview(logoImageView)
         subHeaderView.addSubview(totalAssetsTitleLabel)
         subHeaderView.addSubview(totalAssetsAmountLabel)
-        view.addSubview(segmentControl)
         
         let promptContainerScrollView = PromptPresenter.shared.promptContainerScrollView
         let promptContainerStack = PromptPresenter.shared.promptContainerStack
@@ -239,16 +238,18 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             logoImageView.widthAnchor.constraint(equalToConstant: 40),
             logoImageView.heightAnchor.constraint(equalToConstant: 48)])
         
-        segmentControl.snp.makeConstraints { make in
-            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
-            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
-            make.height.equalTo(ViewSizes.minimum.rawValue).priority(.low)
-        }
+        // TODO: Uncomment this to show the pro segment
+//        view.addSubview(segmentControl)
+//        segmentControl.snp.makeConstraints { make in
+//            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
+//            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
+//            make.height.equalTo(ViewSizes.minimum.rawValue).priority(.low)
+//        }
         
         promptContainerScrollView.constrain([
             promptContainerScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
             promptContainerScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
-            promptContainerScrollView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: Margins.medium.rawValue),
+            promptContainerScrollView.topAnchor.constraint(equalTo: subHeaderView.bottomAnchor, constant: Margins.medium.rawValue),
             promptContainerScrollView.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
 
         promptContainerStack.constrain([
