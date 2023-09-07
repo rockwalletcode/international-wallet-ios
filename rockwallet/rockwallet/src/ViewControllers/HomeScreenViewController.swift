@@ -238,18 +238,18 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             logoImageView.widthAnchor.constraint(equalToConstant: 40),
             logoImageView.heightAnchor.constraint(equalToConstant: 48)])
         
-        // TODO: Uncomment this to show the pro segment
-//        view.addSubview(segmentControl)
-//        segmentControl.snp.makeConstraints { make in
-//            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
-//            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
-//            make.height.equalTo(ViewSizes.minimum.rawValue).priority(.low)
-//        }
+        view.addSubview(segmentControl)
+        segmentControl.snp.makeConstraints { make in
+            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
+            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
+            make.height.equalTo(ViewSizes.minimum.rawValue).priority(.low)
+            make.bottom.equalTo(promptContainerScrollView.snp.top).offset(-Margins.small.rawValue)
+        }
         
         promptContainerScrollView.constrain([
             promptContainerScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
             promptContainerScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
-            promptContainerScrollView.topAnchor.constraint(equalTo: subHeaderView.bottomAnchor, constant: Margins.medium.rawValue),
+            promptContainerScrollView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: Margins.medium.rawValue),
             promptContainerScrollView.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
 
         promptContainerStack.constrain([
@@ -341,6 +341,17 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private func setSegment(_ segment: Int) {
         segmentControl.selectSegment(index: segment)
+        
+        guard let profile = UserManager.shared.profile else { return }
+        
+        // TODO: update the segment contol indexes
+        guard profile.kycAccessRights.hasExchangeAccess else {
+            if segment == 1 {
+                didTapProSegment?()
+                segmentControl.selectSegment(index: 0)
+            }
+            return
+        }
         
         tabBarContainerView.isHidden = segment == 1
         exchangeButtonsView.isHidden = segment == 0
