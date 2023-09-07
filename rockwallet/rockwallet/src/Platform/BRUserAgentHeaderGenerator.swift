@@ -42,13 +42,12 @@ public class BRUserAgentHeaderGenerator {
               let majorString = version.components(separatedBy: ".").first,
               let minorString = version.components(separatedBy: ".").dropFirst().first,
               let engineeringString = version.components(separatedBy: ".").last,
-              let majorVersion =  Int(majorString),
+              let majorVersion = Int(majorString),
               let minorVersion = Int(minorString),
-              let engineeringVersion = Int(engineeringString) else { return "null_version" }
+              let engineeringVersion = Int(engineeringString),
+              let buildVersion = Int(build.components(separatedBy: ".").joined(separator: "")) else { return "null_version" }
         
-        let buildString = build.components(separatedBy: ".").joined(separator: "")
-        
-        return String(format: "%d", majorVersion) + String(format: "%d", minorVersion) + String(format: "%d", engineeringVersion) + buildString
+        return String(format: "%d%02d%02d%05d", majorVersion, minorVersion, engineeringVersion, buildVersion)
     }
     
     private static func appNameString() -> String {
