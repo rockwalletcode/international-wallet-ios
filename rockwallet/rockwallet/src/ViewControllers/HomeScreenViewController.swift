@@ -567,25 +567,45 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation) {
         guard webView.url?.absoluteString == Constant.tradeSignInLink else {
             guard !isRedirectedUrl else {
-                view = webView
+                setupWebView()
                 return
             }
             
-            LoadingView.hideIfNeeded()
             DynamicLinksManager.handleDynamicLink(dynamicLink: webView.url)
             getRedirectUri()
+            LoadingView.hideIfNeeded()
             return
         }
         // make auto tap on web view login button
         let scriptSource = "document.getElementsByTagName('button')[0].click()"
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: {
             webView.evaluateJavaScript(scriptSource, completionHandler: nil)
         })
+    }
+    
+    func setupWebView() {
+        view.addSubview(webView)
+        webView.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalToSuperview().inset(Margins.small.rawValue)
+        }
+        
+        let back = UIBarButtonItem(image: Asset.back.image,
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(backButtonPressed))
+        navigationItem.leftBarButtonItem = back
     }
     
     func handleRedirectedUrl(url: URL) {
         webView.load(URLRequest(url: url))
         isRedirectedUrl = true
+    }
+    
+    @objc func backButtonPressed() {
+        navigationItem.leftBarButtonItem = nil
+        isRedirectedUrl = false
+        webView.removeFromSuperview()
+        view.layoutIfNeeded()
     }
 }
