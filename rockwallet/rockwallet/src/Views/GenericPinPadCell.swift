@@ -35,7 +35,7 @@ class GenericPinPadCell: UICollectionViewCell {
         setup()
     }
 
-    internal var label = UILabel(font: Fonts.Title.three, color: LightColors.Text.three)
+    internal var label = UILabel(font: Fonts.Title.three, color: Colors.Text.three)
     internal let imageView = UIImageView()
     var style: PinPadStyle = .clear
 
@@ -79,12 +79,12 @@ class GenericPinPadCell: UICollectionViewCell {
     }
 
     func setAppearance() {
-        backgroundColor = LightColors.Background.one
+        backgroundColor = Colors.Background.one
         let color: UIColor
         if isHighlighted {
-            color = LightColors.primaryPressed
+            color = Colors.primaryPressed
         } else {
-            color = LightColors.Text.three
+            color = Colors.Text.three
         }
         imageView.tintColor = color
         label.textColor = color

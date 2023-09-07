@@ -11,9 +11,9 @@
 import SwiftUI
 
 struct MarketDataView: View {
-    private let fillColor = Color(LightColors.Background.two)
-    private let textColor = Color(LightColors.Text.one)
-    private let subTextColor = Color(LightColors.Text.two)
+    private let fillColor = Color(Colors.Background.two)
+    private let textColor = Color(Colors.Text.one)
+    private let subTextColor = Color(Colors.Text.two)
     
     @ObservedObject var marketData: MarketDataPublisher
     

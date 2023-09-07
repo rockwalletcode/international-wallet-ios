@@ -12,7 +12,7 @@ import UIKit
 
 struct LabelConfiguration: TextConfigurable {
     var font: UIFont = Fonts.Body.three
-    var textColor: UIColor? = LightColors.primary
+    var textColor: UIColor? = Colors.primary
     var textAlignment: NSTextAlignment = .left
     var numberOfLines: Int = 0
     var lineBreakMode: NSLineBreakMode = .byWordWrapping

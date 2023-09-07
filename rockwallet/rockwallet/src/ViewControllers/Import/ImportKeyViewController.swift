@@ -37,8 +37,8 @@ class ImportKeyViewController: UIViewController, Subscriber {
     private let wallet: Wallet
     private let header = UIView()
     private let illustration = UIImageView(image: Asset.importIllustration.image)
-    private let message = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
-    private let warning = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+    private let message = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
+    private let warning = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
     private let button = BRDButton(title: L10n.Import.scan, type: .secondary)
     private let bullet = UIImageView(image: Asset.cancel.image)
     private let balanceActivity = BRActivityViewController(message: L10n.Import.checking)
@@ -47,7 +47,7 @@ class ImportKeyViewController: UIViewController, Subscriber {
     private var viewModel: (any TxViewModel)?
     private lazy var importConfirmationAlert: WrapperPopupView<TitleValueView> = {
         let alert = WrapperPopupView<TitleValueView>()
-        alert.configure(with: .init(background: .init(backgroundColor: LightColors.Background.one, border: Presets.Border.commonPlain),
+        alert.configure(with: .init(background: .init(backgroundColor: Colors.Background.one, border: Presets.Border.commonPlain),
                                     trailing: Presets.Button.blackIcon,
                                     confirm: Presets.Button.primary,
                                     cancel: Presets.Button.secondary,
@@ -127,10 +127,10 @@ class ImportKeyViewController: UIViewController, Subscriber {
     }
 
     private func setInitialData() {
-        view.backgroundColor = LightColors.Background.one
-        header.backgroundColor = LightColors.primary
+        view.backgroundColor = Colors.Background.one
+        header.backgroundColor = Colors.primary
         illustration.contentMode = .scaleAspectFit
-        bullet.tintColor = LightColors.Text.two
+        bullet.tintColor = Colors.Text.two
         message.text = L10n.Import.message
         warning.text = L10n.Import.warning
         

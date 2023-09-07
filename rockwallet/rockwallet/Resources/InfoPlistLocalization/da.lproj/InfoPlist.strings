@@ -1,0 +1,3917 @@
+/* App name */
+"About.appName.android" = "RockWallet";
+
+/* About screen blog label */
+"About.blog" = "Blog";
+
+/* About screen footer */
+"About.footer" = "Lavet af det globale RockWallet hold. Version %@. Build %@";
+
+/* Privay Policy button label */
+"About.privacy" = "Privatlivspolitik";
+
+/* About screen reddit label */
+"About.reddit" = "Reddit";
+
+/* Terms of Use button label */
+"About.terms" = "Brugsbetingelser";
+
+/* About screen title */
+"About.title" = "Om";
+
+/* About screen twitter label */
+"About.twitter" = "Twitter";
+
+/* About screen wallet ID label */
+"About.walletID" = "RockWallet Rewards ID";
+
+/* Close modal button accessibility label */
+"AccessibilityLabels.close" = "Luk";
+
+/* Support center accessibiliy label */
+"AccessibilityLabels.faq" = "Supportcenter";
+
+"Account.2FA.pasteFollowingCodeInAuthApp" = "Paste the following code in your authenticator app.";
+
+/* Account limits title in profile view */
+"Account.AccountLimits" = "Account limits";
+
+"Account.AccountStatus" = "Account status";
+
+/* Account Verification screen title */
+"Account.AccountVerification" = "Account Verification";
+
+"Account.AchDailyLimits" = "Daily (ACH)";
+
+"Account.AddressMandatory" = "Address*";
+
+"Account.AlreadyCreated" = "Already have an account?";
+
+"Account.Attempt" = "attempt";
+
+"Account.Attempts" = "attempts";
+
+/* Account balance */
+"Account.balance" = "Saldo";
+
+/* Before confirm photo label in create account screen */
+"Account.BeforeConfirm" = "Before you confirm, please:";
+
+"Account.BlockedAccount.Description" = "It appears that you're unable to verify your account. For security reasons, we have temporarily disabled it.\n\nDon't worry, your data is safe, and you can still access your self-custodial funds from your homepage. For more information, please contact support.";
+
+"Account.BlockedAccount.Title" = "Your RockWallet account is currently disabled.";
+
+"Account.BuyLimitsPerPayment" = "Buy limits (per payment method)";
+
+/* Change your email title on registration flow */
+"Account.ChangeEmail" = "Change your email";
+
+"Account.CheckYourEmail" = "Check your email";
+
+"Account.City" = "City*";
+
+"Account.ConfirmPassword" = "Confirm your password";
+
+/* Contact us */
+"Account.ContactUs" = "Contact us";
+
+/* Country title label in select countries view */
+"Account.Country" = "Country";
+
+"Account.CountryRegion" = "Country/Region*";
+
+/* Create a RockWallet account by entering your email address label in registration flow */
+"Account.CreateAccount" = "Create a RockWallet account by entering your email address.";
+
+"Account.CreateAccountButton" = "Create account";
+
+"Account.CreateNewAccountTitle" = "Create your account";
+
+"Account.CreateNewPasswordTitle" = "Create new password";
+
+"Account.CreatePassword" = "Create your password";
+
+/* Current limit per day label in profile screen */
+"Account.CurrentLimit" = "Current limit: $1,000/day";
+
+"Account.Daily" = "Daily";
+
+"Account.DailyLimitAchExtension" = "(ACH)";
+
+"Account.DailyLimitCardExtension" = "(Card)";
+
+/* Issues for processing your data label on profile screen */
+"Account.DataIssues" = "Oops! We had some issues processing your data";
+
+/* Date of birth label in create account */
+"Account.DateOfBirth" = "Date of birth";
+
+"Account.Declined" = "Declined";
+
+/* Delete account option in menu */
+"Account.DeleteAccount" = "Delete account";
+
+"Account.delistedToken" = "You may still be able to send these tokens to another platform. For more details, visit our support page.";
+
+"Account.delistedTokenTitle" = "This token has been delisted";
+
+"Account.Email" = "Email";
+
+"Account.EmailAddress.Title" = "Email address";
+
+"Account.EnterEmail" = "Enter your e-mail";
+
+"Account.EnterPassword" = "Enter your password";
+
+"Account.EnterYourPhoneNumber" = "Enter your phone number";
+
+"Account.EnterYourPhoneNumberSubtitle" = "To ensure that you can access all the features of our app, we need to collect your phone number. We\'ll keep your information safe and won\'t share it with anyone";
+
+/* $10000 per BTC */
+"Account.exchangeRate" = "%@ per %@";
+
+"Account.explanationSSN" = "We are required to verify the identity of all our users to comply with regulations.\n\nThat is why we need to collect your Social Security Number (SSN). We take the security and privacy of your personal information seriously, and use it only for the purposes of identity verification and compliance. This process will have no impact on your credit score.";
+
+"Account.FinalizingDecision" = "Finalizing the decision";
+
+"Account.ForgotPassword" = "Forgot password?";
+
+/* Get full access for the RockWallet label on profile screen */
+"Account.FullAccess" = "Get full access to your RockWallet!";
+
+/* ID Verification title on account screen */
+"Account.IDVerification" = "ID Verification";
+
+"Account.IdVerificationApproved" = "Your ID verification was successfully approved!";
+
+"Account.IdVerificationRejected" = "We’re sorry, your ID verification was rejected.";
+
+"Account.idVerificationRejected.description" = "Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.";
+
+/* Retry verification description */
+"Account.IdVerificationRetry" = "Please try to complete your verification again, while keeping the following in mind:\n\n- Please ensure your type of ID is supported.\n\n- Make sure the area is well-lit and there's no glare on the ID or your face.\n\n- Double check that your ID isn't expired or invalid.";
+
+"Account.infoLinkSSN" = "Why do we need your SSN?";
+
+"Account.InvalidEmail" = "Please enter a valid Email Address";
+
+"Account.LetsGetVerified" = "Let’s get you verified";
+
+"Account.Lifetime" = "Lifetime";
+
+/* Loading Wallet Message */
+"Account.loadingMessage" = "Indlæser pung";
+
+"Account.Logout" = "Log out";
+
+"Account.LogoutMessage" = "You’ve been successfully logged out you RockWallet account. Your self-custodial wallet is still linked to this device.";
+
+"Account.MandatoryFields" = "(*)Mandatory Fields";
+
+/* Verify your account to get full access to the wallet message */
+"Account.MessageVerifyAccount" = "Verify your account to get full access to your RockWallet!";
+
+"Account.Minimum" = "Minimum";
+
+"Account.MissingDataPromptText" = "Please fill in the missing information  to use your RockWallet seamlessly.";
+
+"Account.MissingDataPromptTitle" = "Add the missing information";
+
+"Account.Monthly" = "Monthly";
+
+"Account.NewToRockwallet" = "New to RockWallet?";
+
+"Account.PasswordDoNotMatch" = "Passwords do not match";
+
+"Account.PasswordRecoverDescription" = "We have sent password recover instructions to";
+
+"Account.PasswordRequirements" = "Password must be at least 8 characters long and contain 1 lower, 1 upper case letter, 1 numeric character and one special character.";
+
+"Account.Pending" = "Pending";
+
+"Account.PerExchange" = "Per exchange";
+
+/* Account Personal Information title */
+"Account.PersonalInformation" = "Personal Information";
+
+"Account.PleaseTryAgain" = "Please try again.";
+
+"Account.PostalCode" = "Postal Code*";
+
+/* Promotion and offers label when registering account */
+"Account.Promotion" = "I'm ok with receiving future promotion, offers, and communications";
+
+"Account.PromotionsTickbox" = "I’m ok with receiving future promotion, offers and communications";
+
+/* Proof of Identity title in add document for kyc2 */
+"Account.ProofOfIdentity" = "Proof of Identity";
+
+"Account.RecoverPasswordInstructions" = "We have sent password recover instructions to:\n%@";
+
+"Account.ResendEmail" = "Resend email";
+
+"Account.ResetPasswordMessage" = "Enter your email below to reset your password.";
+
+"Account.ResetPasswordTitle" = "Reset your password";
+
+"Account.ResidentialAddress" = "Residential address";
+
+"Account.Resubmit" = "Resubmit";
+
+/* Retake photo button on create account */
+"Account.RetakePhoto" = "Retake photo";
+
+"Account.SelectCountry" = "Select country";
+
+"Account.SelectState" = "Select state";
+
+"Account.SellLimits" = "Sell limits";
+
+"Account.SignIn" = "Sign in";
+
+"Account.SocialSecurityNumber" = "Social Security Number";
+
+"Account.SocialSecurityNumberRequired" = "Social security number*";
+
+"Account.StartUsingWallet" = "Now let’s start with using your RockWallet.";
+
+/* State title label in select state view */
+"Account.State" = "State";
+
+/* Submit your photo for document id title */
+"Account.SubmitPhoto" = "Submit your photo";
+
+/* Swap and buy limit per day description label */
+"Account.SwapAndBuyLimit" = "Swap limit: $20,000 USD/day\nBuy limit: $500 USD/day";
+
+"Account.TermsTickbox" = "I agree to RockWallet’s";
+
+/* Upgrade your limits label in profile screen */
+"Account.UpgradeLimits" = "Upgrade your limits";
+
+"Account.UpgradeVerificationIdentity" = "You need to upgrade your verification status before you can buy assets.";
+
+"Account.VeriffPrivacyPolicy" = "Veriff’s Privacy Policy";
+
+"Account.VeriffTerms" = "Your session audio and video may be recorded.\nRead more from %@";
+
+/* You need to be at least 18 years old to complete Level 1 verification label in verify account */
+"Account.Verification" = "You need to be at least 18 years old to complete Level 1 verification";
+
+/* Why is the verification declined label in profile screen */
+"Account.VerificationDeclined" = "Why is my verification declined?";
+
+"Account.VerificationSuccessful" = "Your verification was successful!";
+
+"Account.VerificationSuccessful.description" = "Your account has been successfully verified, and your limits have been updated.";
+
+"Account.VerificationUnsuccessful" = "We're sorry, your verification was unsuccessful";
+
+"Account.VerificationUnsuccessful.description" = "Please try your verification again, while keeping the following in mind:\n\n- Please ensure the area is well-lit\n- Please ensure you are centered in the frame";
+
+"Account.Verified" = "Verified";
+
+/* Verified account message on profile screen */
+"Account.VerifiedAccountMessage" = "We’ll let you know when your account is verified.";
+
+"Account.VerifiedAccountText" = "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
+
+"Account.VerifiedAccountTextInternational" = "You now have access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support";
+
+"Account.VerifiedAccountTitle" = "Your account is verified!";
+
+"Account.VerifyAccountDescription" = "Verification helps keep your funds and information secure and ensures we comply with regulations.Verify your account by clicking 'Profile' then 'Verification'.";
+
+/* Verify account text in popup */
+"Account.VerifyAccountText" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support\n・Buy assets with credit card.";
+
+"Account.VerifyAccountTextInternational" = "If you verify your identity, you are given access to:\n・Unlimited deposits\n・Enhanced security\n・Full asset support";
+
+"Account.VerifyAccountTitle" = "To start using 'Swap' or 'Buy', your wallet must be verified.";
+
+/* Enter and verify your email address for your account label in registration flow */
+"Account.VerifyEmail" = "Enter and verify your new email address for your RockWallet account.";
+
+"Account.VerifyIdentity" = "We need to verify your identity before you can %@ assets.";
+
+"Account.VerifyIdentityByVeriff" = "RockWallet would like to confirm your identity, a process is powered by Veriff.";
+
+"Account.VerifyIdentityPlain" = "We need to verify your identity before you can buy or swap assets.";
+
+/* Try again */
+"Account.VerifyIdentityTryAgain" = "Try again";
+
+/* Verify personal information text explanation */
+"Account.VerifyPersonalInformation" = "We need to verify your personal information for compliance purposes. This information won’t be shared with outside sources unless required by law.";
+
+"Account.WaitFewMinutes" = "This may take a few minutes.";
+
+"Account.Weekly" = "Weekly";
+
+/* Welcome title on registration screen */
+"Account.Welcome" = "Welcome!";
+
+/* Why verify my account title */
+"Account.WhyVerify" = "Why should I verify my identity?";
+
+/* Write your name as it appears on your ID label in create account */
+"Account.WriteYourName" = "Write your name as it appears on your ID";
+
+/* Confirm Account Creation mesage body */
+"AccountCreation.body" = "Opret kun en Hedera-konto, hvis du agter at opbevare HBAR i din tegnebog.";
+
+/* Change my email label */
+"AccountCreation.ChangeEmail" = "Change my email";
+
+/* Verification code sent message */
+"AccountCreation.CodeSent" = "Verification code sent.";
+
+/* Create Account button label */
+"AccountCreation.create" = "Opret konto";
+
+/* Creating Account progress Label */
+"AccountCreation.creating" = "Opretter konto";
+
+/* Enter the code message in create account flow */
+"AccountCreation.EnterCode" = "Enter the code we\’ve sent to:\n%@";
+
+"AccountCreation.EnterCode.android" = "Enter the code we\’ve sent to:\n%@";
+
+/* Creating Account progress Label */
+"AccountCreation.error" = "Der opstod en fejl under oprettelsen af kontoen. Prøv igen senere.";
+
+/* Not Now button label. */
+"AccountCreation.notNow" = "Ikke nu";
+
+/* Re-send my code label */
+"AccountCreation.ResendCode" = "Resend my code";
+
+/* Creating Account progress Label */
+"AccountCreation.timeout" = "Anmodningen blev udløbet. Prøv igen senere.";
+
+/* Confirm Account Creation Title */
+"AccountCreation.title" = "Bekræft oprettelse af konto";
+
+/* Verify your email label */
+"AccountCreation.VerifyEmail" = "Verify your email";
+
+/* Why the wallet is disabled text */
+"AccountCreation.WalletDisabled" = "If you enter an incorrect wallet PIN too many times, your wallet will become disabled for a certain amount of time.\nThis is to prevent someone else from trying to guess your PIN by quickly making many guesses.\nIf your wallet is disabled, wait until the time shown and you will be able to enter your PIN again.\n\nIf you continue to enter the incorrect PIN, the amount of waiting time in between attempts will increase. Eventually, the app will reset and you can start a new wallet.\n\nIf you have the Recovery Phrase for your wallet, you can use it to reset your PIN by clicking the “Reset PIN” button.";
+
+/* Why is my wallet disabled title on popup */
+"AccountCreation.WalletDisabledTitle" = "Why is my wallet disabled?";
+
+/* Popup text when the account is deleted */
+"AccountDelete.AccountDeletedPopup" = "Your account has been deleted.\nWe are sorry to see you go.";
+
+/* Delete account title */
+"AccountDelete.DeleteAccountTitle" = "You are about to delete your RockWallet account.";
+
+/* Delete account explanation title */
+"AccountDelete.DeleteWhatMean" = "What does this mean?";
+
+/* Delete account explanation part one */
+"AccountDelete.ExplanationOne" = "-You will no longer be able to use your email to sign in into RockWallet";
+
+/* Delete account explanation part three */
+"AccountDelete.ExplanationThree" = "-Your private keys are still yours, keep your Recovery Phrase in a safe place in case you need to restore your wallet.";
+
+/* Delete account explanation part two */
+"AccountDelete.ExplanationTwo" = "-You will no longer be able to user your KYC and registration status";
+
+/* Recover wallet text after deleting account */
+"AccountDelete.RecoverWallet" = "I understand that the only way to recover my wallet is by entering my Recovery Phrase";
+
+/* Default wallet name */
+"AccountHeader.defaultWalletName" = "Mit RockWallet";
+
+/* Level one title on account screen */
+"AccountKYCLevelOne.LevelOne" = "Level 1";
+
+/* Account limi message on KYC1 */
+"AccountKYCLevelOne.Limit" = "Account limit: $1,000/day ($10,000 lifetime)";
+
+/* Back page of the document text instructions for KYC2 */
+"AccountKYCLevelTwo.BackPageInstructions" = "Make sure you have captured the entire back page of the document";
+
+/* Before start label */
+"AccountKYCLevelTwo.BeforeStart" = "Before you start, please:";
+
+"AccountKYCLevelTwo.BiometricsVerified" = "Biometrics verified";
+
+/* Buy limits on KYC2 account */
+"AccountKYCLevelTwo.BuyLimits" = "Buy limits: $%@ USD/day, no lifetime limit";
+
+/* Capture back page of the document text */
+"AccountKYCLevelTwo.CaptureBackPage" = "Make sure to capture the entire back page of the document.";
+
+"AccountKYCLevelTwo.CaptureEntireDocument" = "Make sure to capture the entire document.";
+
+/* Capture front page text label */
+"AccountKYCLevelTwo.CaptureFrontPage" = "Make sure to capture the entire front page of the document.";
+
+/* Checking for errors label on KYC2 */
+"AccountKYCLevelTwo.CheckingErrors" = "Checking for errors";
+
+"AccountKYCLevelTwo.CompleteLevelOneFirst" = "Please complete Level 1 verification first.";
+
+/* Confirm ID label in KYC2 flow */
+"AccountKYCLevelTwo.ConfirmID" = "We need to confirm your ID";
+
+/* Document confirmation label for KYC2 */
+"AccountKYCLevelTwo.DocumentConfirmation" = "Make sure document details are clearly visible and within the frame";
+
+"AccountKYCLevelTwo.DocumentInspected" = "Document inspected";
+
+/* Documents review label in KYC2 */
+"AccountKYCLevelTwo.DocumentsReview" = "We are reviewing your documents and will let you know when your account has been verified.";
+
+"AccountKYCLevelTwo.DrivingLicence" = "Driver’s license";
+
+"AccountKYCLevelTwo.EnterAddress" = "Enter address";
+
+/* Face capture instructions text on documents for KYC2 */
+"AccountKYCLevelTwo.FaceCaptureInstructions" = "Make sure you have captured your entire face in the frame.";
+
+/* Face is in the frame text for document on KYC2 */
+"AccountKYCLevelTwo.FaceVisible" = "Make sure your face is in the frame and clearly visible";
+
+/* Face is clearly visible confirmation text for documents on KYC2 */
+"AccountKYCLevelTwo.FaceVisibleConfirmation" = "Make sure your face is clearly visible.";
+
+/* Front page of the document instructions text for KYC2 */
+"AccountKYCLevelTwo.FrontPageInstructions" = "Make sure you have captured the entire front page of the document";
+
+"AccountKYCLevelTwo.ImageQualityChecked" = "Image quality checked";
+
+/* KYC Level Two status */
+"AccountKYCLevelTwo.InProgress" = "Your ID verification is in progress";
+
+/* Document instructions label for KYC2 */
+"AccountKYCLevelTwo.Instructions" = "Make sure you have captured the entire document";
+
+/* Level two title in Account screen */
+"AccountKYCLevelTwo.LevelTwo" = "Level 2";
+
+/* Swap limits on KYC2 account */
+"AccountKYCLevelTwo.Limits" = "Swap limits: $%@ USD/day, no lifetime limit";
+
+/* Make sure before photo label in KYC2 */
+"AccountKYCLevelTwo.MakeSure" = "Make sure you are in a well-lit room";
+
+"AccountKYCLevelTwo.NationalIdCard" = "National ID card";
+
+"AccountKYCLevelTwo.Passport" = "Passport";
+
+/* Prepare documents label in KYC2 */
+"AccountKYCLevelTwo.PrepareDocument" = "Prepare a valid government-issued ID it can be either a driver’s license, passport, or ID card.";
+
+"AccountKYCLevelTwo.ResidencePermit" = "Residence permit";
+
+/* Select documents  options text label in KYC2 */
+"AccountKYCLevelTwo.SelectOptions" = "Select one of the following options:";
+
+/* Sending your data label for verification on KYC2 */
+"AccountKYCLevelTwo.SendingData" = "Sending your data for verification";
+
+"AccountKYCLevelTwo.TakeDocumentBackContent" = "Turn your ID card around and take a photo of the other side.";
+
+"AccountKYCLevelTwo.TakeDocumentBackTitle" = "Turn your ID card around";
+
+"AccountKYCLevelTwo.TakeDocumentFrontContent" = "Make sure your photo is clear and readable. We support ID cards, passports and driver’s license";
+
+"AccountKYCLevelTwo.TakeDocumentFrontTitle" = "Take a photo of your document’s photo page";
+
+"AccountKYCLevelTwo.TakeIdBackPhotoContent" = "Make sure your ID is clear and readable and fits fully in the frame";
+
+"AccountKYCLevelTwo.TakeIdBackPhotoTitle" = "Please take a photo of your ID’s back page";
+
+"AccountKYCLevelTwo.TakeIdFrontPhotoContent" = "Make sure your ID is clear and readable and fits fully in the frame";
+
+"AccountKYCLevelTwo.TakeIdFrontPhotoTitle" = "Please take a photo of your ID’s front page";
+
+"AccountKYCLevelTwo.TakePhotoPassportContent" = "Make sure your passport is clear and readable and fits fully in the frame.";
+
+"AccountKYCLevelTwo.TakePhotoPassportTitle" = "Please take a photo of your passport.";
+
+/* Take photos label in KYC2 */
+"AccountKYCLevelTwo.TakePhotos" = "Be prepared to take a selfie and photos of your ID";
+
+"AccountKYCLevelTwo.TakeSelfieContent" = "Please make sure that your face is in the frame and clearly visible.";
+
+"AccountKYCLevelTwo.TakeSelfieTitle" = "Selfie time!";
+
+"AccountKYCLevelTwo.updateLevelOne" = "If your personal information has changed, please first update Level 1 KYC and then continue with\nLevel 2 KYC.";
+
+/* Uploading your photos label in KYC2 flow */
+"AccountKYCLevelTwo.UploadingPhoto" = "Photos processed";
+
+"AccountKYCLevelTwo.VerificationPending" = "Unavailable while KYC verification is pending.";
+
+/* Verifying label on KYC2 */
+"AccountKYCLevelTwo.Verifying" = "Verifying you";
+
+/* Account backed up with iCloud Keychain message in alert view, */
+"Alert.AccountBackedUpiCloud" = "Account backed up with iCloud Keychain";
+
+/* Account succesfully restored from Cloud backup message in alert view */
+"Alert.AccountRestorediCloud" = "Account succesfully restored from Cloud backup";
+
+/* Third party keyboard warning */
+"Alert.customKeyboard.android" = "Det ser ud til, at du bruger et tredjeparts tastatur, som kan registrere, hvad du skriver og stjæle din gendannelsesfrase. Skift til standard Android-tastaturet for ekstra beskyttelse.";
+
+/* Error alert title */
+"Alert.error" = "Fejl";
+
+/* Hedera Account succesfully created header alert view */
+"Alert.HederaAccount" = "Hedera Account succesfully created.";
+
+"Alert.Important" = "Important note";
+
+/* Keystore error */
+"Alert.keystore.generic.android" = "Der er et problem med din Android OS keystore, kontakt venligst support@rockwallet.com";
+
+/* KeyStore error, keys are invalidated */
+"Alert.keystore.invalidated.android" = "Dine RockWallet-krypterede data blev for nyligt ugyldiggjort, eftersom din Android skærmlås blev deaktiveret.";
+
+/* Warn user key store data has been invalidate because the user changed their security settings. The user must uninstall. */
+"Alert.keystore.invalidated.uninstall.android" = "Vi kan ikke fortsætte, fordi dine skærmlåsindstillinger er blevet ændret (f.eks. Adgangskode blev deaktiveret, fingeraftryk blev ændret). Af sikkerhedsmæssige årsager har Android permanent låst din nøglelager. Derfor skal dine RockWallet-appdata slettes ved at afinstallere dem. \n\nBare rolig, dine midler er stadig sikre! Geninstaller appen, og gendan din tegnebog ved hjælp af din gendannelsesfrase.";
+
+/* Warn user key store data has been invalidate because the user changed their security settings. The user must wipe their app data. */
+"Alert.keystore.invalidated.wipe.android" = "Vi kan ikke fortsætte, fordi dine skærmlåsindstillinger er blevet ændret (f.eks. Adgangskode blev deaktiveret, fingeraftryk blev ændret). Af sikkerhedsmæssige årsager har Android permanent låst din nøglelager. Derfor skal dine RockWallet-appdata slettes. \n\nBare rolig, dine midler er stadig sikre! Gendan din tegnebog ved hjælp af din gendannelsesfrase.";
+
+/* Keystore error title */
+"Alert.keystore.title.android" = "Android KeyStore fejl";
+
+/* No internet alert message */
+"Alert.noInternet" = "Ingen internetforbindelse fundet. Tjek din forbindelse og prøv igen.";
+
+"Alert.PermissionCamera" = "KYCCamera doesn't have permission to use the camera, please change privacy settings";
+
+/* General error message */
+"Alert.somethingWentWrong" = "Noget gik galt. Prøv igen.";
+
+/* Request timed out error message */
+"Alert.timedOut" = "Anmodingen er udløbet. Tjek din forbindelse og prøv igen.";
+
+"Alert.UnableCapture" = "Unable to capture media";
+
+/* Warning alert title */
+"Alert.warning" = "Advarsel";
+
+/* 'the addresses were copied'' Alert title */
+"Alerts.copiedAddressesHeader" = "Adresser kopieret";
+
+/* Addresses Copied Alert sub header */
+"Alerts.copiedAddressesSubheader" = "Alle pungens adresser er kopieret.";
+
+"Alerts.emailSent" = "Email sent!";
+
+/* Alert Header Label (the paper key was set) */
+"Alerts.paperKeySet" = "Gendannelsessæt sæt";
+
+/* Alert Subheader label (playfully positive) */
+"Alerts.paperKeySetSubheader" = "Fedt!";
+
+"Alerts.passwordUpdated" = "Password updated";
+
+"Alerts.phraseConfirmed" = "Success!";
+
+/* Alert Header label (the PIN was set) */
+"Alerts.pinSet" = "PIN indstillet";
+
+"Alerts.pinUpdated" = "PIN successfully updated";
+
+/* Send failure alert header label (the send failed to happen) */
+"Alerts.sendFailure" = "Afsendelse mislykkedes";
+
+/* Send success alert header label (confirmation that the send happened) */
+"Alerts.sendSuccess" = "Send bekræftelse";
+
+/* Send success alert subheader label (e.g. the money was sent) */
+"Alerts.sendSuccessSubheader" = "Pengene blev sendt!";
+
+/* Fingerprint was recognized by the scanner */
+"Alerts.touchIdSucceeded.android" = "Fingeraftryk genkendt";
+
+"Alerts.walletRestored" = "Recovery Phrase correct";
+
+/* Error label on XRP send amount screen */
+"Amount.MinXRPAmount" = "The minimum required amount is %d XRP.";
+
+"Amount.MinXRPAmount.android" = "The minimum required amount is %d XRP.";
+
+/* Ripple balance title */
+"Amount.RippleBalance" = "XRP Balance";
+
+/* Ripple balance popup text */
+"Amount.RippleBalanceText" = "Ripple requires each wallet to have a minimum balance of 10 XRP, so the balance displayed here is always 10 XRP less than your actual balance.";
+
+/* Tell the user where they can enable permissions to access device storage. */
+"Android.allowFileSystemAccess" = "Aktiver lagringstilladelse i din enheds indstillinger: \"Indstillinger\" > \"Apps\" > \"RockWallet\" > \"Tilladelser\".";
+
+/* The "home" screen is the name of the top level menu for the app. */
+"Android.BCH.welcome.message" = "Du kan få adgang til enhver BCH i din pung via hjemskærmen.";
+
+/* Warning about using apps that can alter the screen */
+"Android.screenAlteringMessage" = "RockWallet fungerer ikke korrekt medmindre apps der ændrer skærmbilledet (så som Twilight) er deaktiveret.";
+
+/* An app that alters the screen ("screen-altering app") has been detected. */
+"Android.screenAlteringTitle" = "Der er fundet en app der ændrer skærmbilledet";
+
+/* JSON Serialization error message */
+"ApiClient.jsonError" = "JSON serialiseringsfejl";
+
+/* Wallet not ready error message */
+"ApiClient.notReady" = "Pung ikke klar";
+
+/* API Token error message */
+"ApiClient.tokenError" = "Kunne ikke hente API-nøgle";
+
+/* ATM Cash Locatios View Title */
+"ATMMapView.title" = "ATM Cash Locations Map";
+
+"Authentication.description" = "Once RockWallet is registered, you’ll start seeing 6-digit verification codes in the app.";
+
+"Authentication.enterCode" = "Enter the 6-digit code";
+
+"Authentication.enterCodeDescription" = "Enter the 6-digit code from your authenticator app";
+
+"Authentication.enterCodeManually" = "Enter the following code manually";
+
+"Authentication.instructions" = "Open your authenticator app and scan this QR code.";
+
+"Authentication.title" = "Authenticator app";
+
+"Authentication.unableToScanCode" = "Unable to scan code?";
+
+"BackupCodes.description" = "You can use each backup code once, if you’ve already used most of them, you can request a new set of codes.";
+
+"BackupCodes.getNewCodes" = "Get new codes";
+
+"BackupCodes.instructions" = "Save your backup codes in a secure place. These might be the only way to access your account if you are unable to access your phone or you can’t use your security method";
+
+"BackupCodes.Title" = "Backup codes";
+
+/* Send BCH view body. */
+"BCH.body" = "Indtast en BCH destinationsadresse nedenfor. Alle BCH i din wallet ved fork-tidspunktet (%@) vil blive afsendt.";
+
+/* Confirm sending <$5.00> to <address>? */
+"BCH.confirmationMessage" = "Bekræft afsendelse af %@ til %@";
+
+/* Confirmation alert title */
+"BCH.confirmationTitle" = "Bekræftelse";
+
+"BCH.conversionMessage" = "The legacy BCH address has been converted to Cashaddr format.";
+
+"BCH.ConverterDescription" = "You have entered a legacy BCH address. To send, please convert the address to Cashaddr format.";
+
+"BCH.ConverterTitle" = "BCH Legacy address";
+
+"BCH.errorMessage" = "The BCH address must be in Cashaddr format to send.";
+
+/* Generic bch erorr message */
+"BCH.genericError" = "Din konto indeholder ikke nogle BCH eller du modtog BCH efter fork.";
+
+/* Transaction ID copied message */
+"BCH.hashCopiedMessage" = "Transaktions-ID kopieret";
+
+/* No address error message */
+"BCH.noAddressError" = "Indtast venligst en adresse";
+
+/* Attempted to scan unsupported qr code error message. */
+"BCH.paymentProtocolError" = "Betalingsprotokolanmodninger er ikke understøttet for BCH-transaktioner";
+
+/* BCH successfully sent alert message */
+"BCH.successMessage" = "BCH blev afsendt uden problemer.";
+
+/* Widthdraw BCH view title */
+"BCH.title" = "Tilbagetræk BCH";
+
+/* Tx Hash button header */
+"BCH.txHashHeader" = "BCH transaktions-ID";
+
+/* Approve button label */
+"BitID.approve" = "Godkend";
+
+/* <sitename> is requesting authentication using your bitcoin wallet */
+"BitID.authenticationRequest" = "%@ anmoder om godkendelse ved hjælp af din bitcoin-wallet";
+
+/* Deny button label */
+"BitID.deny" = "Afvis";
+
+/* BitID error alert title */
+"BitID.error" = "Godkendelsesfejl";
+
+/* BitID error alert messaage (The payment service you are trying to use isn't working. Please contact them, as you may need to try again) */
+"BitID.errorMessage" = "Tjek venligst tjenesten. Det kan være nødvendigt at prøve igen.";
+
+/* BitID success alert title */
+"BitID.success" = "Godkendt uden problemer";
+
+/* BitID Authentication Request alert view title */
+"BitID.title" = "BitID godkendelsesanmodning";
+
+"Button.Back" = "Back";
+
+/* As in "(tap here to) buy (bitcoin)" */
+"Button.buy" = "Køb";
+
+"Button.BuyDigitalAssets" = "Buy digital assets";
+
+/* Cancel button label */
+"Button.cancel" = "Annuller";
+
+/* Close button */
+"Button.close" = "Close";
+
+/* Confirm button title */
+"Button.confirm" = "Bekræft";
+
+/* prompt continue button */
+"Button.continueAction" = "Fortsæt";
+
+"Button.Convert" = "Convert";
+
+"Button.copy" = "Copy";
+
+/* prompt dismiss button */
+"Button.dismiss" = "Afvis";
+
+/* Done button title */
+"Button.done" = "Færdig";
+
+"Button.Download" = "DOWNLOAD";
+
+/* Finish button title */
+"Button.Finish" = "Finish";
+
+"Button.FundWalletWithAch" = "Fund your wallet with ACH";
+
+"Button.gotIt" = "Got it";
+
+/* Go to dashboard button */
+"Button.GoToDashboard" = "Go to dashboard";
+
+/* Button to return to the "home" screen (the home screen is the top menu). */
+"Button.Home" = "Hjem";
+
+/* Ignore button label */
+"Button.ignore" = "Ignorer";
+
+"Button.iUnderstand" = "I understand";
+
+"Button.LaunchExchange" = "LAUNCH EXCHANGE";
+
+"Button.letsGo" = "Let’s go!";
+
+/* Map button */
+"Button.map" = "Map";
+
+/* Maybe Later button label */
+"Button.maybeLater" = "Måske senere";
+
+/* menu button */
+"Button.menu" = "Menu";
+
+/* More information button */
+"Button.moreInfo" = "Mere info";
+
+"Button.moreLimits" = "More limits";
+
+"Button.next" = "Next";
+
+/* No button */
+"Button.no" = "Nej";
+
+/* OK button label */
+"Button.ok" = "OK";
+
+/* Open Settings button */
+"Button.openSettings" = "Åbn indstillinger";
+
+/* Profile button title on tab bar */
+"Button.Profile" = "Profile";
+
+/* receive button */
+"Button.receive" = "Modtag";
+
+"Button.ReceiveDigitalAssets" = "Receive digital assets";
+
+"Button.remove" = "Remove";
+
+/* Search button */
+"Button.search" = "Search";
+
+/* Click this button to sell an asset */
+"Button.sell" = "Sælg";
+
+/* send button */
+"Button.send" = "Send";
+
+/* Settings button label */
+"Button.settings" = "Indstillinger";
+
+/* Setup button label */
+"Button.setup" = "Opsætning";
+
+/* Skip button title */
+"Button.skip" = "Spring over";
+
+/* Settings button label */
+"Button.submit" = "Send";
+
+"Button.TransferFunds" = "TRANSFER FUNDS";
+
+"Button.TryLater" = "Try later";
+
+/* Button label to uninstall the app. */
+"Button.uninstall.android" = "Afinstaller";
+
+"Button.Verify" = "Verify";
+
+/* Yes button */
+"Button.yes" = "Ja";
+
+/* 3D Secure label on buy flow */
+"Buy.3DSecure" = "3D Secure";
+
+"Buy.Ach.AccountUnlinked" = "Your bank account has been unlinked from RockWallet for security purposes. Please link it again to continue using ACH payments.";
+
+"Buy.Ach.Hybrid.Title" = "3-5 days";
+
+"Buy.Ach.Instant.ConfirmationDrawer.ConfirmAction" = "Confirm purchase";
+
+"Buy.Ach.Instant.ConfirmationDrawer.Description" = "$%@ assets will settle immediately.";
+
+"Buy.Ach.Instant.ConfirmationDrawer.Notice" = "Instant purchase";
+
+"Buy.Ach.Instant.ConfirmationDrawer.Title" = "Puchase with Instant Buy";
+
+"Buy.Ach.Instant.Fee.Alternative.Title" = "Instant ACH fee";
+
+"Buy.Ach.Instant.Fee.Title" = "Instant Buy fee";
+
+"Buy.Ach.Instant.HybridConfirmationDrawer" = "With Instant buy, %@ (%@) will show in your account instantly. The remaining %@ (%@) will arrive in 3-5 days.";
+
+"Buy.Ach.Instant.InfoButtonTitle" = "Receive up to %@ instantly";
+
+"Buy.Ach.Instant.OrderPreview.HybridNotice" = "With Instant Buy, %@ will be settled immediately. Remaining %@ will settle in 3-5 days.";
+
+"Buy.Ach.Instant.OrderPreview.Notice" = "With Instant Buy, %@ will be settled immediately.";
+
+"Buy.Ach.Instant.PopupContent" = "Instant Buy via ACH is a fast and convenient way to purchase digital assets using funds from your bank account. The instant portion of your transaction will show in your account within seconds!";
+
+"Buy.Ach.Instant.PopupTitle" = "What is Instant Buy?";
+
+"Buy.Ach.Instant.Success.Description" = "You will receive a confirmation email when your digital assets are delivered to your wallet.";
+
+"Buy.Ach.Instant.Title" = "Instant";
+
+"Buy.Ach.NotAvailableBody" = "Fund with ACH isn’t available in your region. We'll notify you when this feature is released. You can still buy digital assets with a debit/credit card.";
+
+"Buy.Ach.NotAvailableTitle" = "Sorry! This feature is unavailable";
+
+"Buy.Ach.WalletDisabled" = "%@ needs to be enabled in your wallet first. Kindly enable it %@, or by selecting 'Manage assets' on the home screen.";
+
+"Buy.Ach.WalletDisabled.android" = "%@ needs to be enabled in your wallet first. You can enable it %@, or by selecting %@ on the home screen.";
+
+"Buy.Ach.WalletDisabled.Link" = "here";
+
+"Buy.Ach.WalletDisabled.ManageAssets" = "Manage assets";
+
+"Buy.achBuyDisclaimer" = "It currently takes 3–5 days to process a purchase with ACH";
+
+"Buy.achFee" = "ACH fee (%@)";
+
+"Buy.achLimits" = "Currently, minimum for buying with ACH is %@ USD and maximum is %@ USD per day. At the moment lifetime limit is %@ USD.";
+
+"Buy.achPaymentDurationWarning" = "ACH payments usually take 3-5 days. Funds may take a few days to be debited from your account.";
+
+"Buy.achPaymentMethodRelinked" = "ACH payment method was relinked successfully";
+
+"Buy.achPayments" = "ACH Payments";
+
+"Buy.achSuccess" = "ACH payment method was added successfully";
+
+/* Add card title for buy cryptos */
+"Buy.AddCard" = "Add card";
+
+"Buy.AddCardPrompt" = "Using a Credit Card may trigger additional fees from your Bank. We recommend using your Debit Card.";
+
+/* Add a debit or credit card label on add card flow */
+"Buy.AddDebitCreditCard" = "Add a debit or credit card";
+
+/* Address label in billing address view on buy flow */
+"Buy.Address" = "Address";
+
+"Buy.AddYourCard" = "Add your card";
+
+"Buy.bankAccountFailureText" = "Please try again or select a different payment method.";
+
+"Buy.bankAccountSuccessText" = "It currently takes 3-5 days to process a purchase with ACH. You will receive a confirmation email when your digital assets are delivered to your wallet.";
+
+"Buy.bankAccountSuccessTitle" = "Your purchase is being processed";
+
+/* Billing address label on buy flow */
+"Buy.BillingAddress" = "Billing address";
+
+"Buy.BuyAchLimitsTitle" = "Buy limits (Card + ACH)";
+
+"Buy.BuyLimit" = "Buy limits";
+
+"Buy.BuyLimits.AchDescription" = "It currently takes 3-5 days to process a purchase with ACH.";
+
+"Buy.BuyLimits.android" = "Currently, minimum for Buy is $30.00 USD and maximum is $500.00 USD per day.";
+
+/* Buy min and max limit text */
+"Buy.BuyLimits.description" = "Currently, minimum for Buy is %@ USD and maximum is %@ USD per day.  %@";
+
+"Buy.BuyLimits.description.android" = "Minimum for Buy is %@ per transaction and your weekly limit is %@.";
+
+"Buy.BuyLimits.Increase" = "Click on increase your limits button below if you would like to further increase your limits.";
+
+"Buy.buyWithAch" = "BUY WITH ACH";
+
+"Buy.buyWithCard" = "BUY WITH CARD";
+
+"Buy.BuyWithCardButton" = "Buy with card";
+
+/* Card label on add card flow */
+"Buy.Card" = "Card";
+
+/* CVV label in add card flow */
+"Buy.CardCVV" = "CVV";
+
+/* Card fee message label in order preview screen */
+"Buy.CardFee" = "This fee is charged to cover costs associated with payment processing.";
+
+/* Card number label in add card flow */
+"Buy.CardNumber" = "Card number";
+
+"Buy.CardNumberHint" = "XXXX XXXX XXXX XXXX";
+
+/* Card removal failed error message on delete card flow */
+"Buy.CardRemovalFailed" = "Card removal failed. Please try again.";
+
+/* Card removed message on delete card flow */
+"Buy.CardRemoved" = "Card removed";
+
+/* City label in billing address view on buy flow */
+"Buy.City" = "City";
+
+/* Please confirm your CVV label in payment view */
+"Buy.ConfirmCVV" = "Please confirm your CVV";
+
+"Buy.ConfirmingPayment" = "Confirming payment";
+
+"Buy.Country" = "Country";
+
+"Buy.CvvHint" = "XXX";
+
+"Buy.dailyMaxLimits" = "Daily max";
+
+"Buy.dailyMinLimits" = "Daily min";
+
+/* Buy details title */
+"Buy.Details" = "Purchase details";
+
+"Buy.disabledUSDCMessage" = "USDC needs to be enabled in your wallet first. You can enable it here, or by selecting Manage assets on the home screen.";
+
+/* There was an error while processing your payment title in buy failure screen */
+"Buy.ErrorProcessingPayment" = "There was an error while processing your payment";
+
+"Buy.ExpirationDate" = "Expiration date";
+
+/* Failure transaction message on buy */
+"Buy.FailureTransactionMessage" = "Please contact your card issuer/bank or try again with a different payment method.";
+
+/* First Name label in billing address view on buy flow */
+"Buy.FirstName" = "First Name";
+
+"Buy.fundWithAch" = "FUND WITH ACH";
+
+"Buy.IncreaseYourLimits" = "Increase your limits";
+
+"Buy.InvalidExpirationDate" = "Entered expiration date is not valid!";
+
+"Buy.iWant" = "I want";
+
+/* Last Name label in billing address view on buy flow */
+"Buy.LastName" = "Last Name";
+
+"Buy.linkBankAccount" = "Link bank account";
+
+/* Month and year label in add card flow */
+"Buy.MonthYear" = "MM/YY";
+
+/* Network fee message in order preview screen */
+"Buy.NetworkFeeMessage" = "Network fee prices vary depending on the blockchain in which you are receiving your assets. This is an external fee to cover mining and transaction costs.";
+
+/* Network fees label in order preview screen */
+"Buy.NetworkFees" = "Network fees";
+
+/* Order preview title */
+"Buy.OrderPreview" = "Order preview";
+
+/* Payment failed error message on order preview screen */
+"Buy.PaymentFailed" = "Payment failed";
+
+/* Payment method label in buy select card screen */
+"Buy.PaymentMethod" = "Payment method";
+
+"Buy.PaymentMethodBlocked" = "Temporarly unavailable, please %@";
+
+"Buy.PaymentMethodBlocked.Link" = "contact support";
+
+"Buy.PaymentMethods" = "Payment methods";
+
+/* Pay with label in buy flow */
+"Buy.PayWith" = "Pay with";
+
+"Buy.perTransactionLimit" = "Per Transaction Limit";
+
+"Buy.plaidAccountLinkingDescription" = "For security, we currently support linking just one bank account per user. This ensures safer transactions and a streamlined experience.\nIf you require further assistance, please contact customer support";
+
+"Buy.plaidAccountLinkingTitle" = "Plaid account linking";
+
+"Buy.plaidErrorDescription" = "Please check with your bank or try again later.";
+
+"Buy.plaidErrorTitle" = "There was an error connecting your account via Plaid";
+
+"Buy.ProcessingPayment" = "Processing payment";
+
+/* Purchase success text in purchase details screen */
+"Buy.PurchaseSuccessText" = "This purchase will appear as ‘RockWallet’ on your bank statement.";
+
+/* Your assets are on the way message in purchase details screen */
+"Buy.PurchaseSuccessTitle" = "Your assets are on the way!";
+
+"Buy.relinkBankAccount" = "Re-link bank account";
+
+"Buy.RemoveCard" = "Are you sure you want to remove card ending in %@?";
+
+/* You will no longer be able to use it to buy assets description on removing card dialog */
+"Buy.RemoveCardOption" = "You will no longer be able to use it to buy assets.";
+
+/* Remove payment method action sheet option on profile screen */
+"Buy.RemovePaymentMethod" = "Remove payment method";
+
+/* Security code (CVV) label in add card flow */
+"Buy.SecurityCode" = "Security code (CVV)";
+
+/* Explanation of security code in popup */
+"Buy.SecurityCodePopup" = "Please enter the 3 digit CVV number as it appears on the back of your card";
+
+/* Select a payment method button title in buy flow */
+"Buy.SelectPaymentMethod" = "Select a payment method";
+
+/* State/Province label in billing address view on buy flow */
+"Buy.StateProvince" = "State/Province";
+
+"Buy.switchedToAch" = "Payment method switched to ACH payments!";
+
+"Buy.switchedToDebitCard" = "Payment method switched to Debit card!";
+
+"Buy.Terms.description" = "By placing this order you agree to our %@";
+
+"Buy.TransactionError" = "Transaction error";
+
+"Buy.transferFromBank" = "Transfer from bank account";
+
+/* Try a different payment method button title in failure buy screen */
+"Buy.TryAnotherPayment" = "Try a different payment method";
+
+"Buy.txHashHeader" = "%@ Transaction ID";
+
+"Buy.understandAndAgree" = "I understand and agree";
+
+"Buy.YourAchBuyLimits" = "Your ACH buy limits";
+
+"Buy.YourBuyLimits" = "Your card buy limits";
+
+/* Your order label in buy flow */
+"Buy.YourOrder" = "Your order:";
+
+/* ZIP/Postal Code label in billing address view on buy flow */
+"Buy.ZIPPostalCode" = "ZIP/Postal Code";
+
+/* Camera plugin instruction */
+"CameraPlugin.centerInstruction" = "Centrer dit ID i boksen";
+
+/* Cash Token Action Instructions */
+"CashToken.actionInstructions" = "Please send bitcoin to this address to withdraw at the ATM. Scan QR code or copy and paste to send bitcoin. Note that it may take a few minutes for the transfer to be confirmed.";
+
+/* Cash Token Location */
+"CashToken.amountBTC" = "Amount (BTC)";
+
+/* Cash Token Amount */
+"CashToken.amountUSD" = "Amount (USD)";
+
+/* Cash Token Label */
+"CashToken.awaitingFunds" = "Awaiting Funds";
+
+/* Cash Token Label */
+"CashToken.label" = "Withdrawl Status";
+
+/* Cash Token Location */
+"CashToken.location" = "Location";
+
+/* Cash Token Please Verify */
+"CashToken.pleaseVerify" = "Please Verify";
+
+"CloudBackup.backupDeleted" = "Sikkerhedskopiering slettet";
+
+"CloudBackup.backupDeletedMessage" = "Din iCloud-sikkerhedskopi er slettet efter for mange mislykkede PIN-forsøg. Appen genstarter nu.";
+
+"CloudBackup.backupMenuTitle" = "iCloud-sikkerhedskopi";
+
+"CloudBackup.createButton" = "Opret ny tegnebog";
+
+"CloudBackup.createWarning" = "En tidligere sikkerhedskopieret tegnebog er blevet registreret. Brug af denne sikkerhedskopi anbefales. Er du sikker på, at du vil fortsætte med at oprette en ny tegnebog?";
+
+"CloudBackup.enableBody1" = "iCloud-nøglering skal være tændt for at denne funktion kan fungere.";
+
+"CloudBackup.enableBody2" = "Det skal se ud som følger:";
+
+"CloudBackup.enableButton" = "Jeg har tændt for iCloud-nøglering";
+
+"CloudBackup.enableTitle" = "Aktivér nøglering";
+
+"CloudBackup.encryptBackupMessage" = "Indtast pin for at kryptere backup";
+
+"CloudBackup.mainBody" = "Bemærk, iCloud-sikkerhedskopi er kun så sikker som din iCloud-konto. Vi anbefaler stadig, at du skriver din gendannelsesfrase ned i følgende trin og holder den sikker. Gendannelsesfrasen er den eneste måde at gendanne din tegnebog på, hvis du ikke længere har adgang til iCloud.";
+
+"CloudBackup.mainTitle" = "Sikkerhedskopiering af iCloud-genoprettelse";
+
+"CloudBackup.mainWarning" = "iCloud-nøglering skal være tændt i iOS-indstillingsappen for at denne funktion kan fungere";
+
+"CloudBackup.mainWarningConfirmation" = "Er du sikker på, at du vil deaktivere iCloud Backup? Dette vil slette din sikkerhedskopi fra alle enheder.";
+
+"CloudBackup.pinAttempts" = "Resterende forsøg inden sletning af sikkerhedskopi: %@";
+
+"CloudBackup.recoverButton" = "Gendan fra genoprettelsesnøgle";
+
+"CloudBackup.recoverHeader" = "Indtast pinkoden for at låse op iCloud-sikkerhedskopi";
+
+"CloudBackup.recoverWarning" = "A previously backed up wallet has been detected. Using this backup is recommended. Are you sure you want to proceeed with restoring from a recovery phrase?";
+
+"CloudBackup.restoreButton" = "Gendan fra iCloud Backup";
+
+"CloudBackup.selectTitle" = "Vælg Sikkerhedskopi";
+
+"CloudBackup.step1" = "Start appen Indstillinger.";
+
+"CloudBackup.step2" = "Tryk på dit Apple ID-navn.";
+
+"CloudBackup.step3" = "Tryk på iCloud.";
+
+"CloudBackup.step4" = "Kontroller, at iCloud-nøglering er Tændt";
+
+"CloudBackup.understandText" = "Jeg forstår, at denne funktion ikke fungerer, medmindre iCloud Keychain er aktiveret.";
+
+"CloudBackup.warningBody" = "Din iCloud-sikkerhedskopi slettes efter %@ flere forkerte PIN-forsøg.";
+
+"ComingSoon.body" = "Buy and Swap aren't currently available in your state. We'll notify you when you can use these features.\n\nYou can still safely send and receive digital assets to your wallet in the meantime.";
+
+"ComingSoon.BodyWithoutSell" = "Buy and Swap are not available in your state. We will notify you when they become available. \n\nYou can still Store, Send and Receive digital assets in your RockWallet.";
+
+"ComingSoon.buttons.backHome" = "BACK TO HOME";
+
+"ComingSoon.buttons.contactSupport" = "Contact support";
+
+"ComingSoon.BuyDescription" = "You can continue to Swap, Store, Send, and Receive digital assets to your RockWallet.";
+
+"ComingSoon.FeatureUnavailable.Subtitle" = "This feature is not available in your region. We will notify you when this becomes available.";
+
+"ComingSoon.SellDescription" = "You can continue to Buy, Swap, Store, Send, and Receive digital assets in your RockWallet.";
+
+"ComingSoon.SwapBuyTitle" = "This feature is not available for your account at this time.";
+
+"ComingSoon.SwapDescription" = "You can continue to Buy, Store, Send, and Receive digital assets to your RockWallet.";
+
+"ComingSoon.title" = "Coming soon!";
+
+"CommonString.Or.label" = "Or";
+
+/* Amount to Send: ($1.00) */
+"Confirmation.amountLabel" = "Beløb der skal sendes:";
+
+"Confirmation.destinationTag" = "Destinationsmærke";
+
+"Confirmation.destinationTag_EmptyHint" = "(tom)";
+
+/* Network Fee: ($1.00) */
+"Confirmation.feeLabel" = "Netværksgebyr:";
+
+/* Network Fee: (ETH) */
+"Confirmation.feeLabelETH" = "Netværksgebyr (ETH):";
+
+/* Label for Hedera Memo field on transaction confirmation screen */
+"Confirmation.hederaMemo" = "Hedera Memo";
+
+/* eg. Processing time: This transaction is predicted to complete in [10-60 minutes]. */
+"Confirmation.processingTime" = "Behandlingstid: denne transaktion er efter planen færdig om %@.";
+
+"Confirmation.processingTime.android" = "Estimated delivery time: %@";
+
+/* Label for "send" button on final confirmation screen */
+"Confirmation.send" = "Send";
+
+/* Confirmation Screen title */
+"Confirmation.title" = "Bekræftelse";
+
+/* To: (address) */
+"Confirmation.to" = "Til";
+
+/* Total Cost: ($5.00) */
+"Confirmation.totalLabel" = "Samlede omkostninger:";
+
+"Confirmation.totalLabel.android" = "You'll receive";
+
+/* Validator address label on  confirmation screen */
+"Confirmation.ValidatorAddress" = "Validator Address";
+
+"ConfirmGift.paperWalletAmount" = "Papir tegnebog beløb";
+
+"ConfirmGift.processingTime" = "Validering af denne papirpung på netværket kan tage op til 60 minutter";
+
+/* Confirm paper phrase error message */
+"ConfirmPaperPhrase.error" = "De indtastede ord matcher ikke din gendannelsessætning. Prøv igen.";
+
+/* Confirm paper phrase view label. */
+"ConfirmPaperPhrase.label" = "For at sikre, at alt blev skrevet korrekt, skal du indtaste følgende ord fra din gendannelsessætning.";
+
+/* Word label eg. Word #1, Word #2 */
+"ConfirmPaperPhrase.word" = "Ord #%@";
+
+"ConfirmPaperPhrase.word.android" = "Word %1$s%2$s";
+
+"CreateGift.amountLabel" = "Vælg beløb ($ USD)";
+
+"CreateGift.create" = "skab";
+
+"CreateGift.customAmountHint" = "Tilpasset beløb (maks. $ 500)";
+
+"CreateGift.description" = "Vi opretter det, der kaldes en";
+
+"CreateGift.inputAmountError" = "Du skal vælge et gavebeløb.";
+
+"CreateGift.inputRecipientNameError" = "Du skal indtaste modtagerens navn.";
+
+"CreateGift.insufficientBalanceError" = "Du har ikke tilstrækkelige midler til at sende en gave.";
+
+"CreateGift.insufficientBalanceForAmountError" = "Du har ikke tilstrækkelige midler til at sende en gave på dette beløb.";
+
+"CreateGift.recipientName" = "modtagers navn";
+
+"CreateGift.serverError" = "Der opstod en serverfejl. Prøv igen senere.";
+
+"CreateGift.subtitle" = "Send bitcoin til nogen, selvom de ikke har en tegnebog.";
+
+"CreateGift.title" = "Giv Bitcoin gave";
+
+"CreateGift.unexpectedError" = "Der opstod en uventet fejl. Kontakt support.";
+
+/* Agree to legal terms button */
+"Crowdsale.agree" = "Enig";
+
+/* As in "(tap here to) buy (some) tokens" */
+"Crowdsale.buyButton" = "Køb tokens";
+
+/* Decline to legal terms button */
+"Crowdsale.decline" = "Afvis";
+
+/* Resume Idnetify verification button */
+"Crowdsale.resume" = "Genoptag bekræftelse";
+
+/* Retry Identity verification button */
+"Crowdsale.retry" = "Prøv igen";
+
+/* Bitcoin denomination picker label */
+"DefaultCurrency.bitcoinLabel" = "Bitcoin visningsenhed";
+
+/* Exchange rate label */
+"DefaultCurrency.rateLabel" = "Valutakurs";
+
+"Disabled.disabledUntil" = "Disabled until";
+
+/* The wallet is disabled. */
+"Disabled.title" = "Pung deaktiveret";
+
+"Drawer.button.buy_with_sell" = "SELL & WITHDRAW";
+
+/* title of the drawer shown after buy/sell button tap on home screen */
+"Drawer.title" = "Buy / Sell";
+
+/* Share address by e-mail subject */
+"Email.address_subject" = "%@ adresse";
+
+/* Service capabilities description */
+"EME.permissions.accountRequest" = "Anmod om %@-kontooplysninger";
+
+/* Service capabilities description */
+"EME.permissions.callRequest" = "Anmod om %@ \"smart contract\"-kald";
+
+/* Service capabilities description */
+"EME.permissions.paymentRequest" = "Anmod om betaling af %@";
+
+"ErrorMessages.accessDenied" = "You cannot purchase assets without completing Level 2 account verification. Upgrade your limits on the Profile screen.";
+
+"ErrorMessages.Ach.AccountClosed" = "Unfortunately, the linked bank account is closed. Please try adding a different bank account or a different payment method.";
+
+"ErrorMessages.Ach.AccountFrozen" = "Unfortunately, there was an error while processing your transaction. Please try again later or contact your bank for additional assistance.";
+
+"ErrorMessages.Ach.ErrorWhileProcessing" = "Unfortunately, there was an error while processing your transaction. Please try again later or select a different payment method.";
+
+"ErrorMessages.Ach.InsufficientFunds" = "Unfortunately the transaction could not be completed due to insufficient funds in your bank account. Please try again later";
+
+/* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
+"ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
+
+/* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
+"ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %@ %@. Please enter a higher amount.";
+
+"ErrorMessages.appNotInstalled" = "You don\'t have an app installed to complete this action.";
+
+"ErrorMessages.authorizationFailed" = "Card authorization failed. Please contact your credit card issuer/bank or try another card.";
+
+/* Accepts 3 parameters:, - currency code, - current balance, - (same) currency code */
+"ErrorMessages.balanceTooLow" = "You need %@ %@ in your wallet to cover network fees. Please add more %@ to your wallet.";
+
+"ErrorMessages.cardRequiresPurchase" = "Prior to initiating any withdrawals to your visa debit, please complete a purchase with this card for validation purposes. Buy with card";
+
+/* Check your internet connection message */
+"ErrorMessages.CheckInternet" = "Please check your internet connection and try again later.";
+
+"ErrorMessages.default" = "Something went wrong! Try again later.";
+
+/* Email unavailable alert title */
+"ErrorMessages.emailUnavailableMessage" = "Denne enhed er ikke konfigureret til at sende e-mail med iOS mailappen.";
+
+/* Email unavailable alert title */
+"ErrorMessages.emailUnavailableTitle" = "E-mail utilgængelig";
+
+/* Not enough ETH for transaction fee */
+"ErrorMessages.ethBalanceLowAddEth" = "Insufficient Ethereum balance in your wallet to transfer this type of token.";
+
+/* Not enough ETH for transaction fee */
+"ErrorMessages.ethBalanceLowAddEthWithAmount" = "Insufficient Ethereum balance in your wallet to transfer this type of token.";
+
+"ErrorMessages.Exchange.xrpMinimumReserve" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
+
+"ErrorMessages.exchangeFailed" = "Swap failed. Reason: %@.";
+
+"ErrorMessages.ExchangeQuoteFailed" = "We are currently having issues making a swap between this pair of coins. Please try again later.";
+
+"ErrorMessages.ExchangesUnavailable" = "We are having temporary network issues. Please try again later.";
+
+"ErrorMessages.FailedToGenerateWallet" = "Failed to generate wallet. Please try again.";
+
+"ErrorMessages.highWidrawalFee" = "Minimum buy/swap amount for this pair is temporarily higher due to higher withdrawal network fees. Try other pairs or try again later.";
+
+"ErrorMessages.InvalidPaymailBSVAddress" = "The Paymail address cannot be found. Please use the BSV address.";
+
+"ErrorMessages.Kyc.Underage" = "You must be at least 18 years old to complete Level 1 and 2 verification.";
+
+"ErrorMessages.LivenessCheckLimit.Description" = "You have reached the maximum attempts for Verification. Please contact customer support for more information";
+
+"ErrorMessages.LivenessCheckLimit.errorMessage" = "Biometric authentication attempts reached";
+
+/* Message that gets shown when we've detected the user has encountered the looping lock-screen bug. (preserve [ ] characters) */
+"ErrorMessages.loopingLockScreen.android" = "RockWallet kan ikke godkendes grundet en fejl i din version af Android. [Tryk her for flere oplysninger.]";
+
+/* Messaging unavailable alert title */
+"ErrorMessages.messagingUnavailableMessage" = "Denne enhed er ikke konfigureret til at sende beskeder.";
+
+/* Messaging unavailable alert title */
+"ErrorMessages.messagingUnavailableTitle" = "Beskeder utilgængelig";
+
+"ErrorMessages.networkFee" = "This swap doesn't cover the included network fee. Please add more funds to your wallet or change the amount you're swapping.";
+
+/* Temporary network issues error message */
+"ErrorMessages.NetworkIssues" = "We are having temporary network issues. Please try again later.";
+
+/* No selected currencies error message */
+"ErrorMessages.NoCurrencies" = "No selected currencies.";
+
+"ErrorMessages.noFees" = "Failed to fetch network fees. Please try again later.";
+
+/* Accepts 2 parameters:, - first currency code, - second currency code */
+"ErrorMessages.noQuoteForPair" = "No quote for currency pair %@-%@.";
+
+"ErrorMessages.notEnoughBalance" = "You don’t have enough %@ in your wallet in order to transfer this type of token.";
+
+"ErrorMessages.notEnoughBalanceXRP" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
+
+"ErrorMessages.PaymailAlreadyTaken" = "This Paymail is already taken";
+
+"ErrorMessages.PaymailTaken" = "Paymail already taken";
+
+"ErrorMessages.pendingExchange" = "A maximum of one swap can be active for a currency at a time.";
+
+"ErrorMessages.pinConfirmationFailed" = "PIN Authentication failed.";
+
+"ErrorMessages.PlaidLinkToken" = "Unfortunately, an error occurred while linking the bank account. Please contact us for further support.";
+
+"ErrorMessages.selectAssets" = "In order to succesfully perform a swap, make sure you have two or more of our supported swap assets (BSV, BTC, ETH, BCH, SHIB, USDT) activated and funded within your wallet.";
+
+"ErrorMessages.Sell.LimitExceeded" = "You have exceeded your sell limits, please try again later.";
+
+"ErrorMessages.Sell.SsnInput.IncorrectSsn" = "Please make sure your SSN number is correct and try again.";
+
+/* Something went wrong message */
+"ErrorMessages.SomethingWentWrong" = "Oops! Something went wrong, please try again later.";
+
+"ErrorMessages.temporaryNetworkIssues" = "We are having temporary issues connecting to our network. Please try again later.";
+
+/* Fingerprint was not recognized by the scanner, please try scanning again */
+"ErrorMessages.touchIdFailed.android" = "Fingeraftryk ikke genkendt. Prøv igen.";
+
+"ErrorMessages.TryAgainLater" = "Try again later";
+
+/* Unknown error text message */
+"ErrorMessages.UnknownError" = "Unknown error.";
+
+"ErrorMessages.VeriffDeclined.Description" = "Please try again and follow the on screen instructions.";
+
+"Exchange.PopupText" = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem.";
+
+"ExportConfirmation.cancel" = "Afbestille";
+
+"ExportConfirmation.continue" = "";
+
+"ExportConfirmation.continueAction" = "Blive ved";
+
+"ExportConfirmation.message" = "Dette genererer en CSV-fil, der inkluderer alle gennemførte transaktioner fra alle aktiverede tegnebøger.";
+
+"ExportConfirmation.title" = "Eksporttransaktioner?";
+
+/* "Export transfers body" */
+"ExportTransfers.body" = "Dette genererer en CSV-fil, der inkluderer alle gennemførte transaktioner fra alle aktiverede tegnebøger.";
+
+/* "Export transfers button" */
+"ExportTransfers.confirmExport" = "Eksport overførsler";
+
+/* "Export dialog error message" */
+"ExportTransfers.exportFailedBody" = "Kunne ikke eksportere CSV-filen, prøv igen.";
+
+/* "Export dialog error title" */
+"ExportTransfers.exportFailedTitle" = "Eksport mislykkedes";
+
+/* "Export transfers header" */
+"ExportTransfers.header" = "Eksporttransaktioner?";
+
+/* You can customize your Face ID Spending Limit from the [menu] */
+"FaceIDSettings.customizeText" = "Du kan tilpasse din Face ID betalingsgrænse fra %@.";
+
+/* Text describing the purpose of the Face ID settings in the BRD app. */
+"FaceIDSettings.explanatoryText" = "Brug Face ID for at låse op for din RockWallet og sende penge.";
+
+/* Face Id screen label */
+"FaceIDSettings.label" = "Brug dit ansigt til at låse din RockWallet op, og send penge op til en fastsat grænse.";
+
+/* Title of the screen for setting the Face ID Spending Limit */
+"FaceIDSettings.linkText" = "Face ID betalingsgrænse-skærm";
+
+/* Setting to turn on Face ID for BRD */
+"FaceIDSettings.switchLabel" = "Aktiver Face ID for RockWallet";
+
+/* Face ID settings view title */
+"FaceIDSettings.title" = "Face ID";
+
+/* Text label for a toggle that enables Face ID for sending money. */
+"FaceIDSettings.transactionsTitleText" = "Aktiver Face ID for at sende penge";
+
+/* Instructions on how to turn on face id on the iPhone. Please ensure the name of the menu in this string matches the wording Apple uses in the iPhone menu. */
+"FaceIDSettings.unavailableAlertMessage" = "Du har ikke indstillet Face ID på denne enhed. Gå til Indstillinger->Face ID & adgangskode for at indstille det nu.";
+
+/* Face ID unavailable alert title */
+"FaceIDSettings.unavailableAlertTitle" = "Face ID ikke indstillet";
+
+/* Text label for a toggle that enables Face ID for unlocking the BRD app. */
+"FaceIDSettings.unlockTitleText" = "Aktiver Face ID for at låse op for RockWallet";
+
+/* Face Id spending limit screen title */
+"FaceIDSpendingLimit.title" = "Face ID betalingsgrænse";
+
+"Feedback.noEmailClient" = "Email client not found";
+
+/* Economy fee */
+"FeeSelector.economy" = "Økonomi";
+
+/* E.g. [This transaction is predicted to complete in] 1-24 hours */
+"FeeSelector.economyTime" = "1-24 timer";
+
+/* Warning message for economy fee */
+"FeeSelector.economyWarning" = "Denne mulighed er ikke anbefalet for tidsfølsomme transaktioner.";
+
+/* E.g. Estimated delivery: 10-60 minutes */
+"FeeSelector.estimatedDeliver" = "Forventet levering: %@";
+
+/* [This transaction will complete in] 2-5 minutes */
+"FeeSelector.ethTime" = "2-5 minutter";
+
+"FeeSelector.lessThanMinutes" = "<%@ minutter";
+
+/* Priority fee */
+"FeeSelector.priority" = "Prioritet";
+
+/* E.g. [This transaction is predicted to complete in] 10-30 minutes */
+"FeeSelector.priorityTime" = "10-30 minutter";
+
+/* Regular fee */
+"FeeSelector.regular" = "Almindelig";
+
+/* E.g. [This transaction is predicted to complete in] 10-60 minutes */
+"FeeSelector.regularTime" = "10-60 minutter";
+
+/* Fee Selector title */
+"FeeSelector.title" = "Behandlingshastighed";
+
+/* Label for the Android file chooser when we need to prompt the user to select an image file. */
+"FileChooser.selectImageSource.android" = "Vælg Billedkilde";
+
+/* Fingerprint authentication settings screen description */
+"FingerprintSettings.description" = "Brug dit fingeraftryk til at låse op for dit Bread og sende penge op til en vis grænse.";
+
+/* Switch label to enable fingerprint authentication to send money */
+"FingerprintSettings.sendMoney" = "Brug fingeraftryk til at sende penge";
+
+/* Fingerprint authentication settings sceen title */
+"FingerprintSettings.title" = "Fingeraftryk";
+
+/* Switch label to enable fingerprint authentication to unlock BRD app */
+"FingerprintSettings.unlockApp" = "Brug fingeraftrykket til at låse RockWallet op";
+
+"HomeScreen.accountDataUpdatedToastMessage" = "Your account data has been updated.";
+
+/* Activity button on the home screen toolbar */
+"HomeScreen.activity" = "Activity";
+
+/* This is the section that allows administration of the user's wallet */
+"HomeScreen.admin" = "Administration";
+
+/* Home screen menu button to buy some bitcoin */
+"HomeScreen.buy" = "Køb";
+
+/* home screen toolbar 'Buy & Sell' button */
+"HomeScreen.buyAndSell" = "Køb og Sælg";
+
+"HomeScreen.home" = "Home";
+
+/* Menu button on the home screen toolbar */
+"HomeScreen.menu" = "Menu";
+
+/* This section lists the users wallets */
+"HomeScreen.portfolio" = "Tegnebøger";
+
+/* Pull to refresh control on Home Screen */
+"HomeScreen.PullToRefresh" = "Pull to refresh";
+
+/* Label for the total balance of all the user's assets (style is all lower case if your language permits) */
+"HomeScreen.totalAssets" = "samlet antal aktiver";
+
+/* (Tap here to) trade (your assets for other assets) */
+"HomeScreen.trade" = "Køb og sælg";
+
+/* Checking private key balance progress view text */
+"Import.checking" = "Tjekker beløb på privat nøgle...";
+
+/* Sweep private key confirmation message */
+"Import.confirm" = "Send %@ fra denne private nøgle til din pung? Bitcoin netværket vil modtage et gebyr på %@.";
+
+/* Duplicate key error message */
+"Import.Error.duplicate" = "Denne private nøgle findes allerede i din pung.";
+
+/* empty private key error message */
+"Import.Error.empty" = "Denne private nøgle er tom.";
+
+/* Failed to submit transaction error message */
+"Import.Error.failedSubmit" = "Failed to submit transaction.";
+
+/* High fees error message */
+"Import.Error.highFees" = "Transaktionsgebyrer vil koste mere end der er midler til på denne private nøgle.";
+
+/* Not a valid private key error message */
+"Import.Error.notValid" = "Ikke en gyldig privat nøgle";
+
+/* Service error error message */
+"Import.Error.serviceError" = "Service Error";
+
+/* Service Unavailable error message */
+"Import.Error.serviceUnavailable" = "Service Unavailable";
+
+/* Import signing error message */
+"Import.Error.signing" = "Fejl ved underskrivelse af transaktion";
+
+/* Unable to sweep wallet error message */
+"Import.Error.sweepError" = "Unable to sweep wallet";
+
+/* Unsupported currency error message */
+"Import.Error.unsupportedCurrency" = "Unsupported Currency";
+
+/* [Redeem] the funds stored on this private key. */
+"Import.importButton" = "Indløs";
+
+/* Importing wallet progress view label */
+"Import.importing" = "Indløser privat nøgle";
+
+/* Caption for graphics */
+"Import.leftCaption" = "Privat nøgle";
+
+/* Import wallet intro screen message */
+"Import.message" = "Private nøgler printes ofte på papir som en QR-kode og bruges til at opbevare midler offline. Indløs en privat nøgle for at overføre alle pengene den indeholder til din RockWallet, med en enkelt transaktion.";
+
+/* Enter password alert view title */
+"Import.password" = "Denne private nøgle er beskyttet med et kodeord.";
+
+/* password textfield placeholder */
+"Import.passwordPlaceholder" = "adgangskode";
+
+/* Caption for graphics */
+"Import.rightCaption" = "Din RockWallet pung";
+
+/* Scan Private key button label */
+"Import.scan" = "Scan privat nøgle";
+
+/* Import wallet success alert title */
+"Import.success" = "Succes";
+
+/* Successfully imported wallet message body */
+"Import.SuccessBody" = "Indløste privat nøgle.";
+
+/* Import Wallet screen title */
+"Import.title" = "Indløs privat nøgle";
+
+/* Unlocking Private key activity view message. */
+"Import.unlockingActivity" = "Låser op for nøgle";
+
+/* Import wallet intro warning message */
+"Import.warning" = "At indløse en privat nøgle vil ikke importere transaktionshistorik eller andre detaljer.";
+
+/* Wrong password alert message */
+"Import.wrongPassword" = "Forkert adgangskode, prøv venligst igen.";
+
+/* Input view invalid code */
+"InputView.InvalidCode" = "Invalid code";
+
+/* Close app button */
+"JailbreakWarnings.close" = "Luk";
+
+/* Ignore jailbreak warning button */
+"JailbreakWarnings.ignore" = "Ignorer";
+
+/* Jailbreak warning message */
+"JailbreakWarnings.messageWithBalance" = "ENHEDENS SIKKERHED ER KOMPROMITTERET\n Enhver 'jailbreak' app kan få adgang til RockWallets nøgledata og stjæle dine bitcoin! Ryd straks denne pung og gendan på en sikker enhed.";
+
+/* Jailbreak warning message */
+"JailbreakWarnings.messageWithoutBalance" = "ENHEDENS SIKKERHED ER KOMPROMITTERET\n Enhver 'jailbreak' app kan få adgang til RockWallets nøgledata og stjæle dine bitcoin. Brug kun RockWallet på en ikke jailbreaket enhed.";
+
+/* Jailbreak warning title */
+"JailbreakWarnings.title" = "ADVARSEL";
+
+/* Wipe wallet button */
+"JailbreakWarnings.wipe" = "Ryd";
+
+/* Approve link wallet button label */
+"LinkWallet.approve" = "Godkend";
+
+/* Decline link wallet button label */
+"LinkWallet.decline" = "Afvis";
+
+/* Link Wallet view dislaimer footer */
+"LinkWallet.disclaimer" = "Eksterne apps kan ikke sende penge uden godkendelse fra denne enhed";
+
+/* Link Wallet view title above domain list */
+"LinkWallet.domainTitle" = "Bemærk: brug KUN denne app, når du er på et af følgende domæner";
+
+/* Link wallet logo footer text */
+"LinkWallet.logoFooter" = "Sikker betaling";
+
+/* Link Wallet view title above permissions list */
+"LinkWallet.permissionsTitle" = "Denne app vil være i stand til at:";
+
+/* Link Wallet view title */
+"LinkWallet.title" = "Forbind tegnebog";
+
+/* Location services disabled error */
+"LocationPlugin.disabled" = "Placeringstjenester er deaktiveret.";
+
+/* No permissions for location services */
+"LocationPlugin.notAuthorized" = "RockWallet har ikke adgang til placeringstjenester.";
+
+"LoginController.invalidPinError" = "Incorrect PIN. The wallet will get disabled after %d more failed %@.";
+
+/* Wallet creation date prefix */
+"ManageWallet.creationDatePrefix" = "Du lavede din pung den %@";
+
+/* Manage wallet description text */
+"ManageWallet.description" = "Din pungs navn vises kun i din kontos transaktionshistorik, og kan ikke ses af nogen andre.";
+
+/* Change Wallet name textfield label */
+"ManageWallet.textFeildLabel" = "Pungens navn";
+
+/* Manage wallet modal title */
+"ManageWallet.title" = "Administrer pung";
+
+"MarketData.high24h" = "24 timer høj";
+
+"MarketData.low24h" = "24 timer lav";
+
+"MarketData.marketCap" = "Markedsværdi";
+
+"MarketData.volume" = "Handelsvolumen";
+
+/* "Add [a] Wallet [to the home screen]" */
+"MenuButton.addWallet" = "Tilføj pung";
+
+/* Menu button title */
+"MenuButton.atmCashRedemption" = "ATM Cash Redemption";
+
+/* Feedback menu button title */
+"MenuButton.feedback" = "Support";
+
+/* Menu button title */
+"MenuButton.lock" = "Lås pung";
+
+/* (Click here to) manage (your list of) wallets */
+"MenuButton.manageAssets" = "Manage Assets";
+
+/* (Click here to) manage (your list of) wallets */
+"MenuButton.manageWallets" = "Administrer Tegnebøger";
+
+/* (press here to) scan (a) QR code */
+"MenuButton.scan" = "Scan QR-kode";
+
+/* Menu button title */
+"MenuButton.security" = "Sikkerhedscenter";
+
+/* Menu button title */
+"MenuButton.settings" = "Indstillinger";
+
+/* Menu button title */
+"MenuButton.support" = "Support";
+
+"MenuButton.TellFriend" = "Tell a friend";
+
+/* button label */
+"MenuViewController.createButton" = "Opret ny pung";
+
+/* Menu modal title */
+"MenuViewController.modalTitle" = "Menu";
+
+/* button label */
+"MenuViewController.recoverButton" = "Gendan pung";
+
+/* Paper Key Skip modal body (Android-version) */
+"Modal.PaperKeySkip.Body.Android" = "Din gendannelsesfrase er nødvendig for at åbne din tegnebog, hvis du ændrer sikkerhedsindstillingerne på din telefon. \n\nEr du sikker på, at du vil konfigurere din gendannelsesfrase senere?";
+
+/* Paper Key Skip modal Continue Set Up button */
+"Modal.PaperKeySkip.Button.ContinueSetUp" = "Fortsæt oprettelse";
+
+/* Paper Key Skip modal I'll do it later button */
+"Modal.PaperKeySkip.Button.IllDoItLater" = "Jeg gør det senere";
+
+/* Paper Key Skip modal title */
+"Modal.PaperKeySkip.Title" = "Vær opmærksom";
+
+"NFCReaderUsageDescription" = "RockWallet uses the NFC reader to verify nfc-enabled passports.";
+
+/* Node selection mode is automatic */
+"NodeSelector.automatic" = "Automatisk";
+
+/* Switch to automatic mode button label */
+"NodeSelector.automaticButton" = "Skift til automatisk tilstand";
+
+/* Node is connected label */
+"NodeSelector.connected" = "Forbundet";
+
+/* Node is connecting label */
+"NodeSelector.connecting" = "Opretter forbindelse";
+
+/* Enter node ip address view body */
+"NodeSelector.enterBody" = "Indtast node-IP-adresse og port (valgfrit)";
+
+/* Enter Node ip address view title */
+"NodeSelector.enterTitle" = "Indtast node";
+
+/* Entered invalid node address at the node selection screen */
+"NodeSelector.invalid" = "Ugyldig knude";
+
+/* Switch to manual mode button label */
+"NodeSelector.manualButton" = "Skift til manuel tilstand";
+
+/* Node address label */
+"NodeSelector.nodeLabel" = "Nuværende primære node";
+
+/* Node is not connected label */
+"NodeSelector.notConnected" = "Ikke forbundet";
+
+/* Node status label */
+"NodeSelector.statusLabel" = "Node forbindelsesstatus";
+
+/* Node Selector view title */
+"NodeSelector.title" = "Bitcoin-nodes";
+
+"NoInternet.Body" = "We couldn’t connect to the server. Please check your internet connection and try again.";
+
+"NoInternet.Title" = "Check your connection";
+
+"NSCameraUsageDescription" = "RockWallet utilizes the camera function to scan crypto addresses and capture images of documents for the purpose of identity verification.";
+
+"NSMicrophoneUsageDescription" = "RockWallet utilizes the Microphone and Camera to capture a live video during the identify verification process.";
+
+/* Onboarding screen 'I'll browse first' button */
+"Onboarding.browseFirst" = "Jeg kigger først";
+
+/* Onboarding screen 'Buy some coin' button */
+"Onboarding.buyCoin" = "Køb nogle coins";
+
+"Onboarding.Description" = "Empowering you to navigate the digital asset economy easily and securely";
+
+/* Onboarding screen 'Get started' (create new wallet) button */
+"Onboarding.getStarted" = "Kom i gang";
+
+/* Onboarding screen 'Next' button */
+"Onboarding.next" = "Næste";
+
+/* Onboarding screen restore an existing wallet. */
+"Onboarding.restoreWallet" = "Gendan tegnebog";
+
+"Onboarding.RestoreYourWallet" = "Restore your wallet";
+
+"Onboarding.RestoreYourWalletDescription" = "You can restore your wallet with your recovery phrase or iCloud.";
+
+/* Onboarding screen Skip button title that allows the user to exit the onboarding process. */
+"Onboarding.skip" = "Spring over";
+
+"Onboarding.SkipPhrase" = "SKIP AND SAVE LATER";
+
+/* Onboarding screen Page 4 title */
+"OnboardingPageFour.title" = "Begynd at investere i dag for så lidt som 50 dollars!";
+
+/* Onboarding screen Page 1 title */
+"OnboardingPageOne.title" = "Velkommen til din nye digitale aktivbog!";
+
+"OnboardingPageOne.titleOne" = "Buy, swap, use, and store top cryptocurrencies for low fees";
+
+/* Onboarding screen Page 3 subtitle */
+"OnboardingPageThree.subtitle" = "Invester og diversificer med RockWallet, nemt og sikkert.";
+
+/* Onboarding screen Page 3 title */
+"OnboardingPageThree.title" = "Køb og sælg bitcoin, tokens og andre digitale valutaer.";
+
+/* Onboarding screen Page 2 subtitle */
+"OnboardingPageTwo.subtitle" = "Vi har aktiver til en værdi af mere end 6 milliarder dollars under vores beskyttelse.";
+
+/* Onboarding screen Page 2 title */
+"OnboardingPageTwo.title" = "Gør som millioner af mennesker over hele verden, der stoler på RockWallet.";
+
+"PaymailAddress.CopyMessage" = "Paymail address %@ copied to clipboard";
+
+"PaymailAddress.createAddressDescription" = "To enable quick BSV transfers you can create your unique Paymail address.";
+
+"PaymailAddress.createAddressTitle" = "Create your paymail";
+
+"PaymailAddress.createPaymailAddress" = "Create paymail address";
+
+"PaymailAddress.description" = "Your Paymail address is setted up. Share your Paymail address instead of your wallet address to receive funds seamlessly.";
+
+"PaymailAddress.InappropriateWordsMessage" = "Sorry. Inappropriate language detected. Please choose a different paymail address.";
+
+"PaymailAddress.paymailAddressField" = "Paymail address";
+
+"PaymailAddress.PaymailButton" = "Paymail";
+
+"PaymailAddress.popupDescription" = "Paymail is a collection of protocols for Bitcoin SV wallets that allow for a set of simplified user experiences to be delivered across all wallets in the ecosystem.\nThe goals of the paymail protocol are:\nUser friendly payment destinations through memorable handles";
+
+"PaymailAddress.title" = "Paymail Address";
+
+"PaymailAddress.TransferBsvTitle" = "Transfer BSV easier!";
+
+"PaymailAddress.whatIsPaymail" = "What is Paymail?";
+
+"PaymailAddress.yourPaymailAddress" = "Your Paymail address:";
+
+/* Eg. Send 1.0Eth to purchase CCC */
+"PaymentConfirmation.amountText" = "Send %@ for at købe %@";
+
+/* Payment expired message */
+"PaymentConfirmation.PaymentExpired" = "The payment has expired due to inactivity. Please try again with the same card, or use a different card.";
+
+/* Payment verification timeout message */
+"PaymentConfirmation.PaymentTimeout" = "Payment verification timeout";
+
+/* Payment confirmation view title */
+"PaymentConfirmation.title" = "Bekræftelse";
+
+/* Try again button title in payment view */
+"PaymentConfirmation.TryAgain" = "Try again";
+
+"PaymentConfirmation.TryWithAch" = "Try with ACH payments";
+
+"PaymentConfirmation.TryWithDebit" = "Try with debit card";
+
+"PaymentMethod.Unavailable" = "Temporarily unavailable, please contact support";
+
+/* Bad Payment request alert title */
+"PaymentProtocol.Errors.badPaymentRequest" = "Dårlig betalingsanmodning";
+
+/* Error opening payment protocol file message */
+"PaymentProtocol.Errors.corruptedDocument" = "Ikke understøttet eller beskadiget dokument";
+
+/* Missing certificate payment protocol error message */
+"PaymentProtocol.Errors.missingCertificate" = "manglende certifikat";
+
+/* Request expired payment protocol error message */
+"PaymentProtocol.Errors.requestExpired" = "anmodning udløbet";
+
+/* Payment too small alert title */
+"PaymentProtocol.Errors.smallOutputError" = "Kunne ikke foretage betaling";
+
+/* Amount too small error message */
+"PaymentProtocol.Errors.smallPayment" = "Bitcoin betalinger kan ikke være mindre end %@.";
+
+/* Output too small error message. */
+"PaymentProtocol.Errors.smallTransaction" = "Bitcoin transaktionsoutput kan ikke være mindre end %@.";
+
+/* Unsupported signature type payment protocol error message */
+"PaymentProtocol.Errors.unsupportedSignatureType" = "ikke understøttet signaturtype";
+
+/* Untrusted certificate payment protocol error message */
+"PaymentProtocol.Errors.untrustedCertificate" = "certifikat der ikke er tillid til";
+
+"PersonalInformation.Day" = "DD";
+
+"PersonalInformation.Month" = "MM";
+
+"PersonalInformation.Year" = "YYYY";
+
+"Platform.transaction_cancelled" = "Transaktion annulleret";
+
+"Profile.PaymentMethods" = "Payment methods";
+
+"Prompts.ConnectionIssues.title" = "Connection issues";
+
+"Prompts.CreateAccount.body" = "With your RockWallet account you’ll be able to Swap and Buy seamlessly.";
+
+"Prompts.CreateAccount.description" = "With your RockWallet account, you’ll be able to Store and Manage your digital assets seamlessly.";
+
+"Prompts.CreateAccount.title" = "Create your RockWallet account";
+
+/* Body text for a prompt that asks the user to subscribe to email updates to find out product updates. */
+"Prompts.Email.body" = "Vær den første til at modtage vigtige support- og produktopdateringer";
+
+/* Placeholder text for an email address text field. */
+"Prompts.Email.placeholder" = "Indtast din e-mail";
+
+/* Body text that is shown when the user successfully subscribes to email updates. */
+"Prompts.Email.successBody" = "Du har abonneret på at modtage opdateringer";
+
+/* Text that is displayed as a footnote when the user successfully subscribes to email updates. */
+"Prompts.Email.successFootnote" = "Vi værdsætter din fortsatte støtte";
+
+/* Title that is shown when the user successfully subscribes to email updates. */
+"Prompts.Email.successTitle" = "Tak skal du have!";
+
+/* Title for a prompt that asks the user to subscribe to email updates to find out product updates. */
+"Prompts.Email.title" = "Hold dig opdateret";
+
+/* Body text for a prompt that asks the user to subscribe to email updates to find out product updates., Placeholder text for an email address text field., Body text that is shown when the user successfully subscribes to email updates., Text that is displayed as a footnote when the user successfully subscribes to email updates., Title that is shown when the user successfully subscribes to email updates., Title for a prompt that asks the user to subscribe to email updates to find out product updates., Enable face ID prompt body */
+"Prompts.FaceId.body" = "Tryk Fortsæt for at aktivere Face ID";
+
+/* Enable face ID prompt title */
+"Prompts.FaceId.title" = "Aktiver Face ID";
+
+"Prompts.LimitsAuthentication.body" = "Just one more small step, and you'll be able to enjoy your new limits.";
+
+"Prompts.LimitsAuthentication.title" = "Finish setting up your new Buy limits.";
+
+/* No passcode set warning body */
+"Prompts.NoPasscode.body" = "En adgangskode til enheden er nødvendig for at beskytte din wallet. Gå til indstillinger og slå adgangskode til.";
+
+/* No Passcode set warning title */
+"Prompts.NoPasscode.title" = "Slå enhedens adgangskode til";
+
+/* Instructions on how to enable screen lock settings */
+"Prompts.NoScreenLock.body.android" = "Der skal en skærmlås til på enheden, for at beskytte din pung. Gå til \"Indstillinger\" > \"Sikkerhed\" > \"Skærmlås\" og aktiver for at fortsætte.";
+
+/* Device encryption prompt title */
+"Prompts.NoScreenLock.title.android" = "Skærmlås deaktiveret";
+
+"Prompts.PaperKey.Body" = "Set up your Recovery Phrase in case you ever lose or replace your phone. Your key is also required if you change your phone\'s security settings.";
+
+/* An action is required (You must do this action). */
+"Prompts.PaperKey.title" = "Handling påkrævet";
+
+"Prompts.RateApp.dontShow" = "Spørg ikke igen";
+
+"Prompts.RateApp.enjoyingBrd" = "Nyder BRD?";
+
+"Prompts.RateApp.enjoyingRockWallet" = "Nyder RockWallet?";
+
+"Prompts.RateApp.googlePlayReview" = "Din anmeldelse hjælper med at vokse RockWallet-samfundet.";
+
+"Prompts.RateApp.noThanks" = "Nej tak";
+
+"Prompts.RateApp.rateUs" = "Gennemgå os";
+
+/* Transaction rejected prompt body */
+"Prompts.RecommendRescan.body" = "Din pung er muligvis ikke synkroniseret. Dette kan ofte løses ved at genskanne blokkæden.";
+
+/* Transaction rejected prompt title */
+"Prompts.RecommendRescan.title" = "Transaktion afvist";
+
+/* Share data prompt body */
+"Prompts.ShareData.body" = "Hjælp med at forbedre RockWallet ved at dele dine anonyme data med os";
+
+/* Share data prompt title */
+"Prompts.ShareData.title" = "Del anonyme data";
+
+/* Enable touch ID prompt body */
+"Prompts.TouchId.body" = "Tryk her for at aktivere Touch ID";
+
+/* Enable Fingerprint prompt body */
+"Prompts.TouchId.body.android" = "Tryk her for at aktivere autentificering via fingeraftryk";
+
+/* Enable touch ID prompt title */
+"Prompts.TouchId.title" = "Aktiver Touch ID";
+
+/* Enable Fingerprint prompt title */
+"Prompts.TouchId.title.android" = "Aktiver autentificering via fingeraftryk";
+
+/* Button on fingerprint prompt so the user can enter their PIN instead */
+"Prompts.TouchId.usePin.android" = "PIN";
+
+"Prompts.TwoStep.body" = "Secure your wallet with two factor authentication.";
+
+"Prompts.TwoStep.title" = "Enable 2FA";
+
+/* Upgrade PIN prompt body. */
+"Prompts.UpgradePin.body" = "RockWallet er blevet opgraderet til at bruge en 6-cifret PIN. Tryk her for at opgradere.";
+
+/* Upgrade PIN prompt title. */
+"Prompts.UpgradePin.title" = "Opgader PIN";
+
+"Prompts.VerifyAccount.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
+
+"Prompts.VerifyAccount.description" = "One more step, and you´ll unlock all RockWallet features.";
+
+"Prompts.VerifyAccount.title" = "Verify your account";
+
+/* Body text for the push notifications prompt. */
+"PushNotifications.body" = "Slå push-notifikationer til, og vær den første til at høre om nye funktioner og specialtilbud.";
+
+/* Push notifications are disabled alert title" */
+"PushNotifications.disabled" = "Notifikationer deaktiveret";
+
+/* Body text when push notifications are disabled. */
+"PushNotifications.disabledBody" = "Aktivér meddelelser for at modtage særlige tilbud og opdateringer fra RockWallet.";
+
+/* Body text when push notifications are enabled. */
+"PushNotifications.enabledBody" = "Du modtager særlige tilbud og opdateringer fra RockWallet.";
+
+/* Instructions to enable push notifications for BRD in the phone's system settings. */
+"PushNotifications.enableInstructions" = "Det lader til, at meddelelser er slået fra. Gå til Indstillinger for at aktivere meddelelser fra RockWallet.";
+
+/* Push notifications toggle switch label */
+"PushNotifications.label" = "Modtag pushmeddelelser";
+
+/* Push notifications are off label */
+"PushNotifications.off" = "Fra";
+
+/* Push notifications are on label */
+"PushNotifications.on" = "Til";
+
+/* Push notifications settings view title label */
+"PushNotifications.title" = "Hold dig opdateret";
+
+/* Push notifications settings failed to update settings on the back end */
+"PushNotifications.updateFailed" = "Kunne ikke opdatere indstillinger for push-meddelelser";
+
+/* Google play review prompt body */
+"RateAppPrompt.Body.Android" = "Hvis du elsker vores app, skal du tage et øjeblik til at bedømme den og give os en anmeldelse.";
+
+/* Google play review prompt, revivew button */
+"RateAppPrompt.Button.Dismiss.Android" = "Nej tak";
+
+/* Google play review prompt, dismiss button */
+"RateAppPrompt.Button.RateApp.Android" = "Bedøm RockWallet";
+
+/* Google play review prompt title */
+"RateAppPrompt.Title.Android" = "Bedøm RockWallet";
+
+/* Address copied message. */
+"Receive.copied" = "Kopieret til udklipsholder.";
+
+/* Share via email button label */
+"Receive.emailButton" = "E-mail";
+
+/* Request button label */
+"Receive.request" = "Anmod om et beløb";
+
+"Receive.SelectAsset" = "Select asset";
+
+/* Share button label */
+"Receive.share" = "Del";
+
+/* Share via text message (SMS) */
+"Receive.textButton" = "SMS";
+
+/* Receive modal title */
+"Receive.title" = "Modtag";
+
+"RecoverWallet.description" = "Type your 12 Word Phrase";
+
+/* Done button text */
+"RecoverWallet.done" = "Færdig";
+
+/* Enter recovery phrase label to delete the wallet */
+"RecoverWallet.EnterRecoveryPhrase" = "Please enter your Recovery Phrase to delete this wallet from your device.";
+
+/* Recover wallet header */
+"RecoverWallet.header" = "Gendan pung";
+
+/* Reset PIN with paper key: header */
+"RecoverWallet.header_reset_pin" = "Nulstil PIN";
+
+/* Enter paper key instruction */
+"RecoverWallet.instruction" = "Indtast gendannelsesfrase";
+
+/* Recover wallet intro */
+"RecoverWallet.intro" = "Gendan din RockWallet med din gendannelsesfrase.";
+
+/* Invalid paper key message */
+"RecoverWallet.invalid" = "Den gendannelsessætning, du indtastede, er ugyldig. Dobbeltkontrol af hvert ord, og prøv igen.";
+
+/* Previous button accessibility label */
+"RecoverWallet.leftArrow" = "Venstre pil";
+
+/* Next button label */
+"RecoverWallet.next" = "Næste";
+
+/* What Is recovery phrase text popup */
+"RecoverWallet.RecoveryPhrasePopup" = "A Recovery Phrase consists of 12 randomly generated words. The app creates the Recovery Phrase for you automatically when you start a new wallet. The Recovery Phrase is critically important and should be written down and stored in a safe location. In the event of phone theft, destruction, or loss, the Recovery Phrase can be used to load your wallet onto a new phone. The key is also required when upgrading your current phone to a new one.";
+
+/* Reset PIN with paper key: more information button. */
+"RecoverWallet.reset_pin_more_info" = "Tryk her for flere oplysninger.";
+
+/* Next button accessibility label */
+"RecoverWallet.rightArrow" = "Højre pil";
+
+/* Recover wallet sub-header */
+"RecoverWallet.subheader" = "Indtast gendannelsessætningen for den tegnebog, du vil gendanne.";
+
+/* Reset PIN with paper key: sub-header */
+"RecoverWallet.subheader_reset_pin" = "For at nulstille din pinkode skal du indtaste ordene fra din gendannelsessætning i felterne nedenfor.";
+
+"RecoverWallet.Subheader.DeleteAccount" = "Please enter your Recovery Phrase to delete your account and unlink your wallet";
+
+"RecoverWallet.subtitle" = "Enter your Recovery Phrase";
+
+/* What is recovery phrase title on popup */
+"RecoverWallet.WhatIsRecoveryPhrase" = "What is “Recovery Phrase”?";
+
+/* Instructs the user to enter words from the set of recovery key words. */
+"RecoveryKeyFlow.confirmRecoveryInputError" = "Ordet du indtastede er forkert. Prøv igen.";
+
+/* Instructs the user to enter words from the set of recovery phrase words. */
+"RecoveryKeyFlow.confirmRecoveryKeySubtitle" = "Næsten færdig! Indtast følgende ord fra din gendannelsesfrase.";
+
+/* Title for the confirmation step of the recovery phrase flow. */
+"RecoveryKeyFlow.confirmRecoveryKeyTitle" = "Bekræft gendannelsesfrase";
+
+/* Title displayed when the user starts the process of entering a recovery phrase */
+"RecoveryKeyFlow.enterRecoveryKey" = "Indtast gendannelsesfrase";
+
+/* Subtitle displayed when the user starts the process of entering a recovery phrase */
+"RecoveryKeyFlow.enterRecoveryKeySubtitle" = "Indtast din gendannelsesfrase for at fjerne linket fra denne tegnebog fra din enhed.";
+
+/* Body text for an alert dialog asking the user whether to set up the recovery phrase later */
+"RecoveryKeyFlow.exitRecoveryKeyPromptBody" = "Er du sikker på, at du vil konfigurere din gendannelsesfrase senere?";
+
+/* Title for an alert dialog asking the user whether to set up the recovery key later */
+"RecoveryKeyFlow.exitRecoveryKeyPromptTitle" = "Opsæt senere";
+
+/* Button text for the 'Generate Recovery Phrase' button */
+"RecoveryKeyFlow.generateKeyButton" = "Generer gendannelsesfrase";
+
+/* Subtext for the recovery key landing page. */
+"RecoveryKeyFlow.generateKeyExplanation" = "Denne nøgle er nødvendig for at inddrive dine penge, hvis du opgraderer eller mister din telefon.";
+
+/* Default title for the recovery phrase landing page */
+"RecoveryKeyFlow.generateKeyTitle" = "Generer din private gendannelsesfrase";
+
+/* Title for a button that takes the user to the wallet after setting up the recovery key. */
+"RecoveryKeyFlow.goToWalletButtonTitle" = "Gå til Tegnebog";
+
+"RecoveryKeyFlow.HelpPopup.content" = "Your Recovery Phrase consists of 12 randomly generated words that the wallet creates for you automatically when you start a new wallet.\n\nThe Recovery Phrase is critically important and should be written down and stored in a safe location. In the event of phone theft, destruction or loss, the Recovery Phrase can be used to load your wallet onto a new phone. The Recovery Phrase is also required when upgrading your current phone to a new one.";
+
+"RecoveryKeyFlow.HelpPopup.title" = "What is “Recovery Phrase”?";
+
+/* Hint text for recovery key intro page, e.g., Step 2 */
+"RecoveryKeyFlow.howItWorksStep" = "Sådan fungerer det - Trin %@";
+
+/* Error text displayed when the user enters an incorrect recovery phrase */
+"RecoveryKeyFlow.invalidPhrase" = "Nogle af de ord, du indtastede, stemmer ikke overens med din gendannelsesfrase. Prøv igen.";
+
+"RecoveryKeyFlow.KeepPhrasePrivate.subtitle" = "Remember that anyone with your Recovery Phrase can access your Assets.";
+
+"RecoveryKeyFlow.KeepPhrasePrivate.title" = "Keep it private";
+
+/* Title for recovery key intro page */
+"RecoveryKeyFlow.keepSecure" = "Hold den sikker";
+
+/* Informs the user that the recovery is only required for recovering a wallet. */
+"RecoveryKeyFlow.keyUseHint" = "Din nøgle er kun nødvendig til genopretning, ikke til hverdagsadgang til tegnebogen.";
+
+/* Reminds the user not to take screenshots or email the recovery key words */
+"RecoveryKeyFlow.noScreenshotsOrEmailWarning" = "Af sikkerhedshensyn skal du ikke tage skærmbilleder eller e-maile disse ord";
+
+/* Recommends that the user avoids capturing the paper key with a screenshot */
+"RecoveryKeyFlow.noScreenshotsRecommendation" = "Skriv din nøgle ned på papir og bekræft den. Skærmbilleder anbefales ikke af sikkerhedsmæssige årsager.";
+
+/* Title displayed when the user starts the process of recovering a wallet */
+"RecoveryKeyFlow.recoveryYourWallet" = "Gendan din Tegnebog";
+
+/* Subtitle displayed when the user starts the process of recovering a wallet */
+"RecoveryKeyFlow.recoveryYourWalletSubtitle" = "Indtast gendannelsesfrasen for den tegnebog, du vil gendanne.";
+
+/* Title for recovery key intro page */
+"RecoveryKeyFlow.relaxBuyTrade" = "Slap af, køb og handel";
+
+/* Reminds the user to write down the recovery key words. */
+"RecoveryKeyFlow.rememberToWriteDownReminder" = "Husk at skrive disse ord ned. Stryg tilbage, hvis du har glemt dem.";
+
+/* Instruction displayed when the user is resetting the PIN, which requires the recovery phrase to be entered */
+"RecoveryKeyFlow.resetPINInstruction" = "Indtast din gendannelsesfrase for at nulstille din pinkode.";
+
+/* Assures the user that BRD will keep the user's funds secure. */
+"RecoveryKeyFlow.securityAssurance" = "Køb og handel vel vidende, at dine midler er beskyttet af den bedste sikkerhed og privatlivspolitik i branchen.";
+
+"RecoveryKeyFlow.StorePhraseSecurely.subtitle" = "This is the only way you’ll be able to recover your funds. RockWallet does not keep a copy.";
+
+"RecoveryKeyFlow.StorePhraseSecurely.title" = "Store it securely";
+
+/* Recommends that the user stores the recovery key in a secure location */
+"RecoveryKeyFlow.storeSecurelyRecommendation" = "Gem din nøgle på et sikkert sted. Dette er den eneste måde at genoprette din tegnebog på. RockWallet beholder ikke en kopi.";
+
+/* Title for the success page after the recovery phrase has been set up */
+"RecoveryKeyFlow.successHeading" = "Tillykke! Du afsluttede opsætningen af din gendannelsesfrase.";
+
+/* Subtitle for the success page after the recovery key has been set up */
+"RecoveryKeyFlow.successSubheading" = "Du er klar til at indbetale, handle og købe krypto fra din RockWallet-tegnebog.";
+
+"RecoveryKeyFlow.tickbox.value" = "I understand the importance of the Recovery Phrase.";
+
+"RecoveryKeyFlow.Title" = "Secure your wallet with your Recovery Phrase";
+
+/* Title displayed to the user on the intro screen when unlinking a wallet */
+"RecoveryKeyFlow.unlinkWallet" = "Fjern forbindelsen til din tegnebog fra denne enhed.";
+
+/* Subtitle displayed to the user on the intro screen when unlinking a wallet. */
+"RecoveryKeyFlow.unlinkWalletSubtext" = "Start en ny tegnebog ved at afkoble din enhed fra den aktuelt installerede tegnebog.";
+
+/* Warning displayed when the user starts the process of unlinking a wallet */
+"RecoveryKeyFlow.unlinkWalletWarning" = "Tegnebogen skal genoprettes for at genvinde adgangen.";
+
+/* Title displayed to the user on the intro screen when wiping a wallet */
+"RecoveryKeyFlow.wipeWallet" = "Fjern forbindelsen til din tegnebog fra denne enhed.";
+
+/* Subtitle displayed to the user on the intro screen when wiping a wallet. */
+"RecoveryKeyFlow.wipeWalletSubtext" = "Start en ny tegnebog ved at tørre den aktuelle tegnebog fra din enhed.";
+
+/* Title for recovery key intro page */
+"RecoveryKeyFlow.writeItDown" = "Skriv din nøgle ned";
+
+/* Title for the recovery phrase landing page if the key has already been generated. */
+"RecoveryKeyFlow.writeKeyAgain" = "Skriv din gendannelsessæt igen";
+
+/* Subtitle for the write recovery key screen */
+"RecoveryKeyFlow.writeKeyScreenSubtitle" = "Skriv følgende ord ned i rækkefølge.";
+
+/* Title for the write recovery phrase screen */
+"RecoveryKeyFlow.writeKeyScreenTitle" = "Din gendannelsesfrase";
+
+/* Title for the step number when the user pages through the recovery words */
+"RecoveryKeyFlow.writeKeyStepTitle" = "%@ af %@";
+
+"RecoveryKeyFlow.WritePhrase.subtitle" = "Save your 12 word Recovery Phrase generated  in the next step.";
+
+"RecoveryKeyFlow.WritePhrase.title" = "Write it down";
+
+"RecoveryKeyOnboarding.description1" = "This is required to restore your wallet if you upgrade or lose your phone.";
+
+"RecoveryKeyOnboarding.description2" = "For security reasons, screenshots are not recommended, as anyone with your Recovery Phrase can access your funds.";
+
+"RecoveryKeyOnboarding.description3" = "Remember that this is the only way to restore your wallet. RockWallet does not keep a copy.";
+
+"RecoveryKeyOnboarding.title1" = "Generate your private Recovery Phrase";
+
+"RecoveryKeyOnboarding.title2" = "Write down your Recovery Phrase";
+
+"RecoveryKeyOnboarding.titlePage1" = "Generate your private Recovery Phrase";
+
+/* No amount entered error message. */
+"RequestAnAmount.noAmount" = "Indtast venligst et beløb først.";
+
+/* Request a specific amount of bitcoin */
+"RequestAnAmount.title" = "Anmod om et beløb";
+
+/* Alert action button label */
+"ReScan.alertAction" = "Synkroniser";
+
+/* Alert message body */
+"ReScan.alertMessage" = "Du vil ikke kunne sende penge mens du synkroniserer.";
+
+/* Alert message title */
+"ReScan.alertTitle" = "Synkroniser med blokkæde?";
+
+/* extimated time */
+"ReScan.body1" = "20-45 minutter";
+
+/* Syncing explanation */
+"ReScan.body2" = "Hvis en transaktion vises som gennemført i bitcoin netværket, men ikke i dit RockWallet.";
+
+/* Syncing explanation */
+"ReScan.body3" = "Du modtager gentagne gange en fejlmeddelelse om at din transaktion er blevet afvist.";
+
+/* Start Sync button label */
+"ReScan.buttonTitle" = "Start synkronisering";
+
+/* Sync blockchain view footer */
+"ReScan.footer" = "Du vil ikke kunne bruge penge, når du synkroniserer med blokkæden.";
+
+/* Sync Blockchain view header */
+"ReScan.header" = "Synkroniser blokkæde";
+
+/* Subheader label */
+"ReScan.subheader1" = "Anslået tid";
+
+/* Subheader label */
+"ReScan.subheader2" = "Hvornår skal der synkroniseres?";
+
+"ResetPin.description" = "Your PIN will be used to unlock your RockWallet and send money";
+
+"ResetPin.subtitleConfirmNewPin" = "Confirm your new PIN";
+
+"ResetPin.subtitleNewPin" = "Set your new PIN";
+
+"ResetPin.Title" = "Reset PIN";
+
+/* Rewards view expanded body. */
+"RewardsView.expandedBody" = "Se hvordan du kan spare på handelsgebyrer og låse op for fremtidige gevinster.";
+
+/* Rewards view expanded title. */
+"RewardsView.expandedTitle" = "Introduktion til RockWallet-belønninger.";
+
+/* Rewards view title */
+"RewardsView.normalTitle" = "Belønninger";
+
+/* Scan bitcoin address camera flash toggle */
+"Scanner.flashButtonLabel" = "Kamerablitz";
+
+"Scanner.noCamera" = "No camera found";
+
+/* (alert dialog message) Would you like to send a [Bitcoin / Bitcoin Cash / Ethereum] payment to this address?") */
+"Scanner.paymentPromptMessage" = "Vil du sende en %@ betaling til denne adresse?";
+
+/* alert dialog title */
+"Scanner.paymentPromptTitle" = "Send betaling";
+
+/* Complete filter label */
+"Search.complete" = "færdig";
+
+/* Pending filter label */
+"Search.pending" = "afventer";
+
+/* Received filter label */
+"Search.received" = "modtaget";
+
+/* [Click here to] search */
+"Search.search" = "Søg";
+
+/* Sent filter label */
+"Search.sent" = "sendt";
+
+/* Face ID button title */
+"SecurityCenter.faceIdTitle" = "Face ID";
+
+/* Paper Key button description */
+"SecurityCenter.paperKeyDescription" = "Den eneste måde at få adgang til dine bitcoin på, hvis du mister eller opgraderer din telefon.";
+
+/* Recovery Phrase button title. This used to be called 'paper key', so leaving the string key as `paperKeyTitle` in order, * to not break existing client code. */
+"SecurityCenter.paperKeyTitle" = "Gendannelsesfrase";
+
+/* PIN button description */
+"SecurityCenter.pinDescription" = "Beskytter dit RockWallet mod uberettigede brugere.";
+
+/* PIN button title */
+"SecurityCenter.pinTitle" = "6-cifret PIN";
+
+/* Touch ID button description */
+"SecurityCenter.touchIdDescription" = "Lås dit Break op og send penge op til en vis grænse.";
+
+/* Touch ID button title */
+"SecurityCenter.touchIdTitle" = "Touch ID";
+
+/* Security center fingerprint authentication button */
+"SecurityCenter.touchIdTitle.android" = "Autentificering via fingeraftryk";
+
+"Segment.RockWalletPro" = "ROCKWALLET PRO";
+
+/* Segwit enabled confirmation body */
+"Segwit.ConfirmationConfirmationBody" = "Thank you for helping move bitcoin forward!";
+
+/* Segwit enabled confirmation title */
+"Segwit.ConfirmationConfirmationTitle" = "Du har aktiveret SegWit!";
+
+/* Segwit enabled confirmation description */
+"Segwit.ConfirmationInstructionsDescription" = "";
+
+/* Segwit instructions */
+"Segwit.ConfirmationInstructionsInstructions" = "SegWit-support er stadig en beta funktion.\nNår SegWit er aktiveret, vil det ikke være muligt\nat deaktivere det. Du kan finde legacy-adressen under Indstillinger.\nNogle tredjepartstjenester, herunder kryptohandel, kan være utilgængelige for brugere, der har aktiveret SegWit. I tilfælde af en nødsituation vil du kunne generere en legacy-adresse fra Indstillinger > BTC-Indstillinger.\nSegWit vil automatisk blive aktiveret for alle\nbrugere i en fremtidig opdatering.";
+
+/* Segwit extra confirmation title. */
+"Segwit.ConfirmChoiceLayout" = "Aktivering af SegWit er en irreversibel funktion. Er du sikker på, at du vil fortsætte?";
+
+/* Segwit enableButton */
+"Segwit.Enable" = "Aktiver";
+
+/* Segwit button label that takes the user back to the home screen once SegWit is enabled. */
+"Segwit.HomeButton" = "Til månen";
+
+"Sell.achDurationWarning" = "ACH withdrawal will be processed within 3-5 business days.";
+
+"Sell.achFee" = "ACH fee";
+
+"Sell.achWithdrawal" = "ACH Withdrawal";
+
+"Sell.cardWithdrawal" = "Card withdrawal";
+
+"Sell.details" = "Sell & Withdraw details";
+
+"Sell.disclaimer" = "Minimum withdrawal is %@ and maximum is %@ per day. At the moment your lifetime limit is %@ USD.\n\nACH Withdrawals will be processed within 3-5 business days.withdrawal";
+
+"Sell.InvalidCardNumber" = "Only Visa Debit is supported for withdrawals";
+
+"Sell.iReceive" = "I receive";
+
+"Sell.NotAvailableBody" = "Sell & Withdraw isn't available in your region. We'll notify you when this feature is released. You can always swap to convert digital assets.";
+
+"Sell.OrderPreview" = "Withdrawal preview";
+
+"Sell.rate" = "Conversion rate";
+
+"Sell.SellLimits" = "Minimum for withdrawal is %@ per transaction and your weekly limit is %@.\n\nYour withdrawal will reach your bank account in the next 3-5 business days.";
+
+"Sell.SellLimits1" = "Minimum for withdrawal is %@ per transaction and your weekly limit is %@.";
+
+"Sell.SellLimits2" = "Your withdrawal will reach your bank account in the next 3-5 business days.";
+
+"Sell.SsnInput.Disclaimer" = "To enable selling and withdrawals, we require your Social Security Numbers (SSN). It is a standard procedure to comply with financial regulations.\nRest assured, your data is fully encrypted with the industry’s latest encryption algorithms.";
+
+"Sell.SsnInput.Title.AdditionalInfo" = "We need additional info";
+
+"Sell.SsnInput.Title.CheckingYourData" = "Checking your data...";
+
+"Sell.subtotal" = "Subtotal";
+
+"Sell.title" = "Sell & Withdraw funds";
+
+"Sell.tryAgain" = "Please try again";
+
+"Sell.visaDebit" = "Visa Debit";
+
+"Sell.visaDebitSupport" = "Unfortunately, currently only Visa Debit is supported for withdrawals";
+
+"Sell.widrawToBank" = "Withdraw to";
+
+"Sell.WithdrawalErrorText" = "Please try again and if the issue persists, please contact customer support";
+
+"Sell.WithdrawalSuccessText" = "Your funds should be deposited into your account within 3-5 business days. In rare cases, withdrawals may take up to 7 business days.";
+
+"Sell.WithdrawalSuccessTitle" = "Your withdrawal is being processed";
+
+"Sell.WithdrawDetails" = "Sell and withdraw details";
+
+"Sell.YourAchSellLimits" = "Your ACH withdrawal limits";
+
+"Sell.yourOrder" = "You sell:";
+
+"Sell.YourSellLimits" = "Your sell limits";
+
+"Sell.YouWillReceive" = "You’ll receive";
+
+"Send_fio_toLabel" = "FIO";
+
+/* Send money amount label */
+"Send.amountLabel" = "Beløb";
+
+/* Balance: $4.00 */
+"Send.balance" = "Balance: %@";
+
+/* Balance: $4.00 for iOS, the balance can't have a parameter */
+"Send.balanceString" = "Saldo:";
+
+"Send.BCHConverter.ErrorToast" = "The BCH address could not be converted.";
+
+/* Instructions how to allow the camera access for the app */
+"Send.cameraUnavailabeMessage.android" = "Tillad adgang under \"Indstillinger\" > \"Apps\" > \"RockWallet\" > \"Tilladelser\"";
+
+/* Permission required to access camera */
+"Send.cameraUnavailabeTitle.android" = "RockWallet har ikke tilladelse til at få adgang til kameraet";
+
+/* Camera not allowed message */
+"Send.cameraunavailableMessage" = "Gå til Indstillinger og giv adgang til kamera.";
+
+/* Camera not allowed alert title */
+"Send.cameraUnavailableTitle" = "RockWallet har ikke adgang til kameraet";
+
+/* Warning when sending to self. */
+"Send.containsAddress" = "Destinationen er din egen adresse. Du kan ikke sende til dig selv.";
+
+/* Could not create transaction alert title */
+"Send.creatTransactionError" = "Kunne ikke oprette transaktion.";
+
+/* Description for sending money label */
+"Send.descriptionLabel" = "Memo";
+
+/* Destination tag is too long error message in send view */
+"Send.DestinationTag" = "Destination tag is too long.";
+
+/* Optional Destination Tag label */
+"Send.destinationTag_optional" = "Destinationskode (valgfrit)";
+
+/* Required Destination Tag label */
+"Send.destinationTag_required" = "Destinationskode (påkrævet)";
+
+"Send.destinationTag_required_error" = "Et gyldigt destinationsmærke kræves til måladressen.";
+
+/* Destination Tag text explanation popup in send view */
+"Send.DestinationTagText" = "Some receiving addresses (exchanges usually) require additional identifying information provided with a Destination Tag.\n\nIf the recipient's address is accompanied by a destination tag, make sure to include it.\nAlso, we strongly suggest you send a small amount of cryptocurrency as a test before attempting to send a significant amount.";
+
+/* Emtpy pasteboard error message */
+"Send.emptyPasteboard" = "Tegnebord er tomt";
+
+/* Sending error message */
+"Send.Error.authenticationError" = "Authentication Error";
+
+/* Error calculating maximum. */
+"Send.Error.maxError" = "Could not calculate maximum";
+
+/* "(you) can't send (to your)self" */
+"Send.ethSendSelf" = "Kan ikke sende til dig selv.";
+
+/* Network Fee: $0.01 */
+"Send.fee" = "Netværksafgift: %@";
+
+"Send.fio_invalid" = "Ugyldig FIO-adresse.";
+
+"Send.fio_noAddress" = "Der er ingen %@ adresse tilknyttet denne FIO-adresse.";
+
+"Send.fio_retrievalError" = "Der opstod en fejl under hentning af adressen til denne FIO-adresse. Prøv igen senere.";
+
+/* Payee identity not certified alert title. */
+"Send.identityNotCertified" = "Betalingsmodtagerens identitet er ikke bekræftet.";
+
+/* Insufficient funds error */
+"Send.insufficientFunds" = "Utilstrækkelige midler";
+
+/* Insufficient gas error */
+"Send.insufficientGas" = "Insufficient gas.";
+
+"Send.insufficientGasMessage" = "You must have at least %@ in your wallet in order to send this digital asset. Please add more %@ to your wallet and try again.";
+
+/* Your balance is insufficient to complete this action. */
+"Send.insufficientGasTitle" = "Insufficient %@ Balance";
+
+/* e.g. The destination is not a valid (bitcoin) address. */
+"Send.invalidAddressMessage" = "Modtageradressen er ikke en gyldig %@-adresse.";
+
+/* Invalid address on pasteboard message */
+"Send.invalidAddressOnPasteboard" = "Tegnebord indeholder ikke en gyldig %@ adresse.";
+
+/* Invalid address alert title */
+"Send.invalidAddressTitle" = "Ugyldig adresse";
+
+/* Is rescanning error message */
+"Send.isRescanning" = "Afsendelse er deaktiveret under en ny scanning.";
+
+/* Warning when the user is trying to send bitcoin cash to a legacy bitcoin address (possible, but probably not what the user wants to do) */
+"Send.legacyAddressWarning" = "Advarsel: dette er en legacy-bitcoinadresse. Er du sikker på du vil sende Bitcoin-penge til den?";
+
+/* We are loading the request (now) */
+"Send.loadingRequest" = "Behandler Anmodning";
+
+/* Hedera Memo Tag Label */
+"Send.memoTag_optional" = "Hedera Memo (valgfrit)";
+
+/* Transaction fee could not be be caluculated error. */
+"Send.nilFeeError" = "Utilstrækkelige midler til at dække transaktionsgebyret.";
+
+/* Empty address alert message */
+"Send.noAddress" = "Indtast modtagerens adresse.";
+
+/* Emtpy amount alert message */
+"Send.noAmount" = "Indtast et beløb, der skal sendes.";
+
+/* No fee estimate error on send view */
+"Send.NoFeeEstimate" = "No fee estimate";
+
+/* No Fees error */
+"Send.noFeesError" = "Netværksgebyr-vilkår bliver downloadet. Prøv venligst igen.";
+
+/* Paste button label */
+"Send.pasteLabel" = "Indsæt";
+
+/* Error message for invalid PayID */
+"Send.payId_invalid" = "Ugyldig PayID.";
+
+/* Error message for no address associated with a PayID for a given currency */
+"Send.payId_noAddress" = "Der er ingen %@ adresse tilknyttet denne PayID.";
+
+/* Error message for error in retrieving the address from the PayID endpoint */
+"Send.payId_retrievalError" = "Der opstod en fejl under hentning af adressen til denne PayID. Prøv igen senere.";
+
+/* PayID label */
+"Send.payId_toLabel" = "PayID";
+
+"Send.placeholderText" = "Enter wallet address or Paymail";
+
+"Send.placeholderTextWithoutPaymail" = "Enter wallet address";
+
+/* Could not publish transaction alert title */
+"Send.publishTransactionError" = "Kunne ikke offentliggøre transaktion.";
+
+/* Could not load remote request error message */
+"Send.remoteRequestError" = "Kunne ikke behandle betalingsanmodning";
+
+/* Scan button label */
+"Send.scanLabel" = "Scan";
+
+/* Title for error when send request times out and we are not sure weather it succesfull or not. */
+"Send.sendError" = "Send Error";
+
+/* Sending Max: $4.00 for iOS, the balance can't have a parameter */
+"Send.sendingMax" = "Sender maks:";
+
+/* Send button label (the action, "press here to send") */
+"Send.sendLabel" = "Send";
+
+/* Send button label (for special case where the user specified send amount is too high and does not leave a balance to cover fees.) */
+"Send.sendMaximum" = "Send maksimumsbeløb?";
+
+/* Error message when send request times out and we are not sure weather it succesfull or not. */
+"Send.timeOutBody" = "Timed out waiting for network response. Please wait 30 minutes for confirmation before retrying.";
+
+/* Send screen title (as in "this is the screen for sending money") */
+"Send.title" = "Send penge";
+
+/* Send money to label */
+"Send.toLabel" = "Til";
+
+/* Adress already used alert message - first part */
+"Send.UsedAddress.firstLine" = "Bitcoin adresser er kun beregnet til en enkelt anvendelse.";
+
+/* Adress already used alert message - second part */
+"Send.UsedAddress.secondLIne" = "Genbrug reducerer privatliv for både dig og modtageren og kan resultere i tab, hvis modtageren ikke har direkte kontrol over adressen.";
+
+/* Adress already used alert title */
+"Send.UsedAddress.title" = "Adresse allerede brugt";
+
+/* What is a destination tag title in popup in send view */
+"Send.WhatIsDestinationTag" = "What is a destination tag?";
+
+"SendConfirmation.youWillSend" = "You\'ll send";
+
+"SetPin.descriptionConfirm" = "Please re-enter your PIN";
+
+/* Section header for "other settings". */
+"Settings.other" = "Andet";
+
+/* About label */
+"Settings.about" = "Om";
+
+/* Advanced settings header */
+"Settings.advanced" = "Avanceret";
+
+/* Advanced Settings title */
+"Settings.advancedTitle" = "Avancerede indstillinger";
+
+/* ATM map menu item title explaining that it's a feature only available in the USA */
+"Settings.atmMapMenuItemSubtitle" = "Kun tilgængelig i USA";
+
+/* ATM map menu item title */
+"Settings.atmMapMenuItemTitle" = "Crypto ATM-kort";
+
+/* i.e. the currency which will be displayed */
+"Settings.currency" = "Vis valuta";
+
+/* e.g. "USD Settings" (settings for how USD is handled) */
+"Settings.currencyPageTitle" = "%@ indstillinger";
+
+/* Section title for a collection of different settings screens, one for each currency */
+"Settings.currencySettings" = "Valutaindstillinger";
+
+/* Debug crash */
+"Settings.DebugCrash" = "Debug crash";
+
+"Settings.DeveloperOptions" = "Developer Options";
+
+/* Join Early access label */
+"Settings.earlyAccess" = "Tilmeld dig Early Access";
+
+/* Enable segwit. */
+"Settings.EnableSegwit" = "Aktivér Segwit";
+
+/* Are you enjoying bread alert message body */
+"Settings.enjoying" = "Nyder du RockWallet?";
+
+/* Export transaction history menu item */
+"Settings.exportTransfers" = "Eksporter transaktionshistorik til CSV";
+
+/* Face ID spending limit label */
+"Settings.faceIdLimit" = "Face ID betalingsgrænse";
+
+/* Redeem the funds stored on this private key. */
+"Settings.importTitle" = "Indløs privat nøgle";
+
+/* Manage settings section header */
+"Settings.manage" = "Administrer";
+
+/* No log files found error message */
+"Settings.noLogsFound" = "No Log files found. Please try again later.";
+
+/* Notifications label */
+"Settings.notifications" = "Notifikationer";
+
+/* Preferences settings section header */
+"Settings.preferences" = "Indstillinger";
+
+/* Tap here to reset the list of currencies to the default settings. */
+"Settings.resetCurrencies" = "Nulstil til standard valutaer";
+
+/* Leave review button label */
+"Settings.review" = "Giv os en anmeldelse";
+
+/* Rewards menu item */
+"Settings.rewards" = "Belønninger";
+
+/* Share anonymous data label */
+"Settings.shareData" = "Del anonyme data";
+
+/* "Enables sharing balance to widget" */
+"Settings.shareWithWidget" = "Del porteføljedata med widgets";
+
+/* Sync blockchain label */
+"Settings.sync" = "Synkroniser blokkæde";
+
+"Settings.TellAFriendText" = "Hey, I use RockWallet to store and manage my crypto. It’s really easy to use. Give it a try. https://rockwallet.com/";
+
+"Settings.TellFriendDescription" = "Hey, I use RockWallet to send, receive, store, buy and trade crypto. It’s really easy to use. Give it a try. https://rockwallet.com/";
+
+/* Settings title */
+"Settings.title" = "Indstillinger";
+
+/* Touch ID spending limit label */
+"Settings.touchIdLimit" = "Touch ID brugsgrænse";
+
+/* The fingerprint spending limit */
+"Settings.touchIdLimit.android" = "Brugsgrænse for autentificering via fingeraftryk";
+
+/* View legacy address (old format). */
+"Settings.ViewLegacyAddress" = "Vis Legacy Modtagelsesadresse";
+
+/* Receive Bitcoin instructions */
+"Settings.ViewLegacyAddressReceiveDescription" = "Send kun Bitcoin (BTC) til denne adresse. Ethvert andet aktiv, der sendes til denne adresse, vil gå tabt permanent.";
+
+/* Receive Bitcoin */
+"Settings.ViewLegacyAddressReceiveTitle" = "Modtag Bitcoin";
+
+/* Wallet Settings section header */
+"Settings.wallet" = "Wallet";
+
+"Settings.WebDebugUrl" = "Web Platform Debug URL";
+
+/* Wipe/delete your wallet from the current device. */
+"Settings.wipe" = "Fjern forbindelsen til din tegnebog fra denne enhed.";
+
+/* Share data view body */
+"ShareData.body" = "Hjælp med at forbedre RockWallet ved at dele dine anonyme data med os. Dette inkluderer ikke finansielle oplysninger. Vi respekterer dit finansielle privatliv.";
+
+/* Share data header */
+"ShareData.header" = "Del data?";
+
+/* Share data switch label. */
+"ShareData.toggleLabel" = "Del anonyme data?";
+
+"ShareGift.approximateTotal" = "Omtrentlig total";
+
+"ShareGift.footerMessage1" = "Et netafgift trækkes fra det samlede beløb, når det kræves.\n Den faktiske værdi afhænger af den aktuelle pris på bitcoin.";
+
+"ShareGift.footerMessage2" = "Download RockWallet-appen til iPhone eller Android.\n For mere information besøg rockwallet.com/gift";
+
+"ShareGift.tagLine" = "Nogen gav dig bitcoin!";
+
+"ShareGift.walletName" = "Bitcoin";
+
+/* Button label: select a baker */
+"Staking.add" = "+ Vælg Baker";
+
+/* Baker cell: Free Space field header */
+"Staking.cellFreeSpaceHeader" = "Fri plads";
+
+"Staking.changeValidator" = "Lave om";
+
+"Staking.descriptionTezos" = "Delegér din Tezos-konto til en validator for at optjene en belønning, mens du holder fuld sikkerhed og kontrol med dine mønter.";
+
+/* Baker cell: Fee field header */
+"Staking.feeHeader" = "Betaling:";
+
+"Staking.feePct" = "Fee: %@";
+
+"Staking.loadingBakerError" = "An error occurred while loading baker information. Please try again later.";
+
+/* Status label: current staking transaction is pending */
+"Staking.pendingTransaction" = "Transaktion afventer ...";
+
+/* Button label: remove selected baker */
+"Staking.remove" = "Fjern";
+
+/* Baker cell: ROI field header */
+"Staking.roiHeader" = "Est. ROI";
+
+/* Modal title: Select Baker modal */
+"Staking.selectBakerTitle" = "Vælg XTZ-delegeret";
+
+"Staking.stake" = "Indsats";
+
+/* UI flag showing state of Tezos staking */
+"Staking.stakingActiveFlag" = "AKTIV";
+
+/* UI flag showing state of Tezos staking */
+"Staking.stakingInactiveFlag" = "INAKTIV";
+
+/* UI flag showing state of Tezos staking */
+"Staking.stakingPendingFlag" = "VERSERENDE";
+
+/* Staking banner title */
+"Staking.stakingTitle" = "Indsats";
+
+"Staking.stakingTo" = "indsats til %@";
+
+"Staking.statusPending" = "Afventede";
+
+"Staking.statusStaked" = "Indsat!";
+
+"Staking.subTitle" = "Tjen penge, mens du holder";
+
+/* Tezos XTZ baker asset type */
+"Staking.tezosDune" = "Tezos & Dune";
+
+/* Tezos XTZ baker asset type */
+"Staking.tezosMultiasset" = "Multiasset-pool";
+
+/* Tezos XTZ baker asset type */
+"Staking.tezosOnly" = "Kun tezos";
+
+"Staking.title" = "Indsats %@";
+
+"Staking.unstake" = "Fjern indsatsen";
+
+"Staking.validatorHint" = "Indtast Validator-adresse";
+
+/* button label */
+"StartPaperPhrase.againButtonTitle" = "Skriv genoprettelsesfrasen igen";
+
+/* Paper key explanation text. */
+"StartPaperPhrase.body" = "Din gendannelsessætning er den eneste måde at gendanne din RockWallet på, hvis din telefon går tabt, stjålet, ødelagt eller opgraderes. \n\nVi viser dig en liste over ord, du kan skrive ned på et stykke papir og holder dig sikker.";
+
+/* Paper key explanation text (Android-version) */
+"StartPaperPhrase.Body.Android" = "Din gendannelsessætning er den eneste måde at gendanne din RockWallet på, hvis din telefon går tabt, stjålet, ødelagt eller opgraderes. \n\nDin gendannelsessætning er også påkrævet, hvis du ændrer sikkerhedsindstillingerne på din enhed. \n\nVi viser dig en liste over ord, du kan skrive ned på et stykke papir og holder dig sikker.";
+
+/* button label */
+"StartPaperPhrase.buttonTitle" = "Skriv gendannelsesfrase ned";
+
+/* Argument is date; date should be on a new line */
+"StartPaperPhrase.date" = "Sidst skrevet ned på \n %@";
+
+/* button label */
+"StartViewController.createButton" = "Opret ny tegnebog";
+
+/* Start view message */
+"StartViewController.message" = "Den mest sikre og trygge måde at bruge bitcoins på.";
+
+/* Recover your wallet from a backup */
+"StartViewController.recoverButton" = "Gendan tegnebog";
+
+"SupportForm.feedbackAppreciated" = "Vi vil meget gerne have din feedback";
+
+"SupportForm.helpUsImprove" = "Hjælp os med at forbedre os";
+
+"SupportForm.notNow" = "Ikke nu";
+
+"SupportForm.pleaseDescribe" = "Beskriv din oplevelse";
+
+/* Add item label in swap flow */
+"Swap.AddItem" = "Add item!";
+
+"Swap.AmountPurchased" = "Amount purchased";
+
+"Swap.AssetSelectionMessage" = "Sorry, we currently don’t support trading of this asset.";
+
+/* Back to Home button */
+"Swap.BackToHome" = "Back to Home";
+
+/* Balance text on swap */
+"Swap.Balance" = "I have %@ %@";
+
+"Swap.CardFee" = "Card fee:";
+
+/* Title on check your assets popup */
+"Swap.CheckAssets" = "Check your assets!";
+
+/* Text body in check your assets popup */
+"Swap.CheckAssetsBody" = "In order to successfully perform a swap, make sure you have two or more of our supported swap assets (BSV, BTC, ETH, BCH, SHIB, USDT) activated and funded within your wallet.";
+
+/* Swap details title */
+"Swap.Details" = "Swap details";
+
+"Swap.enableAssetFirst" = "Asset needs to be enabled first. You can do that by selecting ‘Manage assets’ on the home screen.";
+
+/* There was an error while processing your transaction title in failure swap screen */
+"Swap.ErrorProcessingTransaction" = "There was an error while processing your transaction";
+
+/* Error swap message on Failure screen */
+"Swap.FailureSwapMessage" = "Please try swapping again or come back later.";
+
+/* Popup button got it */
+"Swap.GotItButton" = "Got it!";
+
+/* Swap and Buy I want label from currency */
+"Swap.iWant" = "I want";
+
+"Swap.MiningNetworkFee" = "Mining network fee";
+
+/* Not a valid pair */
+"Swap.NotValidPair" = "Not a valid pair";
+
+/* Paid with label in swap details screen */
+"Swap.PaidWith" = "Paid with";
+
+/* Rate label in swap screen */
+"Swap.RateValue" = "Rate";
+
+/* Receiving network fee text label on Swap screen */
+"Swap.ReceiveNetworkFee" = "Receiving network fee";
+
+"Swap.RequestTimedOut" = "Your swap request timed out. Please try again.";
+
+"Swap.retry" = "Retry";
+
+"Swap.SameAssetMessage" = "It’s not possible to select the same asset for both sending and receiving. Please select a different asset for either sending or receiving.";
+
+/* Select assets title in swap flow */
+"Swap.SelectAssets" = "Select assets";
+
+/* Sending fee label on swap screen */
+"Swap.SendingFee" = "Sending fee\n";
+
+/* Sending network fee text label on Swap screen */
+"Swap.SendNetworkFee" = "Sending network fee";
+
+/* Swap again button title in swap failure screen */
+"Swap.SwapAgain" = "Swap again";
+
+"Swap.SwapLimit" = "Swap limits";
+
+/* Swap min and max limit text */
+"Swap.SwapLimits" = "Currently, minimum for Swap is %@ USD and maximum is %@ USD/day.";
+
+"Swap.Swapping" = "Swapping %@ to %@";
+
+/* Swap status message on swap flow */
+"Swap.SwapStatus" = "Your %@ is estimated to arrive in 30 minutes. You can continue to use your wallet. We'll let you know when your swap has finished.";
+
+"Swap.temporarilyUnavailable" = "Swap is temporarily unavailable";
+
+/* Timestamp label in swap details screen */
+"Swap.Timestamp" = "Timestamp";
+
+/* Total label in swap details screen */
+"Swap.Total" = "Total:";
+
+"Swap.transactionFrom" = "From %@";
+
+/* Transaction ID label in swap details screen */
+"Swap.TransactionID" = "RockWallet Transaction ID";
+
+"Swap.transactionInEthereumNetwork" = "It seems that your transaction takes place in the Ethereum network, please keep in mind that network fees will be charged in ETH";
+
+"Swap.transactionTo" = "To %@";
+
+"Swap.youReceive" = "You'll receive";
+
+"Swap.youSend" = "You send";
+
+/* Syncing view done syncing state header text */
+"SyncingView.activity" = "Aktivitet";
+
+/* Syncing view connectiong state header text */
+"SyncingView.connecting" = "Tilslutter";
+
+/* The sync has failed (to complete) */
+"SyncingView.failed" = "Synkronisering mislykkedes";
+
+/* Syncing view header text */
+"SyncingView.header" = "Synkroniserer";
+
+/* Retry button label */
+"SyncingView.retry" = "Prøv igen";
+
+/* "eg. Synced through <Jan 12, 2015> */
+"SyncingView.syncedThrough" = "Synkroniseret via %@";
+
+/* Syncing view syncing state header text */
+"SyncingView.syncing" = "Synkroniserer";
+
+/* 6 d (6 days) */
+"TimeSince.days" = "%@ d";
+
+/* 6 h (6 hours) */
+"TimeSince.hours" = "%@ h";
+
+/* 6 m (6 minutes) */
+"TimeSince.minutes" = "%@ m";
+
+/* 6 s (6 seconds) */
+"TimeSince.seconds" = "%@ s";
+
+"Title.AutoEnterPin" = "Auto-enter PIN";
+
+"Title.ConnectionSettingsOverride" = "Connection Settings Override";
+
+"Title.FastSync" = "Fast Sync";
+
+"Title.LockWallet" = "Lock Wallet";
+
+"Title.RockwalletFeedback" = "RockWallet - Feedback";
+
+"Title.Save" = "Save";
+
+/* Search assets */
+"Title.searchAssets" = "Search assets";
+
+"Title.SendLogs" = "Send Logs";
+
+"Title.SuppressPaperKeyPrompt" = "Suppress paper key prompt";
+
+"Title.UnlinkWalletNoPrompt" = "Unlink Wallet (no prompt)";
+
+/* Add [this item to the list] */
+"TokenList.add" = "Tilføj";
+
+/* Add Wallets  [to your home screen] */
+"TokenList.addTitle" = "Tilføj punge";
+
+/* Hide [this token from view] */
+"TokenList.hide" = "Skjul";
+
+/* [click here to] Manage [your] Wallets */
+"TokenList.manageTitle" = "Administrer punge";
+
+/* Remove [this item from the list] */
+"TokenList.remove" = "Fjern";
+
+/* Show [this item on your home screen] */
+"TokenList.show" = "Vis";
+
+/* You can customize your Touch ID Spending Limit from the [TouchIdSettings.linkText gets added here as a button] */
+"TouchIdSettings.customizeText" = "Du kan tilpasse forbrugsgrænsen for dit Touch ID fra %@.";
+
+/* Fingerprint enabling description body */
+"TouchIdSettings.customizeText.android" = "Du kan tilpasse din brugsgrænse for autentificering via fingeraftryk fra skærmen Brugsgrænse for autentificering via fingeraftryk";
+
+/* Instruction for the fingerprint setup */
+"TouchIdSettings.disabledWarning.body.android" = "Du har ikke aktiveret autentificering via fingeraftryk på denne enhed. Gå til Indstillinger -> Sikkerhed for at konfigurere autentificering via fingeraftryk.";
+
+/* Fingerprint Is Not Setup */
+"TouchIdSettings.disabledWarning.title.android" = "Autentificering via fingeraftryk ikke aktiveret";
+
+/* Text that describes the purpose of the Touch ID settings in the BRD app. */
+"TouchIdSettings.explanatoryText" = "Brug Touch ID for låse op for din RockWallet-app og sende penge";
+
+/* Touch Id screen label */
+"TouchIdSettings.label" = "Brug dit fingeraftryk til at låse op for dit RockWallet og sende penge op til en vis grænse.";
+
+/* Link Text (see TouchIdSettings.customizeText) */
+"TouchIdSettings.linkText" = "Touch ID forbrugsgrænseside";
+
+/* Spending Limit: b100,000 ($100) */
+"TouchIdSettings.spendingLimit" = "Brugsgrænse: %@ (%@)";
+
+/* Touch id switch label. */
+"TouchIdSettings.switchLabel" = "Aktiver Touch ID til RockWallet";
+
+/* Enable fingerprint for this wallet called Bread */
+"TouchIdSettings.switchLabel.android" = "Aktiver autentificering via fingeraftryk";
+
+/* Touch ID settings view title */
+"TouchIdSettings.title" = "Touch ID";
+
+/* Fingerprint authentication label */
+"TouchIdSettings.title.android" = "Autentificering via fingeraftryk";
+
+/* Text label for a toggle that enables Touch ID for sending money. */
+"TouchIdSettings.transactionsTitleText" = "Aktiver Touch ID for at sende penge";
+
+/* Touch ID unavailable alert message */
+"TouchIdSettings.unavailableAlertMessage" = "Du har ikke indstillet Touch ID på denne enhed. Gå til Indstillinger -> Touch ID og Adgangskode og indstil det nu.";
+
+/* Touch ID unavailable alert title */
+"TouchIdSettings.unavailableAlertTitle" = "Touch ID ikke indstillet";
+
+/* Text label for the toggle that enables Touch ID for unlocking the BRD app. */
+"TouchIdSettings.unlockTitleText" = "Aktiver Touch ID for at låse op for RockWallet";
+
+/* Always require passcode option */
+"TouchIdSpendingLimit" = "Kræv altid adgangskode";
+
+/* Touch ID spending limit screen body */
+"TouchIdSpendingLimit.body" = "Du bliver bedt om at indtaste din 6-cifrede PIN for at sende en transaktion over din brugsgrænse, og hver 48 timer siden du sidst indtastede din 6-cifrede PIN.";
+
+/* Touch Id spending limit screen title */
+"TouchIdSpendingLimit.title" = "Touch ID brugsgrænse";
+
+/* name of spending limit when using fingerprint authorization */
+"TouchIdSpendingLimit.title.android" = "Brugsgrænse for autentificering via fingeraftryk";
+
+/* Availability status text */
+"Transaction.available" = "Tilgængelig at bruge";
+
+/* Transaction complete label */
+"Transaction.complete" = "Færdig";
+
+/* Transaction is confirming status text */
+"Transaction.confirming" = "Behandles";
+
+/* eg. Ending balance: $50.00 */
+"Transaction.ending" = "Slutbalance: %@";
+
+/* Exchange rate on date header */
+"Transaction.exchangeOnDayReceived" = "Valutakurs ved modtagelsestidspunkt:";
+
+/* Exchange rate on date header */
+"Transaction.exchangeOnDaySent" = "Valutakurs ved afsendelsestidspunkt:";
+
+/* Transaction failed status text */
+"Transaction.failed" = "Fejlede";
+
+"Transaction.FailedPurchaseWithInstantBuy" = "Failed purchase with Instant Buy";
+
+/* Failed swap label in transaction view */
+"Transaction.FailedSwap" = "Failed swap";
+
+"Transaction.FailedWithdrawWithInstantBuy" = "Failed purchase with Instant Buy";
+
+/* (b600 fee) */
+"Transaction.fee" = "(%@ gebyr)";
+
+"Transaction.HybridPart" = "- %@/2";
+
+/* Invalid transaction */
+"Transaction.invalid" = "UGYLDIG";
+
+/* Timestamp label for event that just happened */
+"Transaction.justNow" = "netop nu";
+
+"Transaction.ManuallySettled" = "Manually settled";
+
+/* Transaction is pending status text */
+"Transaction.pending" = "Afventede";
+
+/* Pending purchase label in transaction view */
+"Transaction.PendingPurchase" = "Pending purchase";
+
+"Transaction.PendingPurchaseWithAch" = "Pending purchase with ACH";
+
+"Transaction.PendingPurchaseWithInstantBuy" = "Pending purchase with Instant Buy";
+
+/* Pending swap label in transaction view */
+"Transaction.PendingSwap" = "Pending swap";
+
+"Transaction.pendingWithdrawalWithCard" = "Pending withdrawal with card";
+
+"Transaction.PendingWithdrawWithAch" = "Pending withdraw with ACH";
+
+"Transaction.PendingWithdrawWithInstantBuy" = "Pending purchase with Instant Buy";
+
+/* Purchased label in transaction view */
+"Transaction.Purchased" = "Purchased";
+
+"Transaction.PurchasedWithAch" = "Purchased with ACH";
+
+"Transaction.purchasedWithInstantBuy" = "Purchased with Instant Buy";
+
+/* Purchase failed label in transaction view */
+"Transaction.PurchaseFailed" = "Purchase failed";
+
+"Transaction.PurchaseFailedWithAch" = "Purchase with ACH failed";
+
+"Transaction.PurchaseFailedWithInstantAch" = "Purchase with Instant Buy failed";
+
+/* Receive status text: 'In progress: 20%' */
+"Transaction.receivedStatus" = "I gang: %@";
+
+"Transaction.refunded" = "Refunded";
+
+/* Send status text: 'In progress: 20%' */
+"Transaction.sendingStatus" = "I gang: %@";
+
+/* sending to <address> */
+"Transaction.sendingTo" = "sender til %@";
+
+/* sent to <address> */
+"Transaction.sentTo" = "sendt til %@";
+
+"Transaction.stakingTo" = "indsats til %@";
+
+/* eg. Starting balance: $50.00 */
+"Transaction.starting" = "Startbalance: %@";
+
+"Transaction.swapFromFailed" = "Swap from %@ failed";
+
+/* Swapped transaction label */
+"Transaction.Swapped" = "Swapped";
+
+"Transaction.swappedFrom" = "Swapped from %@";
+
+"Transaction.swappedTo" = "Swapped to %@";
+
+"Transaction.swappingFrom" = "Swapping from %@";
+
+"Transaction.swappingTo" = "Swapping to %@";
+
+"Transaction.swapToFailed" = "Swap to %@ failed";
+
+/* e.g. "[The money you paid was a] Fee for token transfer: BRD" (BRD is the token that was transfered) */
+"Transaction.tokenTransfer" = "Gebyr for token-overførsel: %@";
+
+"Transaction.toRecipient" = "til %@";
+
+/* Waiting to be confirmed string */
+"Transaction.waiting" = "Venter på bekræftelse. Nogen forhandlere kræver bekræftelse for at gennemføre en transaktion. Anslået tid: 1-2 timer.";
+
+"Transaction.withdarwalWithCardComplete" = "Withdrawal to card successful";
+
+"Transaction.WithdrawalComplete" = "Withdrawn to bank account";
+
+"Transaction.WithdrawalFailed" = "Withdrawal failed";
+
+"Transaction.withdrawalWithCardFailed" = "Withdrawal to card unsuccessful";
+
+"Transaction.WithdrawFailedWithAch" = "Withdraw with ACH failed";
+
+"Transaction.WithdrawWithAch" = "Withdrew with ACH";
+
+/* e.g. I received money from an account. */
+"TransactionDetails.account" = "konto";
+
+/* Address received from header */
+"TransactionDetails.addressFromHeader" = "Fra";
+
+/* Address sent to header */
+"TransactionDetails.addressToHeader" = "Til";
+
+/* e.g. "(this was received) via (address #1)" via = by way of */
+"TransactionDetails.addressViaHeader" = "Via";
+
+/* Amount section header */
+"TransactionDetails.amountHeader" = "Beløb";
+
+/* "(it was worth) $100 when sent, (and it is worth) $200 now" */
+"TransactionDetails.amountWhenReceived" = "%@ ved modtagelsen, %@ nu";
+
+/* "(it was worth) $100 when sent, (and it is worth) $200 now" */
+"TransactionDetails.amountWhenSent" = "%@ da de blev sendt, %@ nu";
+
+/* Block height label */
+"TransactionDetails.blockHeightLabel" = "Bekræftet i blok";
+
+/* Memo section header */
+"TransactionDetails.commentsHeader" = "Memo";
+
+/* Memo field placeholder */
+"TransactionDetails.commentsPlaceholder" = "Tilføj memo...";
+
+/* Timestamp section header for complete tx */
+"TransactionDetails.completeTimestampHeader" = "Gennemført";
+
+/* Block height and confirmations label, eg. 182930 (45061 confirmations) */
+"TransactionDetails.confirmationsLabel" = "Bekræftelser";
+
+"TransactionDetails.destinationTag" = "Destinationsmærke";
+
+"TransactionDetails.destinationTag_EmptyHint" = "(tom)";
+
+/* Empty transaction list message. */
+"TransactionDetails.emptyMessage" = "Dine transaktioner vil vises her.";
+
+/* e.g. the users balance after the transaction was compeleted */
+"TransactionDetails.endingBalanceHeader" = "Slutsaldo";
+
+/* Exchange rate section header */
+"TransactionDetails.exchangeRateHeader" = "Vekselkurs";
+
+/* Tx detail field header */
+"TransactionDetails.feeHeader" = "Samlet gebyr";
+
+/* "Received [$5] at [which of my addresses]" => This is the "at [which of my addresses]" part. */
+"TransactionDetails.from" = "på %@";
+
+/* Tx detail field header */
+"TransactionDetails.gasLimitHeader" = "Gasgrænse";
+
+/* Tx detail field header */
+"TransactionDetails.gasPriceHeader" = "Gaspris";
+
+"TransactionDetails.gift" = "Gave";
+
+"TransactionDetails.giftedTo" = "Begavet til %@";
+
+/* Label for Hedera Memo field on transaction details screen */
+"TransactionDetails.hederaMemo" = "Hedera Memo";
+
+/* Hide Details button */
+"TransactionDetails.hideDetails" = "Skjul detaljer";
+
+/* Label showing the transaction was started (initialized) */
+"TransactionDetails.initializedTimestampHeader" = "Påbegyndt";
+
+/* More button title */
+"TransactionDetails.more" = "Mere...";
+
+/* Moved $5.00 (as in "I moved $5 to another location") */
+"TransactionDetails.moved" = "Flyttede %@";
+
+/* Moved $5.00 */
+"TransactionDetails.movedAmountDescription" = "Flyttet <b>%@</b>";
+
+/* eg. Confirmed in Block: Not Confirmed */
+"TransactionDetails.notConfirmedBlockHeightLabel" = "Ikke bekræftet";
+
+/* "Received [$5] at [which of my addresses]" => This is the "Received [$5]" part. */
+"TransactionDetails.received" = "Modtaget %@";
+
+/* Received $5.00 */
+"TransactionDetails.receivedAmountDescription" = "Modtaget <b>%@</b>";
+
+/* received from <address> */
+"TransactionDetails.receivedFrom" = "modtaget fra %@";
+
+/* received via <address> */
+"TransactionDetails.receivedVia" = "modtaget via %@";
+
+/* receiving from <address> */
+"TransactionDetails.receivingFrom" = "modtager fra %@";
+
+/* receiving via <address> */
+"TransactionDetails.receivingVia" = "modtager via %@";
+
+"TransactionDetails.reclaim" = "Gendan";
+
+"TransactionDetails.resend" = "Send igen";
+
+/* "Sent [$5] to [address]" => This is the "Sent [$5]" part. */
+"TransactionDetails.sent" = "Sendt %@";
+
+/* Sent $5.00 */
+"TransactionDetails.sentAmountDescription" = "Sendt <b>%@</b>";
+
+/* Show Details button */
+"TransactionDetails.showDetails" = "Vis detaljer";
+
+/* The balance the user started with before the transaction completed */
+"TransactionDetails.startingBalanceHeader" = "Startsaldo";
+
+/* Status section header */
+"TransactionDetails.statusHeader" = "Status";
+
+/* Transaction Details Title */
+"TransactionDetails.title" = "Transaktionsoplysninger";
+
+/* Transaction Details Title - Failed */
+"TransactionDetails.titleFailed" = "Skjul detaljer";
+
+/* Transaction Details Title - Internal */
+"TransactionDetails.titleInternal" = "Internt";
+
+/* Transaction Details Title - Received */
+"TransactionDetails.titleReceived" = "Modtaget";
+
+/* Transaction Details Title - Receiving */
+"TransactionDetails.titleReceiving" = "Modtager";
+
+/* Transaction Details Title - Sending */
+"TransactionDetails.titleSending" = "Sender";
+
+/* Transaction Details Title - Sent */
+"TransactionDetails.titleSent" = "Sendt";
+
+/* "Sent [$5] to [address]" => This is the "to [address]" part. */
+"TransactionDetails.to" = "til %@";
+
+/* Tx detail field header */
+"TransactionDetails.totalHeader" = "I alt";
+
+/* Transaction ID header */
+"TransactionDetails.txHashHeader" = "Transaktions ID";
+
+/* (this transaction was) Received at this address: */
+"TransactionDirection.address" = "Modtaget på denne adresse";
+
+/* (this transaction was) Sent to this address: */
+"TransactionDirection.to" = "Sendt til denne adresse";
+
+"TwoStep.additionalMethodsTitle" = "";
+
+"TwoStep.App.BackupCodes.SavedMessage" = "Your backup codes are successfully saved to Downloads folder";
+
+"TwoStep.App.BackupCodes.warning" = "Your backup codes are the only way to access your account if you lose access your Authenticator App";
+
+"TwoStep.App.CantAccess.Title" = "I can’t access my Authenticator App";
+
+"TwoStep.App.Confirmation.BackupCode.Instructions" = "Confirm you’ve stored your backup codes securely by entering one of them.";
+
+"TwoStep.App.Confirmation.BackupCode.Title" = "Enter one of your backup codes";
+
+"TwoStep.App.Confirmation.Title" = "Enter the code from your Authenticator app";
+
+"TwoStep.App.Import.action" = "Import with link";
+
+"TwoStep.App.Import.title" = "Using an authenticator app?";
+
+"TwoStep.AuthSettings.Title" = "Two Factor Authentication Settings";
+
+"TwoStep.BuyTransactions" = "Buy transactions";
+
+"TwoStep.Change.Message" = "Changing your 2FA method is an important security decision, are you sure you want to proceed?";
+
+"TwoStep.Change.Title" = "Change 2FA method";
+
+"TwoStep.changePhoneNumberTitle" = "Change Phone Number";
+
+"TwoStep.Disable.Message" = "Deleting your 2FA method is an important security decision, in order to do this you’ll need to provide your PIN and an email code.";
+
+"TwoStep.Disable.Title" = "Disable 2FA";
+
+"TwoStep.DisableAuthDialogDescription" = "Deleting your 2FA method is an important security decision, in order to do this you’ll need to provide your PIN and an email code.";
+
+"TwoStep.Email.Confirmation.Title" = "We’ve sent you a code";
+
+"TwoStep.Error.Attempt" = "Invalid code. You have %@ more attempt, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
+
+"TwoStep.Error.Attempts" = "Invalid code. You have %@ more attempts, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
+
+"TwoStep.getBackupCodesTitle" = "";
+
+"TwoStep.mainInstructions" = "Two Factor Authentication in enabled with the phone number ending in";
+
+"TwoStep.mainTitle" = "Two factor authentication";
+
+"TwoStep.Mandatory" = "(Mandatory)";
+
+"TwoStep.Menu.Title" = "Two-Factor Authentication (2FA)";
+
+"TwoStep.Method.App.Description" = "Two Factor Authentication is enabled with Authenticator App";
+
+"TwoStep.Method.Email.Description" = "Two Factor Authentication is enabled with Email";
+
+"TwoStep.methods.additionalGetBackupCodesAction" = "Get your backup codes";
+
+"TwoStep.methods.additionalTitle" = "Additional methods";
+
+"TwoStep.methods.authApp.title" = "Authentication app";
+
+"TwoStep.methods.phone.subtitle" = "Change Phone Number";
+
+"TwoStep.methods.phone.title" = "Phone number";
+
+"TwoStep.PreferredSettings" = "Select your preferred 2FA Settings";
+
+"TwoStep.RecoverChangingPassword" = "Recover/Changing password";
+
+"TwoStep.SendingFunds" = "Sending funds";
+
+"TwoStep.Settings" = "2FA Settings";
+
+"TwoStep.settings.achWithdrawal" = "ACH Withdrawal";
+
+"TwoStep.settings.buyTransactions" = "Buy transactions";
+
+"TwoStep.settings.everyNinetyDays" = "Every 90 days";
+
+"TwoStep.settings.funds" = "Sending funds";
+
+"TwoStep.settings.recoverChangePassword" = "Recover/Changing password";
+
+"TwoStep.settings.signInNewDevice" = "Sign in into new device";
+
+"TwoStep.SignInIntoNewDevice" = "Sign in into new device";
+
+"TwoStep.Success.Message" = "2FA Successfully set up";
+
+"TwoStep.SuccessfullyDisabled" = "2FA Successfully disabled";
+
+"TwoStep.TwoStepPeriod" = "Every 90 days";
+
+"UDomains.invalid" = "Invalid address.";
+
+"UnavailableScreen.ProDescription" = "RockWallet Pro isn’t available for you at this point in time.";
+
+/* Disabled until date */
+"UnlockScreen.disabled" = "Deaktiveret indtil: %@";
+
+/* Unlock with FaceID accessibility label */
+"UnlockScreen.faceIdText" = "Lås op med Face ID";
+
+/* My Address button title */
+"UnlockScreen.myAddress" = "Min adresse";
+
+/* Reset PIN with Paper Key button label. */
+"UnlockScreen.resetPin" = "Nulstil PIN";
+
+/* Scan button title */
+"UnlockScreen.scan" = "Scan";
+
+/* Instruction to touch the sensor for fingerprint authentication */
+"UnlockScreen.touchIdInstructions.android" = "Touch sensor";
+
+/* TouchID prompt text */
+"UnlockScreen.touchIdPrompt" = "Lås op for dit RockWallet.";
+
+/* Device authentication body */
+"UnlockScreen.touchIdPrompt.android" = "Lås op for din Android enhed for at fortsætte";
+
+/* Unlock with TouchID accessibility label */
+"UnlockScreen.touchIdText" = "Lås op med Touch ID";
+
+/* Device authentication title */
+"UnlockScreen.touchIdTitle.android" = "Autentificering påkrævet";
+
+/* Wallet disabled header */
+"UnlockScreen.walletDisabled" = "Wallet disabled";
+
+/* Wallet disabled description */
+"UnlockScreen.walletDisabledDescription" = "You will need your recovery phrases to reset PIN.";
+
+/* Wipe wallet prompt */
+"UnlockScreen.wipePrompt" = "Are you sure you would like to wipe this wallet?";
+
+"UpdatePin.Alert.body" = "A PIN is a 6-digit number to validate your identity every time you access your Rockwallet. Be sure to create a number that you can remember easily.";
+
+"UpdatePin.Alert.title" = "What is a PIN?";
+
+"UpdatePin.bottomSheetMsg" = "PIN updated successfully";
+
+/* Update PIN caption text */
+"UpdatePin.caption" = "Husk denne PIN. Hvis du glemmer den, vil du ikke kunne få adgang til dine bitcoin.";
+
+/* Contact Support button on update pin view */
+"UpdatePin.ContactSupport" = "Contact Support";
+
+/* PIN creation info. */
+"UpdatePin.createInstruction" = "Din PIN bliver brugt til at låse op for dit RockWallet og sende penge.";
+
+/* Update PIN title */
+"UpdatePin.createTitle" = "Indstil PIN";
+
+/* Update PIN title */
+"UpdatePin.createTitleConfirm" = "Genindtast PIN";
+
+/* Disabled until text on disabled wallet view */
+"UpdatePin.DisabledUntil" = "Disabled until:";
+
+/* Enter current PIN instruction */
+"UpdatePin.enterCurrent" = "Indtast din nuværende PIN.";
+
+/* Enter new PIN instruction */
+"UpdatePin.enterNew" = "Indtast din nye PIN.";
+
+/* Enter your PIN label to finish the transaction */
+"UpdatePin.EnterPin" = "Please enter your PIN to confirm the transaction";
+
+/* Enter PIN instruction */
+"UpdatePin.enterYourPin" = "Enter your PIN";
+
+/* Incorrect PIN popup message */
+"UpdatePin.IncorrectPin" = "Incorrect PIN. The wallet will get disabled for 6 minutes after";
+
+/* Number of attempts left on pin entry screen */
+"UpdatePin.OneAttempt" = "1 more failed attempt.";
+
+"UpdatePin.pinDoesntMatch" = "Your PIN doesn’t match, please try again.";
+
+/* Re-Enter new PIN instruction */
+"UpdatePin.reEnterNew" = "Genindtast din nye PIN.";
+
+/* Attempts remaining on pin entry screen */
+"UpdatePin.RemainingAttempts" = "Attempts remaining:";
+
+/* Your PIN was reset successfully message */
+"UpdatePin.ResetPinSuccess" = "Your PIN was reset successfully!";
+
+/* Enter PIN header */
+"UpdatePin.securedWallet" = "Secured wallet";
+
+/* Update PIN title */
+"UpdatePin.setNewPinTitle" = "Set your new PIN";
+
+/* Update PIN failure error message. */
+"UpdatePin.setPinError" = "Beklager, kunne ikke opdatere PIN.";
+
+/* Update PIN failure alert view title */
+"UpdatePin.setPinErrorTitle" = "Fejl ved opdatering af PIN";
+
+/* Number of attempts left on pin entry screen */
+"UpdatePin.TwoAttempts" = "2 more failed attempts.";
+
+/* Update pin popup explanation when pressing "?" button */
+"UpdatePin.UpdatePinPopup" = "The RockWallet app requires you to set a PIN to secure your wallet, separate from your device passcode.  \n\nYou will be required to enter the PIN to view your balance or send money, which keeps your wallet private even if you let someone use your phone or if your phone is stolen by someone who knows your device passcode.\n            \nDo not forget your wallet PIN! It can only be reset by using your Recovery Phrase. If you forget your PIN and lose your Recovery Phrase, your wallet will be lost.";
+
+/* Update PIN title */
+"UpdatePin.updateTitle" = "Opdater PIN";
+
+/* Why do I need a PIN title explanation popup */
+"UpdatePin.WhyPIN" = "Why do I need a PIN?";
+
+/* Authorize to copy wallet addresses alert message */
+"URLHandling.addressaddressListAlertMessage" = "Kopier pungadresse til udklipsholderen?";
+
+/* Authorize to copy wallet address PIN view prompt. */
+"URLHandling.addressList" = "Tillad at kopiere pungadresse til udklipsholder";
+
+/* Authorize to copy wallet address alert title */
+"URLHandling.addressListAlertTitle" = "Kopier pungadresse";
+
+/* Copy wallet addresses alert button label */
+"URLHandling.copy" = "Kopier";
+
+/* Verification Code Action Instructions */
+"VerificationCode.actionInstructions" = "Check your phone for the confirmation token we sent you. It may take a couple of minutes.";
+
+/* Verification Code Label */
+"VerificationCode.actionLabel" = "Enter token";
+
+/* Verification Code Confirm Button */
+"VerificationCode.buttonConfirm" = "Confirm";
+
+/* Verification Code Label */
+"VerificationCode.label" = "We Texted You a Confirmation Code";
+
+/* Verification Code Title */
+"VerificationCode.title" = "Confirmation Code";
+
+"VerifyAccount.Button" = "Verify your account";
+
+"VerifyAccount.VerifyIdentityDescription" = "Verify your identity before you can start buying and swapping.";
+
+"VerifyAccount.VerifyIdentityText" = "Verify your identity to enjoy all RockWallet features.";
+
+"VerifyAccount.VerifyMyIdentity" = "Verify my identity";
+
+"VerifyAccount.VerifyYourIdentity" = "Verify your identity";
+
+"VerifyPhoneNumber.instructions" = "We take security seriously. Providing a valid phone number lets us send you verification codes and account alerts to keep your wallet safe.";
+
+"VerifyPhoneNumber.Number.invalid" = "Please enter a valid phone number";
+
+"VerifyPhoneNumber.phoneNumber.title" = "Phone number";
+
+"VerifyPhoneNumber.sms.changeNumber" = "Change my phone number";
+
+"VerifyPhoneNumber.sms.instructions" = "Enter the security code we’ve sent to:\n%@";
+
+"VerifyPhoneNumber.sms.title" = "We’ve sent you an SMS";
+
+"VerifyPhoneNumber.title" = "Verify your phone number";
+
+/* Verify PIN for transaction view body */
+"VerifyPin.authorize" = "Indtast venligst din PIN for at godkende denne transaktion.";
+
+/* Verify PIN view body */
+"VerifyPin.continueBody" = "Indtast din PIN for at fortsætte.";
+
+/* Verify PIN view title */
+"VerifyPin.title" = "PIN påkrævet";
+
+/* Authorize transaction with touch id message */
+"VerifyPin.touchIdMessage" = "Godkend denne transaktion";
+
+"view_coroutine_scope" = "view_scope";
+
+/* Find assets button on add wallets screen */
+"Wallet.FindAssets" = "Trouble finding assets?";
+
+/* Limited assets title in add wallets popup */
+"Wallet.LimitedAssets" = "Limited assets";
+
+/* Limited assets message in add wallets popup */
+"Wallet.LimitedAssetsMessage" = "We currently only support the assets that are listed here. You cannot access other assets through this wallet at the moment.";
+
+"Wallet.one_day" = "1d";
+
+"Wallet.one_month" = "1m";
+
+"Wallet.one_week" = "1w";
+
+"Wallet.one_year" = "1y";
+
+"Wallet.stakingTitle" = "Indsats";
+
+"Wallet.three_months" = "3m";
+
+"Wallet.three_years" = "3y";
+
+/* Turn off fast sync confirmation question */
+"WalletConnectionSettings.confirmation" = "Er du sikker på, at du vil slå Fastsync fra?";
+
+/* Explanation for wallet connection setting */
+"WalletConnectionSettings.explanatoryText" = "Gør synkronisering din Bitcoin tegnebog praktisk instant. Læs mere om, hvordan det fungerer her.";
+
+/* Connection mode switch label. */
+"WalletConnectionSettings.footerTitle" = "Drevet af";
+
+/* Wallet connection settings view title */
+"WalletConnectionSettings.header" = "Fastsync (pilot)";
+
+/* Link text in explanatoryText This NB: This should exactly match the last word of WalletConnectionSettings.explanatoryText */
+"WalletConnectionSettings.link" = "her";
+
+/* WalletConnectionSettiongs, Wallet connection settings menu item title. */
+"WalletConnectionSettings.menuTitle" = "Forbindelsestilstand";
+
+/* Turn off fast sync button label */
+"WalletConnectionSettings.turnOff" = "Sluk";
+
+/* Wallet connection settings view title */
+"WalletConnectionSettings.viewTitle" = "Fastsync";
+
+/* 'No wallet' warning for watch app */
+"Watch.noWalletWarning" = "Åben RockWallet iPhone appen for at konfigurere din pung.";
+
+/* Dismiss button label */
+"Webview.dismiss" = "Afvis";
+
+/* Webview loading error message */
+"Webview.errorMessage" = "Der var en fejl ved indlæsning af indholdet. Prøv igen.";
+
+/* Updating webview message */
+"Webview.updating" = "Opdaterer...";
+
+/* Welcome screen text. (?) will be replaced with the help icon users should look for. */
+"Welcome.body" = "Breadwallet har skiftet navn til RockWallet med et helt nyt look og nogle nye funktioner.\n\nHvis du har brug for hjælp, led efter (?) øverst til højre på de fleste skærme.";
+
+/* Top title of welcome screen */
+"Welcome.title" = "Velkommen til RockWallet!";
+
+/* Single asset widget description */
+"Widget.assetDescription" = "Bliv opdateret med dit yndlings krypto-aktiv";
+
+/* Asset list widget description */
+"Widget.assetListDescription" = "Bliv opdateret med dine foretrukne kryptoaktiver";
+
+/* Asset list widget title */
+"Widget.assetListTitle" = "Liste over aktiver";
+
+/* Single asset widget title */
+"Widget.assetTitle" = "Aktiv";
+
+/* Name of color based on os theme light/dark */
+"Widget.Color.autoLightDark" = "System Auto Lys / Mørk";
+
+/* Name of color - Black */
+"Widget.Color.black" = "Sort";
+
+/* Name of color - Blue */
+"Widget.Color.blue" = "Blå";
+
+/* Name of color - Gray */
+"Widget.Color.gray" = "Grå";
+
+/* Name of color - Green */
+"Widget.Color.green" = "Grøn";
+
+/* Name of color - Orange */
+"Widget.Color.orange" = "orange";
+
+/* Name of color - Pink */
+"Widget.Color.pink" = "Lyserød";
+
+/* Name of color - Primary Background */
+"Widget.Color.primaryBackground" = "Primær";
+
+/* Name of color - Primary Text */
+"Widget.Color.primaryText" = "Primær";
+
+/* Name of color - Purple */
+"Widget.Color.purple" = "Lilla";
+
+/* Name of color - Red */
+"Widget.Color.red" = "Rød";
+
+/* Name of color - Secondary Background */
+"Widget.Color.secondaryBackground" = "Sekundær";
+
+/* Name of color - Secondary Text */
+"Widget.Color.secondaryText" = "Sekundær";
+
+/* Name of color - Tertiary Background */
+"Widget.Color.tertiaryBackground" = "Tertiære";
+
+/* Name of color - Tertiary Text */
+"Widget.Color.tertiaryText" = "Tertiære";
+
+/* Name of color - White */
+"Widget.Color.white" = "hvid";
+
+/* Name of color - Yellow */
+"Widget.Color.yellow" = "Gul";
+
+/* Title of color grouping in widget color picker */
+"Widget.colorSectionBackground" = "Tema baggrundsfarver";
+
+/* Title of color grouping in widget color picker */
+"Widget.colorSectionBasic" = "Grundlæggende farver";
+
+/* Title of color grouping in widget color picker */
+"Widget.colorSectionCurrency" = "Valutafarver";
+
+/* Title of color grouping in widget color picker */
+"Widget.colorSectionSystem" = "Systemfarver";
+
+/* Title of color grouping in widget color picker */
+"Widget.colorSectionText" = "Tema tekstfarver";
+
+/* Portfolio widget description if data sharing is disabled */
+"Widget.enablePortfolio" = "Aktivér i app\n præferencer";
+
+/* Portfolio description */
+"Widget.portfolioDescription" = "Bliv opdateret med din portefølje";
+
+/* Portfolio widget description if data sharing is enabled */
+"Widget.portfolioSummary" = "Portefølje\n Resumé";
+
+/* Portfolio widget title */
+"Widget.portfolioTitle" = "Portefølje";
+
+/* Wipe wallet alert message */
+"WipeWallet.alertMessage" = "Er du sikker på at du vil slette denne wallet?";
+
+/* Wipe wallet alert title */
+"WipeWallet.alertTitle" = "Slet wallet?";
+
+/* Failed wipe wallet alert message */
+"WipeWallet.failedMessage" = "Fejl ved sletning af wallet.";
+
+/* Failed wipe wallet alert title */
+"WipeWallet.failedTitle" = "Fejl";
+
+/* Enter phrase to wipe wallet instruction. (Important to explain it is the CURRENT [this wallet's] paper key that needs to be entered). */
+"WipeWallet.instruction" = "Indtast din gendannelsesfrase for at udslette denne tegnebog fra din enhed.";
+
+/* Instructions for unlinking the wallet */
+"WipeWallet.startMessage" = "Fjern link til pung for at fjerne den fra denne enhed. Når linket til denne pung er fjernet, kan du starte en ny pung eller gendanne en anden pung på denne enhed.";
+
+/* Start wipe wallet view warning */
+"WipeWallet.startWarning" = "Din nuværende tegnebog fjernes fra denne enhed. Hvis du ønsker at gendanne den i fremtiden, skal du indtaste din gendannelsesfrase.";
+
+/* Unlink this wallet from this device. */
+"WipeWallet.title" = "Fjern link til pung";
+
+/* Wipe wallet button title */
+"WipeWallet.wipe" = "Slet";
+
+/* Wiping activity message */
+"WipeWallet.wiping" = "Sletter...";
+
+/* Paper key instructions. */
+"WritePaperPhrase.instruction" = "Skriv hvert ord ned i rækkefølge og opbevar den et sikkert sted.";
+
+/* button label */
+"WritePaperPhrase.next" = "Næste";
+
+/* button label */
+"WritePaperPhrase.previous" = "Forrige";
+
+/* 1 of 3 */
+"WritePaperPhrase.step" = "%@ af %@";
+
+"WritePaperPhrase.warning" = "For security purposes, do not screenshot or email these words.";
+
+"WritePaperPhrase.warning2" = "Remember to write these words down. Swipe back if you forgot.";
+
+"WrongStateBuySell.Subtitle" = "Buy and swap aren\'t currently available in your state. We\'ll notify you when you can use these features.\n\nYou can still safely send and receive digital assets to your wallet in the meantime.";
+

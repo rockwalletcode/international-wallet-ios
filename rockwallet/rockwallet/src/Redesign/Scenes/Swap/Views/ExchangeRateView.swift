@@ -11,10 +11,10 @@
 import UIKit
 
 struct ExchangeRateConfiguration: Configurable {
-    var title = LabelConfiguration(font: Fonts.Subtitle.two, textColor: LightColors.Text.one)
-    var value = LabelConfiguration(font: Fonts.Body.two, textColor: LightColors.secondary)
+    var title = LabelConfiguration(font: Fonts.Subtitle.two, textColor: Colors.Text.one)
+    var value = LabelConfiguration(font: Fonts.Body.two, textColor: Colors.secondary)
     var background = BackgroundConfiguration()
-    var timer = TimerConfiguration(background: .init(tintColor: LightColors.secondary), font: Fonts.Body.two)
+    var timer = TimerConfiguration(background: .init(tintColor: Colors.secondary), font: Fonts.Body.two)
 }
 
 struct ExchangeRateViewModel: ViewModel {

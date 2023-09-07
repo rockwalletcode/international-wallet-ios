@@ -15,7 +15,7 @@ struct CodeInputConfiguration: Configurable {
     var selected: BackgroundConfiguration? = Presets.Background.TextField.selected
     var error: BackgroundConfiguration? = Presets.Background.TextField.error
     var input: TextFieldConfiguration = .init(textConfiguration: .init(font: Fonts.Subtitle.one,
-                                                                       textColor: LightColors.Text.one,
+                                                                       textColor: Colors.Text.one,
                                                                        textAlignment: .center,
                                                                        numberOfLines: 1))
 }

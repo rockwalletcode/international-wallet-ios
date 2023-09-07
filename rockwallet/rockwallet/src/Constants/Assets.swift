@@ -384,7 +384,6 @@ internal enum Asset {
   internal static let world = ImageAsset(name: "world")
   internal static let logo = ImageAsset(name: "logo")
   internal static let logoIcon = ImageAsset(name: "logo_icon")
-  internal static let logoIconWhite = ImageAsset(name: "logo_icon_white")
   internal static let logoVertical = ImageAsset(name: "logo_vertical")
   internal static let logoVerticalWhite = ImageAsset(name: "logo_vertical_white")
   internal static let logoWhite = ImageAsset(name: "logo_white")

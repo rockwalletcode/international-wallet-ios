@@ -46,6 +46,7 @@ protocol AssetDataStore: BaseDataStore, FetchDataStore, TwoStepDataStore {
     var isFromBuy: Bool { get set }
     var currencies: [Currency] { get set }
     var supportedCurrencies: [String]? { get set }
+    var amount: Amount? { get set }
 }
 
 extension Interactor where Self: AssetViewActions,
@@ -207,39 +208,25 @@ extension Presenter where Self: AssetActionResponses,
             
         } else if ExchangeManager.shared.canSwap(from.currency) == false && isSwap {
             error = ExchangeErrors.pendingSwap
-            
-        } else if let profile = UserManager.shared.profile {
+        } else if XRPBalanceValidator.validate(balance: from.currency.state?.balance, amount: from, currency: from.currency) != nil {
+            error = ExchangeErrors.xrpErrorMessage
+        } else {
             let fiat = from.fiatValue.round(to: 2)
             let token = from.tokenValue
             
             let minimumValue = quote?.minimumValue ?? 0
             let minimumUsd = quote?.minimumUsd.round(to: 2) ?? 0
-            let maximumUsd = quote?.maximumUsd.round(to: 2) ?? 0
             
-            var lifetimeLimit: Decimal = 0
-            var dailyLimit: Decimal = 0
-            var perExchangeLimit: Decimal = 0
             var reason: BaseInfoModels.FailureReason = .swap
+            let limits = quote?.currentExchangeLimits?.sorted(by: { $0.interval?.priorityOrder ?? 0 < $1.interval?.priorityOrder ?? 0 }) ?? []
             
             if isBuy && actionResponse.type == .card {
-                lifetimeLimit = profile.buyAllowanceLifetime
-                dailyLimit = profile.buyAllowanceDaily
-                perExchangeLimit = profile.buyAllowancePerExchange
                 reason = .buyCard(nil)
             } else if isBuy && actionResponse.type == .ach {
-                lifetimeLimit = profile.achAllowanceLifetime
-                dailyLimit = profile.achAllowanceDaily
-                perExchangeLimit = profile.achAllowancePerExchange
                 reason = .buyAch(nil, nil)
             } else if isSell {
-                lifetimeLimit = profile.sellAllowanceLifetime
-                dailyLimit = profile.sellAllowanceDaily
-                perExchangeLimit = profile.sellAllowancePerExchange
                 reason = .sell
             } else if isSwap {
-                lifetimeLimit = profile.swapAllowanceLifetime
-                dailyLimit = profile.swapAllowanceDaily
-                perExchangeLimit = profile.swapAllowancePerExchange
                 reason = .swap
             }
             
@@ -249,29 +236,12 @@ extension Presenter where Self: AssetActionResponses,
                 
                 error = nil
                 
-            case _ where fiat > lifetimeLimit,
-                _ where minimumUsd > lifetimeLimit:
-                // Over lifetime limit
+            case _ where !limits.filter({ fiat > $0.limit ?? 0 }).isEmpty:
+                // Over limit
                 
-                error = ExchangeErrors.overLifetimeLimit(limit: lifetimeLimit)
+                let limit = limits.first(where: { fiat > $0.limit ?? 0 })
                 
-            case _ where fiat > dailyLimit:
-                // Over daily limit
-                
-                let level2 = ExchangeErrors.overDailyLimitLevel2(limit: dailyLimit)
-                let level1 = ExchangeErrors.overDailyLimit(limit: dailyLimit)
-                error = profile.status == .levelTwo(.levelTwo) ? level2 : level1
-                
-            case _ where fiat > perExchangeLimit:
-                // Over exchange limit
-                
-                error = ExchangeErrors.overExchangeLimit
-                
-            case _ where fiat > maximumUsd,
-                _ where minimumUsd > maximumUsd:
-                // Over exchange limit
-                
-                error = ExchangeErrors.tooHigh(amount: maximumUsd, currency: toCode, reason: reason)
+                error = ExchangeErrors.tooHigh(interval: limit?.interval ?? .unknown, amount: limit?.limit ?? 0, currency: toCode, reason: reason)
                 
             case _ where fiat < minimumUsd:
                 // Value below minimum Fiat

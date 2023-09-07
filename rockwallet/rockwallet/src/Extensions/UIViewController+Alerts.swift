@@ -76,4 +76,14 @@ extension UIViewController {
             blur?.removeFromSuperview()
         }
     }
+    
+    func showInWebView(urlString: String, title: String) {
+        guard let url = URL(string: urlString) else { return }
+        let webViewController = SimpleWebViewController(url: url)
+        webViewController.setup(with: .init(title: title))
+        let navController = RootNavigationController(rootViewController: webViewController)
+        webViewController.setAsNonDismissableModal()
+        
+        navigationController?.present(navController, animated: true)
+    }
 }

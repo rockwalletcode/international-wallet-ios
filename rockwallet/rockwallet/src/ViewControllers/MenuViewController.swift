@@ -36,9 +36,9 @@ class MenuViewController: UITableViewController, Subscriber {
         tableView.register(WrapperTableViewCell<MenuCell>.self)
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = LightColors.Outline.one
-        tableView.backgroundColor = LightColors.Background.one
-        tableView.backgroundView?.backgroundColor = LightColors.Background.one
+        tableView.separatorColor = Colors.Outline.one
+        tableView.backgroundColor = Colors.Background.one
+        tableView.backgroundView?.backgroundColor = Colors.Background.one
         
         if let button = faqButton {
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)

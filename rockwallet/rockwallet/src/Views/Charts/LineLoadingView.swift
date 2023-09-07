@@ -15,9 +15,9 @@ enum LineLoadingViewStyle {
     var color: UIColor {
         switch self {
         case .chart:
-            return LightColors.Background.one
+            return Colors.Background.one
         case .sync:
-            return LightColors.primary
+            return Colors.primary
         }
     }
 }

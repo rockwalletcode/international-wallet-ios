@@ -13,7 +13,7 @@ import UIKit
 struct WrapperPopupConfiguration<C: Configurable>: Configurable {
     var background: BackgroundConfiguration = .init(backgroundColor: .white, tintColor: .black, border: Presets.Border.commonPlain)
     var leading: BackgroundConfiguration?
-    var title = LabelConfiguration(font: Fonts.Title.six, textColor: LightColors.Text.three, textAlignment: .center)
+    var title = LabelConfiguration(font: Fonts.Title.six, textColor: Colors.Text.three, textAlignment: .center)
     var trailing = Presets.Button.blackIcon
     var confirm = Presets.Button.primary
     var cancel = Presets.Button.secondary
@@ -88,7 +88,7 @@ class WrapperPopupView<T: ViewProtocol & UIView>: UIView,
     
     private lazy var lineView: UIView = {
         let view = UIView()
-        view.backgroundColor = LightColors.Outline.one
+        view.backgroundColor = Colors.Outline.one
         return view
     }()
     

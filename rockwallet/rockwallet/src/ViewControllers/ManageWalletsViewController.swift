@@ -31,7 +31,7 @@ class ManageWalletsViewController: UITableViewController {
     
     private lazy var footerView: UIView = {
         let footerView = UIView()
-        footerView.backgroundColor = LightColors.Background.one
+        footerView.backgroundColor = Colors.Background.one
         
         return footerView
     }()
@@ -43,10 +43,10 @@ class ManageWalletsViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        tableView.backgroundColor = LightColors.Background.one
+        tableView.backgroundColor = Colors.Background.one
         tableView.rowHeight = 66.0
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = LightColors.Outline.one
+        tableView.separatorColor = Colors.Outline.one
         title = L10n.TokenList.manageTitle
         tableView.register(ManageCurrencyCell.self, forCellReuseIdentifier: ManageCurrencyCell.cellIdentifier)
         tableView.setEditing(true, animated: true)
@@ -55,7 +55,7 @@ class ManageWalletsViewController: UITableViewController {
         //If we are first in the nav controller stack, we need a close button
         if navigationController?.viewControllers.first == self {
             let button = UIButton.buildModernCloseButton(position: .left)
-            button.tintColor = LightColors.Text.three
+            button.tintColor = Colors.Text.three
             button.tap = {
                 self.dismiss(animated: true, completion: nil)
             }

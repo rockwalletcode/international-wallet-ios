@@ -23,11 +23,15 @@ class DynamicLinksManager {
         case setPassword = "op=password"
         case home
         case profile
+        case oauth2 = "op=oauth2"
     }
     
     var dynamicLinkType: DynamicLinkType?
     var code: String?
     var email: String?
+    var redirectUri: String?
+    var urlScope: String?
+    var urlParameters: [String: String]?
     
     static func getDynamicLinkType(from url: URL) -> DynamicLinkType? {
         let url = url.absoluteString
@@ -36,6 +40,8 @@ class DynamicLinksManager {
             return .setPassword
         } else if url.contains(DynamicLinkType.home.rawValue) {
             return .home
+        } else if url.contains(DynamicLinkType.oauth2.rawValue) {
+            return .oauth2
         } else if url.contains(DynamicLinkType.profile.rawValue) {
             return .profile
         }
@@ -58,6 +64,9 @@ class DynamicLinksManager {
         case .profile:
             DynamicLinksManager.shared.dynamicLinkType = .profile
             
+        case .oauth2:
+            handleOauth2Login(with: url)
+            
         default:
             break
         }
@@ -73,5 +82,18 @@ class DynamicLinksManager {
         DynamicLinksManager.shared.dynamicLinkType = .setPassword
         DynamicLinksManager.shared.code = code
         DynamicLinksManager.shared.email = email
+    }
+    
+    private static func handleOauth2Login(with url: URL) {
+        guard let parameters = url.queryParameters,
+              let redirectUri = parameters["redirect_uri"],
+              let urlScope = parameters["scope"] else {
+            return
+        }
+        
+        DynamicLinksManager.shared.dynamicLinkType = .oauth2
+        DynamicLinksManager.shared.urlParameters = parameters
+        DynamicLinksManager.shared.redirectUri = redirectUri
+        DynamicLinksManager.shared.urlScope = urlScope
     }
 }

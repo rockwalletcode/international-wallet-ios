@@ -11,11 +11,11 @@
 import UIKit
 
 struct IconTitleSubtitleToggleConfiguration: Configurable {
-    var icon: BackgroundConfiguration = .init(tintColor: LightColors.Text.three)
-    var title: LabelConfiguration = .init(font: Fonts.Subtitle.one, textColor: LightColors.Text.three, numberOfLines: 1)
-    var destructiveTitle: LabelConfiguration = .init(font: Fonts.Subtitle.one, textColor: LightColors.Error.one, numberOfLines: 1)
-    var subtitle: LabelConfiguration = .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.two, numberOfLines: 1)
-    var checkmark: BackgroundConfiguration? = .init(tintColor: LightColors.primary)
+    var icon: BackgroundConfiguration = .init(tintColor: Colors.Text.three)
+    var title: LabelConfiguration = .init(font: Fonts.Subtitle.one, textColor: Colors.Text.three, numberOfLines: 1)
+    var destructiveTitle: LabelConfiguration = .init(font: Fonts.Subtitle.one, textColor: Colors.Error.one, numberOfLines: 1)
+    var subtitle: LabelConfiguration = .init(font: Fonts.Subtitle.two, textColor: Colors.Text.two, numberOfLines: 1)
+    var checkmark: BackgroundConfiguration? = .init(tintColor: Colors.primary)
     var shadow: ShadowConfiguration?
     var background: BackgroundConfiguration?
 }
@@ -75,7 +75,7 @@ class IconTitleSubtitleToggleView: FEView<IconTitleSubtitleToggleConfiguration, 
     
     private lazy var lineView: UIView = {
         let view = UIView()
-        view.backgroundColor = LightColors.Outline.one
+        view.backgroundColor = Colors.Outline.one
         return view
     }()
     

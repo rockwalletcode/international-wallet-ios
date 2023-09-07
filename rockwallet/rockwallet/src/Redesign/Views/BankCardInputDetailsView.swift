@@ -135,7 +135,6 @@ class BankCardInputDetailsView: FEView<BankCardInputDetailsViewConfiguration, Ba
     
     @objc private func triggerExpirationField() {
         didTriggerExpirationField?()
-        
         endEditing(true)
     }
     
@@ -145,5 +144,6 @@ class BankCardInputDetailsView: FEView<BankCardInputDetailsViewConfiguration, Ba
     
     private func cvvInfoButtonTapped() {
         didTapCvvInfo?()
+        endEditing(true)
     }
 }

@@ -44,12 +44,12 @@ class AttributeCell: UIView {
     private let label = UILabel(font: Fonts.Body.one)
     fileprivate let gr = UITapGestureRecognizer()
     fileprivate let tapView = UIView()
-    private let border = UIView(color: LightColors.Outline.two)
+    private let border = UIView(color: Colors.Outline.two)
     
     lazy var infoButton: UIButton = {
         let infoButton = UIButton()
         infoButton.setImage(Asset.help.image, for: .normal)
-        infoButton.tintColor = LightColors.Text.three
+        infoButton.tintColor = Colors.Text.three
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
         
         return infoButton
@@ -111,7 +111,7 @@ class AttributeCell: UIView {
         textField.keyboardType = attributeDefintion.keyboardType
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
-        label.textColor = LightColors.Text.one
+        label.textColor = Colors.Text.one
         contentLabel.lineBreakMode = .byTruncatingMiddle
 
         textField.editingChanged = { [weak self] in
@@ -136,11 +136,11 @@ class AttributeCell: UIView {
                                       preferredStyle: .actionSheet)
         
         let titleAttributes = [NSAttributedString.Key.font: Fonts.AlertActionSheet.title,
-                               NSAttributedString.Key.foregroundColor: LightColors.Text.one]
+                               NSAttributedString.Key.foregroundColor: Colors.Text.one]
         let titleString = NSAttributedString(string: L10n.Send.whatIsDestinationTag, attributes: titleAttributes)
         
         let messageAttributes = [NSAttributedString.Key.font: Fonts.AlertActionSheet.body,
-                                 NSAttributedString.Key.foregroundColor: LightColors.Text.one]
+                                 NSAttributedString.Key.foregroundColor: Colors.Text.one]
         let message = L10n.Send.destinationTagText
         let messageString = NSAttributedString(string: message, attributes: messageAttributes)
         

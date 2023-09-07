@@ -61,7 +61,7 @@ class TransactionsTableViewController: UITableViewController, Subscriber {
     // MARK: - Private
     
     private lazy var emptyMessage: UILabel = {
-        let view = UILabel.wrapping(font: Fonts.Body.one, color: LightColors.Text.one)
+        let view = UILabel.wrapping(font: Fonts.Body.one, color: Colors.Text.one)
         view.textAlignment = .center
         view.text = L10n.TransactionDetails.emptyMessage
         return view

@@ -1181,7 +1181,7 @@ class ModalPresenter: Subscriber {
         }
         
         // Delete user account
-        let deleteAccount = MenuItem(title: L10n.Account.deleteAccount, color: LightColors.Error.one) { [weak self] in
+        let deleteAccount = MenuItem(title: L10n.Account.deleteAccount, color: Colors.Error.one) { [weak self] in
             self?.deleteAccountCallback?()
         }
         

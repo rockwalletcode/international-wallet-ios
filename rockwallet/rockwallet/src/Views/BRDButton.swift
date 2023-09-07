@@ -96,14 +96,14 @@ class BRDButton: UIControl {
             
             switch type {
             case .tertiary:
-                imageView?.tintColor = LightColors.primaryPressed
-                label.textColor = LightColors.primaryPressed
-                container.layer.borderColor = LightColors.primaryPressed.cgColor
+                imageView?.tintColor = Colors.primaryPressed
+                label.textColor = Colors.primaryPressed
+                container.layer.borderColor = Colors.primaryPressed.cgColor
                 
             case .search:
-                imageView?.tintColor = LightColors.Contrast.two
-                label.textColor = LightColors.Contrast.two
-                container.backgroundColor = LightColors.Text.two
+                imageView?.tintColor = Colors.Contrast.two
+                label.textColor = Colors.Contrast.two
+                container.backgroundColor = Colors.Text.two
                 
             default:
                 return
@@ -116,16 +116,16 @@ class BRDButton: UIControl {
             guard isEnabled else {
                 switch type {
                 case .primary:
-                    imageView?.tintColor = LightColors.Disabled.one
-                    label.textColor = LightColors.Disabled.one
+                    imageView?.tintColor = Colors.Disabled.one
+                    label.textColor = Colors.Disabled.one
                     
                 case .secondary:
-                    container.backgroundColor = LightColors.Disabled.one
+                    container.backgroundColor = Colors.Disabled.one
                     
                 case .tertiary:
-                    container.layer.borderColor = LightColors.Disabled.one.cgColor
-                    imageView?.tintColor = LightColors.Disabled.one
-                    label.textColor = LightColors.Disabled.one
+                    container.layer.borderColor = Colors.Disabled.one.cgColor
+                    imageView?.tintColor = Colors.Disabled.one
+                    label.textColor = Colors.Disabled.one
                     
                 default:
                     container.layer.backgroundColor = container.layer.backgroundColor?.copy(alpha: 0.7)
@@ -221,32 +221,32 @@ class BRDButton: UIControl {
         switch type {
         case .primary:
             container.backgroundColor = .clear
-            label.textColor = LightColors.primary
-            imageView?.tintColor = LightColors.primary
-            container.layer.borderColor = LightColors.primary.cgColor
+            label.textColor = Colors.primary
+            imageView?.tintColor = Colors.primary
+            container.layer.borderColor = Colors.primary.cgColor
             container.layer.borderWidth = 1.0
             cornerRadius = .fullRadius
         case .secondary:
-            container.backgroundColor = LightColors.primary
-            label.textColor = LightColors.Contrast.two
-            imageView?.tintColor = LightColors.Contrast.two
+            container.backgroundColor = Colors.primary
+            label.textColor = Colors.Contrast.two
+            imageView?.tintColor = Colors.Contrast.two
             cornerRadius = .fullRadius
         case .tertiary:
-            container.backgroundColor = LightColors.Background.one
-            label.textColor = LightColors.primary
-            container.layer.borderColor = LightColors.primary.cgColor
+            container.backgroundColor = Colors.Background.one
+            label.textColor = Colors.primary
+            container.layer.borderColor = Colors.primary.cgColor
             container.layer.borderWidth = 1.0
-            imageView?.tintColor = LightColors.primary
+            imageView?.tintColor = Colors.primary
             cornerRadius = .fullRadius
         case .underlined:
             container.backgroundColor = .clear
-            label.textColor = LightColors.Contrast.two
-            imageView?.tintColor = LightColors.Contrast.two
+            label.textColor = Colors.Contrast.two
+            imageView?.tintColor = Colors.Contrast.two
         case .search:
             label.font = Fonts.Body.two
-            container.backgroundColor = LightColors.Background.two
-            label.textColor = LightColors.Text.three
-            imageView?.tintColor = LightColors.Text.three
+            container.backgroundColor = Colors.Background.two
+            label.textColor = Colors.Text.three
+            imageView?.tintColor = Colors.Text.three
         }
     }
 

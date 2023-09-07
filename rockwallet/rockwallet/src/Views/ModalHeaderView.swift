@@ -60,7 +60,7 @@ class ModalHeaderView: UIView {
             close.constraint(.height, constant: ViewSizes.Common.largeCommon.rawValue),
             close.constraint(.width, constant: ViewSizes.Common.largeCommon.rawValue)])
 
-        backgroundColor = LightColors.Background.one
+        backgroundColor = Colors.Background.one
         
         setColors()
     }
@@ -79,8 +79,8 @@ class ModalHeaderView: UIView {
 
     private func setColors() {
         titleLabel.font = Fonts.Title.six
-        titleLabel.textColor = LightColors.Text.three
-        border.backgroundColor = LightColors.Outline.one
+        titleLabel.textColor = Colors.Text.three
+        border.backgroundColor = Colors.Outline.one
     }
 
     required init?(coder aDecoder: NSCoder) {

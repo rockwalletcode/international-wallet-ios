@@ -11,11 +11,11 @@ class ManageAssetsButton: RoundedView {
         let manageAssetsButton = UIButton()
         manageAssetsButton.translatesAutoresizingMaskIntoConstraints = false
         manageAssetsButton.titleLabel?.font = Fonts.button
-        manageAssetsButton.tintColor = LightColors.primary
-        manageAssetsButton.setTitleColor(LightColors.primary, for: .normal)
-        manageAssetsButton.setTitleColor(LightColors.Disabled.one, for: .highlighted)
+        manageAssetsButton.tintColor = Colors.primary
+        manageAssetsButton.setTitleColor(Colors.primary, for: .normal)
+        manageAssetsButton.setTitleColor(Colors.Disabled.one, for: .highlighted)
         
-        manageAssetsButton.layer.borderColor = LightColors.primary.cgColor
+        manageAssetsButton.layer.borderColor = Colors.primary.cgColor
         manageAssetsButton.layer.borderWidth = 1.5
         manageAssetsButton.layer.cornerRadius = CornerRadius.fullRadius.rawValue
         

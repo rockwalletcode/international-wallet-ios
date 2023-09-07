@@ -17,7 +17,7 @@ class BuyStore: NSObject, BaseDataStore, BuyDataStore {
     var showTimer: Bool = false
     var accountId: String? { return ach?.id }
     var quoteRequestData: QuoteRequestData {
-        return .init(from: fromCode.lowercased(),
+        return .init(from: fromCode,
                      to: toCode,
                      type: .buy(paymentMethod),
                      accountId: paymentMethod == .ach ? accountId : nil)
@@ -29,13 +29,14 @@ class BuyStore: NSObject, BaseDataStore, BuyDataStore {
     var to: Decimal?
     var isFromBuy: Bool = true
     var paymentMethod: PaymentCard.PaymentType?
+    var exchangeType: ExchangeType? { return paymentMethod == .ach ? .buyAch : .buyCard }
     var publicToken: String?
     var mask: String?
     var limits: NSMutableAttributedString? {
         guard let quote = quote,
               let minText = ExchangeFormatter.fiat.string(for: quote.minimumUsd),
               let weeklyCardText = ExchangeFormatter.fiat.string(for: UserManager.shared.profile?.buyAllowanceWeekly),
-              let weeklyAchText = ExchangeFormatter.fiat.string(for: UserManager.shared.profile?.buyAllowanceWeekly) else { return nil }
+              let weeklyAchText = ExchangeFormatter.fiat.string(for: UserManager.shared.profile?.buyAchAllowanceWeekly) else { return nil }
         
         let limits: String
         let limitsString: NSMutableAttributedString
@@ -76,6 +77,14 @@ class BuyStore: NSObject, BaseDataStore, BuyDataStore {
     
     var currencies: [Currency] = []
     var supportedCurrencies: [String]?
+    var amount: Amount? {
+        get {
+            return toAmount
+        }
+        set(value) {
+            toAmount = value
+        }
+    }
     
     var coreSystem: CoreSystem?
     var keyStore: KeyStore?

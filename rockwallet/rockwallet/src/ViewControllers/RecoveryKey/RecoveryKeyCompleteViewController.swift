@@ -24,8 +24,8 @@ class RecoveryKeyCompleteViewController: BaseRecoveryKeyViewController {
     }
 
     private let lockSuccessIcon = UIImageView(image: Asset.celebrate.image)
-    private let headingLabel = UILabel.wrapping(font: Fonts.Title.six, color: LightColors.Text.three)
-    private let subheadingLabel = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+    private let headingLabel = UILabel.wrapping(font: Fonts.Title.six, color: Colors.Text.three)
+    private let subheadingLabel = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
     
     private lazy var continueButton: FEButton = {
         let view = FEButton()
@@ -59,7 +59,7 @@ class RecoveryKeyCompleteViewController: BaseRecoveryKeyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         navigationItem.setHidesBackButton(true, animated: false)
         
         view.addSubview(lockSuccessIcon)

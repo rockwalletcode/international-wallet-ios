@@ -30,7 +30,7 @@ class HistoryPeriodButton {
         self.historyPeriod = historyPeriod
         self.button = UIButton(type: .system)
         button.setTitle(historyPeriod.buttonLabel.uppercased(), for: .normal)
-        button.setTitleColor(LightColors.Text.three, for: .normal)
+        button.setTitleColor(Colors.Text.three, for: .normal)
         button.titleLabel?.font = Fonts.Subtitle.two
     }
 }

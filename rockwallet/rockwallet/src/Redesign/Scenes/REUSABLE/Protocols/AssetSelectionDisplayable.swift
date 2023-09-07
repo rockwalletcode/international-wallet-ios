@@ -58,7 +58,7 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
         
         let sortedCurrencies = data?.sorted { !$0.isDisabled && $1.isDisabled }
         
-        openModally(coordinator: ItemSelectionCoordinator.self,
+        openModally(coordinator: ExchangeCoordinator.self,
                     scene: Scenes.AssetSelection,
                     presentationStyle: .formSheet) { vc in
             vc?.dataStore?.items = sortedCurrencies ?? []

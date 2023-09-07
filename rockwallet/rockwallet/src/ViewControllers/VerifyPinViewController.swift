@@ -63,8 +63,8 @@ class VerifyPinViewController: UIViewController, ContentBoxPresenter {
     private var pinAuthenticationType: PinAuthenticationType = .unlocking
     private let success: (String) -> Void
     private let pinPad: PinPadViewController
-    private let titleLabel = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.one)
-    private let body = UILabel.wrapping(font: Fonts.Body.one, color: LightColors.Text.two)
+    private let titleLabel = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.one)
+    private let body = UILabel.wrapping(font: Fonts.Body.one, color: Colors.Text.two)
     private let pinView: PinView
     private let bodyText: String
     private let pinLength: Int
@@ -146,7 +146,7 @@ class VerifyPinViewController: UIViewController, ContentBoxPresenter {
                                    style: .plain,
                                    target: self,
                                    action: #selector(backButtonPressed))
-        back.tintColor = LightColors.Text.one
+        back.tintColor = Colors.Text.one
         navigationItem.leftBarButtonItem = back
     }
 

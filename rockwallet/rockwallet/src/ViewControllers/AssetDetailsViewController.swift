@@ -284,8 +284,8 @@ class AssetDetailsViewController: UIViewController, Subscriber {
     private func addTransactionsView() {
         if let transactionsTableView = transactionsTableView {
             transactionsTableView.tableView.contentInset.bottom = AssetDetailsFooterView.height
-            transactionsTableView.view.backgroundColor = LightColors.Background.two
-            view.backgroundColor = LightColors.Background.one
+            transactionsTableView.view.backgroundColor = Colors.Background.two
+            view.backgroundColor = Colors.Background.one
             
             addChildViewController(transactionsTableView, layout: {
                 transactionsTableView.view.constrain([

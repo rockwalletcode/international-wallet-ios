@@ -15,10 +15,10 @@ class GiftCurrencyCell: UIView {
     private let currency = Currencies.shared.btc
     private let iconContainer = UIView(color: .clear)
     private let icon = UIImageView()
-    private let currencyName = UILabel(font: Fonts.Body.one, color: LightColors.Text.one)
-    private let price = UILabel(font: Fonts.Body.three, color: LightColors.Text.two)
-    private let fiatBalance = UILabel(font: Fonts.Body.one, color: LightColors.Text.one)
-    private let tokenBalance = UILabel(font: Fonts.Body.three, color: LightColors.Text.two)
+    private let currencyName = UILabel(font: Fonts.Body.one, color: Colors.Text.one)
+    private let price = UILabel(font: Fonts.Body.three, color: Colors.Text.two)
+    private let fiatBalance = UILabel(font: Fonts.Body.one, color: Colors.Text.one)
+    private let tokenBalance = UILabel(font: Fonts.Body.three, color: Colors.Text.two)
     
     private let rate: Double
     private let amount: Double

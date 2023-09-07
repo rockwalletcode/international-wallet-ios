@@ -46,11 +46,11 @@ class SignUpViewController: BaseTableViewController<AccountCoordinator,
         }))
         
         let partOneAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: LightColors.Text.two,
+            NSAttributedString.Key.foregroundColor: Colors.Text.two,
             NSAttributedString.Key.backgroundColor: UIColor.clear,
             NSAttributedString.Key.font: Fonts.Body.two]
         let partTwoAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: LightColors.secondary,
+            NSAttributedString.Key.foregroundColor: Colors.secondary,
             NSAttributedString.Key.backgroundColor: UIColor.clear,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
             NSAttributedString.Key.font: Fonts.Subtitle.two]

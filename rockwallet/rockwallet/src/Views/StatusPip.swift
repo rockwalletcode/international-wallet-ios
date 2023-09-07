@@ -51,7 +51,7 @@ class StatusPip: UIView {
     
     // MARK: Init
 
-    init(onColor: UIColor = LightColors.primary, offColor: UIColor = LightColors.Outline.one) {
+    init(onColor: UIColor = Colors.primary, offColor: UIColor = Colors.Outline.one) {
         self.state = .off
         self.offColor = offColor
         super.init(frame: .zero)

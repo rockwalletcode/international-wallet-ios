@@ -35,20 +35,20 @@ class BottomBarItem: FEView<BottomBarItemConfiguration, BottomBarItemViewModel> 
     private lazy var imageContainerView: UIView = {
         let container = UIView()
         container.clipsToBounds = true
-        container.backgroundColor = LightColors.primary
+        container.backgroundColor = Colors.primary
         return container
     }()
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView(image: Asset.buy.image)
-        imageView.tintColor = LightColors.Contrast.two
+        imageView.tintColor = Colors.Contrast.two
         return imageView
     }()
     
     private lazy var label: FELabel = {
         let label = FELabel()
         label.textAlignment = .center
-        label.configure(with: .init(font: Fonts.Body.three, textColor: LightColors.Text.one))
+        label.configure(with: .init(font: Fonts.Body.three, textColor: Colors.Text.one))
         return label
     }()
     
