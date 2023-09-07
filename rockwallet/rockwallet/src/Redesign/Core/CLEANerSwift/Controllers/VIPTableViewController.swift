@@ -50,7 +50,7 @@ class VIPTableViewController<C: CoordinatableRoutes,
     
     lazy var contentShadowView: UIView = {
         var contentShadowView = UIView()
-        contentShadowView.backgroundColor = LightColors.Background.one
+        contentShadowView.backgroundColor = Colors.Background.one
         contentShadowView.isUserInteractionEnabled = false
         contentShadowView.clipsToBounds = true
         contentShadowView.layer.cornerRadius = CornerRadius.common.rawValue
@@ -68,7 +68,7 @@ class VIPTableViewController<C: CoordinatableRoutes,
     override func setupSubviews() {
         super.setupSubviews()
         
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         
         view.addSubview(tableView)
         tableView.addSubview(leftAlignedTitleLabel)

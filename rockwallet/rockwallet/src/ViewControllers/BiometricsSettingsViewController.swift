@@ -31,13 +31,13 @@ class BiometricsSettingsViewController: UIViewController, Subscriber {
     
     private let imageView = UIImageView()
     
-    private let explanationLabel = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+    private let explanationLabel = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
     
     // Toggle for enabling Touch ID or Face ID to unlock the BRD app.
-    private let unlockTitleLabel = UILabel.wrapping(font: Fonts.Body.one, color: LightColors.Text.three)
+    private let unlockTitleLabel = UILabel.wrapping(font: Fonts.Body.one, color: Colors.Text.three)
     
     // Toggle for enabling Touch ID or Face ID for sending money.
-    private let transactionsTitleLabel = UILabel.wrapping(font: Fonts.Body.one, color: LightColors.Text.three)
+    private let transactionsTitleLabel = UILabel.wrapping(font: Fonts.Body.one, color: Colors.Text.three)
 
     private let unlockToggle = UISwitch()
     private let transactionsToggle = UISwitch()
@@ -70,13 +70,13 @@ class BiometricsSettingsViewController: UIViewController, Subscriber {
     }
     
     private func setUpAppearance() {
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         explanationLabel.textAlignment = .center
 
-        unlockToggleSeparator.backgroundColor = LightColors.Outline.one
-        transactionsToggleSeparator.backgroundColor = LightColors.Outline.one
-        unlockToggle.onTintColor = LightColors.primary
-        transactionsToggle.onTintColor = LightColors.primary
+        unlockToggleSeparator.backgroundColor = Colors.Outline.one
+        transactionsToggleSeparator.backgroundColor = Colors.Outline.one
+        unlockToggle.onTintColor = Colors.primary
+        transactionsToggle.onTintColor = Colors.primary
         
         [unlockTitleLabel, transactionsTitleLabel].forEach({
             $0.adjustsFontSizeToFitWidth = true
@@ -154,7 +154,7 @@ class BiometricsSettingsViewController: UIViewController, Subscriber {
 
     private func setData() {
         imageView.image = image
-        imageView.tintColor = LightColors.primary
+        imageView.tintColor = Colors.primary
         explanationLabel.text = explanatoryText
         unlockTitleLabel.text = unlockTitleText
         transactionsTitleLabel.text = transactionsTitleText

@@ -13,12 +13,12 @@ import UIKit
 import SnapKit
 
 struct DrawerConfiguration: Configurable {
-    var background = BackgroundConfiguration(backgroundColor: LightColors.Background.two)
+    var background = BackgroundConfiguration(backgroundColor: Colors.Background.two)
     var titleConfig = LabelConfiguration(font: Fonts.Subtitle.one,
-                                         textColor: LightColors.secondary,
+                                         textColor: Colors.secondary,
                                          textAlignment: .center)
     var descriptionConfig = LabelConfiguration(font: Fonts.Body.two,
-                                               textColor: LightColors.Text.one,
+                                               textColor: Colors.Text.one,
                                                textAlignment: .center)
     var buttons: [ButtonConfiguration] = []
 }
@@ -166,8 +166,8 @@ class BottomDrawer: FEView<DrawerConfiguration, DrawerViewModel>, UIGestureRecog
         title.configure(with: config.titleConfig)
         popupDescription.configure(with: config.descriptionConfig)
         
-        let noticeConfig = BackgroundConfiguration(backgroundColor: LightColors.purpleMuted,
-                                                   tintColor: LightColors.instantPurple,
+        let noticeConfig = BackgroundConfiguration(backgroundColor: Colors.purpleMuted,
+                                                   tintColor: Colors.instantPurple,
                                                    border: BorderConfiguration(tintColor: .clear,
                                                                                borderWidth: 0,
                                                                                cornerRadius: .fullRadius))
@@ -192,7 +192,7 @@ class BottomDrawer: FEView<DrawerConfiguration, DrawerViewModel>, UIGestureRecog
             let image = UIImage.textEmbeded(image: image,
                                             string: title,
                                             isImageBeforeText: true,
-                                            tintColor: LightColors.instantPurple)
+                                            tintColor: Colors.instantPurple)
             notice.wrappedView.setup(with: .image(image))
         }
         

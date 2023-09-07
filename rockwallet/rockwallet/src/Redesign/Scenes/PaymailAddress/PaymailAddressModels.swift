@@ -43,7 +43,7 @@ enum PaymailAddressModels {
                 return .image(Asset.copyIcon.image)
                 
             case .paymailNotSetup:
-                return .image(Asset.cancel.image.tinted(with: LightColors.Text.three))
+                return .image(Asset.cancel.image.tinted(with: Colors.Text.three))
                 
             }
         }

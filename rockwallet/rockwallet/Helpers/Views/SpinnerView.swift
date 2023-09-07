@@ -88,7 +88,7 @@ class SpinnerView: UIView {
     
     func animateStrokeHueWithDuration() {
         let animation = CAKeyframeAnimation(keyPath: "strokeColor")
-        animation.values = [LightColors.primary.cgColor, LightColors.primaryPressed.cgColor]
+        animation.values = [Colors.primary.cgColor, Colors.primaryPressed.cgColor]
         animation.calculationMode = .linear
         animation.repeatCount = .infinity
         animation.isRemovedOnCompletion = false

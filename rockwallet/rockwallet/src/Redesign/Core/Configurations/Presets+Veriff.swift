@@ -14,11 +14,11 @@ import Veriff
 extension Presets {
     static var veriff: VeriffSdk.Configuration {
         let branding = VeriffSdk.Branding()
-        branding.background = LightColors.Background.one
-        branding.onBackground = LightColors.Text.three
-        branding.onBackgroundSecondary = LightColors.Text.one
-        branding.primary = LightColors.primary
-        branding.onPrimary = LightColors.Contrast.one
+        branding.background = Colors.Background.one
+        branding.onBackground = Colors.Text.three
+        branding.onBackgroundSecondary = Colors.Text.one
+        branding.primary = Colors.primary
+        branding.onPrimary = Colors.Contrast.one
         branding.buttonRadius = CornerRadius.large.rawValue * 5
         branding.font = VeriffSdk.Branding.Font(regular: Fonts.Secondary,
                                                 medium: Fonts.Tertiary,

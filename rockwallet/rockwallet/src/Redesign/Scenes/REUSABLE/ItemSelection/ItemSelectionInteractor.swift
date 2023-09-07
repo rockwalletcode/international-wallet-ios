@@ -20,7 +20,7 @@ class ItemSelectionInteractor: NSObject, Interactor, ItemSelectionViewActions {
               items.isEmpty == false,
               let isAddingEnabled = dataStore?.isAddingEnabled else { return }
         
-        let item = Models.Item(items: items, isAddingEnabled: isAddingEnabled)
+        let item = Models.Item(items: items, isAddingEnabled: isAddingEnabled, fromCardWithdrawal: dataStore?.fromCardWithdrawal ?? false)
         presenter?.presentData(actionResponse: .init(item: item))
     }
     
@@ -29,7 +29,7 @@ class ItemSelectionInteractor: NSObject, Interactor, ItemSelectionViewActions {
               let searchText = viewAction.text?.lowercased() else { return }
         
         let searchData = searchText.isEmpty ? items : items.filter { $0.displayName?.lowercased().contains(searchText) ?? false }
-        let item = Models.Item(items: searchData, isAddingEnabled: dataStore?.isAddingEnabled)
+        let item = Models.Item(items: searchData, isAddingEnabled: dataStore?.isAddingEnabled, fromCardWithdrawal: dataStore?.fromCardWithdrawal ?? false)
         presenter?.presentData(actionResponse: .init(item: item))
     }
     
@@ -42,7 +42,7 @@ class ItemSelectionInteractor: NSObject, Interactor, ItemSelectionViewActions {
                 guard let items = self.dataStore?.items,
                       let isAddingEnabled = self.dataStore?.isAddingEnabled else { return }
                 
-                let item = Models.Item(items: items, isAddingEnabled: isAddingEnabled)
+                let item = Models.Item(items: items, isAddingEnabled: isAddingEnabled, fromCardWithdrawal: dataStore?.fromCardWithdrawal ?? false)
                 self.presenter?.presentData(actionResponse: .init(item: item))
                 
             case .failure(let error):
@@ -74,7 +74,8 @@ class ItemSelectionInteractor: NSObject, Interactor, ItemSelectionViewActions {
     
     func findAddress(viewAction: ItemSelectionModels.FindAddress.ViewAction) {
         guard let input = viewAction.input, !input.isEmpty else {
-            presenter?.presentData(actionResponse: .init(item: Models.Item(items: nil, isAddingEnabled: false)))
+            let fromCardWithdrawal = dataStore?.fromCardWithdrawal ?? false
+            presenter?.presentData(actionResponse: .init(item: Models.Item(items: nil, isAddingEnabled: false, fromCardWithdrawal: fromCardWithdrawal)))
             return
         }
         
@@ -82,7 +83,7 @@ class ItemSelectionInteractor: NSObject, Interactor, ItemSelectionViewActions {
         FindAddressWorker().execute(requestData: request) { [weak self] result in
             switch result {
             case .success(let items):
-                let item = Models.Item(items: items, isAddingEnabled: false)
+                let item = Models.Item(items: items, isAddingEnabled: false, fromCardWithdrawal: self?.dataStore?.fromCardWithdrawal ?? false)
                 self?.presenter?.presentData(actionResponse: .init(item: item))
                 
             case .failure(let error):
@@ -94,10 +95,16 @@ class ItemSelectionInteractor: NSObject, Interactor, ItemSelectionViewActions {
     // MARK: - Additional helpers
     
     private func fetchCards(completion: ((Result<[PaymentCard]?, Error>) -> Void)?) {
-        PaymentCardsWorker().execute(requestData: PaymentCardsRequestData()) { [weak self] result in
+        let worker = dataStore?.fromCardWithdrawal == true ? SellPaymentCardsWorker() : PaymentCardsWorker()
+        
+        worker.execute(requestData: PaymentCardsRequestData()) { [weak self] result in
             switch result {
             case .success(let data):
-                self?.dataStore?.items = data?.filter { $0.type == .card }
+                var cards = data?.filter { $0.type == .card }
+                if self?.dataStore?.fromCardWithdrawal == true {
+                    cards = cards?.filter { $0.scheme == .visa }
+                }
+                self?.dataStore?.items = cards
                 
             default:
                 break

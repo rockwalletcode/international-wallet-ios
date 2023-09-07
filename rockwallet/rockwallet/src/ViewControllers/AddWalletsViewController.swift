@@ -25,7 +25,7 @@ class AddWalletsViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.keyboardDismissMode = .interactive
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = LightColors.Outline.one
+        tableView.separatorColor = Colors.Outline.one
         tableView.rowHeight = ViewSizes.Common.hugeCommon.rawValue
         tableView.register(ManageCurrencyCell.self, forCellReuseIdentifier: ManageCurrencyCell.cellIdentifier)
         
@@ -43,7 +43,7 @@ class AddWalletsViewController: UIViewController, UITableViewDelegate, UITableVi
         let infoLabel = UILabel()
         infoLabel.text = L10n.Wallet.findAssets
         infoLabel.font = Fonts.Body.two
-        infoLabel.textColor = LightColors.Text.two
+        infoLabel.textColor = Colors.Text.two
         infoLabel.textAlignment = .center
         
         return infoLabel
@@ -51,7 +51,7 @@ class AddWalletsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     lazy var infoButton: UIButton = {
         let infoButton = UIButton()
-        infoButton.setImage(Asset.info.image.tinted(with: LightColors.Text.two), for: .normal)
+        infoButton.setImage(Asset.info.image.tinted(with: Colors.Text.two), for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
         
         return infoButton
@@ -117,7 +117,7 @@ class AddWalletsViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         
         setupSearchBar()
         setupInfoView()
@@ -149,7 +149,7 @@ class AddWalletsViewController: UIViewController, UITableViewDelegate, UITableVi
         searchBar.searchBarStyle = .minimal
         searchBar.barStyle = .black
         searchBar.isTranslucent = false
-        searchBar.barTintColor = LightColors.Background.two
+        searchBar.barTintColor = Colors.Background.two
         searchBar.placeholder = L10n.Search.search
     }
     

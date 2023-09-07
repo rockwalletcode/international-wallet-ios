@@ -25,7 +25,7 @@ class DelistedTokenView: UIView {
         addSubviews()
         addConstraints()
         
-        backgroundColor = LightColors.Disabled.one
+        backgroundColor = Colors.Disabled.one
         
         label.numberOfLines = 0
         label.text = L10n.Account.delistedToken

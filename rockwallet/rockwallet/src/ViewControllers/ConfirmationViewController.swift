@@ -65,75 +65,75 @@ class ConfirmationViewController: UIViewController, ContentBoxPresenter {
     
     private lazy var payLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.one))
+        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: Colors.Text.one))
         return view
     }()
     
     private lazy var toLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.one))
+        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: Colors.Text.one))
         return view
     }()
     
     private lazy var amountLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two))
         return view
     }()
     
     private lazy var address: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Body.one, textColor: LightColors.Text.two, numberOfLines: 1, lineBreakMode: .byTruncatingMiddle))
+        view.configure(with: .init(font: Fonts.Body.one, textColor: Colors.Text.two, numberOfLines: 1, lineBreakMode: .byTruncatingMiddle))
         return view
     }()
     
     private lazy var processingTime: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Body.three, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Body.three, textColor: Colors.Text.two))
         return view
     }()
     
     private lazy var sendLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two))
         view.setup(with: .text(L10n.Confirmation.amountLabel))
         return view
     }()
     
     private lazy var feeLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two))
         return view
     }()
     
     private lazy var totalLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.one))
+        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: Colors.Text.one))
         view.setup(with: .text(L10n.Confirmation.totalLabel))
         return view
     }()
     
     private lazy var send: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two))
         return view
     }()
     
     private lazy var fee: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two))
         return view
     }()
     
     private lazy var total: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.one))
+        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: Colors.Text.one))
         return view
     }()
     
     private lazy var resolvedAddressLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Body.one, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Body.one, textColor: Colors.Text.two))
         return view
     }()
     

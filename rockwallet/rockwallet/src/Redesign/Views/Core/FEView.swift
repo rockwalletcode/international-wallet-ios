@@ -102,8 +102,6 @@ class FEView<C: Configurable, M: ViewModel>: UIView,
         
         self.background = background
         
-        layoutIfNeeded()
-        
         (backgroundView ?? content).setBackground(with: background)
     }
 }

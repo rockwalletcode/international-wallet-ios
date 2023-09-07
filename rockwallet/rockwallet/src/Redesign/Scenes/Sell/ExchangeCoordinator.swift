@@ -92,54 +92,60 @@ class ExchangeCoordinator: BaseCoordinator, SellRoutes, BuyRoutes, SwapRoutes, O
         }
     }
     
-    func showCardSelector(cards: [PaymentCard], selected: ((PaymentCard?) -> Void)?, isFromBuy: Bool = true) {
+    func showCardSelector(cards: [PaymentCard], from exchangeType: ExchangeType? = nil, selected: ((PaymentCard?) -> Void)?) {
         guard !cards.isEmpty else {
-            openModally(coordinator: ItemSelectionCoordinator.self,
-                        scene: Scenes.AddCard)
+            open(scene: Scenes.AddCard) { vc in
+                vc.dataStore?.fromCardWithdrawal = exchangeType == .sellCard
+            }
             return
         }
         
-        openModally(coordinator: ItemSelectionCoordinator.self,
-                    scene: Scenes.CardSelection,
+        open(scene: Scenes.CardSelection,
                     presentationStyle: .currentContext) { [weak self] vc in
-            vc?.dataStore?.isAddingEnabled = true
-            vc?.dataStore?.isSelectingEnabled = isFromBuy
-            vc?.dataStore?.items = cards
+            vc.dataStore?.isAddingEnabled = true
+            vc.dataStore?.isSelectingEnabled = exchangeType == .buyCard || exchangeType == .sellCard
+            vc.dataStore?.fromCardWithdrawal = exchangeType == .sellCard
+            vc.dataStore?.items = cards
             let backButtonVisible = self?.navigationController.children.last is BillingAddressViewController
-            vc?.navigationItem.hidesBackButton = backButtonVisible
+            vc.navigationItem.hidesBackButton = backButtonVisible
             
-            vc?.itemSelected = { item in
-                selected?(item as? PaymentCard)
+            vc.itemSelected = { item in
+                guard let item = item as? PaymentCard else { return }
+                if exchangeType == .sellCard, item.verifiedToSell == false {
+                    return
+                }
+                selected?(item)
                 
                 self?.popToRoot()
             }
             
-            vc?.paymentCardDeleted = {
+            vc.paymentCardDeleted = {
                 selected?(nil)
             }
         }
     }
     
     func showCountrySelector(countries: [Country], selected: ((Country?) -> Void)?) {
-        openModally(coordinator: ItemSelectionCoordinator.self,
-                    scene: Scenes.ItemSelection,
-                    presentationStyle: .formSheet) { vc in
-            vc?.dataStore?.items = countries
-            vc?.dataStore?.sceneTitle = L10n.Account.selectCountry
-            vc?.itemSelected = { item in
+        open(scene: Scenes.ItemSelection,
+             presentationStyle: .formSheet) { [weak self] vc in
+            vc.dataStore?.items = countries
+            vc.dataStore?.sceneTitle = L10n.Account.selectCountry
+            vc.itemSelected = { item in
                 selected?(item as? Country)
+                self?.popViewController()
             }
         }
     }
     
     func showStateSelector(states: [Place], selected: ((Place?) -> Void)?) {
-        openModally(coordinator: ItemSelectionCoordinator.self,
+        openModally(coordinator: ExchangeCoordinator.self,
                     scene: Scenes.ItemSelection,
                     presentationStyle: .formSheet) { vc in
             vc?.dataStore?.items = states
             vc?.dataStore?.sceneTitle = L10n.Account.selectState
-            vc?.itemSelected = { item in
+            vc?.itemSelected = { [weak self] item in
                 selected?(item as? Place)
+                self?.popViewController()
             }
         }
     }
@@ -150,6 +156,18 @@ class ExchangeCoordinator: BaseCoordinator, SellRoutes, BuyRoutes, SwapRoutes, O
         let vc = ManageWalletsViewController(assetCollection: assetCollection, coreSystem: coreSystem)
         let nc = RootNavigationController(rootViewController: vc)
         navigationController.present(nc, animated: true)
+    }
+    
+    func showPaymentsActionSheet(okButtonTitle: String,
+                                 cancelButtonTitle: String,
+                                 handler: @escaping () -> Void) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: okButtonTitle, style: .destructive, handler: { _ in
+            handler()
+        }))
+        alert.addAction(UIAlertAction(title: cancelButtonTitle, style: .cancel, handler: nil))
+        
+        navigationController.present(alert, animated: true, completion: nil)
     }
 }
 

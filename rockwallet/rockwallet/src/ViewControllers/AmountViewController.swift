@@ -67,13 +67,13 @@ class AmountViewController: UIViewController {
     var minimumFractionDigits = 0
     let balanceLabel = UIButton(type: .system)
     private var hasTrailingDecimal = false
-    private let placeholder = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.two)
-    private let amountLabel = UILabel(font: Fonts.Body.one, color: LightColors.Text.two)
+    private let placeholder = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.two)
+    private let amountLabel = UILabel(font: Fonts.Body.one, color: Colors.Text.two)
     private let pinPad: PinPadViewController
     private let currencyToggle: BRDButton
     private let border = UIView(color: .clear)
     private let bottomBorder = UIView(color: .clear)
-    private let cursor = BlinkingView(blinkColor: LightColors.Text.two)
+    private let cursor = BlinkingView(blinkColor: Colors.Text.two)
     private let feeLabel = UILabel()
     private let tapView = UIView()
     private let feeSelector: FeeSelector
@@ -94,7 +94,7 @@ class AmountViewController: UIViewController {
     
     lazy var errorLabel: UILabel = {
         let errorLabel = UILabel()
-        errorLabel.textColor = LightColors.Error.one
+        errorLabel.textColor = Colors.Error.one
         errorLabel.font = Fonts.Body.three
         errorLabel.text = L10n.Amount.minXRPAmount
         errorLabel.isHidden = true
@@ -341,7 +341,7 @@ class AmountViewController: UIViewController {
         }
         
         if let max = maximum {
-            amountLabel.textColor = amount > max ? LightColors.Error.one : LightColors.Text.two
+            amountLabel.textColor = amount > max ? Colors.Error.one : Colors.Text.two
         }
     }
 
@@ -357,13 +357,11 @@ class AmountViewController: UIViewController {
             feeLabel.attributedText = fee
             
             if amount != nil || isSendViewSendingMax {
-                balanceLabel.isHidden = false
                 feeLabel.isHidden = false
                 if currency.isXRP && !isRequesting {
                     infoButton.isHidden = false
                 }
             } else {
-                balanceLabel.isHidden = cursor.isHidden
                 feeLabel.isHidden = cursor.isHidden
                 if currency.isXRP && !isRequesting {
                     infoButton.isHidden = cursor.isHidden
@@ -391,7 +389,6 @@ class AmountViewController: UIViewController {
         cursor.isHidden = true
         bottomBorder.isHidden = true
         
-        updateBalanceAndFeeLabels()
         updateBalanceLabel()
     }
     
@@ -407,17 +404,8 @@ class AmountViewController: UIViewController {
         cursor.isHidden = isCollapsed ? false : true
         bottomBorder.isHidden = isCollapsed ? false : true
         
-        updateBalanceAndFeeLabels()
         updateBalanceLabel()
         didChangeFirstResponder?(isCollapsed)
-    }
-
-    private func updateBalanceAndFeeLabels() {
-        if let amount = amount, !amount.isZero {
-            balanceLabel.isHidden = false
-        } else {
-            balanceLabel.isHidden = cursor.isHidden
-        }
     }
 
     private func fullRefresh() {

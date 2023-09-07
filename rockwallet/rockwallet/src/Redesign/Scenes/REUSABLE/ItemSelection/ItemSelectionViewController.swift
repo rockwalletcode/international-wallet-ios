@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemSelectionViewController: BaseTableViewController<ItemSelectionCoordinator,
+class ItemSelectionViewController: BaseTableViewController<ExchangeCoordinator,
                                    ItemSelectionInteractor,
                                    ItemSelectionPresenter,
                                    ItemSelectionStore>,
@@ -36,7 +36,7 @@ class ItemSelectionViewController: BaseTableViewController<ItemSelectionCoordina
         
         tableView.separatorInset = .zero
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = LightColors.Outline.one
+        tableView.separatorColor = Colors.Outline.one
         tableView.register(WrapperTableViewCell<ItemView>.self)
         
         guard isSearchEnabled else { return }
@@ -62,6 +62,9 @@ class ItemSelectionViewController: BaseTableViewController<ItemSelectionCoordina
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
         switch dataSource?.sectionIdentifier(for: indexPath.section) as? Models.Section {
+        case .banner:
+            cell = self.tableView(tableView, infoViewCellForRowAt: indexPath)
+            
         case .addItem:
             cell = self.tableView(tableView, addItemCellForRowAt: indexPath)
             
@@ -73,7 +76,25 @@ class ItemSelectionViewController: BaseTableViewController<ItemSelectionCoordina
         }
         
         cell.setBackground(with: Presets.Background.transparent)
-        cell.contentView.setupCustomMargins(vertical: .medium, horizontal: .zero)
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, infoViewCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let model = dataSource?.itemIdentifier(for: indexPath) as? InfoViewModel,
+              let cell: WrapperTableViewCell<WrapperView<FEInfoView>> = tableView.dequeueReusableCell(for: indexPath)
+        else {
+            return super.tableView(tableView, cellForRowAt: indexPath)
+        }
+        
+        cell.setup { view in
+            view.setup { view in
+                view.configure(with: Presets.InfoView.error)
+                view.setup(with: model)
+                view.content.setupCustomMargins(all: .large)
+            }
+            view.setupCustomMargins(horizontal: .large)
+        }
         
         return cell
     }
@@ -112,8 +133,6 @@ class ItemSelectionViewController: BaseTableViewController<ItemSelectionCoordina
         
         guard let model = dataSource?.itemIdentifier(for: indexPath), dataStore?.isSelectingEnabled == true else { return }
         itemSelected?(model)
-        
-        coordinator?.dismissFlow()
     }
     
     // MARK: - Search View Delegate

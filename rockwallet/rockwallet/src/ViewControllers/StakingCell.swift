@@ -15,10 +15,10 @@ class StakingCell: UIView, Subscriber {
     private let iconContainer = UIView(color: .clear)
     private let icon = UIImageView()
     private let currency: Currency
-    private let title = UILabel(font: Fonts.Body.two, color: LightColors.Text.one)
+    private let title = UILabel(font: Fonts.Body.two, color: Colors.Text.one)
     private var indicatorView = UIImageView()
-    private let topPadding = UIView(color: LightColors.Background.one)
-    private let bottomPadding = UIView(color: LightColors.Background.one)
+    private let topPadding = UIView(color: Colors.Background.one)
+    private let bottomPadding = UIView(color: Colors.Background.one)
     private let statusFlag = UILabel(font: Fonts.Body.three)
     private var wallet: Wallet?
     
@@ -95,16 +95,16 @@ class StakingCell: UIView, Subscriber {
     private func updateStakingStatus() {
         if currency.wallet?.hasPendingTxn == true {
             statusFlag.text = "  \(L10n.Staking.stakingPendingFlag)  "
-            statusFlag.backgroundColor = LightColors.Pending.two
-            statusFlag.textColor = LightColors.Pending.one
+            statusFlag.backgroundColor = Colors.Pending.two
+            statusFlag.textColor = Colors.Pending.one
         } else if currency.wallet?.stakedValidatorAddress != nil {
             statusFlag.text = "  \(L10n.Staking.stakingActiveFlag)  "
-            statusFlag.backgroundColor = LightColors.Success.two
-            statusFlag.textColor = LightColors.Success.one
+            statusFlag.backgroundColor = Colors.Success.two
+            statusFlag.textColor = Colors.Success.one
         } else {
             statusFlag.text = "  \(L10n.Staking.stakingInactiveFlag)  "
-            statusFlag.backgroundColor = LightColors.Pending.two
-            statusFlag.textColor = LightColors.Pending.one
+            statusFlag.backgroundColor = Colors.Pending.two
+            statusFlag.textColor = Colors.Pending.one
         }
     }
     

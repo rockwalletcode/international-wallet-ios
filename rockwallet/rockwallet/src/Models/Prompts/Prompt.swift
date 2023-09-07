@@ -85,15 +85,15 @@ enum PromptType: Int {
     
     var backgroundColor: UIColor {
         switch self {
-        case .noInternet: return LightColors.Error.two
-        default: return LightColors.Background.three
+        case .noInternet: return Colors.Error.two
+        default: return Colors.Background.three
         }
     }
     
     var alertIcon: UIImage? {
         switch self {
-        case .noInternet: return Asset.warning.image.tinted(with: LightColors.Error.one)
-        default: return Asset.alert.image.tinted(with: LightColors.primary)
+        case .noInternet: return Asset.warning.image.tinted(with: Colors.Error.one)
+        default: return Asset.alert.image.tinted(with: Colors.primary)
         }
     }
     

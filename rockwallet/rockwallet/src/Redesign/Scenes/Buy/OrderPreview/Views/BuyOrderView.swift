@@ -11,19 +11,20 @@
 import UIKit
 
 struct BuyOrderConfiguration: Configurable {
-    var notice: LabelConfiguration = .init(font: Fonts.Body.three, textColor: LightColors.instantPurple, textAlignment: .center)
-    var noticeBackground: BackgroundConfiguration? = .init(backgroundColor: LightColors.purpleMuted,
-                                                           tintColor: LightColors.purpleMuted,
+    var notice: LabelConfiguration = .init(font: Fonts.Body.three, textColor: Colors.instantPurple, textAlignment: .center)
+    var noticeBackground: BackgroundConfiguration? = .init(backgroundColor: Colors.purpleMuted,
+                                                           tintColor: Colors.purpleMuted,
                                                            border: Presets.Border.commonPlain)
-    var title: LabelConfiguration = .init(font: Fonts.Body.two, textColor: LightColors.Text.one)
-    var currencyAmountName: LabelConfiguration = .init(font: Fonts.Title.five, textColor: LightColors.Text.one)
+    var title: LabelConfiguration = .init(font: Fonts.Body.two, textColor: Colors.Text.one)
+    var currencyAmountName: LabelConfiguration = .init(font: Fonts.Title.five, textColor: Colors.Text.one)
     var common: TitleValueConfiguration = Presets.TitleValue.common
     var bold: TitleValueConfiguration = Presets.TitleValue.bold
     var shadow: ShadowConfiguration? = Presets.Shadow.light
-    var background: BackgroundConfiguration? = .init(backgroundColor: LightColors.Background.one,
-                                                     tintColor: LightColors.Text.one,
+    var background: BackgroundConfiguration? = .init(backgroundColor: Colors.Background.one,
+                                                     tintColor: Colors.Text.one,
                                                      border: Presets.Border.mediumPlain)
     var currencyIconImage = BackgroundConfiguration(border: BorderConfiguration(borderWidth: 0, cornerRadius: .fullRadius))
+    var instantBuyFeeConfig: TitleValueConfiguration?
 }
 
 struct BuyOrderViewModel: ViewModel {
@@ -84,7 +85,7 @@ class BuyOrderView: FEView<BuyOrderConfiguration, BuyOrderViewModel> {
     private lazy var topLineView: UIView = {
         let view = UIView()
         view.layer.borderWidth = 1.0
-        view.layer.borderColor = LightColors.Outline.one.cgColor
+        view.layer.borderColor = Colors.Outline.one.cgColor
         return view
     }()
     
@@ -116,7 +117,7 @@ class BuyOrderView: FEView<BuyOrderConfiguration, BuyOrderViewModel> {
     private lazy var bottomLineView: UIView = {
         let view = UIView()
         view.layer.borderWidth = 1.0
-        view.layer.borderColor = LightColors.Outline.one.cgColor
+        view.layer.borderColor = Colors.Outline.one.cgColor
         return view
     }()
     
@@ -128,7 +129,7 @@ class BuyOrderView: FEView<BuyOrderConfiguration, BuyOrderViewModel> {
     private lazy var paymentLineView: UIView = {
         let view = UIView()
         view.layer.borderWidth = 1.0
-        view.layer.borderColor = LightColors.Outline.one.cgColor
+        view.layer.borderColor = Colors.Outline.one.cgColor
         return view
     }()
     
@@ -229,15 +230,15 @@ class BuyOrderView: FEView<BuyOrderConfiguration, BuyOrderViewModel> {
         cardFeeView.configure(with: config?.common)
         
         var instantBuyFeeConfig = config?.common
-        instantBuyFeeConfig?.title.textColor = LightColors.instantPurple
+        instantBuyFeeConfig?.title.textColor = Colors.instantPurple
         instantBuyFeeConfig?.title.font = Fonts.Subtitle.two
-        instantBuyFeeView.configure(with: instantBuyFeeConfig)
+        instantBuyFeeView.configure(with: config?.instantBuyFeeConfig != nil ? config?.instantBuyFeeConfig : instantBuyFeeConfig)
         
         networkFeeView.configure(with: config?.common)
         totalCostView.configure(with: config?.bold)
         
-        paymentMethodView.configure(with: .init(background: .init(backgroundColor: LightColors.Background.one,
-                                                                  tintColor: LightColors.Text.one)))
+        paymentMethodView.configure(with: .init(background: .init(backgroundColor: Colors.Background.one,
+                                                                  tintColor: Colors.Text.one)))
         paymentMethodView.content.setupCustomMargins(all: .zero)
         
         configure(background: config?.background)
@@ -275,6 +276,7 @@ class BuyOrderView: FEView<BuyOrderConfiguration, BuyOrderViewModel> {
         
         paymentMethodView.setup(with: viewModel?.paymentMethod)
         paymentMethodView.isHidden = viewModel?.paymentMethod == nil
+        paymentLineView.isHidden = viewModel?.paymentMethod == nil
         
         needsUpdateConstraints()
     }

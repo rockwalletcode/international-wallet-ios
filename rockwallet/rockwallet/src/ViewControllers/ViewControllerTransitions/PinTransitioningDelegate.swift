@@ -46,7 +46,7 @@ class PresentPinAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         let fromFrame = container.frame
         let maskView = UIView(frame: CGRect(x: 0, y: fromFrame.height, width: fromFrame.width, height: 40.0))
-        maskView.backgroundColor = LightColors.Background.one
+        maskView.backgroundColor = Colors.Background.one
         if shouldShowMaskView {
             container.addSubview(maskView)
         }

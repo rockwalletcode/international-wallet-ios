@@ -56,17 +56,17 @@ enum TransactionStatus: String, Hashable, ModelResponse {
 
     var backgroundColor: UIColor {
         switch self {
-        case .pending: return LightColors.Pending.two
-        case .failed, .invalid, .refunded: return LightColors.Error.two
-        case .complete, .confirmed, .manuallySettled: return LightColors.Success.two
+        case .pending: return Colors.Pending.two
+        case .failed, .invalid, .refunded: return Colors.Error.two
+        case .complete, .confirmed, .manuallySettled: return Colors.Success.two
         }
     }
     
     var tintColor: UIColor {
         switch self {
-        case .pending: return LightColors.Pending.one
-        case .failed, .invalid, .refunded: return LightColors.Error.one
-        case .complete, .confirmed, .manuallySettled: return LightColors.Success.one
+        case .pending: return Colors.Pending.one
+        case .failed, .invalid, .refunded: return Colors.Error.one
+        case .complete, .confirmed, .manuallySettled: return Colors.Success.one
         }
     }
 }

@@ -36,8 +36,8 @@ class EnterPhraseViewController: UIViewController, UIScrollViewDelegate {
     private let reason: PhraseEntryReason
     private let showBackButton: Bool
     private let enterPhrase: EnterPhraseCollectionViewController
-    private let heading = UILabel.wrapping(font: Fonts.Title.six, color: LightColors.Text.three)
-    private let subheading = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+    private let heading = UILabel.wrapping(font: Fonts.Title.six, color: Colors.Text.three)
+    private let subheading = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
     private let faqButton: UIButton
     private let scrollView = UIScrollView()
     private let container = UIView()
@@ -50,7 +50,7 @@ class EnterPhraseViewController: UIViewController, UIScrollViewDelegate {
         let attributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.underlineStyle: 1,
         NSAttributedString.Key.font: Fonts.Body.two,
-        NSAttributedString.Key.foregroundColor: LightColors.Text.three]
+        NSAttributedString.Key.foregroundColor: Colors.Text.three]
 
         let attributedString = NSMutableAttributedString(string: L10n.UpdatePin.contactSupport, attributes: attributes)
         button.setAttributedTitle(attributedString, for: .normal)
@@ -124,7 +124,7 @@ class EnterPhraseViewController: UIViewController, UIScrollViewDelegate {
                                    style: .plain,
                                    target: self,
                                    action: #selector(onBackButton))
-        back.tintColor = LightColors.Text.three
+        back.tintColor = Colors.Text.three
         navigationItem.leftBarButtonItem = back
     }
     
@@ -167,8 +167,8 @@ class EnterPhraseViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        enterPhrase.configure(background: .init(backgroundColor: enterPhrase.isViewOnly ? LightColors.Background.one : .clear,
-                                                tintColor: LightColors.primary,
+        enterPhrase.configure(background: .init(backgroundColor: enterPhrase.isViewOnly ? Colors.Background.one : .clear,
+                                                tintColor: Colors.primary,
                                                 border: .init(borderWidth: 0, cornerRadius: .medium)))
         
         guard enterPhrase.isViewOnly else { return }
@@ -231,7 +231,7 @@ class EnterPhraseViewController: UIViewController, UIScrollViewDelegate {
 
     private func setInitialData() {
         scrollView.delegate = self
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         nextButton.setup(with: .init(title: L10n.Button.continueAction))
         skipButton.setup(with: .init(title: L10n.Onboarding.skipPhrase))
         

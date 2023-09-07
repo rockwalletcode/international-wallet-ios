@@ -156,9 +156,9 @@ class TxDetailViewController: UIViewController, Subscriber {
         container.layer.cornerRadius = CornerRadius.common.rawValue
         container.layer.masksToBounds = true
         
-        footer.backgroundColor = LightColors.Background.one
-        separator.backgroundColor = LightColors.Outline.one
-        detailsButton.setTitleColor(LightColors.secondary, for: .normal)
+        footer.backgroundColor = Colors.Background.one
+        separator.backgroundColor = Colors.Outline.one
+        detailsButton.setTitleColor(Colors.secondary, for: .normal)
         detailsButton.titleLabel?.font = Fonts.Subtitle.two
         
         tableView.tableFooterView = UIView()
@@ -177,7 +177,7 @@ class TxDetailViewController: UIViewController, Subscriber {
         let attributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.underlineStyle: 1,
         NSAttributedString.Key.font: Fonts.Subtitle.two,
-        NSAttributedString.Key.foregroundColor: LightColors.secondary]
+        NSAttributedString.Key.foregroundColor: Colors.secondary]
         var attributedString = NSMutableAttributedString(string: L10n.TransactionDetails.showDetails, attributes: attributes)
         detailsButton.setAttributedTitle(attributedString, for: .normal)
         attributedString = NSMutableAttributedString(string: L10n.TransactionDetails.hideDetails, attributes: attributes)

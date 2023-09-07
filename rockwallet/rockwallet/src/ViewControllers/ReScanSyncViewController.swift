@@ -86,8 +86,8 @@ class ReScanSyncViewController: UIViewController, Subscriber {
     }
 
     private func setInitialData() {
-        view.backgroundColor = LightColors.Background.two
-        faq.tintColor = LightColors.Text.one
+        view.backgroundColor = Colors.Background.two
+        faq.tintColor = Colors.Text.one
         header.text = L10n.ReScan.header
         body.attributedText = bodyText
         footer.text = L10n.ReScan.footer

@@ -444,28 +444,20 @@ class ApplicationController: Subscriber {
         homeScreen.didTapBuy = { [weak self] type in
             guard let self else { return }
             
-            self.coordinator?.showBuy(type: type,
-                                      coreSystem: self.coreSystem,
-                                      keyStore: self.keyStore)
+            self.dismissAllFlowsIfNeeded { [weak self] in
+                self?.coordinator?.showBuy(type: type,
+                                          coreSystem: self?.coreSystem,
+                                          keyStore: self?.keyStore)
+            }
         }
         
         homeScreen.didTapSell = { [weak self] in
             guard let self = self else { return }
             
-            guard self.coordinator?.childCoordinators.isEmpty == true else {
-                self.coordinator?.childCoordinators.forEach { child in
-                    child.navigationController.dismiss(animated: false) { [weak self] in
-                        self?.coordinator?.childDidFinish(child: child)
-                        guard self?.coordinator?.childCoordinators.isEmpty == true else { return }
-                        self?.coordinator?.showSell(coreSystem: self?.coreSystem,
-                                                    keyStore: self?.keyStore)
-                    }
-                }
-                return
+            self.dismissAllFlowsIfNeeded { [weak self] in
+                self?.coordinator?.showSell(coreSystem: self?.coreSystem,
+                                            keyStore: self?.keyStore)
             }
-            
-            self.coordinator?.showSell(coreSystem: self.coreSystem,
-                                       keyStore: self.keyStore)
         }
         
         homeScreen.didTapTrade = { [weak self] in
@@ -477,6 +469,10 @@ class ApplicationController: Subscriber {
         
         homeScreen.didTapProfile = { [weak self] in
             self?.coordinator?.showProfile()
+        }
+        
+        homeScreen.didTapProSegment = { [weak self] in
+            self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
         }
         
         homeScreen.didTapProfileFromPrompt = { [unowned self] in
@@ -544,6 +540,21 @@ class ApplicationController: Subscriber {
         didTapPaymail = { [unowned self] isPaymailFromAssets in
             coordinator?.showPaymailAddress(isPaymailFromAssets: isPaymailFromAssets)
         }
+    }
+    
+    private func dismissAllFlowsIfNeeded(completion: (() -> Void)?) {
+        guard self.coordinator?.childCoordinators.isEmpty == true else {
+            self.coordinator?.childCoordinators.forEach { child in
+                child.navigationController.dismiss(animated: true) { [weak self] in
+                    self?.coordinator?.childDidFinish(child: child)
+                    guard self?.coordinator?.childCoordinators.isEmpty == true else { return }
+                    completion?()
+                }
+            }
+            return
+        }
+        
+        completion?()
     }
     
     private func handleBiometricStatus(approved: Bool) {

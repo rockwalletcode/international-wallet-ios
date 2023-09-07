@@ -30,7 +30,7 @@ struct OnboardingPage {
  */
 class OnboardingViewController: UIViewController {
     
-    // This callback is passed in by the StartFlowPresenter so that actions within 
+    // This callback is passed in by the StartFlowPresenter so that actions within
     // the onboarding screen can be directed to other functions of the app, such as wallet
     // restoration, PIN creation, etc.
     private var didExitWithAction: DidExitOnboardingWithAction?
@@ -40,7 +40,7 @@ class OnboardingViewController: UIViewController {
     private var showingLogo: Bool = false {
         didSet {
             let alpha: CGFloat = showingLogo ? 1 : 0
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: { 
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
                 self.logoImageView.alpha = alpha
             }, completion: nil)
         }
@@ -56,7 +56,7 @@ class OnboardingViewController: UIViewController {
     
     // Heading and subheading labels and the constraints used to animate them.
     var headingLabels: [UILabel] = [UILabel]()
-    var subheadingLabels: [UILabel] = [UILabel]()    
+    var subheadingLabels: [UILabel] = [UILabel]()
     var headingConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
     var subheadingConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
     
@@ -88,7 +88,7 @@ class OnboardingViewController: UIViewController {
             let backAlpha: CGFloat = (pageIndex == 1) ? 1.0 : 0.0
             let delay = (pageIndex == 1) ? firstTransitionDelay : 0.0
             
-            UIView.animate(withDuration: 0.3, delay: delay, options: .curveEaseIn, animations: { 
+            UIView.animate(withDuration: 0.3, delay: delay, options: .curveEaseIn, animations: {
                 self.backButton.alpha = backAlpha
             }, completion: nil)
         }
@@ -102,10 +102,8 @@ class OnboardingViewController: UIViewController {
     private let restoreWithiCloudButton = BRDButton(title: L10n.CloudBackup.restoreButton.uppercased(), type: .tertiary)
     
     // Constraints used to show and hide the bottom buttons.
-    private var topButtonAnimationConstraint: NSLayoutConstraint?
     private var middleButtonAnimationConstraint: NSLayoutConstraint?
     private var bottomButtonAnimationConstraint: NSLayoutConstraint?
-    private var nextButtonAnimationConstraint: NSLayoutConstraint?
     
     private let backButton = UIButton(type: .custom)
     
@@ -119,14 +117,14 @@ class OnboardingViewController: UIViewController {
     }()
     
     private let restoreWalletTitle: UILabel = {
-        let label = UILabel.wrapping(font: Fonts.Title.four, color: LightColors.Contrast.two)
+        let label = UILabel.wrapping(font: Fonts.Title.four, color: Colors.Contrast.two)
         label.text = L10n.Onboarding.restoreYourWallet
         label.textAlignment = .center
         return label
     }()
     
     private let restoreWalletDescription: UILabel = {
-        let label = UILabel.wrapping(font: Fonts.Body.one, color: LightColors.Contrast.two)
+        let label = UILabel.wrapping(font: Fonts.Body.one, color: Colors.Contrast.two)
         label.text = L10n.Onboarding.restoreYourWalletDescription
         label.textAlignment = .center
         return label
@@ -139,13 +137,6 @@ class OnboardingViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var buttonsStackView: UIStackView = {
-        let view = UIStackView()
-        view.axis = .vertical
-        view.spacing = Margins.extraExtraHuge.rawValue
-        return view
-    }()
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -154,6 +145,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if appearanceCount == 0 {
+            setupSubviews()
             animateLandingPage()
         }
         
@@ -171,11 +163,10 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = LightColors.Contrast.one
+        view.backgroundColor = Colors.Contrast.one
         
         setUpLogo()
         setUpPages()
-        setupSubviews()
     }
     
     private func setupSubviews() {
@@ -215,7 +206,7 @@ class OnboardingViewController: UIViewController {
         
         self.createWalletButton.title = createWalletButtonText(pageIndex: 0)
         
-        completion()        
+        completion()
     }
     
     private func setUpLogo() {
@@ -257,15 +248,15 @@ class OnboardingViewController: UIViewController {
         for (index, page) in pages.enumerated() {
             
             // create the headings
-            let headingLabel = makeHeadingLabel(text: page.heading, 
+            let headingLabel = makeHeadingLabel(text: page.heading,
                                                 font: Fonts.Title.six,
-                                                color: LightColors.Contrast.two)
+                                                color: Colors.Contrast.two)
             view.addSubview(headingLabel)
             
             let offset: CGFloat = (index == 0) ? 0 : -(self.headingLabelAnimationOffset)
-            var animationConstraint = headingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, 
+            var animationConstraint = headingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor,
                                                                             constant: offset)
-            var leading = headingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, 
+            var leading = headingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                                                 constant: headingInset)
             var trailing = headingLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                                   constant: -(headingInset))
@@ -278,16 +269,16 @@ class OnboardingViewController: UIViewController {
             headingLabels.append(headingLabel)
             
             // create the subheadings
-            let subheadingLabel = makeHeadingLabel(text: page.subheading, 
+            let subheadingLabel = makeHeadingLabel(text: page.subheading,
                                                    font: Fonts.Subtitle.two,
-                                                   color: LightColors.Contrast.two)
+                                                   color: Colors.Contrast.two)
             view.addSubview(subheadingLabel)
             
-            animationConstraint = subheadingLabel.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, 
+            animationConstraint = subheadingLabel.topAnchor.constraint(equalTo: headingLabel.bottomAnchor,
                                                                        constant: headingSubheadingMargin)
-            leading = subheadingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, 
+            leading = subheadingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                                                constant: subheadingInset)
-            trailing = subheadingLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, 
+            trailing = subheadingLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                                  constant: -(subheadingInset))
             
             subheadingLabel.constrain([animationConstraint, leading, trailing])
@@ -444,13 +435,13 @@ class OnboardingViewController: UIViewController {
         let constraint = headingConstraints[0]
         UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             constraint.constant = -(self.headingLabelAnimationOffset)
-        })            
+        })
         
         // animate heading fade-in
         let label = headingLabels[0]
         UIView.animate(withDuration: duration + 0.2, delay: delay * 2.0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             label.alpha = 1
-        })            
+        })
         
         createWalletButton.alpha = 0
         recoverButton.alpha = 0
@@ -460,7 +451,7 @@ class OnboardingViewController: UIViewController {
         restoreWithiCloudButton.isHidden = false
         
         // fade-in animation for the buttons
-        UIView.animate(withDuration: (duration * 1.5), delay: (delay * 2.0), options: UIView.AnimationOptions.curveEaseIn, animations: { 
+        UIView.animate(withDuration: (duration * 1.5), delay: (delay * 2.0), options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.createWalletButton.alpha = 1
             self.recoverButton.alpha = 1
             self.logoImageView.isHidden = false
@@ -471,12 +462,6 @@ class OnboardingViewController: UIViewController {
             self.createWalletButton.snp.updateConstraints { make in
                 make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(self.buttonsHiddenYOffset)
             }
-        })
-        
-        // slide-up animation for the top button
-        UIView.animate(withDuration: (duration * 1.5), delay: delay, options: UIView.AnimationOptions.curveEaseInOut, animations: { 
-            self.topButtonAnimationConstraint?.constant = self.topButtonVisibleYOffset
-            self.view.layoutIfNeeded()
         })
         
         if self.cloudBackupExists {
@@ -494,7 +479,7 @@ class OnboardingViewController: UIViewController {
         view.layoutIfNeeded()
         
         // slide-up animation for the bottom button
-        UIView.animate(withDuration: (duration * 1.5), delay: (delay * 2.0), options: UIView.AnimationOptions.curveEaseInOut, animations: { 
+        UIView.animate(withDuration: (duration * 1.5), delay: (delay * 2.0), options: UIView.AnimationOptions.curveEaseInOut, animations: {
             // animate the bottom button up to its correct offset relative to the top button
             self.bottomButtonAnimationConstraint?.constant = self.bottomButtonVisibleYOffset
             self.view.layoutIfNeeded()
@@ -512,10 +497,6 @@ class OnboardingViewController: UIViewController {
         let headingConstraint = headingConstraints[pageIndex]
         
         UIView.animate(withDuration: 0.4, animations: {
-            // make sure next or top/bottom buttons are animated out
-            self.topButtonAnimationConstraint?.constant = self.buttonsHiddenYOffset
-            self.nextButtonAnimationConstraint?.constant = self.buttonsHiddenYOffset
-            
             headingLabel.alpha = 0
             subheadingLabel.alpha = 0
             headingConstraint.constant -= (self.headingLabelAnimationOffset)

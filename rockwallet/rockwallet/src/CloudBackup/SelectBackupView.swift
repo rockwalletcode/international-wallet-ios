@@ -25,10 +25,10 @@ struct SelectBackupView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(Color(LightColors.Background.one))
+                .fill(Color(Colors.Background.one))
             VStack {
                 Text(L10n.CloudBackup.selectTitle)
-                    .foregroundColor(Color(LightColors.Text.one))
+                    .foregroundColor(Color(Colors.Text.one))
                     .lineLimit(nil)
                     .font(Font(Fonts.Title.two))
                 ForEach(0..<backups.count, id: \.self) { i in
@@ -48,10 +48,10 @@ struct SelectBackupView: View {
         }, label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 4.0)
-                    .fill(Color(LightColors.primaryPressed))
+                    .fill(Color(Colors.primaryPressed))
                     .opacity(self.selectedBackup == nil ? 0.3 : 1.0)
                 Text(L10n.Button.continueAction)
-                    .foregroundColor(Color(LightColors.Text.one))
+                    .foregroundColor(Color(Colors.Text.one))
                     .font(Font(Fonts.Title.three))
             }
         })
@@ -84,11 +84,11 @@ struct BackupCell: View {
                 .frame(width: 44.0, height: 44.0)
             VStack(alignment: .leading) {
                 Text(dateString)
-                    .foregroundColor(Color(LightColors.Text.one))
+                    .foregroundColor(Color(Colors.Text.one))
                     .font(Font(Fonts.Body.one))
                     .padding(EdgeInsets(top: 8.0, leading: 8.0, bottom: 0.0, trailing: 8.0))
                 Text("\(backup.deviceName)")
-                    .foregroundColor(Color(LightColors.Text.two))
+                    .foregroundColor(Color(Colors.Text.two))
                     .font(Font(Fonts.Body.one))
                     .padding(EdgeInsets(top: 0.0, leading: 8.0, bottom: 8.0, trailing: 8.0))
             }

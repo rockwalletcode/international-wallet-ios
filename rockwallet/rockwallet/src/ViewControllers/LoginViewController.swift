@@ -77,13 +77,13 @@ class LoginViewController: UIViewController, Subscriber {
     private var pinPadPottom: NSLayoutConstraint?
     private var topControlTop: NSLayoutConstraint?
     private var unlockTimer: Timer?
-    private let pinPadBackground = UIView(color: LightColors.Text.one)
+    private let pinPadBackground = UIView(color: Colors.Text.one)
     private var hasAttemptedToShowBiometrics = false
     private let lockedOverlay = UIVisualEffectView()
     private var isResetting = false
     private let context: Context
     private var notificationObservers = [String: NSObjectProtocol]()
-    private let debugLabel = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.two)
+    private let debugLabel = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.two)
     private let shouldDisableBiometrics: Bool
     private let showsBackButton: Bool
     
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController, Subscriber {
     
     lazy var header: UILabel = {
         let header = UILabel()
-        header.textColor = LightColors.Text.three
+        header.textColor = Colors.Text.three
         header.font = Fonts.Title.six
         header.textAlignment = .center
         header.text = L10n.UpdatePin.securedWallet
@@ -105,7 +105,7 @@ class LoginViewController: UIViewController, Subscriber {
     
     lazy var instruction: UILabel = {
         let instruction = UILabel()
-        instruction.textColor = LightColors.Text.two
+        instruction.textColor = Colors.Text.two
         instruction.font = Fonts.Body.two
         instruction.textAlignment = .center
         instruction.text = L10n.UpdatePin.enterYourPin
@@ -118,7 +118,7 @@ class LoginViewController: UIViewController, Subscriber {
         let attributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.underlineStyle: 1,
         NSAttributedString.Key.font: Fonts.Subtitle.two,
-        NSAttributedString.Key.foregroundColor: LightColors.secondary]
+        NSAttributedString.Key.foregroundColor: Colors.secondary]
 
         let attributedString = NSMutableAttributedString(string: L10n.RecoverWallet.headerResetPin, attributes: attributes)
         resetPinButton.setAttributedTitle(attributedString, for: .normal)
@@ -233,7 +233,7 @@ class LoginViewController: UIViewController, Subscriber {
 
     private func addConstraints() {
         backgroundView.constrain(toSuperviewEdges: nil)
-        backgroundView.backgroundColor = LightColors.Background.one
+        backgroundView.backgroundColor = Colors.Background.one
         pinViewContainer.constrain(toSuperviewEdges: nil)
         
         pinPadPottom = pinPadBackground.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -342,7 +342,7 @@ class LoginViewController: UIViewController, Subscriber {
         ToastMessageManager.shared.hide()
         
         let label = UILabel(font: Fonts.Body.one)
-        label.textColor = LightColors.Text.two
+        label.textColor = Colors.Text.two
         label.alpha = 0.0
         let lock = UIImageView(image: Asset.unlock.image)
         lock.alpha = 0.0

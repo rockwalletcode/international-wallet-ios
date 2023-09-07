@@ -11,13 +11,13 @@ import UIKit
 class SegwitViewController: UIViewController {
     
     let logo = UIImageView(image: Asset.segWitLogo.image)
-    let label = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.one)
+    let label = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.one)
     let button = BRDButton(title: L10n.Segwit.enable, type: .secondary)
     private lazy var enabledView: WrapperView<FEInfoView> = {
         let view = WrapperView<FEInfoView>()
-        view.configure(background: .init(backgroundColor: LightColors.Background.three, border: Presets.Border.commonPlain))
-        view.wrappedView.configure(with: .init(title: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.three),
-                                               description: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.one)))
+        view.configure(background: .init(backgroundColor: Colors.Background.three, border: Presets.Border.commonPlain))
+        view.wrappedView.configure(with: .init(title: .init(font: Fonts.Subtitle.two, textColor: Colors.Text.three),
+                                               description: .init(font: Fonts.Subtitle.two, textColor: Colors.Text.one)))
         view.wrappedView.setup(with: .init(title: .text(L10n.Segwit.confirmationConfirmationTitle),
                                            description: .text(L10n.Segwit.confirmationConfirmationBody)))
         view.content.setupCustomMargins(all: .extraLarge)
@@ -27,11 +27,11 @@ class SegwitViewController: UIViewController {
     
     private lazy var segwitAlert: WrapperPopupView<FELabel> = {
         let alert = WrapperPopupView<FELabel>()
-        alert.configure(with: .init(background: .init(backgroundColor: LightColors.Background.one, border: Presets.Border.commonPlain),
+        alert.configure(with: .init(background: .init(backgroundColor: Colors.Background.one, border: Presets.Border.commonPlain),
                                     trailing: Presets.Button.blackIcon,
                                     confirm: Presets.Button.primary,
                                     cancel: Presets.Button.secondary,
-                                    wrappedView: .init(font: Fonts.Body.two, textColor: LightColors.Text.one, textAlignment: .center)))
+                                    wrappedView: .init(font: Fonts.Body.two, textColor: Colors.Text.one, textAlignment: .center)))
         
         alert.setup(with: .init(trailing: .init(image: Asset.close.image),
                                 confirm: .init(title: L10n.Button.continueAction),
@@ -75,10 +75,10 @@ class SegwitViewController: UIViewController {
     }
     
     private func setInitialData() {
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         view.clipsToBounds = true //Some subviews are placed just offscreen so they can be animated into view
         label.text = L10n.Segwit.confirmationInstructionsInstructions
-        logo.tintColor = LightColors.Text.one
+        logo.tintColor = Colors.Text.one
         
         button.tap = { [weak self] in
             self?.showConfirmView()

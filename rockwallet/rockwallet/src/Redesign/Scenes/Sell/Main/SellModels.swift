@@ -10,6 +10,12 @@ import UIKit
 import WalletKit
 
 enum SellModels {
+    struct Item: Hashable {
+        var type: PaymentCard.PaymentType?
+        var achSellAccess: Bool
+        var cardSellAccess: Bool
+    }
+    
     struct Limits {
         struct ActionResponse {
             var min: Decimal?
