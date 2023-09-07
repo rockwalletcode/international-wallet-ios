@@ -18,6 +18,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private let coreSystem: CoreSystem
     
     private var observers: [AnyCancellable] = []
+    private var isRedirectedUrl: Bool = false
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -534,7 +535,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.showInWebView(urlString: response?.redirectUri ?? "", title: "")
+                guard let url = URL(string: response?.redirectUri ?? "") else { return }
+                self?.handleRedirectedUrl(url: url)
+                
             case .failure(let error):
                 // TODO: Handle error
                 print(error)
@@ -551,6 +554,11 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation) {
         guard webView.url?.absoluteString == Constant.tradeSignInLink else {
+            guard !isRedirectedUrl else {
+                view = webView
+                return
+            }
+            
             LoadingView.hideIfNeeded()
             DynamicLinksManager.handleDynamicLink(dynamicLink: webView.url)
             getRedirectUri()
@@ -559,8 +567,13 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         // make auto tap on web view login button
         let scriptSource = "document.getElementsByTagName('button')[0].click()"
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + Presets.Delay.long.rawValue, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
             webView.evaluateJavaScript(scriptSource, completionHandler: nil)
         })
+    }
+    
+    func handleRedirectedUrl(url: URL) {
+        webView.load(URLRequest(url: url))
+        isRedirectedUrl = true
     }
 }
