@@ -774,8 +774,9 @@ class BaseCoordinator: NSObject, Coordinatable {
             }
             
         case .oauth2:
-            // TODO: remove this if we won't use deep linking oauth login
-//            handleOauthLogin()
+            // TODO: remove the flow if we won't use deep linking oauth login
+            // handleOauthLogin()
+            return
         }
     }
     
