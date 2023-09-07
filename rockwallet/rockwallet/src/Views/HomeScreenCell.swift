@@ -25,7 +25,7 @@ class HomeScreenCell: UITableViewCell, Subscriber {
     
     lazy var cardView: UIView = {
         let view = UIView()
-        view.backgroundColor = LightColors.Background.cards
+        view.backgroundColor = Colors.Background.one
         view.layer.masksToBounds = true
         view.layer.cornerRadius = CornerRadius.common.rawValue
         return view
@@ -39,10 +39,10 @@ class HomeScreenCell: UITableViewCell, Subscriber {
     
     private var currency: Currency?
     
-    private let currencyName = UILabel(font: Fonts.Subtitle.one, color: LightColors.Text.three)
-    private let price = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.two)
-    private let fiatBalance = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.two)
-    private let tokenBalance = UILabel(font: Fonts.Subtitle.one, color: LightColors.Text.three)
+    private let currencyName = UILabel(font: Fonts.Subtitle.one, color: Colors.Text.three)
+    private let price = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.two)
+    private let fiatBalance = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.two)
+    private let tokenBalance = UILabel(font: Fonts.Subtitle.one, color: Colors.Text.three)
     
     private let syncIndicator = SyncingIndicator(style: .home)
     private let priceChangeView = PriceChangeView(style: .percentOnly)
@@ -52,7 +52,7 @@ class HomeScreenCell: UITableViewCell, Subscriber {
             UIView.crossfade(tokenBalance, syncIndicator,
                              toRight: isSyncIndicatorVisible,
                              duration: isSyncIndicatorVisible == oldValue ? 0.0 : 0.3)
-            fiatBalance.textColor = (isSyncIndicatorVisible || !(currency?.isSupported ?? false)) ? LightColors.Disabled.one : LightColors.Text.two
+            fiatBalance.textColor = (isSyncIndicatorVisible || !(currency?.isSupported ?? false)) ? Colors.Disabled.one : Colors.Text.two
         }
     }
     

@@ -50,7 +50,7 @@ final class SignUpPresenter: NSObject, Presenter, SignUpActionResponses {
         actionResponse.passwordsMatch &&
         actionResponse.isTermsTickboxValid
         
-        let textColor = (actionResponse.passwordState == .error || actionResponse.passwordAgainState == .error) && !isValid ? LightColors.Error.one : LightColors.Text.two
+        let textColor = (actionResponse.passwordState == .error || actionResponse.passwordAgainState == .error) && !isValid ? Colors.Error.one : Colors.Text.two
         
         let noticeConfiguration = LabelConfiguration(font: Fonts.Body.three, textColor: textColor)
         
@@ -62,7 +62,7 @@ final class SignUpPresenter: NSObject, Presenter, SignUpActionResponses {
                       isEmailEmpty: actionResponse.isEmailEmpty,
                       emailModel: .init(title: L10n.Account.enterEmail,
                                         hint: actionResponse.emailState == .error ? L10n.Account.invalidEmail : nil,
-                                        trailing: actionResponse.emailState == .error ? .image(Asset.warning.image.tinted(with: LightColors.Error.one)) : nil,
+                                        trailing: actionResponse.emailState == .error ? .image(Asset.warning.image.tinted(with: Colors.Error.one)) : nil,
                                         displayState: actionResponse.emailState),
                       isPasswordValid: actionResponse.isPasswordValid,
                       isPasswordEmpty: actionResponse.isPasswordEmpty,
@@ -91,11 +91,11 @@ final class SignUpPresenter: NSObject, Presenter, SignUpActionResponses {
     
     private func prepareTermsTickboxText() -> NSMutableAttributedString {
         let partOneAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: LightColors.Text.two,
+            NSAttributedString.Key.foregroundColor: Colors.Text.two,
             NSAttributedString.Key.backgroundColor: UIColor.clear,
             NSAttributedString.Key.font: Fonts.Body.two]
         let partTwoAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: LightColors.secondary,
+            NSAttributedString.Key.foregroundColor: Colors.secondary,
             NSAttributedString.Key.backgroundColor: UIColor.clear,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
             NSAttributedString.Key.font: Fonts.Subtitle.two]

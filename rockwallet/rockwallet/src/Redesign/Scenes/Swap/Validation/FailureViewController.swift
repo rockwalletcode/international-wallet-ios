@@ -78,7 +78,7 @@ class FailureViewController: BaseInfoViewController {
         }
         
         cell.setup { view in
-            view.configure(with: .init(font: Fonts.Body.two, textColor: LightColors.Text.two, textAlignment: .left))
+            view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two, textAlignment: .left))
             view.setup(with: model)
             view.setupCustomMargins(vertical: .extraHuge, horizontal: .extraHuge)
             view.snp.makeConstraints { make in

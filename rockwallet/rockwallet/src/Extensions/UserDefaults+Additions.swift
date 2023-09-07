@@ -55,6 +55,7 @@ private let kycSessionKey = "kycSessionKey"
 private let cachedErrors = "cachedErrors"
 private let userEmail = "registrationEmail"
 private let userPhoneNumber = "phoneNumber"
+private let isDarkModeKey = "isDarkModeKey"
 
 typealias ResettableBooleanSetting = [String: Bool]
 typealias ResettableObjectSetting = String
@@ -183,6 +184,16 @@ extension UserDefaults {
             return defaults.bool(forKey: hasAquiredShareDataPermissionKey)
         }
         set { defaults.set(newValue, forKey: hasAquiredShareDataPermissionKey) }
+    }
+    
+    static var isDarkMode: Bool {
+        get {
+            if defaults.object(forKey: isDarkModeKey) == nil {
+                return false
+            }
+            return defaults.bool(forKey: isDarkModeKey)
+        }
+        set { defaults.set(newValue, forKey: isDarkModeKey) }
     }
 
     static var showFiatAmounts: Bool {

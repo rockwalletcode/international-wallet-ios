@@ -10,7 +10,7 @@
 
 import UIKit
 
-struct LightColors {
+struct Colors {
     // TODO: update the documentation
     
     struct Background {

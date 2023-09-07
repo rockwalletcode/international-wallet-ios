@@ -15,18 +15,18 @@ class TxAmountCell: UITableViewCell, Subscriber {
     private let container = UIView()
     private lazy var tokenAmountLabel: UILabel = {
         let label = UILabel(font: Fonts.Title.five)
-        label.textColor = LightColors.secondary
+        label.textColor = Colors.secondary
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
     private lazy var fiatAmountLabel: UILabel = {
         let label = UILabel(font: Fonts.Body.one)
-        label.textColor = LightColors.Text.two
+        label.textColor = Colors.Text.two
         label.textAlignment = .center
         return label
     }()
-    private let separator = UIView(color: LightColors.Outline.one)
+    private let separator = UIView(color: Colors.Outline.one)
     
     // MARK: - Init
     

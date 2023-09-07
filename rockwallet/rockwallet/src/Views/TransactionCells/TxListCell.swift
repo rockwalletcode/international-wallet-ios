@@ -19,13 +19,13 @@ class TxListCell: UITableViewCell, Identifiable {
     }()
     
     private  let amount: UILabel = {
-        let label = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.three)
+        let label = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.three)
         return label
     }()
     
-    private let titleLabel = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.three)
-    private let descriptionLabel = UILabel(font: Fonts.Body.two, color: LightColors.Text.two)
-    private let separator = UIView(color: LightColors.Outline.one)
+    private let titleLabel = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.three)
+    private let descriptionLabel = UILabel(font: Fonts.Body.two, color: Colors.Text.two)
+    private let separator = UIView(color: Colors.Outline.one)
     private var viewModel: TxListViewModel?
     
     // MARK: - Init
@@ -98,7 +98,7 @@ class TxListCell: UITableViewCell, Identifiable {
     
     private func setupStyle() {
         selectionStyle = .none
-        backgroundColor = LightColors.Background.two
+        backgroundColor = Colors.Background.two
         amount.textAlignment = .right
         descriptionLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         

@@ -11,7 +11,7 @@
 import UIKit
 
 struct PaymentMethodConfiguration: Configurable {
-    var title: LabelConfiguration? = .init(font: Fonts.Body.three, textColor: LightColors.Text.two)
+    var title: LabelConfiguration? = .init(font: Fonts.Body.two, textColor: Colors.Text.two)
     var cvvTitle: TitleValueConfiguration? = Presets.TitleValue.small
     var shadow: ShadowConfiguration?
     var background: BackgroundConfiguration?
@@ -82,7 +82,7 @@ class PaymentMethodView: FEView<PaymentMethodConfiguration, PaymentMethodViewMod
         mainStack.snp.makeConstraints { make in
             make.edges.equalTo(content.snp.margins)
         }
-        content.setupCustomMargins(all: .huge)
+        content.setupCustomMargins(all: .large)
         
         mainStack.addArrangedSubview(methodTitleLabel)
         methodTitleLabel.snp.makeConstraints { make in
@@ -127,8 +127,8 @@ class PaymentMethodView: FEView<PaymentMethodConfiguration, PaymentMethodViewMod
     override func setup(with viewModel: PaymentMethodViewModel?) {
         super.setup(with: viewModel)
         
-        switch viewModel?.type {
-        case .ach:
+        switch (viewModel?.type, viewModel?.previewFor) {
+        case (.ach, _), (.card, .sell):
             setupForAch()
             
         default:
@@ -157,7 +157,8 @@ class PaymentMethodView: FEView<PaymentMethodConfiguration, PaymentMethodViewMod
         cvvTitle.isHidden = true
         
         cardDetailsView.setup(with: .init(logo: viewModel?.logo,
-                                          cardNumber: viewModel?.cardNumber))
+                                          cardNumber: viewModel?.cardNumber,
+                                          expiration: (viewModel?.type == .card && viewModel?.previewFor == .sell) ? viewModel?.expiration : nil))
     }
     
     // MARK: - User interaction

@@ -35,9 +35,9 @@ class AssetDetailsFooterView: UIView, Subscriber {
     }
     
     private func setup() {
-        let separator = UIView(color: LightColors.Outline.one)
+        let separator = UIView(color: Colors.Outline.one)
         addSubview(separator)
-        backgroundColor = LightColors.Background.one
+        backgroundColor = Colors.Background.one
         separator.constrainTopCorners(height: 0.5)
         layer.cornerRadius = CornerRadius.large.rawValue
         layer.masksToBounds = true

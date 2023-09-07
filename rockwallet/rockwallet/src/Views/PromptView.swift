@@ -33,8 +33,8 @@ class PromptView: UIView {
     let kycStatusView = FEInfoView()
     
     private let imageView = UIImageView()
-    private let title = UILabel(font: Fonts.Subtitle.two, color: LightColors.Text.three)
-    private let body = UILabel.wrapping(font: Fonts.Body.two, color: LightColors.Text.one)
+    private let title = UILabel(font: Fonts.Subtitle.two, color: Colors.Text.three)
+    private let body = UILabel.wrapping(font: Fonts.Body.two, color: Colors.Text.one)
     private let container = UIView()
     
     var type: PromptType? {
@@ -112,17 +112,17 @@ class PromptView: UIView {
     }
     
     private func styleDismissButton() {
-        let normalImg = Asset.close.image.tinted(with: LightColors.Text.three)
-        let highlightedImg = Asset.close.image.tinted(with: LightColors.Text.three.withAlphaComponent(0.5))
+        let normalImg = Asset.close.image.tinted(with: Colors.Text.three)
+        let highlightedImg = Asset.close.image.tinted(with: Colors.Text.three.withAlphaComponent(0.5))
         
         dismissButton.setImage(normalImg, for: .normal)
         dismissButton.setImage(highlightedImg, for: .highlighted)
     }
     
     private func styleContinueButton() {
-        continueButton.setTitleColor(LightColors.Text.three, for: .normal)
-        continueButton.setTitleColor(LightColors.Text.three.withAlphaComponent(0.5), for: .disabled)
-        continueButton.setTitleColor(LightColors.Text.two, for: .highlighted)
+        continueButton.setTitleColor(Colors.Text.three, for: .normal)
+        continueButton.setTitleColor(Colors.Text.three.withAlphaComponent(0.5), for: .disabled)
+        continueButton.setTitleColor(Colors.Text.two, for: .highlighted)
         continueButton.titleLabel?.font = Fonts.Subtitle.two
         
         let title = prompt?.type.actionTitle ?? ""
@@ -139,7 +139,7 @@ class PromptView: UIView {
         styleDismissButton()
         styleContinueButton()
         
-        imageView.backgroundColor = LightColors.Background.cards
+        imageView.backgroundColor = Colors.Background.cards
         imageView.layer.cornerRadius = ViewSizes.medium.rawValue / 2.0
         imageView.contentMode = .center
         imageView.image = prompt?.alertIcon

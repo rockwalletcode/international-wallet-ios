@@ -53,9 +53,9 @@ class RecoveryKeyIntroViewController: BaseTableViewController<BaseCoordinator,
         super.setupSubviews()
         
         navigationItem.setHidesBackButton(true, animated: false)
-        view.backgroundColor = LightColors.Background.one
-        tableView.backgroundColor = LightColors.Background.one
-        navigationController?.navigationBar.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
+        tableView.backgroundColor = Colors.Background.one
+        navigationController?.navigationBar.backgroundColor = Colors.Background.one
         
         let helpButton = UIButton.buildHelpBarButton(tapped: {
             let model = PopupViewModel(title: .text(L10n.RecoveryKeyFlow.HelpPopup.title),
@@ -78,7 +78,7 @@ class RecoveryKeyIntroViewController: BaseTableViewController<BaseCoordinator,
             let castedCell = cell as? WrapperTableViewCell<FELabel>
             castedCell?.setup { view in
                 view.configure(with: .init(font: Fonts.Title.six,
-                                           textColor: LightColors.Text.three,
+                                           textColor: Colors.Text.three,
                                            textAlignment: .center))
             }
             

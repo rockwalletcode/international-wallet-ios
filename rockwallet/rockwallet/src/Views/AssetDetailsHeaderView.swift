@@ -14,7 +14,7 @@ class AssetDetailsHeaderView: UIView, Subscriber {
     
     private lazy var intrinsicSizeView: UIView = {
         let view = UIView()
-        view.backgroundColor = LightColors.Background.cards
+        view.backgroundColor = Colors.Background.cards
         return view
     }()
     
@@ -25,7 +25,7 @@ class AssetDetailsHeaderView: UIView, Subscriber {
     
     private lazy var currencyName: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Title.six, textColor: LightColors.Text.one, textAlignment: .center))
+        view.configure(with: .init(font: Fonts.Title.six, textColor: Colors.Text.one, textAlignment: .center))
         return view
     }()
     
@@ -36,7 +36,7 @@ class AssetDetailsHeaderView: UIView, Subscriber {
     
     private lazy var exchangeRateLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Title.five, textColor: LightColors.Text.one, textAlignment: .center))
+        view.configure(with: .init(font: Fonts.Title.five, textColor: Colors.Text.one, textAlignment: .center))
         return view
     }()
     
@@ -69,7 +69,7 @@ class AssetDetailsHeaderView: UIView, Subscriber {
     
     private let historyPeriodPill: UIView = {
         let view = UIView()
-        view.backgroundColor = LightColors.Background.three
+        view.backgroundColor = Colors.Background.three
         view.layer.cornerRadius = CornerRadius.extraSmall.rawValue
         view.layer.masksToBounds = true
         return view
@@ -239,7 +239,7 @@ class AssetDetailsHeaderView: UIView, Subscriber {
         
         priceChangeView.currency = currency
         priceDateLabel.font = Fonts.Subtitle.two
-        priceDateLabel.textColor = LightColors.Text.one
+        priceDateLabel.textColor = Colors.Text.one
         priceDateLabel.textAlignment = .center
         priceDateLabel.alpha = 0.0
         

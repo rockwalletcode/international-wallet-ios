@@ -13,19 +13,19 @@ class BalanceCell: UIView, Subscriber {
     
     private lazy var balanceLabel: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: Colors.Text.two))
         return view
     }()
     
     private lazy var primaryBalance: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Title.six, textColor: LightColors.Text.one))
+        view.configure(with: .init(font: Fonts.Title.six, textColor: Colors.Text.one))
         return view
     }()
     
     private lazy var secondaryBalance: FELabel = {
         let view = FELabel()
-        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.two))
+        view.configure(with: .init(font: Fonts.Subtitle.two, textColor: Colors.Text.two))
         return view
     }()
     

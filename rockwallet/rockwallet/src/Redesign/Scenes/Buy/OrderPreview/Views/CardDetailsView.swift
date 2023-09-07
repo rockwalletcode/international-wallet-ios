@@ -11,12 +11,12 @@
 import UIKit
 
 struct CardDetailsConfiguration: Configurable {
-    var logo: BackgroundConfiguration? = .init(tintColor: LightColors.Text.two)
-    var title: LabelConfiguration? = .init(font: Fonts.Body.three, textColor: LightColors.Text.two, numberOfLines: 1)
-    var cardNumber: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.one, numberOfLines: 1)
-    var cardNumberError: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.two, numberOfLines: 1)
-    var expiration: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.one)
-    var expirationError: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: LightColors.Text.two)
+    var logo: BackgroundConfiguration? = .init(tintColor: Colors.Text.two)
+    var title: LabelConfiguration? = .init(font: Fonts.Body.three, textColor: Colors.Text.two, numberOfLines: 1)
+    var cardNumber: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: Colors.Text.one, numberOfLines: 1)
+    var cardNumberError: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: Colors.Text.two, numberOfLines: 1)
+    var expiration: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: Colors.Text.one)
+    var expirationError: LabelConfiguration? = .init(font: Fonts.Subtitle.two, textColor: Colors.Text.two)
     var moreButton: BackgroundConfiguration? = Presets.Background.Secondary.selected
 }
 
@@ -82,6 +82,7 @@ class CardDetailsView: FEView<CardDetailsConfiguration, CardDetailsViewModel> {
     
     private lazy var errorLabel: FELabel = {
         let view = FELabel()
+        view.configure(with: .init())
         return view
     }()
     

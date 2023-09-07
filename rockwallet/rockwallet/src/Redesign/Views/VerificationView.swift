@@ -98,8 +98,8 @@ enum VerificationStatus: Hashable {
         let profile = UserManager.shared.profile
         let canUseAch = profile?.kycAccessRights.hasAchAccess ?? false
         let swapAllowanceDaily = ExchangeFormatter.current.string(for: profile?.swapAllowanceDaily) ?? ""
-        let buyAllowanceDaily = ExchangeFormatter.current.string(for: profile?.buyAllowanceDaily) ?? ""
-        let achAllowanceDaily = ExchangeFormatter.current.string(for: profile?.achAllowanceDaily) ?? ""
+        let buyAllowanceWeekly = ExchangeFormatter.current.string(for: profile?.buyAllowanceWeekly) ?? ""
+        let sellAllowanceWeekly = ExchangeFormatter.current.string(for: profile?.sellAchAllowanceWeekly) ?? ""
         
         switch self {
         case .none, .email, .levelOne, .levelTwo(.notStarted), .levelTwo(.kycInfoProvided):
@@ -215,7 +215,7 @@ class VerificationView: FEView<VerificationConfiguration, VerificationViewModel>
     private lazy var statusImageView: WrapperView<FEImageView> = {
         let view = WrapperView<FEImageView>()
         view.wrappedView.setup(with: .init(.image(Asset.selected.image)))
-        view.tintColor = LightColors.primary
+        view.tintColor = Colors.primary
         return view
     }()
     
@@ -356,6 +356,6 @@ class VerificationView: FEView<VerificationConfiguration, VerificationViewModel>
         statusImageView.wrappedView.backgroundColor = .clear
         
         guard let isActive = viewModel.isActive else { return }
-        arrowImageView.tintColor = isActive ? LightColors.Text.two : LightColors.Disabled.one
+        arrowImageView.tintColor = isActive ? Colors.Text.two : Colors.Disabled.one
     }
 }

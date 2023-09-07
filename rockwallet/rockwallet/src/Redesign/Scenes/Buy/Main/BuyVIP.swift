@@ -19,7 +19,6 @@ protocol BuyViewActions: BaseViewActions,
                          PaymentMethodsViewActions {
     func showOrderPreview(viewAction: BuyModels.OrderPreview.ViewAction)
     func navigateAssetSelector(viewAction: BuyModels.AssetSelector.ViewAction)
-    func selectPaymentMethod(viewAction: BuyModels.PaymentMethod.ViewAction)
     func retryPaymentMethod(viewAction: BuyModels.RetryPaymentMethod.ViewAction)
     func showLimitsInfo(viewAction: BuyModels.LimitsInfo.ViewAction)
     func showInstantAchPopup(viewAction: BuyModels.InstantAchPopup.ViewAction)

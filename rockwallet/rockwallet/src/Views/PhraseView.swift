@@ -33,7 +33,7 @@ class PhraseView: UIView {
         label.text = phrase
         label.font = Fonts.Subtitle.one
         label.textAlignment = .center
-        backgroundColor = LightColors.Error.two
+        backgroundColor = Colors.Error.two
         layer.cornerRadius = 10.0
     }
 

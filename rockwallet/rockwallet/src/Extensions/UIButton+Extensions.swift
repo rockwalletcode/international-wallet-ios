@@ -13,11 +13,11 @@ extension UIButton {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = Fonts.button
-        button.tintColor = LightColors.Text.one
-        button.backgroundColor = LightColors.primary
+        button.tintColor = Colors.Text.one
+        button.backgroundColor = Colors.primary
         button.layer.cornerRadius = 6
         button.layer.borderWidth = 0.5
-        button.layer.borderColor = LightColors.Text.one.cgColor
+        button.layer.borderColor = Colors.Text.one.cgColor
         return button
     }
     
@@ -25,7 +25,7 @@ extension UIButton {
         let button = UIButton.icon(image: Asset.close.image,
                                    accessibilityLabel: L10n.AccessibilityLabels.close,
                                    position: position)
-        button.tintColor = LightColors.Text.three
+        button.tintColor = Colors.Text.three
         return button
     }
     
@@ -34,7 +34,7 @@ extension UIButton {
                                    position: NavBarButtonPosition = .right,
                                    tapped: (() -> Void)? = nil) -> UIButton {
         let button = UIButton.icon(image: Asset.help.image, accessibilityLabel: L10n.AccessibilityLabels.faq, position: position)
-        button.tintColor = LightColors.Text.three
+        button.tintColor = Colors.Text.three
         
         button.tap = {
             if let articleId = articleId {
@@ -52,7 +52,7 @@ extension UIButton {
         let button = UIButton(type: .system)
         button.setImage(image, for: .normal)
         button.accessibilityLabel = accessibilityLabel
-        button.tintColor = LightColors.Text.three
+        button.tintColor = Colors.Text.three
         
         return button
     }

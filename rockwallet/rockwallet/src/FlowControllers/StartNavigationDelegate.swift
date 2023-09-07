@@ -21,15 +21,15 @@ class StartNavigationDelegate: NSObject, UINavigationControllerDelegate {
         }
         
         if viewController is EnterPhraseViewController {
-            navigationController.navigationBar.tintColor = LightColors.Text.one
+            navigationController.navigationBar.tintColor = Colors.Text.one
             navigationController.navigationBar.titleTextAttributes = [
-                NSAttributedString.Key.foregroundColor: LightColors.primary,
+                NSAttributedString.Key.foregroundColor: Colors.primary,
                 NSAttributedString.Key.font: Fonts.Title.six
             ]
         }
         
         if viewController is UpdatePinViewController {
-            navigationController.navigationBar.tintColor = LightColors.Text.one
+            navigationController.navigationBar.tintColor = Colors.Text.one
             navigationController.navigationBar.titleTextAttributes = [
                 NSAttributedString.Key.foregroundColor: UIColor.white,
                 NSAttributedString.Key.font: Fonts.Title.six
@@ -42,9 +42,9 @@ class StartNavigationDelegate: NSObject, UINavigationControllerDelegate {
         }
         
         if viewController is UIHostingController<SelectBackupView> {
-            navigationController.navigationBar.tintColor = LightColors.Text.one
+            navigationController.navigationBar.tintColor = Colors.Text.one
             navigationController.navigationBar.titleTextAttributes = [
-                NSAttributedString.Key.foregroundColor: LightColors.primary,
+                NSAttributedString.Key.foregroundColor: Colors.primary,
                 NSAttributedString.Key.font: Fonts.Title.six
             ]
         }

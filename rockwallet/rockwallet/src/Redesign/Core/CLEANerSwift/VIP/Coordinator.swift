@@ -98,6 +98,33 @@ class BaseCoordinator: NSObject, Coordinatable {
         }
     }
     
+    func handleOauthLogin() {
+        decideFlow { [weak self] showScene in
+            guard showScene,
+                  let profile = UserManager.shared.profile,
+                  profile.kycAccessRights.hasSwapAccess == true else {
+                self?.handleUnverifiedOrRestrictedUser(flow: .swap, reason: .swap)
+                
+                return
+            }
+            
+            let redirectUri = DynamicLinksManager.shared.redirectUri ?? ""
+            let scope = DynamicLinksManager.shared.urlScope ?? ""
+            
+            // TODO: Localize strings
+            let model: PopupViewModel = .init(body: "Do you permit login to \(redirectUri) using scopes \(scope)",
+                                              buttons: [.init(title: L10n.Button.ok)])
+            
+            self?.showPopup(on: self?.navigationController,
+                            blurred: false,
+                            with: model,
+                            callbacks: [ { [weak self] in
+                self?.getRedirectUri()
+                self?.hidePopup()
+            }]
+            )}
+    }
+    
     func showBuy(selectedCurrency: Currency? = nil, type: PaymentCard.PaymentType, coreSystem: CoreSystem?, keyStore: KeyStore?) {
         decideFlow { [weak self] showScene in
             guard showScene,
@@ -121,22 +148,32 @@ class BaseCoordinator: NSObject, Coordinatable {
     
     func showSell(selectedCurrency: Currency? = nil, coreSystem: CoreSystem?, keyStore: KeyStore?) {
         decideFlow { [weak self] showScene in
-            guard showScene,
-                  let profile = UserManager.shared.profile,
-                  profile.kycAccessRights.hasAchAccess == true else {
+            let profile = UserManager.shared.profile
+            let hasCardSellAccess = profile?.kycAccessRights.hasCardSellAccess
+            let hasAchSellAccess = profile?.kycAccessRights.hasAchSellAccess
+            
+            guard showScene, hasAchSellAccess == true || hasCardSellAccess == true else {
                 self?.handleUnverifiedOrRestrictedUser(flow: .sell, reason: .sell)
-                
                 return
             }
             
-            guard profile.status == .levelTwo(.kycWithSsn) else {
+            guard profile?.status == .levelTwo(.kycWithSsn) else {
                 self?.openModally(coordinator: ExchangeCoordinator.self, scene: Scenes.SsnAdditionalInfo)
                 return
+            }
+            
+            var paymentMethod: PaymentCard.PaymentType? {
+                switch (hasAchSellAccess, hasCardSellAccess) {
+                case (true, _): return .ach
+                case (false, true): return .card
+                default: return nil
+                }
             }
             
             self?.openModally(coordinator: ExchangeCoordinator.self, scene: Scenes.Sell) { vc in
                 vc?.dataStore?.coreSystem = coreSystem
                 vc?.dataStore?.keyStore = keyStore
+                vc?.dataStore?.paymentMethod = paymentMethod
                 
                 guard let selectedCurrency else { return }
                 vc?.dataStore?.fromAmount = .zero(selectedCurrency)
@@ -729,7 +766,33 @@ class BaseCoordinator: NSObject, Coordinatable {
             showProfile()
             
         case .setPassword:
-            handleUserAccount()
+            dismissFlow()
+            
+            open(scene: Scenes.SetPassword) { vc in
+                vc.dataStore?.code = DynamicLinksManager.shared.code
+                DynamicLinksManager.shared.code = nil
+            }
+            
+        case .oauth2:
+            handleOauthLogin()
+        }
+    }
+    
+    func getRedirectUri() {
+        guard let urlParameters = DynamicLinksManager.shared.urlParameters else { return }
+        
+        let sortedParameters = urlParameters.sorted(by: <).map { "\($0)=\($1)" }.joined()
+        let data = Oauth2LoginRequestData(parameters: urlParameters,
+                                          sortedParameters: sortedParameters)
+        
+        Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.showInWebView(urlString: response?.redirectUri ?? "", title: "OAuth 2.0 login")
+            case .failure(let error):
+                // TODO: Handle error
+                print(error)
+            }
         }
     }
 }

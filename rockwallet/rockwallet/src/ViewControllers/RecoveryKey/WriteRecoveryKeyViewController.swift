@@ -179,7 +179,7 @@ class WriteRecoveryKeyViewController: BaseRecoveryKeyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = LightColors.Background.one
+        view.backgroundColor = Colors.Background.one
         view.clipsToBounds = true
         
         showBackButton()        
@@ -248,19 +248,19 @@ class WriteRecoveryKeyViewController: BaseRecoveryKeyViewController {
     }
     
     private func setUpLabels() {
-        headingLabel.textColor = LightColors.Text.three
+        headingLabel.textColor = Colors.Text.three
         headingLabel.font = Fonts.Title.six
         headingLabel.text = L10n.RecoveryKeyFlow.writeKeyScreenTitle
         headingLabel.textAlignment = .center
         headingLabel.numberOfLines = 0
         
-        subheadingLabel.textColor = LightColors.Text.two
+        subheadingLabel.textColor = Colors.Text.two
         subheadingLabel.font = Fonts.Body.two
         subheadingLabel.text = L10n.RecoveryKeyFlow.writeKeyScreenSubtitle
         subheadingLabel.textAlignment = .center
         subheadingLabel.numberOfLines = 0
         
-        stepLabel.textColor = LightColors.Text.one
+        stepLabel.textColor = Colors.Text.one
         stepLabel.font = Fonts.Subtitle.three
         stepLabel.textAlignment = .center
     }
@@ -281,7 +281,7 @@ class WriteRecoveryKeyViewController: BaseRecoveryKeyViewController {
 
         let wordPaging = WordPagingCollectionView(frame: .zero, collectionViewLayout: wordPagingLayout)
         
-        wordPaging.backgroundColor = LightColors.Background.one
+        wordPaging.backgroundColor = Colors.Background.one
         wordPaging.delegate = self
         wordPaging.dataSource = self
         wordPaging.isScrollEnabled = true
@@ -531,7 +531,7 @@ class RecoveryWordCell: UICollectionViewCell {
     }
     
     private func setUp() {
-        wordLabel.textColor = LightColors.Text.one
+        wordLabel.textColor = Colors.Text.one
         wordLabel.font = Fonts.Title.two
         wordLabel.textAlignment = .center
         wordLabel.adjustsFontSizeToFitWidth = true

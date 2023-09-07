@@ -41,6 +41,7 @@ protocol AddCardDataStore: BaseDataStore, FetchDataStore {
     var cardCVV: String? { get set }
     var months: [String] { get set }
     var years: [String] { get set }
+    var fromCardWithdrawal: Bool { get set }
 }
 
 protocol AddCardDataPassing {

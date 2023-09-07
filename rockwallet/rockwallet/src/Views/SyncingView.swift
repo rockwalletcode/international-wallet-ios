@@ -48,7 +48,7 @@ class SyncingView: UIView {
         let view = UIView()
         view.layer.cornerRadius = progressHeight/2.0
         view.layer.masksToBounds = true
-        view.backgroundColor = LightColors.Outline.two
+        view.backgroundColor = Colors.Outline.two
         return view
     }()
 

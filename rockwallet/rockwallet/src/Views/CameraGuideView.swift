@@ -17,9 +17,9 @@ enum CameraGuideState {
 
     var color: UIColor {
         switch self {
-        case .normal: return LightColors.Text.two
-        case .negative: return LightColors.Error.one
-        case .positive: return LightColors.Success.one
+        case .normal: return Colors.Text.two
+        case .negative: return Colors.Error.one
+        case .positive: return Colors.Success.one
         }
     }
 }

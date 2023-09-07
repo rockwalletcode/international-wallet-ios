@@ -43,7 +43,7 @@ final class TwoStepAuthenticationPresenter: NSObject, Presenter, TwoStepAuthenti
         let isTwoStepEnabled = authExists ? LabelViewModel.text(authMethodDescription) : nil
         let emailAuthCheckmark = authType == .email ? Asset.radiobuttonSelected.image : Asset.radiobutton.image
         let appAuthCheckmark = authType == .authenticator ? Asset.radiobuttonSelected.image : Asset.radiobutton.image
-        let settingsChevron = Asset.chevronRight.image.tinted(with: LightColors.Text.three)
+        let settingsChevron = Asset.chevronRight.image.tinted(with: Colors.Text.three)
         
         let sectionRows: [Models.Section: [any Hashable]] = [
             .instructions: [

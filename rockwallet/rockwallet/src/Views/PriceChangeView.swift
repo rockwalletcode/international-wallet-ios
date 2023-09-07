@@ -22,7 +22,7 @@ class PriceChangeView: UIView, Subscriber {
         }
     }
     
-    private let priceText = UILabel(font: Fonts.Subtitle.two, color: LightColors.Success.one)
+    private let priceText = UILabel(font: Fonts.Subtitle.two, color: Colors.Success.one)
     
     private var priceInfo: FiatPriceInfo? {
         didSet {
@@ -46,12 +46,12 @@ class PriceChangeView: UIView, Subscriber {
         guard let change24Hrs = priceInfo?.change24Hrs else { return nil }
         
         if change24Hrs > 0 {
-            return LightColors.Success.one
+            return Colors.Success.one
         } else if change24Hrs < 0 {
-            return LightColors.Error.one
+            return Colors.Error.one
         }
         
-        return LightColors.Text.one
+        return Colors.Text.one
     }
     
     private var currencyNumberFormatter: NumberFormatter {
@@ -95,7 +95,7 @@ class PriceChangeView: UIView, Subscriber {
         if style == .percentAndAbsolute,
             let absoluteString = currencyNumberFormatter.string(from: NSNumber(value: abs(priceChange.change24Hrs))) {
             text += " (\(absoluteString))"
-            color = LightColors.Text.one
+            color = Colors.Text.one
         }
         
         priceText.text = text

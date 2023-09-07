@@ -44,6 +44,7 @@ struct Constant {
     static let veriffPrivacyPolicy = "https://www.veriff.com/privacy-policy"
     static let reviewLink = "https://apps.apple.com/us/app/rockwallet-buy-and-swap/id6444194230?action=write-review"
     static let limits = "https://\(companyURL)/limits"
+    static let oauth2DeepLink = "https://api.dev.rockwallet.net/blocksatoshi/wallet/international/deep-link?op=oauth2&client_id=wasp123454321&redirect_uri=https://api.dev.rockwallet.net/wasp/oauth2/rw&scope=profile&state=null"
     static var standardPort: Int {
         return E.isTestnet ? 18333 : 8333
     }

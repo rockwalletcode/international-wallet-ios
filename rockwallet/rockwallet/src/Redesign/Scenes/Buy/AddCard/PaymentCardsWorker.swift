@@ -23,6 +23,7 @@ struct PaymentCardsResponseData: ModelResponse {
         var status: String?
         var cardType: String?
         var paymentMethodStatus: String?
+        var usedOnBuy: Bool?
     }
     
     var paymentInstruments: [PaymentInstrument]
@@ -74,7 +75,7 @@ struct PaymentCard: ItemSelectable {
             
             let maxRange = NSRange(location: 0, length: attributedString.mutableString.length)
             attributedString.addAttribute(.font, value: Fonts.Body.three, range: maxRange)
-            attributedString.addAttribute(.foregroundColor, value: LightColors.Error.one, range: maxRange)
+            attributedString.addAttribute(.foregroundColor, value: Colors.Error.one, range: maxRange)
             
             let range = attributedString.mutableString.range(of: L10n.Buy.PaymentMethodBlocked.link)
             attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
@@ -96,6 +97,7 @@ struct PaymentCard: ItemSelectable {
     var status: Status
     var cardType: CardType
     var paymentMethodStatus: PaymentMethodStatus
+    var verifiedToSell: Bool?
     
     var displayName: String? {
         switch type {
@@ -129,7 +131,8 @@ class PaymentCardsMapper: ModelMapper<PaymentCardsResponseData, [PaymentCard]> {
                                accountName: $0.accountName ?? "",
                                status: PaymentCard.Status(rawValue: $0.status ?? "") ?? .none,
                                cardType: PaymentCard.CardType(rawValue: $0.cardType ?? "") ?? .none,
-                               paymentMethodStatus: PaymentCard.PaymentMethodStatus(rawValue: $0.paymentMethodStatus ?? "") ?? .none)
+                               paymentMethodStatus: PaymentCard.PaymentMethodStatus(rawValue: $0.paymentMethodStatus ?? "") ?? .none,
+                               verifiedToSell: $0.usedOnBuy)
         } ?? []
     }
 }
@@ -143,5 +146,11 @@ struct PaymentCardsRequestData: RequestModelData {
 class PaymentCardsWorker: BaseApiWorker<PaymentCardsMapper> {
     override func getUrl() -> String {
         return ExchangeEndpoints.paymentInstruments.url
+    }
+}
+
+class SellPaymentCardsWorker: BaseApiWorker<PaymentCardsMapper> {
+    override func getUrl() -> String {
+        return ExchangeEndpoints.sellPaymentInstruments.url
     }
 }

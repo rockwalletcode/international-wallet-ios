@@ -56,7 +56,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
     private lazy var headerTitleLabel: FELabel = {
         let view = FELabel()
         view.font = Fonts.Body.three
-        view.textColor = LightColors.Text.three
+        view.textColor = Colors.Text.three
         view.textAlignment = .left
         return view
     }()
@@ -77,7 +77,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
     
     private lazy var fiatAmountField: UITextField = {
         let view = UITextField()
-        view.textColor = LightColors.Text.three
+        view.textColor = Colors.Text.three
         view.font = Fonts.Subtitle.one
         view.tintColor = view.textColor
         view.textAlignment = .right
@@ -89,7 +89,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
     
     private lazy var cryptoAmountField: UITextField = {
         let view = UITextField()
-        view.textColor = LightColors.Text.three
+        view.textColor = Colors.Text.three
         view.font = Fonts.Title.five
         view.tintColor = view.textColor
         view.textAlignment = .right
@@ -105,7 +105,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         let view = FELabel()
         view.text = Constant.usdCurrencyCode
         view.font = Fonts.Subtitle.three
-        view.textColor = LightColors.Text.two
+        view.textColor = Colors.Text.two
         view.textAlignment = .right
         return view
     }()
@@ -131,7 +131,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
     private lazy var codeLabel: FELabel = {
         let view = FELabel()
         view.font = Fonts.Title.five
-        view.textColor = LightColors.Text.three
+        view.textColor = Colors.Text.three
         view.textAlignment = .left
         view.sizeToFit()
         return view
@@ -141,7 +141,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         let view = FEImageView()
         view.setup(with: .image(Asset.chevronDown.image))
         view.setupCustomMargins(all: .extraSmall)
-        view.tintColor = LightColors.Text.three
+        view.tintColor = Colors.Text.three
         return view
     }()
     
@@ -155,7 +155,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
     private lazy var feeLabel: FELabel = {
         let view = FELabel()
         view.font = Fonts.Subtitle.three
-        view.textColor = LightColors.Text.two
+        view.textColor = Colors.Text.two
         view.textAlignment = .left
         return view
     }()
@@ -163,7 +163,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
     private lazy var feeAmountLabel: FELabel = {
         let view = FELabel()
         view.font = Fonts.Subtitle.three
-        view.textColor = LightColors.Text.two
+        view.textColor = Colors.Text.two
         view.textAlignment = .right
         return view
     }()
@@ -286,8 +286,8 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         
         currencyIconImageView.wrappedView.configure(background: config?.currencyIconBackground)
         
-        let buttonConfig = BackgroundConfiguration(backgroundColor: LightColors.purpleMuted,
-                                                   tintColor: LightColors.instantPurple,
+        let buttonConfig = BackgroundConfiguration(backgroundColor: Colors.purpleMuted,
+                                                   tintColor: Colors.instantPurple,
                                                    border: BorderConfiguration(tintColor: .clear,
                                                                                borderWidth: 0,
                                                                                cornerRadius: .fullRadius))
@@ -374,7 +374,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         
         let isActive = field.isFirstResponder && text.isEmpty
         
-        attributedPlaceholder.addAttributes([NSAttributedString.Key.foregroundColor: isActive ? LightColors.Outline.two : textColor,
+        attributedPlaceholder.addAttributes([NSAttributedString.Key.foregroundColor: isActive ? Colors.Outline.two : textColor,
                                              NSAttributedString.Key.font: font],
                                             range: NSRange(location: 0, length: attributedPlaceholder.length))
         
