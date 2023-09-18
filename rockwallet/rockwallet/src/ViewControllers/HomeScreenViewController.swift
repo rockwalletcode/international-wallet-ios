@@ -38,7 +38,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private lazy var exchangeButtonsView: UIView = {
         let view = UIView()
-        view.backgroundColor = Colors.Background.cards
+        view.backgroundColor = Colors.Background.one
         view.layer.cornerRadius = CornerRadius.large.rawValue
         view.isHidden = true
         return view
@@ -47,7 +47,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private lazy var exchangeButtonsStackView: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
-        view.backgroundColor = Colors.Background.cards
         view.spacing = Margins.small.rawValue
         return view
     }()
