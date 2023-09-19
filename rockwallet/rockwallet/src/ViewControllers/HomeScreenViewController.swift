@@ -36,13 +36,18 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         return view
     }()
     
-    private lazy var exchangeButtonsView: UIStackView = {
+    private lazy var exchangeButtonsView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colors.Background.one
+        view.layer.cornerRadius = CornerRadius.large.rawValue
+        view.isHidden = true
+        return view
+    }()
+    
+    private lazy var exchangeButtonsStackView: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
-        view.backgroundColor = Colors.Background.cards
-        view.layer.cornerRadius = CornerRadius.large.rawValue
         view.spacing = Margins.small.rawValue
-        view.isHidden = true
         return view
     }()
     
@@ -286,18 +291,15 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             make.height.equalTo(ViewSizes.extraExtraHuge.rawValue)
         }
         
-        exchangeButtonsView.addSubview(transferFunds)
-        transferFunds.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().inset(Margins.small.rawValue)
+        exchangeButtonsView.addSubview(exchangeButtonsStackView)
+        exchangeButtonsStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(Margins.small.rawValue)
+            make.leading.trailing.equalToSuperview().inset(Margins.medium.rawValue)
             make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
         }
         
-        exchangeButtonsView.addSubview(launchExchange)
-        launchExchange.snp.makeConstraints { make in
-            make.top.equalTo(transferFunds.snp.top)
-            make.leading.equalTo(transferFunds.snp.trailing).inset(-Margins.small.rawValue)
-            make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
-        }
+        exchangeButtonsStackView.addArrangedSubview(transferFunds)
+        exchangeButtonsStackView.addArrangedSubview(launchExchange)
         
         view.addSubview(tabBarContainerView)
         tabBarContainerView.addSubview(tabBar)
