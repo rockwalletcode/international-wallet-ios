@@ -204,6 +204,12 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                 self.notificationHandler.checkForInAppNotifications()
             })
         }
+        
+        guard UserManager.shared.profile == nil else { return }
+                
+        UserManager.shared.refresh { _ in
+            self.segmentControl.isHidden = UserManager.shared.profile == nil
+        }
     }
     
     // MARK: Setup
