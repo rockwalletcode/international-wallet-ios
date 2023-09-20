@@ -45,6 +45,7 @@ struct Constant {
     static let reviewLink = "https://apps.apple.com/us/app/rockwallet-buy-and-swap/id6444194230?action=write-review"
     static let limits = "https://\(companyURL)/limits"
     static let tradeSignInLink = "https://trade.uat.rockwallet.pro/sign-in"
+    static let portalSignInLink = "https://wasp.dev.rockwallet.net/signin"
     static var standardPort: Int {
         return E.isTestnet ? 18333 : 8333
     }

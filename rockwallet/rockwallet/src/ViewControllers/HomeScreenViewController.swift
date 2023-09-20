@@ -19,6 +19,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private var observers: [AnyCancellable] = []
     private var isRedirectedUrl: Bool = false
+    private var isPortalLink: Bool = false
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -47,7 +48,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private lazy var exchangeButtonsStackView: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
-        view.spacing = Margins.small.rawValue
+        view.spacing = Margins.extraSmall.rawValue
         return view
     }()
     
@@ -99,10 +100,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private lazy var transferFunds: FEButton = {
         let view = FEButton()
+        view.titleLabel?.numberOfLines = 1
+        view.titleLabel?.adjustsFontSizeToFitWidth = true
         return view
     }()
     
     private lazy var launchExchange: FEButton = {
+        let view = FEButton()
+        view.titleLabel?.numberOfLines = 1
+        view.titleLabel?.adjustsFontSizeToFitWidth = true
+        return view
+    }()
+    
+    private lazy var launchPortalLogin: FEButton = {
         let view = FEButton()
         return view
     }()
@@ -294,6 +304,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         exchangeButtonsStackView.addArrangedSubview(transferFunds)
         exchangeButtonsStackView.addArrangedSubview(launchExchange)
+        if E.isDevelopment {
+            exchangeButtonsStackView.addArrangedSubview(launchPortalLogin)
+        }
         
         view.addSubview(tabBarContainerView)
         tabBarContainerView.addSubview(tabBar)
@@ -387,6 +400,12 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         launchExchange.setup(with: .init(title: L10n.Button.launchExchange,
                                          callback: { [weak self] in
             self?.launchExchangeTapped()
+        }))
+        
+        launchPortalLogin.configure(with: Presets.Button.secondary)
+        launchPortalLogin.setup(with: .init(title: L10n.Buttons.portalLogin,
+                                            callback: { [weak self] in
+            self?.portalLoginTapped()
         }))
     }
     
@@ -536,7 +555,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         let model = PopupViewModel(body: L10n.Exchange.popupText,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
-            self?.handleWebViewRedirects()
+            self?.handleWebViewRedirects(isPortal: false)
+            self?.hidePopup()
+        })])
+        
+        showInfoPopup(with: model)
+    }
+    
+    private func portalLoginTapped() {
+        let model = PopupViewModel(title: .text(L10n.Buttons.portalLogin),
+                                   body: L10n.Exchange.popupText,
+                                   buttons: [.init(title: L10n.Button.gotIt,
+                                                   callback: { [weak self] in
+            self?.handleWebViewRedirects(isPortal: true)
             self?.hidePopup()
         })])
         
@@ -562,16 +593,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             }
         }
     }
-    func handleWebViewRedirects() {
+    func handleWebViewRedirects(isPortal: Bool) {
         webView.navigationDelegate = self
-        guard let url = URL(string: Constant.tradeSignInLink) else { return }
+        isPortalLink = isPortal
+        let urlString = isPortalLink ? Constant.portalSignInLink : Constant.tradeSignInLink
+        guard let url = URL(string: urlString) else { return }
         
         webView.load(URLRequest(url: url))
         LoadingView.show()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation) {
-        guard webView.url?.absoluteString == Constant.tradeSignInLink else {
+        let url = isPortalLink ? Constant.portalSignInLink : Constant.tradeSignInLink
+        guard webView.url?.absoluteString == url else {
             guard !isRedirectedUrl else {
                 setupWebView()
                 return
@@ -582,8 +616,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             LoadingView.hideIfNeeded()
             return
         }
-        // make auto tap on web view login button
-        let scriptSource = "document.getElementsByTagName('button')[0].click()"
+        // auto tap on login button in web view
+        let buttonTag = isPortalLink ? "1" : "0"
+        let scriptSource = "document.getElementsByTagName('button')[\(buttonTag)].click()"
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: {
             webView.evaluateJavaScript(scriptSource, completionHandler: nil)
