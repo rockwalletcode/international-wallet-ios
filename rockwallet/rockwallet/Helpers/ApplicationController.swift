@@ -398,6 +398,7 @@ class ApplicationController: Subscriber {
         UserManager.shared.refresh { [weak self] result in
             switch result {
             case .success:
+                self?.homeScreenViewController?.handleSegmentView()
                 self?.handleDeeplinksIfNeeded()
                 
             case .failure(let error):

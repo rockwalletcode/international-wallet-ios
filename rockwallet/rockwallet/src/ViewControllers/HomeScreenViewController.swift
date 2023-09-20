@@ -348,6 +348,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         }
     }
     
+    func handleSegmentView() {
+        segmentControl.isHidden = UserManager.shared.profile == nil
+    }
+    
     private func setSegment(_ segment: Int) {
         segmentControl.selectSegment(index: segment)
         
