@@ -843,6 +843,8 @@
 /* Yes button */
 "Button.yes" = "Oui";
 
+"Buttons.PortalLogin" = "Portal";
+
 /* 3D Secure label on buy flow */
 "Buy.3DSecure" = "3D Secure";
 
@@ -1585,6 +1587,8 @@
 /* (Tap here to) trade (your assets for other assets) */
 "HomeScreen.trade" = "Échanger";
 
+"HomeScreen.Wallet" = "Wallet";
+
 /* Checking private key balance progress view text */
 "Import.checking" = "Vérification du solde des clés privées...";
 
@@ -2080,6 +2084,12 @@
 /* Upgrade PIN prompt title. */
 "Prompts.UpgradePin.title" = "Mettre à jour le code PIN";
 
+"Prompts.VerificationPending.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
+
+"Prompts.VerificationPending.button" = "Complete verification";
+
+"Prompts.VerificationPending.title" = "Verification pending";
+
 "Prompts.VerifyAccount.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
 
 "Prompts.VerifyAccount.description" = "One more step, and you´ll unlock all RockWallet features.";
@@ -2445,7 +2455,7 @@
 /* Security center fingerprint authentication button */
 "SecurityCenter.touchIdTitle.android" = "Identification par empreinte digitale";
 
-"Segment.RockWalletPro" = "ROCKWALLET PRO";
+"Segment.RockWalletPro" = "RockWallet PRO";
 
 /* Segwit enabled confirmation body */
 "Segwit.ConfirmationConfirmationBody" = "Merci de nous aider à faire progresser le bitcoin !";

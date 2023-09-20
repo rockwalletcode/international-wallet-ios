@@ -827,6 +827,10 @@ internal enum L10n {
       internal static let android = L10n.tr("Localizable", "Button.uninstall.android", fallback: "Uninstall")
     }
   }
+  internal enum Buttons {
+    /// Portal
+    internal static let portalLogin = L10n.tr("Localizable", "Buttons.PortalLogin", fallback: "Portal")
+  }
   internal enum Buy {
     /// 3D Secure label on buy flow
     internal static let _3DSecure = L10n.tr("Localizable", "Buy.3DSecure", fallback: "3D Secure")
@@ -1637,6 +1641,8 @@ internal enum L10n {
     internal static let totalAssets = L10n.tr("Localizable", "HomeScreen.totalAssets", fallback: "Balance")
     /// (Tap here to) trade (your assets for other assets)
     internal static let trade = L10n.tr("Localizable", "HomeScreen.trade", fallback: "Swap")
+    /// Wallet
+    internal static let wallet = L10n.tr("Localizable", "HomeScreen.Wallet", fallback: "Wallet")
   }
   internal enum Import {
     /// Checking private key balance progress view text
@@ -2125,6 +2131,14 @@ internal enum L10n {
       /// Upgrade PIN prompt title.
       internal static let title = L10n.tr("Localizable", "Prompts.UpgradePin.title", fallback: "Upgrade PIN")
     }
+    internal enum VerificationPending {
+      /// One more step and you’ll be able to Swap and Buy seamlessly.
+      internal static let body = L10n.tr("Localizable", "Prompts.VerificationPending.body", fallback: "One more step and you’ll be able to Swap and Buy seamlessly.")
+      /// Complete verification
+      internal static let button = L10n.tr("Localizable", "Prompts.VerificationPending.button", fallback: "Complete verification")
+      /// Verification pending
+      internal static let title = L10n.tr("Localizable", "Prompts.VerificationPending.title", fallback: "Verification pending")
+    }
     internal enum VerifyAccount {
       /// One more step and you’ll be able to Swap and Buy seamlessly.
       internal static let body = L10n.tr("Localizable", "Prompts.VerifyAccount.body", fallback: "One more step and you’ll be able to Swap and Buy seamlessly.")
@@ -2449,8 +2463,8 @@ internal enum L10n {
     }
   }
   internal enum Segment {
-    /// ROCKWALLET PRO
-    internal static let rockWalletPro = L10n.tr("Localizable", "Segment.RockWalletPro", fallback: "ROCKWALLET PRO")
+    /// RockWallet PRO
+    internal static let rockWalletPro = L10n.tr("Localizable", "Segment.RockWalletPro", fallback: "RockWallet PRO")
   }
   internal enum Segwit {
     /// Segwit enabled confirmation body
