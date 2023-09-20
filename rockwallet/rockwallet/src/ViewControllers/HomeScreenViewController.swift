@@ -353,7 +353,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private func setupSegmentControl() {
         let segmentControlModel = SegmentControlViewModel(selectedIndex: 0,
                                                           segments: [.init(image: nil, title: L10n.About.AppName.android.uppercased()),
-                                                                     .init(image: nil, title: L10n.Segment.rockWalletPro)])
+                                                                     .init(image: nil, title: L10n.Segment.rockWalletPro.uppercased())])
         segmentControl.configure(with: .init())
         segmentControl.setup(with: segmentControlModel)
         segmentControl.didChangeValue = { [weak self] segment in
@@ -620,7 +620,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         let buttonTag = isPortalLink ? "1" : "0"
         let scriptSource = "document.getElementsByTagName('button')[\(buttonTag)].click()"
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0, execute: {
             webView.evaluateJavaScript(scriptSource, completionHandler: nil)
         })
     }
