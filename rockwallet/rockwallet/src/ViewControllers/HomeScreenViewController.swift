@@ -209,12 +209,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                 self.notificationHandler.checkForInAppNotifications()
             })
         }
-        
-        guard UserManager.shared.profile == nil else { return }
-                
-        UserManager.shared.refresh { _ in
-            self.segmentControl.isHidden = UserManager.shared.profile == nil
-        }
     }
     
     // MARK: Setup
@@ -352,6 +346,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         segmentControl.didChangeValue = { [weak self] segment in
             self?.setSegment(segment)
         }
+    }
+    
+    func handleSegmentView() {
+        segmentControl.isHidden = UserManager.shared.profile == nil
     }
     
     private func setSegment(_ segment: Int) {
