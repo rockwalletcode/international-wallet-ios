@@ -134,6 +134,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     var didTapLimitsAuthenticationFromPrompt: (() -> Void)?
     var didTapMenu: (() -> Void)?
     var didTapProSegment: (() -> Void)?
+    var didTapTransferFunds: (() -> Void)?
     
     private lazy var pullToRefreshControl: UIRefreshControl = {
         let view = UIRefreshControl()
@@ -548,7 +549,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func transferFundsTapped() {
-        // TODO: add transfer funds action
+        didTapTransferFunds?()
     }
     
     private func launchExchangeTapped() {

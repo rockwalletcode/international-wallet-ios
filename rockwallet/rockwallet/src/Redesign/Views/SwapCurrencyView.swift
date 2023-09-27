@@ -302,6 +302,8 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         super.setup(with: viewModel)
         
         headerTitleLabel.setup(with: viewModel.title)
+        headerTitleLabel.isHidden = viewModel.title == nil
+        
         headerInfoButton.setup(with: .init(title: viewModel.headerInfoButtonTitle, shouldCapitalize: true))
         headerInfoButton.isHidden = viewModel.headerInfoButtonTitle == nil
         

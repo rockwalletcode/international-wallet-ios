@@ -28,6 +28,7 @@ enum AssetModels {
         case limitActions
         case paymentMethod
         case swapCard
+        case transferFunds
         
         var header: AccessoryType? { return nil }
         var footer: AccessoryType? { return nil }
