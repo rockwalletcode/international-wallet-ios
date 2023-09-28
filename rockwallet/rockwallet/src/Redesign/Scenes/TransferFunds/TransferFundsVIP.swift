@@ -12,7 +12,7 @@ extension Scenes {
     static let TransferFunds = TransferFundsViewController.self
 }
 
-protocol TransferFundsViewActions: BaseViewActions, FetchViewActions, AssetViewActions {
+protocol TransferFundsViewActions: BaseViewActions, FetchViewActions, AssetViewActions, CreateTransactionViewActions {
     func navigateAssetSelector(viewAction: TransferFundsModels.AssetSelector.ViewAction)
     func showAssetSelectionMessage(viewAction: TransferFundsModels.AssetSelectionMessage.ViewAction)
 }
@@ -27,7 +27,7 @@ protocol TransferFundsResponseDisplays: AnyObject, BaseResponseDisplays, FetchRe
     func displayAssetSelectionMessage(responseDisplay: TransferFundsModels.AssetSelectionMessage.ResponseDisplay)
 }
 
-protocol TransferFundsDataStore: BaseDataStore, FetchDataStore, AssetDataStore {
+protocol TransferFundsDataStore: BaseDataStore, FetchDataStore, AssetDataStore, CreateTransactionDataStore {
     var from: Decimal? { get set }
     var to: Decimal? { get set }
     var toAmount: Amount? { get set }

@@ -15,6 +15,7 @@ enum ProEndpoints: String, URLType {
     
     case balances
     case addresses
+    case withdraw
     
     var url: String {
         return String(format: Self.baseURL, rawValue)

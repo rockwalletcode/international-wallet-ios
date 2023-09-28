@@ -30,13 +30,13 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
         ]
         
         let transferFundsModel = TransferFundsHorizontalViewModel(fromTransferView: .init(TransferFundsViewModel(headerTitle: L10n.TransactionDetails.addressFromHeader,
-                                                                                                                 icon: .image(Asset.iconCustodial.image),
-                                                                                                                 title: "\(L10n.About.AppName.android) PRO",
-                                                                                                                 subTitle: "(custodial)")),
+                                                                                                                 icon: .image(Asset.iconSelfCustodial.image),
+                                                                                                                 title: L10n.About.AppName.android,
+                                                                                                                 subTitle: "(self-custodial)")),
                                                                   toTransferView: .init(TransferFundsViewModel(headerTitle: L10n.TransactionDetails.addressToHeader,
-                                                                                                               icon: .image(Asset.iconSelfCustodial.image),
-                                                                                                               title: L10n.About.AppName.android,
-                                                                                                               subTitle: "(self-custodial)")))
+                                                                                                               icon: .image(Asset.iconCustodial.image),
+                                                                                                               title: L10n.Segment.rockWalletPro,
+                                                                                                               subTitle: "(custodial)")))
         
         let sectionRows: [AssetModels.Section: [any Hashable]] = [
             .transferFunds: [
@@ -98,6 +98,16 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                                                                 wrappedView: wrappedViewModel)
         
         viewController?.displayConfirmation(responseDisplay: .init(config: config, viewModel: viewModel))
+    }
+    
+    func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
+        guard let from = actionResponse.from,
+              let to = actionResponse.to,
+              let exchangeId = actionResponse.exchangeId else {
+            presentError(actionResponse: .init(error: GeneralError(errorMessage: L10n.Swap.notValidPair)))
+            return
+        }
+        viewController?.displayConfirm(responseDisplay: .init(from: from, to: to, exchangeId: "\(exchangeId)"))
     }
 
     // MARK: - Additional Helpers
