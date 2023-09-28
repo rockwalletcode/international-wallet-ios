@@ -45,6 +45,7 @@ enum AssetModels {
             var card: PaymentCard?
             
             var didFinish: Bool = false
+            var isDeposit: Bool = false
         }
         
         struct ActionResponse {

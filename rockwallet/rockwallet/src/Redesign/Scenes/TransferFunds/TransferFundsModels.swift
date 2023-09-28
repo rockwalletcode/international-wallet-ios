@@ -45,6 +45,7 @@ enum TransferFundsModels {
             var quote: Quote?
             var fromFee: Amount?
             var toFee: Amount?
+            var isDeposit: Bool?
         }
         
         struct ResponseDisplay {
@@ -67,6 +68,19 @@ enum TransferFundsModels {
             var from: String
             var to: String
             var exchangeId: String
+        }
+    }
+    
+    struct SwitchPlaces {
+        struct ViewAction {
+            var isDeposit: Bool?
+        }
+        struct ActionResponse {
+            var isDeposit: Bool?
+        }
+        
+        struct ResponseDisplay {
+            var mainHorizontalViewModel: TransferFundsHorizontalViewModel?
         }
     }
 }

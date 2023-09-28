@@ -51,6 +51,10 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
         cell.setup { view in
             view.configure(with: .init())
             view.setup(with: model)
+            
+            view.didTapTransferFunds = { [weak self] in
+                self?.interactor?.switchPlaces(viewAction: .init(isDeposit: self?.dataStore?.isDeposit))
+            }
         }
         cell.setupCustomMargins(vertical: .small, horizontal: .large)
         
@@ -136,6 +140,14 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
         verticalButtons.wrappedView.getButton(continueButton)?.setup(with: continueButton.viewModel)
     }
     
+    func displaySwitchPlaces(responseDisplay: TransferFundsModels.SwitchPlaces.ResponseDisplay) {
+        guard let section = sections.firstIndex(where: { $0.hashValue == AssetModels.Section.transferFunds.hashValue }),
+              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<TransferFundsHorizontalView> else { return }
+        
+        cell.wrappedView.setup(with: responseDisplay.mainHorizontalViewModel)
+        tableView.invalidateTableViewIntrinsicContentSize()
+    }
+    
     func displayAssetSelectionMessage(responseDisplay: TransferFundsModels.AssetSelectionMessage.ResponseDisplay) {
         coordinator?.showToastMessage(model: responseDisplay.model, configuration: responseDisplay.config)
     }
@@ -149,6 +161,8 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                     LoadingView.show()
                     
                     self?.interactor?.confirm(viewAction: .init())
+                    
+                    LoadingView.hideIfNeeded()
                 } else {
                     self?.coordinator?.dismissFlow()
                 }

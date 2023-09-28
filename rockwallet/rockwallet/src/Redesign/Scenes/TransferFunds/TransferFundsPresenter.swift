@@ -29,14 +29,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
             .swapCard
         ]
         
-        let transferFundsModel = TransferFundsHorizontalViewModel(fromTransferView: .init(TransferFundsViewModel(headerTitle: L10n.TransactionDetails.addressFromHeader,
-                                                                                                                 icon: .image(Asset.iconSelfCustodial.image),
-                                                                                                                 title: L10n.About.AppName.android,
-                                                                                                                 subTitle: "(self-custodial)")),
-                                                                  toTransferView: .init(TransferFundsViewModel(headerTitle: L10n.TransactionDetails.addressToHeader,
-                                                                                                               icon: .image(Asset.iconCustodial.image),
-                                                                                                               title: L10n.Segment.rockWalletPro,
-                                                                                                               subTitle: "(custodial)")))
+        let transferFundsModel = setupTransferFundsView(isDeposit: true)
         
         let sectionRows: [AssetModels.Section: [any Hashable]] = [
             .transferFunds: [
@@ -71,6 +64,13 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                                              continueEnabled: continueEnabled))
     }
     
+    func presentSwitchPlaces(actionResponse: Models.SwitchPlaces.ActionResponse) {
+        guard let isDeposit = actionResponse.isDeposit else { return }
+        
+        let transferFundsModel = setupTransferFundsView(isDeposit: isDeposit)
+        viewController?.displaySwitchPlaces(responseDisplay: .init(mainHorizontalViewModel: transferFundsModel))
+    }
+    
     func presentAssetSelectionMessage(actionResponse: Models.AssetSelectionMessage.ActionResponse) {
         let message = L10n.Swap.enableAssetFirst
         let model = InfoViewModel(description: .text(message), dismissType: .auto)
@@ -86,11 +86,16 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     func presentConfirmation(actionResponse: Models.ShowConfirmDialog.ActionResponse) {
         let config: WrapperPopupConfiguration<SwapConfimationConfiguration> = .init(wrappedView: .init())
         
-        let wrappedViewModel: SwapConfirmationViewModel = .init(from: .init(title: .text("Send from RockWallet PRO"), value: .text("40.85 BSV")),
-                                                                to: .init(title: .text(L10n.TransactionDetails.addressToHeader), value: .text("RockWallet")),
-                                                                rate: .init(title: .text("Amount to send"), value: .text("40.85 BSV")),
-                                                                receivingFee: .init(title: .text("Withdrawal fee"), value: .text("-0.0001 BSV")),
-                                                                totalCost: .init(title: .text(L10n.Swap.youReceive), value: .text("40.8499 BSV")))
+        guard let isDeposit = actionResponse.isDeposit else { return }
+        let fromTitle = !isDeposit ? "Send from RockWallet" : "Send from RockWallet PRO"
+        let toTitle = !isDeposit ? L10n.Segment.rockWalletPro : L10n.About.AppName.android
+        let feeTitle = !isDeposit ? "Estimated Network fee" : "Withdrawal fee"
+        
+        let wrappedViewModel: SwapConfirmationViewModel = .init(from: .init(title: .text(fromTitle), value: .text("40.85 USDC")),
+                                                                to: .init(title: .text(L10n.TransactionDetails.addressToHeader), value: .text(toTitle)),
+                                                                rate: .init(title: .text(L10n.Confirmation.amountLabel), value: .text("40.85 USDC")),
+                                                                receivingFee: .init(title: .text(feeTitle), value: .text("-0.0001 USDC")),
+                                                                totalCost: .init(title: .text(L10n.Swap.youReceive), value: .text("40.8499 USDC")))
         
         let viewModel: WrapperPopupViewModel<SwapConfirmationViewModel> = .init(title: .text(L10n.Confirmation.title),
                                                                                 confirm: .init(title: L10n.Button.confirm),
@@ -112,4 +117,22 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
 
     // MARK: - Additional Helpers
 
+    func setupTransferFundsView(isDeposit: Bool) -> TransferFundsHorizontalViewModel? {
+        let selfCustodialView: TransferFundsViewModel? = .init(TransferFundsViewModel(headerTitle: isDeposit ?
+                                                                                L10n.TransactionDetails.addressFromHeader : L10n.TransactionDetails.addressToHeader,
+                                                                                 icon: .image(Asset.iconSelfCustodial.image),
+                                                                                 title: L10n.About.AppName.android,
+                                                                                 subTitle: "(self-custodial)"))
+        
+        let custodialView: TransferFundsViewModel? = .init(TransferFundsViewModel(headerTitle: !isDeposit ?
+                                                                                 L10n.TransactionDetails.addressFromHeader : L10n.TransactionDetails.addressToHeader,
+                                                                                 icon: .image(Asset.iconCustodial.image),
+                                                                                 title: L10n.Segment.rockWalletPro,
+                                                                                 subTitle: "(custodial)"))
+        let transferFundsModel: TransferFundsHorizontalViewModel? = isDeposit ?
+        TransferFundsHorizontalViewModel(fromTransferView: selfCustodialView, toTransferView: custodialView) :
+        TransferFundsHorizontalViewModel(fromTransferView: custodialView, toTransferView: selfCustodialView)
+        
+        return transferFundsModel
+    }
 }

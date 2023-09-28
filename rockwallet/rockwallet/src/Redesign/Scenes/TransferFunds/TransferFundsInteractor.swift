@@ -103,7 +103,8 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                                                              toAmount: dataStore?.toAmount,
                                                              quote: dataStore?.quote,
                                                              fromFee: dataStore?.fromFeeAmount,
-                                                             toFee: dataStore?.toFeeAmount))
+                                                             toFee: dataStore?.toFeeAmount,
+                                                             isDeposit: dataStore?.isDeposit))
     }
     
     func confirm(viewAction: Models.Confirm.ViewAction) {
@@ -146,9 +147,20 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                 })
                 
             case .failure(let error):
-                self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.failed(error: error)))
+                print(error)
+//                self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.failed(error: error)))
             }
         }
+    }
+    
+    func switchPlaces(viewAction: Models.SwitchPlaces.ViewAction) {
+        guard let from = dataStore?.fromAmount?.currency,
+              let isDeposit = dataStore?.isDeposit else { return }
+        
+        dataStore?.fromAmount = .zero(from)
+        dataStore?.isDeposit = !isDeposit
+        
+        presenter?.presentSwitchPlaces(actionResponse: .init(isDeposit: isDeposit))
     }
     
     // MARK: - Aditional helpers

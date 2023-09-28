@@ -36,8 +36,10 @@ class TransferFundsHorizontalView: FEView<TransferFundsHorizontalViewConfigurati
         return view
     }()
     
-    private lazy var transferImageView: UIImageView = {
-        let view = UIImageView(image: Asset.transferFunds.image)
+    private lazy var transferFundsButton: FEButton = {
+        let view = FEButton()
+        view.setImage(Asset.transferFunds.image, for: .normal)
+        view.addTarget(self, action: #selector(transferFundsButtonTapped), for: .touchUpInside)
         return view
     }()
     
@@ -45,6 +47,8 @@ class TransferFundsHorizontalView: FEView<TransferFundsHorizontalViewConfigurati
         let view = TransferFundsView()
         return view
     }()
+    
+    var didTapTransferFunds: (() -> Void)?
     
     override func setupSubviews() {
         super.setupSubviews()
@@ -58,8 +62,8 @@ class TransferFundsHorizontalView: FEView<TransferFundsHorizontalViewConfigurati
         contentStack.addArrangedSubview(fromTransferView)
         contentStack.addArrangedSubview(toTransferView)
         
-        content.addSubview(transferImageView)
-        transferImageView.snp.makeConstraints { make in
+        content.addSubview(transferFundsButton)
+        transferFundsButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.centerX.equalToSuperview()
             make.height.width.equalTo(Margins.extraExtraHuge.rawValue)
@@ -87,5 +91,9 @@ class TransferFundsHorizontalView: FEView<TransferFundsHorizontalViewConfigurati
         
         fromTransferView.setup(with: viewModel?.fromTransferView)
         toTransferView.setup(with: viewModel?.toTransferView)
+    }
+    
+    @objc private func transferFundsButtonTapped(_ sender: UIButton?) {
+        didTapTransferFunds?()
     }
 }
