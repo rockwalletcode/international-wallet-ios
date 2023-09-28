@@ -10,10 +10,10 @@ import UIKit
 
 class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     typealias Models = TransferFundsModels
-
+    
     var presenter: TransferFundsPresenter?
     var dataStore: TransferFundsStore?
-
+    
     // MARK: - TransferFundsViewActions
     
     func getData(viewAction: FetchModels.Get.ViewAction) {
@@ -22,27 +22,29 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         
         prepareCurrencies(viewAction: item)
         
-        guard (dataStore?.supportedCurrencies ?? []).count > 1 else {
-            presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
-            return
+        ProSupportedCurrenciesWorker().execute { [weak self] result in
+            switch result {
+            case .success(let currencies):
+                self?.dataStore?.proSupportedCurrencies = currencies
+                let fromCurrency: Currency? = self?.dataStore?.currencies.first(where: { $0.code.lowercased() == currencies?.first?.currency })
+                
+                guard let fromCurrency else {
+                    self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
+                    return
+                }
+                
+                self?.dataStore?.fromAmount = .zero(fromCurrency)
+                guard let fromCurrency = self?.dataStore?.fromAmount else {
+                    self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
+                    return
+                }
+                
+                self?.presenter?.presentData(actionResponse: .init(item: Models.Item(fromCurrency)))
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
-        
-        let fromCurrency: Currency? = dataStore?.fromAmount != nil ? dataStore?.fromAmount?.currency : dataStore?.currencies.first
-        
-        guard let fromCurrency,
-              let toCurrency = dataStore?.currencies.first(where: { $0.code != fromCurrency.code }) else {
-            presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
-            return
-        }
-        
-        if dataStore?.fromAmount == nil {
-            dataStore?.fromAmount = .zero(fromCurrency)
-        }
-        
-        dataStore?.toAmount = .zero(toCurrency)
-        
-        presenter?.presentData(actionResponse: .init(item: Models.Item(fromAmount: dataStore?.fromAmount,
-                                                                       toAmount: dataStore?.toAmount)))
     }
     
     func setAmount(viewAction: AssetModels.Asset.ViewAction) {
@@ -91,7 +93,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     func navigateAssetSelector(viewAction: Models.AssetSelector.ViewAction) {
         presenter?.presentNavigateAssetSelector(actionResponse: .init())
     }
-
+    
     func showAssetSelectionMessage(viewAction: Models.AssetSelectionMessage.ViewAction) {
         presenter?.presentAssetSelectionMessage(actionResponse: .init())
     }

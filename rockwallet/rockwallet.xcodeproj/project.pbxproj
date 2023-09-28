@@ -546,6 +546,7 @@
 		C458C7CF29E6D22F00146C0D /* PaymailAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458C7C829E6D22E00146C0D /* PaymailAddressViewController.swift */; };
 		C458C7D029E6D22F00146C0D /* PaymailAddressInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458C7C929E6D22E00146C0D /* PaymailAddressInteractor.swift */; };
 		C461E47829E430E7006BAC3A /* ShareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E47729E430E7006BAC3A /* ShareItem.swift */; };
+		C46410952AC570A1001F78FD /* ProSupportedCurrencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */; };
 		C46C28FE287EBF4F0035C843 /* BaseInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C28F7287EBF4F0035C843 /* BaseInfoStore.swift */; };
 		C46C28FF287EBF4F0035C843 /* BaseInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C28F8287EBF4F0035C843 /* BaseInfoPresenter.swift */; };
 		C46C2900287EBF4F0035C843 /* BaseInfoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C28F9287EBF4F0035C843 /* BaseInfoModels.swift */; };
@@ -1391,6 +1392,7 @@
 		C458C7C829E6D22E00146C0D /* PaymailAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailAddressViewController.swift; sourceTree = "<group>"; };
 		C458C7C929E6D22E00146C0D /* PaymailAddressInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailAddressInteractor.swift; sourceTree = "<group>"; };
 		C461E47729E430E7006BAC3A /* ShareItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareItem.swift; sourceTree = "<group>"; };
+		C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSupportedCurrencies.swift; sourceTree = "<group>"; };
 		C46C28F7287EBF4F0035C843 /* BaseInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoStore.swift; sourceTree = "<group>"; };
 		C46C28F8287EBF4F0035C843 /* BaseInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoPresenter.swift; sourceTree = "<group>"; };
 		C46C28F9287EBF4F0035C843 /* BaseInfoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoModels.swift; sourceTree = "<group>"; };
@@ -3116,6 +3118,7 @@
 				C41E9E312ABC311600AB8170 /* TransferFundsVIP.swift */,
 				C41E9E322ABC311600AB8170 /* TransferFundsViewController.swift */,
 				C41E9E332ABC311600AB8170 /* TransferFundsInteractor.swift */,
+				C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */,
 			);
 			path = TransferFunds;
 			sourceTree = "<group>";
@@ -4328,6 +4331,7 @@
 				7B2BF28929659D850037E731 /* RecoveryKeyIntroViewController.swift in Sources */,
 				C4C553D829F677B3002D9A47 /* CopyValueVIP.swift in Sources */,
 				7E9FADBE2927AA0A00B471A7 /* AchExchangeWorker.swift in Sources */,
+				C46410952AC570A1001F78FD /* ProSupportedCurrencies.swift in Sources */,
 				7E8E97A0283F48EE008606B0 /* NavigationItemView.swift in Sources */,
 				22A9A9461DF61945000F0016 /* BRAPIClient.swift in Sources */,
 				043DB5DA29F0059700DEB8FD /* TwoStepDeleteWorker.swift in Sources */,

@@ -14,6 +14,7 @@ enum ProEndpoints: String, URLType {
     static var baseURL: String = "https://" + E.apiUrl + "blocksatoshi/pro/%@"
     
     case balances
+    case addresses
     
     var url: String {
         return String(format: Self.baseURL, rawValue)

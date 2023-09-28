@@ -43,9 +43,9 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                 transferFundsModel
             ],
             .swapCard: [
-                SwapCurrencyViewModel.init(amount: item.fromAmount,
-                                           currencyCode: item.fromAmount?.currency.code,
-                                           currencyImage: item.fromAmount?.currency.imageSquareBackground)
+                SwapCurrencyViewModel.init(amount: item,
+                                           currencyCode: item?.currency.code,
+                                           currencyImage: item?.currency.imageSquareBackground)
             ]
         ]
         

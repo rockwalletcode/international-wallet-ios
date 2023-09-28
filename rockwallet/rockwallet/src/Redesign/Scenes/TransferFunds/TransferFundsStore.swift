@@ -37,6 +37,7 @@ class TransferFundsStore: NSObject, BaseDataStore, TransferFundsDataStore {
     var quote: Quote?
     var currencies: [Currency] = []
     var supportedCurrencies: [String]?
+    var proSupportedCurrencies: [ProSupportedCurrenciesModel]?
     var amount: Amount? {
         get {
             return toAmount

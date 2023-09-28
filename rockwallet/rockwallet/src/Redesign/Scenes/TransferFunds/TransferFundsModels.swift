@@ -9,7 +9,7 @@
 import UIKit
 
 enum TransferFundsModels {
-    typealias Item = (fromAmount: Amount?, toAmount: Amount?)
+    typealias Item = Amount?
     
     struct AssetSelectionMessage {
         struct ViewAction {}
