@@ -25,7 +25,7 @@ class ThemeManager {
             fatalError("Theme.plist error")
         }
         
-        if UserDefaults.isDarkMode {
+        if !UserDefaults.isDarkMode {
             guard let darkColors = dict["darkColors"] as? [String: String] else {
                 fatalError("Theme.plist error")
             }

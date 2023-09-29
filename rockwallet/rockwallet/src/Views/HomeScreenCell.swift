@@ -31,6 +31,16 @@ class HomeScreenCell: UITableViewCell, Subscriber {
         return view
     }()
     
+    lazy var proLabel: UILabel = {
+        let view = UILabel(font: Fonts.Body.three, color: Colors.Text.one)
+        view.text = "PRO"
+        view.textAlignment = .center
+        view.backgroundColor = Colors.Background.three
+        view.layer.cornerRadius = CornerRadius.small.rawValue
+        view.clipsToBounds = true
+        return view
+    }()
+    
     private lazy var iconImageView: WrapperView<FEImageView> = {
         let view = WrapperView<FEImageView>()
         view.setupClearMargins()
@@ -113,6 +123,7 @@ class HomeScreenCell: UITableViewCell, Subscriber {
         containerView.addSubview(cardView)
         cardView.addSubview(iconImageView)
         cardView.addSubview(currencyName)
+        cardView.addSubview(proLabel)
         cardView.addSubview(price)
         cardView.addSubview(fiatBalance)
         cardView.addSubview(tokenBalance)
@@ -141,6 +152,11 @@ class HomeScreenCell: UITableViewCell, Subscriber {
         currencyName.constrain([
             currencyName.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: containerPadding),
             currencyName.bottomAnchor.constraint(equalTo: iconImageView.centerYAnchor)])
+        proLabel.constrain([
+            proLabel.leadingAnchor.constraint(equalTo: currencyName.trailingAnchor, constant: containerPadding),
+            proLabel.bottomAnchor.constraint(equalTo: iconImageView.centerYAnchor),
+            proLabel.heightAnchor.constraint(equalTo: currencyName.heightAnchor),
+            proLabel.widthAnchor.constraint(equalToConstant: ViewSizes.large.rawValue)])
         price.constrain([
             price.leadingAnchor.constraint(equalTo: currencyName.leadingAnchor),
             price.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -Margins.special.rawValue)])
@@ -166,6 +182,10 @@ class HomeScreenCell: UITableViewCell, Subscriber {
         syncIndicator.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
         layoutIfNeeded()
+    }
+    
+    func removeProLabel(isHidden: Bool) {
+        proLabel.isHidden = isHidden
     }
     
     override func prepareForReuse() {

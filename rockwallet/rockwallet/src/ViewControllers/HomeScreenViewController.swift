@@ -74,7 +74,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private lazy var totalAssetsTitleLabel: UILabel = {
         let view = UILabel(font: Fonts.Body.two, color: Colors.Text.three)
-        view.text = L10n.HomeScreen.totalAssets
+        view.text = L10n.HomeScreen.wallet
         return view
     }()
     
@@ -208,6 +208,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             self?.pullToRefreshControl.endRefreshing()
             
             self?.isRefreshing = false
+        }
+        
+        assetListTableView.didTapFaqButton = { [weak self] in
+            self?.showInWebView(urlString: Constant.supportLink, title: "FAQ")
         }
         
         setupSubviews()
@@ -382,6 +386,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         tabBarContainerView.isHidden = segment == 1
         exchangeButtonsView.isHidden = segment == 0
+        
+        totalAssetsTitleLabel.text = segment == 1 ? L10n.Segment.rockWalletPro : "\(L10n.HomeScreen.wallet) balance"
+        assetListTableView.showAddWalletsButton(segment == 0)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

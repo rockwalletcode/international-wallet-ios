@@ -13,6 +13,7 @@ class AssetListTableView: UITableViewController, Subscriber {
     var didSelectCurrency: ((Currency) -> Void)?
     var didTapAddWallet: (() -> Void)?
     var didReload: (() -> Void)?
+    var didTapFaqButton: (() -> Void)?
     
     private let loadingSpinner = UIActivityIndicatorView(style: .large)
     private let assetHeight: CGFloat = ViewSizes.extralarge.rawValue
@@ -35,6 +36,29 @@ class AssetListTableView: UITableViewController, Subscriber {
         footerView.backgroundColor = Colors.Background.cards
         
         return footerView
+    }()
+    
+    private lazy var buttonsStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = Margins.large.rawValue
+        stack.isHidden = true
+        return stack
+    }()
+    
+    private lazy var faqButton: FEButton = {
+        let view = FEButton()
+        view.configure(with: Presets.Button.blackIcon)
+        view.setup(with: .init(title: "Need help? Visit our FAQs", isUnderlined: true))
+        view.addTarget(self, action: #selector(faqButtonTapped), for: .touchUpInside)
+        return view
+    }()
+    
+    private lazy var swipeLabel: UILabel = {
+        let view = UILabel(font: Fonts.Body.two, color: Colors.Text.three)
+        view.text = "Swipe down to refresh your balance"
+        view.textAlignment = .center
+        return view
     }()
     
     // MARK: - Init
@@ -88,7 +112,16 @@ class AssetListTableView: UITableViewController, Subscriber {
                                           width: footerView.frame.width - (2 * Margins.large.rawValue),
                                           height: manageAssetsButtonHeight)
         
+        buttonsStack.frame = CGRect(x: Margins.large.rawValue,
+                                    y: Margins.large.rawValue,
+                                    width: footerView.frame.width - (2 * Margins.large.rawValue),
+                                    height: manageAssetsButtonHeight)
+        
         footerView.addSubview(manageAssetsButton)
+        footerView.addSubview(buttonsStack)
+        buttonsStack.addArrangedSubview(faqButton)
+        buttonsStack.addArrangedSubview(swipeLabel)
+        
         tableView.tableFooterView = footerView
     }
     
@@ -138,6 +171,10 @@ class AssetListTableView: UITableViewController, Subscriber {
         }
     }
     
+    @objc func faqButtonTapped() {
+        didTapFaqButton?()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -162,6 +199,7 @@ class AssetListTableView: UITableViewController, Subscriber {
         
         if let cell = cell as? HomeScreenCell {
             cell.set(viewModel: viewModel)
+            cell.removeProLabel(isHidden: !manageAssetsButton.isHidden)
         }
         
         return cell
@@ -192,7 +230,6 @@ extension AssetListTableView {
     
     func showLoadingState(_ show: Bool) {
         showLoadingIndicator(show)
-        showAddWalletsButton(!show)
     }
     
     func showLoadingIndicator(_ show: Bool) {
@@ -214,6 +251,9 @@ extension AssetListTableView {
     }
     
     func showAddWalletsButton(_ show: Bool) {
+        buttonsStack.isHidden = show
         manageAssetsButton.isHidden = !show
+        
+        tableView.reloadData()
     }
 }

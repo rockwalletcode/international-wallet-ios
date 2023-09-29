@@ -11,7 +11,9 @@
 import UIKit
 
 struct WrapperPopupConfiguration<C: Configurable>: Configurable {
-    var background: BackgroundConfiguration = .init(backgroundColor: .white, tintColor: .black, border: Presets.Border.commonPlain)
+    var background: BackgroundConfiguration = .init(backgroundColor: Colors.Background.one,
+                                                    tintColor: Colors.Text.one,
+                                                    border: Presets.Border.mediumPlain)
     var leading: BackgroundConfiguration?
     var title = LabelConfiguration(font: Fonts.Title.six, textColor: Colors.Text.three, textAlignment: .center)
     var trailing = Presets.Button.blackIcon
