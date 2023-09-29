@@ -33,7 +33,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         view.layer.masksToBounds = true
         view.layer.cornerRadius = CornerRadius.large.rawValue
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        view.backgroundColor = Colors.Background.cards
+        view.backgroundColor = Colors.Background.two
         return view
     }()
     
@@ -59,7 +59,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         let appearance = view.standardAppearance
         appearance.shadowImage = nil
         appearance.shadowColor = nil
-        appearance.backgroundColor = Colors.Background.cards
+        appearance.backgroundColor = Colors.Background.two
         view.standardAppearance = appearance
         view.unselectedItemTintColor = Colors.Text.two
         return view

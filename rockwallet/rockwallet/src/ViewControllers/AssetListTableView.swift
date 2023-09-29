@@ -14,6 +14,7 @@ class AssetListTableView: UITableViewController, Subscriber {
     var didTapAddWallet: (() -> Void)?
     var didReload: (() -> Void)?
     var didTapFaqButton: (() -> Void)?
+    var isProWallet: Bool = false
     
     private let loadingSpinner = UIActivityIndicatorView(style: .large)
     private let assetHeight: CGFloat = ViewSizes.extralarge.rawValue
@@ -215,7 +216,9 @@ class AssetListTableView: UITableViewController, Subscriber {
             //Only an HBAR wallet requiring creation can go to the account screen without a wallet
             (currency.isHBAR && Store.state.requiresCreation(currency)) else { return }
         
-        didSelectCurrency?(currency)
+        if !isProWallet {
+            didSelectCurrency?(currency)
+        }
         
         GoogleAnalytics.logEvent(GoogleAnalytics.DisplayCurrency())
     }
@@ -251,9 +254,10 @@ extension AssetListTableView {
     }
     
     func showAddWalletsButton(_ show: Bool) {
-        buttonsStack.isHidden = show
-        manageAssetsButton.isHidden = !show
+        isProWallet = !show
+        buttonsStack.isHidden = !isProWallet
+        manageAssetsButton.isHidden = isProWallet
         
-        tableView.reloadData()
+        reload()
     }
 }

@@ -186,6 +186,7 @@ class HomeScreenCell: UITableViewCell, Subscriber {
     
     func removeProLabel(isHidden: Bool) {
         proLabel.isHidden = isHidden
+        priceChangeView.isHidden = !isHidden
     }
     
     override func prepareForReuse() {
