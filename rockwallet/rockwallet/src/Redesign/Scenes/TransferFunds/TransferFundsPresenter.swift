@@ -105,6 +105,16 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
         viewController?.displayConfirmation(responseDisplay: .init(config: config, viewModel: viewModel))
     }
     
+    func presentConfirmTransfer(actionResponse: Models.ConfirmTransfer.ActionResponse) {
+        let popupViewModel = PopupViewModel(title: .text(""),
+                                            body: "Your Funds were successfully sent to your RockWallet PRO account and will appear when confirmed on the Blockchain. Please swipe down to refresh.",
+                                            buttons: [.init(title: L10n.Button.finish)],
+                                            closeButton: .init(image: Asset.close.image))
+        
+        viewController?.displayConfirmTransfer(responseDisplay: .init(popupViewModel: popupViewModel,
+                                                                    popupConfig: Presets.Popup.whiteCentered))
+    }
+    
     func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
         guard let from = actionResponse.from,
               let to = actionResponse.to,

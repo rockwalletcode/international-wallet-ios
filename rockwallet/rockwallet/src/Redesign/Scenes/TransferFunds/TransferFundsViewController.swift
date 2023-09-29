@@ -152,6 +152,20 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
         coordinator?.showToastMessage(model: responseDisplay.model, configuration: responseDisplay.config)
     }
     
+    func displayConfirmTransfer(responseDisplay: TransferFundsModels.ConfirmTransfer.ResponseDisplay) {
+        guard let navigationController = coordinator?.navigationController else { return }
+        
+        coordinator?.showPopup(on: navigationController,
+                               blurred: false,
+                               with: responseDisplay.popupViewModel,
+                               config: responseDisplay.popupConfig,
+                               closeButtonCallback: { [weak self] in
+            self?.coordinator?.dismissFlow()
+        }, callbacks: [ { [weak self] in
+            self?.coordinator?.dismissFlow()
+        } ])
+    }
+    
     func displayConfirmation(responseDisplay: TransferFundsModels.ShowConfirmDialog.ResponseDisplay) {
         let _: WrapperPopupView<SwapConfirmationView>? = coordinator?.showPopup(with: responseDisplay.config,
                                                                                 viewModel: responseDisplay.viewModel,
@@ -160,7 +174,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                 if success {
                     LoadingView.show()
                     
-                    self?.interactor?.confirm(viewAction: .init())
+                    self?.interactor?.confirmTransfer(viewAction: .init())
                     
                     LoadingView.hideIfNeeded()
                 } else {

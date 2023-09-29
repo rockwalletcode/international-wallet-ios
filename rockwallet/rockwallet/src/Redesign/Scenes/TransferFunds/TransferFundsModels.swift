@@ -71,6 +71,19 @@ enum TransferFundsModels {
         }
     }
     
+    struct ConfirmTransfer {
+        struct ViewAction {
+        }
+        
+        struct ActionResponse {
+        }
+        
+        struct ResponseDisplay {
+            var popupViewModel: PopupViewModel
+            var popupConfig: PopupConfiguration
+        }
+    }
+    
     struct SwitchPlaces {
         struct ViewAction {
             var isDeposit: Bool?

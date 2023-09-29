@@ -107,6 +107,10 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                                                              isDeposit: dataStore?.isDeposit))
     }
     
+    func confirmTransfer(viewAction: Models.ConfirmTransfer.ViewAction) {
+        presenter?.presentConfirmTransfer(actionResponse: .init())
+    }
+    
     func confirm(viewAction: Models.Confirm.ViewAction) {
         guard let currency = dataStore?.currencies.first(where: { $0.code == dataStore?.fromAmount?.currency.code }),
               let address = dataStore?.coreSystem?.wallet(for: currency)?.receiveAddress,
