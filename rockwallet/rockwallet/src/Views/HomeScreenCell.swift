@@ -33,7 +33,7 @@ class HomeScreenCell: UITableViewCell, Subscriber {
     
     lazy var proLabel: UILabel = {
         let view = UILabel(font: Fonts.Body.three, color: Colors.Text.one)
-        view.text = "PRO"
+        view.text = L10n.Exchange.pro
         view.textAlignment = .center
         view.backgroundColor = Colors.Background.three
         view.layer.cornerRadius = CornerRadius.small.rawValue

@@ -50,14 +50,14 @@ class AssetListTableView: UITableViewController, Subscriber {
     private lazy var faqButton: FEButton = {
         let view = FEButton()
         view.configure(with: Presets.Button.blackIcon)
-        view.setup(with: .init(title: "Need help? Visit our FAQs", isUnderlined: true))
+        view.setup(with: .init(title: L10n.Exchange.faqButton, isUnderlined: true))
         view.addTarget(self, action: #selector(faqButtonTapped), for: .touchUpInside)
         return view
     }()
     
     private lazy var swipeLabel: UILabel = {
         let view = UILabel(font: Fonts.Body.two, color: Colors.Text.three)
-        view.text = "Swipe down to refresh your balance"
+        view.text = L10n.Exchange.swipeDown
         view.textAlignment = .center
         return view
     }()

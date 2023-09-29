@@ -122,13 +122,13 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                                                                 L10n.TransactionDetails.addressFromHeader : L10n.TransactionDetails.addressToHeader,
                                                                                  icon: .image(Asset.iconSelfCustodial.image),
                                                                                  title: L10n.About.AppName.android,
-                                                                                 subTitle: "(self-custodial)"))
+                                                                                      subTitle: "(\(L10n.Exchange.selfCustodial))"))
         
         let custodialView: TransferFundsViewModel? = .init(TransferFundsViewModel(headerTitle: !isDeposit ?
                                                                                  L10n.TransactionDetails.addressFromHeader : L10n.TransactionDetails.addressToHeader,
                                                                                  icon: .image(Asset.iconCustodial.image),
                                                                                  title: L10n.Segment.rockWalletPro,
-                                                                                 subTitle: "(custodial)"))
+                                                                                 subTitle: "(\(L10n.Exchange.custodial))"))
         let transferFundsModel: TransferFundsHorizontalViewModel? = isDeposit ?
         TransferFundsHorizontalViewModel(fromTransferView: selfCustodialView, toTransferView: custodialView) :
         TransferFundsHorizontalViewModel(fromTransferView: custodialView, toTransferView: selfCustodialView)
