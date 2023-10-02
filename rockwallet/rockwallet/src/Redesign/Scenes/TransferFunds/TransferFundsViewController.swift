@@ -169,20 +169,13 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
             self?.coordinator?.showPinInput(keyStore: self?.dataStore?.keyStore) { success in
                 if success {
                     LoadingView.show()
-                    
                     self?.interactor?.confirm(viewAction: .init())
                     
-                    LoadingView.hideIfNeeded()
                 } else {
                     self?.coordinator?.dismissFlow()
                 }
             }
         })
-    }
-    
-    func displayConfirm(responseDisplay: TransferFundsModels.Confirm.ResponseDisplay) {
-        LoadingView.hideIfNeeded()
-        coordinator?.showSwapInfo(from: responseDisplay.from, to: responseDisplay.to, exchangeId: responseDisplay.exchangeId)
     }
     
     // MARK: - Additional Helpers

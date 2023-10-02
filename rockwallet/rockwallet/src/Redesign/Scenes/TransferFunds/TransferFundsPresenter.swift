@@ -122,13 +122,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
-        guard let from = actionResponse.from,
-              let to = actionResponse.to,
-              let exchangeId = actionResponse.exchangeId else {
-            presentError(actionResponse: .init(error: GeneralError(errorMessage: L10n.ErrorMessages.noCurrencies)))
-            return
-        }
-        viewController?.displayConfirm(responseDisplay: .init(from: from, to: to, exchangeId: "\(exchangeId)"))
+        // TODO: present confirmation
     }
 
     // MARK: - Additional Helpers
