@@ -17,7 +17,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
 
     // MARK: - Overrides
     override var sceneLeftAlignedTitle: String? {
-        return "Transfer funds"
+        return L10n.Button.transferFunds
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,10 +105,6 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
 
     // MARK: - TransferFundsResponseDisplay
     
-    func displayError(responseDisplay: TransferFundsModels.ErrorPopup.ResponseDisplay) {
-//        interactor?.showAssetInfoPopup(viewAction: .init())
-    }
-    
     func displayNavigateAssetSelector(responseDisplay: TransferFundsModels.AssetSelector.ResponseDisplay) {
            coordinator?.showAssetSelector(title: responseDisplay.title,
                                           currencies: dataStore?.currencies,
@@ -136,7 +132,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
         
         tableView.invalidateTableViewIntrinsicContentSize()
         
-        continueButton.viewModel?.enabled = true // responseDisplay.continueEnabled
+        continueButton.viewModel?.enabled = responseDisplay.continueEnabled
         verticalButtons.wrappedView.getButton(continueButton)?.setup(with: continueButton.viewModel)
     }
     
@@ -174,7 +170,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                 if success {
                     LoadingView.show()
                     
-                    self?.interactor?.confirmTransfer(viewAction: .init())
+                    self?.interactor?.confirm(viewAction: .init())
                     
                     LoadingView.hideIfNeeded()
                 } else {

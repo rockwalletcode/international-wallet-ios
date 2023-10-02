@@ -833,7 +833,7 @@
 /* Settings button label */
 "Button.submit" = "Send";
 
-"Button.TransferFunds" = "TRANSFER FUNDS";
+"Button.TransferFunds" = "Transfer funds";
 
 "Button.TryLater" = "Try later";
 
@@ -1458,6 +1458,8 @@
 
 "Exchange.Custodial" = "custodial";
 
+"Exchange.EstimatedNetworkFee" = "Estimated Network fee";
+
 "Exchange.FaqButton" = "Need help? Visit our FAQs";
 
 "Exchange.PopupText" = "Please note, you are leaving the app and being directed to an external website.";
@@ -1466,7 +1468,11 @@
 
 "Exchange.SelfCustodial" = "self-custodial";
 
+"Exchange.sendFrom" = "Send from";
+
 "Exchange.SwipeDown" = "Swipe down to refresh your balance";
+
+"Exchange.WithdrawalFee" = "Withdrawal fee";
 
 "ExportConfirmation.cancel" = "Afbestille";
 

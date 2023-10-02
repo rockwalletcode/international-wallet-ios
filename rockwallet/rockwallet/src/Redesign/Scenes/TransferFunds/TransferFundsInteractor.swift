@@ -107,54 +107,9 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                                                              isDeposit: dataStore?.isDeposit))
     }
     
-    func confirmTransfer(viewAction: Models.ConfirmTransfer.ViewAction) {
-        presenter?.presentConfirmTransfer(actionResponse: .init())
-    }
-    
     func confirm(viewAction: Models.Confirm.ViewAction) {
-        guard let currency = dataStore?.currencies.first(where: { $0.code == dataStore?.fromAmount?.currency.code }),
-              let address = dataStore?.coreSystem?.wallet(for: currency)?.receiveAddress,
-              let from = dataStore?.fromAmount?.tokenValue
-        else { return }
-        
-        let formatter = ExchangeFormatter.current
-        formatter.locale = Locale(identifier: Constant.usLocaleCode)
-        formatter.usesGroupingSeparator = false
-        
-        let fromTokenValue = formatter.string(for: from) ?? ""
-        let toTokenValue = formatter.string(for: dataStore?.toAmount?.tokenValue) ?? ""
-        
-        let data = ExchangeRequestData(quoteId: dataStore?.quote?.quoteId,
-                                       depositQuantity: fromTokenValue,
-                                       withdrawalQuantity: toTokenValue,
-                                       destination: address)
-        
-        ExchangeWorker().execute(requestData: data) { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.dataStore?.exchange = data
-                self?.createTransaction(viewAction: .init(exchange: self?.dataStore?.exchange,
-                                                          currencies: self?.dataStore?.currencies,
-                                                          fromFeeAmount: self?.dataStore?.fromFeeAmount,
-                                                          fromAmount: self?.dataStore?.fromAmount,
-                                                          toAmountCode: self?.dataStore?.toAmount?.currency.code.uppercased()), completion: { [weak self] error in
-                    if let error {
-                        self?.presenter?.presentError(actionResponse: .init(error: error))
-                    } else {
-                        let from = self?.dataStore?.fromAmount?.currency.code
-                        let to = self?.dataStore?.toAmount?.currency.code
-                        
-                        self?.presenter?.presentConfirm(actionResponse: .init(from: from,
-                                                                              to: to,
-                                                                              exchangeId: self?.dataStore?.exchange?.exchangeId))
-                    }
-                })
-                
-            case .failure(let error):
-                print(error)
-//                self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.failed(error: error)))
-            }
-        }
+        // TODO: add transaction api call
+        presenter?.presentConfirm(actionResponse: .init())
     }
     
     func switchPlaces(viewAction: Models.SwitchPlaces.ViewAction) {

@@ -821,8 +821,8 @@ internal enum L10n {
     internal static let skip = L10n.tr("Localizable", "Button.skip", fallback: "Skip")
     /// Settings button label
     internal static let submit = L10n.tr("Localizable", "Button.submit", fallback: "Submit")
-    /// TRANSFER FUNDS
-    internal static let transferFunds = L10n.tr("Localizable", "Button.TransferFunds", fallback: "TRANSFER FUNDS")
+    /// Transfer funds
+    internal static let transferFunds = L10n.tr("Localizable", "Button.TransferFunds", fallback: "Transfer funds")
     /// Try later
     internal static let tryLater = L10n.tr("Localizable", "Button.TryLater", fallback: "Try later")
     /// Verify
@@ -1540,6 +1540,8 @@ internal enum L10n {
   internal enum Exchange {
     /// custodial
     internal static let custodial = L10n.tr("Localizable", "Exchange.Custodial", fallback: "custodial")
+    /// Estimated Network fee
+    internal static let estimatedNetworkFee = L10n.tr("Localizable", "Exchange.EstimatedNetworkFee", fallback: "Estimated Network fee")
     /// Need help? Visit our FAQs
     internal static let faqButton = L10n.tr("Localizable", "Exchange.FaqButton", fallback: "Need help? Visit our FAQs")
     /// Please note, you are leaving the app and being directed to an external website.
@@ -1548,8 +1550,12 @@ internal enum L10n {
     internal static let pro = L10n.tr("Localizable", "Exchange.Pro", fallback: "PRO")
     /// self-custodial
     internal static let selfCustodial = L10n.tr("Localizable", "Exchange.SelfCustodial", fallback: "self-custodial")
+    /// Send from
+    internal static let sendFrom = L10n.tr("Localizable", "Exchange.sendFrom", fallback: "Send from")
     /// Swipe down to refresh your balance
     internal static let swipeDown = L10n.tr("Localizable", "Exchange.SwipeDown", fallback: "Swipe down to refresh your balance")
+    /// Withdrawal fee
+    internal static let withdrawalFee = L10n.tr("Localizable", "Exchange.WithdrawalFee", fallback: "Withdrawal fee")
   }
   internal enum ExportConfirmation {
     /// Cancel

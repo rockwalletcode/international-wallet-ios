@@ -13,6 +13,22 @@ import Lottie
 import WebKit
 
 class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, WKNavigationDelegate {
+    
+    enum SegmentControlCases: String, CaseIterable {
+        case rockWallet
+        case rockWalletPro
+        
+        var title: String {
+            switch self {
+            case .rockWallet:
+                return L10n.About.AppName.android.uppercased()
+                
+            case .rockWalletPro:
+                return L10n.Segment.rockWalletPro.uppercased()
+            }
+        }
+    }
+    
     private let walletAuthenticator: WalletAuthenticator
     private let notificationHandler = NotificationHandler()
     private let coreSystem: CoreSystem
@@ -357,8 +373,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private func setupSegmentControl() {
         let segmentControlModel = SegmentControlViewModel(selectedIndex: 0,
-                                                          segments: [.init(image: nil, title: L10n.About.AppName.android.uppercased()),
-                                                                     .init(image: nil, title: L10n.Segment.rockWalletPro.uppercased())])
+                                                          segments: [.init(image: nil, title: SegmentControlCases.rockWallet.title),
+                                                                     .init(image: nil, title: SegmentControlCases.rockWalletPro.title)])
         segmentControl.configure(with: .init())
         segmentControl.setup(with: segmentControlModel)
         segmentControl.didChangeValue = { [weak self] segment in
@@ -372,23 +388,25 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private func setSegment(_ segment: Int) {
         segmentControl.selectSegment(index: segment)
+        let selectedSegment = SegmentControlCases.allCases[segment]
         
         guard let profile = UserManager.shared.profile else { return }
         
-        // TODO: update the segment contol indexes
         guard profile.kycAccessRights.hasExchangeAccess else {
-            if segment == 1 {
+            if selectedSegment == .rockWalletPro {
                 didTapProSegment?()
                 segmentControl.selectSegment(index: 0)
             }
             return
         }
+                
+        tabBarContainerView.isHidden = selectedSegment == .rockWalletPro
+        exchangeButtonsView.isHidden = selectedSegment == .rockWallet
         
-        tabBarContainerView.isHidden = segment == 1
-        exchangeButtonsView.isHidden = segment == 0
+        totalAssetsTitleLabel.text = selectedSegment == .rockWalletPro ?
+        L10n.Segment.rockWalletPro : "\(L10n.HomeScreen.wallet) \(L10n.HomeScreen.totalAssets.lowercased())"
         
-        totalAssetsTitleLabel.text = segment == 1 ? L10n.Segment.rockWalletPro : "\(L10n.HomeScreen.wallet) \(L10n.HomeScreen.totalAssets.lowercased())"
-        assetListTableView.showAddWalletsButton(segment == 0)
+        assetListTableView.showAddWalletsButton(selectedSegment == .rockWallet)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -399,7 +417,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private func setupProButtons() {
         transferFunds.configure(with: Presets.Button.secondary)
-        transferFunds.setup(with: .init(title: L10n.Button.transferFunds,
+        transferFunds.setup(with: .init(title: L10n.Button.transferFunds.uppercased(),
                                         callback: { [weak self] in
             self?.transferFundsTapped()
         }))
