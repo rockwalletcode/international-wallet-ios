@@ -108,15 +108,21 @@ class AssetListTableView: UITableViewController, Subscriber {
                                               width: tableViewWidth,
                                               height: manageAssetsButtonHeight + (Margins.large.rawValue * 2)))
         
-        manageAssetsButton.frame = CGRect(x: Margins.large.rawValue,
-                                          y: Margins.large.rawValue,
-                                          width: footerView.frame.width - (2 * Margins.large.rawValue),
-                                          height: manageAssetsButtonHeight)
+        footerView.addSubview(manageAssetsButton)
+        manageAssetsButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview().inset(Margins.large.rawValue)
+            make.centerY.equalToSuperview().inset(Margins.large.rawValue)
+            make.width.equalTo(footerView.snp.width).inset(Margins.extraHuge.rawValue)
+            make.height.equalTo(manageAssetsButtonHeight)
+        }
         
-        buttonsStack.frame = CGRect(x: Margins.large.rawValue,
-                                    y: Margins.large.rawValue,
-                                    width: footerView.frame.width - (2 * Margins.large.rawValue),
-                                    height: manageAssetsButtonHeight)
+        footerView.addSubview(buttonsStack)
+        buttonsStack.snp.makeConstraints { make in
+            make.centerX.equalToSuperview().inset(Margins.large.rawValue)
+            make.centerY.equalToSuperview().inset(Margins.large.rawValue)
+            make.width.equalTo(footerView.snp.width).inset(Margins.extraHuge.rawValue)
+            make.height.equalTo(manageAssetsButtonHeight)
+        }
         
         footerView.addSubview(manageAssetsButton)
         footerView.addSubview(buttonsStack)

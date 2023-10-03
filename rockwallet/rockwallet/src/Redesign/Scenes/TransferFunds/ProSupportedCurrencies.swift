@@ -32,7 +32,7 @@ class ProSupportedCurrenciesMapper: ModelMapper<ProSupportedCurrenciesResponseDa
     override func getModel(from response: ProSupportedCurrenciesResponseData?) -> [ProSupportedCurrenciesModel]? {
         guard let response = response else { return nil }
         
-        var supportedCurrencies = response.supportedCurrencies?.compactMap({
+        let supportedCurrencies = response.supportedCurrencies?.compactMap({
             return ProSupportedCurrenciesModel(currency: $0.currency ?? "",
                                                blockchain: $0.blockchain ?? "",
                                                address: $0.address ?? "",
