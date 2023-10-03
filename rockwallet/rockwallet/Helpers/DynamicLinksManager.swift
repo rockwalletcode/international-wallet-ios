@@ -23,7 +23,7 @@ class DynamicLinksManager {
         case setPassword = "op=password"
         case home
         case profile
-        case oauth2 = "op=oauth2"
+        case oauth2 = "oauth2"
     }
     
     var dynamicLinkType: DynamicLinkType?
@@ -85,15 +85,11 @@ class DynamicLinksManager {
     }
     
     private static func handleOauth2Login(with url: URL) {
-        guard let parameters = url.queryParameters,
-              let redirectUri = parameters["redirect_uri"],
-              let urlScope = parameters["scope"] else {
+        guard let parameters = url.queryParameters else {
             return
         }
         
         DynamicLinksManager.shared.dynamicLinkType = .oauth2
         DynamicLinksManager.shared.urlParameters = parameters
-        DynamicLinksManager.shared.redirectUri = redirectUri
-        DynamicLinksManager.shared.urlScope = urlScope
     }
 }

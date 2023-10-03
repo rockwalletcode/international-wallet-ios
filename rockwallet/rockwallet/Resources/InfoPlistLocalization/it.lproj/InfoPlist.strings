@@ -132,6 +132,8 @@
 
 "Account.explanationSSN" = "We are required to verify the identity of all our users to comply with regulations.\n\nThat is why we need to collect your Social Security Number (SSN). We take the security and privacy of your personal information seriously, and use it only for the purposes of identity verification and compliance. This process will have no impact on your credit score.";
 
+"Account.Express" = "Express";
+
 "Account.FinalizingDecision" = "Finalizing the decision";
 
 "Account.ForgotPassword" = "Forgot password?";
@@ -150,6 +152,10 @@
 
 /* Retry verification description */
 "Account.IdVerificationRetry" = "Please try to complete your verification again, while keeping the following in mind:\n\n- Please ensure your type of ID is supported.\n\n- Make sure the area is well-lit and there's no glare on the ID or your face.\n\n- Double check that your ID isn't expired or invalid.";
+
+"Account.InfoDialog.ExpressVerification" = "You have access to: \n・Buy with a %@ lifetime limit.\n・Swap with a %@ lifetime limit.\n・Send, Receive and Store your crypto assets";
+
+"Account.InfoDialog.FullVerification" = "You have access to: \n・Buy and Sell with a %@ weekly limit.\n・Swap with a %@ daily limit.\n・Send, Receive and Store your crypto assets";
 
 "Account.infoLinkSSN" = "Why do we need your SSN?";
 
@@ -178,6 +184,8 @@
 "Account.MissingDataPromptTitle" = "Add the missing information";
 
 "Account.Monthly" = "Monthly";
+
+"Account.NationalityCitizenship" = "Nationality/Citizenship";
 
 "Account.NewToRockwallet" = "New to RockWallet?";
 
@@ -230,6 +238,8 @@
 "Account.SignIn" = "Sign in";
 
 "Account.SocialSecurityNumber" = "Social Security Number";
+
+"Account.SocialSecurityNumberLastFourDigits" = "Social Security Number (last 4 digits)";
 
 "Account.SocialSecurityNumberRequired" = "Social security number*";
 
@@ -761,7 +771,7 @@
 
 "Button.iUnderstand" = "I understand";
 
-"Button.LaunchExchange" = "LAUNCH EXCHANGE";
+"Button.LaunchExchange" = "LAUNCH PRO";
 
 "Button.letsGo" = "Let’s go!";
 
@@ -832,6 +842,8 @@
 
 /* Yes button */
 "Button.yes" = "Sì";
+
+"Buttons.PortalLogin" = "Portal";
 
 /* 3D Secure label on buy flow */
 "Buy.3DSecure" = "3D Secure";
@@ -1575,6 +1587,8 @@
 /* (Tap here to) trade (your assets for other assets) */
 "HomeScreen.trade" = "Scambio";
 
+"HomeScreen.Wallet" = "Wallet";
+
 /* Checking private key balance progress view text */
 "Import.checking" = "Verifica del saldo della chiave privata...";
 
@@ -1673,6 +1687,14 @@
 
 /* Wipe wallet button */
 "JailbreakWarnings.wipe" = "Cancella";
+
+"KYCExpressSplash.Buttons.continue" = "continue with express verification";
+
+"KYCExpressSplash.Buttons.goHome" = "go to homepage";
+
+"KYCExpressSplash.subtitle" = "By completing the express verification you’ll unlock the power to buy, and swap with unmatched ease. Embrace the next level of cryptocurrency management without any hassle.";
+
+"KYCExpressSplash.title" = "Release Rockwallet full potential!";
 
 /* Approve link wallet button label */
 "LinkWallet.approve" = "Approva";
@@ -1984,6 +2006,14 @@
 /* Enable face ID prompt title */
 "Prompts.FaceId.title" = "Abilita Face ID";
 
+"Prompts.KYCExpress.action" = "Express Verification";
+
+"Prompts.KYCExpress.body" = "Gain access to powerful features like buy, sell and swap!";
+
+"Prompts.KYCExpress.title" = "Unlock Rockwallet's Full Potential";
+
+"Prompts.KYCFull.action" = "Get fully verified";
+
 "Prompts.LimitsAuthentication.body" = "Just one more small step, and you'll be able to enjoy your new limits.";
 
 "Prompts.LimitsAuthentication.title" = "Finish setting up your new Buy limits.";
@@ -2053,6 +2083,12 @@
 
 /* Upgrade PIN prompt title. */
 "Prompts.UpgradePin.title" = "Aggiorna il PIN";
+
+"Prompts.VerificationPending.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
+
+"Prompts.VerificationPending.button" = "Complete verification";
+
+"Prompts.VerificationPending.title" = "Verification pending";
 
 "Prompts.VerifyAccount.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
 
@@ -2419,7 +2455,7 @@
 /* Security center fingerprint authentication button */
 "SecurityCenter.touchIdTitle.android" = "Autenticazione Impronta Digitale";
 
-"Segment.RockWalletPro" = "ROCKWALLET PRO";
+"Segment.RockWalletPro" = "RockWallet PRO";
 
 /* Segwit enabled confirmation body */
 "Segwit.ConfirmationConfirmationBody" = "Thank you for helping move bitcoin forward!";
@@ -2496,7 +2532,7 @@
 
 "Sell.WithdrawDetails" = "Sell and withdraw details";
 
-"Sell.YourAchSellLimits" = "Your ACH withdrawal limits";
+"Sell.YourAchSellLimits" = "Your ACH sell limits";
 
 "Sell.yourOrder" = "You sell:";
 

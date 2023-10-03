@@ -42,6 +42,7 @@ struct ProfileResponseData: ModelResponse {
         let hasAchAccess: Bool
         let hasAchSellAccess: Bool
         let hasCardSellAccess: Bool
+        let hasExchangeAccess: Bool
         let restrictionReason: String?
     }
     
@@ -130,6 +131,7 @@ struct Profile: Model {
         let hasAchAccess: Bool
         let hasAchSellAccess: Bool
         let hasCardSellAccess: Bool
+        let hasExchangeAccess: Bool
         let restrictionReason: RestrictionReason?
         
         enum RestrictionReason: String {
@@ -192,6 +194,7 @@ class ProfileMapper: ModelMapper<ProfileResponseData, Profile> {
                                               hasAchAccess: response.kycAccessRights?.hasAchAccess ?? false,
                                               hasAchSellAccess: response.kycAccessRights?.hasAchSellAccess ?? false,
                                               hasCardSellAccess: response.kycAccessRights?.hasCardSellAccess ?? false,
+                                              hasExchangeAccess: response.kycAccessRights?.hasExchangeAccess ?? false,
                                               restrictionReason: .init(rawValue: response.kycAccessRights?.restrictionReason ?? "")),
                        isMigrated: response.isRegistered ?? false,
                        kycFailureReason: response.kycFailureReason,
