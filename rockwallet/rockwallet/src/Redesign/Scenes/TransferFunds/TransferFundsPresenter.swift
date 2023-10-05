@@ -127,7 +127,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
 
     // MARK: - Additional Helpers
 
-    func setupTransferFundsView(isDeposit: Bool) -> TransferFundsHorizontalViewModel? {
+    func setupTransferFundsView(isDeposit: Bool) -> SwitchFromToHorizontalViewModel? {
         let selfCustodialView: TransferFundsViewModel? = .init(TransferFundsViewModel(headerTitle: isDeposit ?
                                                                                 L10n.TransactionDetails.addressFromHeader : L10n.TransactionDetails.addressToHeader,
                                                                                  icon: .image(Asset.iconSelfCustodial.image),
@@ -139,9 +139,9 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                                                                  icon: .image(Asset.iconCustodial.image),
                                                                                  title: L10n.Segment.rockWalletPro,
                                                                                  subTitle: "(\(L10n.Exchange.custodial))"))
-        let transferFundsModel: TransferFundsHorizontalViewModel? = isDeposit ?
-        TransferFundsHorizontalViewModel(fromTransferView: selfCustodialView, toTransferView: custodialView) :
-        TransferFundsHorizontalViewModel(fromTransferView: custodialView, toTransferView: selfCustodialView)
+        let transferFundsModel: SwitchFromToHorizontalViewModel? = isDeposit ?
+        SwitchFromToHorizontalViewModel(fromTransferView: selfCustodialView, toTransferView: custodialView) :
+        SwitchFromToHorizontalViewModel(fromTransferView: custodialView, toTransferView: selfCustodialView)
         
         return transferFundsModel
     }

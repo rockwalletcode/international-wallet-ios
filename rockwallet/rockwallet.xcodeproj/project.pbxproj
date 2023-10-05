@@ -530,7 +530,7 @@
 		9F0EA16C25E2904400D4225E /* WidgetDataShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0EA16325E2902700D4225E /* WidgetDataShareService.swift */; };
 		9FC529D02604FAA300855473 /* BreadwalletWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9FC529D42604FAA300855473 /* BreadwalletWidget.intentdefinition */; };
 		C40FF99F2ABD6BAB00EDEF1B /* TransferFundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FF99E2ABD6BAB00EDEF1B /* TransferFundsView.swift */; };
-		C40FF9A12ABD8E2200EDEF1B /* TransferFundsHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FF9A02ABD8E2100EDEF1B /* TransferFundsHorizontalView.swift */; };
+		C40FF9A12ABD8E2200EDEF1B /* SwitchFromToHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FF9A02ABD8E2100EDEF1B /* SwitchFromToHorizontalView.swift */; };
 		C41E9E352ABC311600AB8170 /* TransferFundsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E2E2ABC311600AB8170 /* TransferFundsStore.swift */; };
 		C41E9E362ABC311600AB8170 /* TransferFundsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E2F2ABC311600AB8170 /* TransferFundsPresenter.swift */; };
 		C41E9E372ABC311600AB8170 /* TransferFundsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E302ABC311600AB8170 /* TransferFundsModels.swift */; };
@@ -1376,7 +1376,7 @@
 		A24399A172C828ECD708E17D /* MarketInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketInfo.swift; sourceTree = "<group>"; };
 		A2439F5D8263945E73EFF4A3 /* CacheService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		C40FF99E2ABD6BAB00EDEF1B /* TransferFundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsView.swift; sourceTree = "<group>"; };
-		C40FF9A02ABD8E2100EDEF1B /* TransferFundsHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsHorizontalView.swift; sourceTree = "<group>"; };
+		C40FF9A02ABD8E2100EDEF1B /* SwitchFromToHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchFromToHorizontalView.swift; sourceTree = "<group>"; };
 		C41E9E2E2ABC311600AB8170 /* TransferFundsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsStore.swift; sourceTree = "<group>"; };
 		C41E9E2F2ABC311600AB8170 /* TransferFundsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsPresenter.swift; sourceTree = "<group>"; };
 		C41E9E302ABC311600AB8170 /* TransferFundsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsModels.swift; sourceTree = "<group>"; };
@@ -2624,7 +2624,7 @@
 				7BE9CB74292242290016C0F4 /* VerticalButtonsView.swift */,
 				D712BD1129DACBAB00C2F09E /* BottomBarItem.swift */,
 				C40FF99E2ABD6BAB00EDEF1B /* TransferFundsView.swift */,
-				C40FF9A02ABD8E2100EDEF1B /* TransferFundsHorizontalView.swift */,
+				C40FF9A02ABD8E2100EDEF1B /* SwitchFromToHorizontalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -4017,7 +4017,7 @@
 				04185DC229D179B700AECBFA /* TwoStepAuthenticationViewController.swift in Sources */,
 				3A4972C52602E0ED0002C3EC /* IosBRDAuthProvider.swift in Sources */,
 				CEC6AA4D1DF0741100EE5AFD /* ModalDisplayable.swift in Sources */,
-				C40FF9A12ABD8E2200EDEF1B /* TransferFundsHorizontalView.swift in Sources */,
+				C40FF9A12ABD8E2200EDEF1B /* SwitchFromToHorizontalView.swift in Sources */,
 				7EBC6B062848ABC5000A301F /* RegistrationConfirmationStore.swift in Sources */,
 				7B8CF81E28A3D0C600D54D14 /* CardDetailsFormatter.swift in Sources */,
 				7BF5D4EC296BFC8D00942ADB /* SignInModels.swift in Sources */,

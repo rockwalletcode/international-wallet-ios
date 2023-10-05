@@ -37,7 +37,7 @@ class BaseExchangeTableViewController<C: CoordinatableRoutes,
         
         tableView.register(WrapperTableViewCell<MainSwapView>.self)
         tableView.register(WrapperTableViewCell<SwapCurrencyView>.self)
-        tableView.register(WrapperTableViewCell<TransferFundsHorizontalView>.self)
+        tableView.register(WrapperTableViewCell<SwitchFromToHorizontalView>.self)
         
         tableView.delaysContentTouches = false
         tableView.backgroundColor = Colors.Background.two

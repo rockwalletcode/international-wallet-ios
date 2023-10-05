@@ -1,5 +1,5 @@
 // 
-//  TransferFundsHorizontalView.swift
+//  SwitchFromToHorizontalView.swift
 //  rockwallet
 //
 //  Created by Dijana Angelovska on 22.9.23.
@@ -10,19 +10,19 @@
 
 import UIKit
 
-struct TransferFundsHorizontalViewConfiguration: Configurable {
+struct SwitchFromToHorizontalViewConfiguration: Configurable {
     var shadow: ShadowConfiguration? = Presets.Shadow.light
     var background: BackgroundConfiguration? = .init(backgroundColor: Colors.Background.one,
                                                      tintColor: Colors.Text.one,
                                                      border: Presets.Border.mediumPlain)
 }
 
-struct TransferFundsHorizontalViewModel: ViewModel {
+struct SwitchFromToHorizontalViewModel: ViewModel {
     var fromTransferView: TransferFundsViewModel? = .init()
     var toTransferView: TransferFundsViewModel? = .init()
 }
 
-class TransferFundsHorizontalView: FEView<TransferFundsHorizontalViewConfiguration, TransferFundsHorizontalViewModel> {
+class SwitchFromToHorizontalView: FEView<SwitchFromToHorizontalViewConfiguration, SwitchFromToHorizontalViewModel> {
     
     private lazy var contentStack: UIStackView = {
         let view = UIStackView()
@@ -31,24 +31,24 @@ class TransferFundsHorizontalView: FEView<TransferFundsHorizontalViewConfigurati
         return view
     }()
     
-    private lazy var fromTransferView: TransferFundsView = {
+    private lazy var fromView: TransferFundsView = {
         let view = TransferFundsView()
         return view
     }()
     
-    private lazy var transferFundsButton: FEButton = {
+    private lazy var switchPlacesButton: FEButton = {
         let view = FEButton()
         view.setImage(Asset.transferFunds.image, for: .normal)
-        view.addTarget(self, action: #selector(transferFundsButtonTapped), for: .touchUpInside)
+        view.addTarget(self, action: #selector(switchPlacesButtonTapped), for: .touchUpInside)
         return view
     }()
     
-    private lazy var toTransferView: TransferFundsView = {
+    private lazy var toView: TransferFundsView = {
         let view = TransferFundsView()
         return view
     }()
     
-    var didTapTransferFunds: (() -> Void)?
+    var didTapSwitchPlacesButton: (() -> Void)?
     
     override func setupSubviews() {
         super.setupSubviews()
@@ -59,22 +59,22 @@ class TransferFundsHorizontalView: FEView<TransferFundsHorizontalViewConfigurati
             make.bottom.equalToSuperview().priority(.low)
         }
         
-        contentStack.addArrangedSubview(fromTransferView)
-        contentStack.addArrangedSubview(toTransferView)
+        contentStack.addArrangedSubview(fromView)
+        contentStack.addArrangedSubview(toView)
         
-        content.addSubview(transferFundsButton)
-        transferFundsButton.snp.makeConstraints { make in
+        content.addSubview(switchPlacesButton)
+        switchPlacesButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.centerX.equalToSuperview()
             make.height.width.equalTo(Margins.extraExtraHuge.rawValue)
         }
     }
     
-    override func configure(with config: TransferFundsHorizontalViewConfiguration?) {
+    override func configure(with config: SwitchFromToHorizontalViewConfiguration?) {
         super.configure(with: config)
         
-        backgroundView = fromTransferView
-        shadowView = fromTransferView
+        backgroundView = fromView
+        shadowView = fromView
         
         configure(background: config?.background)
         configure(shadow: config?.shadow)
@@ -82,18 +82,18 @@ class TransferFundsHorizontalView: FEView<TransferFundsHorizontalViewConfigurati
         guard let background = config?.background,
         let shadow = config?.shadow else { return }
         
-        toTransferView.setBackground(with: background)
-        toTransferView.layer.setShadow(with: shadow)
+        toView.setBackground(with: background)
+        toView.layer.setShadow(with: shadow)
     }
     
-    override func setup(with viewModel: TransferFundsHorizontalViewModel?) {
+    override func setup(with viewModel: SwitchFromToHorizontalViewModel?) {
         super.setup(with: viewModel)
         
-        fromTransferView.setup(with: viewModel?.fromTransferView)
-        toTransferView.setup(with: viewModel?.toTransferView)
+        fromView.setup(with: viewModel?.fromTransferView)
+        toView.setup(with: viewModel?.toTransferView)
     }
     
-    @objc private func transferFundsButtonTapped(_ sender: UIButton?) {
-        didTapTransferFunds?()
+    @objc private func switchPlacesButtonTapped(_ sender: UIButton?) {
+        didTapSwitchPlacesButton?()
     }
 }

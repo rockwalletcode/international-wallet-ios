@@ -93,7 +93,7 @@ enum TransferFundsModels {
         }
         
         struct ResponseDisplay {
-            var mainHorizontalViewModel: TransferFundsHorizontalViewModel?
+            var mainHorizontalViewModel: SwitchFromToHorizontalViewModel?
         }
     }
 }

@@ -42,8 +42,8 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
     }
     
     func tableView(_ tableView: UITableView, transferFundsCellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let model = dataSource?.itemIdentifier(for: indexPath) as? TransferFundsHorizontalViewModel,
-              let cell: WrapperTableViewCell<TransferFundsHorizontalView> = tableView.dequeueReusableCell(for: indexPath)
+        guard let model = dataSource?.itemIdentifier(for: indexPath) as? SwitchFromToHorizontalViewModel,
+              let cell: WrapperTableViewCell<SwitchFromToHorizontalView> = tableView.dequeueReusableCell(for: indexPath)
         else {
             return super.tableView(tableView, cellForRowAt: indexPath)
         }
@@ -138,7 +138,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
     
     func displaySwitchPlaces(responseDisplay: TransferFundsModels.SwitchPlaces.ResponseDisplay) {
         guard let section = sections.firstIndex(where: { $0.hashValue == AssetModels.Section.transferFunds.hashValue }),
-              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<TransferFundsHorizontalView> else { return }
+              let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? WrapperTableViewCell<SwitchFromToHorizontalView> else { return }
         
         cell.wrappedView.setup(with: responseDisplay.mainHorizontalViewModel)
         tableView.invalidateTableViewIntrinsicContentSize()
