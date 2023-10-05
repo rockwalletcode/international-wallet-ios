@@ -529,6 +529,14 @@
 		7EF45F91284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F90284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift */; };
 		9F0EA16C25E2904400D4225E /* WidgetDataShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0EA16325E2902700D4225E /* WidgetDataShareService.swift */; };
 		9FC529D02604FAA300855473 /* BreadwalletWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9FC529D42604FAA300855473 /* BreadwalletWidget.intentdefinition */; };
+		C40FF99F2ABD6BAB00EDEF1B /* TransferFundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FF99E2ABD6BAB00EDEF1B /* TransferFundsView.swift */; };
+		C40FF9A12ABD8E2200EDEF1B /* SwitchFromToHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FF9A02ABD8E2100EDEF1B /* SwitchFromToHorizontalView.swift */; };
+		C41E9E352ABC311600AB8170 /* TransferFundsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E2E2ABC311600AB8170 /* TransferFundsStore.swift */; };
+		C41E9E362ABC311600AB8170 /* TransferFundsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E2F2ABC311600AB8170 /* TransferFundsPresenter.swift */; };
+		C41E9E372ABC311600AB8170 /* TransferFundsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E302ABC311600AB8170 /* TransferFundsModels.swift */; };
+		C41E9E382ABC311600AB8170 /* TransferFundsVIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E312ABC311600AB8170 /* TransferFundsVIP.swift */; };
+		C41E9E392ABC311600AB8170 /* TransferFundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E322ABC311600AB8170 /* TransferFundsViewController.swift */; };
+		C41E9E3A2ABC311600AB8170 /* TransferFundsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E332ABC311600AB8170 /* TransferFundsInteractor.swift */; };
 		C43EFBE829DC33620067FE70 /* LogoutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EFBE729DC33620067FE70 /* LogoutWorker.swift */; };
 		C4520F102875C726003FFB7F /* AssetSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4520F092875C726003FFB7F /* AssetSelectionViewController.swift */; };
 		C458C7CB29E6D22E00146C0D /* PaymailAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458C7C429E6D22E00146C0D /* PaymailAddressStore.swift */; };
@@ -538,6 +546,7 @@
 		C458C7CF29E6D22F00146C0D /* PaymailAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458C7C829E6D22E00146C0D /* PaymailAddressViewController.swift */; };
 		C458C7D029E6D22F00146C0D /* PaymailAddressInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458C7C929E6D22E00146C0D /* PaymailAddressInteractor.swift */; };
 		C461E47829E430E7006BAC3A /* ShareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E47729E430E7006BAC3A /* ShareItem.swift */; };
+		C46410952AC570A1001F78FD /* ProSupportedCurrencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */; };
 		C46C28FE287EBF4F0035C843 /* BaseInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C28F7287EBF4F0035C843 /* BaseInfoStore.swift */; };
 		C46C28FF287EBF4F0035C843 /* BaseInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C28F8287EBF4F0035C843 /* BaseInfoPresenter.swift */; };
 		C46C2900287EBF4F0035C843 /* BaseInfoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C28F9287EBF4F0035C843 /* BaseInfoModels.swift */; };
@@ -1366,6 +1375,14 @@
 		A243988A5DA12A405BFEB9F6 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A24399A172C828ECD708E17D /* MarketInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketInfo.swift; sourceTree = "<group>"; };
 		A2439F5D8263945E73EFF4A3 /* CacheService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		C40FF99E2ABD6BAB00EDEF1B /* TransferFundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsView.swift; sourceTree = "<group>"; };
+		C40FF9A02ABD8E2100EDEF1B /* SwitchFromToHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchFromToHorizontalView.swift; sourceTree = "<group>"; };
+		C41E9E2E2ABC311600AB8170 /* TransferFundsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsStore.swift; sourceTree = "<group>"; };
+		C41E9E2F2ABC311600AB8170 /* TransferFundsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsPresenter.swift; sourceTree = "<group>"; };
+		C41E9E302ABC311600AB8170 /* TransferFundsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsModels.swift; sourceTree = "<group>"; };
+		C41E9E312ABC311600AB8170 /* TransferFundsVIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsVIP.swift; sourceTree = "<group>"; };
+		C41E9E322ABC311600AB8170 /* TransferFundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsViewController.swift; sourceTree = "<group>"; };
+		C41E9E332ABC311600AB8170 /* TransferFundsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsInteractor.swift; sourceTree = "<group>"; };
 		C43EFBE729DC33620067FE70 /* LogoutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutWorker.swift; sourceTree = "<group>"; };
 		C4520F092875C726003FFB7F /* AssetSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSelectionViewController.swift; sourceTree = "<group>"; };
 		C458C7C429E6D22E00146C0D /* PaymailAddressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailAddressStore.swift; sourceTree = "<group>"; };
@@ -1375,6 +1392,7 @@
 		C458C7C829E6D22E00146C0D /* PaymailAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailAddressViewController.swift; sourceTree = "<group>"; };
 		C458C7C929E6D22E00146C0D /* PaymailAddressInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailAddressInteractor.swift; sourceTree = "<group>"; };
 		C461E47729E430E7006BAC3A /* ShareItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareItem.swift; sourceTree = "<group>"; };
+		C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSupportedCurrencies.swift; sourceTree = "<group>"; };
 		C46C28F7287EBF4F0035C843 /* BaseInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoStore.swift; sourceTree = "<group>"; };
 		C46C28F8287EBF4F0035C843 /* BaseInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoPresenter.swift; sourceTree = "<group>"; };
 		C46C28F9287EBF4F0035C843 /* BaseInfoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoModels.swift; sourceTree = "<group>"; };
@@ -2406,6 +2424,7 @@
 				7E5B305C28A67FDC0065D2D8 /* REUSABLE */,
 				7E52B79D286EF4CE003D2249 /* Swap */,
 				7EF2187D2862F07A006ABCC1 /* Buy */,
+				C41E9E2C2ABC2D0000AB8170 /* TransferFunds */,
 				7EF45F7C2847671F00D1F7B0 /* KYC */,
 			);
 			path = Scenes;
@@ -2604,6 +2623,8 @@
 				7EB838452849D49A00C7CC05 /* MultipleButtonsView.swift */,
 				7BE9CB74292242290016C0F4 /* VerticalButtonsView.swift */,
 				D712BD1129DACBAB00C2F09E /* BottomBarItem.swift */,
+				C40FF99E2ABD6BAB00EDEF1B /* TransferFundsView.swift */,
+				C40FF9A02ABD8E2100EDEF1B /* SwitchFromToHorizontalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3086,6 +3107,20 @@
 				9FDDE55625D5B79D00E42BE3 /* ChartViewModel.swift */,
 			);
 			path = ChartView;
+			sourceTree = "<group>";
+		};
+		C41E9E2C2ABC2D0000AB8170 /* TransferFunds */ = {
+			isa = PBXGroup;
+			children = (
+				C41E9E2E2ABC311600AB8170 /* TransferFundsStore.swift */,
+				C41E9E2F2ABC311600AB8170 /* TransferFundsPresenter.swift */,
+				C41E9E302ABC311600AB8170 /* TransferFundsModels.swift */,
+				C41E9E312ABC311600AB8170 /* TransferFundsVIP.swift */,
+				C41E9E322ABC311600AB8170 /* TransferFundsViewController.swift */,
+				C41E9E332ABC311600AB8170 /* TransferFundsInteractor.swift */,
+				C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */,
+			);
+			path = TransferFunds;
 			sourceTree = "<group>";
 		};
 		C43EFBE929DC602D0067FE70 /* Workers */ = {
@@ -3982,6 +4017,7 @@
 				04185DC229D179B700AECBFA /* TwoStepAuthenticationViewController.swift in Sources */,
 				3A4972C52602E0ED0002C3EC /* IosBRDAuthProvider.swift in Sources */,
 				CEC6AA4D1DF0741100EE5AFD /* ModalDisplayable.swift in Sources */,
+				C40FF9A12ABD8E2200EDEF1B /* SwitchFromToHorizontalView.swift in Sources */,
 				7EBC6B062848ABC5000A301F /* RegistrationConfirmationStore.swift in Sources */,
 				7B8CF81E28A3D0C600D54D14 /* CardDetailsFormatter.swift in Sources */,
 				7BF5D4EC296BFC8D00942ADB /* SignInModels.swift in Sources */,
@@ -4031,6 +4067,7 @@
 				043DB5D029EDC7B900DEB8FD /* SetTwoStepAuthWorker.swift in Sources */,
 				7B39478E297000ED007D405E /* ForgotPasswordModels.swift in Sources */,
 				7EF45F8C284768C100D1F7B0 /* ItemSelectionModels.swift in Sources */,
+				C41E9E3A2ABC311600AB8170 /* TransferFundsInteractor.swift in Sources */,
 				C4CCFCEC29D43DB600E38B3A /* AuthenticatorAppInteractor.swift in Sources */,
 				CE20C8F61DBAF77D00C8397A /* UIViewController+Extensions.swift in Sources */,
 				C47671AA29CD9AF4008A2F94 /* BackupCodesView.swift in Sources */,
@@ -4076,6 +4113,7 @@
 				7EB838482849DD8200C7CC05 /* FELink.swift in Sources */,
 				CEBF32F01DDCD30600348FC6 /* AssetDetailsViewController.swift in Sources */,
 				7B94EFAA28BD501500F63B62 /* UINavigationController+Completion.swift in Sources */,
+				C41E9E392ABC311600AB8170 /* TransferFundsViewController.swift in Sources */,
 				CEE1F5631DF13E5A00D733AD /* ModalHeaderView.swift in Sources */,
 				7E5CB39E2835090E00EC787E /* BaseTableViewController.swift in Sources */,
 				7ED427F028755CB200AA19A8 /* ExchangeDetailsPresenter.swift in Sources */,
@@ -4293,6 +4331,7 @@
 				7B2BF28929659D850037E731 /* RecoveryKeyIntroViewController.swift in Sources */,
 				C4C553D829F677B3002D9A47 /* CopyValueVIP.swift in Sources */,
 				7E9FADBE2927AA0A00B471A7 /* AchExchangeWorker.swift in Sources */,
+				C46410952AC570A1001F78FD /* ProSupportedCurrencies.swift in Sources */,
 				7E8E97A0283F48EE008606B0 /* NavigationItemView.swift in Sources */,
 				22A9A9461DF61945000F0016 /* BRAPIClient.swift in Sources */,
 				043DB5DA29F0059700DEB8FD /* TwoStepDeleteWorker.swift in Sources */,
@@ -4517,7 +4556,9 @@
 				7B2E5052289A5F02008CACD8 /* AddCardStore.swift in Sources */,
 				7E5CB3922835090E00EC787E /* FetchModels.swift in Sources */,
 				7EF2999027E3B8D200A2238A /* MarketData.swift in Sources */,
+				C41E9E352ABC311600AB8170 /* TransferFundsStore.swift in Sources */,
 				7EBC6B082848ABC5000A301F /* RegistrationConfirmationModels.swift in Sources */,
+				C41E9E372ABC311600AB8170 /* TransferFundsModels.swift in Sources */,
 				7B54E59E27F4A2B0002DD1E4 /* DatePickerViewController.swift in Sources */,
 				7C0A3ACE210A0E1D006C2783 /* NotificationAuthorizer.swift in Sources */,
 				7E5CB3A32835090E00EC787E /* Reusable.swift in Sources */,
@@ -4554,6 +4595,7 @@
 				3A6785FB257019220065F835 /* RedeemTransitioningDelegate.swift in Sources */,
 				CE20C90C1DBC59E600C8397A /* StartFlowPresenter.swift in Sources */,
 				7B394789297000ED007D405E /* ForgotPasswordVIP.swift in Sources */,
+				C40FF99F2ABD6BAB00EDEF1B /* TransferFundsView.swift in Sources */,
 				7B54E5A227F4A2B0002DD1E4 /* Decodable+Extensions.swift in Sources */,
 				7E5CB3832835090E00EC787E /* Presets.swift in Sources */,
 				7B54E5A327F4A2B0002DD1E4 /* HttpRequest.swift in Sources */,
@@ -4569,6 +4611,7 @@
 				71249916221F466800BEA491 /* Prompt.swift in Sources */,
 				7EF45F522845352400D1F7B0 /* KYCBasicStore.swift in Sources */,
 				3A1D416E250957A00089FE63 /* MarketDataView.swift in Sources */,
+				C41E9E382ABC311600AB8170 /* TransferFundsVIP.swift in Sources */,
 				7EBC6B0D2848B81A000A301F /* CodeInputView.swift in Sources */,
 				CE36454C1E7B42850079D0CF /* WhiteDecimalPad.swift in Sources */,
 				CE5F21D91E4A922700C47B8E /* DismissLoginAnimator.swift in Sources */,
@@ -4615,6 +4658,7 @@
 				044D099F29C8525E00C510DC /* VerifyPhoneNumberPresenter.swift in Sources */,
 				CEB909F51E5FE63D001804DC /* EnterPhraseViewController.swift in Sources */,
 				7BBBF4DD287421CF00E4D36B /* SwapViewController.swift in Sources */,
+				C41E9E362ABC311600AB8170 /* TransferFundsPresenter.swift in Sources */,
 				C46C28FF287EBF4F0035C843 /* BaseInfoPresenter.swift in Sources */,
 				CE6D0F971DE8B73A00BD4BCF /* ModalTransitionDelegate.swift in Sources */,
 				7E5B306028A680300065D2D8 /* SuccessViewController.swift in Sources */,
