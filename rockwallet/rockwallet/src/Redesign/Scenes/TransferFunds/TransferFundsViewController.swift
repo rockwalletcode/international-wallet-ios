@@ -52,7 +52,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
             view.configure(with: .init())
             view.setup(with: model)
             
-            view.didTapTransferFunds = { [weak self] in
+            view.didTapSwitchPlacesButton = { [weak self] in
                 self?.interactor?.switchPlaces(viewAction: .init(isDeposit: self?.dataStore?.isDeposit))
             }
         }
