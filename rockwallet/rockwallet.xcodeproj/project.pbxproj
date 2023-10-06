@@ -711,6 +711,12 @@
 		D712BD1229DACBAB00C2F09E /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712BD1129DACBAB00C2F09E /* BottomBarItem.swift */; };
 		D71FE3552A4D9708003BAE00 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FE3542A4D9708003BAE00 /* String+Extensions.swift */; };
 		D730F7EE29F6659400809BEE /* SupportedCurrenciesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D730F7ED29F6659400809BEE /* SupportedCurrenciesManager.swift */; };
+		D73159A72ACE9573003C88F9 /* AuthorizeLoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73159A02ACE9573003C88F9 /* AuthorizeLoginStore.swift */; };
+		D73159A82ACE9573003C88F9 /* AuthorizeLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73159A12ACE9573003C88F9 /* AuthorizeLoginPresenter.swift */; };
+		D73159A92ACE9573003C88F9 /* AuthorizeLoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73159A22ACE9573003C88F9 /* AuthorizeLoginModels.swift */; };
+		D73159AA2ACE9573003C88F9 /* AuthorizeLoginVIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73159A32ACE9573003C88F9 /* AuthorizeLoginVIP.swift */; };
+		D73159AB2ACE9573003C88F9 /* AuthorizeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73159A42ACE9573003C88F9 /* AuthorizeLoginViewController.swift */; };
+		D73159AC2ACE9573003C88F9 /* AuthorizeLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73159A52ACE9573003C88F9 /* AuthorizeLoginInteractor.swift */; };
 		D780AF432A6E5F6100794C3B /* SsnAdditionalInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780AF3C2A6E5F6100794C3B /* SsnAdditionalInfoPresenter.swift */; };
 		D780AF442A6E5F6100794C3B /* SsnAdditionalInfoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780AF3D2A6E5F6100794C3B /* SsnAdditionalInfoModels.swift */; };
 		D780AF452A6E5F6100794C3B /* SsnAdditionalInfoVIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780AF3E2A6E5F6100794C3B /* SsnAdditionalInfoVIP.swift */; };
@@ -733,6 +739,8 @@
 		D7F75965299BB4F800FB4BFA /* FindAddressWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F75964299BB4F800FB4BFA /* FindAddressWorker.swift */; };
 		D7F75969299D1F9900FB4BFA /* RetrieveAddressWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F75968299D1F9900FB4BFA /* RetrieveAddressWorker.swift */; };
 		D7F8EA3829C4857B008DD7C7 /* DrawerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8EA3729C4857B008DD7C7 /* DrawerManager.swift */; };
+		D7FAC50B2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC50A2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift */; };
+		D7FAC50D2ACFFCA8001A9A79 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC50C2ACFFCA8001A9A79 /* CountdownTimerView.swift */; };
 		D7FBCE602A6FA37C002E5249 /* WaitingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE592A6FA37B002E5249 /* WaitingStore.swift */; };
 		D7FBCE612A6FA37C002E5249 /* WaitingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE5A2A6FA37B002E5249 /* WaitingPresenter.swift */; };
 		D7FBCE622A6FA37C002E5249 /* WaitingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE5B2A6FA37B002E5249 /* WaitingModels.swift */; };
@@ -1549,6 +1557,12 @@
 		D712BD1129DACBAB00C2F09E /* BottomBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
 		D71FE3542A4D9708003BAE00 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D730F7ED29F6659400809BEE /* SupportedCurrenciesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedCurrenciesManager.swift; sourceTree = "<group>"; };
+		D73159A02ACE9573003C88F9 /* AuthorizeLoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginStore.swift; sourceTree = "<group>"; };
+		D73159A12ACE9573003C88F9 /* AuthorizeLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginPresenter.swift; sourceTree = "<group>"; };
+		D73159A22ACE9573003C88F9 /* AuthorizeLoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginModels.swift; sourceTree = "<group>"; };
+		D73159A32ACE9573003C88F9 /* AuthorizeLoginVIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginVIP.swift; sourceTree = "<group>"; };
+		D73159A42ACE9573003C88F9 /* AuthorizeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginViewController.swift; sourceTree = "<group>"; };
+		D73159A52ACE9573003C88F9 /* AuthorizeLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginInteractor.swift; sourceTree = "<group>"; };
 		D780AF3C2A6E5F6100794C3B /* SsnAdditionalInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SsnAdditionalInfoPresenter.swift; sourceTree = "<group>"; };
 		D780AF3D2A6E5F6100794C3B /* SsnAdditionalInfoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SsnAdditionalInfoModels.swift; sourceTree = "<group>"; };
 		D780AF3E2A6E5F6100794C3B /* SsnAdditionalInfoVIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SsnAdditionalInfoVIP.swift; sourceTree = "<group>"; };
@@ -1571,6 +1585,8 @@
 		D7F75964299BB4F800FB4BFA /* FindAddressWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAddressWorker.swift; sourceTree = "<group>"; };
 		D7F75968299D1F9900FB4BFA /* RetrieveAddressWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveAddressWorker.swift; sourceTree = "<group>"; };
 		D7F8EA3729C4857B008DD7C7 /* DrawerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerManager.swift; sourceTree = "<group>"; };
+		D7FAC50A2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTitleValuesView.swift; sourceTree = "<group>"; };
+		D7FAC50C2ACFFCA8001A9A79 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
 		D7FBCE592A6FA37B002E5249 /* WaitingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingStore.swift; sourceTree = "<group>"; };
 		D7FBCE5A2A6FA37B002E5249 /* WaitingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPresenter.swift; sourceTree = "<group>"; };
 		D7FBCE5B2A6FA37B002E5249 /* WaitingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingModels.swift; sourceTree = "<group>"; };
@@ -2386,6 +2402,7 @@
 		7E5CB32F2835090D00EC787E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D731599E2ACE9537003C88F9 /* AuthorizeLogin */,
 				C4CCFCDE29D43D6100E38B3A /* Authenticator */,
 				04185DB729D1794000AECBFA /* TwoStepAuthentication */,
 				D78D295729ED3A460039A5D6 /* TwoStepSettings */,
@@ -2604,6 +2621,8 @@
 				7EB838452849D49A00C7CC05 /* MultipleButtonsView.swift */,
 				7BE9CB74292242290016C0F4 /* VerticalButtonsView.swift */,
 				D712BD1129DACBAB00C2F09E /* BottomBarItem.swift */,
+				D7FAC50A2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift */,
+				D7FAC50C2ACFFCA8001A9A79 /* CountdownTimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3555,6 +3574,19 @@
 			name = AnimatedIcons;
 			sourceTree = "<group>";
 		};
+		D731599E2ACE9537003C88F9 /* AuthorizeLogin */ = {
+			isa = PBXGroup;
+			children = (
+				D73159A02ACE9573003C88F9 /* AuthorizeLoginStore.swift */,
+				D73159A12ACE9573003C88F9 /* AuthorizeLoginPresenter.swift */,
+				D73159A22ACE9573003C88F9 /* AuthorizeLoginModels.swift */,
+				D73159A32ACE9573003C88F9 /* AuthorizeLoginVIP.swift */,
+				D73159A42ACE9573003C88F9 /* AuthorizeLoginViewController.swift */,
+				D73159A52ACE9573003C88F9 /* AuthorizeLoginInteractor.swift */,
+			);
+			path = AuthorizeLogin;
+			sourceTree = "<group>";
+		};
 		D780AF382A6E5EF900794C3B /* SSN */ = {
 			isa = PBXGroup;
 			children = (
@@ -4028,6 +4060,7 @@
 				7E5CB3A62835090E00EC787E /* ThemeManager.swift in Sources */,
 				7C6ACCB61FEB345E0028ABFA /* TxStatusCell.swift in Sources */,
 				CE5393B022D7CC98000303B3 /* HistoryPeriod.swift in Sources */,
+				D73159AA2ACE9573003C88F9 /* AuthorizeLoginVIP.swift in Sources */,
 				043DB5D029EDC7B900DEB8FD /* SetTwoStepAuthWorker.swift in Sources */,
 				7B39478E297000ED007D405E /* ForgotPasswordModels.swift in Sources */,
 				7EF45F8C284768C100D1F7B0 /* ItemSelectionModels.swift in Sources */,
@@ -4153,10 +4186,12 @@
 				7B54E5A127F4A2B0002DD1E4 /* APIURLHandler.swift in Sources */,
 				CE0822661FCE059A00EF371D /* HomeScreenCell.swift in Sources */,
 				7EC21A1B28991A6500FED711 /* BillingAddressViewController.swift in Sources */,
+				D7FAC50D2ACFFCA8001A9A79 /* CountdownTimerView.swift in Sources */,
 				7BB3B7D729558D33006FF250 /* Circle.swift in Sources */,
 				CE44BA1B1F33BFC500392A1A /* NodeSelectorViewController.swift in Sources */,
 				7B54E5AE27F4A2B0002DD1E4 /* PickerViewViewController.swift in Sources */,
 				3A93890922A303800081FCF9 /* BezierView.swift in Sources */,
+				D73159A72ACE9573003C88F9 /* AuthorizeLoginStore.swift in Sources */,
 				CE124D001E69170900DFA146 /* SyncingView.swift in Sources */,
 				7EB8FD272897D212000FF75C /* BuyInteractor.swift in Sources */,
 				CE20C90E1DBE52B000C8397A /* UIView+Extensions.swift in Sources */,
@@ -4185,6 +4220,7 @@
 				7EE91A5F2968310100331B1F /* KYCAddressInteractor.swift in Sources */,
 				0452C93829D42FC600CCC8DA /* KYCAuthEndpoints.swift in Sources */,
 				CE4C1CC81ED88B600063E184 /* URLController.swift in Sources */,
+				D7FAC50B2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift in Sources */,
 				CE20C9171DBE6F2A00C8397A /* UIButton+Extensions.swift in Sources */,
 				3A611A0C2322139D004B8E36 /* Dot.swift in Sources */,
 				7B2BF28629659D850037E731 /* RecoveryKeyIntroVIP.swift in Sources */,
@@ -4193,6 +4229,7 @@
 				CE92F9F41DED59E80046B516 /* UIView+AnimationAdditions.swift in Sources */,
 				CEDB0B0522D4354C00331FFC /* LineLoadingView.swift in Sources */,
 				044D09A229C8525E00C510DC /* VerifyPhoneNumberVIP.swift in Sources */,
+				D73159AB2ACE9573003C88F9 /* AuthorizeLoginViewController.swift in Sources */,
 				7E42ACCC293F485800E1FC26 /* PlaidErrorWorker.swift in Sources */,
 				7EF45F332844D26E00D1F7B0 /* VerificationView.swift in Sources */,
 				7E87B32D285346E00097671F /* UIImage+Compress.swift in Sources */,
@@ -4395,6 +4432,7 @@
 				7B54E5AB27F4A2B0002DD1E4 /* SpinnerView.swift in Sources */,
 				7ED83AF7284F40EB00261565 /* CheckListPresenter.swift in Sources */,
 				7E67680328479765007EC155 /* ResendConfirmationWorker.swift in Sources */,
+				D73159A82ACE9573003C88F9 /* AuthorizeLoginPresenter.swift in Sources */,
 				C458C7CE29E6D22F00146C0D /* PaymailAddressVIP.swift in Sources */,
 				7EF2999227E3B8D200A2238A /* SimplePrice.swift in Sources */,
 				7E8E97A5283F9804008606B0 /* FEPopupView.swift in Sources */,
@@ -4436,6 +4474,7 @@
 				7E5CB39B2835090E00EC787E /* BaseVIP.swift in Sources */,
 				7EC0F8B62888049F0037145C /* WrapperPopupView.swift in Sources */,
 				CEAA9E971DC18E1F0066731D /* PhraseView.swift in Sources */,
+				D73159A92ACE9573003C88F9 /* AuthorizeLoginModels.swift in Sources */,
 				7E75AD4B2943298900E54DEF /* AssetVIP.swift in Sources */,
 				7E5CB3912835090E00EC787E /* AlertVIP.swift in Sources */,
 				3AFAD937256826F3005853E8 /* BorderedTextInput.swift in Sources */,
@@ -4567,6 +4606,7 @@
 				7B0E34C928ABA73900D15180 /* CardDetailsView.swift in Sources */,
 				7EF2999327E3B8D200A2238A /* Models.swift in Sources */,
 				71249916221F466800BEA491 /* Prompt.swift in Sources */,
+				D73159AC2ACE9573003C88F9 /* AuthorizeLoginInteractor.swift in Sources */,
 				7EF45F522845352400D1F7B0 /* KYCBasicStore.swift in Sources */,
 				3A1D416E250957A00089FE63 /* MarketDataView.swift in Sources */,
 				7EBC6B0D2848B81A000A301F /* CodeInputView.swift in Sources */,

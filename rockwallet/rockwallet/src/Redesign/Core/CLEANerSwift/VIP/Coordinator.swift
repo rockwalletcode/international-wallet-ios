@@ -24,6 +24,7 @@ protocol Coordinatable: CoordinatableRoutes {
     func start()
 }
 
+// swiftlint:disable type_body_length
 class BaseCoordinator: NSObject, Coordinatable {
     weak var modalPresenter: ModalPresenter? {
         get {
@@ -625,6 +626,10 @@ class BaseCoordinator: NSObject, Coordinatable {
                 LoadingView.show()
                 vc.interactor?.getAssetSelectionData(viewModel: .init(type: .card))
                 
+            case .authorizeLogin:
+                vc.coordinator?.dismissFlow()
+                self.openInBrowser(destination: "https://web.dev.rockwallet.com/dashboard")
+                
             default:
                 vc.coordinator?.dismissFlow()
             }
@@ -638,6 +643,9 @@ class BaseCoordinator: NSObject, Coordinatable {
                 
             case .limitsAuthentication:
                 vc.coordinator?.popToRoot()
+                
+            case .authorizeLogin:
+                vc.coordinator?.dismissFlow()
                 
             default:
                 vc.coordinator?.showExchangeDetails(with: vc.dataStore?.id,
@@ -692,7 +700,7 @@ class BaseCoordinator: NSObject, Coordinatable {
                     }
                 }
                 
-            case .veriffDeclined, .livenessCheckLimit:
+            case .veriffDeclined, .livenessCheckLimit, .authorizationRejected, .authorizationFailed:
                 vc.coordinator?.dismissFlow()
                 
             default:
@@ -713,7 +721,7 @@ class BaseCoordinator: NSObject, Coordinatable {
             case .swap:
                 vc.coordinator?.dismissFlow()
 
-            case .buyCard, .buyAch, .plaidConnection, .sell, .livenessCheckLimit, .veriffDeclined:
+            case .buyCard, .buyAch, .plaidConnection, .sell, .livenessCheckLimit, .veriffDeclined, .authorizationRejected, .authorizationFailed:
                 vc.coordinator?.showSupport()
                 
             case .limitsAuthentication, .documentVerification, .documentVerificationRetry:
@@ -736,18 +744,24 @@ class BaseCoordinator: NSObject, Coordinatable {
                                         callback: callback)
     }
     
-    func prepareForDeeplinkHandling(coreSystem: CoreSystem, keyStore: KeyStore) {
-        guard !childCoordinators.isEmpty else {
-            handleDeeplink(coreSystem: coreSystem, keyStore: keyStore)
+    func dismissAllFlowsIfNeeded(completion: (() -> Void)?) {
+        guard childCoordinators.isEmpty == true else {
+            childCoordinators.forEach { child in
+                child.navigationController.dismiss(animated: true) { [weak self] in
+                    self?.childDidFinish(child: child)
+                    guard self?.childCoordinators.isEmpty == true else { return }
+                    completion?()
+                }
+            }
             return
         }
         
-        childCoordinators.forEach { child in
-            child.navigationController.dismiss(animated: false) { [weak self] in
-                self?.childDidFinish(child: child)
-                guard self?.childCoordinators.isEmpty == true else { return }
-                self?.handleDeeplink(coreSystem: coreSystem, keyStore: keyStore)
-            }
+        completion?()
+    }
+    
+    func prepareForDeeplinkHandling(coreSystem: CoreSystem, keyStore: KeyStore) {
+        dismissAllFlowsIfNeeded { [weak self] in
+            self?.handleDeeplink(coreSystem: coreSystem, keyStore: keyStore)
         }
     }
     
@@ -777,6 +791,9 @@ class BaseCoordinator: NSObject, Coordinatable {
             // TODO: remove the flow if we won't use deep linking oauth login
             // handleOauthLogin()
             return
+            
+        case .login:
+            openModally(coordinator: AccountCoordinator.self, scene: Scenes.AuthorizeLogin)
         }
     }
     
@@ -795,6 +812,12 @@ class BaseCoordinator: NSObject, Coordinatable {
                 // TODO: Handle error
                 print(error)
             }
+        }
+    }
+    
+    func openInBrowser(destination: String) {
+        if let url = URL(string: destination), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
         }
     }
 }

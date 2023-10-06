@@ -24,10 +24,12 @@ class DynamicLinksManager {
         case home
         case profile
         case oauth2 = "oauth2"
+        case login
     }
     
     var dynamicLinkType: DynamicLinkType?
     var code: String?
+    var loginToken: String?
     var email: String?
     var redirectUri: String?
     var urlScope: String?
@@ -44,6 +46,8 @@ class DynamicLinksManager {
             return .oauth2
         } else if url.contains(DynamicLinkType.profile.rawValue) {
             return .profile
+        } else if url.contains(DynamicLinkType.login.rawValue) {
+            return .login
         }
         
         return nil
@@ -66,6 +70,9 @@ class DynamicLinksManager {
             
         case .oauth2:
             handleOauth2Login(with: url)
+            
+        case .login:
+            handleLogin(with: url)
             
         default:
             break
@@ -91,5 +98,15 @@ class DynamicLinksManager {
         
         DynamicLinksManager.shared.dynamicLinkType = .oauth2
         DynamicLinksManager.shared.urlParameters = parameters
+    }
+    
+    private static func handleLogin(with url: URL) {
+        guard let parameters = url.queryParameters,
+              let token = parameters["token"] else {
+            return
+        }
+        
+        DynamicLinksManager.shared.dynamicLinkType = .login
+        DynamicLinksManager.shared.loginToken = token
     }
 }

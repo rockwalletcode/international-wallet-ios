@@ -360,6 +360,7 @@ internal enum Asset {
   internal static let dragControl = ImageAsset(name: "DragControl")
   internal static let access = ImageAsset(name: "access")
   internal static let assets = ImageAsset(name: "assets")
+  internal static let authorization = ImageAsset(name: "authorization")
   internal static let cards = ImageAsset(name: "cards")
   internal static let celebrate = ImageAsset(name: "celebrate")
   internal static let documents = ImageAsset(name: "documents")
