@@ -20,7 +20,7 @@ final class AuthorizeLoginPresenter: NSObject, Presenter, AuthorizeLoginActionRe
         
         let sections: [Models.Section] = [.timer, .description, .data]
         let sectionRows: [Models.Section: [any Hashable]] = [
-            .timer: [CountdownTimerViewModel(countdownTime: 20)],
+            .timer: [CountdownTimerViewModel(countdownTime: Constant.authorizeLoginTime, countdownTimeCritical: Constant.authorizeLoginTimeCritical)],
             .description: [InfoViewModel(title: .text("About this request"),
                                          description: .text("By confirming, you'll grant login access to the RockWallet web app"))],
             .data: [GroupedTitleValuesViewModel(models: [TitleValueViewModel(title: .text("Where"), value: .text(item.location)),

@@ -12,6 +12,7 @@ import UIKit
 
 struct CountdownTimerViewModel: ViewModel {
     let countdownTime: TimeInterval
+    let countdownTimeCritical: TimeInterval
 }
 
 struct CountdownTimerViewConfiguration: Configurable {
@@ -32,7 +33,7 @@ class CountdownTimerView: FEView<CountdownTimerViewConfiguration, CountdownTimer
     private var currentTime: TimeInterval = 0 {
         didSet {
             timerLabel.setup(with: .text(currentTime.stringFromTimeInterval()))
-            updateCountdown(isCritical: currentTime < 15)
+            updateCountdown(isCritical: currentTime < viewModel?.countdownTimeCritical ?? 0)
         }
     }
     
@@ -70,14 +71,14 @@ class CountdownTimerView: FEView<CountdownTimerViewConfiguration, CountdownTimer
         let radius = min(containerView.bounds.width, containerView.bounds.height) / 2
         
         let circularPath = UIBezierPath(arcCenter: centerPoint,
-                                        radius: radius - 10,
+                                        radius: radius - CornerRadius.small.rawValue,
                                         startAngle: -.pi / 2,
                                         endAngle: 2 * .pi - .pi / 2,
                                         clockwise: true)
         
         circleLayer.path = circularPath.cgPath
         circleLayer.strokeColor = Colors.Disabled.two.cgColor
-        circleLayer.lineWidth = 4
+        circleLayer.lineWidth = Margins.extraSmall.rawValue
         circleLayer.fillColor = UIColor.clear.cgColor
     }
     
