@@ -65,7 +65,8 @@ class RootNavigationController: UINavigationController, UINavigationControllerDe
             is ExchangeDetailsViewController,
             is OrderPreviewViewController,
             is SsnAdditionalInfoViewController,
-            is AuthorizeLoginViewController:
+            is AuthorizeLoginViewController,
+            is TransferFundsViewController:
             backgroundColor = Colors.Background.two
             tintColor = Colors.Text.three
             

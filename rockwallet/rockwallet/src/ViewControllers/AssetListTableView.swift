@@ -13,6 +13,8 @@ class AssetListTableView: UITableViewController, Subscriber {
     var didSelectCurrency: ((Currency) -> Void)?
     var didTapAddWallet: (() -> Void)?
     var didReload: (() -> Void)?
+    var didTapFaqButton: (() -> Void)?
+    var isProWallet: Bool = false
     
     private let loadingSpinner = UIActivityIndicatorView(style: .large)
     private let assetHeight: CGFloat = ViewSizes.extralarge.rawValue
@@ -35,6 +37,29 @@ class AssetListTableView: UITableViewController, Subscriber {
         footerView.backgroundColor = Colors.Background.cards
         
         return footerView
+    }()
+    
+    private lazy var buttonsStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = Margins.large.rawValue
+        stack.isHidden = true
+        return stack
+    }()
+    
+    private lazy var faqButton: FEButton = {
+        let view = FEButton()
+        view.configure(with: Presets.Button.blackIcon)
+        view.setup(with: .init(title: L10n.Exchange.faqButton, isUnderlined: true))
+        view.addTarget(self, action: #selector(faqButtonTapped), for: .touchUpInside)
+        return view
+    }()
+    
+    private lazy var swipeLabel: UILabel = {
+        let view = UILabel(font: Fonts.Body.two, color: Colors.Text.three)
+        view.text = L10n.Exchange.swipeDown
+        view.textAlignment = .center
+        return view
     }()
     
     // MARK: - Init
@@ -83,12 +108,27 @@ class AssetListTableView: UITableViewController, Subscriber {
                                               width: tableViewWidth,
                                               height: manageAssetsButtonHeight + (Margins.large.rawValue * 2)))
         
-        manageAssetsButton.frame = CGRect(x: Margins.large.rawValue,
-                                          y: Margins.large.rawValue,
-                                          width: footerView.frame.width - (2 * Margins.large.rawValue),
-                                          height: manageAssetsButtonHeight)
+        footerView.addSubview(manageAssetsButton)
+        manageAssetsButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview().inset(Margins.large.rawValue)
+            make.centerY.equalToSuperview().inset(Margins.large.rawValue)
+            make.width.equalTo(footerView.snp.width).inset(Margins.extraHuge.rawValue)
+            make.height.equalTo(manageAssetsButtonHeight)
+        }
+        
+        footerView.addSubview(buttonsStack)
+        buttonsStack.snp.makeConstraints { make in
+            make.centerX.equalToSuperview().inset(Margins.large.rawValue)
+            make.centerY.equalToSuperview().inset(Margins.large.rawValue)
+            make.width.equalTo(footerView.snp.width).inset(Margins.extraHuge.rawValue)
+            make.height.equalTo(manageAssetsButtonHeight)
+        }
         
         footerView.addSubview(manageAssetsButton)
+        footerView.addSubview(buttonsStack)
+        buttonsStack.addArrangedSubview(faqButton)
+        buttonsStack.addArrangedSubview(swipeLabel)
+        
         tableView.tableFooterView = footerView
     }
     
@@ -138,6 +178,10 @@ class AssetListTableView: UITableViewController, Subscriber {
         }
     }
     
+    @objc func faqButtonTapped() {
+        didTapFaqButton?()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -162,6 +206,7 @@ class AssetListTableView: UITableViewController, Subscriber {
         
         if let cell = cell as? HomeScreenCell {
             cell.set(viewModel: viewModel)
+            cell.removeProLabel(isHidden: !manageAssetsButton.isHidden)
         }
         
         return cell
@@ -177,7 +222,9 @@ class AssetListTableView: UITableViewController, Subscriber {
             //Only an HBAR wallet requiring creation can go to the account screen without a wallet
             (currency.isHBAR && Store.state.requiresCreation(currency)) else { return }
         
-        didSelectCurrency?(currency)
+        if !isProWallet {
+            didSelectCurrency?(currency)
+        }
         
         GoogleAnalytics.logEvent(GoogleAnalytics.DisplayCurrency())
     }
@@ -192,7 +239,6 @@ extension AssetListTableView {
     
     func showLoadingState(_ show: Bool) {
         showLoadingIndicator(show)
-        showAddWalletsButton(!show)
     }
     
     func showLoadingIndicator(_ show: Bool) {
@@ -214,6 +260,10 @@ extension AssetListTableView {
     }
     
     func showAddWalletsButton(_ show: Bool) {
-        manageAssetsButton.isHidden = !show
+        isProWallet = !show
+        buttonsStack.isHidden = !isProWallet
+        manageAssetsButton.isHidden = isProWallet
+        
+        reload()
     }
 }
