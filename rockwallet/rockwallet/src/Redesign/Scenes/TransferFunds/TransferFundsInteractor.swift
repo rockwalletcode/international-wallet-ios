@@ -130,7 +130,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         let currencies = SupportedCurrenciesManager.shared.supportedCurrencies(type: type)
         
         dataStore?.supportedCurrencies = currencies
-        dataStore?.currencies = Store.state.currencies.filter { cur in currencies.map { $0.lowercased() }.contains(cur.code.lowercased()) }
+        dataStore?.currencies = Store.state.currenciesProWallet.filter { cur in currencies.map { $0.lowercased() }.contains(cur.code.lowercased()) }
     }
     
     private func setPresentAmountData(handleErrors: Bool) {
