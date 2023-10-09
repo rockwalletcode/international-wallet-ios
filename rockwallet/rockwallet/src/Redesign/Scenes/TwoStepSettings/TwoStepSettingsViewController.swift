@@ -29,8 +29,7 @@ class TwoStepSettingsViewController: BaseTableViewController<AccountCoordinator,
             cell = self.tableView(tableView, iconTitleSubtitleToggleViewCellForRowAt: indexPath)
             
             (cell as? WrapperTableViewCell<IconTitleSubtitleToggleView>)?.wrappedView.didToggle = { [weak self] isOn in
-                guard let self else { return }
-                self.interactor?.toggleSetting(viewAction: .init(sending: isOn))
+                self?.interactor?.toggleSetting(viewAction: .init(sending: isOn))
             }
             
         default:
