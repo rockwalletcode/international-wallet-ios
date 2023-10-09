@@ -18,8 +18,6 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
     lazy var authorizeButton = FEButton()
     lazy var rejectButton = FEButton()
     
-    var buttonsEnabled = true
-    
     // MARK: - Overrides
     
     override var sceneLeftAlignedTitle: String? { return "Authorize login" }
@@ -102,14 +100,14 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
         super.setupVerticalButtons()
         
         authorizeButton.configure(with: Presets.Button.primary)
-        authorizeButton.setup(with: .init(title: "Authorize", enabled: buttonsEnabled, callback: { [weak self] in
+        authorizeButton.setup(with: .init(title: "Authorize", callback: { [weak self] in
             self?.invalidateTimer()
             self?.interactor?.authorize(viewAction: .init())
             LoadingView.show()
         }))
         
         rejectButton.configure(with: Presets.Button.inverse)
-        rejectButton.setup(with: .init(title: "Reject", enabled: buttonsEnabled, callback: { [weak self] in
+        rejectButton.setup(with: .init(title: "Reject", callback: { [weak self] in
             self?.invalidateTimer()
             self?.coordinator?.showFailure(reason: .authorizationRejected, isModalDismissable: false, hidesBackButton: true)
         }))

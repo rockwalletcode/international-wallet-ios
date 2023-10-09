@@ -140,7 +140,7 @@ enum BaseInfoModels {
                 return L10n.Button.back
                 
             case .authorizeLogin:
-                return "Close"
+                return L10n.Button.close
                 
             default:
                 return L10n.Buy.details
