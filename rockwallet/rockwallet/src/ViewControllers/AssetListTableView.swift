@@ -193,13 +193,13 @@ class AssetListTableView: UITableViewController, Subscriber {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Store.state.currencies.count
+        return isProWallet ? Store.state.currenciesProWallet.count : Store.state.currencies.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard Store.state.currencies.indices.contains(indexPath.row) else { return UITableViewCell() }
         
-        let currency = Store.state.currencies[indexPath.row]
+        let currency = isProWallet ? Store.state.currenciesProWallet[indexPath.row] : Store.state.currencies[indexPath.row]
         let viewModel = HomeScreenAssetViewModel(currency: currency)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenCellIds.regularCell.rawValue, for: indexPath)

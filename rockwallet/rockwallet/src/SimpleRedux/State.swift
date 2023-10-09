@@ -20,6 +20,7 @@ struct State {
     let walletID: String?
     let wallets: [CurrencyId: WalletState]
     let creationRequired: [CurrencyId]
+    var supportedCurrenciesPro: [String] = ["BSV", "BTC", "USDC", "ETH"]  // TODO: update this list if we get currencies from BE
     
     subscript(currency: Currency) -> WalletState? {
         guard let walletState = wallets[currency.uid] else {
@@ -34,6 +35,10 @@ struct State {
     
     var currencies: [Currency] {
         return orderedWallets.map { $0.currency }
+    }
+    
+    var currenciesProWallet: [Currency] {
+        return currencies.filter { item in supportedCurrenciesPro.contains(where: { $0 == item.code }) }
     }
     
     var shouldShowBuyNotificationForDefaultCurrency: Bool {
@@ -129,7 +134,7 @@ enum SyncState {
 // MARK: -
 
 struct WalletState {
-    let currency: Currency
+    var currency: Currency
     weak var wallet: Wallet?
     let displayOrder: Int // -1 for hidden
     let syncProgress: Float
