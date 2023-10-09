@@ -51,6 +51,30 @@
 
 "Account.Attempts" = "attempts";
 
+"Account.AuthorizeLogin.device" = "Device";
+
+"Account.AuthorizeLogin.Failure.description" = "Please check your connection and try again.";
+
+"Account.AuthorizeLogin.Failure.title" = "There was an error while authorizing your Log in";
+
+"Account.AuthorizeLogin.Info.description" = "By confirming, you'll grant login access to the RockWallet web app";
+
+"Account.AuthorizeLogin.Info.title" = "About this request";
+
+"Account.AuthorizeLogin.ip" = "IP";
+
+"Account.AuthorizeLogin.Rejected.description" = "If you didn't attempt to log in or suspect a compromise in your wallet security, please reach out to our customer support team for assistance.";
+
+"Account.AuthorizeLogin.Rejected.title" = "Login Successfully Rejected";
+
+"Account.AuthorizeLogin.Success.description" = "You should now have access to your account on the web app.";
+
+"Account.AuthorizeLogin.Success.title" = "Log in succesfull";
+
+"Account.AuthorizeLogin.title" = "Authorize Login";
+
+"Account.AuthorizeLogin.where" = "Where";
+
 /* Account balance */
 "Account.balance" = "Solde";
 
@@ -141,6 +165,8 @@
 /* Get full access for the RockWallet label on profile screen */
 "Account.FullAccess" = "Accédez à l'intégralité de votre portefeuille RockWallet !";
 
+"Account.FullSsn" = "Full SSN (Social security number)";
+
 /* ID Verification title on account screen */
 "Account.IDVerification" = "Identifiant de vérification";
 
@@ -150,10 +176,12 @@
 
 "Account.idVerificationRejected.description" = "Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.";
 
-"Account.idVerificationRejected.description.Sprint.eleven" = "Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.";
-
 /* Retry verification description */
 "Account.IdVerificationRetry" = "Please try to complete your verification again, while keeping the following in mind:\n\n- Please ensure your type of ID is supported.\n\n- Make sure the area is well-lit and there's no glare on the ID or your face.\n\n- Double check that your ID isn't expired or invalid.";
+
+"Account.IncorrectSsn.description" = "Unfortunately, the SSN you’ve entered was not correct. Try again or try with a different method of verification.";
+
+"Account.IncorrectSsn.title" = "We’re sorry, your SSN was not correct";
 
 "Account.InfoDialog.ExpressVerification" = "You have access to: \n・Buy with a %@ lifetime limit\n・Swap with a %@ lifetime limit\n・Send, Receive and Store your crypto assets";
 
@@ -724,6 +752,10 @@
 /* BitID Authentication Request alert view title */
 "BitID.title" = "Demande d'authentification BitID";
 
+"Button.anotherVerificationMethod" = "Try another method of verification";
+
+"Button.authorize" = "Authorize";
+
 "Button.Back" = "Back";
 
 /* As in "(tap here to) buy (bitcoin)" */
@@ -802,6 +834,8 @@
 /* Open Settings button */
 "Button.openSettings" = "Ouvrir les paramètres";
 
+"Button.openWebApp" = "Open web app";
+
 /* Profile button title on tab bar */
 "Button.Profile" = "Profil";
 
@@ -809,6 +843,8 @@
 "Button.receive" = "Recevoir";
 
 "Button.ReceiveDigitalAssets" = "Receive digital assets";
+
+"Button.reject" = "Reject";
 
 "Button.remove" = "Supprimer";
 
@@ -2561,11 +2597,11 @@
 
 "Sell.WithdrawDetails" = "Sell and withdraw details";
 
-"Sell.YourAchSellLimits" = "Your ACH sell limits";
+"Sell.YourAchSellLimits" = "Your ACH withdrawal limits";
+
+"Sell.YourCardSellLimits" = "Your sell limits";
 
 "Sell.yourOrder" = "You sell:";
-
-"Sell.YourSellLimits" = "Your sell limits";
 
 "Sell.YouWillReceive" = "You’ll receive";
 

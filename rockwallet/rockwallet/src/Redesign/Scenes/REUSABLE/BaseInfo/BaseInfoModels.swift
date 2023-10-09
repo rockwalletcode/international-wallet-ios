@@ -76,7 +76,7 @@ enum BaseInfoModels {
                 return L10n.Account.verificationSuccessful
                 
             case .authorizeLogin:
-                return "Log in successful"
+                return L10n.Account.AuthorizeLogin.Success.title
             }
         }
         
@@ -108,7 +108,7 @@ enum BaseInfoModels {
                 return L10n.Account.VerificationSuccessful.description
                 
             case .authorizeLogin:
-                return "You should now have access to your account on the web app."
+                return L10n.Account.AuthorizeLogin.Success.description
             }
         }
         
@@ -121,7 +121,7 @@ enum BaseInfoModels {
                 return L10n.Button.receiveDigitalAssets
                 
             case .authorizeLogin:
-                return "Open web app"
+                return L10n.Button.openWebApp
                 
             default:
                 return L10n.Button.back
@@ -238,10 +238,10 @@ enum BaseInfoModels {
                 return L10n.Account.verificationUnsuccessful
                 
             case .authorizationFailed:
-                return "There was an error while authorizing your Log in"
+                return L10n.Account.AuthorizeLogin.Failure.title
                 
             case .authorizationRejected:
-                return "Login Successfully Rejected"
+                return L10n.Account.AuthorizeLogin.Rejected.title
             }
         }
         
@@ -300,10 +300,10 @@ enum BaseInfoModels {
                 return L10n.ErrorMessages.VeriffDeclined.description
                 
             case .authorizationFailed:
-                return "Please check your connection and try again."
+                return L10n.Account.AuthorizeLogin.Failure.description
                 
             case .authorizationRejected:
-                return "If you didn't attempt to log in or suspect a compromise in your wallet security, please reach out to our customer support team for assistance."
+                return L10n.Account.AuthorizeLogin.Rejected.description
             }
         }
         

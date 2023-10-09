@@ -20,7 +20,7 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
     
     // MARK: - Overrides
     
-    override var sceneLeftAlignedTitle: String? { return "Authorize login" }
+    override var sceneLeftAlignedTitle: String? { return L10n.Account.AuthorizeLogin.title }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -100,14 +100,14 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
         super.setupVerticalButtons()
         
         authorizeButton.configure(with: Presets.Button.primary)
-        authorizeButton.setup(with: .init(title: "Authorize", callback: { [weak self] in
+        authorizeButton.setup(with: .init(title: L10n.Button.authorize, callback: { [weak self] in
             self?.invalidateTimer()
             self?.interactor?.authorize(viewAction: .init())
             LoadingView.show()
         }))
         
         rejectButton.configure(with: Presets.Button.inverse)
-        rejectButton.setup(with: .init(title: "Reject", callback: { [weak self] in
+        rejectButton.setup(with: .init(title: L10n.Button.reject, callback: { [weak self] in
             self?.invalidateTimer()
             self?.coordinator?.showFailure(reason: .authorizationRejected, isModalDismissable: false, hidesBackButton: true)
         }))
