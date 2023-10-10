@@ -37,6 +37,7 @@ class BaseExchangeTableViewController<C: CoordinatableRoutes,
         
         tableView.register(WrapperTableViewCell<MainSwapView>.self)
         tableView.register(WrapperTableViewCell<SwapCurrencyView>.self)
+        tableView.register(WrapperTableViewCell<SwitchFromToHorizontalView>.self)
         
         tableView.delaysContentTouches = false
         tableView.backgroundColor = Colors.Background.two
@@ -172,7 +173,8 @@ class BaseExchangeTableViewController<C: CoordinatableRoutes,
         switch self {
         case is SwapViewController,
             is BuyViewController,
-            is SellViewController:
+            is SellViewController,
+            is TransferFundsViewController:
             continueButton.configure(with: Presets.Button.primary)
             continueButton.setup(with: .init(title: L10n.Button.confirm,
                                              enabled: false,
