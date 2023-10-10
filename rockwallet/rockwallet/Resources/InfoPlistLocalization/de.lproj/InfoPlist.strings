@@ -150,12 +150,14 @@
 
 "Account.idVerificationRejected.description" = "Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.";
 
+"Account.idVerificationRejected.description.Sprint.eleven" = "Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.";
+
 /* Retry verification description */
 "Account.IdVerificationRetry" = "Please try to complete your verification again, while keeping the following in mind:\n\n- Please ensure your type of ID is supported.\n\n- Make sure the area is well-lit and there's no glare on the ID or your face.\n\n- Double check that your ID isn't expired or invalid.";
 
-"Account.InfoDialog.ExpressVerification" = "You have access to: \n・Buy with a %@ lifetime limit.\n・Swap with a %@ lifetime limit.\n・Send, Receive and Store your crypto assets";
+"Account.InfoDialog.ExpressVerification" = "You have access to: \n・Buy with a %@ lifetime limit\n・Swap with a %@ lifetime limit\n・Send, Receive and Store your crypto assets";
 
-"Account.InfoDialog.FullVerification" = "You have access to: \n・Buy and Sell with a %@ weekly limit.\n・Swap with a %@ daily limit.\n・Send, Receive and Store your crypto assets";
+"Account.InfoDialog.FullVerification" = "You have access to: \n・Buy with a %@ weekly limit\n・Sell with a %@ weekly limit\n・Swap with a %@ daily limit\n・Send, Receive and Store your crypto assets";
 
 "Account.infoLinkSSN" = "Why do we need your SSN?";
 
@@ -185,7 +187,7 @@
 
 "Account.Monthly" = "Monthly";
 
-"Account.NationalityCitizenship" = "Nationality/Citizenship";
+"Account.NationalityCitizenship" = "Nationality/Citizenship*";
 
 "Account.NewToRockwallet" = "New to RockWallet?";
 
@@ -831,7 +833,7 @@
 /* Settings button label */
 "Button.submit" = "Abschicken";
 
-"Button.TransferFunds" = "TRANSFER FUNDS";
+"Button.TransferFunds" = "Transfer funds";
 
 "Button.TryLater" = "Try later";
 
@@ -940,6 +942,8 @@
 "Buy.BuyLimits.description" = "Currently, minimum for Buy is %@ USD and maximum is %@ USD per day.  %@";
 
 "Buy.BuyLimits.description.android" = "Minimum for Buy is %@ per transaction and your weekly limit is %@.";
+
+"Buy.BuyLimits.description.lifetime.android" = "Minimum for Buy is %@ per transaction and you have a lifetime limit of %@.";
 
 "Buy.BuyLimits.Increase" = "Click on increase your limits button below if you would like to further increase your limits.";
 
@@ -1341,6 +1345,9 @@
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
 "ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
 
+/* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
+"ErrorMessages.AmountTooHigh.Sprint.eleven" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
+
 /* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
 "ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %@ %@. Please enter a higher amount.";
 
@@ -1432,6 +1439,8 @@
 
 "ErrorMessages.Sell.SsnInput.IncorrectSsn" = "Please make sure your SSN number is correct and try again.";
 
+"ErrorMessages.Sell.SsnInput.IncorrectSsn2" = "Please make sure your last 4 digits of your Social Security Number are correct and try again";
+
 /* Something went wrong message */
 "ErrorMessages.SomethingWentWrong" = "Oops! Something went wrong, please try again later.";
 
@@ -1447,7 +1456,23 @@
 
 "ErrorMessages.VeriffDeclined.Description" = "Please try again and follow the on screen instructions.";
 
-"Exchange.PopupText" = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem.";
+"Exchange.Custodial" = "custodial";
+
+"Exchange.EstimatedNetworkFee" = "Estimated Network fee";
+
+"Exchange.FaqButton" = "Need help? Visit our FAQs";
+
+"Exchange.PopupText" = "Please note, you are leaving the app and being directed to an external website.";
+
+"Exchange.Pro" = "PRO";
+
+"Exchange.SelfCustodial" = "self-custodial";
+
+"Exchange.sendFrom" = "Send from";
+
+"Exchange.SwipeDown" = "Swipe down to refresh your balance";
+
+"Exchange.WithdrawalFee" = "Withdrawal fee";
 
 "ExportConfirmation.cancel" = "Stornieren";
 
@@ -1694,7 +1719,7 @@
 
 "KYCExpressSplash.subtitle" = "By completing the express verification you’ll unlock the power to buy, and swap with unmatched ease. Embrace the next level of cryptocurrency management without any hassle.";
 
-"KYCExpressSplash.title" = "Release Rockwallet full potential!";
+"KYCExpressSplash.title" = "Release RockWallet full potential!";
 
 /* Approve link wallet button label */
 "LinkWallet.approve" = "Genehmigen";
@@ -1974,6 +1999,10 @@
 
 "Profile.PaymentMethods" = "Payment methods";
 
+"Prompts.Account.NotVerified.body" = "We were unable to complete your verification.";
+
+"Prompts.Account.NotVerified.title" = "Account not verified";
+
 "Prompts.ConnectionIssues.title" = "Connection issues";
 
 "Prompts.CreateAccount.body" = "With your RockWallet account you’ll be able to Swap and Buy seamlessly.";
@@ -2010,7 +2039,7 @@
 
 "Prompts.KYCExpress.body" = "Gain access to powerful features like buy, sell and swap!";
 
-"Prompts.KYCExpress.title" = "Unlock Rockwallet's Full Potential";
+"Prompts.KYCExpress.title" = "Unlock RockWallet's Full Potential";
 
 "Prompts.KYCFull.action" = "Get fully verified";
 
@@ -3026,6 +3055,8 @@
 /* Swap min and max limit text */
 "Swap.SwapLimits" = "Currently, minimum for Swap is %@ USD and maximum is %@ USD/day.";
 
+"Swap.SwapLimits.Lifetime" = "Currently, minimum for Swap is %@ and maximum is %@ lifetime.";
+
 "Swap.Swapping" = "Swapping %@ to %@";
 
 /* Swap status message on swap flow */
@@ -3711,6 +3742,12 @@
 "VerificationCode.title" = "Confirmation Code";
 
 "VerifyAccount.Button" = "Verify your account";
+
+"VerifyAccount.ExpressVerification.description" = "Verification helps keep your funds and information secure and allow you to buy, sell and swap seamlessly.";
+
+"VerifyAccount.ExpressVerification.title" = "Express Verification";
+
+"VerifyAccount.Veriff.Action.title" = "Get Verify";
 
 "VerifyAccount.VerifyIdentityDescription" = "Verify your identity before you can start buying and swapping.";
 

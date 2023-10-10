@@ -404,7 +404,7 @@ extension Presets {
 extension Presets {
     struct ExchangeView {
         static var shadow: ShadowConfiguration? = Presets.Shadow.light
-        static var background: BackgroundConfiguration? = .init(backgroundColor: Colors.Background.cards,
+        static var background: BackgroundConfiguration? = .init(backgroundColor: Colors.Background.one,
                                                                 tintColor: Colors.Text.one,
                                                                 border: Presets.Border.mediumPlain)
     }

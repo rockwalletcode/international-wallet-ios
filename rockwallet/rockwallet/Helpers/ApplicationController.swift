@@ -476,6 +476,13 @@ class ApplicationController: Subscriber {
             self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
         }
         
+        homeScreen.didTapTransferFunds = { [weak self] in
+            self?.coordinator?.openModally(coordinator: ExchangeCoordinator.self, scene: Scenes.TransferFunds) { vc in
+                vc?.dataStore?.coreSystem = self?.coreSystem
+                vc?.dataStore?.keyStore = self?.keyStore
+            }
+        }
+        
         homeScreen.didTapProfileFromPrompt = { [unowned self] in
             switch UserManager.shared.profileResult {
             case .success:
