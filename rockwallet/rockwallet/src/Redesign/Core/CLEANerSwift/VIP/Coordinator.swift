@@ -766,10 +766,9 @@ class BaseCoordinator: NSObject, Coordinatable {
             showProfile()
             
         case .setPassword:
-            dismissFlow()
-            
-            open(scene: Scenes.SetPassword) { vc in
-                vc.dataStore?.code = DynamicLinksManager.shared.code
+            openModally(coordinator: AccountCoordinator.self, scene: Scenes.SetPassword) { vc in
+                vc?.navigationItem.hidesBackButton = true
+                vc?.dataStore?.code = DynamicLinksManager.shared.code
                 DynamicLinksManager.shared.code = nil
             }
             
