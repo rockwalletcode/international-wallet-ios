@@ -84,11 +84,12 @@ class UserManager: NSObject {
         }
     }
     
-    func setUserCredentials(email: String?, sessionToken: String?, sessionTokenHash: String?) {
+    func setUserCredentials(email: String?, sessionToken: String?, sessionTokenHash: String?, refreshWallet: Bool = true) {
         UserDefaults.email = email
         UserDefaults.sessionToken = sessionToken
         UserDefaults.sessionTokenHash = sessionTokenHash
         
+        guard refreshWallet else { return }
         Store.trigger(name: .refreshToken)
     }
     

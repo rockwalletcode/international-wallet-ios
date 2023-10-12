@@ -78,7 +78,7 @@ class BaseCoordinator: NSObject, Coordinatable {
         navigationController.show(nvc, sender: nil)
     }
     
-    func showSwap(selectedCurrency: Currency? = nil, coreSystem: CoreSystem, keyStore: KeyStore) {
+    func showSwap(selectedCurrency: Currency? = nil, coreSystem: CoreSystem?, keyStore: KeyStore?) {
         decideFlow { [weak self] showScene in
             guard showScene,
                   let profile = UserManager.shared.profile,
@@ -736,18 +736,24 @@ class BaseCoordinator: NSObject, Coordinatable {
                                         callback: callback)
     }
     
-    func prepareForDeeplinkHandling(coreSystem: CoreSystem, keyStore: KeyStore) {
-        guard !childCoordinators.isEmpty else {
-            handleDeeplink(coreSystem: coreSystem, keyStore: keyStore)
+    func dismissAllFlowsIfNeeded(completion: (() -> Void)?) {
+        guard childCoordinators.isEmpty == true else {
+            childCoordinators.forEach { child in
+                child.navigationController.dismiss(animated: true) { [weak self] in
+                    self?.childDidFinish(child: child)
+                    guard self?.childCoordinators.isEmpty == true else { return }
+                    completion?()
+                }
+            }
             return
         }
         
-        childCoordinators.forEach { child in
-            child.navigationController.dismiss(animated: false) { [weak self] in
-                self?.childDidFinish(child: child)
-                guard self?.childCoordinators.isEmpty == true else { return }
-                self?.handleDeeplink(coreSystem: coreSystem, keyStore: keyStore)
-            }
+        completion?()
+    }
+    
+    func prepareForDeeplinkHandling(coreSystem: CoreSystem, keyStore: KeyStore) {
+        dismissAllFlowsIfNeeded { [weak self] in
+            self?.handleDeeplink(coreSystem: coreSystem, keyStore: keyStore)
         }
     }
     
@@ -766,11 +772,13 @@ class BaseCoordinator: NSObject, Coordinatable {
             showProfile()
             
         case .setPassword:
-            openModally(coordinator: AccountCoordinator.self, scene: Scenes.SetPassword) { vc in
-                vc?.navigationItem.hidesBackButton = true
-                vc?.dataStore?.code = DynamicLinksManager.shared.code
-                DynamicLinksManager.shared.code = nil
-            }
+            dismissAllFlowsIfNeeded(completion: { [weak self] in
+                self?.openModally(coordinator: AccountCoordinator.self, scene: Scenes.SetPassword) { vc in
+                    vc?.navigationItem.hidesBackButton = true
+                    vc?.dataStore?.code = DynamicLinksManager.shared.code
+                    DynamicLinksManager.shared.code = nil
+                }
+            })
             
         case .oauth2:
             // TODO: remove the flow if we won't use deep linking oauth login
