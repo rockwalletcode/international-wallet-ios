@@ -44,7 +44,7 @@ class ForgotPasswordInteractor: NSObject, Interactor, ForgotPasswordViewActions 
             case .success:
                 self?.presenter?.presentNext(actionResponse: .init())
                 
-                UserManager.shared.setUserCredentials(email: self?.dataStore?.email, sessionToken: nil, sessionTokenHash: nil)
+                UserManager.shared.setUserCredentials(email: self?.dataStore?.email, sessionToken: nil, sessionTokenHash: nil, refreshWallet: false)
                 
             case .failure(let error):
                 self?.presenter?.presentError(actionResponse: .init(error: error))
