@@ -31,8 +31,6 @@ class LoadingView: UIView {
         view.font = Fonts.Body.two
         view.textColor = Colors.primary
         view.textAlignment = .center
-        view.text = "Please wait while we direct you to RockWallet PRO"
-        view.isHidden = true
         
         return view
     }()
@@ -82,7 +80,7 @@ class LoadingView: UIView {
     }
     
     // MARK: show and hide trigger methods
-    static func show(animated: Bool = true, showDescription: Bool = false) {
+    static func show(animated: Bool = true, descriptionText: String = "") {
         if isShowing {
             hideIfNeeded(animated: false)
         }
@@ -96,7 +94,7 @@ class LoadingView: UIView {
         UIApplication.shared.isIdleTimerDisabled = true
         
         let loadingView = LoadingView()
-        loadingView.descriptionLabel.isHidden = !showDescription
+        loadingView.descriptionLabel.setup(with: .text(descriptionText))
         topView.addSubview(loadingView)
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.topAnchor.constraint(equalTo: topView.topAnchor).isActive = true
