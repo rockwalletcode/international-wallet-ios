@@ -17,16 +17,22 @@ class AuthorizeLoginInteractor: NSObject, Interactor, AuthorizeLoginViewActions 
     // MARK: - AuthorizeLoginViewActions
     
     func getData(viewAction: FetchModels.Get.ViewAction) {
+        AuthorizationStartedWorker().execute()
         presenter?.presentData(actionResponse: .init(item: Models.Item(location: dataStore?.location,
                                                                        device: dataStore?.device,
                                                                        ipAddress: dataStore?.ipAddress)))
     }
     
     func authorize(viewAction: AuthorizeLoginModels.Authorize.ViewAction) {
-//        DynamicLinksManager.shared.loginToken = nil // Call in case of failure
-        // TODO: BE call
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.presenter?.presentAuthorization(actionResponse: .init(success: true))
+        DynamicLinksManager.shared.loginToken = nil
+        AuthorizeLoginWorker().execute() { [weak self] result in
+            switch result {
+            case .success(let authorization):
+                self?.presenter?.presentAuthorization(actionResponse: .init(success: true))
+                
+            case .failure:
+                self?.presenter?.presentAuthorization(actionResponse: .init(success: false))
+            }
         }
     }
 

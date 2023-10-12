@@ -24,7 +24,7 @@ class DynamicLinksManager {
         case home
         case profile
         case oauth2 = "oauth2"
-        case login
+        case login = "op=web_login"
     }
     
     var dynamicLinkType: DynamicLinkType?

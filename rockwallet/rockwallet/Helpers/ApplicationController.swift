@@ -177,6 +177,10 @@ class ApplicationController: Subscriber {
                 self?.setupSystem(with: account)
             })
         }
+        
+        Store.subscribe(self, name: .handleDeeplink) { _ in
+            self.coordinator?.prepareForDeeplinkHandling(coreSystem: self.coreSystem, keyStore: self.keyStore)
+        }
     }
     
     private func setupKeyboard() {
@@ -391,10 +395,6 @@ class ApplicationController: Subscriber {
     }
     
     private func afterLoginFlow() {
-        Store.subscribe(self, name: .handleDeeplink) { _ in
-            self.coordinator?.prepareForDeeplinkHandling(coreSystem: self.coreSystem, keyStore: self.keyStore)
-        }
-        
         UserManager.shared.refresh { [weak self] result in
             switch result {
             case .success:

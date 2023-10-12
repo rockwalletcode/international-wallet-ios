@@ -750,6 +750,8 @@
 		D7F8EA3829C4857B008DD7C7 /* DrawerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8EA3729C4857B008DD7C7 /* DrawerManager.swift */; };
 		D7FAC50B2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC50A2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift */; };
 		D7FAC50D2ACFFCA8001A9A79 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC50C2ACFFCA8001A9A79 /* CountdownTimerView.swift */; };
+		D7FAC50F2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC50E2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift */; };
+		D7FAC5112AD56AED001A9A79 /* AuthorizationStartedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC5102AD56AED001A9A79 /* AuthorizationStartedWorker.swift */; };
 		D7FBCE602A6FA37C002E5249 /* WaitingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE592A6FA37B002E5249 /* WaitingStore.swift */; };
 		D7FBCE612A6FA37C002E5249 /* WaitingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE5A2A6FA37B002E5249 /* WaitingPresenter.swift */; };
 		D7FBCE622A6FA37C002E5249 /* WaitingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE5B2A6FA37B002E5249 /* WaitingModels.swift */; };
@@ -1605,6 +1607,8 @@
 		D7F8EA3729C4857B008DD7C7 /* DrawerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerManager.swift; sourceTree = "<group>"; };
 		D7FAC50A2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTitleValuesView.swift; sourceTree = "<group>"; };
 		D7FAC50C2ACFFCA8001A9A79 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
+		D7FAC50E2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginWorker.swift; sourceTree = "<group>"; };
+		D7FAC5102AD56AED001A9A79 /* AuthorizationStartedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStartedWorker.swift; sourceTree = "<group>"; };
 		D7FBCE592A6FA37B002E5249 /* WaitingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingStore.swift; sourceTree = "<group>"; };
 		D7FBCE5A2A6FA37B002E5249 /* WaitingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPresenter.swift; sourceTree = "<group>"; };
 		D7FBCE5B2A6FA37B002E5249 /* WaitingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingModels.swift; sourceTree = "<group>"; };
@@ -3618,6 +3622,8 @@
 				D73159A32ACE9573003C88F9 /* AuthorizeLoginVIP.swift */,
 				D73159A42ACE9573003C88F9 /* AuthorizeLoginViewController.swift */,
 				D73159A52ACE9573003C88F9 /* AuthorizeLoginInteractor.swift */,
+				D7FAC50E2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift */,
+				D7FAC5102AD56AED001A9A79 /* AuthorizationStartedWorker.swift */,
 			);
 			path = AuthorizeLogin;
 			sourceTree = "<group>";
@@ -4160,6 +4166,7 @@
 				7E8E979D283F4830008606B0 /* ProfileInteractor.swift in Sources */,
 				CE5F21DB1E4A93A500C47B8E /* LoginTransitionDelegate.swift in Sources */,
 				71C44E942264BE2C00EF4459 /* BaseRecoveryKeyViewController.swift in Sources */,
+				D7FAC50F2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift in Sources */,
 				0452C93729D42FC600CCC8DA /* BlocksatoshiEndpoints.swift in Sources */,
 				7E5CB38E2835090E00EC787E /* UIColor+init.swift in Sources */,
 				7B0AE8092976936B0079C7E1 /* SetPasswordWorker.swift in Sources */,
@@ -4343,6 +4350,7 @@
 				3A6FD42F24E4570900068ECE /* KeyStore+CloudBackup.swift in Sources */,
 				7BC3F046294C6F8300947526 /* VeriffSessionWorker.swift in Sources */,
 				C46C2901287EBF4F0035C843 /* BaseInfoVIP.swift in Sources */,
+				D7FAC5112AD56AED001A9A79 /* AuthorizationStartedWorker.swift in Sources */,
 				7E5CB3872835090E00EC787E /* BorderConfiguration.swift in Sources */,
 				7B54E5A627F4A2B0002DD1E4 /* HTTPRequestHelpers.swift in Sources */,
 				7E5CB38D2835090E00EC787E /* Configurable.swift in Sources */,
