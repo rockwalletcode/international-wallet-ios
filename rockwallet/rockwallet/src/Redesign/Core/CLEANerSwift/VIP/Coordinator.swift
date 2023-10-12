@@ -766,11 +766,13 @@ class BaseCoordinator: NSObject, Coordinatable {
             showProfile()
             
         case .setPassword:
-            openModally(coordinator: AccountCoordinator.self, scene: Scenes.SetPassword) { vc in
-                vc?.navigationItem.hidesBackButton = true
-                vc?.dataStore?.code = DynamicLinksManager.shared.code
-                DynamicLinksManager.shared.code = nil
-            }
+            dismissFlow(completion: { [weak self] in
+                self?.openModally(coordinator: AccountCoordinator.self, scene: Scenes.SetPassword) { vc in
+                    vc?.navigationItem.hidesBackButton = true
+                    vc?.dataStore?.code = DynamicLinksManager.shared.code
+                    DynamicLinksManager.shared.code = nil
+                }
+            })
             
         case .oauth2:
             // TODO: remove the flow if we won't use deep linking oauth login
@@ -795,5 +797,10 @@ class BaseCoordinator: NSObject, Coordinatable {
                 print(error)
             }
         }
+    }
+    
+    func dismissFlow(completion: (() -> Void)?) {
+        navigationController.dismiss(animated: true, completion: completion)
+        parentCoordinator?.childDidFinish(child: self)
     }
 }
