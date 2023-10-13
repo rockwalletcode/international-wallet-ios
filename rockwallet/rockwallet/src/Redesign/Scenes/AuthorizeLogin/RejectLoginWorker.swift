@@ -12,6 +12,10 @@ import Foundation
 
 class RejectLoginWorker: BaseApiWorker<PlainMapper> {
     override func getUrl() -> String {
-        return APIURLHandler.getUrl(WebLoginEndpoints.reject)
+        return APIURLHandler.getUrl(WebLoginEndpoints.reject, parameters: DynamicLinksManager.shared.loginToken ?? "")
+    }
+    
+    override func getMethod() -> HTTPMethod {
+        return .post
     }
 }

@@ -15,7 +15,7 @@ enum WebLoginEndpoints: String, URLType {
     
     case progress = "auth/%@/progress"
     case login = "auth/login"
-    case reject = "auth/reject"
+    case reject = "auth/%@/reject"
     
     var url: String {
         return String(format: Self.baseURL, rawValue)

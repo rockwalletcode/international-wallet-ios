@@ -19,8 +19,9 @@ class AuthorizeLoginInteractor: NSObject, Interactor, AuthorizeLoginViewActions 
     func getData(viewAction: FetchModels.Get.ViewAction) {
         AuthorizationStartedWorker().execute { [weak self] result in
             switch result {
-            case .success(let response):
-                self?.presenter?.presentData(actionResponse: .init(item: Models.Item(countdownTime: response?.time,
+            case .success:
+                // TODO: Update countdown time from response
+                self?.presenter?.presentData(actionResponse: .init(item: Models.Item(countdownTime: Constant.authorizeLoginTime,
                                                                                      location: self?.dataStore?.location,
                                                                                      device: self?.dataStore?.device,
                                                                                      ipAddress: self?.dataStore?.ipAddress)))
@@ -42,7 +43,7 @@ class AuthorizeLoginInteractor: NSObject, Interactor, AuthorizeLoginViewActions 
         
         DynamicLinksManager.shared.loginToken = nil
         let requestData = AuthorizeLoginRequestData(email: email, token: token, deviceToken: deviceToken)
-        AuthorizeLoginWorker().execute { [weak self] result in
+        AuthorizeLoginWorker().execute(requestData: requestData) { [weak self] result in
             switch result {
             case .success:
                 self?.presenter?.presentAuthorization(actionResponse: .init(success: true))

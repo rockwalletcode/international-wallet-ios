@@ -390,7 +390,12 @@ class ModalPresenter: Subscriber {
                 }
                 
             case .deepLink(let url):
-                UIApplication.shared.open(url)
+                guard DynamicLinksManager.shared.shouldHandleDynamicLink == true else {
+                    UIApplication.shared.open(url)
+                    return
+                }
+                
+                Store.trigger(name: .handleDeeplink)
             case .invalid:
                 break
             case .gift:

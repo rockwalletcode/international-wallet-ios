@@ -15,7 +15,7 @@ struct AuthorizeLoginRequestData: RequestModelData {
     let token: String?
     let deviceToken: String?
     
-    func getParameters() -> [String : Any] {
+    func getParameters() -> [String: Any] {
         let params: [String: Any?] = [
             "email": email,
             "token": token,
@@ -27,16 +27,16 @@ struct AuthorizeLoginRequestData: RequestModelData {
 }
 
 class AuthorizeLoginWorker: BaseApiWorker<PlainMapper> {
-    override func getHeaders() -> [String : String] {
-        return UserSignature().getHeaders(nonce: (getParameters()["email"] as? String),
-                                          token: (getParameters()["token"] as? String))
+    override func getHeaders() -> [String: String] {
+        return UserSignature().getHeaders(nonce: requestData?.getParameters()["email"] as? String,
+                                          token: requestData?.getParameters()["device_token"] as? String)
     }
     
     override func getUrl() -> String {
         return APIURLHandler.getUrl(WebLoginEndpoints.login)
     }
     
-    override func getParameters() -> [String : Any] {
+    override func getParameters() -> [String: Any] {
         return requestData?.getParameters() ?? [:]
     }
     

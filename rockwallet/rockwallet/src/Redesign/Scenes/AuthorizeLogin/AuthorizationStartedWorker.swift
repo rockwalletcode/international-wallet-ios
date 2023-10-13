@@ -25,8 +25,12 @@ class AuthorizationStartedMapper: ModelMapper<AuthorizationStartedResponseModel,
     }
 }
 
-class AuthorizationStartedWorker: BaseApiWorker<AuthorizationStartedMapper> {
+class AuthorizationStartedWorker: BaseApiWorker<PlainMapper> {
     override func getUrl() -> String {
         return APIURLHandler.getUrl(WebLoginEndpoints.progress, parameters: DynamicLinksManager.shared.loginToken ?? "")
+    }
+    
+    override func getMethod() -> HTTPMethod {
+        return .post
     }
 }
