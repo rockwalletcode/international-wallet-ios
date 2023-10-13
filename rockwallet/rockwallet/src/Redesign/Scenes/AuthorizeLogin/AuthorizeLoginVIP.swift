@@ -14,14 +14,17 @@ extension Scenes {
 
 protocol AuthorizeLoginViewActions: BaseViewActions, FetchViewActions {
     func authorize(viewAction: AuthorizeLoginModels.Authorize.ViewAction)
+    func reject(viewAction: AuthorizeLoginModels.Reject.ViewAction)
 }
 
 protocol AuthorizeLoginActionResponses: BaseActionResponses, FetchActionResponses {
     func presentAuthorization(actionResponse: AuthorizeLoginModels.Authorize.ActionResponse)
+    func presentRejection(actionResponse: AuthorizeLoginModels.Reject.ActionResponse)
 }
 
 protocol AuthorizeLoginResponseDisplays: BaseResponseDisplays, FetchResponseDisplays {
     func displayAuthorization(responseDisplay: AuthorizeLoginModels.Authorize.ResponseDisplay)
+    func displayRejection(responseDisplay: AuthorizeLoginModels.Reject.ResponseDisplay)
 }
 
 protocol AuthorizeLoginDataStore: BaseDataStore {

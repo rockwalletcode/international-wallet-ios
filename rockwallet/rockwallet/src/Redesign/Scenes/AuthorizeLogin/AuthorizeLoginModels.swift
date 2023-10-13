@@ -9,7 +9,7 @@
 import UIKit
 
 enum AuthorizeLoginModels {
-    typealias Item = (location: String?, device: String?, ipAddress: String?)
+    typealias Item = (countdownTime: TimeInterval?, location: String?, device: String?, ipAddress: String?)
     
     enum Section: Sectionable {
         case timer
@@ -21,6 +21,16 @@ enum AuthorizeLoginModels {
     }
     
     struct Authorize {
+        struct ViewAction { }
+        struct ActionResponse {
+            var success: Bool
+        }
+        struct ResponseDisplay {
+            var success: Bool
+        }
+    }
+    
+    struct Reject {
         struct ViewAction { }
         struct ActionResponse {
             var success: Bool

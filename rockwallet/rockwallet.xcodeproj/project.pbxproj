@@ -750,8 +750,10 @@
 		D7F8EA3829C4857B008DD7C7 /* DrawerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8EA3729C4857B008DD7C7 /* DrawerManager.swift */; };
 		D7FAC50B2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC50A2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift */; };
 		D7FAC50D2ACFFCA8001A9A79 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC50C2ACFFCA8001A9A79 /* CountdownTimerView.swift */; };
-		D7FAC50F2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC50E2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift */; };
 		D7FAC5112AD56AED001A9A79 /* AuthorizationStartedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC5102AD56AED001A9A79 /* AuthorizationStartedWorker.swift */; };
+		D7FAC5132AD807E5001A9A79 /* AuthorizeLoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC5122AD807E5001A9A79 /* AuthorizeLoginWorker.swift */; };
+		D7FAC5152AD80C71001A9A79 /* WebLoginEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC5142AD80C71001A9A79 /* WebLoginEndpoints.swift */; };
+		D7FAC5172AD921FD001A9A79 /* RejectLoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FAC5162AD921FD001A9A79 /* RejectLoginWorker.swift */; };
 		D7FBCE602A6FA37C002E5249 /* WaitingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE592A6FA37B002E5249 /* WaitingStore.swift */; };
 		D7FBCE612A6FA37C002E5249 /* WaitingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE5A2A6FA37B002E5249 /* WaitingPresenter.swift */; };
 		D7FBCE622A6FA37C002E5249 /* WaitingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBCE5B2A6FA37B002E5249 /* WaitingModels.swift */; };
@@ -1607,8 +1609,10 @@
 		D7F8EA3729C4857B008DD7C7 /* DrawerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerManager.swift; sourceTree = "<group>"; };
 		D7FAC50A2ACFEAB4001A9A79 /* GroupedTitleValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTitleValuesView.swift; sourceTree = "<group>"; };
 		D7FAC50C2ACFFCA8001A9A79 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
-		D7FAC50E2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginWorker.swift; sourceTree = "<group>"; };
 		D7FAC5102AD56AED001A9A79 /* AuthorizationStartedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStartedWorker.swift; sourceTree = "<group>"; };
+		D7FAC5122AD807E5001A9A79 /* AuthorizeLoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeLoginWorker.swift; sourceTree = "<group>"; };
+		D7FAC5142AD80C71001A9A79 /* WebLoginEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginEndpoints.swift; sourceTree = "<group>"; };
+		D7FAC5162AD921FD001A9A79 /* RejectLoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectLoginWorker.swift; sourceTree = "<group>"; };
 		D7FBCE592A6FA37B002E5249 /* WaitingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingStore.swift; sourceTree = "<group>"; };
 		D7FBCE5A2A6FA37B002E5249 /* WaitingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPresenter.swift; sourceTree = "<group>"; };
 		D7FBCE5B2A6FA37B002E5249 /* WaitingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingModels.swift; sourceTree = "<group>"; };
@@ -1718,6 +1722,7 @@
 				C489928329F80105005A987C /* PaymailEndpoints.swift */,
 				C4C6FAC42A9498CB0053302C /* Oauth2Endpoints.swift */,
 				C4AC87F62AB98A1E006D755D /* ProEndpoints.swift */,
+				D7FAC5142AD80C71001A9A79 /* WebLoginEndpoints.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -3622,8 +3627,9 @@
 				D73159A32ACE9573003C88F9 /* AuthorizeLoginVIP.swift */,
 				D73159A42ACE9573003C88F9 /* AuthorizeLoginViewController.swift */,
 				D73159A52ACE9573003C88F9 /* AuthorizeLoginInteractor.swift */,
-				D7FAC50E2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift */,
 				D7FAC5102AD56AED001A9A79 /* AuthorizationStartedWorker.swift */,
+				D7FAC5122AD807E5001A9A79 /* AuthorizeLoginWorker.swift */,
+				D7FAC5162AD921FD001A9A79 /* RejectLoginWorker.swift */,
 			);
 			path = AuthorizeLogin;
 			sourceTree = "<group>";
@@ -4106,6 +4112,7 @@
 				043DB5D029EDC7B900DEB8FD /* SetTwoStepAuthWorker.swift in Sources */,
 				7B39478E297000ED007D405E /* ForgotPasswordModels.swift in Sources */,
 				7EF45F8C284768C100D1F7B0 /* ItemSelectionModels.swift in Sources */,
+				D7FAC5172AD921FD001A9A79 /* RejectLoginWorker.swift in Sources */,
 				C41E9E3A2ABC311600AB8170 /* TransferFundsInteractor.swift in Sources */,
 				C4CCFCEC29D43DB600E38B3A /* AuthenticatorAppInteractor.swift in Sources */,
 				CE20C8F61DBAF77D00C8397A /* UIViewController+Extensions.swift in Sources */,
@@ -4166,7 +4173,6 @@
 				7E8E979D283F4830008606B0 /* ProfileInteractor.swift in Sources */,
 				CE5F21DB1E4A93A500C47B8E /* LoginTransitionDelegate.swift in Sources */,
 				71C44E942264BE2C00EF4459 /* BaseRecoveryKeyViewController.swift in Sources */,
-				D7FAC50F2AD51F9C001A9A79 /* AuthorizeLoginWorker.swift in Sources */,
 				0452C93729D42FC600CCC8DA /* BlocksatoshiEndpoints.swift in Sources */,
 				7E5CB38E2835090E00EC787E /* UIColor+init.swift in Sources */,
 				7B0AE8092976936B0079C7E1 /* SetPasswordWorker.swift in Sources */,
@@ -4214,6 +4220,7 @@
 				CE8CD8E11E31976800785E02 /* LoginViewController.swift in Sources */,
 				7EF45F8A284768C100D1F7B0 /* ItemSelectionStore.swift in Sources */,
 				7EF45F87284768C100D1F7B0 /* ItemSelectionVIP.swift in Sources */,
+				D7FAC5132AD807E5001A9A79 /* AuthorizeLoginWorker.swift in Sources */,
 				7B6052C4299E55EB002C00C2 /* AnimatedBlockSetLogo.swift in Sources */,
 				7BF5D4FC296D4FC900942ADB /* SignUpStore.swift in Sources */,
 				CECCE5AB1E038C9900D99448 /* GenericPinPadCell.swift in Sources */,
@@ -4646,6 +4653,7 @@
 				7B54E5A227F4A2B0002DD1E4 /* Decodable+Extensions.swift in Sources */,
 				7E5CB3832835090E00EC787E /* Presets.swift in Sources */,
 				7B54E5A327F4A2B0002DD1E4 /* HttpRequest.swift in Sources */,
+				D7FAC5152AD80C71001A9A79 /* WebLoginEndpoints.swift in Sources */,
 				7E8E9799283F4830008606B0 /* ProfilePresenter.swift in Sources */,
 				7EF45F88284768C100D1F7B0 /* ItemSelectionInteractor.swift in Sources */,
 				CEA3626A1E01150D0061FC0E /* CGContext+Additions.swift in Sources */,

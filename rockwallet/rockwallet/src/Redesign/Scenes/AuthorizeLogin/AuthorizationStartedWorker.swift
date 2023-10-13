@@ -10,8 +10,23 @@
 
 import Foundation
 
-class AuthorizationStartedWorker: BaseApiWorker<PlainMapper> {
+struct AuthorizationStartedModel: Model {
+    let time: TimeInterval
+}
+
+struct AuthorizationStartedResponseModel: ModelResponse {
+    let time: Int
+}
+
+class AuthorizationStartedMapper: ModelMapper<AuthorizationStartedResponseModel, AuthorizationStartedModel> {
+    override func getModel(from response: AuthorizationStartedResponseModel?) -> AuthorizationStartedModel? {
+        guard let time = response?.time else { return nil }
+        return .init(time: TimeInterval(exactly: time) ?? Constant.authorizeLoginTime)
+    }
+}
+
+class AuthorizationStartedWorker: BaseApiWorker<AuthorizationStartedMapper> {
     override func getUrl() -> String {
-        return ""
+        return APIURLHandler.getUrl(WebLoginEndpoints.progress, parameters: DynamicLinksManager.shared.loginToken ?? "")
     }
 }

@@ -1,8 +1,8 @@
 // 
-//  AuthorizeLoginWorker.swift
+//  WebLoginWorker.swift
 //  rockwallet
 //
-//  Created by Dino Gačević on 10/10/2023.
+//  Created by Dino Gačević on 12/10/2023.
 //  Copyright © 2023 RockWallet, LLC. All rights reserved.
 //
 //  See the LICENSE file at the project root for license information.
@@ -10,22 +10,37 @@
 
 import Foundation
 
-struct AuthorizeLoginResponse: ModelResponse {
+struct AuthorizeLoginRequestData: RequestModelData {
+    let email: String?
+    let token: String?
+    let deviceToken: String?
     
-}
-
-struct AuthorizeLogin: Model {
-    
-}
-
-class AuthorizeLoginMapper: ModelMapper<AuthorizeLoginResponse, AuthorizeLogin> {
-    override func getModel(from response: AuthorizeLoginResponse?) -> AuthorizeLogin? {
-        return .init()
+    func getParameters() -> [String : Any] {
+        let params: [String: Any?] = [
+            "email": email,
+            "token": token,
+            "device_token": deviceToken
+        ]
+        
+        return params.compactMapValues { $0 }
     }
 }
 
-class AuthorizeLoginWorker: BaseApiWorker<AuthorizeLoginMapper> {
+class AuthorizeLoginWorker: BaseApiWorker<PlainMapper> {
+    override func getHeaders() -> [String : String] {
+        return UserSignature().getHeaders(nonce: (getParameters()["email"] as? String),
+                                          token: (getParameters()["token"] as? String))
+    }
+    
     override func getUrl() -> String {
-        return ""
+        return APIURLHandler.getUrl(WebLoginEndpoints.login)
+    }
+    
+    override func getParameters() -> [String : Any] {
+        return requestData?.getParameters() ?? [:]
+    }
+    
+    override func getMethod() -> HTTPMethod {
+        return .post
     }
 }

@@ -109,7 +109,8 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
         rejectButton.configure(with: Presets.Button.inverse)
         rejectButton.setup(with: .init(title: L10n.Button.reject, callback: { [weak self] in
             self?.invalidateTimer()
-            self?.coordinator?.showFailure(reason: .authorizationRejected, isModalDismissable: false, hidesBackButton: true)
+            self?.interactor?.reject(viewAction: .init())
+            LoadingView.show()
         }))
         
         guard let authorizeButtonConfig = authorizeButton.config,
@@ -129,6 +130,16 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
         
         if responseDisplay.success {
             coordinator?.showSuccess(reason: .authorizeLogin, isModalDismissable: false, hidesBackButton: true)
+        } else {
+            coordinator?.showFailure(reason: .authorizationFailed, isModalDismissable: false, hidesBackButton: true)
+        }
+    }
+    
+    func displayRejection(responseDisplay: AuthorizeLoginModels.Reject.ResponseDisplay) {
+        LoadingView.hideIfNeeded()
+        
+        if responseDisplay.success {
+            coordinator?.showFailure(reason: .authorizationRejected, isModalDismissable: false, hidesBackButton: true)
         } else {
             coordinator?.showFailure(reason: .authorizationFailed, isModalDismissable: false, hidesBackButton: true)
         }
