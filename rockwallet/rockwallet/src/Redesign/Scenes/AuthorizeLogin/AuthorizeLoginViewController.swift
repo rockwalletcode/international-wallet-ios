@@ -28,6 +28,11 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
         invalidateTimer()
     }
     
+    override func prepareData() {
+        super.prepareData()
+        LoadingView.show()
+    }
+    
     override func setupSubviews() {
         super.setupSubviews()
         
@@ -124,6 +129,11 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
     // MARK: - User Interaction
 
     // MARK: - AuthorizeLoginResponseDisplay
+    
+    override func displayData(responseDisplay: FetchModels.Get.ResponseDisplay) {
+        super.displayData(responseDisplay: responseDisplay)
+        LoadingView.hideIfNeeded()
+    }
     
     func displayAuthorization(responseDisplay: AuthorizeLoginModels.Authorize.ResponseDisplay) {
         LoadingView.hideIfNeeded()

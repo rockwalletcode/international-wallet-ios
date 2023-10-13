@@ -11,21 +11,21 @@
 import Foundation
 
 struct AuthorizationStartedModel: Model {
-    let time: TimeInterval
+    let countdownTime: TimeInterval
 }
 
 struct AuthorizationStartedResponseModel: ModelResponse {
-    let time: Int
+    let timeoutSeconds: Int
 }
 
 class AuthorizationStartedMapper: ModelMapper<AuthorizationStartedResponseModel, AuthorizationStartedModel> {
     override func getModel(from response: AuthorizationStartedResponseModel?) -> AuthorizationStartedModel? {
-        guard let time = response?.time else { return nil }
-        return .init(time: TimeInterval(exactly: time) ?? Constant.authorizeLoginTime)
+        guard let time = response?.timeoutSeconds else { return nil }
+        return .init(countdownTime: TimeInterval(exactly: time) ?? Constant.authorizeLoginTime)
     }
 }
 
-class AuthorizationStartedWorker: BaseApiWorker<PlainMapper> {
+class AuthorizationStartedWorker: BaseApiWorker<AuthorizationStartedMapper> {
     override func getUrl() -> String {
         return APIURLHandler.getUrl(WebLoginEndpoints.progress, parameters: DynamicLinksManager.shared.loginToken ?? "")
     }

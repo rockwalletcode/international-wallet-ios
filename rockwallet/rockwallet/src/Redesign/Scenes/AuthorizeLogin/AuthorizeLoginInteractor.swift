@@ -19,9 +19,8 @@ class AuthorizeLoginInteractor: NSObject, Interactor, AuthorizeLoginViewActions 
     func getData(viewAction: FetchModels.Get.ViewAction) {
         AuthorizationStartedWorker().execute { [weak self] result in
             switch result {
-            case .success:
-                // TODO: Update countdown time from response
-                self?.presenter?.presentData(actionResponse: .init(item: Models.Item(countdownTime: Constant.authorizeLoginTime,
+            case .success(let response):
+                self?.presenter?.presentData(actionResponse: .init(item: Models.Item(countdownTime: response?.countdownTime,
                                                                                      location: self?.dataStore?.location,
                                                                                      device: self?.dataStore?.device,
                                                                                      ipAddress: self?.dataStore?.ipAddress)))
