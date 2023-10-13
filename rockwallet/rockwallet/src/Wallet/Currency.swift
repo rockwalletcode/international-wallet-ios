@@ -126,6 +126,10 @@ class Currency: SharedCurrency, CurrencyWithIcon, ItemSelectable {
             return ["litecoin"]
         }
         
+        if isDogecoin {
+            return ["doge"]
+        }
+        
         return nil
     }
     

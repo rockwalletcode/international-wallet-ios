@@ -79,7 +79,7 @@ class BaseCoordinator: NSObject, Coordinatable {
         navigationController.show(nvc, sender: nil)
     }
     
-    func showSwap(selectedCurrency: Currency? = nil, coreSystem: CoreSystem, keyStore: KeyStore) {
+    func showSwap(selectedCurrency: Currency? = nil, coreSystem: CoreSystem?, keyStore: KeyStore?) {
         decideFlow { [weak self] showScene in
             guard showScene,
                   let profile = UserManager.shared.profile,
@@ -780,12 +780,13 @@ class BaseCoordinator: NSObject, Coordinatable {
             showProfile()
             
         case .setPassword:
-            dismissFlow()
-            
-            open(scene: Scenes.SetPassword) { vc in
-                vc.dataStore?.code = DynamicLinksManager.shared.code
-                DynamicLinksManager.shared.code = nil
-            }
+            dismissFlow(completion: { [weak self] in
+                self?.openModally(coordinator: AccountCoordinator.self, scene: Scenes.SetPassword) { vc in
+                    vc?.navigationItem.hidesBackButton = true
+                    vc?.dataStore?.code = DynamicLinksManager.shared.code
+                    DynamicLinksManager.shared.code = nil
+                }
+            })
             
         case .oauth2:
             // TODO: remove the flow if we won't use deep linking oauth login
@@ -819,5 +820,10 @@ class BaseCoordinator: NSObject, Coordinatable {
         if let url = URL(string: destination), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
+    }
+    
+    func dismissFlow(completion: (() -> Void)?) {
+        navigationController.dismiss(animated: true, completion: completion)
+        parentCoordinator?.childDidFinish(child: self)
     }
 }

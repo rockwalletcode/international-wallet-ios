@@ -81,6 +81,7 @@ class SharedCurrency: CurrencyUID {
     var isERC20Token: Bool { return tokenType == .erc20 }
     var isBitcoinCompatible: Bool { return isBitcoin || isBitcoinCash || isBitcoinSV }
     var isEthereumCompatible: Bool { return isEthereum || isERC20Token }
+    var isDogecoin: Bool { return uid == Currencies.shared.getUID(from: AssetCodes.doge.value) }
     
     // Unused
     var isHBAR: Bool { return uid == Currencies.shared.getUID(from: "hbar")}
@@ -222,6 +223,7 @@ class Currencies {
         case eth
         case xrp
         case ltc
+        case doge
         
         var value: String { return rawValue }
     }

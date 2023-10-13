@@ -51,7 +51,7 @@ public class BRUserAgentHeaderGenerator {
     }
     
     private static func appNameString() -> String {
-        return "rwintl"
+        return "rwlt"
     }
     
     private static func cfNetworkVersionString() -> String {
