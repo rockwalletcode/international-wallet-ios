@@ -149,12 +149,14 @@ internal enum L10n {
     internal static let forgotPassword = L10n.tr("Localizable", "Account.ForgotPassword", fallback: "Forgot password?")
     /// Get full access for the RockWallet label on profile screen
     internal static let fullAccess = L10n.tr("Localizable", "Account.FullAccess", fallback: "Get full access to your RockWallet!")
+    /// Full SSN (Social security number)
+    internal static let fullSsn = L10n.tr("Localizable", "Account.FullSsn", fallback: "Full SSN (Social security number)")
     /// ID Verification title on account screen
     internal static let idVerification = L10n.tr("Localizable", "Account.IDVerification", fallback: "ID Verification")
     /// Your ID verification was successfully approved!
     internal static let idVerificationApproved = L10n.tr("Localizable", "Account.IdVerificationApproved", fallback: "Your ID verification was successfully approved!")
-    /// We’re sorry, your ID verification was rejected.
-    internal static let idVerificationRejected = L10n.tr("Localizable", "Account.IdVerificationRejected", fallback: "We’re sorry, your ID verification was rejected.")
+    /// We’re sorry, we can’t verify your account.
+    internal static let idVerificationRejected = L10n.tr("Localizable", "Account.IdVerificationRejected", fallback: "We’re sorry, we can’t verify your account.")
     /// Retry verification description
     internal static let idVerificationRetry = L10n.tr("Localizable", "Account.IdVerificationRetry", fallback: "Please try to complete your verification again, while keeping the following in mind:\n\n- Please ensure your type of ID is supported.\n\n- Make sure the area is well-lit and there's no glare on the ID or your face.\n\n- Double check that your ID isn't expired or invalid.")
     /// Why do we need your SSN?
@@ -325,6 +327,40 @@ internal enum L10n {
       /// Paste the following code in your authenticator app.
       internal static let pasteFollowingCodeInAuthApp = L10n.tr("Localizable", "Account.2FA.pasteFollowingCodeInAuthApp", fallback: "Paste the following code in your authenticator app.")
     }
+    internal enum AuthorizeLogin {
+      /// Device
+      internal static let device = L10n.tr("Localizable", "Account.AuthorizeLogin.device", fallback: "Device")
+      /// IP
+      internal static let ip = L10n.tr("Localizable", "Account.AuthorizeLogin.ip", fallback: "IP")
+      /// Authorize Login
+      internal static let title = L10n.tr("Localizable", "Account.AuthorizeLogin.title", fallback: "Authorize Login")
+      /// Where
+      internal static let `where` = L10n.tr("Localizable", "Account.AuthorizeLogin.where", fallback: "Where")
+      internal enum Failure {
+        /// Please check your connection and try again.
+        internal static let description = L10n.tr("Localizable", "Account.AuthorizeLogin.Failure.description", fallback: "Please check your connection and try again.")
+        /// There was an error while authorizing your Log in
+        internal static let title = L10n.tr("Localizable", "Account.AuthorizeLogin.Failure.title", fallback: "There was an error while authorizing your Log in")
+      }
+      internal enum Info {
+        /// By confirming, you'll grant login access to the RockWallet web app
+        internal static let description = L10n.tr("Localizable", "Account.AuthorizeLogin.Info.description", fallback: "By confirming, you'll grant login access to the RockWallet web app")
+        /// About this request
+        internal static let title = L10n.tr("Localizable", "Account.AuthorizeLogin.Info.title", fallback: "About this request")
+      }
+      internal enum Rejected {
+        /// If you didn't attempt to log in or suspect a compromise in your wallet security, please reach out to our customer support team for assistance.
+        internal static let description = L10n.tr("Localizable", "Account.AuthorizeLogin.Rejected.description", fallback: "If you didn't attempt to log in or suspect a compromise in your wallet security, please reach out to our customer support team for assistance.")
+        /// Login Successfully Rejected
+        internal static let title = L10n.tr("Localizable", "Account.AuthorizeLogin.Rejected.title", fallback: "Login Successfully Rejected")
+      }
+      internal enum Success {
+        /// You should now have access to your account on the web app.
+        internal static let description = L10n.tr("Localizable", "Account.AuthorizeLogin.Success.description", fallback: "You should now have access to your account on the web app.")
+        /// Log in succesfull
+        internal static let title = L10n.tr("Localizable", "Account.AuthorizeLogin.Success.title", fallback: "Log in succesfull")
+      }
+    }
     internal enum BlockedAccount {
       /// It appears that you're unable to verify your account. For security reasons, we have temporarily disabled it.
       /// 
@@ -336,6 +372,12 @@ internal enum L10n {
     internal enum EmailAddress {
       /// Email address
       internal static let title = L10n.tr("Localizable", "Account.EmailAddress.Title", fallback: "Email address")
+    }
+    internal enum IncorrectSsn {
+      /// Unfortunately, the SSN you’ve entered was not correct. Try again or try with a different method of verification.
+      internal static let description = L10n.tr("Localizable", "Account.IncorrectSsn.description", fallback: "Unfortunately, the SSN you’ve entered was not correct. Try again or try with a different method of verification.")
+      /// We’re sorry, your SSN was not correct
+      internal static let title = L10n.tr("Localizable", "Account.IncorrectSsn.title", fallback: "We’re sorry, your SSN was not correct")
     }
     internal enum InfoDialog {
       /// You have access to: 
@@ -368,12 +410,6 @@ internal enum L10n {
     internal enum IdVerificationRejected {
       /// Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.
       internal static let description = L10n.tr("Localizable", "Account.idVerificationRejected.description", fallback: "Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.")
-      internal enum Description {
-        internal enum Sprint {
-          /// Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.
-          internal static let eleven = L10n.tr("Localizable", "Account.idVerificationRejected.description.Sprint.eleven", fallback: "Unfortunately, we were unable to complete your verification at this time. Feel free to contact us for further support.")
-        }
-      }
     }
   }
   internal enum AccountCreation {
@@ -739,6 +775,10 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "BitID.title", fallback: "BitID Authentication Request")
   }
   internal enum Button {
+    /// Try another method of verification
+    internal static let anotherVerificationMethod = L10n.tr("Localizable", "Button.anotherVerificationMethod", fallback: "Try another method of verification")
+    /// Authorize
+    internal static let authorize = L10n.tr("Localizable", "Button.authorize", fallback: "Authorize")
     /// Back
     internal static let back = L10n.tr("Localizable", "Button.Back", fallback: "Back")
     /// As in "(tap here to) buy (bitcoin)"
@@ -799,12 +839,16 @@ internal enum L10n {
     internal static let ok = L10n.tr("Localizable", "Button.ok", fallback: "OK")
     /// Open Settings button
     internal static let openSettings = L10n.tr("Localizable", "Button.openSettings", fallback: "Open Settings")
+    /// Open web app
+    internal static let openWebApp = L10n.tr("Localizable", "Button.openWebApp", fallback: "Open web app")
     /// Profile button title on tab bar
     internal static let profile = L10n.tr("Localizable", "Button.Profile", fallback: "Profile")
     /// receive button
     internal static let receive = L10n.tr("Localizable", "Button.receive", fallback: "Receive")
     /// Receive digital assets
     internal static let receiveDigitalAssets = L10n.tr("Localizable", "Button.ReceiveDigitalAssets", fallback: "Receive digital assets")
+    /// Reject
+    internal static let reject = L10n.tr("Localizable", "Button.reject", fallback: "Reject")
     /// Remove
     internal static let remove = L10n.tr("Localizable", "Button.remove", fallback: "Remove")
     /// Search button
@@ -1544,6 +1588,8 @@ internal enum L10n {
     internal static let estimatedNetworkFee = L10n.tr("Localizable", "Exchange.EstimatedNetworkFee", fallback: "Estimated Network fee")
     /// Need help? Visit our FAQs
     internal static let faqButton = L10n.tr("Localizable", "Exchange.FaqButton", fallback: "Need help? Visit our FAQs")
+    /// Please wait while we direct you to RockWallet PRO
+    internal static let loadProDescription = L10n.tr("Localizable", "Exchange.LoadProDescription", fallback: "Please wait while we direct you to RockWallet PRO")
     /// Please note, you are leaving the app and being directed to an external website.
     internal static let popupText = L10n.tr("Localizable", "Exchange.PopupText", fallback: "Please note, you are leaving the app and being directed to an external website.")
     /// PRO
@@ -2590,12 +2636,12 @@ internal enum L10n {
     internal static let withdrawalSuccessTitle = L10n.tr("Localizable", "Sell.WithdrawalSuccessTitle", fallback: "Your withdrawal is being processed")
     /// Sell and Withdraw details
     internal static let withdrawDetails = L10n.tr("Localizable", "Sell.WithdrawDetails", fallback: "Sell and Withdraw details")
-    /// Your ACH sell limits
-    internal static let yourAchSellLimits = L10n.tr("Localizable", "Sell.YourAchSellLimits", fallback: "Your ACH sell limits")
+    /// Your ACH withdrawal limits
+    internal static let yourAchSellLimits = L10n.tr("Localizable", "Sell.YourAchSellLimits", fallback: "Your ACH withdrawal limits")
+    /// Your card withdrawal limits
+    internal static let yourCardSellLimits = L10n.tr("Localizable", "Sell.YourCardSellLimits", fallback: "Your card withdrawal limits")
     /// You sell:
     internal static let yourOrder = L10n.tr("Localizable", "Sell.yourOrder", fallback: "You sell:")
-    /// Your sell limits
-    internal static let yourSellLimits = L10n.tr("Localizable", "Sell.YourSellLimits", fallback: "Your sell limits")
     /// You’ll receive
     internal static let youWillReceive = L10n.tr("Localizable", "Sell.YouWillReceive", fallback: "You’ll receive")
     internal enum SsnInput {
