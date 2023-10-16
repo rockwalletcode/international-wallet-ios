@@ -35,7 +35,9 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
             .swapCard: [
                 SwapCurrencyViewModel.init(amount: item,
                                            currencyCode: item?.currency.code,
-                                           currencyImage: item?.currency.imageSquareBackground)
+                                           currencyImage: item?.currency.imageSquareBackground,
+                                           balanceTitle: L10n.Exchange.rockWalletBalance,
+                                           balance: "80.81738785 USDC") // TODO: update with BE balance data
             ]
         ]
         

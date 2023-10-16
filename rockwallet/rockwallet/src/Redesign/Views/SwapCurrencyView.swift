@@ -28,6 +28,8 @@ struct SwapCurrencyViewModel: ViewModel {
     var title: LabelViewModel?
     var feeDescription: LabelViewModel?
     var selectionDisabled = false
+    var balanceTitle: String?
+    var balance: String?
 }
 
 class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>, UITextFieldDelegate {
@@ -137,6 +139,32 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         return view
     }()
     
+    private lazy var balanceStack: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.distribution = .fill
+        view.spacing = Margins.extraSmall.rawValue
+        return view
+    }()
+    
+    private lazy var balanceTitleLabel: FELabel = {
+        let view = FELabel()
+        view.font = Fonts.Body.two
+        view.textColor = Colors.Text.two
+        view.textAlignment = .left
+        view.sizeToFit()
+        return view
+    }()
+    
+    private lazy var balanceLabel: FELabel = {
+        let view = FELabel()
+        view.font = Fonts.Body.two
+        view.textColor = Colors.Text.two
+        view.textAlignment = .left
+        view.sizeToFit()
+        return view
+    }()
+    
     private lazy var selectorImageView: FEImageView = {
         let view = FEImageView()
         view.setup(with: .image(Asset.chevronDown.image))
@@ -220,7 +248,9 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         
         cryptoAmountField.setContentHuggingPriority(.required, for: .horizontal)
         
-        mainStack.addArrangedSubview(fiatStack)
+        mainStack.addArrangedSubview(balanceStack)
+        balanceStack.addArrangedSubview(balanceTitleLabel)
+        balanceStack.addArrangedSubview(fiatStack)
         
         let fiatSpacer = UIView()
         cryptoStack.addArrangedSubview(fiatSpacer)
@@ -231,6 +261,8 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         fiatStack.addArrangedSubview(fiatSpacer)
         fiatStack.addArrangedSubview(fiatAmountField)
         fiatStack.addArrangedSubview(fiatCurrencyLabel)
+        
+        mainStack.addArrangedSubview(balanceLabel)
         
         decidePlaceholder()
     }
@@ -315,8 +347,6 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
             cryptoAmountField.attributedText = viewModel.formattedTokenString
         }
         
-        fiatStack.isHidden = viewModel.formattedFiatString == nil
-        
         codeLabel.text = viewModel.amount?.currency.code ?? viewModel.currencyCode
         
         currencyIconImageView.wrappedView.setup(with: .image(viewModel.amount?.currency.imageSquareBackground ?? viewModel.currencyImage))
@@ -336,6 +366,12 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         
         let image: UIImage? = viewModel.selectionDisabled ? nil : Asset.chevronDown.image
         selectorImageView.setup(with: .image(image))
+        
+        balanceTitleLabel.setup(with: .text(viewModel.balanceTitle))
+        balanceTitleLabel.isHidden = viewModel.balanceTitle == nil
+        
+        balanceLabel.setup(with: .text(viewModel.balance))
+        balanceLabel.isHidden = viewModel.balance == nil
         
         decidePlaceholder()
     }
