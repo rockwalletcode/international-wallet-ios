@@ -28,6 +28,7 @@ enum AssetModels {
         case limitActions
         case paymentMethod
         case swapCard
+        case transferFunds
         
         var header: AccessoryType? { return nil }
         var footer: AccessoryType? { return nil }
@@ -44,6 +45,7 @@ enum AssetModels {
             var card: PaymentCard?
             
             var didFinish: Bool = false
+            var isDeposit: Bool = false
         }
         
         struct ActionResponse {

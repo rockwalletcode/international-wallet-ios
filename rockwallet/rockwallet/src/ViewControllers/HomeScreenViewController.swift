@@ -10,13 +10,32 @@ import Combine
 import UIKit
 import SnapKit
 import Lottie
+import WebKit
 
-class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
+class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, WKNavigationDelegate {
+    
+    enum SegmentControlCases: String, CaseIterable {
+        case rockWallet
+        case rockWalletPro
+        
+        var title: String {
+            switch self {
+            case .rockWallet:
+                return L10n.About.AppName.android.uppercased()
+                
+            case .rockWalletPro:
+                return L10n.Segment.rockWalletPro.uppercased()
+            }
+        }
+    }
+    
     private let walletAuthenticator: WalletAuthenticator
     private let notificationHandler = NotificationHandler()
     private let coreSystem: CoreSystem
     
     private var observers: [AnyCancellable] = []
+    private var isRedirectedUrl: Bool = false
+    private var isPortalLink: Bool = false
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -30,17 +49,22 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         view.layer.masksToBounds = true
         view.layer.cornerRadius = CornerRadius.large.rawValue
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        view.backgroundColor = Colors.Background.cards
+        view.backgroundColor = Colors.Background.two
         return view
     }()
     
-    private lazy var exchangeButtonsView: UIStackView = {
+    private lazy var exchangeButtonsView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colors.Background.one
+        view.layer.cornerRadius = CornerRadius.large.rawValue
+        view.isHidden = true
+        return view
+    }()
+    
+    private lazy var exchangeButtonsStackView: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
-        view.backgroundColor = Colors.Background.cards
-        view.layer.cornerRadius = CornerRadius.large.rawValue
-        view.spacing = Margins.small.rawValue
-        view.isHidden = true
+        view.spacing = Margins.extraSmall.rawValue
         return view
     }()
     
@@ -51,7 +75,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         let appearance = view.standardAppearance
         appearance.shadowImage = nil
         appearance.shadowColor = nil
-        appearance.backgroundColor = Colors.Background.cards
+        appearance.backgroundColor = Colors.Background.two
         view.standardAppearance = appearance
         view.unselectedItemTintColor = Colors.Text.two
         return view
@@ -66,7 +90,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private lazy var totalAssetsTitleLabel: UILabel = {
         let view = UILabel(font: Fonts.Body.two, color: Colors.Text.three)
-        view.text = L10n.HomeScreen.totalAssets
+        view.text = L10n.HomeScreen.wallet
         return view
     }()
     
@@ -85,6 +109,11 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         return view
     }()
     
+    private lazy var segmentControlStackView: UIStackView = {
+        let view = UIStackView()
+        return view
+    }()
+    
     private lazy var segmentControl: SegmentControl = {
         let view = SegmentControl()
         return view
@@ -92,11 +121,25 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private lazy var transferFunds: FEButton = {
         let view = FEButton()
+        view.titleLabel?.numberOfLines = 1
+        view.titleLabel?.adjustsFontSizeToFitWidth = true
         return view
     }()
     
     private lazy var launchExchange: FEButton = {
         let view = FEButton()
+        view.titleLabel?.numberOfLines = 1
+        view.titleLabel?.adjustsFontSizeToFitWidth = true
+        return view
+    }()
+    
+    private lazy var launchPortalLogin: FEButton = {
+        let view = FEButton()
+        return view
+    }()
+    
+    private lazy var webView: WKWebView = {
+        let view = WKWebView()
         return view
     }()
     
@@ -112,6 +155,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     var didTapLimitsAuthenticationFromPrompt: (() -> Void)?
     var didTapMenu: (() -> Void)?
     var didTapProSegment: (() -> Void)?
+    var didTapTransferFunds: (() -> Void)?
     
     private lazy var pullToRefreshControl: UIRefreshControl = {
         let view = UIRefreshControl()
@@ -187,6 +231,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             self?.isRefreshing = false
         }
         
+        assetListTableView.didTapFaqButton = { [weak self] in
+            self?.showInWebView(urlString: Constant.supportLink, title: "")
+        }
+        
         setupSubviews()
         setInitialData()
         setupSubscriptions()
@@ -239,19 +287,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             logoImageView.heightAnchor.constraint(equalToConstant: 48)])
         
         // TODO: Uncomment this to show the pro segment
-//        view.addSubview(segmentControl)
-//        segmentControl.snp.makeConstraints { make in
+//        view.addSubview(segmentControlStackView)
+//        segmentControlStackView.snp.makeConstraints { make in
 //            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
 //            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
-//            make.height.equalTo(ViewSizes.minimum.rawValue).priority(.low)
 //        }
+//        segmentControlStackView.addArrangedSubview(segmentControl)
         
         promptContainerScrollView.constrain([
             promptContainerScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
             promptContainerScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
             promptContainerScrollView.topAnchor.constraint(equalTo: subHeaderView.bottomAnchor, constant: Margins.medium.rawValue),
             promptContainerScrollView.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
-
+        
         promptContainerStack.constrain([
             promptContainerStack.leadingAnchor.constraint(equalTo: promptContainerScrollView.leadingAnchor),
             promptContainerStack.trailingAnchor.constraint(equalTo: promptContainerScrollView.trailingAnchor),
@@ -273,17 +321,17 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
             make.height.equalTo(ViewSizes.extraExtraHuge.rawValue)
         }
         
-        exchangeButtonsView.addSubview(transferFunds)
-        transferFunds.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().inset(Margins.small.rawValue)
+        exchangeButtonsView.addSubview(exchangeButtonsStackView)
+        exchangeButtonsStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(Margins.small.rawValue)
+            make.leading.trailing.equalToSuperview().inset(Margins.medium.rawValue)
             make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
         }
         
-        exchangeButtonsView.addSubview(launchExchange)
-        launchExchange.snp.makeConstraints { make in
-            make.top.equalTo(transferFunds.snp.top)
-            make.leading.equalTo(transferFunds.snp.trailing).inset(-Margins.small.rawValue)
-            make.height.equalTo(ViewSizes.Common.defaultCommon.rawValue)
+        exchangeButtonsStackView.addArrangedSubview(transferFunds)
+        exchangeButtonsStackView.addArrangedSubview(launchExchange)
+        if E.isDevelopment {
+            exchangeButtonsStackView.addArrangedSubview(launchPortalLogin)
         }
         
         view.addSubview(tabBarContainerView)
@@ -330,8 +378,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private func setupSegmentControl() {
         let segmentControlModel = SegmentControlViewModel(selectedIndex: 0,
-                                                          segments: [.init(image: nil, title: L10n.About.AppName.android.uppercased()),
-                                                                     .init(image: nil, title: L10n.Segment.rockWalletPro)])
+                                                          segments: [.init(image: nil, title: SegmentControlCases.rockWallet.title),
+                                                                     .init(image: nil, title: SegmentControlCases.rockWalletPro.title)])
         segmentControl.configure(with: .init())
         segmentControl.setup(with: segmentControlModel)
         segmentControl.didChangeValue = { [weak self] segment in
@@ -339,11 +387,31 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         }
     }
     
+    func handleSegmentView() {
+        segmentControl.isHidden = UserManager.shared.profile == nil
+    }
+    
     private func setSegment(_ segment: Int) {
         segmentControl.selectSegment(index: segment)
+        let selectedSegment = SegmentControlCases.allCases[segment]
         
-        tabBarContainerView.isHidden = segment == 1
-        exchangeButtonsView.isHidden = segment == 0
+        guard let profile = UserManager.shared.profile else { return }
+        
+        guard profile.kycAccessRights.hasExchangeAccess else {
+            if selectedSegment == .rockWalletPro {
+                didTapProSegment?()
+                segmentControl.selectSegment(index: 0)
+            }
+            return
+        }
+                
+        tabBarContainerView.isHidden = selectedSegment == .rockWalletPro
+        exchangeButtonsView.isHidden = selectedSegment == .rockWallet
+        
+        totalAssetsTitleLabel.text = selectedSegment == .rockWalletPro ?
+        L10n.Segment.rockWalletPro : "\(L10n.HomeScreen.wallet) \(L10n.HomeScreen.totalAssets.lowercased())"
+        
+        assetListTableView.showAddWalletsButton(selectedSegment == .rockWallet)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -354,7 +422,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     
     private func setupProButtons() {
         transferFunds.configure(with: Presets.Button.secondary)
-        transferFunds.setup(with: .init(title: L10n.Button.transferFunds,
+        transferFunds.setup(with: .init(title: L10n.Button.transferFunds.uppercased(),
                                         callback: { [weak self] in
             self?.transferFundsTapped()
         }))
@@ -363,6 +431,12 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         launchExchange.setup(with: .init(title: L10n.Button.launchExchange,
                                          callback: { [weak self] in
             self?.launchExchangeTapped()
+        }))
+        
+        launchPortalLogin.configure(with: Presets.Button.secondary)
+        launchPortalLogin.setup(with: .init(title: L10n.Buttons.portalLogin,
+                                            callback: { [weak self] in
+            self?.portalLoginTapped()
         }))
     }
     
@@ -468,7 +542,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
                                 rate: rate)
             return amount.fiatValue
         }.reduce(0.0, +)
-
+        
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
         totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
@@ -505,15 +579,26 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
     }
     
     private func transferFundsTapped() {
-        // TODO: add transfer funds action
+        didTapTransferFunds?()
     }
     
     private func launchExchangeTapped() {
         let model = PopupViewModel(body: L10n.Exchange.popupText,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
-            DynamicLinksManager.handleDynamicLink(dynamicLink: URL(string: Constant.oauth2DeepLink))
-            self?.getRedirectUri()
+            self?.handleWebViewRedirects(isPortal: false)
+            self?.hidePopup()
+        })])
+        
+        showInfoPopup(with: model)
+    }
+    
+    private func portalLoginTapped() {
+        let model = PopupViewModel(title: .text(L10n.Buttons.portalLogin),
+                                   body: L10n.Exchange.popupText,
+                                   buttons: [.init(title: L10n.Button.gotIt,
+                                                   callback: { [weak self] in
+            self?.handleWebViewRedirects(isPortal: true)
             self?.hidePopup()
         })])
         
@@ -530,11 +615,69 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber {
         Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.showInWebView(urlString: response?.redirectUri ?? "", title: "")
+                guard let url = URL(string: response?.redirectUri ?? "") else { return }
+                self?.handleRedirectedUrl(url: url)
+                
             case .failure(let error):
                 // TODO: Handle error
                 print(error)
             }
         }
+    }
+    func handleWebViewRedirects(isPortal: Bool) {
+        webView.navigationDelegate = self
+        isPortalLink = isPortal
+        let urlString = isPortalLink ? Constant.portalSignInLink : Constant.tradeSignInLink
+        guard let url = URL(string: urlString) else { return }
+        
+        webView.load(URLRequest(url: url))
+        LoadingView.show(descriptionText: L10n.Exchange.loadProDescription)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation) {
+        let url = isPortalLink ? Constant.portalSignInLink : Constant.tradeSignInLink
+        guard webView.url?.absoluteString == url else {
+            guard !isRedirectedUrl else {
+                setupWebView()
+                return
+            }
+            
+            DynamicLinksManager.handleDynamicLink(dynamicLink: webView.url)
+            getRedirectUri()
+            LoadingView.hideIfNeeded()
+            return
+        }
+        // auto tap on login button in web view
+        let buttonTag = isPortalLink ? "1" : "0"
+        let scriptSource = "document.getElementsByTagName('button')[\(buttonTag)].click()"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0, execute: {
+            webView.evaluateJavaScript(scriptSource, completionHandler: nil)
+        })
+    }
+    
+    func setupWebView() {
+        view.addSubview(webView)
+        webView.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalToSuperview().inset(Margins.small.rawValue)
+        }
+        
+        let back = UIBarButtonItem(image: Asset.back.image,
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(backButtonPressed))
+        navigationItem.leftBarButtonItem = back
+    }
+    
+    func handleRedirectedUrl(url: URL) {
+        webView.load(URLRequest(url: url))
+        isRedirectedUrl = true
+    }
+    
+    @objc func backButtonPressed() {
+        navigationItem.leftBarButtonItem = nil
+        isRedirectedUrl = false
+        webView.removeFromSuperview()
+        view.layoutIfNeeded()
     }
 }

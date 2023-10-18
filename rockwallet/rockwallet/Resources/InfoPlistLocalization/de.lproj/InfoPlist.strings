@@ -51,6 +51,30 @@
 
 "Account.Attempts" = "attempts";
 
+"Account.AuthorizeLogin.device" = "Device";
+
+"Account.AuthorizeLogin.Failure.description" = "Please check your connection and try again.";
+
+"Account.AuthorizeLogin.Failure.title" = "There was an error while authorizing your Log in";
+
+"Account.AuthorizeLogin.Info.description" = "By confirming, you'll grant login access to the RockWallet web app";
+
+"Account.AuthorizeLogin.Info.title" = "About this request";
+
+"Account.AuthorizeLogin.ip" = "IP";
+
+"Account.AuthorizeLogin.Rejected.description" = "If you didn't attempt to log in or suspect a compromise in your wallet security, please reach out to our customer support team for assistance.";
+
+"Account.AuthorizeLogin.Rejected.title" = "Login Successfully Rejected";
+
+"Account.AuthorizeLogin.Success.description" = "You should now have access to your account on the web app.";
+
+"Account.AuthorizeLogin.Success.title" = "Log in succesfull";
+
+"Account.AuthorizeLogin.title" = "Authorize Login";
+
+"Account.AuthorizeLogin.where" = "Where";
+
 /* Account balance */
 "Account.balance" = "Guthaben";
 
@@ -132,12 +156,16 @@
 
 "Account.explanationSSN" = "We are required to verify the identity of all our users to comply with regulations.\n\nThat is why we need to collect your Social Security Number (SSN). We take the security and privacy of your personal information seriously, and use it only for the purposes of identity verification and compliance. This process will have no impact on your credit score.";
 
+"Account.Express" = "Express";
+
 "Account.FinalizingDecision" = "Finalizing the decision";
 
 "Account.ForgotPassword" = "Forgot password?";
 
 /* Get full access for the RockWallet label on profile screen */
 "Account.FullAccess" = "Get full access to your RockWallet!";
+
+"Account.FullSsn" = "Full SSN (Social security number)";
 
 /* ID Verification title on account screen */
 "Account.IDVerification" = "ID Verification";
@@ -150,6 +178,14 @@
 
 /* Retry verification description */
 "Account.IdVerificationRetry" = "Please try to complete your verification again, while keeping the following in mind:\n\n- Please ensure your type of ID is supported.\n\n- Make sure the area is well-lit and there's no glare on the ID or your face.\n\n- Double check that your ID isn't expired or invalid.";
+
+"Account.IncorrectSsn.description" = "Unfortunately, the SSN you’ve entered was not correct. Try again or try with a different method of verification.";
+
+"Account.IncorrectSsn.title" = "We’re sorry, your SSN was not correct";
+
+"Account.InfoDialog.ExpressVerification" = "You have access to: \n・Buy with a %@ lifetime limit\n・Swap with a %@ lifetime limit\n・Send, Receive and Store your crypto assets";
+
+"Account.InfoDialog.FullVerification" = "You have access to: \n・Buy with a %@ weekly limit\n・Sell with a %@ weekly limit\n・Swap with a %@ daily limit\n・Send, Receive and Store your crypto assets";
 
 "Account.infoLinkSSN" = "Why do we need your SSN?";
 
@@ -178,6 +214,8 @@
 "Account.MissingDataPromptTitle" = "Add the missing information";
 
 "Account.Monthly" = "Monthly";
+
+"Account.NationalityCitizenship" = "Nationality/Citizenship*";
 
 "Account.NewToRockwallet" = "New to RockWallet?";
 
@@ -230,6 +268,8 @@
 "Account.SignIn" = "Sign in";
 
 "Account.SocialSecurityNumber" = "Social Security Number";
+
+"Account.SocialSecurityNumberLastFourDigits" = "Social Security Number (last 4 digits)";
 
 "Account.SocialSecurityNumberRequired" = "Social security number*";
 
@@ -712,6 +752,10 @@
 /* BitID Authentication Request alert view title */
 "BitID.title" = "BitID-Authentifizierungsanfrage";
 
+"Button.anotherVerificationMethod" = "Try another method of verification";
+
+"Button.authorize" = "Authorize";
+
 "Button.Back" = "Back";
 
 /* As in "(tap here to) buy (bitcoin)" */
@@ -761,7 +805,7 @@
 
 "Button.iUnderstand" = "I understand";
 
-"Button.LaunchExchange" = "LAUNCH EXCHANGE";
+"Button.LaunchExchange" = "LAUNCH PRO";
 
 "Button.letsGo" = "Let’s go!";
 
@@ -790,6 +834,8 @@
 /* Open Settings button */
 "Button.openSettings" = "Einstellungen öffnen";
 
+"Button.openWebApp" = "Open web app";
+
 /* Profile button title on tab bar */
 "Button.Profile" = "Profile";
 
@@ -797,6 +843,8 @@
 "Button.receive" = "Erhalten";
 
 "Button.ReceiveDigitalAssets" = "Receive digital assets";
+
+"Button.reject" = "Reject";
 
 "Button.remove" = "Remove";
 
@@ -821,7 +869,7 @@
 /* Settings button label */
 "Button.submit" = "Abschicken";
 
-"Button.TransferFunds" = "TRANSFER FUNDS";
+"Button.TransferFunds" = "Transfer funds";
 
 "Button.TryLater" = "Try later";
 
@@ -832,6 +880,8 @@
 
 /* Yes button */
 "Button.yes" = "Ja";
+
+"Buttons.PortalLogin" = "Portal";
 
 /* 3D Secure label on buy flow */
 "Buy.3DSecure" = "3D Secure";
@@ -928,6 +978,8 @@
 "Buy.BuyLimits.description" = "Currently, minimum for Buy is %@ USD and maximum is %@ USD per day.  %@";
 
 "Buy.BuyLimits.description.android" = "Minimum for Buy is %@ per transaction and your weekly limit is %@.";
+
+"Buy.BuyLimits.description.lifetime.android" = "Minimum for Buy is %@ per transaction and you have a lifetime limit of %@.";
 
 "Buy.BuyLimits.Increase" = "Click on increase your limits button below if you would like to further increase your limits.";
 
@@ -1329,6 +1381,9 @@
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
 "ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
 
+/* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
+"ErrorMessages.AmountTooHigh.Sprint.eleven" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
+
 /* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
 "ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %@ %@. Please enter a higher amount.";
 
@@ -1420,6 +1475,8 @@
 
 "ErrorMessages.Sell.SsnInput.IncorrectSsn" = "Please make sure your SSN number is correct and try again.";
 
+"ErrorMessages.Sell.SsnInput.IncorrectSsn2" = "Please make sure your last 4 digits of your Social Security Number are correct and try again";
+
 /* Something went wrong message */
 "ErrorMessages.SomethingWentWrong" = "Oops! Something went wrong, please try again later.";
 
@@ -1435,7 +1492,25 @@
 
 "ErrorMessages.VeriffDeclined.Description" = "Please try again and follow the on screen instructions.";
 
-"Exchange.PopupText" = "Please note, you are being directed to a third party website, however, this is still within the RockWallet Ecosystem.";
+"Exchange.Custodial" = "custodial";
+
+"Exchange.EstimatedNetworkFee" = "Estimated Network fee";
+
+"Exchange.FaqButton" = "Need help? Visit our FAQs";
+
+"Exchange.LoadProDescription" = "Please wait while we direct you to RockWallet PRO";
+
+"Exchange.PopupText" = "Please note, you are leaving the app and being directed to an external website.";
+
+"Exchange.Pro" = "PRO";
+
+"Exchange.SelfCustodial" = "self-custodial";
+
+"Exchange.sendFrom" = "Send from";
+
+"Exchange.SwipeDown" = "Swipe down to refresh your balance";
+
+"Exchange.WithdrawalFee" = "Withdrawal fee";
 
 "ExportConfirmation.cancel" = "Stornieren";
 
@@ -1575,6 +1650,8 @@
 /* (Tap here to) trade (your assets for other assets) */
 "HomeScreen.trade" = "Handeln";
 
+"HomeScreen.Wallet" = "Wallet";
+
 /* Checking private key balance progress view text */
 "Import.checking" = "Das Privatschlüsselguthaben wird überprüft …";
 
@@ -1673,6 +1750,14 @@
 
 /* Wipe wallet button */
 "JailbreakWarnings.wipe" = "Löschen";
+
+"KYCExpressSplash.Buttons.continue" = "continue with express verification";
+
+"KYCExpressSplash.Buttons.goHome" = "go to homepage";
+
+"KYCExpressSplash.subtitle" = "By completing the express verification you’ll unlock the power to buy, and swap with unmatched ease. Embrace the next level of cryptocurrency management without any hassle.";
+
+"KYCExpressSplash.title" = "Release RockWallet full potential!";
 
 /* Approve link wallet button label */
 "LinkWallet.approve" = "Genehmigen";
@@ -1952,6 +2037,10 @@
 
 "Profile.PaymentMethods" = "Payment methods";
 
+"Prompts.Account.NotVerified.body" = "We were unable to complete your verification.";
+
+"Prompts.Account.NotVerified.title" = "Account not verified";
+
 "Prompts.ConnectionIssues.title" = "Connection issues";
 
 "Prompts.CreateAccount.body" = "With your RockWallet account you’ll be able to Swap and Buy seamlessly.";
@@ -1983,6 +2072,14 @@
 
 /* Enable face ID prompt title */
 "Prompts.FaceId.title" = "Face ID aktivieren";
+
+"Prompts.KYCExpress.action" = "Express Verification";
+
+"Prompts.KYCExpress.body" = "Gain access to powerful features like buy, sell and swap!";
+
+"Prompts.KYCExpress.title" = "Unlock RockWallet's Full Potential";
+
+"Prompts.KYCFull.action" = "Get fully verified";
 
 "Prompts.LimitsAuthentication.body" = "Just one more small step, and you'll be able to enjoy your new limits.";
 
@@ -2053,6 +2150,12 @@
 
 /* Upgrade PIN prompt title. */
 "Prompts.UpgradePin.title" = "PIN upgraden";
+
+"Prompts.VerificationPending.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
+
+"Prompts.VerificationPending.button" = "Complete verification";
+
+"Prompts.VerificationPending.title" = "Verification pending";
 
 "Prompts.VerifyAccount.body" = "One more step and you’ll be able to Swap and Buy seamlessly.";
 
@@ -2419,7 +2522,7 @@
 /* Security center fingerprint authentication button */
 "SecurityCenter.touchIdTitle.android" = "Fingerabdruck-Authentifizierung";
 
-"Segment.RockWalletPro" = "ROCKWALLET PRO";
+"Segment.RockWalletPro" = "RockWallet PRO";
 
 /* Segwit enabled confirmation body */
 "Segwit.ConfirmationConfirmationBody" = "Thank you for helping move bitcoin forward!";
@@ -2498,9 +2601,9 @@
 
 "Sell.YourAchSellLimits" = "Your ACH withdrawal limits";
 
-"Sell.yourOrder" = "You sell:";
+"Sell.YourCardSellLimits" = "Your sell limits";
 
-"Sell.YourSellLimits" = "Your sell limits";
+"Sell.yourOrder" = "You sell:";
 
 "Sell.YouWillReceive" = "You’ll receive";
 
@@ -2989,6 +3092,8 @@
 
 /* Swap min and max limit text */
 "Swap.SwapLimits" = "Currently, minimum for Swap is %@ USD and maximum is %@ USD/day.";
+
+"Swap.SwapLimits.Lifetime" = "Currently, minimum for Swap is %@ and maximum is %@ lifetime.";
 
 "Swap.Swapping" = "Swapping %@ to %@";
 
@@ -3675,6 +3780,12 @@
 "VerificationCode.title" = "Confirmation Code";
 
 "VerifyAccount.Button" = "Verify your account";
+
+"VerifyAccount.ExpressVerification.description" = "Verification helps keep your funds and information secure and allow you to buy, sell and swap seamlessly.";
+
+"VerifyAccount.ExpressVerification.title" = "Express Verification";
+
+"VerifyAccount.Veriff.Action.title" = "Get Verify";
 
 "VerifyAccount.VerifyIdentityDescription" = "Verify your identity before you can start buying and swapping.";
 

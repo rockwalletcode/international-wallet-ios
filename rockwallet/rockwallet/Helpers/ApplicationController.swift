@@ -398,6 +398,7 @@ class ApplicationController: Subscriber {
         UserManager.shared.refresh { [weak self] result in
             switch result {
             case .success:
+                self?.homeScreenViewController?.handleSegmentView()
                 self?.handleDeeplinksIfNeeded()
                 
             case .failure(let error):
@@ -442,9 +443,7 @@ class ApplicationController: Subscriber {
         }
         
         homeScreen.didTapBuy = { [weak self] type in
-            guard let self else { return }
-            
-            self.dismissAllFlowsIfNeeded { [weak self] in
+            self?.coordinator?.dismissAllFlowsIfNeeded { [weak self] in
                 self?.coordinator?.showBuy(type: type,
                                           coreSystem: self?.coreSystem,
                                           keyStore: self?.keyStore)
@@ -452,19 +451,17 @@ class ApplicationController: Subscriber {
         }
         
         homeScreen.didTapSell = { [weak self] in
-            guard let self = self else { return }
-            
-            self.dismissAllFlowsIfNeeded { [weak self] in
+            self?.coordinator?.dismissAllFlowsIfNeeded { [weak self] in
                 self?.coordinator?.showSell(coreSystem: self?.coreSystem,
                                             keyStore: self?.keyStore)
             }
         }
         
         homeScreen.didTapTrade = { [weak self] in
-            guard let self else { return }
-            
-            self.coordinator?.showSwap(coreSystem: self.coreSystem,
-                                       keyStore: self.keyStore)
+            self?.coordinator?.dismissAllFlowsIfNeeded { [weak self] in
+                self?.coordinator?.showSwap(coreSystem: self?.coreSystem,
+                                           keyStore: self?.keyStore)
+            }
         }
         
         homeScreen.didTapProfile = { [weak self] in
@@ -473,6 +470,13 @@ class ApplicationController: Subscriber {
         
         homeScreen.didTapProSegment = { [weak self] in
             self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
+        }
+        
+        homeScreen.didTapTransferFunds = { [weak self] in
+            self?.coordinator?.openModally(coordinator: ExchangeCoordinator.self, scene: Scenes.TransferFunds) { vc in
+                vc?.dataStore?.coreSystem = self?.coreSystem
+                vc?.dataStore?.keyStore = self?.keyStore
+            }
         }
         
         homeScreen.didTapProfileFromPrompt = { [unowned self] in
@@ -540,21 +544,6 @@ class ApplicationController: Subscriber {
         didTapPaymail = { [unowned self] isPaymailFromAssets in
             coordinator?.showPaymailAddress(isPaymailFromAssets: isPaymailFromAssets)
         }
-    }
-    
-    private func dismissAllFlowsIfNeeded(completion: (() -> Void)?) {
-        guard self.coordinator?.childCoordinators.isEmpty == true else {
-            self.coordinator?.childCoordinators.forEach { child in
-                child.navigationController.dismiss(animated: true) { [weak self] in
-                    self?.coordinator?.childDidFinish(child: child)
-                    guard self?.coordinator?.childCoordinators.isEmpty == true else { return }
-                    completion?()
-                }
-            }
-            return
-        }
-        
-        completion?()
     }
     
     private func handleBiometricStatus(approved: Bool) {
