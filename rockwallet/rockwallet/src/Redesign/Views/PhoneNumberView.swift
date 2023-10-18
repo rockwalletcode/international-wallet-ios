@@ -50,7 +50,7 @@ class PhoneNumberView: FEView<PhoneNumberConfiguration, PhoneNumberViewModel> {
             make.leading.equalTo(areaCodeTextfield.snp.trailing).inset(Margins.minimum.rawValue)
         }
         
-        phoneNumberTextField.valueChanged = { [weak self] field in
+        phoneNumberTextField.finishedEditing = { [weak self] field in
             self?.didChangePhoneNumber?(field.text)
         }
         

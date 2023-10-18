@@ -631,7 +631,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         guard let url = URL(string: urlString) else { return }
         
         webView.load(URLRequest(url: url))
-        LoadingView.show()
+        LoadingView.show(descriptionText: L10n.Exchange.loadProDescription)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation) {
