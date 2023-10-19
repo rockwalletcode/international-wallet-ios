@@ -26,6 +26,15 @@ class LoadingView: UIView {
         return view
     }()
     
+    private lazy var descriptionLabel: FELabel = {
+        let view = FELabel()
+        view.font = Fonts.Body.two
+        view.textColor = Colors.primary
+        view.textAlignment = .center
+        
+        return view
+    }()
+    
     // MARK: initialisation
     
     override init(frame: CGRect) {
@@ -55,6 +64,12 @@ class LoadingView: UIView {
         roundedView.widthAnchor.constraint(equalToConstant: 56).isActive = true
         roundedView.constrainToCenter()
         
+        addSubview(descriptionLabel)
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(roundedView.snp.bottom).inset(-Margins.medium.rawValue)
+            make.centerX.equalToSuperview().inset(Margins.small.rawValue)
+        }
+        
         topView.addSubview(self)
         
         translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +80,7 @@ class LoadingView: UIView {
     }
     
     // MARK: show and hide trigger methods
-    static func show(animated: Bool = true) {
+    static func show(animated: Bool = true, descriptionText: String = "") {
         if isShowing {
             hideIfNeeded(animated: false)
         }
@@ -79,6 +94,7 @@ class LoadingView: UIView {
         UIApplication.shared.isIdleTimerDisabled = true
         
         let loadingView = LoadingView()
+        loadingView.descriptionLabel.setup(with: .text(descriptionText))
         topView.addSubview(loadingView)
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.topAnchor.constraint(equalTo: topView.topAnchor).isActive = true

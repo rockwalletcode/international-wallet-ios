@@ -286,18 +286,17 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             logoImageView.widthAnchor.constraint(equalToConstant: 40),
             logoImageView.heightAnchor.constraint(equalToConstant: 48)])
         
-        // TODO: Uncomment this to show the pro segment
-//        view.addSubview(segmentControlStackView)
-//        segmentControlStackView.snp.makeConstraints { make in
-//            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
-//            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
-//        }
-//        segmentControlStackView.addArrangedSubview(segmentControl)
+        view.addSubview(segmentControlStackView)
+        segmentControlStackView.snp.makeConstraints { make in
+            make.top.equalTo(subHeaderView.snp.bottom).offset(Margins.medium.rawValue)
+            make.leading.trailing.equalToSuperview().inset(Margins.large.rawValue)
+        }
+        segmentControlStackView.addArrangedSubview(segmentControl)
         
         promptContainerScrollView.constrain([
             promptContainerScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large.rawValue),
             promptContainerScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large.rawValue),
-            promptContainerScrollView.topAnchor.constraint(equalTo: subHeaderView.bottomAnchor, constant: Margins.medium.rawValue),
+            promptContainerScrollView.topAnchor.constraint(equalTo: segmentControlStackView.bottomAnchor, constant: Margins.medium.rawValue),
             promptContainerScrollView.heightAnchor.constraint(equalToConstant: ViewSizes.minimum.rawValue).priority(.defaultLow)])
         
         promptContainerStack.constrain([
@@ -631,7 +630,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         guard let url = URL(string: urlString) else { return }
         
         webView.load(URLRequest(url: url))
-        LoadingView.show()
+        LoadingView.show(descriptionText: L10n.Exchange.loadProDescription)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation) {

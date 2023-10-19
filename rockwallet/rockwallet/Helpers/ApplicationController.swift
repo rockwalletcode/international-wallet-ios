@@ -88,7 +88,7 @@ class ApplicationController: Subscriber {
         
         mainSetup()
         setupKeyboard()
-//        setupFirebase()
+        setupFirebase()
         
         Reachability.addDidChangeCallback({ isReachable in
             self.isReachable = isReachable

@@ -286,6 +286,14 @@
 
 "Account.TermsTickbox" = "I agree to RockWallet’s";
 
+"Account.UpdateApp.Instruction1" = "It just takes a few seconds!";
+
+"Account.UpdateApp.Instruction2" = "Tap the update button to proceed";
+
+"Account.UpdateApp.Subtitle" = "To access this section of the app, you need to update the app to the latest version.";
+
+"Account.UpdateApp.Title" = "Update your RockWallet app";
+
 /* Upgrade your limits label in profile screen */
 "Account.UpgradeLimits" = "Upgrade your limits";
 
@@ -875,6 +883,8 @@
 
 /* Button label to uninstall the app. */
 "Button.uninstall.android" = "Desinstalar";
+
+"Button.UpdateNow" = "Update now";
 
 "Button.Verify" = "Verify";
 
@@ -1498,9 +1508,13 @@
 
 "Exchange.FaqButton" = "Need help? Visit our FAQs";
 
+"Exchange.LoadProDescription" = "Please wait while we direct you to RockWallet PRO";
+
 "Exchange.PopupText" = "Please note, you are leaving the app and being directed to an external website.";
 
 "Exchange.Pro" = "PRO";
+
+"Exchange.RockWalletBalance" = "RockWallet Balance";
 
 "Exchange.SelfCustodial" = "self-custodial";
 
