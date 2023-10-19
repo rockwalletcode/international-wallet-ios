@@ -20,6 +20,10 @@ class AuthorizeLoginInteractor: NSObject, Interactor, AuthorizeLoginViewActions 
         AuthorizationStartedWorker().execute { [weak self] result in
             switch result {
             case .success(let response):
+                self?.dataStore?.device = response?.device
+                self?.dataStore?.location = response?.location
+                self?.dataStore?.ipAddress = response?.ipAddress
+                
                 self?.presenter?.presentData(actionResponse: .init(item: Models.Item(countdownTime: response?.countdownTime,
                                                                                      location: self?.dataStore?.location,
                                                                                      device: self?.dataStore?.device,

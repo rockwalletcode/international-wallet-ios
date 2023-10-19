@@ -12,16 +12,25 @@ import Foundation
 
 struct AuthorizationStartedModel: Model {
     let countdownTime: TimeInterval
+    let ipAddress: String
+    let location: String
+    let device: String
 }
 
 struct AuthorizationStartedResponseModel: ModelResponse {
     let timeoutSeconds: Int
+    let ip: String?
+    let location: String?
+    let device: String?
 }
 
 class AuthorizationStartedMapper: ModelMapper<AuthorizationStartedResponseModel, AuthorizationStartedModel> {
     override func getModel(from response: AuthorizationStartedResponseModel?) -> AuthorizationStartedModel? {
-        guard let time = response?.timeoutSeconds else { return nil }
-        return .init(countdownTime: TimeInterval(exactly: time) ?? Constant.authorizeLoginTime)
+        guard let response else { return nil }
+        return AuthorizationStartedModel(countdownTime: TimeInterval(exactly: response.timeoutSeconds) ?? Constant.authorizeLoginTime,
+                                         ipAddress: response.ip ?? "/",
+                                         location: response.location ?? "/",
+                                         device: response.device ?? "/")
     }
 }
 

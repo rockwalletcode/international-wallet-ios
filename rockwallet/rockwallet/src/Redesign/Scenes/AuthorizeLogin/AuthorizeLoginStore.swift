@@ -12,9 +12,9 @@ class AuthorizeLoginStore: NSObject, BaseDataStore, AuthorizeLoginDataStore {
     
     // MARK: - AuthorizeLoginDataStore
     
-    var location: String? = "Maribor, Slovenia"
-    var device: String? = "iPhone 14 Pro"
-    var ipAddress: String? = "213.172.234.81"
+    var location: String?
+    var device: String?
+    var ipAddress: String?
 
     // MARK: - Aditional helpers
 }
