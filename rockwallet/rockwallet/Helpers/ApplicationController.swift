@@ -150,6 +150,10 @@ class ApplicationController: Subscriber {
     }
     
     private func setupSubscribers() {
+        Store.subscribe(self, name: .handleDeeplink) { _ in
+            self.coordinator?.prepareForDeeplinkHandling(coreSystem: self.coreSystem, keyStore: self.keyStore)
+        }
+        
         Store.subscribe(self, name: .wipeWalletNoPrompt, callback: { [weak self] _ in
             self?.wipeWalletNoPrompt()
         })
@@ -176,10 +180,6 @@ class ApplicationController: Subscriber {
             self?.coreSystem.shutdown(completion: {
                 self?.setupSystem(with: account)
             })
-        }
-        
-        Store.subscribe(self, name: .handleDeeplink) { _ in
-            self.coordinator?.prepareForDeeplinkHandling(coreSystem: self.coreSystem, keyStore: self.keyStore)
         }
     }
     

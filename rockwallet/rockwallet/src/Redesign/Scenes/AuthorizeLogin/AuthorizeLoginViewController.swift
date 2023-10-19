@@ -51,12 +51,12 @@ class AuthorizeLoginViewController: BaseTableViewController<AccountCoordinator,
             cell = self.tableView(tableView, countdownTimerCellForRowAt: indexPath)
             
         case .description:
-            guard let thisCell = self.tableView(tableView, infoViewCellForRowAt: indexPath) as? WrapperTableViewCell<WrapperView<FEInfoView>> else {
+            guard let cell = self.tableView(tableView, infoViewCellForRowAt: indexPath) as? WrapperTableViewCell<WrapperView<FEInfoView>> else {
                 return UITableViewCell()
             }
             
-            thisCell.wrappedView.setupClearMargins()
-            cell = thisCell
+            cell.wrappedView.setupClearMargins()
+            return cell
             
         case .data:
             cell = self.tableView(tableView, groupedTitleValueCellForRowAt: indexPath)
