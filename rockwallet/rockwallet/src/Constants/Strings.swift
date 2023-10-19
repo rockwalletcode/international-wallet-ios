@@ -396,6 +396,16 @@ internal enum L10n {
         return L10n.tr("Localizable", "Account.InfoDialog.FullVerification", String(describing: p1), String(describing: p2), String(describing: p3), fallback: "You have access to: \n・Buy with a %@ weekly limit\n・Sell with a %@ weekly limit\n・Swap with a %@ daily limit\n・Send, Receive and Store your crypto assets")
       }
     }
+    internal enum UpdateApp {
+      /// It just takes a few seconds!
+      internal static let instruction1 = L10n.tr("Localizable", "Account.UpdateApp.Instruction1", fallback: "It just takes a few seconds!")
+      /// Tap the update button to proceed
+      internal static let instruction2 = L10n.tr("Localizable", "Account.UpdateApp.Instruction2", fallback: "Tap the update button to proceed")
+      /// To access this section of the app, you need to update the app to the latest version.
+      internal static let subtitle = L10n.tr("Localizable", "Account.UpdateApp.Subtitle", fallback: "To access this section of the app, you need to update the app to the latest version.")
+      /// Update your RockWallet app
+      internal static let title = L10n.tr("Localizable", "Account.UpdateApp.Title", fallback: "Update your RockWallet app")
+    }
     internal enum VerificationSuccessful {
       /// Your account has been successfully verified, and your limits have been updated.
       internal static let description = L10n.tr("Localizable", "Account.VerificationSuccessful.description", fallback: "Your account has been successfully verified, and your limits have been updated.")
@@ -869,6 +879,8 @@ internal enum L10n {
     internal static let transferFunds = L10n.tr("Localizable", "Button.TransferFunds", fallback: "Transfer funds")
     /// Try later
     internal static let tryLater = L10n.tr("Localizable", "Button.TryLater", fallback: "Try later")
+    /// Update now
+    internal static let updateNow = L10n.tr("Localizable", "Button.UpdateNow", fallback: "Update now")
     /// Verify
     internal static let verify = L10n.tr("Localizable", "Button.Verify", fallback: "Verify")
     /// Yes button
@@ -1594,6 +1606,8 @@ internal enum L10n {
     internal static let popupText = L10n.tr("Localizable", "Exchange.PopupText", fallback: "Please note, you are leaving the app and being directed to an external website.")
     /// PRO
     internal static let pro = L10n.tr("Localizable", "Exchange.Pro", fallback: "PRO")
+    /// RockWallet Balance
+    internal static let rockWalletBalance = L10n.tr("Localizable", "Exchange.RockWalletBalance", fallback: "RockWallet Balance")
     /// self-custodial
     internal static let selfCustodial = L10n.tr("Localizable", "Exchange.SelfCustodial", fallback: "self-custodial")
     /// Send from
