@@ -37,7 +37,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                            currencyCode: item?.currency.code,
                                            currencyImage: item?.currency.imageSquareBackground,
                                            balanceTitle: L10n.Exchange.rockWalletBalance,
-                                           balance: "80.81738785 USDC") // TODO: update with BE balance data
+                                           balance: "80.81738") // TODO: update with BE balance data
             ]
         ]
         
