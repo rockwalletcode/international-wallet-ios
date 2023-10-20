@@ -46,6 +46,7 @@ enum BaseInfoModels {
         case sell
         case documentVerification
         case limitsAuthentication
+        case authorizeLogin
         
         var iconName: String {
             switch self {
@@ -73,6 +74,9 @@ enum BaseInfoModels {
                 
             case .limitsAuthentication:
                 return L10n.Account.verificationSuccessful
+                
+            case .authorizeLogin:
+                return L10n.Account.AuthorizeLogin.Success.title
             }
         }
         
@@ -102,6 +106,9 @@ enum BaseInfoModels {
                 
             case .limitsAuthentication:
                 return L10n.Account.VerificationSuccessful.description
+                
+            case .authorizeLogin:
+                return L10n.Account.AuthorizeLogin.Success.description
             }
         }
         
@@ -112,6 +119,9 @@ enum BaseInfoModels {
                 
             case .documentVerification:
                 return L10n.Button.receiveDigitalAssets
+                
+            case .authorizeLogin:
+                return L10n.Button.openWebApp
                 
             default:
                 return L10n.Button.back
@@ -128,6 +138,9 @@ enum BaseInfoModels {
                 
             case .limitsAuthentication:
                 return L10n.Button.back
+                
+            case .authorizeLogin:
+                return L10n.Button.close
                 
             default:
                 return L10n.Buy.details
@@ -191,11 +204,16 @@ enum BaseInfoModels {
         case limitsAuthentication
         case livenessCheckLimit
         case veriffDeclined
+        case authorizationFailed
+        case authorizationRejected
         
         var iconName: String {
             switch self {
             case .documentVerification, .documentVerificationRetry:
                 return Asset.ilVerificationunsuccessfull.name
+                
+            case .authorizationRejected:
+                return Asset.authorization.name
                 
             default:
                 return Asset.error.name
@@ -218,6 +236,12 @@ enum BaseInfoModels {
                 
             case .limitsAuthentication:
                 return L10n.Account.verificationUnsuccessful
+                
+            case .authorizationFailed:
+                return L10n.Account.AuthorizeLogin.Failure.title
+                
+            case .authorizationRejected:
+                return L10n.Account.AuthorizeLogin.Rejected.title
             }
         }
         
@@ -274,6 +298,12 @@ enum BaseInfoModels {
                 
             case .veriffDeclined:
                 return L10n.ErrorMessages.VeriffDeclined.description
+                
+            case .authorizationFailed:
+                return L10n.Account.AuthorizeLogin.Failure.description
+                
+            case .authorizationRejected:
+                return L10n.Account.AuthorizeLogin.Rejected.description
             }
         }
         
@@ -287,6 +317,9 @@ enum BaseInfoModels {
                 
             case .livenessCheckLimit, .veriffDeclined:
                 return L10n.ErrorMessages.tryAgainLater
+                
+            case .authorizationRejected, .authorizationFailed:
+                return L10n.ComingSoon.Buttons.backHome
                 
             default:
                 return L10n.PaymentConfirmation.tryAgain

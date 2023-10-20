@@ -23,6 +23,9 @@ enum QRCode: Equatable {
             self = .privateKey(content)
         } else if let url = URL(string: content), url.isDeepLink {
             self = .deepLink(url)
+        } else if let url = URL(string: content), DynamicLinksManager.getDynamicLinkType(from: url) != nil {
+            DynamicLinksManager.handleDynamicLink(dynamicLink: url)
+            self = .deepLink(url)
         } else if let paymentRequest = QRCode.detectPaymentRequest(fromURI: content) {
             if let currencyRestriction,
                 let paymentRequestRestricted = QRCode.detectPaymentRequest(fromURI: content, currencyRestriction: currencyRestriction) {

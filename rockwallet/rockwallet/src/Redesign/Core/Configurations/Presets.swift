@@ -38,6 +38,20 @@ struct Presets {
                                                           border: Presets.Border.normalButtonFullRadius)
         }
         
+        struct Inverse {
+            static var normal = BackgroundConfiguration(backgroundColor: Colors.Background.one,
+                                                        tintColor: Colors.primary,
+                                                        border: Presets.Border.borderlessButtonFullRadius)
+            
+            static var selected = BackgroundConfiguration(backgroundColor: Colors.Disabled.two,
+                                                          tintColor: Colors.primary,
+                                                          border: Presets.Border.borderlessButtonFullRadius)
+            
+            static var disabled = BackgroundConfiguration(backgroundColor: Colors.Background.one,
+                                                          tintColor: Colors.Disabled.one,
+                                                          border: Presets.Border.borderlessButtonFullRadius)
+        }
+        
         struct Secondary {
             static var normal = BackgroundConfiguration(tintColor: Colors.primary)
             static var selected = BackgroundConfiguration(tintColor: Colors.Text.one)
@@ -106,6 +120,10 @@ extension Presets {
         static var primary = ButtonConfiguration(normalConfiguration: Presets.Background.Primary.normal,
                                                  selectedConfiguration: Presets.Background.Primary.selected,
                                                  disabledConfiguration: Presets.Background.Primary.disabled)
+        
+        static var inverse = ButtonConfiguration(normalConfiguration: Presets.Background.Inverse.normal,
+                                                 selectedConfiguration: Presets.Background.Inverse.selected,
+                                                 disabledConfiguration: Presets.Background.Inverse.disabled)
         
         static var whiteBorderless = ButtonConfiguration(normalConfiguration: Presets.Background.Primary.borderless,
                                                          selectedConfiguration: Presets.Background.Primary.borderless,

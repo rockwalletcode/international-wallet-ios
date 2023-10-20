@@ -55,7 +55,7 @@
 
 "Account.AuthorizeLogin.Failure.description" = "Please check your connection and try again.";
 
-"Account.AuthorizeLogin.Failure.title" = "There was an error while authorizing your Log in";
+"Account.AuthorizeLogin.Failure.title" = "There was an error while Authorizing your Log in";
 
 "Account.AuthorizeLogin.Info.description" = "By confirming, you'll grant login access to the RockWallet web app";
 
@@ -65,11 +65,11 @@
 
 "Account.AuthorizeLogin.Rejected.description" = "If you didn't attempt to log in or suspect a compromise in your wallet security, please reach out to our customer support team for assistance.";
 
-"Account.AuthorizeLogin.Rejected.title" = "Login Successfully Rejected";
+"Account.AuthorizeLogin.Rejected.title" = "You have Rejected Log in Authorization";
 
 "Account.AuthorizeLogin.Success.description" = "You should now have access to your account on the web app.";
 
-"Account.AuthorizeLogin.Success.title" = "Log in succesfull";
+"Account.AuthorizeLogin.Success.title" = "Log in Successful";
 
 "Account.AuthorizeLogin.title" = "Authorize Login";
 
@@ -195,6 +195,16 @@
 
 "Account.Lifetime" = "Lifetime";
 
+"Account.Limits" = "Limits";
+
+"Account.Limits.BuyWithCardAndACH" = "Buy with card & ACH";
+
+"Account.Limits.Current" = "Current: %@";
+
+"Account.Limits.LifetimeLimit" = "Lifetime limit";
+
+"Account.Limits.Subtitle" = "Here you will be able to check and edit the limits of your transactions";
+
 /* Loading Wallet Message */
 "Account.loadingMessage" = "Loading Wallet";
 
@@ -290,7 +300,9 @@
 
 "Account.UpdateApp.Instruction2" = "Tap the update button to proceed";
 
-"Account.UpdateApp.Subtitle" = "To access this section of the app, you need to update the app to the latest version.";
+"Account.UpdateApp.Subtitle.Home" = "To keep your RockWallet experience smooth and secure, please update to the latest version.";
+
+"Account.UpdateApp.Subtitle.SectionDisabled" = "To access this section of the app, you need to update the app to the latest version.";
 
 "Account.UpdateApp.Title" = "Update your RockWallet app";
 
@@ -993,7 +1005,7 @@
 
 "Buy.BuyLimits.Increase" = "Click on increase your limits button below if you would like to further increase your limits.";
 
-"Buy.buyWithAch" = "BUY WITH ACH";
+"Buy.buyWithAch" = "Buy with ACH";
 
 "Buy.buyWithCard" = "BUY WITH CARD";
 

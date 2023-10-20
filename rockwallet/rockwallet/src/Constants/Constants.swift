@@ -50,6 +50,8 @@ struct Constant {
         return E.isTestnet ? 18333 : 8333
     }
     static let bip39CreationTime = TimeInterval(1388534400) - NSTimeIntervalSince1970
+    static let authorizeLoginTime: TimeInterval = 30
+    static let authorizeLoginTimeCritical: TimeInterval = 15
     
     /// Path where core library stores its persistent data
     static var coreDataDirURL: URL {
