@@ -5,7 +5,7 @@
 "About.blog" = "ブログ";
 
 /* About screen footer */
-"About.footer" = "グローバルブレッドチームによって開発されました。バージョン %sビルド%s";
+"About.footer" = "グローバルブレッドチームによって開発されました。バージョン %@ビルド%@";
 
 /* Privay Policy button label */
 "About.privacy" = "プライバシーポリシー";
@@ -152,7 +152,7 @@
 "Account.EnterYourPhoneNumberSubtitle" = "To ensure that you can access all the features of our app, we need to collect your phone number. We\'ll keep your information safe and won\'t share it with anyone";
 
 /* $10000 per BTC */
-"Account.exchangeRate" = "%sあたり%s";
+"Account.exchangeRate" = "%@あたり%@";
 
 "Account.explanationSSN" = "We are required to verify the identity of all our users to comply with regulations.\n\nThat is why we need to collect your Social Security Number (SSN). We take the security and privacy of your personal information seriously, and use it only for the purposes of identity verification and compliance. This process will have no impact on your credit score.";
 
@@ -199,7 +199,7 @@
 
 "Account.Limits.BuyWithCardAndACH" = "Buy with card & ACH";
 
-"Account.Limits.Current" = "Current: %s";
+"Account.Limits.Current" = "Current: %@";
 
 "Account.Limits.LifetimeLimit" = "Lifetime limit";
 
@@ -313,7 +313,7 @@
 
 "Account.VeriffPrivacyPolicy" = "Veriff’s Privacy Policy";
 
-"Account.VeriffTerms" = "Your session audio and video may be recorded.\nRead more from %s";
+"Account.VeriffTerms" = "Your session audio and video may be recorded.\nRead more from %@";
 
 /* You need to be at least 18 years old to complete Level 1 verification label in verify account */
 "Account.Verification" = "You need to be at least 18 years old to complete Level 1 verification";
@@ -352,7 +352,7 @@
 /* Enter and verify your email address for your account label in registration flow */
 "Account.VerifyEmail" = "Enter and verify your new email address for your RockWallet account.";
 
-"Account.VerifyIdentity" = "We need to verify your identity before you can %s assets.";
+"Account.VerifyIdentity" = "We need to verify your identity before you can %@ assets.";
 
 "Account.VerifyIdentityByVeriff" = "RockWallet would like to confirm your identity, a process is powered by Veriff.";
 
@@ -393,7 +393,7 @@
 "AccountCreation.creating" = "アカウントを作成する";
 
 /* Enter the code message in create account flow */
-"AccountCreation.EnterCode" = "Enter the code we\’ve sent to:\n%s";
+"AccountCreation.EnterCode" = "Enter the code we\’ve sent to:\n%@";
 
 "AccountCreation.EnterCode.android" = "Enter the code we\’ve sent to:\n%@";
 
@@ -460,7 +460,7 @@
 "AccountKYCLevelTwo.BiometricsVerified" = "Biometrics verified";
 
 /* Buy limits on KYC2 account */
-"AccountKYCLevelTwo.BuyLimits" = "Buy limits: $%s USD/day, no lifetime limit";
+"AccountKYCLevelTwo.BuyLimits" = "Buy limits: $%@ USD/day, no lifetime limit";
 
 /* Capture back page of the document text */
 "AccountKYCLevelTwo.CaptureBackPage" = "Make sure to capture the entire back page of the document.";
@@ -514,7 +514,7 @@
 "AccountKYCLevelTwo.LevelTwo" = "Level 2";
 
 /* Swap limits on KYC2 account */
-"AccountKYCLevelTwo.Limits" = "Swap limits: $%s USD/day, no lifetime limit";
+"AccountKYCLevelTwo.Limits" = "Swap limits: $%@ USD/day, no lifetime limit";
 
 /* Make sure before photo label in KYC2 */
 "AccountKYCLevelTwo.MakeSure" = "Make sure you are in a well-lit room";
@@ -714,10 +714,10 @@
 "BackupCodes.Title" = "Backup codes";
 
 /* Send BCH view body. */
-"BCH.body" = "送金先のBCHアドレスを入力してください。フォーク時（%s）にウォレット内にあった全てのBCHが送られます。";
+"BCH.body" = "送金先のBCHアドレスを入力してください。フォーク時（%@）にウォレット内にあった全てのBCHが送られます。";
 
 /* Confirm sending <$5.00> to <address>? */
-"BCH.confirmationMessage" = "%sを%sに送金することを確認する";
+"BCH.confirmationMessage" = "%@を%@に送金することを確認する";
 
 /* Confirmation alert title */
 "BCH.confirmationTitle" = "承認";
@@ -755,7 +755,7 @@
 "BitID.approve" = "承認する";
 
 /* <sitename> is requesting authentication using your bitcoin wallet */
-"BitID.authenticationRequest" = "%sがビットコインウォレットを使っての認証を求めています";
+"BitID.authenticationRequest" = "%@がビットコインウォレットを使っての認証を求めています";
 
 /* Deny button label */
 "BitID.deny" = "拒否する";
@@ -914,7 +914,7 @@
 
 "Buy.Ach.Instant.ConfirmationDrawer.ConfirmAction" = "Confirm purchase";
 
-"Buy.Ach.Instant.ConfirmationDrawer.Description" = "$%s assets will settle immediately.";
+"Buy.Ach.Instant.ConfirmationDrawer.Description" = "$%@ assets will settle immediately.";
 
 "Buy.Ach.Instant.ConfirmationDrawer.Notice" = "Instant purchase";
 
@@ -924,13 +924,13 @@
 
 "Buy.Ach.Instant.Fee.Title" = "Instant Buy fee";
 
-"Buy.Ach.Instant.HybridConfirmationDrawer" = "With Instant buy, %s (%s) will show in your account instantly. The remaining %s (%s) will arrive in 3-5 days.";
+"Buy.Ach.Instant.HybridConfirmationDrawer" = "With Instant buy, %@ (%@) will show in your account instantly. The remaining %@ (%@) will arrive in 3-5 days.";
 
-"Buy.Ach.Instant.InfoButtonTitle" = "Receive up to %s instantly";
+"Buy.Ach.Instant.InfoButtonTitle" = "Receive up to %@ instantly";
 
-"Buy.Ach.Instant.OrderPreview.HybridNotice" = "With Instant Buy, %s will be settled immediately. Remaining %s will settle in 3-5 days.";
+"Buy.Ach.Instant.OrderPreview.HybridNotice" = "With Instant Buy, %@ will be settled immediately. Remaining %@ will settle in 3-5 days.";
 
-"Buy.Ach.Instant.OrderPreview.Notice" = "With Instant Buy, %s will be settled immediately.";
+"Buy.Ach.Instant.OrderPreview.Notice" = "With Instant Buy, %@ will be settled immediately.";
 
 "Buy.Ach.Instant.PopupContent" = "Instant Buy via ACH is a fast and convenient way to purchase digital assets using funds from your bank account. The instant portion of your transaction will show in your account within seconds!";
 
@@ -944,9 +944,9 @@
 
 "Buy.Ach.NotAvailableTitle" = "Sorry! This feature is unavailable";
 
-"Buy.Ach.WalletDisabled" = "%s needs to be enabled in your wallet first. Kindly enable it %s, or by selecting 'Manage assets' on the home screen.";
+"Buy.Ach.WalletDisabled" = "%@ needs to be enabled in your wallet first. Kindly enable it %@, or by selecting 'Manage assets' on the home screen.";
 
-"Buy.Ach.WalletDisabled.android" = "%s needs to be enabled in your wallet first. You can enable it %s, or by selecting %s on the home screen.";
+"Buy.Ach.WalletDisabled.android" = "%@ needs to be enabled in your wallet first. You can enable it %@, or by selecting %@ on the home screen.";
 
 "Buy.Ach.WalletDisabled.Link" = "here";
 
@@ -956,7 +956,7 @@
 
 "Buy.achFee" = "ACH fee (%@)";
 
-"Buy.achLimits" = "Currently, minimum for buying with ACH is %s USD and maximum is %s USD per day. At the moment lifetime limit is %s USD.";
+"Buy.achLimits" = "Currently, minimum for buying with ACH is %@ USD and maximum is %@ USD per day. At the moment lifetime limit is %@ USD.";
 
 "Buy.achPaymentDurationWarning" = "ACH payments usually take 3-5 days. Funds may take a few days to be debited from your account.";
 
@@ -997,9 +997,9 @@
 "Buy.BuyLimits.android" = "Currently, minimum for Buy is $30.00 USD and maximum is $500.00 USD per day.";
 
 /* Buy min and max limit text */
-"Buy.BuyLimits.description" = "Currently, minimum for Buy is %s USD and maximum is %s USD per day.  %s";
+"Buy.BuyLimits.description" = "Currently, minimum for Buy is %@ USD and maximum is %@ USD per day.  %@";
 
-"Buy.BuyLimits.description.android" = "Minimum for Buy is %s per transaction and your weekly limit is %s.";
+"Buy.BuyLimits.description.android" = "Minimum for Buy is %@ per transaction and your weekly limit is %@.";
 
 "Buy.BuyLimits.description.lifetime.android" = "Minimum for Buy is %@ per transaction and you have a lifetime limit of %@.";
 
@@ -1123,7 +1123,7 @@
 
 "Buy.relinkBankAccount" = "Re-link bank account";
 
-"Buy.RemoveCard" = "Are you sure you want to remove card ending in %s?";
+"Buy.RemoveCard" = "Are you sure you want to remove card ending in %@?";
 
 /* You will no longer be able to use it to buy assets description on removing card dialog */
 "Buy.RemoveCardOption" = "You will no longer be able to use it to buy assets.";
@@ -1147,7 +1147,7 @@
 
 "Buy.switchedToDebitCard" = "Payment method switched to Debit card!";
 
-"Buy.Terms.description" = "By placing this order you agree to our %s";
+"Buy.Terms.description" = "By placing this order you agree to our %@";
 
 "Buy.TransactionError" = "Transaction error";
 
@@ -1156,7 +1156,7 @@
 /* Try a different payment method button title in failure buy screen */
 "Buy.TryAnotherPayment" = "Try a different payment method";
 
-"Buy.txHashHeader" = "%s Transaction ID";
+"Buy.txHashHeader" = "%@ Transaction ID";
 
 "Buy.understandAndAgree" = "I understand and agree";
 
@@ -1222,7 +1222,7 @@
 
 "CloudBackup.mainWarningConfirmation" = "iCloudバックアップを無効にしてもよろしいですか？これにより、すべてのデバイスからバックアップが削除されます。";
 
-"CloudBackup.pinAttempts" = "バックアップを消去する前に残っている試行： %s";
+"CloudBackup.pinAttempts" = "バックアップを消去する前に残っている試行： %@";
 
 "CloudBackup.recoverButton" = "回復キーから復元";
 
@@ -1244,7 +1244,7 @@
 
 "CloudBackup.understandText" = "この機能はiCloudキーチェーンが有効になっていないと機能しないことを理解しています。";
 
-"CloudBackup.warningBody" = "あなたのiCloudバックアップは、あと%s回の間違ったPIN試行の後に消去されます。";
+"CloudBackup.warningBody" = "あなたのiCloudバックアップは、あと%@回の間違ったPIN試行の後に消去されます。";
 
 "ComingSoon.body" = "Buy and Swap aren't currently available in your state. We'll notify you when you can use these features.\n\nYou can still safely send and receive digital assets to your wallet in the meantime.";
 
@@ -1285,9 +1285,9 @@
 "Confirmation.hederaMemo" = "ヘデラメモ";
 
 /* eg. Processing time: This transaction is predicted to complete in [10-60 minutes]. */
-"Confirmation.processingTime" = "処理時間: この取引は%sで完了する見込みです。";
+"Confirmation.processingTime" = "処理時間: この取引は%@で完了する見込みです。";
 
-"Confirmation.processingTime.android" = "Estimated delivery time: %s";
+"Confirmation.processingTime.android" = "Estimated delivery time: %@";
 
 /* Label for "send" button on final confirmation screen */
 "Confirmation.send" = "送金する";
@@ -1317,7 +1317,7 @@
 "ConfirmPaperPhrase.label" = "すべてが正しく記述されていることを確認するには、回復フレーズから次の単語を入力してください。";
 
 /* Word label eg. Word #1, Word #2 */
-"ConfirmPaperPhrase.word" = "フレーズ #%s";
+"ConfirmPaperPhrase.word" = "フレーズ #%@";
 
 "ConfirmPaperPhrase.word.android" = "Word %1$s%2$s";
 
@@ -1379,16 +1379,16 @@
 "Drawer.title" = "Buy / Sell";
 
 /* Share address by e-mail subject */
-"Email.address_subject" = "%s住所";
+"Email.address_subject" = "%@住所";
 
 /* Service capabilities description */
-"EME.permissions.accountRequest" = "%s のアカウント情報をリクエスト";
+"EME.permissions.accountRequest" = "%@ のアカウント情報をリクエスト";
 
 /* Service capabilities description */
-"EME.permissions.callRequest" = "%s のスマートコントラクトのコールをリクエスト";
+"EME.permissions.callRequest" = "%@ のスマートコントラクトのコールをリクエスト";
 
 /* Service capabilities description */
-"EME.permissions.paymentRequest" = "%s のアカウント情報をリクエスト";
+"EME.permissions.paymentRequest" = "%@ のアカウント情報をリクエスト";
 
 "ErrorMessages.accessDenied" = "You cannot purchase assets without completing Level 2 account verification. Upgrade your limits on the Profile screen.";
 
@@ -1401,20 +1401,20 @@
 "ErrorMessages.Ach.InsufficientFunds" = "Unfortunately the transaction could not be completed due to insufficient funds in your bank account. Please try again later";
 
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
-"ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %s %s. Please enter a lower amount.";
+"ErrorMessages.AmountTooHigh" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
 
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
-"ErrorMessages.AmountTooHigh.Sprint.eleven" = "The amount is higher than your daily limit of %s %s. Please enter a lower amount.";
+"ErrorMessages.AmountTooHigh.Sprint.eleven" = "The amount is higher than your daily limit of %@ %@. Please enter a lower amount.";
 
 /* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
-"ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %s %s. Please enter a higher amount.";
+"ErrorMessages.amountTooLow" = "The amount is lower than the minimum of %@ %@. Please enter a higher amount.";
 
 "ErrorMessages.appNotInstalled" = "You don\'t have an app installed to complete this action.";
 
 "ErrorMessages.authorizationFailed" = "Card authorization failed. Please contact your credit card issuer/bank or try another card.";
 
 /* Accepts 3 parameters:, - currency code, - current balance, - (same) currency code */
-"ErrorMessages.balanceTooLow" = "You need %s %s in your wallet to cover network fees. Please add more %s to your wallet.";
+"ErrorMessages.balanceTooLow" = "You need %@ %@ in your wallet to cover network fees. Please add more %@ to your wallet.";
 
 "ErrorMessages.cardRequiresPurchase" = "Prior to initiating any withdrawals to your visa debit, please complete a purchase with this card for validation purposes. Buy with card";
 
@@ -1430,14 +1430,14 @@
 "ErrorMessages.emailUnavailableTitle" = "メールが利用できません";
 
 /* Not enough ETH for transaction fee */
-"ErrorMessages.ethBalanceLowAddEth" = "%s is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
+"ErrorMessages.ethBalanceLowAddEth" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
 
 /* Not enough ETH for transaction fee */
-"ErrorMessages.ethBalanceLowAddEthWithAmount" = "%s is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
+"ErrorMessages.ethBalanceLowAddEthWithAmount" = "%@ is an ERC-20 token on the Ethereum blockchain and requires ETH network fees. Please add ETH to your wallet.";
 
 "ErrorMessages.Exchange.xrpMinimumReserve" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
-"ErrorMessages.exchangeFailed" = "Swap failed. Reason: %s.";
+"ErrorMessages.exchangeFailed" = "Swap failed. Reason: %@.";
 
 "ErrorMessages.ExchangeQuoteFailed" = "We are currently having issues making a swap between this pair of coins. Please try again later.";
 
@@ -1475,9 +1475,9 @@
 "ErrorMessages.noFees" = "Failed to fetch network fees. Please try again later.";
 
 /* Accepts 2 parameters:, - first currency code, - second currency code */
-"ErrorMessages.noQuoteForPair" = "No quote for currency pair %s-%s.";
+"ErrorMessages.noQuoteForPair" = "No quote for currency pair %@-%@.";
 
-"ErrorMessages.notEnoughBalance" = "You don’t have enough %s in your wallet in order to transfer this type of token.";
+"ErrorMessages.notEnoughBalance" = "You don’t have enough %@ in your wallet in order to transfer this type of token.";
 
 "ErrorMessages.notEnoughBalanceXRP" = "Ensure you leave at least %@ XRP in your wallet; the Ripple Ledger requires this as a non-withdrawable minimum reserve.";
 
@@ -1562,7 +1562,7 @@
 "ExportTransfers.header" = "輸出取引？";
 
 /* You can customize your Face ID Spending Limit from the [menu] */
-"FaceIDSettings.customizeText" = "%sからFace ID使用限度額をカスタマイズすることができます。";
+"FaceIDSettings.customizeText" = "%@からFace ID使用限度額をカスタマイズすることができます。";
 
 /* Text describing the purpose of the Face ID settings in the BRD app. */
 "FaceIDSettings.explanatoryText" = "Face IDを使用してBRDアプリのロックを解除し、送金してください。";
@@ -1606,12 +1606,12 @@
 "FeeSelector.economyWarning" = "このオプションは早く送金を済ませたい方にはお勧めしません。";
 
 /* E.g. Estimated delivery: 10-60 minutes */
-"FeeSelector.estimatedDeliver" = "推定送金時間: %s";
+"FeeSelector.estimatedDeliver" = "推定送金時間: %@";
 
 /* [This transaction will complete in] 2-5 minutes */
 "FeeSelector.ethTime" = "2〜5分";
 
-"FeeSelector.lessThanMinutes" = "<%s 分";
+"FeeSelector.lessThanMinutes" = "<%@ 分";
 
 /* Priority fee */
 "FeeSelector.priority" = "優先度";
@@ -1680,7 +1680,7 @@
 "Import.checking" = "秘密鍵の残高確認中...";
 
 /* Sweep private key confirmation message */
-"Import.confirm" = "この秘密鍵からウォレットに%sを送信しますか? ビットコインネットワークは手数料%sを頂戴します。";
+"Import.confirm" = "この秘密鍵からウォレットに%@を送信しますか? ビットコインネットワークは手数料%@を頂戴します。";
 
 /* Duplicate key error message */
 "Import.Error.duplicate" = "この秘密鍵はすでにあなたのウォレットに存在しています。";
@@ -1810,10 +1810,10 @@
 /* No permissions for location services */
 "LocationPlugin.notAuthorized" = "ブレッドは位置情報サービスへのアクセスが許可されていません。";
 
-"LoginController.invalidPinError" = "Incorrect PIN. The wallet will get disabled after %d more failed %s.";
+"LoginController.invalidPinError" = "Incorrect PIN. The wallet will get disabled after %d more failed %@.";
 
 /* Wallet creation date prefix */
-"ManageWallet.creationDatePrefix" = "あなたは%sにご自身のウォレットを作成しました";
+"ManageWallet.creationDatePrefix" = "あなたは%@にご自身のウォレットを作成しました";
 
 /* Manage wallet description text */
 "ManageWallet.description" = "あなたのウォレットの名前はご自身のアカウントの取引履歴上でのみ表示され、あなた以外誰も閲覧することができません。";
@@ -1977,7 +1977,7 @@
 /* Onboarding screen Page 2 title */
 "OnboardingPageTwo.title" = "世界中で何百万もの人々がBRDを利用しています。あなたもぜひ。";
 
-"PaymailAddress.CopyMessage" = "Paymail address %s copied to clipboard";
+"PaymailAddress.CopyMessage" = "Paymail address %@ copied to clipboard";
 
 "PaymailAddress.createAddressDescription" = "To enable quick BSV transfers you can create your unique Paymail address.";
 
@@ -2004,7 +2004,7 @@
 "PaymailAddress.yourPaymailAddress" = "Your Paymail address:";
 
 /* Eg. Send 1.0Eth to purchase CCC */
-"PaymentConfirmation.amountText" = "%sを購入するために%sを送金する";
+"PaymentConfirmation.amountText" = "%@を購入するために%@を送金する";
 
 /* Payment expired message */
 "PaymentConfirmation.PaymentExpired" = "The payment has expired due to inactivity. Please try again with the same card, or use a different card.";
@@ -2040,10 +2040,10 @@
 "PaymentProtocol.Errors.smallOutputError" = "支払いが行えませんでした";
 
 /* Amount too small error message */
-"PaymentProtocol.Errors.smallPayment" = "%s未満のビットコインの支払いは行えません。";
+"PaymentProtocol.Errors.smallPayment" = "%@未満のビットコインの支払いは行えません。";
 
 /* Output too small error message. */
-"PaymentProtocol.Errors.smallTransaction" = "ビットコインの送金額は%s以上である必要があります。";
+"PaymentProtocol.Errors.smallTransaction" = "ビットコインの送金額は%@以上である必要があります。";
 
 /* Unsupported signature type payment protocol error message */
 "PaymentProtocol.Errors.unsupportedSignatureType" = "サポートされていないタイプの署名です";
@@ -2338,7 +2338,7 @@
 "RecoveryKeyFlow.HelpPopup.title" = "What is “Recovery Phrase”?";
 
 /* Hint text for recovery key intro page, e.g., Step 2 */
-"RecoveryKeyFlow.howItWorksStep" = "使い方 - ステップ%s";
+"RecoveryKeyFlow.howItWorksStep" = "使い方 - ステップ%@";
 
 /* Error text displayed when the user enters an incorrect recovery phrase */
 "RecoveryKeyFlow.invalidPhrase" = "入力した単語の一部が回復フレーズと一致しません。もう一度お試しください。";
@@ -2422,7 +2422,7 @@
 "RecoveryKeyFlow.writeKeyScreenTitle" = "あなたの回復フレーズ";
 
 /* Title for the step number when the user pages through the recovery words */
-"RecoveryKeyFlow.writeKeyStepTitle" = "%sの%s";
+"RecoveryKeyFlow.writeKeyStepTitle" = "%@の%@";
 
 "RecoveryKeyFlow.WritePhrase.subtitle" = "Save your 12 word Recovery Phrase generated  in the next step.";
 
@@ -2502,7 +2502,7 @@
 "Scanner.noCamera" = "No camera found";
 
 /* (alert dialog message) Would you like to send a [Bitcoin / Bitcoin Cash / Ethereum] payment to this address?") */
-"Scanner.paymentPromptMessage" = "この住所に %s の支払いを送信しますか?";
+"Scanner.paymentPromptMessage" = "この住所に %@ の支払いを送信しますか?";
 
 /* alert dialog title */
 "Scanner.paymentPromptTitle" = "支払いを送る";
@@ -2579,7 +2579,7 @@
 
 "Sell.details" = "Sell & Withdraw details";
 
-"Sell.disclaimer" = "Minimum withdrawal is %s and maximum is %s per day. At the moment your lifetime limit is %s USD.\n\nACH Withdrawals will be processed within 3-5 business days.withdrawal";
+"Sell.disclaimer" = "Minimum withdrawal is %@ and maximum is %@ per day. At the moment your lifetime limit is %@ USD.\n\nACH Withdrawals will be processed within 3-5 business days.withdrawal";
 
 "Sell.InvalidCardNumber" = "Only Visa Debit is supported for withdrawals";
 
@@ -2637,7 +2637,7 @@
 "Send.amountLabel" = "金額";
 
 /* Balance: $4.00 */
-"Send.balance" = "残高: %s";
+"Send.balance" = "残高: %@";
 
 /* Balance: $4.00 for iOS, the balance can't have a parameter */
 "Send.balanceString" = "残高:";
@@ -2692,11 +2692,11 @@
 "Send.ethSendSelf" = "自分に送金することはできません。";
 
 /* Network Fee: $0.01 */
-"Send.fee" = "ネットワーク手数料: %s";
+"Send.fee" = "ネットワーク手数料: %@";
 
 "Send.fio_invalid" = "無効なFIOアドレス。";
 
-"Send.fio_noAddress" = "このFIOアドレスに関連付けられている%sアドレスはありません。";
+"Send.fio_noAddress" = "このFIOアドレスに関連付けられている%@アドレスはありません。";
 
 "Send.fio_retrievalError" = "このFIOアドレスのアドレスの取得中にエラーが発生しました。後でもう一度やり直してください。";
 
@@ -2709,16 +2709,16 @@
 /* Insufficient gas error */
 "Send.insufficientGas" = "Insufficient gas.";
 
-"Send.insufficientGasMessage" = "You must have at least %s in your wallet in order to send this digital asset. Please add more %s to your wallet and try again.";
+"Send.insufficientGasMessage" = "You must have at least %@ in your wallet in order to send this digital asset. Please add more %@ to your wallet and try again.";
 
 /* Your balance is insufficient to complete this action. */
-"Send.insufficientGasTitle" = "Insufficient %s Balance";
+"Send.insufficientGasTitle" = "Insufficient %@ Balance";
 
 /* e.g. The destination is not a valid (bitcoin) address. */
-"Send.invalidAddressMessage" = "送金先のアドレスが無効な%sアドレスです。";
+"Send.invalidAddressMessage" = "送金先のアドレスが無効な%@アドレスです。";
 
 /* Invalid address on pasteboard message */
-"Send.invalidAddressOnPasteboard" = "ペーストボードに有効な%sアドレスが入っていません。";
+"Send.invalidAddressOnPasteboard" = "ペーストボードに有効な%@アドレスが入っていません。";
 
 /* Invalid address alert title */
 "Send.invalidAddressTitle" = "無効なアドレスです";
@@ -2757,7 +2757,7 @@
 "Send.payId_invalid" = "PayIDが無効です。";
 
 /* Error message for no address associated with a PayID for a given currency */
-"Send.payId_noAddress" = "このPayIDに関連付けられている%sアドレスはありません。";
+"Send.payId_noAddress" = "このPayIDに関連付けられている%@アドレスはありません。";
 
 /* Error message for error in retrieving the address from the PayID endpoint */
 "Send.payId_retrievalError" = "このPayIDの住所の取得中にエラーが発生しました。後でもう一度やり直してください。";
@@ -2837,7 +2837,7 @@
 "Settings.currency" = "表示される通貨";
 
 /* e.g. "USD Settings" (settings for how USD is handled) */
-"Settings.currencyPageTitle" = "%s設定";
+"Settings.currencyPageTitle" = "%@設定";
 
 /* Section title for a collection of different settings screens, one for each currency */
 "Settings.currencySettings" = "通貨設定";
@@ -2957,7 +2957,7 @@
 /* Baker cell: Fee field header */
 "Staking.feeHeader" = "費用：";
 
-"Staking.feePct" = "Fee: %s";
+"Staking.feePct" = "Fee: %@";
 
 "Staking.loadingBakerError" = "An error occurred while loading baker information. Please try again later.";
 
@@ -2987,7 +2987,7 @@
 /* Staking banner title */
 "Staking.stakingTitle" = "ステーキング";
 
-"Staking.stakingTo" = "%sへのステーキング";
+"Staking.stakingTo" = "%@へのステーキング";
 
 "Staking.statusPending" = "保留中";
 
@@ -3004,7 +3004,7 @@
 /* Tezos XTZ baker asset type */
 "Staking.tezosOnly" = "テゾスのみ";
 
-"Staking.title" = "ステーク%s";
+"Staking.title" = "ステーク%@";
 
 "Staking.unstake" = "アンステーク";
 
@@ -3023,7 +3023,7 @@
 "StartPaperPhrase.buttonTitle" = "回復フレーズを書き留めます";
 
 /* Argument is date; date should be on a new line */
-"StartPaperPhrase.date" = "最後に書き留めた\n %s";
+"StartPaperPhrase.date" = "最後に書き留めた\n %@";
 
 /* button label */
 "StartViewController.createButton" = "新しいウォレットを作成する";
@@ -3053,7 +3053,7 @@
 "Swap.BackToHome" = "Back to Home";
 
 /* Balance text on swap */
-"Swap.Balance" = "I have %s %s";
+"Swap.Balance" = "I have %@ %@";
 
 "Swap.CardFee" = "Card fee:";
 
@@ -3115,14 +3115,14 @@
 "Swap.SwapLimit" = "Swap limits";
 
 /* Swap min and max limit text */
-"Swap.SwapLimits" = "Currently, minimum for Swap is %s USD and maximum is %s USD/day.";
+"Swap.SwapLimits" = "Currently, minimum for Swap is %@ USD and maximum is %@ USD/day.";
 
 "Swap.SwapLimits.Lifetime" = "Currently, minimum for Swap is %@ and maximum is %@ lifetime.";
 
-"Swap.Swapping" = "Swapping %s to %s";
+"Swap.Swapping" = "Swapping %@ to %@";
 
 /* Swap status message on swap flow */
-"Swap.SwapStatus" = "Your %s is estimated to arrive in 30 minutes. You can continue to use your wallet. We'll let you know when your swap has finished.";
+"Swap.SwapStatus" = "Your %@ is estimated to arrive in 30 minutes. You can continue to use your wallet. We'll let you know when your swap has finished.";
 
 "Swap.temporarilyUnavailable" = "Swap is temporarily unavailable";
 
@@ -3132,14 +3132,14 @@
 /* Total label in swap details screen */
 "Swap.Total" = "Total:";
 
-"Swap.transactionFrom" = "From %s";
+"Swap.transactionFrom" = "From %@";
 
 /* Transaction ID label in swap details screen */
 "Swap.TransactionID" = "RockWallet Transaction ID";
 
 "Swap.transactionInEthereumNetwork" = "It seems that your transaction takes place in the Ethereum network, please keep in mind that network fees will be charged in ETH";
 
-"Swap.transactionTo" = "To %s";
+"Swap.transactionTo" = "To %@";
 
 "Swap.youReceive" = "You'll receive";
 
@@ -3161,22 +3161,22 @@
 "SyncingView.retry" = "再試行";
 
 /* "eg. Synced through <Jan 12, 2015> */
-"SyncingView.syncedThrough" = "%sまで同期完了";
+"SyncingView.syncedThrough" = "%@まで同期完了";
 
 /* Syncing view syncing state header text */
 "SyncingView.syncing" = "同期中";
 
 /* 6 d (6 days) */
-"TimeSince.days" = "%s日";
+"TimeSince.days" = "%@日";
 
 /* 6 h (6 hours) */
-"TimeSince.hours" = "%s時間";
+"TimeSince.hours" = "%@時間";
 
 /* 6 m (6 minutes) */
-"TimeSince.minutes" = "%s分";
+"TimeSince.minutes" = "%@分";
 
 /* 6 s (6 seconds) */
-"TimeSince.seconds" = "%s秒";
+"TimeSince.seconds" = "%@秒";
 
 "Title.AutoEnterPin" = "Auto-enter PIN";
 
@@ -3218,7 +3218,7 @@
 "TokenList.show" = "表示する";
 
 /* You can customize your Touch ID Spending Limit from the [TouchIdSettings.linkText gets added here as a button] */
-"TouchIdSettings.customizeText" = "%sからTouch ID利用限度額を変更できます。";
+"TouchIdSettings.customizeText" = "%@からTouch ID利用限度額を変更できます。";
 
 /* Fingerprint enabling description body */
 "TouchIdSettings.customizeText.android" = "指紋認証利用上限は指紋認証利用上限画面でカスタマイズできます";
@@ -3239,7 +3239,7 @@
 "TouchIdSettings.linkText" = "Touch ID利用限度額画面";
 
 /* Spending Limit: b100,000 ($100) */
-"TouchIdSettings.spendingLimit" = "利用限度: %s (%s)";
+"TouchIdSettings.spendingLimit" = "利用限度: %@ (%@)";
 
 /* Touch id switch label. */
 "TouchIdSettings.switchLabel" = "ブレッドでTouch IDの有効化";
@@ -3287,7 +3287,7 @@
 "Transaction.confirming" = "進行中";
 
 /* eg. Ending balance: $50.00 */
-"Transaction.ending" = "期末残高: %s";
+"Transaction.ending" = "期末残高: %@";
 
 /* Exchange rate on date header */
 "Transaction.exchangeOnDayReceived" = "受け取り時の為替レート：";
@@ -3306,9 +3306,9 @@
 "Transaction.FailedWithdrawWithInstantBuy" = "Failed purchase with Instant Buy";
 
 /* (b600 fee) */
-"Transaction.fee" = "(%s 手数料)";
+"Transaction.fee" = "(%@ 手数料)";
 
-"Transaction.HybridPart" = "- %s/2";
+"Transaction.HybridPart" = "- %@/2";
 
 /* Invalid transaction */
 "Transaction.invalid" = "無効";
@@ -3352,43 +3352,43 @@
 "Transaction.PurchaseFailedWithInstantAch" = "Purchase with Instant Buy failed";
 
 /* Receive status text: 'In progress: 20%' */
-"Transaction.receivedStatus" = "進行中: %s";
+"Transaction.receivedStatus" = "進行中: %@";
 
 "Transaction.refunded" = "Refunded";
 
 /* Send status text: 'In progress: 20%' */
-"Transaction.sendingStatus" = "進行中: %s";
+"Transaction.sendingStatus" = "進行中: %@";
 
 /* sending to <address> */
-"Transaction.sendingTo" = "%sに送金中";
+"Transaction.sendingTo" = "%@に送金中";
 
 /* sent to <address> */
-"Transaction.sentTo" = "%sに送金済み";
+"Transaction.sentTo" = "%@に送金済み";
 
-"Transaction.stakingTo" = "%sへのステーキング";
+"Transaction.stakingTo" = "%@へのステーキング";
 
 /* eg. Starting balance: $50.00 */
-"Transaction.starting" = "期首残高: %s";
+"Transaction.starting" = "期首残高: %@";
 
-"Transaction.swapFromFailed" = "Swap from %s failed";
+"Transaction.swapFromFailed" = "Swap from %@ failed";
 
 /* Swapped transaction label */
 "Transaction.Swapped" = "Swapped";
 
-"Transaction.swappedFrom" = "Swapped from %s";
+"Transaction.swappedFrom" = "Swapped from %@";
 
-"Transaction.swappedTo" = "Swapped to %s";
+"Transaction.swappedTo" = "Swapped to %@";
 
-"Transaction.swappingFrom" = "Swapping from %s";
+"Transaction.swappingFrom" = "Swapping from %@";
 
-"Transaction.swappingTo" = "Swapping to %s";
+"Transaction.swappingTo" = "Swapping to %@";
 
-"Transaction.swapToFailed" = "Swap to %s failed";
+"Transaction.swapToFailed" = "Swap to %@ failed";
 
 /* e.g. "[The money you paid was a] Fee for token transfer: BRD" (BRD is the token that was transfered) */
-"Transaction.tokenTransfer" = "トークン送金の手数料: %s";
+"Transaction.tokenTransfer" = "トークン送金の手数料: %@";
 
-"Transaction.toRecipient" = "〜 %s";
+"Transaction.toRecipient" = "〜 %@";
 
 /* Waiting to be confirmed string */
 "Transaction.waiting" = "承認を待っています。トランザクションの完了には承認が必要となる場合があります。推定時間: 1-2時間。";
@@ -3421,10 +3421,10 @@
 "TransactionDetails.amountHeader" = "金額";
 
 /* "(it was worth) $100 when sent, (and it is worth) $200 now" */
-"TransactionDetails.amountWhenReceived" = "%s を受領したので、%s になります";
+"TransactionDetails.amountWhenReceived" = "%@ を受領したので、%@ になります";
 
 /* "(it was worth) $100 when sent, (and it is worth) $200 now" */
-"TransactionDetails.amountWhenSent" = "送金時%s、現在%s";
+"TransactionDetails.amountWhenSent" = "送金時%@、現在%@";
 
 /* Block height label */
 "TransactionDetails.blockHeightLabel" = "ブロックチェーンで承認済み";
@@ -3458,7 +3458,7 @@
 "TransactionDetails.feeHeader" = "総手数料";
 
 /* "Received [$5] at [which of my addresses]" => This is the "at [which of my addresses]" part. */
-"TransactionDetails.from" = "%sで";
+"TransactionDetails.from" = "%@で";
 
 /* Tx detail field header */
 "TransactionDetails.gasLimitHeader" = "ガソリン上限";
@@ -3468,7 +3468,7 @@
 
 "TransactionDetails.gift" = "贈り物";
 
-"TransactionDetails.giftedTo" = "%s贈られました";
+"TransactionDetails.giftedTo" = "%@贈られました";
 
 /* Label for Hedera Memo field on transaction details screen */
 "TransactionDetails.hederaMemo" = "ヘデラメモ";
@@ -3483,41 +3483,41 @@
 "TransactionDetails.more" = "もっと見る...";
 
 /* Moved $5.00 (as in "I moved $5 to another location") */
-"TransactionDetails.moved" = "%sを移動させました";
+"TransactionDetails.moved" = "%@を移動させました";
 
 /* Moved $5.00 */
-"TransactionDetails.movedAmountDescription" = "<b>%s</b>を移動させました";
+"TransactionDetails.movedAmountDescription" = "<b>%@</b>を移動させました";
 
 /* eg. Confirmed in Block: Not Confirmed */
 "TransactionDetails.notConfirmedBlockHeightLabel" = "未承認";
 
 /* "Received [$5] at [which of my addresses]" => This is the "Received [$5]" part. */
-"TransactionDetails.received" = "%sを受け取りました";
+"TransactionDetails.received" = "%@を受け取りました";
 
 /* Received $5.00 */
-"TransactionDetails.receivedAmountDescription" = "<b>%s</b>を受け取りました";
+"TransactionDetails.receivedAmountDescription" = "<b>%@</b>を受け取りました";
 
 /* received from <address> */
-"TransactionDetails.receivedFrom" = "%sから受け取りました";
+"TransactionDetails.receivedFrom" = "%@から受け取りました";
 
 /* received via <address> */
-"TransactionDetails.receivedVia" = "%s経由で受け取り済み";
+"TransactionDetails.receivedVia" = "%@経由で受け取り済み";
 
 /* receiving from <address> */
-"TransactionDetails.receivingFrom" = "%sから受け取っています";
+"TransactionDetails.receivingFrom" = "%@から受け取っています";
 
 /* receiving via <address> */
-"TransactionDetails.receivingVia" = "%s経由で受け取り中";
+"TransactionDetails.receivingVia" = "%@経由で受け取り中";
 
 "TransactionDetails.reclaim" = "再利用";
 
 "TransactionDetails.resend" = "再送信";
 
 /* "Sent [$5] to [address]" => This is the "Sent [$5]" part. */
-"TransactionDetails.sent" = "%sを送金しました";
+"TransactionDetails.sent" = "%@を送金しました";
 
 /* Sent $5.00 */
-"TransactionDetails.sentAmountDescription" = "<b>%s</b>を送金しました";
+"TransactionDetails.sentAmountDescription" = "<b>%@</b>を送金しました";
 
 /* Show Details button */
 "TransactionDetails.showDetails" = "詳細を表示する";
@@ -3550,7 +3550,7 @@
 "TransactionDetails.titleSent" = "送金済み";
 
 /* "Sent [$5] to [address]" => This is the "to [address]" part. */
-"TransactionDetails.to" = "%sに";
+"TransactionDetails.to" = "%@に";
 
 /* Tx detail field header */
 "TransactionDetails.totalHeader" = "トータル";
@@ -3600,9 +3600,9 @@
 
 "TwoStep.Email.Confirmation.Title" = "We’ve sent you a code";
 
-"TwoStep.Error.Attempt" = "Invalid code. You have %s more attempt, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
+"TwoStep.Error.Attempt" = "Invalid code. You have %@ more attempt, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
 
-"TwoStep.Error.Attempts" = "Invalid code. You have %s more attempts, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
+"TwoStep.Error.Attempts" = "Invalid code. You have %@ more attempts, after that your RockWallet account will be blocked. You’ll still be able to access your self-custodial features.";
 
 "TwoStep.getBackupCodesTitle" = "";
 
@@ -3661,7 +3661,7 @@
 "UnavailableScreen.ProDescription" = "RockWallet Pro isn’t available for you at this point in time.";
 
 /* Disabled until date */
-"UnlockScreen.disabled" = "以下まで無効: %s";
+"UnlockScreen.disabled" = "以下まで無効: %@";
 
 /* Unlock with FaceID accessibility label */
 "UnlockScreen.faceIdText" = "FaceIDでロックを解除する";
@@ -3827,7 +3827,7 @@
 
 "VerifyPhoneNumber.sms.changeNumber" = "Change my phone number";
 
-"VerifyPhoneNumber.sms.instructions" = "Enter the security code we’ve sent to:\n%s";
+"VerifyPhoneNumber.sms.instructions" = "Enter the security code we’ve sent to:\n%@";
 
 "VerifyPhoneNumber.sms.title" = "We’ve sent you an SMS";
 
@@ -4042,7 +4042,7 @@
 "WritePaperPhrase.previous" = "前へ";
 
 /* 1 of 3 */
-"WritePaperPhrase.step" = "%sの%s";
+"WritePaperPhrase.step" = "%@の%@";
 
 "WritePaperPhrase.warning" = "For security purposes, do not screenshot or email these words.";
 

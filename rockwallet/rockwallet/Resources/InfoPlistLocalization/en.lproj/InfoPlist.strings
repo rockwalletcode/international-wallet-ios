@@ -199,7 +199,7 @@
 
 "Account.Limits.BuyWithCardAndACH" = "Buy with card & ACH";
 
-"Account.Limits.Current" = "Current: %s";
+"Account.Limits.Current" = "Current: %@";
 
 "Account.Limits.LifetimeLimit" = "Lifetime limit";
 
