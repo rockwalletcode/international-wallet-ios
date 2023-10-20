@@ -92,7 +92,6 @@
 		1F73224F2A8656FC008FB65F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABD8D0D24E1CF1500EC4C91 /* SwiftUI.framework */; };
 		1F7322502A865708008FB65F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A9A9611DF61FE0000F0016 /* SystemConfiguration.framework */; };
 		1F7322522A865713008FB65F /* Veriff in Frameworks */ = {isa = PBXBuildFile; productRef = 1F7322512A865713008FB65F /* Veriff */; };
-		1F7322542A865718008FB65F /* WalletKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1F7322532A865718008FB65F /* WalletKit */; };
 		1F7322552A865721008FB65F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A9A9651DF61FEE000F0016 /* WebKit.framework */; };
 		1FA102872A86592A00FE853D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75A2A79A1DA5934300A983D8 /* Assets.xcassets */; };
 		1FA102882A86593900FE853D /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5E6C991EB9135000A476DB /* Icon.xcassets */; };
@@ -529,6 +528,7 @@
 		7EF45F91284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF45F90284777AC00D1F7B0 /* RegistrationConfirmationWorker.swift */; };
 		9F0EA16C25E2904400D4225E /* WidgetDataShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0EA16325E2902700D4225E /* WidgetDataShareService.swift */; };
 		9FC529D02604FAA300855473 /* BreadwalletWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9FC529D42604FAA300855473 /* BreadwalletWidget.intentdefinition */; };
+		C400A9C52AE29A7A00E07319 /* WalletKit in Frameworks */ = {isa = PBXBuildFile; productRef = C400A9C42AE29A7A00E07319 /* WalletKit */; };
 		C40FF99F2ABD6BAB00EDEF1B /* TransferFundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FF99E2ABD6BAB00EDEF1B /* TransferFundsView.swift */; };
 		C40FF9A12ABD8E2200EDEF1B /* SwitchFromToHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FF9A02ABD8E2100EDEF1B /* SwitchFromToHorizontalView.swift */; };
 		C41E9E352ABC311600AB8170 /* TransferFundsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E2E2ABC311600AB8170 /* TransferFundsStore.swift */; };
@@ -1638,7 +1638,7 @@
 			files = (
 				1F73224F2A8656FC008FB65F /* SwiftUI.framework in Frameworks */,
 				1F7322462A8656D1008FB65F /* LinkKit in Frameworks */,
-				1F7322542A865718008FB65F /* WalletKit in Frameworks */,
+				C400A9C52AE29A7A00E07319 /* WalletKit in Frameworks */,
 				1F73224A2A8656DD008FB65F /* MobileIntelligence in Frameworks */,
 				1F7322362A86566F008FB65F /* Frames in Frameworks */,
 				1F7322372A86567B008FB65F /* CloudKit.framework in Frameworks */,
@@ -3764,7 +3764,7 @@
 				1F7322492A8656DD008FB65F /* MobileIntelligence */,
 				1F73224D2A8656F5008FB65F /* SnapKit */,
 				1F7322512A865713008FB65F /* Veriff */,
-				1F7322532A865718008FB65F /* WalletKit */,
+				C400A9C42AE29A7A00E07319 /* WalletKit */,
 			);
 			productName = breadwallet;
 			productReference = 75A2A7901DA5934300A983D8 /* rockwallet.app */;
@@ -3884,7 +3884,7 @@
 				0453B0BA29D22BF100BBE246 /* XCRemoteSwiftPackageReference "google-tag-manager-ios-sdk" */,
 				049CE74629DDACDE009D0F2D /* XCRemoteSwiftPackageReference "GoogleDataTransport" */,
 				049CE74929DDAD07009D0F2D /* XCRemoteSwiftPackageReference "GoogleUtilities" */,
-				6FA3E6662A5FFE7000BD8DB4 /* XCRemoteSwiftPackageReference "wallet-kit-ios" */,
+				C400A9C32AE29A7A00E07319 /* XCRemoteSwiftPackageReference "wallet-kit-ios" */,
 			);
 			productRefGroup = 75A2A7911DA5934300A983D8 /* Products */;
 			projectDirPath = "";
@@ -5849,20 +5849,20 @@
 				version = 7.11.0;
 			};
 		};
-		6FA3E6662A5FFE7000BD8DB4 /* XCRemoteSwiftPackageReference "wallet-kit-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rockwalletcode/wallet-kit-ios.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.0.27;
-			};
-		};
 		7E5CB32B2834E63400EC787E /* XCRemoteSwiftPackageReference "cosmos" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rockwalletcode/cosmos.git";
 			requirement = {
 				kind = exactVersion;
 				version = 5.0.2;
+			};
+		};
+		C400A9C32AE29A7A00E07319 /* XCRemoteSwiftPackageReference "wallet-kit-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rockwalletcode/wallet-kit-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.28;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -5918,9 +5918,9 @@
 			package = 044D099429C352EA00C510DC /* XCRemoteSwiftPackageReference "veriff-ios-spm" */;
 			productName = Veriff;
 		};
-		1F7322532A865718008FB65F /* WalletKit */ = {
+		C400A9C42AE29A7A00E07319 /* WalletKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6FA3E6662A5FFE7000BD8DB4 /* XCRemoteSwiftPackageReference "wallet-kit-ios" */;
+			package = C400A9C32AE29A7A00E07319 /* XCRemoteSwiftPackageReference "wallet-kit-ios" */;
 			productName = WalletKit;
 		};
 /* End XCSwiftPackageProductDependency section */
