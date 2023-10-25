@@ -22,6 +22,7 @@ protocol CreateTransactionDataStore: BaseDataStore, FetchDataStore {
     var keyStore: KeyStore? { get set }
     var sender: Sender? { get set }
     var fromFeeBasis: TransferFeeBasis? { get set }
+    var proTransfer: String? { get set }
     var senderValidationResult: SenderValidationResult? { get set }
 }
 
@@ -47,20 +48,10 @@ struct XRPBalanceValidator {
 extension Interactor where Self: CreateTransactionViewActions,
                            Self.DataStore: CreateTransactionDataStore {
     func createTransaction(viewAction: CreateTransactionModels.Transaction.ViewAction?, completion: ((FEError?) -> Void)?) {
-        guard let viewAction,
-              let exchange = viewAction.exchange,
-              let destination = exchange.address,
-              let amountValue = exchange.amount,
-              let exchangeId = exchange.exchangeId,
-              let exchangeCurrency = exchange.currency?.lowercased(),
-              let fromAmount = viewAction.fromAmount,
-              let toAmountCode = viewAction.toAmountCode,
-              let fromFeeAmount = viewAction.fromFeeAmount,
+        let currency = viewAction?.currencies?.first(where: { $0.code == viewAction?.proTransfer })
+        guard let currency = currency,
               let fromFeeBasis = dataStore?.fromFeeBasis,
-              let currency = viewAction.currencies?.first(where: { $0.code.lowercased() == exchangeCurrency }) else {
-            completion?(ExchangeErrors.noFees)
-            return
-        }
+              let fromAmount = viewAction?.fromAmount?.tokenValue else { return }
         
         generateSender(viewAction: .init(fromAmountCurrency: currency))
         
@@ -69,24 +60,17 @@ extension Interactor where Self: CreateTransactionViewActions,
             return
         }
         
-        var attributeText: String?
-        XRPAttributeValidator.validate(from: exchange.destinationTag,
-                                       currency: currency) { attribute in
-            attributeText = attribute
-        }
-        
-        let amount = Amount(decimalAmount: amountValue, isFiat: false, currency: currency)
-        let transaction = sender.createTransaction(address: destination,
+        let amount = Amount(decimalAmount: fromAmount, isFiat: false, currency: currency)
+        let transaction = sender.createTransaction(address: viewAction?.address ?? "",
                                                    amount: amount,
                                                    feeBasis: fromFeeBasis,
-                                                   attribute: attributeText,
-                                                   exchangeId: exchangeId)
+                                                   proTransfer: viewAction?.proTransfer?.lowercased())
         
         var error: FEError?
         
         switch transaction {
         case .ok:
-            sender.sendTransaction(allowBiometrics: false, exchangeId: exchangeId) { data in
+            sender.sendTransaction(allowBiometrics: false) { data in
                 guard let pin: String = try? keychainItem(key: KeychainKey.pin) else {
                     completion?(ExchangeErrors.pinConfirmation)
                     return
@@ -130,28 +114,22 @@ extension Interactor where Self: CreateTransactionViewActions,
             error = GeneralError(errorMessage: L10n.Send.containsAddress)
             
         case .insufficientFunds:
-            error = ExchangeErrors.balanceTooLow(balance: fromFeeAmount.tokenValue,
-                                                 currency: currency.code)
+            error = GeneralError(errorMessage: L10n.ErrorMessages.unknownError)
             
         case .noExchangeRate:
-            error = ExchangeErrors.noQuote(from: fromAmount.currency.code,
-                                           to: toAmountCode)
+            error = GeneralError(errorMessage: L10n.ErrorMessages.unknownError)
             
         case .noFees:
             error = ExchangeErrors.noFees
             
-        case .outputTooSmall(let amount):
-            error = ExchangeErrors.tooLow(amount: amount.tokenValue,
-                                          currency: toAmountCode,
-                                          reason: .swap)
+        case .outputTooSmall:
+            error = GeneralError(errorMessage: L10n.ErrorMessages.unknownError)
             
         case .invalidRequest(let string):
             error = GeneralError(errorMessage: string)
             
-        case .paymentTooSmall(let amount):
-            error = ExchangeErrors.tooLow(amount: amount.tokenValue,
-                                          currency: toAmountCode,
-                                          reason: .swap)
+        case .paymentTooSmall:
+            error = GeneralError(errorMessage: L10n.ErrorMessages.unknownError)
             
         case .usedAddress:
             error = GeneralError(errorMessage: "Used address")
@@ -164,7 +142,8 @@ extension Interactor where Self: CreateTransactionViewActions,
             
         }
         
-        completion?(error)
+        completion?(ExchangeErrors.noFees)
+        return
     }
     
     func generateSender(viewAction: CreateTransactionModels.Sender.ViewAction) {

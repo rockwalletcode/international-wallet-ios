@@ -26,7 +26,8 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             switch result {
             case .success(let currencies):
                 self?.dataStore?.proSupportedCurrencies = currencies
-                let fromCurrency: Currency? = self?.dataStore?.currencies.first(where: { $0.code.lowercased() == currencies?.first?.currency })
+                let fromCurrency: Currency? = self?.dataStore?.currencies.first(where: { $0.code.lowercased() == "bsv" })
+                self?.dataStore?.selectedCurrency = fromCurrency
                 
                 guard let fromCurrency else {
                     self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
@@ -67,18 +68,24 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             return
         }
         
-        guard let rate = dataStore?.quote?.exchangeRate,
-              let toCurrency = dataStore?.amount?.currency else {
-            setPresentAmountData(handleErrors: true)
-            return
-        }
+        let fiat = ExchangeFormatter.current.number(from: viewAction.toFiatValue ?? "")?.decimalValue
+        
+//        guard let rate = dataStore?.quote?.exchangeRate,
+//              let toCurrency = dataStore?.amount?.currency else {
+//            setPresentAmountData(handleErrors: true)
+//            return
+//        }
         
         let to: Amount
         
-        if let fiat = ExchangeFormatter.current.number(from: viewAction.toFiatValue ?? "")?.decimalValue {
-            to = .init(decimalAmount: fiat, isFiat: true, currency: toCurrency, exchangeRate: rate)
-        } else if let crypto = ExchangeFormatter.current.number(from: viewAction.fromTokenValue ?? "")?.decimalValue {
-            to = .init(decimalAmount: crypto, isFiat: false, currency: toCurrency, exchangeRate: rate)
+        if let value = viewAction.fromTokenValue,
+           let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue,
+           let currency = dataStore?.selectedCurrency {
+            to = .init(decimalAmount: crypto, isFiat: false, currency: currency, exchangeRate: 1 / 5)
+        } else if let value = viewAction.fromFiatValue,
+                  let fiat = ExchangeFormatter.current.number(from: value)?.decimalValue,
+                  let currency = dataStore?.selectedCurrency {
+            to = .init(decimalAmount: fiat, isFiat: true, currency: currency, exchangeRate: 1 / 5)
         } else {
             setPresentAmountData(handleErrors: true)
             return
@@ -99,7 +106,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func showConfirmation(viewAction: Models.ShowConfirmDialog.ViewAction) {
-        presenter?.presentConfirmation(actionResponse: .init(fromAmount: dataStore?.fromAmount,
+        presenter?.presentConfirmation(actionResponse: .init(fromAmount: dataStore?.amount,
                                                              toAmount: dataStore?.toAmount,
                                                              quote: dataStore?.quote,
                                                              fromFee: dataStore?.fromFeeAmount,
@@ -108,8 +115,55 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func confirm(viewAction: Models.Confirm.ViewAction) {
-        // TODO: add transaction api call
-        presenter?.presentConfirm(actionResponse: .init())
+        guard let from = dataStore?.amount?.tokenValue,
+        let isDeposit = dataStore?.isDeposit else { return }
+        
+        let formatter = ExchangeFormatter.current
+        formatter.locale = Locale(identifier: Constant.usLocaleCode)
+        formatter.usesGroupingSeparator = false
+        let fromTokenValue = formatter.string(for: from) ?? ""
+        let destinationAddress: String
+        
+        if isDeposit {
+            destinationAddress = dataStore?.proSupportedCurrencies?.first(where: { $0.currency == dataStore?.selectedCurrency?.code.lowercased() })?.address ?? ""
+        } else {
+            destinationAddress = dataStore?.currencies.first(where: { $0.code == dataStore?.selectedCurrency?.code.lowercased() })?.tokenAddress ?? ""
+        }
+        
+        if isDeposit {
+            prepareFees(viewAction: .init(), completion: { [weak self] in
+                self?.createTransaction(viewAction: .init(currencies: self?.dataStore?.currencies,
+                                                          fromAmount: self?.dataStore?.amount,
+                                                          proTransfer: self?.dataStore?.selectedCurrency?.name,
+                                                          address: destinationAddress), completion: { [weak self] error in
+                    if let error {
+                        self?.presenter?.presentError(actionResponse: .init(error: error))
+                    } else {
+                        let from = self?.dataStore?.fromAmount?.currency.code
+                        let to = self?.dataStore?.toAmount?.currency.code
+                        
+                        self?.presenter?.presentConfirm(actionResponse: .init())
+                    }
+                })
+            })
+        } else {
+            // TODO: withdraw api call
+        }
+    }
+    
+    func prepareFees(viewAction: AssetModels.Fee.ViewAction, completion: (() -> Void)?) {
+        guard let from = dataStore?.fromAmount,
+              let profile = UserManager.shared.profile else {
+            return
+        }
+        
+        generateSender(viewAction: .init(fromAmountCurrency: dataStore?.fromAmount?.currency))
+        
+        getFees(viewAction: .init(fromAmount: from, limit: profile.swapAllowanceLifetime), completion: { [weak self] _ in
+            self?.setPresentAmountData(handleErrors: true)
+            
+            completion?()
+        })
     }
     
     func switchPlaces(viewAction: Models.SwitchPlaces.ViewAction) {
@@ -137,9 +191,6 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         let isNotZero = !(dataStore?.fromAmount?.tokenValue ?? 0).isZero
         
         presenter?.presentAmount(actionResponse: .init(fromAmount: dataStore?.fromAmount,
-                                                       toAmount: dataStore?.toAmount,
-                                                       fromFee: dataStore?.fromFeeAmount,
-                                                       toFee: dataStore?.toFeeAmount,
                                                        senderValidationResult: dataStore?.senderValidationResult,
                                                        fromFeeBasis: dataStore?.fromFeeBasis,
                                                        fromFeeAmount: dataStore?.fromFeeAmount,

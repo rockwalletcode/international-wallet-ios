@@ -58,17 +58,9 @@ enum TransferFundsModels {
         struct ViewAction {
         }
         
-        struct ActionResponse {
-            var from: String?
-            var to: String?
-            var exchangeId: String?
-        }
+        struct ActionResponse {}
         
-        struct ResponseDisplay {
-            var from: String
-            var to: String
-            var exchangeId: String
-        }
+        struct ResponseDisplay {}
     }
     
     struct ConfirmTransfer {

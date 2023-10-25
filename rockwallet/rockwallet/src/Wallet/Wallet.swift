@@ -223,7 +223,8 @@ class Wallet {
                         attribute: String? = nil,
                         exchangeId: String?,
                         secondFactorCode: String? = nil,
-                        secondFactorBackup: String? = nil) -> CreateTransferResult {
+                        secondFactorBackup: String? = nil,
+                        proTransfer: String? = nil) -> CreateTransferResult {
         guard let target = Address.create(string: address, network: core.manager.network) else {
             return .failure(.invalidAddress)
         }
@@ -238,7 +239,8 @@ class Wallet {
                                 attributes: attributes(forAttribute: attribute),
                                 exchangeId: exchangeId,
                                 secondFactorCode: secondFactorCode,
-                                secondFactorBackup: secondFactorBackup) else {
+                                secondFactorBackup: secondFactorBackup,
+                                proTransfer: proTransfer) else {
                 return .failure(.invalidAmountOrFee)
             }
             
@@ -251,7 +253,8 @@ class Wallet {
                                 attributes: attributes(forAttribute: attribute),
                                 exchangeId: exchangeId,
                                 secondFactorCode: secondFactorCode,
-                                secondFactorBackup: secondFactorBackup) else {
+                                secondFactorBackup: secondFactorBackup,
+                                proTransfer: proTransfer) else {
                 return .failure(.invalidAmountOrFee)
             }
             

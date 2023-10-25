@@ -132,7 +132,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
         
         tableView.invalidateTableViewIntrinsicContentSize()
         
-        continueButton.viewModel?.enabled = responseDisplay.continueEnabled
+        continueButton.viewModel?.enabled = true // responseDisplay.continueEnabled
         verticalButtons.wrappedView.getButton(continueButton)?.setup(with: continueButton.viewModel)
     }
     
@@ -176,6 +176,11 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                 }
             }
         })
+    }
+    
+    func displayConfirm(responseDisplay: SwapModels.Confirm.ResponseDisplay) {
+        LoadingView.hideIfNeeded()
+        coordinator?.showSwapInfo(from: responseDisplay.from, to: responseDisplay.to, exchangeId: responseDisplay.exchangeId)
     }
     
     // MARK: - Additional Helpers

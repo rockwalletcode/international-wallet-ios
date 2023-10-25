@@ -16,6 +16,7 @@ class SwapStore: NSObject, BaseDataStore, SwapDataStore {
     var fromFeeBasis: WalletKit.TransferFeeBasis?
     var senderValidationResult: SenderValidationResult?
     var sender: Sender?
+    var proTransfer: String?
     
     // MARK: - ExchangeRateDataStore
     

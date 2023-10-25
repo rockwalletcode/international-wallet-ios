@@ -149,7 +149,8 @@ class Sender: Subscriber {
                            gift: Gift? = nil,
                            exchangeId: String? = nil,
                            secondFactorCode: String? = nil,
-                           secondFactorBackup: String? = nil) -> SenderValidationResult {
+                           secondFactorBackup: String? = nil,
+                           proTransfer: String? = nil) -> SenderValidationResult {
         let result = validate(address: address, amount: amount, feeBasis: feeBasis)
         guard case .ok = result else { return result }
         
@@ -162,7 +163,8 @@ class Sender: Subscriber {
                                      attribute: attribute,
                                      exchangeId: exchangeId,
                                      secondFactorCode: secondFactorCode,
-                                     secondFactorBackup: secondFactorBackup) {
+                                     secondFactorBackup: secondFactorBackup,
+                                     proTransfer: proTransfer) {
         case .success(let transfer):
             self.comment = comment
             self.gift = gift

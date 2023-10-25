@@ -10,12 +10,12 @@ import UIKit
 import WalletKit
 
 class BuyStore: NSObject, BaseDataStore, BuyDataStore {
-    
     // MARK: - ExchangeRateDataStore
     var fromCode: String { return Constant.usdCurrencyCode }
     var toCode: String { toAmount?.currency.code ?? "" }
     var showTimer: Bool = false
     var accountId: String? { return ach?.id }
+    var proTransfer: String?
     var quoteRequestData: QuoteRequestData {
         return .init(from: fromCode,
                      to: toCode,
