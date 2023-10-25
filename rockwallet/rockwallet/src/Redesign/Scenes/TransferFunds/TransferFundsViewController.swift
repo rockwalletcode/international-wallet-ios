@@ -178,9 +178,9 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
         })
     }
     
-    func displayConfirm(responseDisplay: SwapModels.Confirm.ResponseDisplay) {
+    func displayConfirm(responseDisplay: TransferFundsModels.Confirm.ResponseDisplay) {
         LoadingView.hideIfNeeded()
-        coordinator?.showSwapInfo(from: responseDisplay.from, to: responseDisplay.to, exchangeId: responseDisplay.exchangeId)
+        coordinator?.dismissFlow()
     }
     
     // MARK: - Additional Helpers

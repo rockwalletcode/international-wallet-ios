@@ -125,9 +125,8 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
-        // TODO: present confirmation
-        print("Confirm")
-//        viewController?.displayConfirm(responseDisplay: .init())
+        // TODO: present confirmation message
+       viewController?.displayConfirm(responseDisplay: .init())
     }
 
     // MARK: - Additional Helpers

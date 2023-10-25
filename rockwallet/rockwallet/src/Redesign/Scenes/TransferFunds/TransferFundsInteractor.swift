@@ -124,13 +124,8 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         let fromTokenValue = formatter.string(for: from) ?? ""
         let destinationAddress: String
         
-        if isDeposit {
+        if !isDeposit {
             destinationAddress = dataStore?.proSupportedCurrencies?.first(where: { $0.currency == dataStore?.selectedCurrency?.code.lowercased() })?.address ?? ""
-        } else {
-            destinationAddress = dataStore?.currencies.first(where: { $0.code == dataStore?.selectedCurrency?.code.lowercased() })?.tokenAddress ?? ""
-        }
-        
-        if isDeposit {
             prepareFees(viewAction: .init(), completion: { [weak self] in
                 self?.createTransaction(viewAction: .init(currencies: self?.dataStore?.currencies,
                                                           fromAmount: self?.dataStore?.amount,
@@ -139,15 +134,23 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                     if let error {
                         self?.presenter?.presentError(actionResponse: .init(error: error))
                     } else {
-                        let from = self?.dataStore?.fromAmount?.currency.code
-                        let to = self?.dataStore?.toAmount?.currency.code
-                        
                         self?.presenter?.presentConfirm(actionResponse: .init())
                     }
                 })
             })
         } else {
-            // TODO: withdraw api call
+            destinationAddress = Store.state.orderedWallets.first(where: { $0.currency.code == dataStore?.selectedCurrency?.code })?.receiveAddress ?? ""
+            
+            let data = WithdrawalRequestData(amount: fromTokenValue, address: destinationAddress, asset: dataStore?.selectedCurrency?.code.lowercased())
+            WithdrawalWorker().execute(requestData: data) { [weak self] result in
+                switch result {
+                case .success:
+                    self?.presenter?.presentConfirm(actionResponse: .init())
+                    
+                case .failure(let error):
+                    self?.presenter?.presentError(actionResponse: .init(error: error))
+                }
+            }
         }
     }
     
