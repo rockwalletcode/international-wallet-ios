@@ -36,6 +36,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private var observers: [AnyCancellable] = []
     private var isRedirectedUrl: Bool = false
     private var isPortalLink: Bool = false
+    private var selectedSegment: HomeScreenViewController.SegmentControlCases = .rockWallet
+    private var proBalancesData: ProBalancesModel?
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -392,7 +394,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private func setSegment(_ segment: Int) {
         segmentControl.selectSegment(index: segment)
-        let selectedSegment = SegmentControlCases.allCases[segment]
+        selectedSegment = SegmentControlCases.allCases[segment]
         
         guard let profile = UserManager.shared.profile else { return }
         
@@ -406,6 +408,21 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                 
         tabBarContainerView.isHidden = selectedSegment == .rockWalletPro
         exchangeButtonsView.isHidden = selectedSegment == .rockWallet
+        
+        if selectedSegment == .rockWalletPro {
+            ProBalancesWorker().execute(requestData: ProBalancesRequestData()) { result in
+                switch result {
+                case .success(let data):
+                    self.updateProBalance(data: data)
+                    self.assetListTableView.proBalancesData = data
+                    
+                case .failure:
+                    break
+                }
+            }
+        } else {
+            updateTotalAssets()
+        }
         
         totalAssetsTitleLabel.text = selectedSegment == .rockWalletPro ?
         L10n.Segment.rockWalletPro : "\(L10n.HomeScreen.wallet) \(L10n.HomeScreen.totalAssets.lowercased())"
@@ -534,6 +551,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func updateTotalAssets() {
+        guard selectedSegment == .rockWallet else { return }
         let fiatTotal: Decimal = Store.state.wallets.values.map {
             guard let balance = $0.balance,
                   let rate = $0.currentRate else { return 0.0 }
@@ -543,6 +561,14 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         }.reduce(0.0, +)
         
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
+              let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
+        totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
+    }
+    
+    func updateProBalance(data: ProBalancesModel?) {
+        let balance = 0.0
+        
+        guard let formattedBalance = ExchangeFormatter.fiat.string(for: balance),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
         totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
     }

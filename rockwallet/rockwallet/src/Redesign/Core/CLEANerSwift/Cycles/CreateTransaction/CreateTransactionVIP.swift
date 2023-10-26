@@ -81,8 +81,6 @@ extension Interactor where Self: CreateTransactionViewActions,
                     sender.reset()
                 }
                 
-                var error: FEError?
-                
                 switch result {
                 case .success:
                     ExchangeManager.shared.reload()

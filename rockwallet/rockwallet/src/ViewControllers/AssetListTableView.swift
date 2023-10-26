@@ -15,6 +15,11 @@ class AssetListTableView: UITableViewController, Subscriber {
     var didReload: (() -> Void)?
     var didTapFaqButton: (() -> Void)?
     var isProWallet: Bool = false
+    var proBalancesData: ProBalancesModel? {
+        didSet {
+            reload()
+        }
+    }
     
     private let loadingSpinner = UIActivityIndicatorView(style: .large)
     private let assetHeight: CGFloat = ViewSizes.extralarge.rawValue
@@ -205,7 +210,7 @@ class AssetListTableView: UITableViewController, Subscriber {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenCellIds.regularCell.rawValue, for: indexPath)
         
         if let cell = cell as? HomeScreenCell {
-            cell.set(viewModel: viewModel)
+            cell.set(viewModel: viewModel, proBalancesData: proBalancesData, isProWallet: isProWallet)
             cell.removeProLabel(isHidden: !manageAssetsButton.isHidden)
         }
         
