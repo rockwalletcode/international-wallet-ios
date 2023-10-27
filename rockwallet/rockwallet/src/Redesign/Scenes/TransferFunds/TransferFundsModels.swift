@@ -40,6 +40,7 @@ enum TransferFundsModels {
         struct ViewAction {}
         
         struct ActionResponse {
+            var fromCurrency: Currency?
             var fromAmount: Amount?
             var toAmount: Amount?
             var quote: Quote?
@@ -58,7 +59,9 @@ enum TransferFundsModels {
         struct ViewAction {
         }
         
-        struct ActionResponse {}
+        struct ActionResponse {
+            var isDeposit: Bool?
+        }
         
         struct ResponseDisplay {}
     }

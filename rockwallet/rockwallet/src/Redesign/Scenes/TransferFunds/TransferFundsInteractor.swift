@@ -26,7 +26,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             switch result {
             case .success(let currencies):
                 self?.dataStore?.proSupportedCurrencies = currencies
-                let fromCurrency: Currency? = self?.dataStore?.currencies.first(where: { $0.code.lowercased() == "bsv" })
+                let fromCurrency: Currency? = self?.dataStore?.currencies.first
                 self?.dataStore?.selectedCurrency = fromCurrency
                 
                 guard let fromCurrency else {
@@ -53,12 +53,12 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
            let currency = dataStore?.currencies.first(where: { $0.code.lowercased() == value }) {
             dataStore?.amount = .zero(currency)
             
-            guard viewAction.didFinish else { return }
-            getExchangeRate(viewAction: .init(getFees: false), completion: { [weak self] in
-                self?.setPresentAmountData(handleErrors: false)
-            })
-            
-            return
+//            guard viewAction.didFinish else { return }
+//            getExchangeRate(viewAction: .init(getFees: false), completion: { [weak self] in
+//                self?.setPresentAmountData(handleErrors: false)
+//            })
+//
+//            return
         } else if viewAction.card != nil {
             guard viewAction.didFinish else { return }
             getExchangeRate(viewAction: .init(getFees: false), completion: { [weak self] in
@@ -106,7 +106,8 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func showConfirmation(viewAction: Models.ShowConfirmDialog.ViewAction) {
-        presenter?.presentConfirmation(actionResponse: .init(fromAmount: dataStore?.amount,
+        presenter?.presentConfirmation(actionResponse: .init(fromCurrency: dataStore?.selectedCurrency,
+                                                             fromAmount: dataStore?.amount,
                                                              toAmount: dataStore?.toAmount,
                                                              quote: dataStore?.quote,
                                                              fromFee: dataStore?.fromFeeAmount,
@@ -134,7 +135,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                     if let error {
                         self?.presenter?.presentError(actionResponse: .init(error: error))
                     } else {
-                        self?.presenter?.presentConfirm(actionResponse: .init())
+                        self?.presenter?.presentConfirm(actionResponse: .init(isDeposit: self?.dataStore?.isDeposit))
                     }
                 })
             })
@@ -145,7 +146,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             WithdrawalWorker().execute(requestData: data) { [weak self] result in
                 switch result {
                 case .success:
-                    self?.presenter?.presentConfirm(actionResponse: .init())
+                    self?.presenter?.presentConfirm(actionResponse: .init(isDeposit: self?.dataStore?.isDeposit))
                     
                 case .failure(let error):
                     self?.presenter?.presentError(actionResponse: .init(error: error))

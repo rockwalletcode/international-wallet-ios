@@ -89,8 +89,10 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
 //              let to = actionResponse.toAmount,
 //              let isDeposit = actionResponse.isDeposit,
 //              let rate = actionResponse.quote?.exchangeRate.doubleValue else { return }
-        guard let from = actionResponse.fromAmount else { return }
-        let isDeposit = actionResponse.isDeposit ?? false
+        guard let from = actionResponse.fromAmount,
+              let fromCurrency = actionResponse.fromCurrency,
+              let isDeposit = actionResponse.isDeposit else { return }
+        
         let fromTitle = !isDeposit ? "\(L10n.Exchange.sendFrom) \(L10n.About.AppName.android)" : "\(L10n.Exchange.sendFrom) \(L10n.Segment.rockWalletPro)"
         let fromText = String(format: "\(Constant.currencyFormat) (\(Constant.currencyFormat))",
                               ExchangeFormatter.current.string(for: from.tokenValue.doubleValue) ?? "",
@@ -100,15 +102,15 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
         let rateText = String(format: "1 %@ = \(Constant.currencyFormat)",
                               from.currency.code,
                               ExchangeNumberFormatter().string(for: "rate") ?? "",
-                              "BSV")
+                              fromCurrency.code)
         let toTitle = !isDeposit ? L10n.Segment.rockWalletPro : L10n.About.AppName.android
         let feeTitle = !isDeposit ? L10n.Exchange.estimatedNetworkFee : L10n.Exchange.withdrawalFee
         let toFeeText = String(format: "-\(Constant.currencyFormat)",
                                ExchangeFormatter.current.string(for: actionResponse.toFee?.tokenValue.doubleValue) ?? "",
-                               actionResponse.toFee?.currency.code ?? "BSV")
+                               actionResponse.toFee?.currency.code ?? "")
         let totalCostText = String(format: Constant.currencyFormat,
                                    ExchangeFormatter.current.string(for: from.tokenValue) ?? "",
-                                   "BSV")
+                                   fromCurrency.code)
         
         let wrappedViewModel: SwapConfirmationViewModel = .init(from: .init(title: .text(fromTitle), value: .text(totalCostText)),
                                                                 to: .init(title: .text(L10n.TransactionDetails.addressToHeader), value: .text(toTitle)),
@@ -125,8 +127,12 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
-        // TODO: present confirmation message
-       viewController?.displayConfirm(responseDisplay: .init())
+        if actionResponse.isDeposit ?? false {
+            viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text("Your funds were successfully sent to your RockWallet account.")),
+                                                                  config: Presets.InfoView.verification))
+        } else {
+            viewController?.displayConfirm(responseDisplay: .init())
+        }
     }
 
     // MARK: - Additional Helpers
