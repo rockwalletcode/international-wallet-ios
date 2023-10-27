@@ -48,6 +48,21 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         }
     }
     
+    func setAssetSelectionData(viewAction: AssetModels.Asset.ViewAction) {
+        if let value = viewAction.currency?.lowercased(),
+           let currency = dataStore?.currencies.first(where: { $0.code.lowercased() == value }) {
+            dataStore?.amount = .zero(currency)
+            dataStore?.selectedCurrency = currency
+            
+            dataStore?.fromAmount = .zero(currency)
+            guard let fromCurrency = dataStore?.fromAmount else { return }
+            
+            setPresentAmountData(handleErrors: false)
+            
+            presenter?.presentData(actionResponse: .init(item: Models.Item(fromCurrency)))
+        }
+    }
+    
     func setAmount(viewAction: AssetModels.Asset.ViewAction) {
         if let value = viewAction.currency?.lowercased(),
            let currency = dataStore?.currencies.first(where: { $0.code.lowercased() == value }) {
