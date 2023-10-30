@@ -43,6 +43,7 @@ enum AssetModels {
             
             var currency: String?
             var card: PaymentCard?
+            var balanceValue: String?
             
             var didFinish: Bool = false
             var isDeposit: Bool = false

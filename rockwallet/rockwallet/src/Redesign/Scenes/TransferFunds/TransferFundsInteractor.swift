@@ -40,7 +40,16 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                     return
                 }
                 
-                self?.presenter?.presentData(actionResponse: .init(item: Models.Item(fromCurrency)))
+                let balance = self?.dataStore?.currencies.compactMap {
+                    let balanceText = String(format: Constant.currencyFormat,
+                                              ExchangeFormatter.current.string(for: $0.state?.balance?.tokenValue) ?? "",
+                                              $0.code.uppercased())
+                    
+                    return balanceText
+                }
+                
+                self?.presenter?.presentData(actionResponse: .init(item: Models.Item(amount: fromCurrency,
+                                                                                     balance: balance?.first)))
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -59,7 +68,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             
             setPresentAmountData(handleErrors: false)
             
-            presenter?.presentData(actionResponse: .init(item: Models.Item(fromCurrency)))
+            presenter?.presentData(actionResponse: .init(item: Models.Item(amount: fromCurrency, balance: viewAction.balanceValue)))
         }
     }
     

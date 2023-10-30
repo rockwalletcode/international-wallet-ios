@@ -118,7 +118,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                }
                  
                self?.coordinator?.dismissFlow()
-               self?.interactor?.setAssetSelectionData(viewAction: .init(currency: model.subtitle, didFinish: true))
+               self?.interactor?.setAssetSelectionData(viewAction: .init(currency: model.subtitle, balanceValue: model.topRightText, didFinish: true))
            }
        }
     
