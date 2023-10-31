@@ -154,7 +154,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             prepareFees(viewAction: .init(), completion: { [weak self] in
                 self?.createTransaction(viewAction: .init(currencies: self?.dataStore?.currencies,
                                                           fromAmount: self?.dataStore?.amount,
-                                                          proTransfer: self?.dataStore?.selectedCurrency?.name,
+                                                          proTransfer: self?.dataStore?.selectedCurrency?.code,
                                                           address: destinationAddress), completion: { [weak self] error in
                     if let error {
                         self?.presenter?.presentError(actionResponse: .init(error: error))
@@ -180,16 +180,13 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func prepareFees(viewAction: AssetModels.Fee.ViewAction, completion: (() -> Void)?) {
-        guard let from = dataStore?.fromAmount,
-              let profile = UserManager.shared.profile else {
+        guard let from = dataStore?.fromAmount else {
             return
         }
         
         generateSender(viewAction: .init(fromAmountCurrency: dataStore?.fromAmount?.currency))
         
-        getFees(viewAction: .init(fromAmount: from, limit: profile.swapAllowanceLifetime), completion: { [weak self] _ in
-            self?.setPresentAmountData(handleErrors: true)
-            
+        getFees(viewAction: .init(fromAmount: from), completion: { _ in
             completion?()
         })
     }
