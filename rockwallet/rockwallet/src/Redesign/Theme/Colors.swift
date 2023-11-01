@@ -88,8 +88,8 @@ struct Colors {
     /// ACH Instant Purple
     static var instantPurple = ThemeManager.shared.color(for: "ach-instant-purple")
     
-    /// Change color variables to support dark mode
-    mutating func updateColors() {
+    /// Update color variables to support dark mode
+    func updateColors() {
         Background.one = ThemeManager.shared.color(for: "background-01")
         Background.two = ThemeManager.shared.color(for: "background-02")
         Background.three = ThemeManager.shared.color(for: "background-03")
