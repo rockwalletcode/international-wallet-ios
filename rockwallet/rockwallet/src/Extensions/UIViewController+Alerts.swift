@@ -24,7 +24,9 @@ extension UIViewController {
     // MARK: - Info Popup
     // TODO: Unify / cleanup the logic with BaseCoordinator
     
-    func showInfoPopup(with model: PopupViewModel, config: PopupConfiguration? = Presets.Popup.white, callbacks: [(() -> Void)] = []) {
+    func showInfoPopup(with model: PopupViewModel,
+                       config: PopupConfiguration? = Presets.Popup.white,
+                       callbacks: [(() -> Void)] = []) {
         let blurView = UIVisualEffectView()
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
@@ -53,6 +55,10 @@ extension UIViewController {
         popup.buttonCallbacks = callbacks
         popup.closeCallback = { [weak self] in
             self?.hidePopup()
+        }
+        
+        popup.didTapUrl = { [weak self] url in
+            self?.showInWebView(urlString: url ?? "", title: "")
         }
         
         UIView.animate(withDuration: Presets.Animation.short.rawValue,

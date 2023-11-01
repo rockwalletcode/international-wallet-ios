@@ -16,6 +16,7 @@ struct PopupConfiguration: Configurable {
     var body: LabelConfiguration?
     var buttons: [ButtonConfiguration] = []
     var closeButton: ButtonConfiguration?
+    var urlLink: LabelConfiguration?
 }
 
 struct PopupViewModel: ViewModel {
@@ -24,6 +25,9 @@ struct PopupViewModel: ViewModel {
     var body: String?
     var buttons: [ButtonViewModel] = []
     var closeButton: ButtonViewModel? = .init(image: Asset.close.image)
+    var urlLink: LabelViewModel?
+    var url: String?
+    var iconImageName: String?
 }
 
 class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
@@ -48,6 +52,27 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
     
     private lazy var titleLabel: FELabel = {
         let view = FELabel()
+        return view
+    }()
+    
+    private lazy var attributedTextStack: UIStackView = {
+        let view = UIStackView()
+        view.spacing = Margins.minimum.rawValue
+        return view
+    }()
+    
+    private lazy var attributedTextLabel: FELabel = {
+        let view = FELabel()
+        return view
+    }()
+    
+    private lazy var iconView: FEImageView = {
+        let view = FEImageView()
+        return view
+    }()
+    
+    private lazy var spacerView: UIView = {
+        let view = UIView()
         return view
     }()
     
@@ -82,6 +107,7 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
     
     var closeCallback: (() -> Void)?
     var buttonCallbacks: [() -> Void] = []
+    var didTapUrl: ((String?) -> Void)?
     
     override func setupSubviews() {
         super.setupSubviews()
@@ -115,6 +141,19 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
         }
         
         mainStack.addArrangedSubview(textView)
+        
+        mainStack.addArrangedSubview(attributedTextStack)
+        attributedTextStack.addArrangedSubview(attributedTextLabel)
+        attributedTextStack.addArrangedSubview(iconView)
+        iconView.snp.makeConstraints { make in
+            make.width.height.equalTo(Margins.huge.rawValue)
+        }
+       
+        mainStack .addArrangedSubview(spacerView)
+        spacerView.snp.makeConstraints { make in
+            make.width.lessThanOrEqualToSuperview().priority(.low)
+        }
+        
         mainStack.addArrangedSubview(buttonsStack)
     }
     
@@ -124,6 +163,7 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
         
         titleLabel.configure(with: config.title)
         configure(background: config.background)
+        attributedTextLabel.configure(with: config.urlLink)
         
         closeButton.wrappedView.configure(with: config.closeButton)
         
@@ -141,10 +181,16 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
         titleLabel.setup(with: viewModel.title)
         titleLabel.isHidden = viewModel.title == nil
         
+        attributedTextLabel.setup(with: viewModel.urlLink)
+        attributedTextLabel.isHidden = viewModel.urlLink == nil
+        
         closeButton.wrappedView.setup(with: viewModel.closeButton)
         
         imageView.setup(with: .imageName(viewModel.imageName))
         imageView.isHidden = viewModel.imageName == nil
+        
+        iconView.setup(with: .imageName(viewModel.iconImageName))
+        iconView.isHidden = viewModel.iconImageName == nil
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 2.0
@@ -178,6 +224,10 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
             }
         }
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(urlTapped))
+        attributedTextLabel.isUserInteractionEnabled = true
+        attributedTextLabel.addGestureRecognizer(tapGesture)
+        
         layoutIfNeeded()
     }
     
@@ -191,5 +241,9 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
         else { return }
         
         buttonCallbacks[index]()
+    }
+    
+    @objc private func urlTapped() {
+        didTapUrl?(viewModel?.url)
     }
 }

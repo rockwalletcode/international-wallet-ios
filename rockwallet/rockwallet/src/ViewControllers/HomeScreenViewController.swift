@@ -587,9 +587,24 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                                                    callback: { [weak self] in
             self?.handleWebViewRedirects(isPortal: false)
             self?.hidePopup()
-        })])
+        })],
+                                   urlLink: .attributedText(prepareTermsTickboxText(attributedText: "More info? Visit our FAQs")),
+                                   url: Constant.supportLink,
+                                   iconImageName: Asset.faqIcon.name)
         
         showInfoPopup(with: model)
+    }
+    
+    private func prepareTermsTickboxText(attributedText: String) -> NSMutableAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.foregroundColor: Colors.Text().two,
+            NSAttributedString.Key.backgroundColor: UIColor.clear,
+            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+            NSAttributedString.Key.font: Fonts.Body.two]
+        
+        let attributedString = NSMutableAttributedString(string: attributedText, attributes: attributes)
+        
+        return attributedString
     }
     
     private func portalLoginTapped() {
