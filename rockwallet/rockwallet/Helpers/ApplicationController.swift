@@ -400,7 +400,6 @@ class ApplicationController: Subscriber {
         UserManager.shared.refresh { [weak self] result in
             switch result {
             case .success:
-                self?.homeScreenViewController?.handleSegmentView()
                 self?.handleDeeplinksIfNeeded()
                 
             case .failure(let error):
@@ -470,8 +469,13 @@ class ApplicationController: Subscriber {
             self?.coordinator?.showProfile()
         }
         
-        homeScreen.didTapProSegment = { [weak self] in
-            self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
+        homeScreen.didTapProSegment = { [weak self] isVerifyAccount in
+            guard let isVerify = isVerifyAccount else { return }
+            if isVerify {
+                self?.coordinator?.showVerifyAccount(flow: .rockWalletPro)
+            } else {
+                self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
+            }
         }
         
         homeScreen.didTapTransferFunds = { [weak self] in

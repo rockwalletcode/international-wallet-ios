@@ -267,6 +267,10 @@ class BaseCoordinator: NSObject, Coordinatable {
         }
     }
     
+    func showSignUpFlow() {
+        open(scene: Scenes.SignUp)
+    }
+    
     /// Determines whether the viewcontroller or navigation stack are being dismissed
     /// SHOULD NEVER BE CALLED MANUALLY
     func goBack() {
@@ -537,6 +541,9 @@ class BaseCoordinator: NSObject, Coordinatable {
             switch flow {
             case .buy, .swap:
                 vc.coordinator?.popViewController()
+                
+            case .rockWalletPro:
+                vc.coordinator?.showSignUpFlow()
                 
             default:
                 self?.showKYCLevelOne(isModal: false)

@@ -30,6 +30,7 @@ enum ProfileModels {
         case buy
         case swap
         case sell
+        case rockWalletPro
     }
     
     struct Navigate {

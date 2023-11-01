@@ -156,7 +156,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     var didTapCreateAccountFromPrompt: (() -> Void)?
     var didTapLimitsAuthenticationFromPrompt: (() -> Void)?
     var didTapMenu: (() -> Void)?
-    var didTapProSegment: (() -> Void)?
+    var didTapProSegment: ((Bool?) -> Void)?
     var didTapTransferFunds: (() -> Void)?
     
     private lazy var pullToRefreshControl: UIRefreshControl = {
@@ -210,8 +210,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         super.viewWillAppear(animated)
         
         pullToRefreshControl.endRefreshing()
-        
-        segmentControl.isHidden = UserManager.shared.profile == nil
         
         GoogleAnalytics.logEvent(GoogleAnalytics.Home())
     }
@@ -396,11 +394,17 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         segmentControl.selectSegment(index: segment)
         selectedSegment = SegmentControlCases.allCases[segment]
         
-        guard let profile = UserManager.shared.profile else { return }
+        guard let profile = UserManager.shared.profile else {
+            if selectedSegment == .rockWalletPro {
+                tapSegment(isVerifyAccount: true)
+                segmentControl.selectSegment(index: 0)
+            }
+            return
+        }
         
         guard profile.kycAccessRights.hasExchangeAccess else {
             if selectedSegment == .rockWalletPro {
-                didTapProSegment?()
+                tapSegment(isVerifyAccount: false)
                 segmentControl.selectSegment(index: 0)
             }
             return
@@ -609,8 +613,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         didTapMenu?()
     }
     
-    private func tapSegment() {
-        didTapProSegment?()
+    private func tapSegment(isVerifyAccount: Bool?) {
+        didTapProSegment?(isVerifyAccount)
     }
     
     private func transferFundsTapped() {
