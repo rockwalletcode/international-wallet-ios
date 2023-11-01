@@ -58,6 +58,7 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
     private lazy var attributedTextStack: UIStackView = {
         let view = UIStackView()
         view.spacing = Margins.minimum.rawValue
+        view.distribution = .equalSpacing
         return view
     }()
     

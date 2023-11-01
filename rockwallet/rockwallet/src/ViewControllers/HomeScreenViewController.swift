@@ -588,7 +588,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             self?.handleWebViewRedirects(isPortal: false)
             self?.hidePopup()
         })],
-                                   urlLink: .attributedText(prepareTermsTickboxText(attributedText: "More info? Visit our FAQs")),
+                                   urlLink: .attributedText(prepareTermsTickboxText(attributedText: L10n.Popup.visitFaqText)),
                                    url: Constant.supportLink,
                                    iconImageName: Asset.faqIcon.name)
         
@@ -597,7 +597,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private func prepareTermsTickboxText(attributedText: String) -> NSMutableAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: Colors.Text().two,
+            NSAttributedString.Key.foregroundColor: Colors.Text.two,
             NSAttributedString.Key.backgroundColor: UIColor.clear,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
             NSAttributedString.Key.font: Fonts.Body.two]
