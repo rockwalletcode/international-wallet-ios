@@ -37,8 +37,10 @@ final class SignUpPresenter: NSObject, Presenter, SignUpActionResponses {
             .password: [TextFieldModel(title: L10n.Account.createPassword, value: item.password, showPasswordToggle: true)],
             .confirmPassword: [TextFieldModel(title: L10n.Account.confirmPassword, value: item.password, showPasswordToggle: true)],
             .notice: [LabelViewModel.text(L10n.Account.passwordRequirements)],
-            .termsTickbox: [TickboxItemViewModel(title: .attributedText(prepareTermsTickboxText(termsText: L10n.Account.termsTickbox)), url: termsAndConditionsURL)],
-            .termsTickboxPro: [TickboxItemViewModel(title: .attributedText(prepareTermsTickboxText(termsText: "I agree to RockWallet PRO’s")), url: termsAndConditionsURL)],
+            .termsTickbox: [TickboxItemViewModel(title: .attributedText(prepareTermsTickboxText(termsText: L10n.Account.termsTickbox)),
+                                                 url: termsAndConditionsURL)],
+            .termsTickboxPro: [TickboxItemViewModel(title: .attributedText(prepareTermsTickboxText(termsText: L10n.Account.termsTickboxPro)),
+                                                    url: termsAndConditionsURL)],
             .promotionsTickbox: [TickboxItemViewModel(title: .text(L10n.Account.promotionsTickbox))]
         ]
         
