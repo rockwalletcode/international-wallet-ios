@@ -339,6 +339,8 @@ class ApplicationController: Subscriber {
         applyBlurEffect()
         checkForNotificationSettingsChange(appActive: false)
         cacheBalances()
+        
+        UserDefaults.isDarkMode = false
     }
     
     func didBecomeActive() {
