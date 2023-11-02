@@ -629,8 +629,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             self?.hidePopup()
         })],
                                    urlLink: .attributedText(prepareTermsTickboxText(attributedText: L10n.Popup.visitFaqText)),
-                                   url: Constant.supportLink,
-                                   iconImageName: Asset.faqIcon.name)
+                                   url: Constant.supportLink)
         
         showInfoPopup(with: model)
     }
@@ -642,7 +641,13 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
             NSAttributedString.Key.font: Fonts.Body.two]
         
+        let iconAttachment = NSTextAttachment()
+        iconAttachment.image = UIImage(named: Asset.faqIcon.name)
+        iconAttachment.bounds = CGRect(x: Margins.large.rawValue, y: -Margins.small.rawValue, width: Margins.huge.rawValue, height: Margins.huge.rawValue)
+        let attachmentString = NSAttributedString(attachment: iconAttachment)
+        
         let attributedString = NSMutableAttributedString(string: attributedText, attributes: attributes)
+        attributedString.append(attachmentString)
         
         return attributedString
     }
