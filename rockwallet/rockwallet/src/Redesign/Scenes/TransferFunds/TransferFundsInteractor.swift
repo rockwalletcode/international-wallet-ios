@@ -73,43 +73,17 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func setAmount(viewAction: AssetModels.Asset.ViewAction) {
-        if let value = viewAction.currency?.lowercased(),
-           let currency = dataStore?.currencies.first(where: { $0.code.lowercased() == value }) {
-            dataStore?.amount = .zero(currency)
-            
-//            guard viewAction.didFinish else { return }
-//            getExchangeRate(viewAction: .init(getFees: false), completion: { [weak self] in
-//                self?.setPresentAmountData(handleErrors: false)
-//            })
-//
-//            return
-        } else if viewAction.card != nil {
-            guard viewAction.didFinish else { return }
-            getExchangeRate(viewAction: .init(getFees: false), completion: { [weak self] in
-                self?.setPresentAmountData(handleErrors: false)
-            })
-            
-            return
-        }
-        
-        let fiat = ExchangeFormatter.current.number(from: viewAction.toFiatValue ?? "")?.decimalValue
-        
-//        guard let rate = dataStore?.quote?.exchangeRate,
-//              let toCurrency = dataStore?.amount?.currency else {
-//            setPresentAmountData(handleErrors: true)
-//            return
-//        }
-        
         let to: Amount
         
         if let value = viewAction.fromTokenValue,
            let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue,
            let currency = dataStore?.selectedCurrency {
-            to = .init(decimalAmount: crypto, isFiat: false, currency: currency, exchangeRate: 1 / 5)
+            prepareFees(viewAction: .init(), completion: {})
+            to = .init(decimalAmount: crypto, isFiat: false, currency: currency)
         } else if let value = viewAction.fromFiatValue,
                   let fiat = ExchangeFormatter.current.number(from: value)?.decimalValue,
                   let currency = dataStore?.selectedCurrency {
-            to = .init(decimalAmount: fiat, isFiat: true, currency: currency, exchangeRate: 1 / 5)
+            to = .init(decimalAmount: fiat, isFiat: true, currency: currency)
         } else {
             setPresentAmountData(handleErrors: true)
             return
@@ -151,17 +125,15 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         
         if !isDeposit {
             destinationAddress = dataStore?.proSupportedCurrencies?.first(where: { $0.currency == dataStore?.selectedCurrency?.code.lowercased() })?.address ?? ""
-            prepareFees(viewAction: .init(), completion: { [weak self] in
-                self?.createTransaction(viewAction: .init(currencies: self?.dataStore?.currencies,
-                                                          fromAmount: self?.dataStore?.amount,
-                                                          proTransfer: self?.dataStore?.selectedCurrency?.code,
-                                                          address: destinationAddress), completion: { [weak self] error in
-                    if let error {
-                        self?.presenter?.presentError(actionResponse: .init(error: error))
-                    } else {
-                        self?.presenter?.presentConfirm(actionResponse: .init(isDeposit: self?.dataStore?.isDeposit))
-                    }
-                })
+            createTransaction(viewAction: .init(currencies: dataStore?.currencies,
+                                                fromAmount: dataStore?.amount,
+                                                proTransfer: dataStore?.selectedCurrency?.code,
+                                                address: destinationAddress), completion: { [weak self] error in
+                if let error {
+                    self?.presenter?.presentError(actionResponse: .init(error: error))
+                } else {
+                    self?.presenter?.presentConfirm(actionResponse: .init(isDeposit: self?.dataStore?.isDeposit))
+                }
             })
         } else {
             destinationAddress = Store.state.orderedWallets.first(where: { $0.currency.code == dataStore?.selectedCurrency?.code })?.receiveAddress ?? ""
