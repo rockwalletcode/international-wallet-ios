@@ -167,6 +167,8 @@
 
 "Account.FullSsn" = "Full SSN (Social security number)";
 
+"Account.GetVerified" = "Get verified";
+
 /* ID Verification title on account screen */
 "Account.IDVerification" = "Identifiant de vérification";
 
@@ -179,7 +181,7 @@
 /* Retry verification description */
 "Account.IdVerificationRetry" = "Please try to complete your verification again, while keeping the following in mind:\n\n- Please ensure your type of ID is supported.\n\n- Make sure the area is well-lit and there's no glare on the ID or your face.\n\n- Double check that your ID isn't expired or invalid.";
 
-"Account.IncorrectSsn.description" = "Unfortunately, the SSN you’ve entered was not correct. Try again or try with a different method of verification.";
+"Account.IncorrectSsn.description" = "Unfortunately, we were unable to verify your social security number. Try with a different method of verification or contact support.";
 
 "Account.IncorrectSsn.title" = "We’re sorry, your SSN was not correct";
 
@@ -201,9 +203,11 @@
 
 "Account.Limits.Current" = "Current: %@";
 
+"Account.Limits.expressLimitInfo" = "Express verification offers a one-time limit. To renew, upgrade your limits.";
+
 "Account.Limits.LifetimeLimit" = "Lifetime limit";
 
-"Account.Limits.Subtitle" = "Here you will be able to check and edit the limits of your transactions";
+"Account.Limits.Subtitle" = "Here you will be able to check and request to increase the limits of your transactions";
 
 /* Loading Wallet Message */
 "Account.loadingMessage" = "Chargement du portefeuille";
@@ -251,6 +255,10 @@
 
 "Account.PromotionsTickbox" = "I’m ok with receiving future promotion, offers and communications";
 
+"Account.Prompts.PendingVerification.Status" = "Verification in process";
+
+"Account.Prompts.PendingVerification.Subtitle" = "Verification might take a few minutes please come back later to check your account status";
+
 /* Proof of Identity title in add document for kyc2 */
 "Account.ProofOfIdentity" = "Document d'identité";
 
@@ -296,6 +304,8 @@
 
 "Account.TermsTickbox" = "I agree to RockWallet’s";
 
+"Account.TermsTickboxPro" = "I agree to RockWallet PRO’s";
+
 "Account.UpdateApp.Instruction1" = "It just takes a few seconds!";
 
 "Account.UpdateApp.Instruction2" = "Tap the update button to proceed";
@@ -328,6 +338,8 @@
 "Account.VerificationUnsuccessful" = "We're sorry, your verification was unsuccessful";
 
 "Account.VerificationUnsuccessful.description" = "Please try your verification again, while keeping the following in mind:\n\n- Please ensure the area is well-lit\n- Please ensure you are centered in the frame";
+
+"Account.VerificationUnsuccessful.Title" = "We’re sorry, we can’t verify your account.";
 
 "Account.Verified" = "Vérification effectuée";
 
@@ -772,7 +784,7 @@
 /* BitID Authentication Request alert view title */
 "BitID.title" = "Demande d'authentification BitID";
 
-"Button.anotherVerificationMethod" = "Try another method of verification";
+"Button.anotherVerificationMethod" = "Try another verification method";
 
 "Button.authorize" = "Authorize";
 
@@ -1056,6 +1068,8 @@
 "Buy.ErrorProcessingPayment" = "Une erreur s'est produite lors du traitement de votre paiement";
 
 "Buy.ExpirationDate" = "Date d'expiration";
+
+"Buy.ExpressLimitExceeded" = "Express limit exceeded increase your limits to continue";
 
 /* Failure transaction message on buy */
 "Buy.FailureTransactionMessage" = "Veuillez contacter l'émetteur de votre carte de crédit/votre banque ou essayer un autre mode de paiement.";
@@ -1402,9 +1416,6 @@
 
 /* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
 "ErrorMessages.AmountTooHigh" = "Le montant est supérieur à votre limite quotidienne de %@ %@. Veuillez indiquer un montant inférieur.";
-
-/* The currency amount is to high for exchange. Accepts 2 parameters:, - maxiumum amount, - currency code */
-"ErrorMessages.AmountTooHigh.Sprint.eleven" = "Le montant est supérieur à votre limite quotidienne de %@ %@. Veuillez indiquer un montant inférieur.";
 
 /* The currency amount is to low for exchange. Accepts 2 parameters:, - minimum amount, - currency code */
 "ErrorMessages.amountTooLow" = "Le montant est inférieur à la limite minimale de %@ %@. Veuillez indiquer un montant supérieur.";
@@ -3698,6 +3709,14 @@
 
 /* Wipe wallet prompt */
 "UnlockScreen.wipePrompt" = "Voulez-vous vraiment supprimer ce portefeuille ?";
+
+"Update.description" = "To keep your RockWallet experience smooth and secure, please update to the latest version.";
+
+"Update.takesFewSeconds" = "It just takes a few seconds!";
+
+"Update.tapToProceed" = "Tap the update button to proceed";
+
+"Update.title" = "Update your RockWallet app";
 
 "UpdatePin.Alert.body" = "A PIN is a 6-digit number to validate your identity every time you access your Rockwallet. Be sure to create a number that you can remember easily.";
 

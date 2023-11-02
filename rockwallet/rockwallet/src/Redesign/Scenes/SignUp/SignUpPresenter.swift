@@ -28,6 +28,7 @@ final class SignUpPresenter: NSObject, Presenter, SignUpActionResponses {
             .confirmPassword,
             .notice,
             .termsTickbox,
+            .termsTickboxPro,
             .promotionsTickbox
         ]
         
@@ -36,7 +37,10 @@ final class SignUpPresenter: NSObject, Presenter, SignUpActionResponses {
             .password: [TextFieldModel(title: L10n.Account.createPassword, value: item.password, showPasswordToggle: true)],
             .confirmPassword: [TextFieldModel(title: L10n.Account.confirmPassword, value: item.password, showPasswordToggle: true)],
             .notice: [LabelViewModel.text(L10n.Account.passwordRequirements)],
-            .termsTickbox: [TickboxItemViewModel(title: .attributedText(prepareTermsTickboxText()), url: termsAndConditionsURL)],
+            .termsTickbox: [TickboxItemViewModel(title: .attributedText(prepareTermsTickboxText(termsText: L10n.Account.termsTickbox)),
+                                                 url: termsAndConditionsURL)],
+            .termsTickboxPro: [TickboxItemViewModel(title: .attributedText(prepareTermsTickboxText(termsText: L10n.Account.termsTickboxPro)),
+                                                    url: termsAndConditionsURL)],
             .promotionsTickbox: [TickboxItemViewModel(title: .text(L10n.Account.promotionsTickbox))]
         ]
         
@@ -89,7 +93,7 @@ final class SignUpPresenter: NSObject, Presenter, SignUpActionResponses {
     
     // MARK: - Additional Helpers
     
-    private func prepareTermsTickboxText() -> NSMutableAttributedString {
+    private func prepareTermsTickboxText(termsText: String) -> NSMutableAttributedString {
         let partOneAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: Colors.Text.two,
             NSAttributedString.Key.backgroundColor: UIColor.clear,
@@ -100,7 +104,7 @@ final class SignUpPresenter: NSObject, Presenter, SignUpActionResponses {
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
             NSAttributedString.Key.font: Fonts.Subtitle.two]
         
-        let partOne = NSMutableAttributedString(string: L10n.Account.termsTickbox + " ", attributes: partOneAttributes)
+        let partOne = NSMutableAttributedString(string: termsText + " ", attributes: partOneAttributes)
         let partTwo = NSMutableAttributedString(string: L10n.About.terms, attributes: partTwoAttributes)
         let combined = NSMutableAttributedString()
         combined.append(partOne)
