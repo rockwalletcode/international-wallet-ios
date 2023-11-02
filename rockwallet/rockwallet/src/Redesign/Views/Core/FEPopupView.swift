@@ -27,7 +27,6 @@ struct PopupViewModel: ViewModel {
     var closeButton: ButtonViewModel? = .init(image: Asset.close.image)
     var urlLink: LabelViewModel?
     var url: String?
-    var iconImageName: String?
 }
 
 class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
@@ -55,20 +54,8 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
         return view
     }()
     
-    private lazy var attributedTextStack: UIStackView = {
-        let view = UIStackView()
-        view.spacing = Margins.minimum.rawValue
-        view.distribution = .equalSpacing
-        return view
-    }()
-    
     private lazy var attributedTextLabel: FELabel = {
         let view = FELabel()
-        return view
-    }()
-    
-    private lazy var iconView: FEImageView = {
-        let view = FEImageView()
         return view
     }()
     
@@ -142,14 +129,7 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
         }
         
         mainStack.addArrangedSubview(textView)
-        
-        mainStack.addArrangedSubview(attributedTextStack)
-        attributedTextStack.addArrangedSubview(attributedTextLabel)
-        attributedTextStack.addArrangedSubview(iconView)
-        iconView.snp.makeConstraints { make in
-            make.width.height.equalTo(Margins.huge.rawValue)
-        }
-       
+        mainStack.addArrangedSubview(attributedTextLabel)
         mainStack .addArrangedSubview(spacerView)
         spacerView.snp.makeConstraints { make in
             make.width.lessThanOrEqualToSuperview().priority(.low)
@@ -189,9 +169,6 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
         
         imageView.setup(with: .imageName(viewModel.imageName))
         imageView.isHidden = viewModel.imageName == nil
-        
-        iconView.setup(with: .imageName(viewModel.iconImageName))
-        iconView.isHidden = viewModel.iconImageName == nil
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 2.0
