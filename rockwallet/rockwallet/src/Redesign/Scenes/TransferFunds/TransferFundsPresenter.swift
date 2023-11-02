@@ -127,12 +127,11 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
-        if actionResponse.isDeposit ?? false {
-            viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text("Your funds were successfully sent to your RockWallet account.")),
-                                                                  config: Presets.InfoView.verification))
-        } else {
-            viewController?.displayConfirm(responseDisplay: .init())
-        }
+        let isDeposit = actionResponse.isDeposit ?? false
+        let description = isDeposit ? L10n.Withdrawal.successMessage : L10n.Deposit.successMessage
+        
+        viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(description)),
+                                                              config: Presets.InfoView.verification))
     }
 
     // MARK: - Additional Helpers

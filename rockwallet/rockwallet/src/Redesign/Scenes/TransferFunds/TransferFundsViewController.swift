@@ -178,9 +178,12 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
         })
     }
     
-    func displayConfirm(responseDisplay: TransferFundsModels.Confirm.ResponseDisplay) {
+    override func displayMessage(responseDisplay: MessageModels.ResponseDisplays) {
         LoadingView.hideIfNeeded()
+        
         coordinator?.dismissFlow()
+        UIApplication.topViewController()?.showToastMessage(model: responseDisplay.model,
+                                                            configuration: responseDisplay.config)
     }
     
     // MARK: - Additional Helpers
