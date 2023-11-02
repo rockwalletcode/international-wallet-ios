@@ -2070,6 +2070,8 @@
 
 "Platform.transaction_cancelled" = "Transaktion annulleret";
 
+"Popup.VisitFaqText" = "More info? Visit our FAQs";
+
 "Profile.PaymentMethods" = "Payment methods";
 
 "Prompts.Account.NotVerified.body" = "We were unable to complete your verification.";

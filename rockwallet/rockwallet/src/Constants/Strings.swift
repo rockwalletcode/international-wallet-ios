@@ -2125,6 +2125,10 @@ internal enum L10n {
     /// Transaction Cancelled
     internal static let transactionCancelled = L10n.tr("Localizable", "Platform.transaction_cancelled", fallback: "Transaction Cancelled")
   }
+  internal enum Popup {
+    /// More info? Visit our FAQs
+    internal static let visitFaqText = L10n.tr("Localizable", "Popup.VisitFaqText", fallback: "More info? Visit our FAQs")
+  }
   internal enum Profile {
     /// Payment methods
     internal static let paymentMethods = L10n.tr("Localizable", "Profile.PaymentMethods", fallback: "Payment methods")

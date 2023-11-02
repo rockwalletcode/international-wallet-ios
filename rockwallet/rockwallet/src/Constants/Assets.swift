@@ -312,6 +312,7 @@ internal enum Asset {
   internal static let exchange = ImageAsset(name: "exchange")
   internal static let eyeHide = ImageAsset(name: "eyeHide")
   internal static let eyeShow = ImageAsset(name: "eyeShow")
+  internal static let faqIcon = ImageAsset(name: "faqIcon")
   internal static let fav = ImageAsset(name: "fav")
   internal static let filter = ImageAsset(name: "filter")
   internal static let flash = ImageAsset(name: "flash")
