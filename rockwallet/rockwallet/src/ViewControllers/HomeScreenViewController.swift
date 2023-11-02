@@ -567,7 +567,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private func updateTheme() {
         ThemeManager.shared = ThemeManager.init()
         
-        var colors = Colors()
+        let colors = Colors()
         colors.updateColors()
     }
     
