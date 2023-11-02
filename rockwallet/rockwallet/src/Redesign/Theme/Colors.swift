@@ -87,4 +87,42 @@ struct Colors {
     static var purpleMuted = ThemeManager.shared.color(for: "ach-purple-muted")
     /// ACH Instant Purple
     static var instantPurple = ThemeManager.shared.color(for: "ach-instant-purple")
+    
+    /// Update color variables to support dark mode
+    func updateColors() {
+        Background.one = ThemeManager.shared.color(for: "background-01")
+        Background.two = ThemeManager.shared.color(for: "background-02")
+        Background.three = ThemeManager.shared.color(for: "background-03")
+        Background.cards = ThemeManager.shared.color(for: "background-cards")
+        
+        Colors.primary = ThemeManager.shared.color(for: "primary")
+        Colors.secondary = ThemeManager.shared.color(for: "secondary")
+        Colors.tertiary = ThemeManager.shared.color(for: "tertiary")
+        
+        Contrast.one = ThemeManager.shared.color(for: "contrast-01")
+        Contrast.two = ThemeManager.shared.color(for: "contrast-02")
+        
+        Text.one = ThemeManager.shared.color(for: "text-01")
+        Text.two = ThemeManager.shared.color(for: "text-02")
+        Text.three = ThemeManager.shared.color(for: "text-03")
+        
+        Outline.one = ThemeManager.shared.color(for: "outline-01")
+        Outline.two = ThemeManager.shared.color(for: "outline-02")
+        
+        Disabled.one = ThemeManager.shared.color(for: "disabled-01")
+        Disabled.two = ThemeManager.shared.color(for: "disabled-02")
+        
+        Success.one = ThemeManager.shared.color(for: "success-01")
+        Success.two = ThemeManager.shared.color(for: "success-02")
+        
+        Pending.one = ThemeManager.shared.color(for: "pending-01")
+        Pending.two = ThemeManager.shared.color(for: "pending-02")
+        
+        Error.one = ThemeManager.shared.color(for: "error-01")
+        Error.two = ThemeManager.shared.color(for: "error-02")
+        
+        Colors.primaryPressed = ThemeManager.shared.color(for: "primary-pressed")
+        Colors.purpleMuted = ThemeManager.shared.color(for: "ach-purple-muted")
+        Colors.instantPurple = ThemeManager.shared.color(for: "ach-instant-purple")
+    }
 }

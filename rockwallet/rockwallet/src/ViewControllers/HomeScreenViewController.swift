@@ -411,6 +411,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         L10n.Segment.rockWalletPro : "\(L10n.HomeScreen.wallet) \(L10n.HomeScreen.totalAssets.lowercased())"
         
         assetListTableView.showAddWalletsButton(selectedSegment == .rockWallet)
+        
+        UserDefaults.isDarkMode = selectedSegment == .rockWalletPro
+        updateTheme()
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -559,6 +562,13 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         coreSystem.widgetDataShareService.updatePortfolio(info: info)
         coreSystem.widgetDataShareService.quoteCurrencyCode = Store.state.defaultCurrencyCode
+    }
+    
+    private func updateTheme() {
+        ThemeManager.shared = ThemeManager.init()
+        
+        let colors = Colors()
+        colors.updateColors()
     }
     
     // MARK: Actions
