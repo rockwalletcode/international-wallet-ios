@@ -19,6 +19,7 @@ enum SignUpModels {
         case confirmPassword
         case notice
         case termsTickbox
+        case termsTickboxPro
         case promotionsTickbox
         
         var header: AccessoryType? { return nil }

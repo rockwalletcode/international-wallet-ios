@@ -122,7 +122,7 @@ class SignUpViewController: BaseTableViewController<AccountCoordinator,
         case .notice:
             cell = self.tableView(tableView, labelCellForRowAt: indexPath)
             
-        case .termsTickbox:
+        case .termsTickbox, .termsTickboxPro:
             cell = self.tableView(tableView, tickboxCellForRowAt: indexPath)
             
             let castedCell = cell as? WrapperTableViewCell<TickboxItemView>
