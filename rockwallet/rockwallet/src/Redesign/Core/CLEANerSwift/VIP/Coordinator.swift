@@ -190,6 +190,14 @@ class BaseCoordinator: NSObject, Coordinatable {
         }
     }
     
+    func showProOption() {
+        decideFlow { [weak self] showScene in
+            guard showScene else { return }
+            
+            self?.showVerifyAccount(flow: .rockWalletPro)
+        }
+    }
+    
     // TODO: showDeleteProfileInfo and showTwoStepAuthentication should be refactored when everything used coordinators.
     
     func showDeleteProfileInfo(from viewController: UIViewController?,
@@ -265,10 +273,6 @@ class BaseCoordinator: NSObject, Coordinatable {
         } else {
             open(coordinator: KYCCoordinator.self, scene: Scenes.KYCBasic)
         }
-    }
-    
-    func showSignUpFlow() {
-        open(scene: Scenes.SignUp)
     }
     
     /// Determines whether the viewcontroller or navigation stack are being dismissed
@@ -541,9 +545,6 @@ class BaseCoordinator: NSObject, Coordinatable {
             switch flow {
             case .buy, .swap:
                 vc.coordinator?.popViewController()
-                
-            case .rockWalletPro:
-                vc.coordinator?.showSignUpFlow()
                 
             default:
                 self?.showKYCLevelOne(isModal: false)

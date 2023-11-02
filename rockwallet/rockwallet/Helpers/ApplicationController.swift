@@ -469,12 +469,12 @@ class ApplicationController: Subscriber {
             self?.coordinator?.showProfile()
         }
         
-        homeScreen.didTapProSegment = { [weak self] isVerifyAccount in
-            guard let isVerify = isVerifyAccount else { return }
-            if isVerify {
-                self?.coordinator?.showVerifyAccount(flow: .rockWalletPro)
-            } else {
+        homeScreen.didTapProSegment = { [weak self] isUserLogged in
+            guard let isUserLogged = isUserLogged else { return }
+            if isUserLogged {
                 self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
+            } else {
+                self?.coordinator?.showProOption()
             }
         }
         

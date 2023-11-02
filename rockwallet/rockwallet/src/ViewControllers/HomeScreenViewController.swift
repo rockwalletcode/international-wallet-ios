@@ -396,7 +396,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         guard let profile = UserManager.shared.profile else {
             if selectedSegment == .rockWalletPro {
-                tapSegment(isVerifyAccount: true)
+                tapSegment(isUserLogged: false)
                 segmentControl.selectSegment(index: 0)
             }
             return
@@ -404,7 +404,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         guard profile.kycAccessRights.hasExchangeAccess else {
             if selectedSegment == .rockWalletPro {
-                tapSegment(isVerifyAccount: false)
+                tapSegment(isUserLogged: true)
                 segmentControl.selectSegment(index: 0)
             }
             return
@@ -613,8 +613,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         didTapMenu?()
     }
     
-    private func tapSegment(isVerifyAccount: Bool?) {
-        didTapProSegment?(isVerifyAccount)
+    private func tapSegment(isUserLogged: Bool?) {
+        didTapProSegment?(isUserLogged)
     }
     
     private func transferFundsTapped() {
