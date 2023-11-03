@@ -470,7 +470,7 @@ class ApplicationController: Subscriber {
         }
         
         homeScreen.didTapProSegment = { [weak self] isUserLogged in
-            guard let isUserLogged = isUserLogged else { return }
+            guard let isUserLogged else { return }
             if isUserLogged {
                 self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
             } else {
