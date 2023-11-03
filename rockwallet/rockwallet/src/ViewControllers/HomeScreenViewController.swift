@@ -420,8 +420,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                     self.updateProBalance(data: data)
                     self.assetListTableView.proBalancesData = data
                     
-                case .failure:
-                    break
+                case .failure(let error):
+                    self.showErrorMessage(error.localizedDescription)
                 }
             }
         } else {
@@ -577,7 +577,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: balance),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
-        totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
+        totalAssetsAmountLabel.text = String(format: "\(Constant.currencyFormat)", formattedBalance, fiatCurrency)
     }
     
     private func updateAmountsForWidgets() {

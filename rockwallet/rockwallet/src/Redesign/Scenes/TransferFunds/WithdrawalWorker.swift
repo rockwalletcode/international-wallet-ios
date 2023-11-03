@@ -16,11 +16,10 @@ struct WithdrawalRequestData: RequestModelData {
     let asset: String?
     
     func getParameters() -> [String: Any] {
-        let params = [
-            "amount": amount,
-            "address": address,
-            "asset": asset
-        ]
+        let params = [ "amount": amount,
+                       "address": address,
+                       "asset": asset ]
+        
         return params.compactMapValues { $0 }
     }
 }

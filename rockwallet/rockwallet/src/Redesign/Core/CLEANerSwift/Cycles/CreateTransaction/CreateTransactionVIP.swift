@@ -146,7 +146,6 @@ extension Interactor where Self: CreateTransactionViewActions,
         }
         
         completion?(error)
-        return
     }
     
     func generateSender(viewAction: CreateTransactionModels.Sender.ViewAction) {

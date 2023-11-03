@@ -34,8 +34,7 @@ struct ProBalancesModel: Model {
 
 class ProBalancesMapper: ModelMapper<ProBalancesResponseData, ProBalancesModel> {
     override func getModel(from response: ProBalancesResponseData?) -> ProBalancesModel? {
-        guard let response = response else { return nil }
-        return ProBalancesModel(mnet: response.mnet, usdc: response.usdc, btc: response.btc, eth: response.eth, bsv: response.bsv)
+        return ProBalancesModel(mnet: response?.mnet, usdc: response?.usdc, btc: response?.btc, eth: response?.eth, bsv: response?.bsv)
     }
 }
 

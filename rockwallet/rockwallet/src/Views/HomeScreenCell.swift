@@ -100,7 +100,7 @@ class HomeScreenCell: UITableViewCell, Subscriber {
         
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: proBalance),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
-        let proBalanceText = String(format: "%@ %@", formattedBalance, fiatCurrency)
+        let proBalanceText = String(format: "\(Constant.currencyFormat)", formattedBalance, fiatCurrency)
         
         fiatBalance.text = isProWallet ? proBalanceText : viewModel.fiatBalance
         tokenBalance.text = isProWallet ? proBalanceText : viewModel.tokenBalance

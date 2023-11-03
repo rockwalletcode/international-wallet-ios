@@ -471,11 +471,12 @@ class ApplicationController: Subscriber {
         
         homeScreen.didTapProSegment = { [weak self] isUserLogged in
             guard let isUserLogged else { return }
-            if isUserLogged {
-                self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
-            } else {
+            
+            guard isUserLogged == true else {
                 self?.coordinator?.showProOption()
+                return
             }
+            self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
         }
         
         homeScreen.didTapTransferFunds = { [weak self] in

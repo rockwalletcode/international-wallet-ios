@@ -156,7 +156,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             return
         }
         
-        generateSender(viewAction: .init(fromAmountCurrency: dataStore?.fromAmount?.currency))
+        generateSender(viewAction: .init(fromAmountCurrency: from.currency))
         
         getFees(viewAction: .init(fromAmount: from), completion: { _ in
             completion?()
