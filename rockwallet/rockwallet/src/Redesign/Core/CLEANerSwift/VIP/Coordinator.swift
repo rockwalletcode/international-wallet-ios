@@ -392,8 +392,12 @@ class BaseCoordinator: NSObject, Coordinatable {
                 if error?.errorType == .twoStepRequired {
                     coordinator = AccountCoordinator(navigationController: nvc)
                 } else {
-                    completion?(false)
-                    return
+                    guard error?.errorType == .twoStepRequired || UserManager.shared.profile == nil else {
+                        completion?(false)
+                        return
+                    }
+                    
+                    coordinator = AccountCoordinator(navigationController: nvc)
                 }
             }
             
