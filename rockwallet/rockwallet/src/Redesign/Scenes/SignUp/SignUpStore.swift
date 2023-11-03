@@ -17,6 +17,7 @@ class SignUpStore: NSObject, BaseDataStore, SignUpDataStore {
     var password = ""
     var passwordAgain = ""
     var termsTickbox = false
+    var termsTickboxPro = false
     var promotionsTickbox = false
     
     // MARK: - Additional helpers
