@@ -71,14 +71,12 @@ class SignUpInteractor: NSObject, Interactor, SignUpViewActions {
     }
     
     func toggleTermsTickbox(viewAction: SignUpModels.TermsTickbox.ViewAction) {
-        guard let valuePro = viewAction.valuePro else {
+        if viewAction.valuePro != nil {
+            dataStore?.termsTickboxPro = viewAction.valuePro ?? false
+        } else {
             dataStore?.termsTickbox = viewAction.value ?? false
-            validate(viewAction: .init())
-            
-            return
         }
         
-        dataStore?.termsTickboxPro = valuePro
         validate(viewAction: .init())
     }
     
