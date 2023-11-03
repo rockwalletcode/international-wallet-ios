@@ -52,7 +52,7 @@ class SignUpInteractor: NSObject, Interactor, SignUpViewActions {
         
         let passwordsMatch = !isPasswordEmpty && !isPasswordAgainEmpty && dataStore?.password == dataStore?.passwordAgain
         
-        let isTermsTickboxValid = dataStore?.termsTickbox == true
+        let isTermsTickboxValid = dataStore?.termsTickbox == true && dataStore?.termsTickboxPro == true
         
         presenter?.presentValidate(actionResponse: .init(email: viewAction.email,
                                                          password: viewAction.password,
@@ -71,8 +71,14 @@ class SignUpInteractor: NSObject, Interactor, SignUpViewActions {
     }
     
     func toggleTermsTickbox(viewAction: SignUpModels.TermsTickbox.ViewAction) {
-        dataStore?.termsTickbox = viewAction.value
+        guard let valuePro = viewAction.valuePro else {
+            dataStore?.termsTickbox = viewAction.value ?? false
+            validate(viewAction: .init())
+            
+            return
+        }
         
+        dataStore?.termsTickboxPro = valuePro
         validate(viewAction: .init())
     }
     

@@ -122,7 +122,7 @@ class SignUpViewController: BaseTableViewController<AccountCoordinator,
         case .notice:
             cell = self.tableView(tableView, labelCellForRowAt: indexPath)
             
-        case .termsTickbox, .termsTickboxPro:
+        case .termsTickbox:
             cell = self.tableView(tableView, tickboxCellForRowAt: indexPath)
             
             let castedCell = cell as? WrapperTableViewCell<TickboxItemView>
@@ -134,6 +134,21 @@ class SignUpViewController: BaseTableViewController<AccountCoordinator,
                 
                 view.didToggleTickbox = { [weak self] value in
                     self?.interactor?.toggleTermsTickbox(viewAction: .init(value: value))
+                }
+            }
+            
+        case .termsTickboxPro:
+            cell = self.tableView(tableView, tickboxCellForRowAt: indexPath)
+            
+            let castedCell = cell as? WrapperTableViewCell<TickboxItemView>
+            castedCell?.setup { view in
+                view.didTapUrl = { [weak self] url in // TODO: update url for T&C for pro wallet when we have it
+                    guard let url = url?.absoluteString else { return }
+                    self?.coordinator?.showInWebView(urlString: url, title: L10n.About.terms)
+                }
+                
+                view.didToggleTickbox = { [weak self] value in
+                    self?.interactor?.toggleTermsTickbox(viewAction: .init(valuePro: value))
                 }
             }
             

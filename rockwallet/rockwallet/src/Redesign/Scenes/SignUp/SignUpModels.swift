@@ -80,7 +80,8 @@ enum SignUpModels {
     
     struct TermsTickbox {
         struct ViewAction {
-            var value: Bool
+            var value: Bool?
+            var valuePro: Bool?
         }
     }
     
