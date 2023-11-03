@@ -83,11 +83,6 @@ extension UIViewController {
         }
     }
     
-    func showToastMessage(model: InfoViewModel? = nil, configuration: InfoViewConfiguration? = nil) {
-        ToastMessageManager.shared.show(model: model,
-                                        configuration: configuration)
-    }
-    
     func showInWebView(urlString: String, title: String) {
         guard let url = URL(string: urlString) else { return }
         let webViewController = SimpleWebViewController(url: url)

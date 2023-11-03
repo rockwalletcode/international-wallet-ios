@@ -122,6 +122,8 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
         
         viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(description)),
                                                               config: Presets.InfoView.verification))
+        
+        viewController?.displayConfirm(responseDisplay: .init())
     }
 
     // MARK: - Additional Helpers
