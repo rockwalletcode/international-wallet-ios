@@ -19,6 +19,8 @@ struct CreateTransactionModels {
             var fromFeeAmount: Amount?
             var fromAmount: Amount?
             var toAmountCode: String?
+            var proTransfer: String?
+            var address: String?
         }
     }
     

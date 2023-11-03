@@ -57,6 +57,8 @@ class HomeScreenCell: UITableViewCell, Subscriber {
     private let syncIndicator = SyncingIndicator(style: .home)
     private let priceChangeView = PriceChangeView(style: .percentOnly)
     
+    var proBalance: Decimal = 0
+    
     private var isSyncIndicatorVisible: Bool = false {
         didSet {
             UIView.crossfade(tokenBalance, syncIndicator,
@@ -72,32 +74,53 @@ class HomeScreenCell: UITableViewCell, Subscriber {
         setupViews()
     }
     
-    func set(viewModel: HomeScreenAssetViewModel) {
+    func set(viewModel: HomeScreenAssetViewModel, proBalancesData: ProBalancesModel?, isProWallet: Bool = false) {
         accessibilityIdentifier = viewModel.currency.name
         currency = viewModel.currency
         iconImageView.wrappedView.setup(with: .image(viewModel.currency.imageSquareBackground))
         iconImageView.configure(background: BackgroundConfiguration(border: .init(borderWidth: 0, cornerRadius: .fullRadius)))
         currencyName.text = viewModel.currency.name
         price.text = viewModel.exchangeRate
-        fiatBalance.text = viewModel.fiatBalance
-        tokenBalance.text = viewModel.tokenBalance
+        
+        if isProWallet {
+            let currencyPro = Store.state.currenciesProWallet.first(where: { $0.code == currency?.code })
+            switch currencyPro?.code {
+            case Constant.BSV:
+                proBalance = proBalancesData?.bsv ?? 0
+            case Constant.ETH:
+                proBalance = proBalancesData?.eth ?? 0
+            case Constant.BTC:
+                proBalance = proBalancesData?.btc ?? 0
+            case Constant.USDC:
+                proBalance = proBalancesData?.usdc ?? 0
+            default:
+                break
+            }
+        }
+        
+        guard let formattedBalance = ExchangeFormatter.fiat.string(for: proBalance),
+              let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
+        let proBalanceText = String(format: "\(Constant.currencyFormat)", formattedBalance, fiatCurrency)
+        
+        fiatBalance.text = isProWallet ? proBalanceText : viewModel.fiatBalance
+        tokenBalance.text = isProWallet ? proBalanceText : viewModel.tokenBalance
         priceChangeView.currency = viewModel.currency
         
         Store.subscribe(self, selector: { $0[viewModel.currency]?.syncState != $1[viewModel.currency]?.syncState },
                         callback: { state in
-                            guard !(viewModel.currency.isHBAR && Store.state.requiresCreation(viewModel.currency)),
-                               let syncState = state[viewModel.currency]?.syncState else {
-                                self.isSyncIndicatorVisible = false
-                                return
-                            }
+            guard !(viewModel.currency.isHBAR && Store.state.requiresCreation(viewModel.currency)),
+                  let syncState = state[viewModel.currency]?.syncState else {
+                self.isSyncIndicatorVisible = false
+                return
+            }
             
-                            self.syncIndicator.syncState = syncState
-                            switch syncState {
-                            case .connecting, .failed, .syncing:
-                                self.isSyncIndicatorVisible = false
-                            case .success:
-                                self.isSyncIndicatorVisible = false
-                            }
+            self.syncIndicator.syncState = syncState
+            switch syncState {
+            case .connecting, .failed, .syncing:
+                self.isSyncIndicatorVisible = false
+            case .success:
+                self.isSyncIndicatorVisible = false
+            }
         })
         
         Store.subscribe(self, selector: { $0[viewModel.currency]?.syncProgress != $1[viewModel.currency]?.syncProgress },

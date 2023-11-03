@@ -44,6 +44,20 @@ class VerifyAccountViewController: BaseInfoViewController {
                 })
             ]
             
+        case .rockWalletPro:
+            return [
+                .init(title: L10n.Button.verify, callback: { [weak self] in
+                    self?.shouldDismiss = true
+                    
+                    self?.didTapMainButton?()
+                }),
+                .init(title: L10n.Button.maybeLater, isUnderlined: true, callback: { [weak self] in
+                    self?.shouldDismiss = true
+                    
+                    self?.didTapSecondaryButton?()
+                })
+            ]
+            
         default:
             return []
         }

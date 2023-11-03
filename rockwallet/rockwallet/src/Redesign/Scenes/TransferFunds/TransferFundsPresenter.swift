@@ -33,11 +33,11 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                 transferFundsModel
             ],
             .swapCard: [
-                SwapCurrencyViewModel.init(amount: item,
-                                           currencyCode: item?.currency.code,
-                                           currencyImage: item?.currency.imageSquareBackground,
+                SwapCurrencyViewModel.init(amount: item.amount,
+                                           currencyCode: item.amount?.currency.code,
+                                           currencyImage: item.amount?.currency.imageSquareBackground,
                                            balanceTitle: L10n.Exchange.rockWalletBalance,
-                                           balance: "80.81738") // TODO: update with BE balance data
+                                           balance: item.balance)
             ]
         ]
         
@@ -61,6 +61,9 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
         
         viewController?.displayAmount(responseDisplay: .init(mainSwapViewModel: mainSwapViewModel,
                                                              continueEnabled: continueEnabled))
+        
+        guard !actionResponse.handleErrors else { return }
+        _ = handleError(actionResponse: actionResponse)
     }
     
     func presentSwitchPlaces(actionResponse: Models.SwitchPlaces.ActionResponse) {
@@ -84,34 +87,24 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     
     func presentConfirmation(actionResponse: Models.ShowConfirmDialog.ActionResponse) {
         let config: WrapperPopupConfiguration<SwapConfimationConfiguration> = .init(wrappedView: .init())
-        
+
         guard let from = actionResponse.fromAmount,
-              let to = actionResponse.toAmount,
-              let isDeposit = actionResponse.isDeposit,
-              let rate = actionResponse.quote?.exchangeRate.doubleValue else { return }
+              let fromCurrency = actionResponse.fromCurrency,
+              let isDeposit = actionResponse.isDeposit else { return }
         
         let fromTitle = !isDeposit ? "\(L10n.Exchange.sendFrom) \(L10n.About.AppName.android)" : "\(L10n.Exchange.sendFrom) \(L10n.Segment.rockWalletPro)"
-        let fromText = String(format: "\(Constant.currencyFormat) (\(Constant.currencyFormat))",
-                              ExchangeFormatter.current.string(for: from.tokenValue.doubleValue) ?? "",
-                              from.currency.code,
-                              ExchangeFormatter.fiat.string(for: from.fiatValue.doubleValue) ?? "",
-                              Constant.usdCurrencyCode)
-        let rateText = String(format: "1 %@ = \(Constant.currencyFormat)",
-                              from.currency.code,
-                              ExchangeNumberFormatter().string(for: rate) ?? "",
-                              to.currency.code)
         let toTitle = !isDeposit ? L10n.Segment.rockWalletPro : L10n.About.AppName.android
         let feeTitle = !isDeposit ? L10n.Exchange.estimatedNetworkFee : L10n.Exchange.withdrawalFee
-        let toFeeText = String(format: "-\(Constant.currencyFormat)",
-                               ExchangeFormatter.current.string(for: actionResponse.toFee?.tokenValue.doubleValue) ?? "",
-                               actionResponse.toFee?.currency.code ?? to.currency.code)
+        let toFeeText = String(format: "\(Constant.currencyFormat)",
+                               ExchangeFormatter.current.string(for: actionResponse.fromFee?.tokenValue.doubleValue) ?? "",
+                               fromCurrency.code)
         let totalCostText = String(format: Constant.currencyFormat,
-                                   ExchangeFormatter.current.string(for: to.tokenValue.doubleValue) ?? "",
-                                   to.currency.code)
+                                   ExchangeFormatter.current.string(for: from.tokenValue) ?? "",
+                                   fromCurrency.code)
         
-        let wrappedViewModel: SwapConfirmationViewModel = .init(from: .init(title: .text(fromTitle), value: .text(fromText)),
+        let wrappedViewModel: SwapConfirmationViewModel = .init(from: .init(title: .text(fromTitle), value: .text(totalCostText)),
                                                                 to: .init(title: .text(L10n.TransactionDetails.addressToHeader), value: .text(toTitle)),
-                                                                rate: .init(title: .text(L10n.Confirmation.amountLabel), value: .text(rateText)),
+                                                                rate: .init(title: .text(L10n.Confirmation.amountLabel), value: .text(totalCostText)),
                                                                 receivingFee: .init(title: .text(feeTitle), value: .text(toFeeText)),
                                                                 totalCost: .init(title: .text(L10n.Swap.youReceive), value: .text(totalCostText)))
         
@@ -124,7 +117,13 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
-        // TODO: present confirmation
+        let isDeposit = actionResponse.isDeposit ?? false
+        let description = isDeposit ? L10n.Withdrawal.successMessage : L10n.Deposit.successMessage
+        
+        viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(description)),
+                                                              config: Presets.InfoView.verification))
+        
+        viewController?.displayConfirm(responseDisplay: .init())
     }
 
     // MARK: - Additional Helpers

@@ -16,6 +16,7 @@ class OrderPreviewStore: NSObject, BaseDataStore, OrderPreviewDataStore {
     var fromFeeBasis: WalletKit.TransferFeeBasis?
     var senderValidationResult: SenderValidationResult?
     var sender: Sender?
+    var proTransfer: String?
     
     // MARK: - OrderPreviewDataStore
     var type: PreviewType?

@@ -581,6 +581,7 @@
 		C4CCFCEA29D43DB600E38B3A /* AuthenticatorAppVIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CCFCE329D43DB600E38B3A /* AuthenticatorAppVIP.swift */; };
 		C4CCFCEB29D43DB600E38B3A /* AuthenticatorAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CCFCE429D43DB600E38B3A /* AuthenticatorAppViewController.swift */; };
 		C4CCFCEC29D43DB600E38B3A /* AuthenticatorAppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CCFCE529D43DB600E38B3A /* AuthenticatorAppInteractor.swift */; };
+		C4D74C782AE900DF0055F557 /* WithdrawalWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74C772AE900DE0055F557 /* WithdrawalWorker.swift */; };
 		C4F462A029CC86FF00083512 /* BackupCodesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F4629929CC86FF00083512 /* BackupCodesStore.swift */; };
 		C4F462A129CC86FF00083512 /* BackupCodesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F4629A29CC86FF00083512 /* BackupCodesPresenter.swift */; };
 		C4F462A229CC86FF00083512 /* BackupCodesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F4629B29CC86FF00083512 /* BackupCodesModels.swift */; };
@@ -1439,6 +1440,7 @@
 		C4CCFCE329D43DB600E38B3A /* AuthenticatorAppVIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorAppVIP.swift; sourceTree = "<group>"; };
 		C4CCFCE429D43DB600E38B3A /* AuthenticatorAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorAppViewController.swift; sourceTree = "<group>"; };
 		C4CCFCE529D43DB600E38B3A /* AuthenticatorAppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorAppInteractor.swift; sourceTree = "<group>"; };
+		C4D74C772AE900DE0055F557 /* WithdrawalWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalWorker.swift; sourceTree = "<group>"; };
 		C4F4629929CC86FF00083512 /* BackupCodesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodesStore.swift; sourceTree = "<group>"; };
 		C4F4629A29CC86FF00083512 /* BackupCodesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodesPresenter.swift; sourceTree = "<group>"; };
 		C4F4629B29CC86FF00083512 /* BackupCodesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodesModels.swift; sourceTree = "<group>"; };
@@ -3147,6 +3149,7 @@
 				C41E9E322ABC311600AB8170 /* TransferFundsViewController.swift */,
 				C41E9E332ABC311600AB8170 /* TransferFundsInteractor.swift */,
 				C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */,
+				C4D74C772AE900DE0055F557 /* WithdrawalWorker.swift */,
 			);
 			path = TransferFunds;
 			sourceTree = "<group>";
@@ -4315,6 +4318,7 @@
 				CE92F9F01DED0C790046B516 /* PresentModalAnimator.swift in Sources */,
 				D7EA320929C0805B00D9FD4F /* BiometricStatusHelper.swift in Sources */,
 				CEA2480023DE819D00B18BC6 /* AttributeCell.swift in Sources */,
+				C4D74C782AE900DF0055F557 /* WithdrawalWorker.swift in Sources */,
 				7CBD578F2107EB560042C388 /* PairedWalletData.swift in Sources */,
 				7EF2998B27E3B8C400A2238A /* Resources.swift in Sources */,
 				7E5CB38C2835090E00EC787E /* Borderable.swift in Sources */,

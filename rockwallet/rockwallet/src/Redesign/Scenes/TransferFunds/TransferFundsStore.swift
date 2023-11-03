@@ -10,10 +10,14 @@ import UIKit
 import WalletKit
 
 class TransferFundsStore: NSObject, BaseDataStore, TransferFundsDataStore {
-    // MARK: - TransferFundsDataStore
+    // MARK: - CreateTransactionDataStore
     var fromFeeBasis: WalletKit.TransferFeeBasis?
     var senderValidationResult: SenderValidationResult?
     var sender: Sender?
+    var proTransfer: String?
+    
+    // MARK: - TransferFundsDataStore
+    var selectedCurrency: Currency?
     var to: Decimal?
     var publicToken: String?
     var mask: String?

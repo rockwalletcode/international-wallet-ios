@@ -9,7 +9,7 @@
 import UIKit
 
 enum TransferFundsModels {
-    typealias Item = Amount?
+    typealias Item = (amount: Amount?, balance: String?)
     
     struct AssetSelectionMessage {
         struct ViewAction {}
@@ -40,6 +40,7 @@ enum TransferFundsModels {
         struct ViewAction {}
         
         struct ActionResponse {
+            var fromCurrency: Currency?
             var fromAmount: Amount?
             var toAmount: Amount?
             var quote: Quote?
@@ -59,16 +60,10 @@ enum TransferFundsModels {
         }
         
         struct ActionResponse {
-            var from: String?
-            var to: String?
-            var exchangeId: String?
+            var isDeposit: Bool?
         }
         
-        struct ResponseDisplay {
-            var from: String
-            var to: String
-            var exchangeId: String
-        }
+        struct ResponseDisplay {}
     }
     
     struct ConfirmTransfer {

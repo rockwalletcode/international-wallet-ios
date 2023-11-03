@@ -190,6 +190,14 @@ class BaseCoordinator: NSObject, Coordinatable {
         }
     }
     
+    func showProOption() {
+        decideFlow { [weak self] showScene in
+            guard showScene else { return }
+            
+            self?.showVerifyAccount(flow: .rockWalletPro)
+        }
+    }
+    
     // TODO: showDeleteProfileInfo and showTwoStepAuthentication should be refactored when everything used coordinators.
     
     func showDeleteProfileInfo(from viewController: UIViewController?,
@@ -384,8 +392,12 @@ class BaseCoordinator: NSObject, Coordinatable {
                 if error?.errorType == .twoStepRequired {
                     coordinator = AccountCoordinator(navigationController: nvc)
                 } else {
-                    completion?(false)
-                    return
+                    guard error?.errorType == .twoStepRequired || UserManager.shared.profile == nil else {
+                        completion?(false)
+                        return
+                    }
+                    
+                    coordinator = AccountCoordinator(navigationController: nvc)
                 }
             }
             

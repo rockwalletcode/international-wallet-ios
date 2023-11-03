@@ -1382,6 +1382,8 @@
 /* Exchange rate label */
 "DefaultCurrency.rateLabel" = "Växelkurs";
 
+"Deposit.successMessage" = "Your funds were successfully sent to your RockWallet PRO Account and will appear when the requisite confirmations are met on the blockchain. \nPlease swipe down to refresh.";
+
 "Disabled.disabledUntil" = "Disabled until";
 
 /* The wallet is disabled. */
@@ -4052,6 +4054,8 @@
 
 /* Wiping activity message */
 "WipeWallet.wiping" = "Rensar...";
+
+"Withdrawal.successMessage" = "Your funds were successfully sent to your RockWallet account. \nPlease swipe down to refresh.";
 
 /* Paper key instructions. */
 "WritePaperPhrase.instruction" = "Skriv ner varje ord i ordning och lagra dem på ett säkert ställe.";

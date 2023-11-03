@@ -1441,6 +1441,11 @@ internal enum L10n {
     /// Exchange rate label
     internal static let rateLabel = L10n.tr("Localizable", "DefaultCurrency.rateLabel", fallback: "Exchange Rate")
   }
+  internal enum Deposit {
+    /// Your funds were successfully sent to your RockWallet PRO Account and will appear when the requisite confirmations are met on the blockchain. 
+    /// Please swipe down to refresh.
+    internal static let successMessage = L10n.tr("Localizable", "Deposit.successMessage", fallback: "Your funds were successfully sent to your RockWallet PRO Account and will appear when the requisite confirmations are met on the blockchain. \nPlease swipe down to refresh.")
+  }
   internal enum Disabled {
     /// Disabled until
     internal static let disabledUntil = L10n.tr("Localizable", "Disabled.disabledUntil", fallback: "Disabled until")
@@ -4050,6 +4055,11 @@ internal enum L10n {
     internal static let wipe = L10n.tr("Localizable", "WipeWallet.wipe", fallback: "Wipe")
     /// Wiping activity message
     internal static let wiping = L10n.tr("Localizable", "WipeWallet.wiping", fallback: "Wiping...")
+  }
+  internal enum Withdrawal {
+    /// Your funds were successfully sent to your RockWallet account. 
+    /// Please swipe down to refresh.
+    internal static let successMessage = L10n.tr("Localizable", "Withdrawal.successMessage", fallback: "Your funds were successfully sent to your RockWallet account. \nPlease swipe down to refresh.")
   }
   internal enum WritePaperPhrase {
     /// Paper key instructions.

@@ -25,7 +25,7 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
                            selected: ((Any?) -> Void)?) {
         let allCurrencies = Currencies.shared.currencies
         
-        let supportedAssets = allCurrencies.filter { item in supportedCurrencies?.contains(where: { $0.lowercased() == item.code }) ?? false }
+        let supportedAssets = allCurrencies.filter { item in currencies?.contains(where: { $0.code.lowercased() == item.code }) ?? false }
         
         var data: [AssetViewModel]? = currencies?.compactMap {
             let currencyFormat = Constant.currencyFormat

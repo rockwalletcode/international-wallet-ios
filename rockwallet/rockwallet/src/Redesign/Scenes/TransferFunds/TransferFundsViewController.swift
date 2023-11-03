@@ -118,7 +118,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                }
                  
                self?.coordinator?.dismissFlow()
-               self?.interactor?.setAmount(viewAction: .init(currency: model.subtitle, didFinish: true))
+               self?.interactor?.setAssetSelectionData(viewAction: .init(currency: model.subtitle, balanceValue: model.topRightText, didFinish: true))
            }
        }
     
@@ -176,6 +176,12 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                 }
             }
         })
+    }
+    
+    func displayConfirm(responseDisplay: TransferFundsModels.Confirm.ResponseDisplay) {
+        LoadingView.hideIfNeeded()
+        
+        coordinator?.dismissFlow()
     }
     
     // MARK: - Additional Helpers

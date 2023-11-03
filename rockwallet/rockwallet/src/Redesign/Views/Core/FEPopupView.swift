@@ -164,6 +164,7 @@ class FEPopupView: FEView<PopupConfiguration, PopupViewModel> {
         
         attributedTextLabel.setup(with: viewModel.urlLink)
         attributedTextLabel.isHidden = viewModel.urlLink == nil
+        spacerView.isHidden = viewModel.urlLink == nil
         
         closeButton.wrappedView.setup(with: viewModel.closeButton)
         
