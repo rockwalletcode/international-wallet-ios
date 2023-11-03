@@ -470,8 +470,6 @@ class ApplicationController: Subscriber {
         }
         
         homeScreen.didTapProSegment = { [weak self] isUserLogged in
-            guard let isUserLogged else { return }
-            
             guard isUserLogged == true else {
                 self?.coordinator?.showProOption()
                 return
