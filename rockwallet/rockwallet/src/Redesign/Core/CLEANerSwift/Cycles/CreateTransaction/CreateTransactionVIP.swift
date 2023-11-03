@@ -112,7 +112,8 @@ extension Interactor where Self: CreateTransactionViewActions,
             error = GeneralError(errorMessage: L10n.Send.containsAddress)
             
         case .insufficientFunds:
-            error = GeneralError(errorMessage: L10n.ErrorMessages.unknownError)
+            error = ExchangeErrors.balanceTooLow(balance: fromAmount,
+                                                 currency: currency.code)
             
         case .noExchangeRate:
             error = GeneralError(errorMessage: L10n.ErrorMessages.unknownError)
@@ -120,14 +121,18 @@ extension Interactor where Self: CreateTransactionViewActions,
         case .noFees:
             error = ExchangeErrors.noFees
             
-        case .outputTooSmall:
-            error = GeneralError(errorMessage: L10n.ErrorMessages.unknownError)
+        case .outputTooSmall(let amount):
+            error = ExchangeErrors.tooLow(amount: amount.tokenValue,
+                                          currency: currency.code,
+                                          reason: .swap)
             
         case .invalidRequest(let string):
             error = GeneralError(errorMessage: string)
             
         case .paymentTooSmall:
-            error = GeneralError(errorMessage: L10n.ErrorMessages.unknownError)
+            error = ExchangeErrors.tooLow(amount: amount.tokenValue,
+                                          currency: currency.code,
+                                          reason: .swap)
             
         case .usedAddress:
             error = GeneralError(errorMessage: "Used address")
@@ -140,7 +145,7 @@ extension Interactor where Self: CreateTransactionViewActions,
             
         }
         
-        completion?(ExchangeErrors.noFees)
+        completion?(error)
         return
     }
     

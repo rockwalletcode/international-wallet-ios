@@ -710,7 +710,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         let buttonTag = isPortalLink ? "1" : "0"
         let scriptSource = "document.getElementsByTagName('button')[\(buttonTag)].click()"
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0, execute: {
             webView.evaluateJavaScript(scriptSource, completionHandler: nil)
         })
     }

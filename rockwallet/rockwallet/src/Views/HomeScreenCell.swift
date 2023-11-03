@@ -57,7 +57,7 @@ class HomeScreenCell: UITableViewCell, Subscriber {
     private let syncIndicator = SyncingIndicator(style: .home)
     private let priceChangeView = PriceChangeView(style: .percentOnly)
     
-    var proBalance: Decimal = 0.0
+    var proBalance: Decimal = 0
     
     private var isSyncIndicatorVisible: Bool = false {
         didSet {
