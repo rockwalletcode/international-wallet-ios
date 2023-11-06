@@ -416,8 +416,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         if selectedSegment == .rockWalletPro {
             ProBalancesWorker().execute(requestData: ProBalancesRequestData()) { result in
                 switch result {
-                case .success(let responseData):
-                    guard let data = responseData else { return }
+                case .success(let data):
+                    guard let data else { return }
                     self.updateProBalance(data: data)
                     self.assetListTableView.proBalancesData = data
                     
