@@ -37,7 +37,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private var isRedirectedUrl: Bool = false
     private var isPortalLink: Bool = false
     private var selectedSegment: HomeScreenViewController.SegmentControlCases = .rockWallet
-    private var proBalancesData: ProBalancesModel?
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -417,6 +416,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             ProBalancesWorker().execute(requestData: ProBalancesRequestData()) { result in
                 switch result {
                 case .success(let data):
+                    guard let data else { return }
                     self.updateProBalance(data: data)
                     self.assetListTableView.proBalancesData = data
                     
@@ -569,15 +569,21 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
-        totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
+        totalAssetsAmountLabel.text = String(format: Constant.currencyFormat, formattedBalance, fiatCurrency)
     }
     
-    func updateProBalance(data: ProBalancesModel?) {
-        let balance = 0.0
+    private func updateProBalance(data: ProBalancesModel) {
+        let fiatTotal: Decimal = Store.state.wallets.values.map {
+            let proBalance = data.getProBalance(code: $0.currency.code)
+            let balance = Amount(decimalAmount: proBalance, isFiat: true, currency: $0.currency)
+            let amount = Amount(amount: balance,
+                                rate: $0.currentRate)
+            return amount.fiatValue
+        }.reduce(0.0, +)
         
-        guard let formattedBalance = ExchangeFormatter.fiat.string(for: balance),
+        guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
-        totalAssetsAmountLabel.text = String(format: "\(Constant.currencyFormat)", formattedBalance, fiatCurrency)
+        totalAssetsAmountLabel.text = String(format: Constant.currencyFormat, formattedBalance, fiatCurrency)
     }
     
     private func updateAmountsForWidgets() {

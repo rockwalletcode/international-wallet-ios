@@ -205,12 +205,13 @@ class AssetListTableView: UITableViewController, Subscriber {
         guard Store.state.currencies.indices.contains(indexPath.row) else { return UITableViewCell() }
         
         let currency = isProWallet ? Store.state.currenciesProWallet[indexPath.row] : Store.state.currencies[indexPath.row]
-        let viewModel = HomeScreenAssetViewModel(currency: currency)
+        
+        let viewModel = HomeScreenAssetViewModel(currency: currency, proBalancesData: proBalancesData)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenCellIds.regularCell.rawValue, for: indexPath)
         
         if let cell = cell as? HomeScreenCell {
-            cell.set(viewModel: viewModel, proBalancesData: proBalancesData, isProWallet: isProWallet)
+            cell.set(viewModel: viewModel, isProWallet: isProWallet)
             cell.removeProLabel(isHidden: !manageAssetsButton.isHidden)
         }
         
