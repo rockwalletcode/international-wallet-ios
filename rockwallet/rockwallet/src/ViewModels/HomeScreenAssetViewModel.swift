@@ -10,6 +10,7 @@ import Foundation
 
 struct HomeScreenAssetViewModel {
     let currency: Currency
+    let proBalancesData: ProBalancesModel?
     
     var exchangeRate: String {
         return currency.state?.currentRate?.localString(forCurrency: currency, usesCustomFormat: true) ?? ""
@@ -29,5 +30,40 @@ struct HomeScreenAssetViewModel {
         else { return "" }
         
         return text
+    }
+    
+    var fiatBalancePro: String {
+        guard let rate = currency.state?.currentRate else { return "" }
+        
+        let currencyPro = Store.state.currenciesProWallet.first(where: { $0.code == currency.code })
+        let proBalance = getProBalance(code: currencyPro?.code ?? "")
+        let balance = Amount(decimalAmount: proBalance, isFiat: true, currency: currency)
+        
+        return Amount(amount: balance, rate: rate).fiatDescription
+    }
+    
+    var tokenBalancePro: String {
+        let currencyPro = Store.state.currenciesProWallet.first(where: { $0.code == currency.code })
+        let balance = getProBalance(code: currencyPro?.code ?? "")
+        
+        return ExchangeFormatter.current.string(for: balance) ?? ""
+    }
+    
+    func getProBalance(code: String) -> Decimal {
+        var proBalance: Decimal = 0
+        switch code {
+        case Constant.BSV:
+            proBalance = proBalancesData?.bsv ?? 0
+        case Constant.ETH:
+            proBalance = proBalancesData?.eth ?? 0
+        case Constant.BTC:
+            proBalance = proBalancesData?.btc ?? 0
+        case Constant.USDC:
+            proBalance = proBalancesData?.usdc ?? 0
+        default:
+            break
+        }
+        
+        return proBalance
     }
 }

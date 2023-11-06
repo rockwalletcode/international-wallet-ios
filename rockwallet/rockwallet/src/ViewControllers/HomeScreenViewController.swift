@@ -572,12 +572,35 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
     }
     
-    func updateProBalance(data: ProBalancesModel?) {
-        let balance = 0.0
+    private func updateProBalance(data: ProBalancesModel?) {
+        let fiatTotal: Decimal = Store.state.wallets.values.map {
+            let proBalance = Amount(decimalAmount: getProBalance(code: $0.currency.code, proBalancesData: data), isFiat: true, currency: $0.currency)
+            let amount = Amount(amount: proBalance,
+                                rate: $0.currentRate)
+            return amount.fiatValue
+        }.reduce(0.0, +)
         
-        guard let formattedBalance = ExchangeFormatter.fiat.string(for: balance),
+        guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
-        totalAssetsAmountLabel.text = String(format: "\(Constant.currencyFormat)", formattedBalance, fiatCurrency)
+        totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
+    }
+    
+    func getProBalance(code: String, proBalancesData: ProBalancesModel?) -> Decimal {
+        var proBalance: Decimal = 0
+        switch code {
+        case Constant.BSV:
+            proBalance = proBalancesData?.bsv ?? 0
+        case Constant.ETH:
+            proBalance = proBalancesData?.eth ?? 0
+        case Constant.BTC:
+            proBalance = proBalancesData?.btc ?? 0
+        case Constant.USDC:
+            proBalance = proBalancesData?.usdc ?? 0
+        default:
+            break
+        }
+        
+        return proBalance
     }
     
     private func updateAmountsForWidgets() {
