@@ -109,11 +109,8 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
            coordinator?.showAssetSelector(title: responseDisplay.title,
                                           currencies: dataStore?.currencies,
                                           supportedCurrencies: dataStore?.supportedCurrencies) { [weak self] model in
-               guard let model = model as? AssetViewModel else { return }
-               
-               guard !model.isDisabled else {
-                   self?.interactor?.showAssetSelectionMessage(viewAction: .init())
-                   
+               guard let model = model as? AssetViewModel,
+                     !model.isDisabled else {
                    return
                }
                  

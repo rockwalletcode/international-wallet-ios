@@ -36,7 +36,7 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
                                          ExchangeFormatter.fiat.string(for: $0.state?.balance?.fiatValue) ?? "",
                                          Constant.usdCurrencyCode)
             
-            let isDisabledAsset = isDisabledAsset(code: $0.code, supportedCurrencies: supportedCurrencies) ?? false
+            let isDisabledAsset = $0.state?.balance?.tokenValue == 0
             
             return AssetViewModel(icon: $0.imageSquareBackground,
                                   title: $0.name,

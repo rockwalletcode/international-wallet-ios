@@ -99,10 +99,6 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         presenter?.presentNavigateAssetSelector(actionResponse: .init())
     }
     
-    func showAssetSelectionMessage(viewAction: Models.AssetSelectionMessage.ViewAction) {
-        presenter?.presentAssetSelectionMessage(actionResponse: .init())
-    }
-    
     func showConfirmation(viewAction: Models.ShowConfirmDialog.ViewAction) {
         presenter?.presentConfirmation(actionResponse: .init(fromCurrency: dataStore?.selectedCurrency,
                                                              fromAmount: dataStore?.amount,
