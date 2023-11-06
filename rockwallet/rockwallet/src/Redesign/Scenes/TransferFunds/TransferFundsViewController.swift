@@ -129,7 +129,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
         
         tableView.invalidateTableViewIntrinsicContentSize()
         
-        continueButton.viewModel?.enabled = responseDisplay.continueEnabled
+        continueButton.viewModel?.enabled = true // TODO: Enabled for testing, revert it back to responseDisplay.continueEnabled
         verticalButtons.wrappedView.getButton(continueButton)?.setup(with: continueButton.viewModel)
     }
     
