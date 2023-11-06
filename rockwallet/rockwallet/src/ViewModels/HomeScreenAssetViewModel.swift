@@ -50,20 +50,21 @@ struct HomeScreenAssetViewModel {
     }
     
     func getProBalance(code: String) -> Decimal {
-        var proBalance: Decimal = 0
         switch code {
         case Constant.BSV:
-            proBalance = proBalancesData?.bsv ?? 0
+            return proBalancesData?.bsv ?? 0
+            
         case Constant.ETH:
-            proBalance = proBalancesData?.eth ?? 0
+            return proBalancesData?.eth ?? 0
+            
         case Constant.BTC:
-            proBalance = proBalancesData?.btc ?? 0
+            return proBalancesData?.btc ?? 0
+            
         case Constant.USDC:
-            proBalance = proBalancesData?.usdc ?? 0
+            return proBalancesData?.usdc ?? 0
+            
         default:
-            break
+            return 0
         }
-        
-        return proBalance
     }
 }

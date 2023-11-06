@@ -416,7 +416,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         if selectedSegment == .rockWalletPro {
             ProBalancesWorker().execute(requestData: ProBalancesRequestData()) { result in
                 switch result {
-                case .success(let data):
+                case .success(let responseData):
+                    guard let data = responseData else { return }
                     self.updateProBalance(data: data)
                     self.assetListTableView.proBalancesData = data
                     
@@ -569,10 +570,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
-        totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
+        totalAssetsAmountLabel.text = String(format: Constant.currencyFormat, formattedBalance, fiatCurrency)
     }
     
-    private func updateProBalance(data: ProBalancesModel?) {
+    private func updateProBalance(data: ProBalancesModel) {
         let fiatTotal: Decimal = Store.state.wallets.values.map {
             let proBalance = Amount(decimalAmount: getProBalance(code: $0.currency.code, proBalancesData: data), isFiat: true, currency: $0.currency)
             let amount = Amount(amount: proBalance,
@@ -582,25 +583,26 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
-        totalAssetsAmountLabel.text = String(format: "%@ %@", formattedBalance, fiatCurrency)
+        totalAssetsAmountLabel.text = String(format: Constant.currencyFormat, formattedBalance, fiatCurrency)
     }
     
-    func getProBalance(code: String, proBalancesData: ProBalancesModel?) -> Decimal {
-        var proBalance: Decimal = 0
+    func getProBalance(code: String, proBalancesData: ProBalancesModel) -> Decimal {
         switch code {
         case Constant.BSV:
-            proBalance = proBalancesData?.bsv ?? 0
+            return proBalancesData.bsv
+            
         case Constant.ETH:
-            proBalance = proBalancesData?.eth ?? 0
+            return proBalancesData.eth
+            
         case Constant.BTC:
-            proBalance = proBalancesData?.btc ?? 0
+            return proBalancesData.btc
+            
         case Constant.USDC:
-            proBalance = proBalancesData?.usdc ?? 0
+            return proBalancesData.usdc
+            
         default:
-            break
+            return 0
         }
-        
-        return proBalance
     }
     
     private func updateAmountsForWidgets() {
