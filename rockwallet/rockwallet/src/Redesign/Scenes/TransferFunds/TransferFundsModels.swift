@@ -25,10 +25,15 @@ enum TransferFundsModels {
     struct AssetSelector {
         struct ViewAction {}
         
-        struct ActionResponse {}
+        struct ActionResponse {
+            var proBalancesData: ProBalancesModel?
+            var isDeposit: Bool
+        }
         
         struct ResponseDisplay {
             let title: String
+            var proBalancesData: ProBalancesModel?
+            var isDeposit: Bool
         }
     }
     

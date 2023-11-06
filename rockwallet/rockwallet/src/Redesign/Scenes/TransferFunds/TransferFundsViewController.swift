@@ -108,7 +108,9 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
     func displayNavigateAssetSelector(responseDisplay: TransferFundsModels.AssetSelector.ResponseDisplay) {
            coordinator?.showAssetSelector(title: responseDisplay.title,
                                           currencies: dataStore?.currencies,
-                                          supportedCurrencies: dataStore?.supportedCurrencies) { [weak self] model in
+                                          supportedCurrencies: dataStore?.supportedCurrencies,
+                                          isDeposit: responseDisplay.isDeposit,
+                                          proBalancesData: responseDisplay.proBalancesData) { [weak self] model in
                guard let model = model as? AssetViewModel,
                      !model.isDisabled else {
                    return

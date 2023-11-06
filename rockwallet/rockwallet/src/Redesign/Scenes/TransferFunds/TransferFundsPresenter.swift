@@ -82,7 +82,9 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentNavigateAssetSelector(actionResponse: Models.AssetSelector.ActionResponse) {
-        viewController?.displayNavigateAssetSelector(responseDisplay: .init(title: L10n.Receive.selectAsset))
+        viewController?.displayNavigateAssetSelector(responseDisplay: .init(title: L10n.Receive.selectAsset,
+                                                                            proBalancesData: actionResponse.proBalancesData,
+                                                                            isDeposit: actionResponse.isDeposit))
     }
     
     func presentConfirmation(actionResponse: Models.ShowConfirmDialog.ActionResponse) {

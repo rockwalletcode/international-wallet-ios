@@ -96,7 +96,8 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func navigateAssetSelector(viewAction: Models.AssetSelector.ViewAction) {
-        presenter?.presentNavigateAssetSelector(actionResponse: .init())
+        presenter?.presentNavigateAssetSelector(actionResponse: .init(proBalancesData: dataStore?.proBalancesData,
+                                                                      isDeposit: dataStore?.isDeposit ?? false))
     }
     
     func showConfirmation(viewAction: Models.ShowConfirmDialog.ViewAction) {
