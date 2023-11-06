@@ -30,6 +30,25 @@ struct ProBalancesModel: Model {
     var btc: Decimal
     var eth: Decimal
     var bsv: Decimal
+    
+    func getProBalance(code: String) -> Decimal {
+        switch code {
+        case Constant.BSV:
+            return bsv
+            
+        case Constant.ETH:
+            return eth
+            
+        case Constant.BTC:
+            return btc
+            
+        case Constant.USDC:
+            return usdc
+            
+        default:
+            return 0
+        }
+    }
 }
 
 class ProBalancesMapper: ModelMapper<ProBalancesResponseData, ProBalancesModel> {

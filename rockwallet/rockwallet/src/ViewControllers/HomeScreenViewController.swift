@@ -37,7 +37,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private var isRedirectedUrl: Bool = false
     private var isPortalLink: Bool = false
     private var selectedSegment: HomeScreenViewController.SegmentControlCases = .rockWallet
-    private var proBalancesData: ProBalancesModel?
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -575,8 +574,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private func updateProBalance(data: ProBalancesModel) {
         let fiatTotal: Decimal = Store.state.wallets.values.map {
-            let proBalance = Amount(decimalAmount: getProBalance(code: $0.currency.code, proBalancesData: data), isFiat: true, currency: $0.currency)
-            let amount = Amount(amount: proBalance,
+            let proBalance = data.getProBalance(code: $0.currency.code)
+            let balance = Amount(decimalAmount: proBalance, isFiat: true, currency: $0.currency)
+            let amount = Amount(amount: balance,
                                 rate: $0.currentRate)
             return amount.fiatValue
         }.reduce(0.0, +)
@@ -584,25 +584,6 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         guard let formattedBalance = ExchangeFormatter.fiat.string(for: fiatTotal),
               let fiatCurrency = Store.state.orderedWallets.first?.currentRate?.code else { return }
         totalAssetsAmountLabel.text = String(format: Constant.currencyFormat, formattedBalance, fiatCurrency)
-    }
-    
-    func getProBalance(code: String, proBalancesData: ProBalancesModel) -> Decimal {
-        switch code {
-        case Constant.BSV:
-            return proBalancesData.bsv
-            
-        case Constant.ETH:
-            return proBalancesData.eth
-            
-        case Constant.BTC:
-            return proBalancesData.btc
-            
-        case Constant.USDC:
-            return proBalancesData.usdc
-            
-        default:
-            return 0
-        }
     }
     
     private func updateAmountsForWidgets() {
