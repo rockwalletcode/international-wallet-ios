@@ -48,8 +48,10 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                     return balanceText
                 }
                 
+                self?.dataStore?.balance = balance?.first
+                
                 self?.presenter?.presentData(actionResponse: .init(item: Models.Item(amount: fromCurrency,
-                                                                                     balance: balance?.first)))
+                                                                                     balance: self?.dataStore?.balance)))
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -67,6 +69,8 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             guard let fromCurrency = dataStore?.fromAmount else { return }
             
             setPresentAmountData(handleErrors: false)
+            
+            dataStore?.balance = viewAction.balanceValue
             
             presenter?.presentData(actionResponse: .init(item: Models.Item(amount: fromCurrency, balance: viewAction.balanceValue)))
         }
