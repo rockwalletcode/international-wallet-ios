@@ -16,7 +16,7 @@ struct PopupConfiguration: Configurable {
     var body: LabelConfiguration?
     var buttons: [ButtonConfiguration] = []
     var closeButton: ButtonConfiguration?
-    var urlLink: LabelConfiguration?
+    var urlLink: LabelConfiguration? = .init(font: Fonts.Body.two, textColor: Colors.Text.three, textAlignment: .center)
 }
 
 struct PopupViewModel: ViewModel {

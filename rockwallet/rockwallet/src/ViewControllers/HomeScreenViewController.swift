@@ -639,7 +639,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                                    urlLink: .attributedText(prepareTermsTickboxText(attributedText: L10n.Popup.visitFaqText)),
                                    url: Constant.supportLink)
         
-        showInfoPopup(with: model)
+        showInfoPopup(with: model,
+                      config: Presets.Popup.whiteCentered)
     }
     
     private func prepareTermsTickboxText(attributedText: String) -> NSMutableAttributedString {

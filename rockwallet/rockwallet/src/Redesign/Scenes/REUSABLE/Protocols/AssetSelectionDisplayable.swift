@@ -39,8 +39,8 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
                                  isFiat: true, currency: $0)
             let fiatBalancePro = Amount(amount: balance, rate: $0.state?.currentRate).fiatDescription
             
-            var tokenBalance = isDeposit ? proBalancesData?.getProBalance(code: $0.code) : $0.state?.balance?.tokenValue
-            var fiatBalance = isDeposit ? fiatBalancePro : ExchangeFormatter.fiat.string(for: $0.state?.balance?.fiatValue)
+            let tokenBalance = isDeposit ? proBalancesData?.getProBalance(code: $0.code) : $0.state?.balance?.tokenValue
+            let fiatBalance = isDeposit ? fiatBalancePro : ExchangeFormatter.fiat.string(for: $0.state?.balance?.fiatValue)
             
             let topRightText = String(format: currencyFormat,
                                       ExchangeFormatter.current.string(for: tokenBalance) ?? "",

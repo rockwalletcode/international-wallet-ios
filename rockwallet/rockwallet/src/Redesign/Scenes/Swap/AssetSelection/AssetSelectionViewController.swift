@@ -19,6 +19,7 @@ class AssetSelectionViewController: ItemSelectionViewController {
         super.setupSubviews()
         
         searchController.searchBar.placeholder = L10n.Title.searchAssets
+        searchController.searchBar.searchTextField.textColor = Colors.Text.two
         
         tableView.register(WrapperTableViewCell<AssetView>.self)
     }
