@@ -14,6 +14,8 @@ protocol AssetSelectionDisplayable {
     func showAssetSelector(title: String,
                            currencies: [Currency]?,
                            supportedCurrencies: [String]?,
+                           isDeposit: Bool?,
+                           proBalancesData: ProBalancesModel?,
                            selected: ((Any?) -> Void)?)
     func isDisabledAsset(code: String?, supportedCurrencies: [String]?) -> Bool?
 }
@@ -22,21 +24,32 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
     func showAssetSelector(title: String,
                            currencies: [Currency]?,
                            supportedCurrencies: [String]?,
+                           isDeposit: Bool? = false,
+                           proBalancesData: ProBalancesModel? = nil,
                            selected: ((Any?) -> Void)?) {
         let allCurrencies = Currencies.shared.currencies
         
         let supportedAssets = allCurrencies.filter { item in currencies?.contains(where: { $0.code.lowercased() == item.code }) ?? false }
         
         var data: [AssetViewModel]? = currencies?.compactMap {
+            guard let isDeposit else { return nil }
+            
             let currencyFormat = Constant.currencyFormat
+            let balance = Amount(decimalAmount: proBalancesData?.getProBalance(code: $0.code) ?? 0, isFiat: true, currency: $0)
+            let fiatBalancePro = Amount(amount: balance, rate: $0.state?.currentRate).fiatDescription
+            
+            let tokenBalance = isDeposit ? proBalancesData?.getProBalance(code: $0.code) : $0.state?.balance?.tokenValue
+            let fiatBalance = isDeposit ? fiatBalancePro : ExchangeFormatter.fiat.string(for: $0.state?.balance?.fiatValue)
+            
             let topRightText = String(format: currencyFormat,
-                                      ExchangeFormatter.current.string(for: $0.state?.balance?.tokenValue) ?? "",
+                                      ExchangeFormatter.current.string(for: tokenBalance) ?? "",
                                       $0.code.uppercased())
+            
             let bottomRightText = String(format: currencyFormat,
-                                         ExchangeFormatter.fiat.string(for: $0.state?.balance?.fiatValue) ?? "",
+                                         fiatBalance ?? "",
                                          Constant.usdCurrencyCode)
             
-            let isDisabledAsset = isDisabledAsset(code: $0.code, supportedCurrencies: supportedCurrencies) ?? false
+            let isDisabledAsset = tokenBalance == 0
             
             return AssetViewModel(icon: $0.imageSquareBackground,
                                   title: $0.name,

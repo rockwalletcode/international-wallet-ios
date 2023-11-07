@@ -16,8 +16,6 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
 
     // MARK: - TransferFundsActionResponses
     
-    private var mainSwapViewModel = MainSwapViewModel()
-    
     func presentData(actionResponse: FetchModels.Get.ActionResponse) {
         guard let item = actionResponse.item as? Models.Item else { return }
         
@@ -53,16 +51,18 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
         let formattedFiatString = ExchangeFormatter.createAmountString(string: fromFiatValue ?? "")
         let formattedTokenString = ExchangeFormatter.createAmountString(string: fromTokenValue ?? "")
         
-        mainSwapViewModel = MainSwapViewModel(from: .init(amount: from,
+        let swapCurrencyViewModel = SwapCurrencyViewModel(amount: from,
                                                           formattedFiatString: formattedFiatString,
-                                                          formattedTokenString: formattedTokenString))
+                                                          formattedTokenString: formattedTokenString,
+                                                          balanceTitle: L10n.Exchange.rockWalletBalance,
+                                                          balance: actionResponse.balanceValue)
         
         let continueEnabled = !handleError(actionResponse: actionResponse) && actionResponse.handleErrors
         
-        viewController?.displayAmount(responseDisplay: .init(mainSwapViewModel: mainSwapViewModel,
+        viewController?.displayAmount(responseDisplay: .init(swapCurrencyViewModel: swapCurrencyViewModel,
                                                              continueEnabled: continueEnabled))
         
-        guard !actionResponse.handleErrors else { return }
+        guard actionResponse.handleErrors else { return }
         _ = handleError(actionResponse: actionResponse)
     }
     
@@ -82,7 +82,9 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentNavigateAssetSelector(actionResponse: Models.AssetSelector.ActionResponse) {
-        viewController?.displayNavigateAssetSelector(responseDisplay: .init(title: L10n.Receive.selectAsset))
+        viewController?.displayNavigateAssetSelector(responseDisplay: .init(title: L10n.Receive.selectAsset,
+                                                                            proBalancesData: actionResponse.proBalancesData,
+                                                                            isDeposit: actionResponse.isDeposit))
     }
     
     func presentConfirmation(actionResponse: Models.ShowConfirmDialog.ActionResponse) {

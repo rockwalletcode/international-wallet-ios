@@ -64,6 +64,7 @@ enum AssetModels {
             var fromFeeAmount: Amount?
             var fromFeeCurrency: Currency?
             var quote: Quote?
+            var balanceValue: String?
             
             var handleErrors = false
         }

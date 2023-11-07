@@ -477,10 +477,11 @@ class ApplicationController: Subscriber {
             self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
         }
         
-        homeScreen.didTapTransferFunds = { [weak self] in
+        homeScreen.didTapTransferFunds = { [weak self] proBalancesData in
             self?.coordinator?.openModally(coordinator: ExchangeCoordinator.self, scene: Scenes.TransferFunds) { vc in
                 vc?.dataStore?.coreSystem = self?.coreSystem
                 vc?.dataStore?.keyStore = self?.keyStore
+                vc?.dataStore?.proBalancesData = proBalancesData
             }
         }
         

@@ -37,6 +37,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private var isRedirectedUrl: Bool = false
     private var isPortalLink: Bool = false
     private var selectedSegment: HomeScreenViewController.SegmentControlCases = .rockWallet
+    private var proBalancesData: ProBalancesModel? = nil
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -156,7 +157,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     var didTapLimitsAuthenticationFromPrompt: (() -> Void)?
     var didTapMenu: (() -> Void)?
     var didTapProSegment: ((Bool?) -> Void)?
-    var didTapTransferFunds: (() -> Void)?
+    var didTapTransferFunds: ((ProBalancesModel?) -> Void)?
     
     private lazy var pullToRefreshControl: UIRefreshControl = {
         let view = UIRefreshControl()
@@ -419,6 +420,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                     guard let data else { return }
                     self.updateProBalance(data: data)
                     self.assetListTableView.proBalancesData = data
+                    self.proBalancesData = data
                     
                 case .failure(let error):
                     self.showErrorMessage(error.localizedDescription)
@@ -624,7 +626,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func transferFundsTapped() {
-        didTapTransferFunds?()
+        didTapTransferFunds?(proBalancesData)
     }
     
     private func launchExchangeTapped() {
@@ -637,7 +639,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                                    urlLink: .attributedText(prepareTermsTickboxText(attributedText: L10n.Popup.visitFaqText)),
                                    url: Constant.supportLink)
         
-        showInfoPopup(with: model)
+        showInfoPopup(with: model, config: Presets.Popup.whiteCentered)
     }
     
     private func prepareTermsTickboxText(attributedText: String) -> NSMutableAttributedString {

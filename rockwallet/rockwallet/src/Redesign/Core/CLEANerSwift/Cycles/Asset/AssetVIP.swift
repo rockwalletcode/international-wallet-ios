@@ -146,6 +146,7 @@ extension Presenter where Self: AssetActionResponses,
         let isBuy = self.isKind(of: BuyPresenter.self)
         let isSell = self.isKind(of: SellPresenter.self)
         let isSwap = self.isKind(of: SwapPresenter.self)
+        let isTransfer = self.isKind(of: TransferFundsPresenter.self)
         
         if isSwap,
            let dataStore = (self as? SwapPresenter)?.viewController?.dataStore,
