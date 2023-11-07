@@ -111,10 +111,7 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                                           supportedCurrencies: dataStore?.supportedCurrencies,
                                           isDeposit: responseDisplay.isDeposit,
                                           proBalancesData: responseDisplay.proBalancesData) { [weak self] model in
-               guard let model = model as? AssetViewModel,
-                     !model.isDisabled else {
-                   return
-               }
+               guard let model = model as? AssetViewModel, !model.isDisabled else { return }
                  
                self?.coordinator?.dismissFlow()
                self?.interactor?.setAssetSelectionData(viewAction: .init(currency: model.subtitle, balanceValue: model.topRightText, didFinish: true))
