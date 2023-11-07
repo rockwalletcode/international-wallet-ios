@@ -85,11 +85,11 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                   let currency = dataStore?.selectedCurrency {
             to = .init(decimalAmount: fiat, isFiat: true, currency: currency)
         } else {
-            setPresentAmountData(handleErrors: true)
+            setPresentAmountData(handleErrors: false) // TODO: hundle errors for deposit balances
             return
         }
         
-        dataStore?.amount = to
+        dataStore?.fromAmount = to
         dataStore?.from = to.fiatValue
         
         setPresentAmountData(handleErrors: false)
@@ -102,7 +102,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     
     func showConfirmation(viewAction: Models.ShowConfirmDialog.ViewAction) {
         presenter?.presentConfirmation(actionResponse: .init(fromCurrency: dataStore?.selectedCurrency,
-                                                             fromAmount: dataStore?.amount,
+                                                             fromAmount: dataStore?.fromAmount,
                                                              toAmount: dataStore?.toAmount,
                                                              quote: dataStore?.quote,
                                                              fromFee: dataStore?.fromFeeAmount,
@@ -167,6 +167,20 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         dataStore?.fromAmount = .zero(from)
         dataStore?.isDeposit = !isDeposit
         
+        let currency = Store.state.currencies.first(where: { $0.code == from.code })
+        if isDeposit {
+            dataStore?.balance = String(format: Constant.currencyFormat,
+                                        ExchangeFormatter.current.string(for: currency?.state?.balance?.tokenValue) ?? "",
+                                        currency?.code.uppercased() ?? "")
+        } else {
+            let balancePro = dataStore?.proBalancesData?.getProBalance(code: currency?.code ?? "") ?? 0
+            dataStore?.balance = String(format: Constant.currencyFormat,
+                                        ExchangeFormatter.current.string(for: balancePro) ?? "",
+                                        currency?.code.uppercased() ?? "")
+        }
+        
+        setPresentAmountData(handleErrors: false)
+        
         presenter?.presentSwitchPlaces(actionResponse: .init(isDeposit: isDeposit))
     }
     
@@ -190,6 +204,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                                                        fromFeeAmount: dataStore?.fromFeeAmount,
                                                        fromFeeCurrency: dataStore?.sender?.wallet.feeCurrency,
                                                        quote: dataStore?.quote,
+                                                       balanceValue: dataStore?.balance,
                                                        handleErrors: handleErrors && isNotZero))
     }
 }

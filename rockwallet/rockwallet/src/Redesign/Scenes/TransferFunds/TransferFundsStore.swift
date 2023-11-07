@@ -18,6 +18,7 @@ class TransferFundsStore: NSObject, BaseDataStore, TransferFundsDataStore {
     
     // MARK: - TransferFundsDataStore
     var proBalancesData: ProBalancesModel?
+    var balance: String?
     var selectedCurrency: Currency?
     var to: Decimal?
     var publicToken: String?
