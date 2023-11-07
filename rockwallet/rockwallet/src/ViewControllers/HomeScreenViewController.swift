@@ -386,23 +386,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         }
     }
     
-    func handleSegmentView() {
-        segmentControl.isHidden = UserManager.shared.profile == nil
-    }
-    
     private func setSegment(_ segment: Int) {
         segmentControl.selectSegment(index: segment)
         selectedSegment = SegmentControlCases.allCases[segment]
         
         if selectedSegment == .rockWalletPro {
             guard let profile = UserManager.shared.profile else {
-                tapSegment(hasExchangeAccess: false)
+                tapSegment(isUserLogged: false)
                 segmentControl.selectSegment(index: 0)
                 return
             }
             
             guard profile.kycAccessRights.hasExchangeAccess else {
-                tapSegment(hasExchangeAccess: true)
+                tapSegment(isUserLogged: true)
                 segmentControl.selectSegment(index: 0)
                 return
             }
@@ -634,8 +630,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         didTapMenu?()
     }
     
-    private func tapSegment(hasExchangeAccess: Bool?) {
-        didTapProSegment?(hasExchangeAccess)
+    private func tapSegment(isUserLogged: Bool?) {
+        didTapProSegment?(isUserLogged)
     }
     
     private func transferFundsTapped() {
