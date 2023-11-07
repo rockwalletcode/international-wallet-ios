@@ -50,7 +50,7 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
                                          fiatBalance ?? "",
                                          Constant.usdCurrencyCode)
             
-            let isDisabledAsset = isDeposit ? proBalancesData?.getProBalance(code: $0.code) == 0 : $0.state?.balance?.tokenValue == 0
+            let isDisabledAsset = tokenBalance == 0
             
             return AssetViewModel(icon: $0.imageSquareBackground,
                                   title: $0.name,
