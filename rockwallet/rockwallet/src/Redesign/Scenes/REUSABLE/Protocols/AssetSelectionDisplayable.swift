@@ -37,17 +37,15 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
             let currencyFormat = Constant.currencyFormat
             let balance = Amount(decimalAmount: proBalancesData?.getProBalance(code: $0.code) ?? 0, isFiat: true, currency: $0)
             let fiatBalancePro = Amount(amount: balance, rate: $0.state?.currentRate).fiatDescription
+            let fiatBalance = String(format: currencyFormat,
+                                     ExchangeFormatter.fiat.string(for: $0.state?.balance?.fiatValue) ?? "",
+                                     $0.code.uppercased())
+            let bottomRightText = isDeposit ? fiatBalancePro : fiatBalance
             
             let tokenBalance = isDeposit ? proBalancesData?.getProBalance(code: $0.code) : $0.state?.balance?.tokenValue
-            let fiatBalance = isDeposit ? fiatBalancePro : ExchangeFormatter.fiat.string(for: $0.state?.balance?.fiatValue)
-            
             let topRightText = String(format: currencyFormat,
                                       ExchangeFormatter.current.string(for: tokenBalance) ?? "",
                                       $0.code.uppercased())
-            
-            let bottomRightText = String(format: currencyFormat,
-                                         fiatBalance ?? "",
-                                         Constant.usdCurrencyCode)
             
             let isDisabledAsset = tokenBalance == 0
             

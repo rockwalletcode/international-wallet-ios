@@ -32,7 +32,7 @@ class HomeScreenCell: UITableViewCell, Subscriber {
     }()
     
     lazy var proLabel: UILabel = {
-        let view = UILabel(font: Fonts.Body.three, color: Colors.Text.one)
+        let view = UILabel(font: Fonts.Body.three, color: Colors.Background.two)
         view.text = L10n.Exchange.pro
         view.textAlignment = .center
         view.backgroundColor = Colors.Background.three
@@ -110,11 +110,21 @@ class HomeScreenCell: UITableViewCell, Subscriber {
             }
             self.syncIndicator.progress = progress
         })
+        
+        updateTheme()
     }
     
     func setupViews() {
         addSubviews()
         addConstraints()
+    }
+    
+    private func updateTheme() {
+        currencyName.textColor = Colors.Text.three
+        price.textColor = Colors.Text.two
+        tokenBalance.textColor = Colors.Text.three
+        cardView.backgroundColor = Colors.Background.one
+        proLabel.backgroundColor = Colors.Background.three
     }
     
     private func addSubviews() {

@@ -37,7 +37,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private var isRedirectedUrl: Bool = false
     private var isPortalLink: Bool = false
     private var selectedSegment: HomeScreenViewController.SegmentControlCases = .rockWallet
-    private var proBalancesData: ProBalancesModel? = nil
+    private var proBalancesData: ProBalancesModel?
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -430,6 +430,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             updateTotalAssets()
         }
         
+        logoImageView.image = selectedSegment == .rockWallet ? Asset.logoIcon.image : Asset.logoPro.image
         totalAssetsTitleLabel.text = selectedSegment == .rockWalletPro ?
         L10n.Segment.rockWalletPro : "\(L10n.HomeScreen.wallet) \(L10n.HomeScreen.totalAssets.lowercased())"
         
@@ -607,6 +608,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         let colors = Colors()
         colors.updateColors()
+        
+        updateThemeColors()
+    }
+    
+    private func updateThemeColors() {
+        view.backgroundColor = Colors.Background.two
+        tabBarContainerView.backgroundColor = Colors.Background.two
+        exchangeButtonsView.backgroundColor = Colors.Background.one
+        tabBar.unselectedItemTintColor = Colors.Text.two
+        totalAssetsTitleLabel.textColor = Colors.Text.three
+        totalAssetsAmountLabel.textColor = Colors.Text.three
+        assetListTableView.tableView.backgroundColor = Colors.Background.two
+        segmentControl.configure(with: .init())
     }
     
     // MARK: Actions

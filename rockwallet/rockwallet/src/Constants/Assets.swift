@@ -328,6 +328,7 @@ internal enum Asset {
   internal static let loader = ImageAsset(name: "loader")
   internal static let lockClosed = ImageAsset(name: "lock_closed")
   internal static let lockOpen = ImageAsset(name: "lock_open")
+  internal static let logoPro = ImageAsset(name: "logo-pro")
   internal static let logout = ImageAsset(name: "logout")
   internal static let love = ImageAsset(name: "love")
   internal static let mail = ImageAsset(name: "mail")
