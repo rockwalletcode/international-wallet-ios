@@ -35,8 +35,7 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
             guard let isDeposit else { return nil }
             
             let currencyFormat = Constant.currencyFormat
-            let balance = Amount(decimalAmount: proBalancesData?.getProBalance(code: $0.code) ?? 0,
-                                 isFiat: true, currency: $0)
+            let balance = Amount(decimalAmount: proBalancesData?.getProBalance(code: $0.code) ?? 0, isFiat: true, currency: $0)
             let fiatBalancePro = Amount(amount: balance, rate: $0.state?.currentRate).fiatDescription
             
             let tokenBalance = isDeposit ? proBalancesData?.getProBalance(code: $0.code) : $0.state?.balance?.tokenValue
