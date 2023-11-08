@@ -1346,14 +1346,14 @@ internal enum L10n {
     internal static let error = L10n.tr("Localizable", "ConfirmPaperPhrase.error", fallback: "The words entered do not match your Recovery Phrase. Please try again.")
     /// Confirm paper phrase view label.
     internal static let label = L10n.tr("Localizable", "ConfirmPaperPhrase.label", fallback: "To make sure everything was written down correctly, please enter the following words from your Recovery Phrase.")
-    /// Word label eg. Word #1, Word #2
-    internal static func word(_ p1: Int) -> String {
-      return L10n.tr("Localizable", "ConfirmPaperPhrase.word", p1, fallback: "Word %02i")
-    }
     internal enum Word {
       /// Word %1$s%2$s
       internal static func android(_ p1: UnsafePointer<CChar>, _ p2: UnsafePointer<CChar>) -> String {
         return L10n.tr("Localizable", "ConfirmPaperPhrase.word.android", p1, p2, fallback: "Word %1$s%2$s")
+      }
+      /// Word %02d
+      internal static func ios(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "ConfirmPaperPhrase.word.ios", p1, fallback: "Word %02d")
       }
     }
   }
@@ -3734,8 +3734,8 @@ internal enum L10n {
     internal static let copy = L10n.tr("Localizable", "URLHandling.copy", fallback: "Copy")
   }
   internal enum UnavailableScreen {
-    /// RockWallet Pro isn’t available for you at this point in time.
-    internal static let proDescription = L10n.tr("Localizable", "UnavailableScreen.ProDescription", fallback: "RockWallet Pro isn’t available for you at this point in time.")
+    /// RockWallet PRO isn’t available in your region. We'll notify you when this feature is released. You can still swap and buy digital assets with your RockWallet.
+    internal static let proDescription = L10n.tr("Localizable", "UnavailableScreen.ProDescription", fallback: "RockWallet PRO isn’t available in your region. We'll notify you when this feature is released. You can still swap and buy digital assets with your RockWallet.")
   }
   internal enum UnlockScreen {
     /// Disabled until date

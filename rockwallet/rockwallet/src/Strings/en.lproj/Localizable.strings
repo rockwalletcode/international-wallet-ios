@@ -1330,10 +1330,9 @@
 /* Confirm paper phrase view label. */
 "ConfirmPaperPhrase.label" = "To make sure everything was written down correctly, please enter the following words from your Recovery Phrase.";
 
-/* Word label eg. Word #1, Word #2 */
-"ConfirmPaperPhrase.word" = "Word %02i";
-
 "ConfirmPaperPhrase.word.android" = "Word %1$s%2$s";
+
+"ConfirmPaperPhrase.word.ios" = "Word %02d";
 
 "CreateGift.amountLabel" = "Choose amount ($USD)";
 
@@ -3673,7 +3672,7 @@
 
 "UDomains.invalid" = "Invalid address.";
 
-"UnavailableScreen.ProDescription" = "RockWallet Pro isn’t available for you at this point in time.";
+"UnavailableScreen.ProDescription" = "RockWallet PRO isn’t available in your region. We'll notify you when this feature is released. You can still swap and buy digital assets with your RockWallet.";
 
 /* Disabled until date */
 "UnlockScreen.disabled" = "Disabled until: %@";

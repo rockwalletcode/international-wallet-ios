@@ -474,7 +474,13 @@ class ApplicationController: Subscriber {
                 self?.coordinator?.showProOption()
                 return
             }
-            self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
+            
+            let hasKYCLevelTwo = UserManager.shared.profile?.status.hasKYCLevelTwo ?? false
+            if hasKYCLevelTwo {
+                self?.coordinator?.showComingSoon(reason: .rockWalletPro, restrictionReason: .state)
+            } else {
+                self?.coordinator?.showVerifyAccount(flow: .rockWalletPro)
+            }
         }
         
         homeScreen.didTapTransferFunds = { [weak self] proBalancesData in

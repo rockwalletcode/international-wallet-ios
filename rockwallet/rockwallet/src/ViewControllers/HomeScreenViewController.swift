@@ -37,7 +37,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private var isRedirectedUrl: Bool = false
     private var isPortalLink: Bool = false
     private var selectedSegment: HomeScreenViewController.SegmentControlCases = .rockWallet
-    private var proBalancesData: ProBalancesModel? = nil
+    private var proBalancesData: ProBalancesModel?
     
     private lazy var assetListTableView: AssetListTableView = {
         let view = AssetListTableView()
@@ -386,34 +386,23 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         }
     }
     
-    func handleSegmentView() {
-        segmentControl.isHidden = UserManager.shared.profile == nil
-    }
-    
     private func setSegment(_ segment: Int) {
         segmentControl.selectSegment(index: segment)
         selectedSegment = SegmentControlCases.allCases[segment]
         
-        guard let profile = UserManager.shared.profile else {
-            if selectedSegment == .rockWalletPro {
+        if selectedSegment == .rockWalletPro {
+            guard let profile = UserManager.shared.profile else {
                 tapSegment(isUserLogged: false)
                 segmentControl.selectSegment(index: 0)
+                return
             }
-            return
-        }
-        
-        guard profile.kycAccessRights.hasExchangeAccess else {
-            if selectedSegment == .rockWalletPro {
+            
+            guard profile.kycAccessRights.hasExchangeAccess else {
                 tapSegment(isUserLogged: true)
                 segmentControl.selectSegment(index: 0)
+                return
             }
-            return
-        }
-                
-        tabBarContainerView.isHidden = selectedSegment == .rockWalletPro
-        exchangeButtonsView.isHidden = selectedSegment == .rockWallet
-        
-        if selectedSegment == .rockWalletPro {
+            
             ProBalancesWorker().execute(requestData: ProBalancesRequestData()) { result in
                 switch result {
                 case .success(let data):
@@ -430,12 +419,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             updateTotalAssets()
         }
         
-        totalAssetsTitleLabel.text = selectedSegment == .rockWalletPro ?
-        L10n.Segment.rockWalletPro : "\(L10n.HomeScreen.wallet) \(L10n.HomeScreen.totalAssets.lowercased())"
+        updateViews(selectedSegment: selectedSegment)
+    }
+    
+    private func updateViews(selectedSegment: SegmentControlCases) {
+        tabBarContainerView.isHidden = selectedSegment == .rockWalletPro
+        exchangeButtonsView.isHidden = selectedSegment == .rockWallet
+        
+        logoImageView.image = selectedSegment == .rockWallet ? Asset.logoIcon.image : Asset.logoPro.image
+        totalAssetsTitleLabel.text = selectedSegment == .rockWallet ? "\(L10n.HomeScreen.wallet) \(L10n.HomeScreen.totalAssets.lowercased())" : L10n.Segment.rockWalletPro
         
         assetListTableView.showAddWalletsButton(selectedSegment == .rockWallet)
-        
         UserDefaults.isDarkMode = selectedSegment == .rockWalletPro
+        
         updateTheme()
     }
     
@@ -607,6 +603,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         let colors = Colors()
         colors.updateColors()
+        
+        updateThemeColors()
+    }
+    
+    private func updateThemeColors() {
+        view.backgroundColor = Colors.Background.two
+        tabBarContainerView.backgroundColor = Colors.Background.two
+        exchangeButtonsView.backgroundColor = Colors.Background.one
+        tabBar.unselectedItemTintColor = Colors.Text.two
+        totalAssetsTitleLabel.textColor = Colors.Text.three
+        totalAssetsAmountLabel.textColor = Colors.Text.three
+        assetListTableView.tableView.backgroundColor = Colors.Background.two
+        segmentControl.configure(with: .init())
     }
     
     // MARK: Actions
