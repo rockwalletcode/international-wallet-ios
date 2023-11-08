@@ -39,7 +39,7 @@ extension AssetSelectionDisplayable where Self: BaseCoordinator {
             let fiatBalancePro = Amount(amount: balance, rate: $0.state?.currentRate).fiatDescription
             let fiatBalance = String(format: currencyFormat,
                                      ExchangeFormatter.fiat.string(for: $0.state?.balance?.fiatValue) ?? "",
-                                     $0.code.uppercased())
+                                     Constant.usdCurrencyCode)
             let bottomRightText = isDeposit ? fiatBalancePro : fiatBalance
             
             let tokenBalance = isDeposit ? proBalancesData?.getProBalance(code: $0.code) : $0.state?.balance?.tokenValue
