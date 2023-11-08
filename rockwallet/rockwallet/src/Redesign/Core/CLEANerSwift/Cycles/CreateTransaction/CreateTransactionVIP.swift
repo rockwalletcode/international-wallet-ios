@@ -163,8 +163,7 @@ extension Interactor where Self: CreateTransactionViewActions,
     func getFees(viewAction: CreateTransactionModels.Fee.ViewAction, completion: ((Result<TransferFeeBasis, Error>) -> Void)?) {
         guard let from = viewAction.fromAmount,
               let fromAddress = from.currency.wallet?.defaultReceiveAddress,
-              let sender = dataStore?.sender,
-              from.fiatValue <= viewAction.limit ?? 0 else {
+              let sender = dataStore?.sender else {
             dataStore?.fromFeeBasis = nil
             dataStore?.senderValidationResult = nil
             

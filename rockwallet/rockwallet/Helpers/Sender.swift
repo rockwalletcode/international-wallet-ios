@@ -129,12 +129,14 @@ class Sender: Subscriber {
         } else if let balance = wallet.currency.state?.balance {
             guard amount <= balance else { return .insufficientFunds }
         }
+        
+        // TODO: refactor validation for deposit
         if wallet.feeCurrency != wallet.currency {
             if let feeBalance = wallet.feeCurrency.state?.balance, let feeBasis = feeBasis {
-                let feeAmount = Amount(cryptoAmount: feeBasis.fee, currency: wallet.feeCurrency)
-                if feeBalance.tokenValue < feeAmount.tokenValue {
-                    return .insufficientGas
-                }
+                let feeAmount = Amount(cryptoAmount: feeBasis.fee, currency: wallet.feeCurrency) 
+//                if feeBalance.tokenValue < feeAmount.tokenValue {
+//                    return .insufficientGas
+//                }
             }
         }
         return .ok

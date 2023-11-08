@@ -115,7 +115,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func confirm(viewAction: Models.Confirm.ViewAction) {
-        guard let from = dataStore?.amount?.tokenValue,
+        guard let from = dataStore?.fromAmount?.tokenValue,
         let isDeposit = dataStore?.isDeposit else { return }
         
         let formatter = ExchangeFormatter.current
@@ -127,7 +127,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         if !isDeposit {
             destinationAddress = dataStore?.proSupportedCurrencies?.first(where: { $0.currency == dataStore?.selectedCurrency?.code.lowercased() })?.address ?? ""
             createTransaction(viewAction: .init(currencies: dataStore?.currencies,
-                                                fromAmount: dataStore?.amount,
+                                                fromAmount: dataStore?.fromAmount,
                                                 proTransfer: dataStore?.selectedCurrency?.code,
                                                 address: destinationAddress), completion: { [weak self] error in
                 if let error {
