@@ -639,16 +639,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func launchExchangeTapped() {
-        let model = PopupViewModel(body: L10n.Exchange.popupText,
-                                   buttons: [.init(title: L10n.Button.gotIt,
-                                                   callback: { [weak self] in
-            self?.handleWebViewRedirects(isPortal: false)
-            self?.hidePopup()
-        })],
-                                   urlLink: .attributedText(prepareTermsTickboxText(attributedText: L10n.Popup.visitFaqText)),
-                                   url: Constant.supportLink)
-        
-        showInfoPopup(with: model, config: Presets.Popup.whiteCentered)
+        showPopup(isPortal: false)
     }
     
     private func prepareTermsTickboxText(attributedText: String) -> NSMutableAttributedString {
@@ -670,15 +661,20 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func portalLoginTapped() {
-        let model = PopupViewModel(title: .text(L10n.Buttons.portalLogin),
-                                   body: L10n.Exchange.popupText,
+        showPopup(isPortal: true)
+    }
+    
+    private func showPopup(isPortal: Bool) {
+        let model = PopupViewModel(body: L10n.Exchange.popupText,
                                    buttons: [.init(title: L10n.Button.gotIt,
                                                    callback: { [weak self] in
-            self?.handleWebViewRedirects(isPortal: true)
+            self?.handleWebViewRedirects(isPortal: isPortal)
             self?.hidePopup()
-        })])
+        })],
+                                   urlLink: .attributedText(prepareTermsTickboxText(attributedText: L10n.Popup.visitFaqText)),
+                                   url: Constant.supportLink)
         
-        showInfoPopup(with: model)
+        showInfoPopup(with: model, config: Presets.Popup.whiteCentered)
     }
     
     func getRedirectUri() {
