@@ -43,14 +43,17 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
     
     func tableView(_ tableView: UITableView, transferFundsCellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let model = dataSource?.itemIdentifier(for: indexPath) as? SwitchFromToHorizontalViewModel,
-              let cell: WrapperTableViewCell<SwitchFromToHorizontalView> = tableView.dequeueReusableCell(for: indexPath)
+              let cell: WrapperTableViewCell<SwitchFromToHorizontalView> = tableView.dequeueReusableCell(for: indexPath),
+              let isDeposit = dataStore?.isDeposit
         else {
             return super.tableView(tableView, cellForRowAt: indexPath)
         }
         
         cell.setup { view in
-            view.configure(with: .init())
-            view.setup(with: model)
+            if !isDeposit {
+                view.configure(with: .init())
+                view.setup(with: model)
+            }
             
             view.didTapSwitchPlacesButton = { [weak self] in
                 self?.interactor?.switchPlaces(viewAction: .init(isDeposit: self?.dataStore?.isDeposit))

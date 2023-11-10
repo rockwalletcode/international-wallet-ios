@@ -201,6 +201,8 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         Currencies.shared.reloadCurrencies()
         
+        getProBalance()
+        
         coreSystem.refreshWallet { [weak self] in
             self?.assetListTableView.reload()
         }
@@ -403,23 +405,27 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                 return
             }
             
-            ProBalancesWorker().execute(requestData: ProBalancesRequestData()) { result in
-                switch result {
-                case .success(let data):
-                    guard let data else { return }
-                    self.updateProBalance(data: data)
-                    self.assetListTableView.proBalancesData = data
-                    self.proBalancesData = data
-                    
-                case .failure(let error):
-                    self.showErrorMessage(error.localizedDescription)
-                }
-            }
+            getProBalance()
         } else {
             updateTotalAssets()
         }
         
         updateViews(selectedSegment: selectedSegment)
+    }
+    
+    func getProBalance() {
+        ProBalancesWorker().execute(requestData: ProBalancesRequestData()) { result in
+            switch result {
+            case .success(let data):
+                guard let data else { return }
+                self.updateProBalance(data: data)
+                self.assetListTableView.proBalancesData = data
+                self.proBalancesData = data
+                
+            case .failure(let error):
+                self.showErrorMessage(error.localizedDescription)
+            }
+        }
     }
     
     private func updateViews(selectedSegment: SegmentControlCases) {
