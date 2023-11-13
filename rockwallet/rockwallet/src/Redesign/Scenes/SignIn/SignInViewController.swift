@@ -102,12 +102,35 @@ class SignInViewController: BaseTableViewController<AccountCoordinator,
         case .forgotPassword:
             cell = self.tableView(tableView, multipleButtonsCellForRowAt: indexPath)
             
+        case .termsDescription, .terms, .termsPro:
+            cell = self.tableView(tableView, descriptionLabelCellForRowAt: indexPath)
+            
         default:
             cell = super.tableView(tableView, cellForRowAt: indexPath)
         }
         
         cell.setBackground(with: Presets.Background.transparent)
         cell.setupCustomMargins(vertical: .huge, horizontal: .large)
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, descriptionLabelCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let model = dataSource?.itemIdentifier(for: indexPath) as? LabelViewModel,
+              let cell: WrapperTableViewCell<FELabel> = tableView.dequeueReusableCell(for: indexPath)
+        else {
+            return super.tableView(tableView, cellForRowAt: indexPath)
+        }
+        
+        cell.setup { view in
+            view.configure(with: .init(font: Fonts.Body.two, textColor: Colors.Text.two, textAlignment: .center, isUserInteractionEnabled: true))
+            view.setup(with: model)
+            
+            view.didTapLink = { [weak self] in
+                let url = Constant.termsAndConditions
+                self?.coordinator?.showInWebView(urlString: url, title: L10n.About.terms)
+            }
+        }
         
         return cell
     }

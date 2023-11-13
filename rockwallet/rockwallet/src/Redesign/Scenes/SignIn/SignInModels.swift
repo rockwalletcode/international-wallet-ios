@@ -17,6 +17,9 @@ enum SignInModels {
         case email
         case password
         case forgotPassword
+        case termsDescription
+        case terms
+        case termsPro
         
         var header: AccessoryType? { return nil }
         var footer: AccessoryType? { return nil }
