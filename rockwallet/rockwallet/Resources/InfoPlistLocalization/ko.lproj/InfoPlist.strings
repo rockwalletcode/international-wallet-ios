@@ -16,6 +16,8 @@
 /* Terms of Use button label */
 "About.terms" = "이용 약관";
 
+"About.TermsAndConditionsPro" = "RockWallet PRO Terms and Conditions";
+
 /* About screen title */
 "About.title" = "관련 사항";
 
@@ -1013,6 +1015,8 @@
 
 "Buy.BuyLimits.description.android" = "Minimum for Buy is %@ per transaction and your weekly limit is %@.";
 
+"Buy.BuyLimits.description.lifetime" = "Minimum for Buy is %@ %@ per transaction and you have a lifetime limit of %@ %@";
+
 "Buy.BuyLimits.description.lifetime.android" = "Minimum for Buy is %@ per transaction and you have a lifetime limit of %@.";
 
 "Buy.BuyLimits.Increase" = "Click on increase your limits button below if you would like to further increase your limits.";
@@ -1332,7 +1336,7 @@
 
 "ConfirmPaperPhrase.word.android" = "Word %1$s%2$s";
 
-"ConfirmPaperPhrase.word.ios" = "Word %02d";
+"ConfirmPaperPhrase.word.ios" = "단어 #%02d";
 
 "CreateGift.amountLabel" = "금액 선택 ($ USD)";
 

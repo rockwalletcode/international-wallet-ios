@@ -577,6 +577,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func updateProBalance(data: ProBalancesModel) {
+        guard selectedSegment == .rockWalletPro else { return }
         let fiatTotal: Decimal = Store.state.wallets.values.map {
             let proBalance = data.getProBalance(code: $0.currency.code)
             let balance = Amount(decimalAmount: proBalance, isFiat: true, currency: $0.currency)
