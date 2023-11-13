@@ -256,6 +256,8 @@ internal enum L10n {
     internal static let submitPhoto = L10n.tr("Localizable", "Account.SubmitPhoto", fallback: "Submit your photo")
     /// Swap and buy limit per day description label
     internal static let swapAndBuyLimit = L10n.tr("Localizable", "Account.SwapAndBuyLimit", fallback: "Swap limit: $20,000 USD/day\nBuy limit: $500 USD/day")
+    /// By Signing in, you agree to the following:
+    internal static let termsDescription = L10n.tr("Localizable", "Account.TermsDescription", fallback: "By Signing in, you agree to the following:")
     /// I agree to RockWallet’s
     internal static let termsTickbox = L10n.tr("Localizable", "Account.TermsTickbox", fallback: "I agree to RockWallet’s")
     /// I agree to RockWallet PRO’s

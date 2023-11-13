@@ -304,6 +304,8 @@
 /* Swap and buy limit per day description label */
 "Account.SwapAndBuyLimit" = "Swap limit: $20,000 USD/day\nBuy limit: $500 USD/day";
 
+"Account.TermsDescription" = "By Signing in, you agree to the following:";
+
 "Account.TermsTickbox" = "I agree to RockWallet’s";
 
 "Account.TermsTickboxPro" = "I agree to RockWallet PRO’s";
