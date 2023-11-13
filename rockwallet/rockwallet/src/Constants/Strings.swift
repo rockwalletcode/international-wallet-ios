@@ -39,6 +39,8 @@ internal enum L10n {
     internal static let reddit = L10n.tr("Localizable", "About.reddit", fallback: "Reddit")
     /// Terms of Use button label
     internal static let terms = L10n.tr("Localizable", "About.terms", fallback: "Terms And Conditions")
+    /// RockWallet PRO Terms and Conditions
+    internal static let termsAndConditionsPro = L10n.tr("Localizable", "About.TermsAndConditionsPro", fallback: "RockWallet PRO Terms and Conditions")
     /// About screen title
     internal static let title = L10n.tr("Localizable", "About.title", fallback: "About")
     /// About screen twitter label
@@ -1204,6 +1206,10 @@ internal enum L10n {
         internal static func android(_ p1: Any, _ p2: Any) -> String {
           return L10n.tr("Localizable", "Buy.BuyLimits.description.android", String(describing: p1), String(describing: p2), fallback: "Minimum for Buy is %@ per transaction and your weekly limit is %@.")
         }
+        /// Minimum for Buy is %@ %@ per transaction and you have a lifetime limit of %@ %@
+        internal static func lifetime(_ p1: Any, _ p2: Any, _ p3: Any, _ p4: Any) -> String {
+          return L10n.tr("Localizable", "Buy.BuyLimits.description.lifetime", String(describing: p1), String(describing: p2), String(describing: p3), String(describing: p4), fallback: "Minimum for Buy is %@ %@ per transaction and you have a lifetime limit of %@ %@")
+        }
         internal enum Lifetime {
           /// Minimum for Buy is %@ per transaction and you have a lifetime limit of %@.
           internal static func android(_ p1: Any, _ p2: Any) -> String {
@@ -1351,9 +1357,9 @@ internal enum L10n {
       internal static func android(_ p1: UnsafePointer<CChar>, _ p2: UnsafePointer<CChar>) -> String {
         return L10n.tr("Localizable", "ConfirmPaperPhrase.word.android", p1, p2, fallback: "Word %1$s%2$s")
       }
-      /// Word %02d
+      /// Word #%02d
       internal static func ios(_ p1: Int) -> String {
-        return L10n.tr("Localizable", "ConfirmPaperPhrase.word.ios", p1, fallback: "Word %02d")
+        return L10n.tr("Localizable", "ConfirmPaperPhrase.word.ios", p1, fallback: "Word #%02d")
       }
     }
   }

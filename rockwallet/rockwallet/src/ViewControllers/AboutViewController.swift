@@ -61,6 +61,19 @@ class AboutViewController: UIViewController {
         return button
     }()
     
+    private lazy var termsPro: UIButton = {
+        let button = UIButton()
+        let attributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.underlineStyle: 1,
+        NSAttributedString.Key.font: Fonts.Subtitle.two,
+        NSAttributedString.Key.foregroundColor: Colors.secondary]
+        
+        let attributedString = NSMutableAttributedString(string: L10n.About.termsAndConditionsPro, attributes: attributes)
+        button.setAttributedTitle(attributedString, for: .normal)
+        
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,21 +93,31 @@ class AboutViewController: UIViewController {
         view.addSubview(termsAndPrivacyStack)
         termsAndPrivacyStack.addArrangedSubview(terms)
         termsAndPrivacyStack.addArrangedSubview(privacy)
+        view.addSubview(termsPro)
         view.addSubview(aboutFooterView)
     }
 
     private func addConstraints() {
-        aboutHeaderView.constrain([
-            aboutHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ViewSizes.extraExtraHuge.rawValue),
-            aboutHeaderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            aboutHeaderView.widthAnchor.constraint(equalToConstant: 213)])
-        termsAndPrivacyStack.constrain([
-            termsAndPrivacyStack.topAnchor.constraint(equalTo: aboutHeaderView.bottomAnchor, constant: Margins.extraLarge.rawValue * 2),
-            termsAndPrivacyStack.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
-        aboutFooterView.constrain([
-            aboutFooterView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.huge.rawValue),
-            aboutFooterView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.huge.rawValue),
-            aboutFooterView.topAnchor.constraint(equalTo: privacy.bottomAnchor, constant: Margins.extraLarge.rawValue * 2)])
+        aboutHeaderView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(ViewSizes.extraExtraHuge.rawValue * 2)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(213)
+        }
+        
+        termsAndPrivacyStack.snp.makeConstraints { make in
+            make.top.equalTo(aboutHeaderView.snp.bottom).offset(Margins.extraLarge.rawValue)
+            make.centerX.equalToSuperview()
+        }
+        
+        termsPro.snp.makeConstraints { make in
+            make.top.equalTo(termsAndPrivacyStack.snp.bottom).offset(Margins.small.rawValue)
+            make.leading.trailing.equalToSuperview().inset(Margins.medium.rawValue)
+        }
+        
+        aboutFooterView.snp.makeConstraints { make in
+            make.top.equalTo(termsPro.snp.bottom).offset(Margins.medium.rawValue)
+            make.leading.trailing.equalToSuperview().inset(Margins.huge.rawValue)
+        }
     }
     
     private func setActions() {
@@ -103,6 +126,10 @@ class AboutViewController: UIViewController {
         }
         
         terms.tap = { [weak self] in
+            self?.presentURL(string: Constant.termsAndConditions, title: self?.terms.titleLabel?.text ?? "")
+        }
+        
+        termsPro.tap = { [weak self] in
             self?.presentURL(string: Constant.termsAndConditions, title: self?.terms.titleLabel?.text ?? "")
         }
     }
