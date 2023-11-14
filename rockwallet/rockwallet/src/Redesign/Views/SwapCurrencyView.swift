@@ -265,8 +265,6 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         mainStack.addArrangedSubview(balanceLabel)
         
         decidePlaceholder()
-        
-        fiatStack.isHidden = true
     }
     
     @objc func fiatAmountDidChange(_ textField: UITextField) {

@@ -77,17 +77,20 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func setAmount(viewAction: AssetModels.Asset.ViewAction) {
+        guard let currency = dataStore?.selectedCurrency,
+              let currentRate = currency.state?.currentRate else {
+            return
+        }
+        
         let to: Amount
+        prepareFees(viewAction: .init(), completion: {})
         
         if let value = viewAction.fromTokenValue,
-           let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue,
-           let currency = dataStore?.selectedCurrency {
-            prepareFees(viewAction: .init(), completion: {})
-            to = .init(decimalAmount: crypto, isFiat: false, currency: currency)
+           let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue {
+            to = .init(decimalAmount: crypto, isFiat: false, currency: currency, exchangeRate: Decimal(currentRate.rate))
         } else if let value = viewAction.fromFiatValue,
-                  let fiat = ExchangeFormatter.current.number(from: value)?.decimalValue,
-                  let currency = dataStore?.selectedCurrency {
-            to = .init(decimalAmount: fiat, isFiat: true, currency: currency)
+                  let fiat = ExchangeFormatter.current.number(from: value)?.decimalValue {
+            to = .init(decimalAmount: fiat, isFiat: true, currency: currency, exchangeRate: Decimal(currentRate.rate))
         } else {
             setPresentAmountData(handleErrors: false) // TODO: hundle errors for deposit balances
             return
