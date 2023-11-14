@@ -93,21 +93,22 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
         guard let from = actionResponse.fromAmount,
               let fromCurrency = actionResponse.fromCurrency,
               let isDeposit = actionResponse.isDeposit,
-              let fromFee =  actionResponse.fromFee else { return }
+              let fromFee = actionResponse.fromFee else { return }
         
         let fromTitle = !isDeposit ? "\(L10n.Exchange.sendFrom) \(L10n.About.AppName.android)" : "\(L10n.Exchange.sendFrom) \(L10n.Segment.rockWalletPro)"
         let toTitle = !isDeposit ? L10n.Segment.rockWalletPro : L10n.About.AppName.android
         let feeTitle = !isDeposit ? L10n.Exchange.estimatedNetworkFee : L10n.Exchange.withdrawalFee
         
-        let toFeeText = String(format: "\(Constant.currencyFormat)",
-                               ExchangeFormatter.current.string(for: actionResponse.fromFee?.tokenValue.doubleValue) ?? "",
+        let currencyFormat = isDeposit ? "-\(Constant.currencyFormat)" : "\(Constant.currencyFormat)"
+        let toFeeText = String(format: currencyFormat,
+                               ExchangeFormatter.current.string(for: fromFee.tokenValue.doubleValue) ?? "",
                                fromCurrency.code)
         
         let fromValue = String(format: Constant.currencyFormat,
                                    ExchangeFormatter.current.string(for: from.tokenValue) ?? "",
                                    fromCurrency.code)
         
-        let totalAmount = from + fromFee
+        let totalAmount = isDeposit ? from - fromFee : from
         let totalCostText = String(format: Constant.currencyFormat,
                                    ExchangeFormatter.current.string(for: totalAmount.tokenValue) ?? "",
                                    fromCurrency.code)
