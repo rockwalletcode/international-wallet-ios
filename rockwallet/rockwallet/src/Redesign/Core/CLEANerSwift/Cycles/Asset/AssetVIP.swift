@@ -137,7 +137,7 @@ extension Presenter where Self: AssetActionResponses,
         guard let from = actionResponse.fromAmount else { return true }
         
         let quote = actionResponse.quote
-        var balance = from.currency.state?.balance
+        let balance = actionResponse.isDeposit ? actionResponse.balanceAmount : from.currency.state?.balance
         let fromCode = from.currency.code.uppercased()
         let toCode = Constant.usdCurrencyCode
         var senderValidationResult = actionResponse.senderValidationResult ?? .ok
@@ -163,10 +163,6 @@ extension Presenter where Self: AssetActionResponses,
             return false
         } else if !actionResponse.handleErrors {
             return false
-        }
-        
-        if actionResponse.isDeposit {
-            balance = actionResponse.balanceAmount
         }
         
         if let feeCurrency = actionResponse.fromFeeCurrency,
