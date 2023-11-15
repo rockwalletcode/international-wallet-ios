@@ -137,7 +137,7 @@ extension Presenter where Self: AssetActionResponses,
         guard let from = actionResponse.fromAmount else { return true }
         
         let quote = actionResponse.quote
-        let balance = from.currency.state?.balance
+        let balance = actionResponse.isDeposit ? actionResponse.balanceAmount : from.currency.state?.balance
         let fromCode = from.currency.code.uppercased()
         let toCode = Constant.usdCurrencyCode
         var senderValidationResult = actionResponse.senderValidationResult ?? .ok
@@ -169,16 +169,25 @@ extension Presenter where Self: AssetActionResponses,
            let feeCurrencyWalletBalance = feeCurrency.wallet?.balance,
            let fee = actionResponse.fromFeeBasis?.fee {
             let feeAmount = Amount(cryptoAmount: fee, currency: feeCurrency)
-
+            
             if let balance, from > balance {
                 senderValidationResult = .insufficientFunds
-            // ETH feeBasis on insufficient gas includes from + feeAmount
+                error = ExchangeErrors.insufficientFunds(currency: fromCode)
+                // ETH feeBasis on insufficient gas includes from + feeAmount
             } else if from.currency.isERC20Token || from.currency.isEthereum,
                       feeAmount > feeCurrencyWalletBalance {
                 senderValidationResult = .insufficientGas
             } else if from.currency == feeAmount.currency, let balance, from + feeAmount > balance {
                 senderValidationResult = .insufficientGas
             }
+        }
+        
+        guard !isTransfer else { // TODO: Update this if we need some other error messages for transfer funds
+            if error != nil {
+                presentError(actionResponse: .init(error: error))
+            }
+            
+            return error != nil
         }
         
         if actionResponse.fromFeeBasis?.fee == nil && (isSwap || isSell) {

@@ -57,13 +57,10 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                                           balanceTitle: L10n.Exchange.rockWalletBalance,
                                                           balance: actionResponse.balanceValue)
         
-        let continueEnabled = !handleError(actionResponse: actionResponse) && actionResponse.handleErrors
+        let continueEnabled = !handleError(actionResponse: actionResponse)
         
         viewController?.displayAmount(responseDisplay: .init(swapCurrencyViewModel: swapCurrencyViewModel,
                                                              continueEnabled: continueEnabled))
-        
-        guard actionResponse.handleErrors else { return }
-        _ = handleError(actionResponse: actionResponse)
     }
     
     func presentSwitchPlaces(actionResponse: Models.SwitchPlaces.ActionResponse) {
@@ -104,6 +101,11 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                ExchangeFormatter.current.string(for: fromFee.tokenValue.doubleValue) ?? "",
                                fromCurrency.code)
         
+        let fromText = String(format: "\(Constant.currencyFormat) (\(Constant.currencyFormat))",
+                              ExchangeFormatter.current.string(for: from.tokenValue.doubleValue) ?? "",
+                              from.currency.code,
+                              ExchangeFormatter.fiat.string(for: from.fiatValue.doubleValue) ?? "",
+                              Constant.usdCurrencyCode)
         let fromValue = String(format: Constant.currencyFormat,
                                    ExchangeFormatter.current.string(for: from.tokenValue) ?? "",
                                    fromCurrency.code)
@@ -113,7 +115,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                    ExchangeFormatter.current.string(for: totalAmount.tokenValue) ?? "",
                                    fromCurrency.code)
         
-        let wrappedViewModel: SwapConfirmationViewModel = .init(from: .init(title: .text(fromTitle), value: .text(fromValue)),
+        let wrappedViewModel: SwapConfirmationViewModel = .init(from: .init(title: .text(fromTitle), value: .text(fromText)),
                                                                 to: .init(title: .text(L10n.TransactionDetails.addressToHeader), value: .text(toTitle)),
                                                                 rate: .init(title: .text(L10n.Confirmation.amountLabel), value: .text(fromValue)),
                                                                 receivingFee: .init(title: .text(feeTitle), value: .text(toFeeText)),
