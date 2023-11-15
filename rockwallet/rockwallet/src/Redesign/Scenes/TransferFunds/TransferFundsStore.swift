@@ -66,13 +66,15 @@ class TransferFundsStore: NSObject, BaseDataStore, TransferFundsDataStore {
         return .init(cryptoAmount: value.fee, currency: currency)
     }
     
-    var toFeeAmount: Amount? {
-        guard let value = quote?.toFee,
-              let fee = ExchangeFormatter.current.string(for: value.fee),
-              let currency = currencies.first(where: { $0.code == value.currency.uppercased() }) else {
-            return nil
+    var isFormValid: Bool {
+        guard let amount = fromAmount,
+              amount.tokenValue > 0,
+              fromFeeAmount != nil,
+              selectedCurrency != nil else {
+            return false
         }
-        return .init(tokenString: fee, currency: currency)
+        
+        return true
     }
 
     // MARK: - Aditional helpers

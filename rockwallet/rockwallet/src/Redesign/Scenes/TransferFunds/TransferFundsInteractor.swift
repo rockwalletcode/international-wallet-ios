@@ -86,13 +86,13 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         prepareFees(viewAction: .init(), completion: {})
         
         if let value = viewAction.fromTokenValue,
-           let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue {
+                  let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue {
             to = .init(decimalAmount: crypto, isFiat: false, currency: currency, exchangeRate: Decimal(currentRate.rate))
         } else if let value = viewAction.fromFiatValue,
                   let fiat = ExchangeFormatter.current.number(from: value)?.decimalValue {
             to = .init(decimalAmount: fiat, isFiat: true, currency: currency, exchangeRate: Decimal(currentRate.rate))
         } else {
-            setPresentAmountData(handleErrors: false) // TODO: hundle errors for deposit balances
+            setPresentAmountData(handleErrors: true)
             return
         }
         
@@ -113,7 +113,6 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                                                              toAmount: dataStore?.toAmount,
                                                              quote: dataStore?.quote,
                                                              fromFee: dataStore?.fromFeeAmount,
-                                                             toFee: dataStore?.toFeeAmount,
                                                              isDeposit: dataStore?.isDeposit))
     }
     
@@ -203,7 +202,17 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     private func setPresentAmountData(handleErrors: Bool) {
+        guard let currency = dataStore?.selectedCurrency,
+              let isDeposit = dataStore?.isDeposit else {
+            return
+        }
+        
         let isNotZero = !(dataStore?.fromAmount?.tokenValue ?? 0).isZero
+        
+        var balance: Amount?
+        if isDeposit {
+            balance = Amount(decimalAmount: dataStore?.proBalancesData?.getProBalance(code: currency.code) ?? 0, isFiat: true, currency: currency)
+        }
         
         presenter?.presentAmount(actionResponse: .init(fromAmount: dataStore?.fromAmount,
                                                        senderValidationResult: dataStore?.senderValidationResult,
@@ -212,6 +221,8 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                                                        fromFeeCurrency: dataStore?.sender?.wallet.feeCurrency,
                                                        quote: dataStore?.quote,
                                                        balanceValue: dataStore?.balance,
+                                                       balanceAmount: balance,
+                                                       isDeposit: isDeposit,
                                                        handleErrors: handleErrors && isNotZero))
     }
 }

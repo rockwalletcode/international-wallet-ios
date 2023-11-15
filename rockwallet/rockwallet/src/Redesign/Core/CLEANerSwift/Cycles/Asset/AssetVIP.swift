@@ -137,7 +137,7 @@ extension Presenter where Self: AssetActionResponses,
         guard let from = actionResponse.fromAmount else { return true }
         
         let quote = actionResponse.quote
-        let balance = from.currency.state?.balance
+        var balance = from.currency.state?.balance
         let fromCode = from.currency.code.uppercased()
         let toCode = Constant.usdCurrencyCode
         var senderValidationResult = actionResponse.senderValidationResult ?? .ok
@@ -165,6 +165,10 @@ extension Presenter where Self: AssetActionResponses,
             return false
         }
         
+        if actionResponse.isDeposit {
+            balance = actionResponse.balanceAmount
+        }
+        
         if let feeCurrency = actionResponse.fromFeeCurrency,
            let feeCurrencyWalletBalance = feeCurrency.wallet?.balance,
            let fee = actionResponse.fromFeeBasis?.fee {
@@ -172,6 +176,7 @@ extension Presenter where Self: AssetActionResponses,
 
             if let balance, from > balance {
                 senderValidationResult = .insufficientFunds
+                error = ExchangeErrors.insufficientFunds(currency: fromCode)
             // ETH feeBasis on insufficient gas includes from + feeAmount
             } else if from.currency.isERC20Token || from.currency.isEthereum,
                       feeAmount > feeCurrencyWalletBalance {
@@ -181,104 +186,108 @@ extension Presenter where Self: AssetActionResponses,
             }
         }
         
-        if actionResponse.fromFeeBasis?.fee == nil && (isSwap || isSell) {
-            switch senderValidationResult {
-            case .insufficientFunds:
+        if !isTransfer { // TODO: Update this if we need some other error messages for transfer funds
+            if actionResponse.fromFeeBasis?.fee == nil && (isSwap || isSell) {
+                switch senderValidationResult {
+                case .insufficientFunds:
+                    error = ExchangeErrors.insufficientFunds(currency: fromCode)
+                    
+                default:
+                    error = ExchangeErrors.noFees
+                }
+                
+            } else if case .insufficientFunds = senderValidationResult {
                 error = ExchangeErrors.insufficientFunds(currency: fromCode)
                 
-            default:
-                error = ExchangeErrors.noFees
-            }
-            
-        } else if case .insufficientFunds = senderValidationResult {
-            error = ExchangeErrors.insufficientFunds(currency: fromCode)
-            
-        } else if case .insufficientGas = senderValidationResult {
-            let value = actionResponse.fromFeeAmount?.tokenValue ?? quote?.fromFee?.fee ?? 0
-            
-            if from.currency.isERC20Token {
-                error = ExchangeErrors.insufficientGasERC20(currency: fromCode, balance: value)
+            } else if case .insufficientGas = senderValidationResult {
+                let value = actionResponse.fromFeeAmount?.tokenValue ?? quote?.fromFee?.fee ?? 0
                 
-            } else if actionResponse.fromFeeBasis?.fee != nil {
-                error = ExchangeErrors.balanceTooLow(balance: value, currency: fromCode)
-                
-            }
-            
-        } else if quote == nil {
-            error = ExchangeErrors.noQuote(from: fromCode, to: toCode)
-            
-        } else if ExchangeManager.shared.canSwap(from.currency) == false && isSwap {
-            error = ExchangeErrors.pendingSwap
-        } else if XRPBalanceValidator.validate(balance: from.currency.state?.balance, amount: from, currency: from.currency) != nil {
-            error = ExchangeErrors.xrpErrorMessage
-        } else {
-            let fiat = from.fiatValue.round(to: 2)
-            let token = from.tokenValue
-            
-            let minimumValue = quote?.minimumValue ?? 0
-            let minimumUsd = quote?.minimumUsd.round(to: 2) ?? 0
-            
-            var reason: BaseInfoModels.FailureReason = .swap
-            let limits = quote?.currentExchangeLimits?.sorted(by: { $0.interval?.priorityOrder ?? 0 < $1.interval?.priorityOrder ?? 0 }) ?? []
-            
-            if isBuy && actionResponse.type == .card {
-                reason = .buyCard(nil)
-            } else if isBuy && actionResponse.type == .ach {
-                reason = .buyAch(nil, nil)
-            } else if isSell {
-                reason = .sell
-            } else if isSwap {
-                reason = .swap
-            }
-            
-            switch fiat {
-            case _ where fiat <= 0:
-                // Fiat value is or below 0
-                
-                error = nil
-                
-            case _ where !limits.filter({ fiat > $0.limit ?? 0 }).isEmpty:
-                // Over limit
-                
-                let limit = limits.first(where: { fiat > $0.limit ?? 0 })
-                
-                error = ExchangeErrors.tooHigh(interval: limit?.interval ?? .unknown, amount: limit?.limit ?? 0, currency: toCode, reason: reason)
-                
-            case _ where fiat < minimumUsd:
-                // Value below minimum Fiat
-                
-                error = ExchangeErrors.tooLow(amount: minimumUsd, currency: toCode, reason: reason)
-                
-            case _ where token < minimumValue && fiat >= minimumUsd:
-                // Value below minimum crypto and fiat is equal or above minimum because of the fees
-                
-                if isSwap {
-                    error = ExchangeErrors.networkFee
+                if from.currency.isERC20Token {
+                    error = ExchangeErrors.insufficientGasERC20(currency: fromCode, balance: value)
+                    
+                } else if actionResponse.fromFeeBasis?.fee != nil {
+                    error = ExchangeErrors.balanceTooLow(balance: value, currency: fromCode)
+                    
                 }
                 
-            case _ where token < minimumValue:
-                // Value below minimum crypto
+            } else if quote == nil {
+                error = ExchangeErrors.noQuote(from: fromCode, to: toCode)
                 
-                if isSwap {
-                    error = ExchangeErrors.tooLow(amount: minimumValue, currency: toCode, reason: reason)
+            } else if ExchangeManager.shared.canSwap(from.currency) == false && isSwap {
+                error = ExchangeErrors.pendingSwap
+            } else if XRPBalanceValidator.validate(balance: from.currency.state?.balance, amount: from, currency: from.currency) != nil {
+                error = ExchangeErrors.xrpErrorMessage
+            } else {
+                let fiat = from.fiatValue.round(to: 2)
+                let token = from.tokenValue
+                
+                let minimumValue = quote?.minimumValue ?? 0
+                let minimumUsd = quote?.minimumUsd.round(to: 2) ?? 0
+                
+                var reason: BaseInfoModels.FailureReason = .swap
+                let limits = quote?.currentExchangeLimits?.sorted(by: { $0.interval?.priorityOrder ?? 0 < $1.interval?.priorityOrder ?? 0 }) ?? []
+                
+                if isBuy && actionResponse.type == .card {
+                    reason = .buyCard(nil)
+                } else if isBuy && actionResponse.type == .ach {
+                    reason = .buyAch(nil, nil)
+                } else if isSell {
+                    reason = .sell
+                } else if isSwap {
+                    reason = .swap
                 }
                 
-            case _ where fiat > (balance?.fiatValue ?? 0):
-                // Value higher than balance
-                
-                if isSell || isSwap {
-                    let value = actionResponse.fromFeeAmount?.tokenValue ?? actionResponse.quote?.fromFee?.fee ?? 0
-                    error = ExchangeErrors.balanceTooLow(balance: value, currency: actionResponse.fromFeeAmount?.currency.code.uppercased() ?? "")
+                switch fiat {
+                case _ where fiat <= 0:
+                    // Fiat value is or below 0
+                    
+                    error = nil
+                    
+                case _ where !limits.filter({ fiat > $0.limit ?? 0 }).isEmpty:
+                    // Over limit
+                    
+                    let limit = limits.first(where: { fiat > $0.limit ?? 0 })
+                    
+                    error = ExchangeErrors.tooHigh(interval: limit?.interval ?? .unknown, amount: limit?.limit ?? 0, currency: toCode, reason: reason)
+                    
+                case _ where fiat < minimumUsd:
+                    // Value below minimum Fiat
+                    
+                    error = ExchangeErrors.tooLow(amount: minimumUsd, currency: toCode, reason: reason)
+                    
+                case _ where token < minimumValue && fiat >= minimumUsd:
+                    // Value below minimum crypto and fiat is equal or above minimum because of the fees
+                    
+                    if isSwap {
+                        error = ExchangeErrors.networkFee
+                    }
+                    
+                case _ where token < minimumValue:
+                    // Value below minimum crypto
+                    
+                    if isSwap {
+                        error = ExchangeErrors.tooLow(amount: minimumValue, currency: toCode, reason: reason)
+                    }
+                    
+                case _ where fiat > (balance?.fiatValue ?? 0):
+                    // Value higher than balance
+                    
+                    if isSell || isSwap {
+                        let value = actionResponse.fromFeeAmount?.tokenValue ?? actionResponse.quote?.fromFee?.fee ?? 0
+                        error = ExchangeErrors.balanceTooLow(balance: value, currency: actionResponse.fromFeeAmount?.currency.code.uppercased() ?? "")
+                    }
+                    
+                default:
+                    // Remove error
+                    
+                    error = nil
                 }
-                
-            default:
-                // Remove error
-                
-                error = nil
             }
         }
         
-        presentError(actionResponse: .init(error: error))
+        if error != nil {
+            presentError(actionResponse: .init(error: error))
+        }
         
         return error != nil
     }
