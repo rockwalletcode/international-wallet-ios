@@ -557,6 +557,7 @@
 		C4842F1529939F4100915BA4 /* UnlinkWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4842F1429939F4100915BA4 /* UnlinkWalletViewController.swift */; };
 		C489928229F7FF43005A987C /* PaymailAddressWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C489928129F7FF43005A987C /* PaymailAddressWorker.swift */; };
 		C489928429F80105005A987C /* PaymailEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C489928329F80105005A987C /* PaymailEndpoints.swift */; };
+		C48A65722B06521B0021AB87 /* WithdrawalFixedFees.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48A65712B06521B0021AB87 /* WithdrawalFixedFees.swift */; };
 		C491ABF828A6395D00E79954 /* OrderPreviewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491ABF128A6395C00E79954 /* OrderPreviewStore.swift */; };
 		C491ABF928A6395D00E79954 /* OrderPreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491ABF228A6395C00E79954 /* OrderPreviewPresenter.swift */; };
 		C491ABFA28A6395D00E79954 /* OrderPreviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491ABF328A6395C00E79954 /* OrderPreviewModels.swift */; };
@@ -1416,6 +1417,7 @@
 		C4842F1429939F4100915BA4 /* UnlinkWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlinkWalletViewController.swift; sourceTree = "<group>"; };
 		C489928129F7FF43005A987C /* PaymailAddressWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailAddressWorker.swift; sourceTree = "<group>"; };
 		C489928329F80105005A987C /* PaymailEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailEndpoints.swift; sourceTree = "<group>"; };
+		C48A65712B06521B0021AB87 /* WithdrawalFixedFees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalFixedFees.swift; sourceTree = "<group>"; };
 		C491ABF128A6395C00E79954 /* OrderPreviewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPreviewStore.swift; sourceTree = "<group>"; };
 		C491ABF228A6395C00E79954 /* OrderPreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPreviewPresenter.swift; sourceTree = "<group>"; };
 		C491ABF328A6395C00E79954 /* OrderPreviewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPreviewModels.swift; sourceTree = "<group>"; };
@@ -3142,14 +3144,13 @@
 		C41E9E2C2ABC2D0000AB8170 /* TransferFunds */ = {
 			isa = PBXGroup;
 			children = (
+				C48A65702B0651D20021AB87 /* Workers */,
 				C41E9E2E2ABC311600AB8170 /* TransferFundsStore.swift */,
 				C41E9E2F2ABC311600AB8170 /* TransferFundsPresenter.swift */,
 				C41E9E302ABC311600AB8170 /* TransferFundsModels.swift */,
 				C41E9E312ABC311600AB8170 /* TransferFundsVIP.swift */,
 				C41E9E322ABC311600AB8170 /* TransferFundsViewController.swift */,
 				C41E9E332ABC311600AB8170 /* TransferFundsInteractor.swift */,
-				C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */,
-				C4D74C772AE900DE0055F557 /* WithdrawalWorker.swift */,
 			);
 			path = TransferFunds;
 			sourceTree = "<group>";
@@ -3193,6 +3194,16 @@
 				7E5B305A28A67FC60065D2D8 /* SwapInfoViewController.swift */,
 			);
 			path = SwapInfo;
+			sourceTree = "<group>";
+		};
+		C48A65702B0651D20021AB87 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				C46410942AC570A1001F78FD /* ProSupportedCurrencies.swift */,
+				C4D74C772AE900DE0055F557 /* WithdrawalWorker.swift */,
+				C48A65712B06521B0021AB87 /* WithdrawalFixedFees.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		C491ABEF28A6393F00E79954 /* OrderPreview */ = {
@@ -4081,6 +4092,7 @@
 				D78D296429ED3A7B0039A5D6 /* TwoStepSettingsViewController.swift in Sources */,
 				3A5C9B2B22A5676F00C907C1 /* PriceChange.swift in Sources */,
 				7E5CB3AC2835090E00EC787E /* WrapperView.swift in Sources */,
+				C48A65722B06521B0021AB87 /* WithdrawalFixedFees.swift in Sources */,
 				7EF45F512845352400D1F7B0 /* KYCBasicViewController.swift in Sources */,
 				7EF2999127E3B8D200A2238A /* MarketChart.swift in Sources */,
 				CEA9178620C07FBB00F29B31 /* SyncingHeaderView.swift in Sources */,

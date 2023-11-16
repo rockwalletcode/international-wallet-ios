@@ -16,6 +16,7 @@ enum ProEndpoints: String, URLType {
     case balances
     case addresses
     case withdraw
+    case withdrawalFixedFees = "withdrawal-fees-fixed"
     
     var url: String {
         return String(format: Self.baseURL, rawValue)
