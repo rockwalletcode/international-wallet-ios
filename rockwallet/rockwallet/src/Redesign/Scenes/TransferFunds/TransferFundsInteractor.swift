@@ -212,7 +212,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                 self?.dataStore?.fixedFees = response
                 
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.presenter?.presentError(actionResponse: .init(error: error))
             }
         }
     }
