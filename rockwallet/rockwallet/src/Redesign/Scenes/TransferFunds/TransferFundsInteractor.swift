@@ -21,6 +21,7 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                                     achEnabled: UserManager.shared.profile?.kycAccessRights.hasAchAccess ?? false)
         
         prepareCurrencies(viewAction: item)
+        getWithdrawalFixedFees()
         
         ProSupportedCurrenciesWorker().execute { [weak self] result in
             switch result {
@@ -108,11 +109,14 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     }
     
     func showConfirmation(viewAction: Models.ShowConfirmDialog.ViewAction) {
+        guard let isDeposit = dataStore?.isDeposit else { return }
+        
+        let fromFee = isDeposit ? dataStore?.fromFixedFeeAmount : dataStore?.fromFeeAmount
         presenter?.presentConfirmation(actionResponse: .init(fromCurrency: dataStore?.selectedCurrency,
                                                              fromAmount: dataStore?.fromAmount,
                                                              toAmount: dataStore?.toAmount,
                                                              quote: dataStore?.quote,
-                                                             fromFee: dataStore?.fromFeeAmount,
+                                                             fromFee: fromFee,
                                                              isDeposit: dataStore?.isDeposit))
     }
     
@@ -199,6 +203,18 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         
         dataStore?.supportedCurrencies = currencies
         dataStore?.currencies = Store.state.currenciesProWallet.filter { cur in currencies.map { $0.lowercased() }.contains(cur.code.lowercased()) }
+    }
+    
+    func getWithdrawalFixedFees() {
+        WithdrawalFixedFeesWorker().execute { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.dataStore?.fixedFees = response
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     private func setPresentAmountData(handleErrors: Bool) {

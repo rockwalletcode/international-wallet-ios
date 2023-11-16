@@ -46,6 +46,7 @@ class TransferFundsStore: NSObject, BaseDataStore, TransferFundsDataStore {
     var proSupportedCurrencies: [ProSupportedCurrenciesModel]?
     var exchange: Exchange?
     var isDeposit: Bool = false
+    var fixedFees: WithdrawalFixedFees?
     var amount: Amount? {
         get {
             return toAmount
@@ -64,6 +65,14 @@ class TransferFundsStore: NSObject, BaseDataStore, TransferFundsDataStore {
             return nil
         }
         return .init(cryptoAmount: value.fee, currency: currency)
+    }
+    
+    var fromFixedFeeAmount: Amount? {
+        guard let currency = currencies.first(where: { $0.code == selectedCurrency?.code.uppercased() }),
+              let fee = fixedFees?.getFixedFees(code: currency.code) else {
+            return nil
+        }
+        return .init(Amount(decimalAmount: fee, isFiat: false, currency: currency))
     }
     
     var isFormValid: Bool {
