@@ -110,9 +110,9 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                    ExchangeFormatter.current.string(for: from.tokenValue) ?? "",
                                    fromCurrency.code)
         
-        let totalAmount = isDeposit ? from - fromFee : from
+        let totalAmount = isDeposit ? from.tokenValue - fromFee.tokenValue : from.tokenValue
         let totalCostText = String(format: Constant.currencyFormat,
-                                   ExchangeFormatter.current.string(for: totalAmount.tokenValue) ?? "",
+                                   ExchangeFormatter.current.string(for: totalAmount) ?? "",
                                    fromCurrency.code)
         
         let wrappedViewModel: SwapConfirmationViewModel = .init(from: .init(title: .text(fromTitle), value: .text(fromText)),
