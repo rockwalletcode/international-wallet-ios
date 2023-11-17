@@ -56,6 +56,7 @@ private let cachedErrors = "cachedErrors"
 private let userEmail = "registrationEmail"
 private let userPhoneNumber = "phoneNumber"
 private let isDarkModeKey = "isDarkModeKey"
+private let shouldDisplayProPopupKey = "shouldDisplayProPopupKey"
 
 typealias ResettableBooleanSetting = [String: Bool]
 typealias ResettableObjectSetting = String
@@ -194,6 +195,16 @@ extension UserDefaults {
             return defaults.bool(forKey: isDarkModeKey)
         }
         set { defaults.set(newValue, forKey: isDarkModeKey) }
+    }
+    
+    static var shouldDisplayProPopup: Bool {
+        get {
+            guard defaults.object(forKey: shouldDisplayProPopupKey) != nil else {
+                return false
+            }
+            return defaults.bool(forKey: shouldDisplayProPopupKey)
+        }
+        set { defaults.set(newValue, forKey: shouldDisplayProPopupKey) }
     }
 
     static var showFiatAmounts: Bool {
