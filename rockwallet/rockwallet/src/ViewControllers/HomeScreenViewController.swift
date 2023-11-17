@@ -439,6 +439,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         UserDefaults.isDarkMode = selectedSegment == .rockWalletPro
         
         updateTheme()
+        
+        if UserDefaults.shouldDisplayProPopup {
+            showPopupProDescription()
+        }
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -647,6 +651,20 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private func launchExchangeTapped() {
         showPopup(isPortal: false)
+    }
+    
+    private func showPopupProDescription() {
+        let model = PopupViewModel(title: .text(L10n.Popup.proTitle),
+                                   body: L10n.Popup.proDescription,
+                                   buttons: [.init(title: L10n.Button.gotIt,
+                                                   callback: { [weak self] in
+            self?.hidePopup()
+        })],
+                                   urlLink: .attributedText(prepareTermsTickboxText(attributedText: L10n.Popup.visitFaqText)),
+                                   url: Constant.supportLink)
+        
+        showInfoPopup(with: model)
+        UserDefaults.shouldDisplayProPopup = false
     }
     
     private func prepareTermsTickboxText(attributedText: String) -> NSMutableAttributedString {

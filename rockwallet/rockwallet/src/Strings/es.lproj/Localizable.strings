@@ -893,6 +893,8 @@
 /* send button */
 "Button.send" = "Enviar";
 
+"Button.SendCode" = "Send code";
+
 /* Settings button label */
 "Button.settings" = "Ajustes";
 
@@ -1675,6 +1677,8 @@
 /* home screen toolbar 'Buy & Sell' button */
 "HomeScreen.buyAndSell" = "Comprar & Vender";
 
+"HomeScreen.CryptoBalance.title" = "Crypto balance";
+
 "HomeScreen.home" = "Home";
 
 /* Menu button on the home screen toolbar */
@@ -1691,6 +1695,8 @@
 
 /* (Tap here to) trade (your assets for other assets) */
 "HomeScreen.trade" = "Comercio";
+
+"HomeScreen.UsdBalance.title" = "USD Account Balance";
 
 "HomeScreen.Wallet" = "Wallet";
 
@@ -2077,6 +2083,10 @@
 
 "Platform.transaction_cancelled" = "Transacción cancelada";
 
+"Popup.ProDescription" = "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.\n-Transfers within a few clicks";
+
+"Popup.ProTitle" = "Take your assets to the next level with RockWallet Pro and enjoy:";
+
 "Popup.VisitFaqText" = "More info? Visit our FAQs";
 
 "Profile.PaymentMethods" = "Payment methods";
@@ -2145,6 +2155,10 @@
 
 /* An action is required (You must do this action). */
 "Prompts.PaperKey.title" = "Acción obligatoria";
+
+"Prompts.PhoneVerification.body" = "Verification helps keep your funds and information secure and allow you to buy, sell, and swap seamlessly.";
+
+"Prompts.PhoneVerification.title" = "Phone number not verified";
 
 "Prompts.RateApp.dontShow" = "No preguntes de nuevo";
 
@@ -2566,7 +2580,11 @@
 /* Security center fingerprint authentication button */
 "SecurityCenter.touchIdTitle.android" = "Autenticación por huellas digitales";
 
+"Segment.CryptoAssets" = "Crypto assets";
+
 "Segment.RockWalletPro" = "RockWallet PRO";
+
+"Segment.UsdAccount" = "USD account";
 
 /* Segwit enabled confirmation body */
 "Segwit.ConfirmationConfirmationBody" = "¡Gracias por ayudarnos a avanzar con el bitcoin!";
@@ -3815,6 +3833,82 @@
 
 /* Copy wallet addresses alert button label */
 "URLHandling.copy" = "Copiar";
+
+"UsdAccount.Create.Agreements" = "I have read the agreement to the following:\n• RockWallet Agreement\n• Fortress Trust Consumer Disclosures\n• Fortress Trust Privacy Policy\n• Fortress Trust Account Agreement";
+
+"UsdAccount.Create.Agreements.bold1" = "• RockWallet Agreement";
+
+"UsdAccount.Create.Agreements.bold2" = "• Fortress Trust Consumer Disclosures";
+
+"UsdAccount.Create.Agreements.bold3" = "• Fortress Trust Privacy Policy";
+
+"UsdAccount.Create.Agreements.bold4" = "• Fortress Trust Account Agreement";
+
+"UsdAccount.Create.Benefit1" = "Have USD funds readily available in app for faster transactions";
+
+"UsdAccount.Create.Benefit1.bold" = "Have USD funds readily available";
+
+"UsdAccount.Create.Benefit2" = "Save on fees and enjoy faster transactions with USD in your wallet";
+
+"UsdAccount.Create.Benefit2.bold" = "Save on fees";
+
+"UsdAccount.Create.Benefit3" = "Save time with auto-populated bank account info";
+
+"UsdAccount.Create.Benefit3.bold" = "Save time";
+
+"UsdAccount.Create.eSignAgreement" = "I read the E-Sign Agreement and understand I will not receive documents in the mail";
+
+"UsdAccount.Create.eSignAgreement.bold" = "E-Sign Agreement";
+
+"UsdAccount.Create.FortressTerms" = "I have read and agreed to the Fortress Trust Terms and Conditions";
+
+"UsdAccount.Create.FortressTerms.bold" = "Fortress Trust Terms and Conditions";
+
+"UsdAccount.Create.Subtitle" = "Save on transfer fees and enjoy faster transactions";
+
+"UsdAccount.Create.Title" = "Open a USD Account";
+
+"UsdAccount.Details.AccountHolder" = "Account holder";
+
+"UsdAccount.Details.AccountNumber" = "Account number";
+
+"UsdAccount.Details.AccountType" = "Account type";
+
+"UsdAccount.Details.AchRoutingNumber" = "ACH and wire routing number";
+
+"UsdAccount.Details.CardSubtitle" = "Fund your RockWallet USD Bank Account via domestic transfer.";
+
+"UsdAccount.Details.CardTitle" = "Info for Domestic Transfers";
+
+"UsdAccount.Details.Copied" = "Copied!";
+
+"UsdAccount.Details.Title" = "RockWallet USD Bank Account \nDetails";
+
+"UsdAccount.Home.Deposit.Description" = "View USD account transfer info";
+
+"UsdAccount.Home.Deposit.Title" = "Deposit";
+
+"UsdAccount.Home.TransactionHistory" = "Transaction History";
+
+"UsdAccount.Home.Withdraw.Description" = "Withdraw your USD";
+
+"UsdAccount.Home.Withdraw.Title" = "Withdraw";
+
+"USDAccount.PaymentOption.Balance" = "You have %@ available";
+
+"USDAccount.PaymentOption.Benefit1" = "Instant availability of funds to buy digital assets";
+
+"USDAccount.PaymentOption.Benefit2" = "Pay less fees";
+
+"USDAccount.PaymentOption.Title" = "RockWallet USD Account (Preferred)";
+
+"UsdAccount.Transactions.GenerateStatement" = "Generate statement";
+
+"UsdAccount.Transactions.ViewAllButton" = "View all transactions";
+
+"UsdAccount.Withdraw.AmountTooHigh" = "The amount you entered for withdrawal exceeds the balance in your RockWallet USD Account.";
+
+"UsdAccount.Withdraw.Title" = "Withdraw";
 
 /* Verification Code Action Instructions */
 "VerificationCode.actionInstructions" = "Verifique en su teléfono el token de confirmación que le enviamos. Puede tomar un par de minutos.";
