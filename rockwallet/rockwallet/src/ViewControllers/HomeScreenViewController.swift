@@ -627,6 +627,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         totalAssetsAmountLabel.textColor = Colors.Text.three
         assetListTableView.tableView.backgroundColor = Colors.Background.two
         segmentControl.configure(with: .init())
+        
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: Colors.Text.three]
+        pullToRefreshControl.attributedTitle = NSAttributedString(string: L10n.HomeScreen.pullToRefresh, attributes: attributes)
+        pullToRefreshControl.tintColor = Colors.Text.three
     }
     
     // MARK: Actions
