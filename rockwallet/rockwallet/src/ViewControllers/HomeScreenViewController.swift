@@ -198,7 +198,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         isRefreshing = true
         
         if selectedSegment == .rockWallet {
-            PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
+            showGeneralPrompt()
         }
         
         Currencies.shared.reloadCurrencies()
@@ -221,7 +221,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
+        if selectedSegment == .rockWallet {
+            showGeneralPrompt()
+        }
     }
     
     override func viewDidLoad() {
@@ -447,7 +449,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         }
         
         guard selectedSegment == .rockWalletPro else {
-            PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
+            showGeneralPrompt()
             return
         }
         
@@ -455,6 +457,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         for type in PromptType.defaultTypes {
             PromptPresenter.shared.hidePrompt(type)
         }
+    }
+    
+    func showGeneralPrompt() {
+        PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -549,7 +555,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             PromptPresenter.shared.hidePrompt(.noInternet)
             
             if !isReachable {
-                PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: self?.walletAuthenticator, on: self)
+                self?.showGeneralPrompt()
             }
         })
         
