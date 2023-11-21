@@ -97,9 +97,10 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
         let feeTitle = !isDeposit ? L10n.Exchange.estimatedNetworkFee : L10n.Exchange.withdrawalFee
         
         let currencyFormat = isDeposit ? "-\(Constant.currencyFormat)" : "\(Constant.currencyFormat)"
+        var feeCurrencyCode = !isDeposit && fromCurrency.isERC20Token ? Constant.ETH : fromCurrency.code
         let toFeeText = String(format: currencyFormat,
                                ExchangeFormatter.current.string(for: fromFee.tokenValue.doubleValue) ?? "",
-                               fromCurrency.code)
+                               feeCurrencyCode)
         
         let fromText = String(format: "\(Constant.currencyFormat) (\(Constant.currencyFormat))",
                               ExchangeFormatter.current.string(for: from.tokenValue.doubleValue) ?? "",

@@ -197,7 +197,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         isRefreshing = true
         
-        PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
+        if selectedSegment == .rockWallet {
+            showGeneralPrompt()
+        }
         
         Currencies.shared.reloadCurrencies()
         
@@ -219,7 +221,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
+        if selectedSegment == .rockWallet {
+            showGeneralPrompt()
+        }
     }
     
     override func viewDidLoad() {
@@ -439,6 +443,24 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         UserDefaults.isDarkMode = selectedSegment == .rockWalletPro
         
         updateTheme()
+        
+        if UserDefaults.shouldDisplayProPopup {
+            showPopupProDescription()
+        }
+        
+        guard selectedSegment == .rockWalletPro else {
+            showGeneralPrompt()
+            return
+        }
+        
+        PromptFactory.shared.presentedPopups.removeAll()
+        for type in PromptType.defaultTypes {
+            PromptPresenter.shared.hidePrompt(type)
+        }
+    }
+    
+    func showGeneralPrompt() {
+        PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -533,7 +555,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             PromptPresenter.shared.hidePrompt(.noInternet)
             
             if !isReachable {
-                PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: self?.walletAuthenticator, on: self)
+                self?.showGeneralPrompt()
             }
         })
         
@@ -623,6 +645,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         totalAssetsAmountLabel.textColor = Colors.Text.three
         assetListTableView.tableView.backgroundColor = Colors.Background.two
         segmentControl.configure(with: .init())
+        
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: Colors.Text.three]
+        pullToRefreshControl.attributedTitle = NSAttributedString(string: L10n.HomeScreen.pullToRefresh, attributes: attributes)
+        pullToRefreshControl.tintColor = Colors.Text.three
     }
     
     // MARK: Actions
@@ -647,6 +673,20 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     
     private func launchExchangeTapped() {
         showPopup(isPortal: false)
+    }
+    
+    private func showPopupProDescription() {
+        let model = PopupViewModel(title: .text(L10n.Popup.proTitle),
+                                   body: L10n.Popup.proDescription,
+                                   buttons: [.init(title: L10n.Button.gotIt,
+                                                   callback: { [weak self] in
+            self?.hidePopup()
+        })],
+                                   urlLink: .attributedText(prepareTermsTickboxText(attributedText: L10n.Popup.visitFaqText)),
+                                   url: Constant.supportLink)
+        
+        showInfoPopup(with: model)
+        UserDefaults.shouldDisplayProPopup = false
     }
     
     private func prepareTermsTickboxText(attributedText: String) -> NSMutableAttributedString {
