@@ -46,6 +46,10 @@ class LoginViewController: UIViewController, Subscriber {
         resetPinButton.isHidden = true
         header.text = L10n.VerifyPin.title
         instruction.text = L10n.VerifyPin.continueBody
+        
+        if case .confirmation = context {
+            logo.isHidden = true
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
