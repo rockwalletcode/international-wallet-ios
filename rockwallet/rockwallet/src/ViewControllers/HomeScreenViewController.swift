@@ -197,7 +197,9 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         isRefreshing = true
         
-        PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
+        if selectedSegment == .rockWallet {
+            PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
+        }
         
         Currencies.shared.reloadCurrencies()
         
@@ -442,6 +444,16 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         if UserDefaults.shouldDisplayProPopup {
             showPopupProDescription()
+        }
+        
+        guard selectedSegment == .rockWalletPro else {
+            PromptPresenter.shared.attemptShowGeneralPrompt(walletAuthenticator: walletAuthenticator, on: self)
+            return
+        }
+        
+        PromptFactory.shared.presentedPopups.removeAll()
+        for type in PromptType.defaultTypes {
+            PromptPresenter.shared.hidePrompt(type)
         }
     }
     
