@@ -146,7 +146,7 @@ class RegistrationConfirmationViewController: BaseTableViewController<AccountCoo
                 self.coordinator?.dismissFlow()
                 
             case .account:
-                self.coordinator?.showVerifyPhoneNumber()
+                self.coordinator?.showKYCLevelOne(isModal: false)
                 
             case .twoStepAccountEmailSettings, .twoStepEmail:
                 self.coordinator?.popViewController { [weak self] in
