@@ -203,7 +203,7 @@ class AssetListTableView: UITableViewController, Subscriber {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var currencies: [Currency] = isProWallet ? Store.state.currenciesProWallet : Store.state.currencies
+        let currencies: [Currency] = isProWallet ? Store.state.currenciesProWallet : Store.state.currencies
         guard currencies.indices.contains(indexPath.row) else { return UITableViewCell() }
         
         let currency = currencies[indexPath.row]
