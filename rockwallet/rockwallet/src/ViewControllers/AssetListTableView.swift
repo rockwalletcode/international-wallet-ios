@@ -203,10 +203,10 @@ class AssetListTableView: UITableViewController, Subscriber {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard Store.state.currencies.indices.contains(indexPath.row) else { return UITableViewCell() }
+        let currencies: [Currency] = isProWallet ? Store.state.currenciesProWallet : Store.state.currencies
+        guard currencies.indices.contains(indexPath.row) else { return UITableViewCell() }
         
-        let currency = isProWallet ? Store.state.currenciesProWallet[indexPath.row] : Store.state.currencies[indexPath.row]
-        
+        let currency = currencies[indexPath.row]
         let viewModel = HomeScreenAssetViewModel(currency: currency, proBalancesData: proBalancesData)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenCellIds.regularCell.rawValue, for: indexPath)

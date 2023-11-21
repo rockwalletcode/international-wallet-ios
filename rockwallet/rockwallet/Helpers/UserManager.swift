@@ -88,6 +88,7 @@ class UserManager: NSObject {
         UserDefaults.email = email
         UserDefaults.sessionToken = sessionToken
         UserDefaults.sessionTokenHash = sessionTokenHash
+        UserDefaults.shouldDisplayProPopup = true
         
         guard refreshWallet else { return }
         Store.trigger(name: .refreshToken)

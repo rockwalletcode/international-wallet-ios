@@ -131,10 +131,10 @@ internal enum L10n {
     internal static let enterEmail = L10n.tr("Localizable", "Account.EnterEmail", fallback: "Enter your e-mail")
     /// Enter your password
     internal static let enterPassword = L10n.tr("Localizable", "Account.EnterPassword", fallback: "Enter your password")
-    /// Enter your phone number
-    internal static let enterYourPhoneNumber = L10n.tr("Localizable", "Account.EnterYourPhoneNumber", fallback: "Enter your phone number")
-    /// To ensure that you can access all the features of our app, we need to collect your phone number. We'll keep your information safe and won't share it with anyone
-    internal static let enterYourPhoneNumberSubtitle = L10n.tr("Localizable", "Account.EnterYourPhoneNumberSubtitle", fallback: "To ensure that you can access all the features of our app, we need to collect your phone number. We'll keep your information safe and won't share it with anyone")
+    /// Let’s get your phone verified
+    internal static let enterYourPhoneNumber = L10n.tr("Localizable", "Account.EnterYourPhoneNumber", fallback: "Let’s get your phone verified")
+    /// To ensure that you can access all the features of our app, we need to verify your phone number. We'll send you a code via SMS
+    internal static let enterYourPhoneNumberSubtitle = L10n.tr("Localizable", "Account.EnterYourPhoneNumberSubtitle", fallback: "To ensure that you can access all the features of our app, we need to verify your phone number. We'll send you a code via SMS")
     /// $10000 per BTC
     internal static func exchangeRate(_ p1: Any, _ p2: Any) -> String {
       return L10n.tr("Localizable", "Account.exchangeRate", String(describing: p1), String(describing: p2), fallback: "%@ per %@")
@@ -905,6 +905,8 @@ internal enum L10n {
     internal static let sell = L10n.tr("Localizable", "Button.sell", fallback: "Sell")
     /// send button
     internal static let send = L10n.tr("Localizable", "Button.send", fallback: "Send")
+    /// Send code
+    internal static let sendCode = L10n.tr("Localizable", "Button.SendCode", fallback: "Send code")
     /// Settings button label
     internal static let settings = L10n.tr("Localizable", "Button.settings", fallback: "Settings")
     /// Setup button label
@@ -1783,6 +1785,14 @@ internal enum L10n {
     internal static let trade = L10n.tr("Localizable", "HomeScreen.trade", fallback: "Swap")
     /// Wallet
     internal static let wallet = L10n.tr("Localizable", "HomeScreen.Wallet", fallback: "Wallet")
+    internal enum CryptoBalance {
+      /// Crypto balance
+      internal static let title = L10n.tr("Localizable", "HomeScreen.CryptoBalance.title", fallback: "Crypto balance")
+    }
+    internal enum UsdBalance {
+      /// USD Account Balance
+      internal static let title = L10n.tr("Localizable", "HomeScreen.UsdBalance.title", fallback: "USD Account Balance")
+    }
   }
   internal enum Import {
     /// Checking private key balance progress view text
@@ -2139,6 +2149,14 @@ internal enum L10n {
     internal static let transactionCancelled = L10n.tr("Localizable", "Platform.transaction_cancelled", fallback: "Transaction Cancelled")
   }
   internal enum Popup {
+    /// -Lower Trading Fees
+    /// -Deep Liquidity
+    /// -Comprehensive Trading Graphs.
+    /// -Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.
+    /// -Transfers within a few clicks
+    internal static let proDescription = L10n.tr("Localizable", "Popup.ProDescription", fallback: "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.\n-Transfers within a few clicks")
+    /// Take your assets to the next level with RockWallet Pro and enjoy:
+    internal static let proTitle = L10n.tr("Localizable", "Popup.ProTitle", fallback: "Take your assets to the next level with RockWallet Pro and enjoy:")
     /// More info? Visit our FAQs
     internal static let visitFaqText = L10n.tr("Localizable", "Popup.VisitFaqText", fallback: "More info? Visit our FAQs")
   }
@@ -2226,6 +2244,12 @@ internal enum L10n {
       internal static let body = L10n.tr("Localizable", "Prompts.PaperKey.Body", fallback: "Set up your Recovery Phrase in case you ever lose or replace your phone. Your key is also required if you change your phone's security settings.")
       /// An action is required (You must do this action).
       internal static let title = L10n.tr("Localizable", "Prompts.PaperKey.title", fallback: "Action Required")
+    }
+    internal enum PhoneVerification {
+      /// Verification helps keep your funds and information secure and allow you to buy, sell, and swap seamlessly.
+      internal static let body = L10n.tr("Localizable", "Prompts.PhoneVerification.body", fallback: "Verification helps keep your funds and information secure and allow you to buy, sell, and swap seamlessly.")
+      /// Phone number not verified
+      internal static let title = L10n.tr("Localizable", "Prompts.PhoneVerification.title", fallback: "Phone number not verified")
     }
     internal enum RateApp {
       /// Don't ask again
@@ -2615,8 +2639,12 @@ internal enum L10n {
     }
   }
   internal enum Segment {
+    /// Crypto assets
+    internal static let cryptoAssets = L10n.tr("Localizable", "Segment.CryptoAssets", fallback: "Crypto assets")
     /// RockWallet PRO
     internal static let rockWalletPro = L10n.tr("Localizable", "Segment.RockWalletPro", fallback: "RockWallet PRO")
+    /// USD account
+    internal static let usdAccount = L10n.tr("Localizable", "Segment.UsdAccount", fallback: "USD account")
   }
   internal enum Segwit {
     /// Segwit enabled confirmation body
@@ -3741,6 +3769,20 @@ internal enum L10n {
     /// Copy wallet addresses alert button label
     internal static let copy = L10n.tr("Localizable", "URLHandling.copy", fallback: "Copy")
   }
+  internal enum USDAccount {
+    internal enum PaymentOption {
+      /// You have %@ available
+      internal static func balance(_ p1: Any) -> String {
+        return L10n.tr("Localizable", "USDAccount.PaymentOption.Balance", String(describing: p1), fallback: "You have %@ available")
+      }
+      /// Instant availability of funds to buy digital assets
+      internal static let benefit1 = L10n.tr("Localizable", "USDAccount.PaymentOption.Benefit1", fallback: "Instant availability of funds to buy digital assets")
+      /// Pay less fees
+      internal static let benefit2 = L10n.tr("Localizable", "USDAccount.PaymentOption.Benefit2", fallback: "Pay less fees")
+      /// RockWallet USD Account (Preferred)
+      internal static let title = L10n.tr("Localizable", "USDAccount.PaymentOption.Title", fallback: "RockWallet USD Account (Preferred)")
+    }
+  }
   internal enum UnavailableScreen {
     /// RockWallet PRO isn’t available in your region. We'll notify you when this feature is released. You can still swap and buy digital assets with your RockWallet.
     internal static let proDescription = L10n.tr("Localizable", "UnavailableScreen.ProDescription", fallback: "RockWallet PRO isn’t available in your region. We'll notify you when this feature is released. You can still swap and buy digital assets with your RockWallet.")
@@ -3849,6 +3891,107 @@ internal enum L10n {
       internal static let title = L10n.tr("Localizable", "UpdatePin.Alert.title", fallback: "What is a PIN?")
     }
   }
+  internal enum UsdAccount {
+    internal enum Create {
+      /// I have read the agreement to the following:
+      /// • RockWallet Agreement
+      /// • Fortress Trust Consumer Disclosures
+      /// • Fortress Trust Privacy Policy
+      /// • Fortress Trust Account Agreement
+      internal static let agreements = L10n.tr("Localizable", "UsdAccount.Create.Agreements", fallback: "I have read the agreement to the following:\n• RockWallet Agreement\n• Fortress Trust Consumer Disclosures\n• Fortress Trust Privacy Policy\n• Fortress Trust Account Agreement")
+      /// Have USD funds readily available in app for faster transactions
+      internal static let benefit1 = L10n.tr("Localizable", "UsdAccount.Create.Benefit1", fallback: "Have USD funds readily available in app for faster transactions")
+      /// Save on fees and enjoy faster transactions with USD in your wallet
+      internal static let benefit2 = L10n.tr("Localizable", "UsdAccount.Create.Benefit2", fallback: "Save on fees and enjoy faster transactions with USD in your wallet")
+      /// Save time with auto-populated bank account info
+      internal static let benefit3 = L10n.tr("Localizable", "UsdAccount.Create.Benefit3", fallback: "Save time with auto-populated bank account info")
+      /// I read the E-Sign Agreement and understand I will not receive documents in the mail
+      internal static let eSignAgreement = L10n.tr("Localizable", "UsdAccount.Create.eSignAgreement", fallback: "I read the E-Sign Agreement and understand I will not receive documents in the mail")
+      /// I have read and agreed to the Fortress Trust Terms and Conditions
+      internal static let fortressTerms = L10n.tr("Localizable", "UsdAccount.Create.FortressTerms", fallback: "I have read and agreed to the Fortress Trust Terms and Conditions")
+      /// Save on transfer fees and enjoy faster transactions
+      internal static let subtitle = L10n.tr("Localizable", "UsdAccount.Create.Subtitle", fallback: "Save on transfer fees and enjoy faster transactions")
+      /// Open a USD Account
+      internal static let title = L10n.tr("Localizable", "UsdAccount.Create.Title", fallback: "Open a USD Account")
+      internal enum Agreements {
+        /// • RockWallet Agreement
+        internal static let bold1 = L10n.tr("Localizable", "UsdAccount.Create.Agreements.bold1", fallback: "• RockWallet Agreement")
+        /// • Fortress Trust Consumer Disclosures
+        internal static let bold2 = L10n.tr("Localizable", "UsdAccount.Create.Agreements.bold2", fallback: "• Fortress Trust Consumer Disclosures")
+        /// • Fortress Trust Privacy Policy
+        internal static let bold3 = L10n.tr("Localizable", "UsdAccount.Create.Agreements.bold3", fallback: "• Fortress Trust Privacy Policy")
+        /// • Fortress Trust Account Agreement
+        internal static let bold4 = L10n.tr("Localizable", "UsdAccount.Create.Agreements.bold4", fallback: "• Fortress Trust Account Agreement")
+      }
+      internal enum Benefit1 {
+        /// Have USD funds readily available
+        internal static let bold = L10n.tr("Localizable", "UsdAccount.Create.Benefit1.bold", fallback: "Have USD funds readily available")
+      }
+      internal enum Benefit2 {
+        /// Save on fees
+        internal static let bold = L10n.tr("Localizable", "UsdAccount.Create.Benefit2.bold", fallback: "Save on fees")
+      }
+      internal enum Benefit3 {
+        /// Save time
+        internal static let bold = L10n.tr("Localizable", "UsdAccount.Create.Benefit3.bold", fallback: "Save time")
+      }
+      internal enum FortressTerms {
+        /// Fortress Trust Terms and Conditions
+        internal static let bold = L10n.tr("Localizable", "UsdAccount.Create.FortressTerms.bold", fallback: "Fortress Trust Terms and Conditions")
+      }
+      internal enum ESignAgreement {
+        /// E-Sign Agreement
+        internal static let bold = L10n.tr("Localizable", "UsdAccount.Create.eSignAgreement.bold", fallback: "E-Sign Agreement")
+      }
+    }
+    internal enum Details {
+      /// Account holder
+      internal static let accountHolder = L10n.tr("Localizable", "UsdAccount.Details.AccountHolder", fallback: "Account holder")
+      /// Account number
+      internal static let accountNumber = L10n.tr("Localizable", "UsdAccount.Details.AccountNumber", fallback: "Account number")
+      /// Account type
+      internal static let accountType = L10n.tr("Localizable", "UsdAccount.Details.AccountType", fallback: "Account type")
+      /// ACH and wire routing number
+      internal static let achRoutingNumber = L10n.tr("Localizable", "UsdAccount.Details.AchRoutingNumber", fallback: "ACH and wire routing number")
+      /// Fund your RockWallet USD Bank Account via domestic transfer.
+      internal static let cardSubtitle = L10n.tr("Localizable", "UsdAccount.Details.CardSubtitle", fallback: "Fund your RockWallet USD Bank Account via domestic transfer.")
+      /// Info for Domestic Transfers
+      internal static let cardTitle = L10n.tr("Localizable", "UsdAccount.Details.CardTitle", fallback: "Info for Domestic Transfers")
+      /// Copied!
+      internal static let copied = L10n.tr("Localizable", "UsdAccount.Details.Copied", fallback: "Copied!")
+      /// RockWallet USD Bank Account 
+      /// Details
+      internal static let title = L10n.tr("Localizable", "UsdAccount.Details.Title", fallback: "RockWallet USD Bank Account \nDetails")
+    }
+    internal enum Home {
+      /// Transaction History
+      internal static let transactionHistory = L10n.tr("Localizable", "UsdAccount.Home.TransactionHistory", fallback: "Transaction History")
+      internal enum Deposit {
+        /// View USD account transfer info
+        internal static let description = L10n.tr("Localizable", "UsdAccount.Home.Deposit.Description", fallback: "View USD account transfer info")
+        /// Deposit
+        internal static let title = L10n.tr("Localizable", "UsdAccount.Home.Deposit.Title", fallback: "Deposit")
+      }
+      internal enum Withdraw {
+        /// Withdraw your USD
+        internal static let description = L10n.tr("Localizable", "UsdAccount.Home.Withdraw.Description", fallback: "Withdraw your USD")
+        /// Withdraw
+        internal static let title = L10n.tr("Localizable", "UsdAccount.Home.Withdraw.Title", fallback: "Withdraw")
+      }
+    }
+    internal enum Transactions {
+      /// Generate statement
+      internal static let generateStatement = L10n.tr("Localizable", "UsdAccount.Transactions.GenerateStatement", fallback: "Generate statement")
+      /// View all transactions
+      internal static let viewAllButton = L10n.tr("Localizable", "UsdAccount.Transactions.ViewAllButton", fallback: "View all transactions")
+    }
+    internal enum Withdraw {
+      /// The amount you entered for withdrawal exceeds the balance in your RockWallet USD Account.
+      internal static let amountTooHigh = L10n.tr("Localizable", "UsdAccount.Withdraw.AmountTooHigh", fallback: "The amount you entered for withdrawal exceeds the balance in your RockWallet USD Account.")
+      /// Withdraw
+      internal static let title = L10n.tr("Localizable", "UsdAccount.Withdraw.Title", fallback: "Withdraw")
+    }
+  }
   internal enum VerificationCode {
     /// Verification Code Action Instructions
     internal static let actionInstructions = L10n.tr("Localizable", "VerificationCode.actionInstructions", fallback: "Check your phone for the confirmation token we sent you. It may take a couple of minutes.")
@@ -3899,8 +4042,8 @@ internal enum L10n {
       internal static let title = L10n.tr("Localizable", "VerifyPhoneNumber.phoneNumber.title", fallback: "Phone number")
     }
     internal enum Sms {
-      /// Change my phone number
-      internal static let changeNumber = L10n.tr("Localizable", "VerifyPhoneNumber.sms.changeNumber", fallback: "Change my phone number")
+      /// Change my number
+      internal static let changeNumber = L10n.tr("Localizable", "VerifyPhoneNumber.sms.changeNumber", fallback: "Change my number")
       /// Enter the security code we’ve sent to:
       /// %@
       internal static func instructions(_ p1: Any) -> String {
