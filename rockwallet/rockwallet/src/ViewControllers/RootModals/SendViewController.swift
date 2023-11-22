@@ -679,7 +679,7 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
         case .failed:
             showAlert(title: L10n.Alert.error, message: L10n.Send.creatTransactionError)
             
-        case .insufficientGas:
+        case .insufficientGas, .invalidAmountOrFee:
             showInsufficientGasError()
             
         case .identityNotCertified(let message):
