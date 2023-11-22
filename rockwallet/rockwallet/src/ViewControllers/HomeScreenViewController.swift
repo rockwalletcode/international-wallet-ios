@@ -197,17 +197,18 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         isRefreshing = true
         
-        if selectedSegment == .rockWallet {
-            showGeneralPrompt()
-        }
-        
         Currencies.shared.reloadCurrencies()
-        
-        getProBalance()
-        
+       
         coreSystem.refreshWallet { [weak self] in
             self?.assetListTableView.reload()
         }
+        
+        guard selectedSegment == .rockWallet else {
+            getProBalance()
+            return
+        }
+        
+        showGeneralPrompt()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -400,12 +401,14 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             guard let profile = UserManager.shared.profile else {
                 tapSegment(isUserLogged: false)
                 segmentControl.selectSegment(index: 0)
+                selectedSegment = .rockWallet
                 return
             }
             
             guard profile.kycAccessRights.hasExchangeAccess else {
                 tapSegment(isUserLogged: true)
                 segmentControl.selectSegment(index: 0)
+                selectedSegment = .rockWallet
                 return
             }
             
