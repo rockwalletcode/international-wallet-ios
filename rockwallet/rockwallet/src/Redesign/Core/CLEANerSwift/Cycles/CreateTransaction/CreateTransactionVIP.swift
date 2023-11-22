@@ -143,6 +143,8 @@ extension Interactor where Self: CreateTransactionViewActions,
         case .insufficientGas:
             error = ExchangeErrors.networkFee
             
+        case .invalidAmountOrFee:
+            error = GeneralError(errorMessage: L10n.ErrorMessages.depositBalance)
         }
         
         completion?(error)

@@ -24,6 +24,7 @@ enum SenderValidationResult {
     case ownAddress
     case insufficientFunds
     case noExchangeRate
+    case invalidAmountOrFee
     
     // BTC errors
     case noFees // fees not downlaoded
@@ -176,6 +177,9 @@ class Sender: Subscriber {
             
         case .failure(let error) where error == .invalidAddress:
             return .invalidAddress
+            
+        case .failure(let error) where error == .invalidAmountOrFee:
+            return .invalidAmountOrFee
             
         case .failure(let error):
             print(error.localizedDescription)
