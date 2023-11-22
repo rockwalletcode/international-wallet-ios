@@ -358,7 +358,7 @@ enum BaseInfoModels {
             L10n.ComingSoon.FeatureUnavailable.subtitle
         }
         
-        var firstButtonTitle: String? { L10n.Swap.backToHome }
+        var firstButtonTitle: String? { L10n.ComingSoon.Buttons.backHome }
         
         var secondButtonTitle: String? { nil }
     }

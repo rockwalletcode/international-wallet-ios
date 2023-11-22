@@ -24,6 +24,7 @@ enum SenderValidationResult {
     case ownAddress
     case insufficientFunds
     case noExchangeRate
+    case invalidAmountOrFee
     
     // BTC errors
     case noFees // fees not downlaoded
@@ -130,15 +131,15 @@ class Sender: Subscriber {
             guard amount <= balance else { return .insufficientFunds }
         }
         
-        // TODO: refactor validation for deposit
-        if wallet.feeCurrency != wallet.currency {
-            if let feeBalance = wallet.feeCurrency.state?.balance, let feeBasis = feeBasis {
-                let feeAmount = Amount(cryptoAmount: feeBasis.fee, currency: wallet.feeCurrency) 
+        // TODO: uncomment and refactor validation for deposit
+//        if wallet.feeCurrency != wallet.currency {
+//            if let feeBalance = wallet.feeCurrency.state?.balance, let feeBasis = feeBasis {
+//                let feeAmount = Amount(cryptoAmount: feeBasis.fee, currency: wallet.feeCurrency) 
 //                if feeBalance.tokenValue < feeAmount.tokenValue {
 //                    return .insufficientGas
 //                }
-            }
-        }
+//            }
+//        }
         return .ok
     }
     
@@ -176,6 +177,9 @@ class Sender: Subscriber {
             
         case .failure(let error) where error == .invalidAddress:
             return .invalidAddress
+            
+        case .failure(let error) where error == .invalidAmountOrFee:
+            return .invalidAmountOrFee
             
         case .failure(let error):
             print(error.localizedDescription)
