@@ -414,7 +414,7 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
                                                                      .foregroundColor: Colors.Text.two
         ]
         
-        var balanceAttributes: [NSAttributedString.Key: Any] = [.font: Fonts.Subtitle.two,
+        let balanceAttributes: [NSAttributedString.Key: Any] = [.font: Fonts.Subtitle.two,
                                                                 .foregroundColor: Colors.Text.two]
         
         let feeAttributes: [NSAttributedString.Key: Any] = [.font: Fonts.Body.two,
@@ -679,7 +679,7 @@ class SendViewController: BaseSendViewController, Subscriber, ModalPresentable {
         case .failed:
             showAlert(title: L10n.Alert.error, message: L10n.Send.creatTransactionError)
             
-        case .insufficientGas:
+        case .insufficientGas, .invalidAmountOrFee:
             showInsufficientGasError()
             
         case .identityNotCertified(let message):
