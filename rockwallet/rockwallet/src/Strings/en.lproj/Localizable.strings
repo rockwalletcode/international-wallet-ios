@@ -98,6 +98,8 @@
 
 "Account.ConfirmPassword" = "Confirm your password";
 
+"Account.confirmYourInformation" = "Confirm your information";
+
 /* Contact us */
 "Account.ContactUs" = "Contact us";
 
@@ -235,11 +237,15 @@
 
 "Account.NewToRockwallet" = "New to RockWallet?";
 
+"Account.OtherPaymentOptions" = "Other Payment Options";
+
 "Account.PasswordDoNotMatch" = "Passwords do not match";
 
 "Account.PasswordRecoverDescription" = "We have sent password recover instructions to";
 
 "Account.PasswordRequirements" = "Password must be at least 8 characters long and contain 1 lower, 1 upper case letter, 1 numeric character and one special character.";
+
+"Account.PaymentOptions" = "Payment Options";
 
 "Account.Pending" = "Pending";
 
@@ -279,6 +285,10 @@
 /* Retake photo button on create account */
 "Account.RetakePhoto" = "Retake photo";
 
+"Account.ReviewingInformation.description" = "Verification might take a few extra minutes. We will notify you when we are done.";
+
+"Account.ReviewingInformation.title" = "We are still reviewing your information...";
+
 "Account.SelectCountry" = "Select country";
 
 "Account.SelectState" = "Select state";
@@ -297,6 +307,8 @@
 
 /* State title label in select state view */
 "Account.State" = "State";
+
+"Account.submitPersonalInfoDisclaimer" = "Please check that all your details are correct before submiting";
 
 /* Submit your photo for document id title */
 "Account.SubmitPhoto" = "Submit your photo";
@@ -802,6 +814,8 @@
 /* Cancel button label */
 "Button.cancel" = "Cancel";
 
+"Button.ChangeMyMind" = "I changed my mind";
+
 /* Close button */
 "Button.close" = "Close";
 
@@ -823,6 +837,8 @@
 
 "Button.Download" = "DOWNLOAD";
 
+"Button.edit" = "Edit";
+
 /* Finish button title */
 "Button.Finish" = "Finish";
 
@@ -832,6 +848,8 @@
 
 /* Go to dashboard button */
 "Button.GoToDashboard" = "Go to dashboard";
+
+"Button.GoToHome" = "Go to home";
 
 /* Button to return to the "home" screen (the home screen is the top menu). */
 "Button.Home" = "Home";
@@ -1272,13 +1290,13 @@
 
 "ComingSoon.BodyWithoutSell" = "Buy and Swap are not available in your state. We will notify you when they become available. \n\nYou can still Store, Send and Receive digital assets in your RockWallet.";
 
-"ComingSoon.buttons.backHome" = "BACK TO HOME";
+"ComingSoon.buttons.backHome" = "Back to home";
 
 "ComingSoon.buttons.contactSupport" = "Contact support";
 
 "ComingSoon.BuyDescription" = "You can continue to Swap, Store, Send, and Receive digital assets to your RockWallet.";
 
-"ComingSoon.FeatureUnavailable.Subtitle" = "This feature is not available in your region. We will notify you when this becomes available.";
+"ComingSoon.FeatureUnavailable.Subtitle" = "This feature is not currently available in your region. We will notify you when it becomes available.";
 
 "ComingSoon.SellDescription" = "You can continue to Buy, Swap, Store, Send, and Receive digital assets in your RockWallet.";
 
@@ -1288,7 +1306,17 @@
 
 "ComingSoon.title" = "Coming soon!";
 
+"CommonString.Approved" = "Approved";
+
+"CommonString.EndingOn.title" = "Ending on";
+
+"CommonString.goToHome" = "Go to home";
+
 "CommonString.Or.label" = "Or";
+
+"CommonString.Safari" = "Safari";
+
+"CommonString.StartingOn.title" = "Starting on";
 
 /* Amount to Send: ($1.00) */
 "Confirmation.amountLabel" = "Amount to send";
@@ -1442,6 +1470,8 @@
 "ErrorMessages.CheckInternet" = "Please check your internet connection and try again later.";
 
 "ErrorMessages.default" = "Something went wrong! Try again later.";
+
+"ErrorMessages.DepositBalance" = "The amount is higher than your current balance. Please enter a lower amount or add more funds.";
 
 /* Email unavailable alert title */
 "ErrorMessages.emailUnavailableMessage" = "This device isn't configured to send email with the iOS mail app.";
@@ -1662,6 +1692,10 @@
 
 /* Switch label to enable fingerprint authentication to unlock BRD app */
 "FingerprintSettings.unlockApp" = "Use fingerprint to unlock RockWallet";
+
+"GenerateStatement.Buttons.Generate.title" = "Generate";
+
+"GenerateStatement.Title" = "Generate Statement";
 
 "HomeScreen.accountDataUpdatedToastMessage" = "Your account data has been updated.";
 
@@ -2048,6 +2082,8 @@
 
 "PaymentMethod.Unavailable" = "Temporarily unavailable, please contact support";
 
+"PaymentMethods.ACH" = "ACH";
+
 /* Bad Payment request alert title */
 "PaymentProtocol.Errors.badPaymentRequest" = "Your transaction request couldn’t be completed. Please try again.";
 
@@ -2081,11 +2117,19 @@
 
 "PersonalInformation.Year" = "YYYY";
 
+"PhoneVerification.VerificationLimitReached.Description" = "We've noticed multiple attempts to verify your code. For security, there's a temporary hold on further verification tries. Please wait 10 minutes before trying again.";
+
+"PhoneVerification.VerificationLimitReached.Title" = "Verification Limit Reached";
+
 "Platform.transaction_cancelled" = "Transaction Cancelled";
 
 "Popup.ProDescription" = "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.\n-Transfers within a few clicks";
 
 "Popup.ProTitle" = "Take your assets to the next level with RockWallet Pro and enjoy:";
+
+"Popup.Statement.Description" = "It normally takes a few minutes, but can sometimes be ready sooner";
+
+"Popup.Statement.Title" = "Your statement is being generated";
 
 "Popup.VisitFaqText" = "More info? Visit our FAQs";
 
@@ -3087,9 +3131,6 @@
 
 "Swap.AssetSelectionMessage" = "Sorry, we currently don’t support trading of this asset.";
 
-/* Back to Home button */
-"Swap.BackToHome" = "Back to Home";
-
 /* Balance text on swap */
 "Swap.Balance" = "I have %@ %@";
 
@@ -3834,6 +3875,12 @@
 /* Copy wallet addresses alert button label */
 "URLHandling.copy" = "Copy";
 
+"UsdAccount.Close.PendingTransactionsDialog.Description" = "Please wait to perform this action until all pending transactions are completed.";
+
+"UsdAccount.Close.PendingTransactionsDialog.Title" = "You Have Pending Transactions";
+
+"UsdAccount.closeAccount" = "Close RockWallet USD Account";
+
 "UsdAccount.Create.Agreements" = "I have read the agreement to the following:\n• RockWallet Agreement\n• Fortress Trust Consumer Disclosures\n• Fortress Trust Privacy Policy\n• Fortress Trust Account Agreement";
 
 "UsdAccount.Create.Agreements.bold1" = "• RockWallet Agreement";
@@ -3844,6 +3891,8 @@
 
 "UsdAccount.Create.Agreements.bold4" = "• Fortress Trust Account Agreement";
 
+"UsdAccount.Create.Agreements.IRead" = "I have read the agreement to the following:";
+
 "UsdAccount.Create.Benefit1" = "Have USD funds readily available in app for faster transactions";
 
 "UsdAccount.Create.Benefit1.bold" = "Have USD funds readily available";
@@ -3852,21 +3901,47 @@
 
 "UsdAccount.Create.Benefit2.bold" = "Save on fees";
 
+"UsdAccount.Create.Benefit2.regular" = "and enjoy faster transactions with USD in your wallet";
+
 "UsdAccount.Create.Benefit3" = "Save time with auto-populated bank account info";
 
 "UsdAccount.Create.Benefit3.bold" = "Save time";
+
+"UsdAccount.Create.Benefit3.regular" = "with auto-populated bank account info";
 
 "UsdAccount.Create.eSignAgreement" = "I read the E-Sign Agreement and understand I will not receive documents in the mail";
 
 "UsdAccount.Create.eSignAgreement.bold" = "E-Sign Agreement";
 
+"UsdAccount.Create.eSignAgreement.regular" = "and understand I will not receive documents in the mail";
+
 "UsdAccount.Create.FortressTerms" = "I have read and agreed to the Fortress Trust Terms and Conditions";
 
 "UsdAccount.Create.FortressTerms.bold" = "Fortress Trust Terms and Conditions";
 
+"UsdAccount.Create.FortressTerms.regular" = "I have read and agreed to the";
+
+"UsdAccount.Create.IRead" = "I read the";
+
+"UsdAccount.Create.Popup.title" = "Verify your identity to open a RockWallet USD Bank Account";
+
 "UsdAccount.Create.Subtitle" = "Save on transfer fees and enjoy faster transactions";
 
 "UsdAccount.Create.Title" = "Open a USD Account";
+
+"UsdAccount.Delete.Completed.Description" = "You may reopen it anytime";
+
+"UsdAccount.Delete.Completed.Title" = "You have closed your RockWallet USD Account";
+
+"UsdAccount.Delete.Confirmation.Description" = "If you close your account you would need to reopen another USD account and redo the verification process.";
+
+"UsdAccount.Delete.Confirmation.Title" = "Are you sure you want to close your RockWallet USD Account?";
+
+"UsdAccount.Delete.FundsWarning.Description" = "Before closing your RockWallet USD Account, move all your money to another bank or use it to buy assets in the app";
+
+"UsdAccount.Delete.FundsWarning.SecondaryButton" = "Continue to Withdraw Funds";
+
+"UsdAccount.Delete.FundsWarning.Title" = "Withdraw Funds From Your RockWallet USD Account";
 
 "UsdAccount.Details.AccountHolder" = "Account holder";
 
@@ -3901,6 +3976,12 @@
 "USDAccount.PaymentOption.Benefit2" = "Pay less fees";
 
 "USDAccount.PaymentOption.Title" = "RockWallet USD Account (Preferred)";
+
+"UsdAccount.Success.description" = "Start using your USD balance by transferring funds to the account";
+
+"UsdAccount.Success.title" = "Your USD account was created successfully";
+
+"UsdAccount.Title" = "USD Account";
 
 "UsdAccount.Transactions.GenerateStatement" = "Generate statement";
 
@@ -3941,7 +4022,13 @@
 
 "VerifyAccount.VerifyYourIdentity" = "Verify your identity";
 
+"VerifyPhoneNumber.CodeExpired" = "This code has expired, please request to resend your code and try again";
+
+"VerifyPhoneNumber.EnterCode" = "Please enter the code we've sent to: %@";
+
 "VerifyPhoneNumber.instructions" = "We take security seriously. Providing a valid phone number lets us send you verification codes and account alerts to keep your wallet safe.";
+
+"VerifyPhoneNumber.InvalidCode" = "This code doesn’t exist, please try again. You have %@ %@ left.";
 
 "VerifyPhoneNumber.Number.invalid" = "Please enter a valid phone number";
 

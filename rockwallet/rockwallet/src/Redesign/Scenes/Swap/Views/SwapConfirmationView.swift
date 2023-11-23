@@ -16,7 +16,7 @@ struct SwapConfimationConfiguration: Configurable {
     var rate: TitleValueConfiguration = Presets.TitleValue.common
     var sendingFee: TitleValueConfiguration = Presets.TitleValue.common
     var receivingFee: TitleValueConfiguration = Presets.TitleValue.common
-    var totalCost: TitleValueConfiguration = Presets.TitleValue.bold
+    var totalCost: TitleValueConfiguration = Presets.TitleValue.common
 }
 
 struct SwapConfirmationViewModel: ViewModel {
