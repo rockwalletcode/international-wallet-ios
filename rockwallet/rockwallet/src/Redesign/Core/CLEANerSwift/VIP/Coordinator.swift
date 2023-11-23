@@ -634,7 +634,10 @@ class BaseCoordinator: NSObject, Coordinatable {
         
         vc.didTapMainButton = {
             switch vc.reason {
-            case .documentVerification, .limitsAuthentication:
+            case .documentVerification:
+                self.popToRoot()
+                
+            case .limitsAuthentication:
                 LoadingView.show()
                 vc.interactor?.getAssetSelectionData(viewModel: .init(type: .card))
                 
