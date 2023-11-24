@@ -635,7 +635,7 @@ class BaseCoordinator: NSObject, Coordinatable {
         vc.didTapMainButton = {
             switch vc.reason {
             case .documentVerification:
-                self.popToRoot()
+                self.dismissFlow()
                 
             case .limitsAuthentication:
                 LoadingView.show()
