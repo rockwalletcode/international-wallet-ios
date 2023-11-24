@@ -89,7 +89,7 @@ class PaymailAddressInteractor: NSObject, Interactor, PaymailAddressViewActions 
             }
         }
         
-        let xpub = keyStore?.getXPubFromAccount(code: code) ?? ""
+        let xpub = keyStore?.getXPubFromAccount(code: code, isChange: false) ?? ""
         
         return xpub
     }
