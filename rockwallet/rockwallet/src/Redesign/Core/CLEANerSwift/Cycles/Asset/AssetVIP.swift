@@ -174,11 +174,16 @@ extension Presenter where Self: AssetActionResponses,
                 senderValidationResult = .insufficientFunds
                 error = ExchangeErrors.insufficientFunds(currency: fromCode)
                 // ETH feeBasis on insufficient gas includes from + feeAmount
-            } else if from.currency.isERC20Token || from.currency.isEthereum,
-                      feeAmount > feeCurrencyWalletBalance {
+            } else if from.currency.isERC20Token,
+                      feeAmount > feeCurrencyWalletBalance,
+                      !actionResponse.isDeposit {
                 senderValidationResult = .insufficientGas
-            } else if from.currency == feeAmount.currency, let balance, from + feeAmount > balance {
+                error = ExchangeErrors.insufficientGasERC20(currency: fromCode, balance: feeAmount.tokenValue)
+            } else if from.currency == feeAmount.currency,
+                      let balance, from + feeAmount > balance,
+                      !actionResponse.isDeposit {
                 senderValidationResult = .insufficientGas
+                error = ExchangeErrors.balanceTooLow(balance: feeAmount.tokenValue, currency: fromCode)
             }
         }
         
