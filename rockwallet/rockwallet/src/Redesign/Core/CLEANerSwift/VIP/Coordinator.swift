@@ -551,7 +551,7 @@ class BaseCoordinator: NSObject, Coordinatable {
                 vc.coordinator?.popViewController()
                 
             default:
-                self?.showKYCLevelOne(isModal: false)
+                self?.showKYCLevelOne(isModal: true)
             }
         }
         

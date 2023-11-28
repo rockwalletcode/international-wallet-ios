@@ -239,6 +239,8 @@
 
 "Account.OtherPaymentOptions" = "Other Payment Options";
 
+"Account.otherWithdrawalOptions" = "Other withdrawal options";
+
 "Account.PasswordDoNotMatch" = "Passwords do not match";
 
 "Account.PasswordRecoverDescription" = "We have sent password recover instructions to";
@@ -401,6 +403,8 @@
 
 /* Why verify my account title */
 "Account.WhyVerify" = "Why should I verify my identity?";
+
+"Account.withdrawalOptions" = "Withdrawal Options";
 
 /* Write your name as it appears on your ID label in create account */
 "Account.WriteYourName" = "Write your name as it appears on your ID";
@@ -1026,6 +1030,8 @@
 
 "Buy.BuyAchLimitsTitle" = "Buy limits (Card + ACH)";
 
+"Buy.buyFee" = "Buy fee";
+
 "Buy.BuyLimit" = "Buy limits";
 
 "Buy.BuyLimits.AchDescription" = "It currently takes 3-5 days to process a purchase with ACH.";
@@ -1309,6 +1315,8 @@
 "CommonString.Approved" = "Approved";
 
 "CommonString.EndingOn.title" = "Ending on";
+
+"CommonString.Free" = "Free";
 
 "CommonString.goToHome" = "Go to home";
 
@@ -1841,6 +1849,10 @@
 
 "KYCExpressSplash.title" = "Release RockWallet full potential!";
 
+"Limits.SellToACH" = "Sell to ACH";
+
+"Limits.SellToCard" = "Sell to card";
+
 /* Approve link wallet button label */
 "LinkWallet.approve" = "Goedkeuren";
 
@@ -2035,6 +2047,10 @@
 /* Onboarding screen Page 2 title */
 "OnboardingPageTwo.title" = "Sluit je aan bij miljoenen mensen over de hele wereld die op RockWallet vertrouwen.";
 
+"OtherPaymentMethods.BuyDisclaimer" = "Buying via ACH or Card may result in:\n・A delay of 1–5 business days for fund arrival\n・Potential additional fees";
+
+"OtherPaymentMethods.WithdrawalDisclaimer" = "Withdrawing via ACH or Card may result in:\n・A delay of 1–5 business days for fund arrival\n・Potential additional fees";
+
 "PaymailAddress.CopyMessage" = "Paymail address %@ copied to clipboard";
 
 "PaymailAddress.createAddressDescription" = "To enable quick BSV transfers you can create your unique Paymail address.";
@@ -2084,6 +2100,12 @@
 
 "PaymentMethods.ACH" = "ACH";
 
+"PaymentMethods.SelectACard" = "Select a card";
+
+"PaymentOptions.payment" = "How would you like to buy?";
+
+"PaymentOptions.withdrawal" = "Where would you like your funds to go?";
+
 /* Bad Payment request alert title */
 "PaymentProtocol.Errors.badPaymentRequest" = "Slecht Betalingsverzoek";
 
@@ -2123,9 +2145,9 @@
 
 "Platform.transaction_cancelled" = "Transactie geannuleerd";
 
-"Popup.ProDescription" = "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.\n-Transfers within a few clicks";
+"Popup.ProDescription" = "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet PRO.\n-Transfers within a few clicks";
 
-"Popup.ProTitle" = "Take your assets to the next level with RockWallet Pro and enjoy:";
+"Popup.ProTitle" = "Take your assets to the next level with RockWallet PRO and enjoy:";
 
 "Popup.Statement.Description" = "It normally takes a few minutes, but can sometimes be ready sooner";
 
@@ -2672,6 +2694,8 @@
 "Sell.OrderPreview" = "Withdrawal preview";
 
 "Sell.rate" = "Conversion rate";
+
+"Sell.sellFee" = "Sell fee";
 
 "Sell.SellLimits" = "Minimum for withdrawal is %@ per transaction and your weekly limit is %@.\n\nYour withdrawal will reach your bank account in the next 3-5 business days.";
 
@@ -3943,6 +3967,10 @@
 
 "UsdAccount.Delete.FundsWarning.Title" = "Withdraw Funds From Your RockWallet USD Account";
 
+"UsdAccount.DepositAction.title" = "Tap here to deposit more funds to your RockWallet USD bank account";
+
+"UsdAccount.DepositAction.title.bold" = "Tap here to deposit more funds";
+
 "UsdAccount.Details.AccountHolder" = "Account holder";
 
 "UsdAccount.Details.AccountNumber" = "Account number";
@@ -3959,6 +3987,8 @@
 
 "UsdAccount.Details.Title" = "RockWallet USD Bank Account \nDetails";
 
+"UsdAccount.Errors.tooLowUsdBalance" = "Your RockWallet USD Account doesn’t have enough funds for this purchase.";
+
 "UsdAccount.Home.Deposit.Description" = "View USD account transfer info";
 
 "UsdAccount.Home.Deposit.Title" = "Deposit";
@@ -3971,11 +4001,23 @@
 
 "USDAccount.PaymentOption.Balance" = "You have %@ available";
 
+"USDAccount.PaymentOption.Balance.ios" = "You have %@ %@ available";
+
 "USDAccount.PaymentOption.Benefit1" = "Instant availability of funds to buy digital assets";
 
 "USDAccount.PaymentOption.Benefit2" = "Pay less fees";
 
+"USDAccount.PaymentOption.Subtitle" = "RockWallet USD Balance";
+
 "USDAccount.PaymentOption.Title" = "RockWallet USD Account (Preferred)";
+
+"UsdAccount.Status.Active" = "Active";
+
+"UsdAccount.Status.Description" = "The RockWallet USD Bank Account enables you to store and withdraw USD within our app!";
+
+"UsdAccount.Status.Title" = "Account Status: %@";
+
+"UsdAccount.Status.VerificationInProgress" = "Verification in progress";
 
 "UsdAccount.Success.description" = "Start using your USD balance by transferring funds to the account";
 
@@ -3988,6 +4030,8 @@
 "UsdAccount.Transactions.ViewAllButton" = "View all transactions";
 
 "UsdAccount.Withdraw.AmountTooHigh" = "The amount you entered for withdrawal exceeds the balance in your RockWallet USD Account.";
+
+"UsdAccount.Withdraw.Details.Title" = "Withdraw details";
 
 "UsdAccount.Withdraw.Title" = "Withdraw";
 
@@ -4029,6 +4073,8 @@
 "VerifyPhoneNumber.instructions" = "We take security seriously. Providing a valid phone number lets us send you verification codes and account alerts to keep your wallet safe.";
 
 "VerifyPhoneNumber.InvalidCode" = "This code doesn’t exist, please try again. You have %@ %@ left.";
+
+"VerifyPhoneNumber.InvalidCodeLastAttempt" = "This code doesn’t exist, please try again. You have 1 attempt left.  If you reach the limit, a 10-minute waiting period will be applied before you can try verifying again";
 
 "VerifyPhoneNumber.Number.invalid" = "Please enter a valid phone number";
 
@@ -4240,6 +4286,8 @@
 
 /* Wiping activity message */
 "WipeWallet.wiping" = "Aan het wissen...";
+
+"Withdrawal.OrderPreview" = "Withdrawal preview";
 
 "Withdrawal.successMessage" = "Your funds were successfully sent to your RockWallet account. \nPlease swipe down to refresh.";
 
