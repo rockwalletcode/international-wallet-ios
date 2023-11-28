@@ -40,6 +40,7 @@ class KYCCoordinator: BaseCoordinator,
             vc?.dataStore?.sceneTitle = L10n.Account.selectCountry
             vc?.itemSelected = { item in
                 selected?(item as? Country)
+                self.dismissFlow()
             }
         }
     }
@@ -52,6 +53,7 @@ class KYCCoordinator: BaseCoordinator,
             vc?.dataStore?.sceneTitle = L10n.Account.selectState
             vc?.itemSelected = { item in
                 selected?(item as? Place)
+                self.dismissFlow()
             }
         }
     }

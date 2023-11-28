@@ -36,6 +36,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     private var observers: [AnyCancellable] = []
     private var isRedirectedUrl: Bool = false
     private var isPortalLink: Bool = false
+    private var isUserLoggedInWebPro: Bool = false
     private var selectedSegment: HomeScreenViewController.SegmentControlCases = .rockWallet
     private var proBalancesData: ProBalancesModel?
     
@@ -675,7 +676,17 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     }
     
     private func launchExchangeTapped() {
-        showPopup(isPortal: false)
+        guard isUserLoggedInWebPro else {
+            showPopup(isPortal: false)
+            return
+        }
+        
+        setupWebView(completion: { [weak self] in
+            self?.webView.navigationDelegate = self
+            guard let url = URL(string: Constant.tradeSignInLink) else { return }
+            
+            self?.webView.load(URLRequest(url: url))
+        })
     }
     
     private func showPopupProDescription() {
@@ -774,17 +785,18 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         let scriptSource = "document.getElementsByTagName('button')[\(buttonTag)].click()"
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 8.0, execute: {
+            self.isUserLoggedInWebPro = true
             webView.evaluateJavaScript(scriptSource, completionHandler: nil)
         })
     }
     
-    func setupWebView() {
+    func setupWebView(completion: (() -> Void)? = nil) {
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview().inset(Margins.small.rawValue)
         }
         
-        let back = UIBarButtonItem(image: Asset.back.image,
+        let back = UIBarButtonItem(image: Asset.back.image.withRenderingMode(.alwaysOriginal),
                                    style: .plain,
                                    target: self,
                                    action: #selector(backButtonPressed))
