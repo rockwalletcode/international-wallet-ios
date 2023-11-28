@@ -796,7 +796,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             make.top.leading.trailing.bottom.equalToSuperview().inset(Margins.small.rawValue)
         }
         
-        let back = UIBarButtonItem(image: Asset.back.image,
+        let back = UIBarButtonItem(image: Asset.back.image.withRenderingMode(.alwaysOriginal),
                                    style: .plain,
                                    target: self,
                                    action: #selector(backButtonPressed))
