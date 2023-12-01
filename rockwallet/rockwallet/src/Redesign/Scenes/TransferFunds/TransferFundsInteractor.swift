@@ -79,8 +79,13 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     
     func setAmount(viewAction: AssetModels.Asset.ViewAction) {
         guard let currency = dataStore?.selectedCurrency,
-              let currentRate = currency.state?.currentRate else {
+              let currentRate = currency.state?.currentRate,
+              let isDeposit = dataStore?.isDeposit else {
             return
+        }
+        
+        if viewAction.didFinish, !isDeposit {
+            prepareFees(viewAction: .init(), completion: {})
         }
         
         let to: Amount
