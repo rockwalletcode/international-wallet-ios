@@ -85,7 +85,12 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
             }
             
             view.didFinish = { [weak self] _ in
-                self?.interactor?.prepareFees(viewAction: .init(), completion: {})
+                let isDeposit = self?.dataStore?.isDeposit ?? false
+                if isDeposit {
+                    self?.interactor?.prepareFees(viewAction: .init(), completion: {})
+                } else {
+                    self?.interactor?.setAmount(viewAction: .init(didFinish: true))
+                }
             }
             
             view.didTapSelectAsset = { [weak self] in
