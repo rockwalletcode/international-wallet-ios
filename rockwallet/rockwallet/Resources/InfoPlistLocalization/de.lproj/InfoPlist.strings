@@ -2155,9 +2155,9 @@
 
 "Platform.transaction_cancelled" = "Transaktion abgebrochen";
 
-"Popup.ProDescription" = "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.\n-Transfers within a few clicks";
+"Popup.ProDescription" = "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet PRO.\n-Transfers within a few clicks";
 
-"Popup.ProTitle" = "Take your assets to the next level with RockWallet Pro and enjoy:";
+"Popup.ProTitle" = "Take your assets to the next level with RockWallet PRO and enjoy:";
 
 "Popup.Statement.Description" = "It normally takes a few minutes, but can sometimes be ready sooner";
 

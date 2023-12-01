@@ -2254,11 +2254,11 @@ internal enum L10n {
     /// -Lower Trading Fees
     /// -Deep Liquidity
     /// -Comprehensive Trading Graphs.
-    /// -Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.
+    /// -Unlimited transfer volume between your self-custodial wallet and your RockWallet PRO.
     /// -Transfers within a few clicks
-    internal static let proDescription = L10n.tr("Localizable", "Popup.ProDescription", fallback: "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.\n-Transfers within a few clicks")
-    /// Take your assets to the next level with RockWallet Pro and enjoy:
-    internal static let proTitle = L10n.tr("Localizable", "Popup.ProTitle", fallback: "Take your assets to the next level with RockWallet Pro and enjoy:")
+    internal static let proDescription = L10n.tr("Localizable", "Popup.ProDescription", fallback: "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet PRO.\n-Transfers within a few clicks")
+    /// Take your assets to the next level with RockWallet PRO and enjoy:
+    internal static let proTitle = L10n.tr("Localizable", "Popup.ProTitle", fallback: "Take your assets to the next level with RockWallet PRO and enjoy:")
     /// More info? Visit our FAQs
     internal static let visitFaqText = L10n.tr("Localizable", "Popup.VisitFaqText", fallback: "More info? Visit our FAQs")
     internal enum Statement {
