@@ -205,11 +205,15 @@
 
 "Account.Limits.BuyWithCardAndACH" = "Buy with card & ACH";
 
+"Account.Limits.BuyWithRWAccount" = "Buy with RockWallet USD account";
+
 "Account.Limits.Current" = "Current: %@";
 
 "Account.Limits.expressLimitInfo" = "Express verification offers a one-time limit. To renew, upgrade your limits.";
 
 "Account.Limits.LifetimeLimit" = "Lifetime limit";
+
+"Account.Limits.SellToRWAccount" = "Sell to RockWallet USD account";
 
 "Account.Limits.Subtitle" = "Here you will be able to check and request to increase the limits of your transactions";
 
@@ -939,6 +943,8 @@
 "Button.UpdateNow" = "Update now";
 
 "Button.Verify" = "Verify";
+
+"Button.viewYourNewAccount" = "View your New account";
 
 /* Yes button */
 "Button.yes" = "Sim";
@@ -2137,6 +2143,10 @@
 
 "PersonalInformation.Month" = "MM";
 
+"PersonalInformation.Title" = "Let’s get your personal details verified";
+
+"PersonalInformation.Title.MissingSsn" = "We’re missing your Social Security Number (SSN)";
+
 "PersonalInformation.Year" = "YYYY";
 
 "PhoneVerification.VerificationLimitReached.Description" = "We've noticed multiple attempts to verify your code. For security, there's a temporary hold on further verification tries. Please wait 10 minutes before trying again.";
@@ -2145,9 +2155,9 @@
 
 "Platform.transaction_cancelled" = "Transação cancelada";
 
-"Popup.ProDescription" = "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet PRO.\n-Transfers within a few clicks";
+"Popup.ProDescription" = "-Lower Trading Fees\n-Deep Liquidity\n-Comprehensive Trading Graphs.\n-Unlimited transfer volume between your self-custodial wallet and your RockWallet Pro.\n-Transfers within a few clicks";
 
-"Popup.ProTitle" = "Take your assets to the next level with RockWallet PRO and enjoy:";
+"Popup.ProTitle" = "Take your assets to the next level with RockWallet Pro and enjoy:";
 
 "Popup.Statement.Description" = "It normally takes a few minutes, but can sometimes be ready sooner";
 
@@ -3761,7 +3771,7 @@
 
 "UDomains.invalid" = "Invalid address.";
 
-"UnavailableScreen.ProDescription" = "RockWallet PRO isn’t available in your region. We'll notify you when this feature is released. You can still swap and buy digital assets with your RockWallet.";
+"UnavailableScreen.ProDescription" = "RockWallet PRO isn’t available in your region. We'll notify you when this feature is released.";
 
 /* Disabled until date */
 "UnlockScreen.disabled" = "Desativado até: %@";
@@ -3967,6 +3977,8 @@
 
 "UsdAccount.Delete.FundsWarning.Title" = "Withdraw Funds From Your RockWallet USD Account";
 
+"UsdAccount.DeleteRwAccount.Warning.Description" = "Before deleting your RockWallet Account, move all your money to another bank account or use it to buy assets in the app";
+
 "UsdAccount.DepositAction.title" = "Tap here to deposit more funds to your RockWallet USD bank account";
 
 "UsdAccount.DepositAction.title.bold" = "Tap here to deposit more funds";
@@ -4011,6 +4023,16 @@
 
 "USDAccount.PaymentOption.Title" = "RockWallet USD Account (Preferred)";
 
+"UsdAccount.Perks.Benefit2" = "Pay less on fees compared to other transaction methods";
+
+"UsdAccount.Perks.Benefit2.bold" = "Pay less on fees";
+
+"UsdAccount.Perks.Benefit4" = "Enjoy seamless transactions with an integrated USD bank account";
+
+"UsdAccount.Perks.Benefit4.bold" = "Enjoy seamless transactions";
+
+"UsdAccount.Perks.Title" = "About Your Account";
+
 "UsdAccount.Status.Active" = "Active";
 
 "UsdAccount.Status.Description" = "The RockWallet USD Bank Account enables you to store and withdraw USD within our app!";
@@ -4024,6 +4046,10 @@
 "UsdAccount.Success.title" = "Your USD account was created successfully";
 
 "UsdAccount.Title" = "USD Account";
+
+"UsdAccount.Transaction.Purchase" = "Purchase %@";
+
+"UsdAccount.Transaction.Sold" = "Sold %@";
 
 "UsdAccount.Transactions.GenerateStatement" = "Generate statement";
 
@@ -4072,9 +4098,9 @@
 
 "VerifyPhoneNumber.instructions" = "We take security seriously. Providing a valid phone number lets us send you verification codes and account alerts to keep your wallet safe.";
 
-"VerifyPhoneNumber.InvalidCode" = "This code doesn’t exist, please try again. You have %@ %@ left.";
+"VerifyPhoneNumber.InvalidCode" = "This code doesn’t exist, please try again. You have %@ attempts left.";
 
-"VerifyPhoneNumber.InvalidCodeLastAttempt" = "This code doesn’t exist, please try again. You have 1 attempt left.  If you reach the limit, a 10-minute waiting period will be applied before you can try verifying again";
+"VerifyPhoneNumber.InvalidCodeLastAttempt" = "This code doesn’t exist, please try again. You have 1 attempt left. If you reach the limit, a 10-minute waiting period will be applied before you can try verifying again";
 
 "VerifyPhoneNumber.Number.invalid" = "Please enter a valid phone number";
 
@@ -4290,6 +4316,8 @@
 "Withdrawal.OrderPreview" = "Withdrawal preview";
 
 "Withdrawal.successMessage" = "Your funds were successfully sent to your RockWallet account. \nPlease swipe down to refresh.";
+
+"Withdrawal.WithdrawalLimits" = "Your withdrawal will reach your bank account in the next 2-5 business days.";
 
 /* Paper key instructions. */
 "WritePaperPhrase.instruction" = "Escreva cada palavra por ordem e guarde-as num lugar seguro.";
