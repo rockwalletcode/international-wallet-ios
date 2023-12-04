@@ -91,11 +91,20 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         let to: Amount
         
         if let value = viewAction.fromTokenValue,
-                  let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue {
+           let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue {
             to = .init(decimalAmount: crypto, isFiat: false, currency: currency, exchangeRate: Decimal(currentRate.rate))
         } else if let value = viewAction.fromFiatValue,
                   let fiat = ExchangeFormatter.current.number(from: value)?.decimalValue {
             to = .init(decimalAmount: fiat, isFiat: true, currency: currency, exchangeRate: Decimal(currentRate.rate))
+        } else if viewAction.isMaxAmount, !isDeposit {
+            guard let fromAmount = dataStore?.fromAmount,
+                  let fromFeeAmount = dataStore?.fromFeeAmount else { return }
+            let tokenValue = fromAmount - fromFeeAmount
+            to = .init(decimalAmount: tokenValue.tokenValue, isFiat: false, currency: currency, exchangeRate: Decimal(currentRate.rate))
+        } else if viewAction.isMaxAmount, isDeposit {
+            guard let fromAmount = dataStore?.fromAmount else { return }
+            let balance = dataStore?.proBalancesData?.getProBalance(code: currency.code) ?? 0
+            to = .init(decimalAmount: balance, isFiat: false, currency: currency, exchangeRate: Decimal(currentRate.rate))
         } else {
             setPresentAmountData(handleErrors: true)
             return

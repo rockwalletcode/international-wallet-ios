@@ -76,6 +76,10 @@ class TransferFundsViewController: BaseExchangeTableViewController<ExchangeCoord
                                        background: Presets.ExchangeView.background))
             view.setup(with: model)
             
+            view.didTapMaxAmountButton = { [weak self] in
+                self?.interactor?.setAmount(viewAction: .init(isMaxAmount: true))
+            }
+            
             view.didChangeFiatAmount = { [weak self] value in
                 self?.interactor?.setAmount(viewAction: .init(fromFiatValue: value))
             }

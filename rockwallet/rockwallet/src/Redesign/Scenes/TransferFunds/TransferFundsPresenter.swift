@@ -55,7 +55,8 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                                           formattedFiatString: formattedFiatString,
                                                           formattedTokenString: formattedTokenString,
                                                           balanceTitle: L10n.Exchange.rockWalletBalance,
-                                                          balance: actionResponse.balanceValue)
+                                                          balance: actionResponse.balanceValue,
+                                                          maxAmount: "Max Amount")
         
         let continueEnabled = !handleError(actionResponse: actionResponse)
         

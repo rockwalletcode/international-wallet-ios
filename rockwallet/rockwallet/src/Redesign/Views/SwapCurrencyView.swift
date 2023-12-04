@@ -30,6 +30,7 @@ struct SwapCurrencyViewModel: ViewModel {
     var selectionDisabled = false
     var balanceTitle: String?
     var balance: String?
+    var maxAmount: String?
 }
 
 class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>, UITextFieldDelegate {
@@ -39,6 +40,7 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
     var didChangeCryptoAmount: ((String?) -> Void)?
     var didChangeContent: (() -> Void)?
     var didFinish: ((_ didSwitchPlaces: Bool) -> Void)?
+    var didTapMaxAmountButton: (() -> Void)?
     
     private lazy var mainStack: UIStackView = {
         let view = UIStackView()
@@ -196,6 +198,20 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         return view
     }()
     
+    private lazy var maxAmountStack: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.distribution = .fill
+        view.spacing = Margins.small.rawValue
+        return view
+    }()
+    
+    private lazy var maxAmountButton: FEButton = {
+        let view = FEButton()
+        view.addTarget(self, action: #selector(maxAmountButtonTapped(_:)), for: .touchUpInside)
+        return view
+    }()
+    
     override func setupSubviews() {
         super.setupSubviews()
         
@@ -263,6 +279,14 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         fiatStack.addArrangedSubview(fiatCurrencyLabel)
         
         mainStack.addArrangedSubview(balanceLabel)
+        mainStack.addArrangedSubview(maxAmountStack)
+        
+        let maxAmountSpacer = UIView()
+        maxAmountStack.addArrangedSubview(maxAmountSpacer)
+        maxAmountSpacer.snp.makeConstraints { make in
+            make.width.lessThanOrEqualToSuperview().priority(.required)
+        }
+        maxAmountStack.addArrangedSubview(maxAmountButton)
         
         decidePlaceholder()
     }
@@ -327,6 +351,8 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
                                                selectedConfiguration: buttonConfig,
                                                disabledConfiguration: buttonConfig,
                                                font: Fonts.Body.three))
+        
+        maxAmountButton.configure(with: ButtonConfiguration(normalConfiguration: BackgroundConfiguration(tintColor: Colors.Text.one)))
     }
     
     override func setup(with viewModel: SwapCurrencyViewModel?) {
@@ -373,6 +399,9 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
         balanceLabel.setup(with: .text(viewModel.balance))
         balanceLabel.isHidden = viewModel.balance == nil
         
+        maxAmountButton.setup(with: .init(title: viewModel.maxAmount, isUnderlined: true))
+        maxAmountButton.isHidden = viewModel.maxAmount == nil
+        
         decidePlaceholder()
     }
     
@@ -402,6 +431,10 @@ class SwapCurrencyView: FEView<SwapCurrencyConfiguration, SwapCurrencyViewModel>
     
     @objc private func headerInfoButtonTapped(_ sender: FEButton) {
         didTapHeaderInfoButton?()
+    }
+    
+    @objc private func maxAmountButtonTapped(_ sender: FEButton) {
+        didTapMaxAmountButton?()
     }
     
     private func setPlaceholder(for field: UITextField) {

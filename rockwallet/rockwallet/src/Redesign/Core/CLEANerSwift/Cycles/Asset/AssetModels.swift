@@ -47,6 +47,7 @@ enum AssetModels {
             
             var didFinish: Bool = false
             var isDeposit: Bool = false
+            var isMaxAmount: Bool = false
         }
         
         struct ActionResponse {
