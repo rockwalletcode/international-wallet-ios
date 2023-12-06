@@ -84,26 +84,27 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             return
         }
         
-        if viewAction.didFinish, !isDeposit {
-            prepareFees(viewAction: .init(), completion: {})
-        }
-        
-        let to: Amount
-        
         if let value = viewAction.fromTokenValue,
                   let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue {
-            to = .init(decimalAmount: crypto, isFiat: false, currency: currency, exchangeRate: Decimal(currentRate.rate))
+            dataStore?.fromAmount = .init(decimalAmount: crypto, isFiat: false, currency: currency, exchangeRate: Decimal(currentRate.rate))
+            
         } else if let value = viewAction.fromFiatValue,
                   let fiat = ExchangeFormatter.current.number(from: value)?.decimalValue {
-            to = .init(decimalAmount: fiat, isFiat: true, currency: currency, exchangeRate: Decimal(currentRate.rate))
+            dataStore?.fromAmount = .init(decimalAmount: fiat, isFiat: true, currency: currency, exchangeRate: Decimal(currentRate.rate))
+            
+        } else if viewAction.didFinish {
+            guard !isDeposit else {
+                setPresentAmountData(handleErrors: handleWithdrawErrors())
+                return
+            }
+            prepareFees(viewAction: .init(), completion: {})
+            
         } else {
             setPresentAmountData(handleErrors: true)
             return
         }
         
-        dataStore?.fromAmount = to
-        dataStore?.from = to.fiatValue
-        
+        dataStore?.from = dataStore?.fromAmount?.fiatValue
         setPresentAmountData(handleErrors: false)
     }
     
@@ -174,6 +175,19 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
             
             completion?()
         })
+    }
+    
+    func handleWithdrawErrors() -> Bool {
+        guard let balance = dataStore?.proBalancesData?.getProBalance(code: dataStore?.selectedCurrency?.code ?? ""),
+              let amount = dataStore?.fromAmount?.tokenValue else { return false }
+        
+        guard amount <= balance else {
+            presenter?.presentError(actionResponse: .init(error:
+                                                            GeneralError(errorMessage: L10n.ErrorMessages.notEnoughBalance(dataStore?.selectedCurrency?.code ?? ""))))
+            return true
+        }
+        
+        return false
     }
     
     func switchPlaces(viewAction: Models.SwitchPlaces.ViewAction) {
