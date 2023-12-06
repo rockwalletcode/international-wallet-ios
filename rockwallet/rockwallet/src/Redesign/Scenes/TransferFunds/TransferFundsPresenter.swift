@@ -57,7 +57,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                                           balanceTitle: L10n.Exchange.rockWalletBalance,
                                                           balance: actionResponse.balanceValue)
         
-        let continueEnabled = !handleError(actionResponse: actionResponse)
+        let continueEnabled = actionResponse.isDeposit ? !actionResponse.handleErrors : !handleError(actionResponse: actionResponse)
         
         viewController?.displayAmount(responseDisplay: .init(swapCurrencyViewModel: swapCurrencyViewModel,
                                                              continueEnabled: continueEnabled))
