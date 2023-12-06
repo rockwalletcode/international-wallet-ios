@@ -790,6 +790,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         })
     }
     
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        if let urlString = navigationAction.request.url?.absoluteString {
+            if urlString.contains("session-expired") {
+                isUserLoggedInWebPro = false
+                backButtonPressed()
+                decisionHandler(.cancel)
+                return
+            }
+        }
+        
+        decisionHandler(.allow)
+    }
+    
     func setupWebView(completion: (() -> Void)? = nil) {
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
