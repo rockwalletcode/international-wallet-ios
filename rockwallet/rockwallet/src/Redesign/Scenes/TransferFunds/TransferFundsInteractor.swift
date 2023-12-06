@@ -182,8 +182,8 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
               let amount = dataStore?.fromAmount?.tokenValue else { return false }
         
         guard amount <= balance else {
-            presenter?.presentError(actionResponse: .init(error: GeneralError(errorMessage:
-                                                                                L10n.ErrorMessages.notEnoughBalance(dataStore?.selectedCurrency?.code ?? ""))))
+            presenter?.presentError(actionResponse: .init(error:
+                                                            GeneralError(errorMessage: L10n.ErrorMessages.notEnoughBalance(dataStore?.selectedCurrency?.code ?? ""))))
             return true
         }
         
