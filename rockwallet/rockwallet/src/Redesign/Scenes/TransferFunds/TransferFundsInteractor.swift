@@ -79,12 +79,16 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     
     func setAmount(viewAction: AssetModels.Asset.ViewAction) {
         guard let currency = dataStore?.selectedCurrency,
-              let currentRate = currency.state?.currentRate else {
+              let currentRate = currency.state?.currentRate,
+              let isDeposit = dataStore?.isDeposit else {
             return
         }
         
+        if viewAction.didFinish, !isDeposit {
+            prepareFees(viewAction: .init(), completion: {})
+        }
+        
         let to: Amount
-        prepareFees(viewAction: .init(), completion: {})
         
         if let value = viewAction.fromTokenValue,
                   let crypto = ExchangeFormatter.current.number(from: value)?.decimalValue {
@@ -165,7 +169,9 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         
         generateSender(viewAction: .init(fromAmountCurrency: from.currency))
         
-        getFees(viewAction: .init(fromAmount: from), completion: { _ in
+        getFees(viewAction: .init(fromAmount: from), completion: { [weak self] _ in
+            self?.setPresentAmountData(handleErrors: true)
+            
             completion?()
         })
     }

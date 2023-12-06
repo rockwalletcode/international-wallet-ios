@@ -198,15 +198,15 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
         
         isRefreshing = true
         
+        guard selectedSegment == .rockWallet else {
+            getProBalance()
+            return
+        }
+        
         Currencies.shared.reloadCurrencies()
        
         coreSystem.refreshWallet { [weak self] in
             self?.assetListTableView.reload()
-        }
-        
-        guard selectedSegment == .rockWallet else {
-            getProBalance()
-            return
         }
         
         showGeneralPrompt()
@@ -788,6 +788,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             self.isUserLoggedInWebPro = true
             webView.evaluateJavaScript(scriptSource, completionHandler: nil)
         })
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        if let urlString = navigationAction.request.url?.absoluteString {
+            if urlString.contains("session-expired") {
+                isUserLoggedInWebPro = false
+                backButtonPressed()
+                decisionHandler(.cancel)
+                return
+            }
+        }
+        
+        decisionHandler(.allow)
     }
     
     func setupWebView(completion: (() -> Void)? = nil) {
