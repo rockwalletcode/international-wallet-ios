@@ -78,7 +78,6 @@ class TransferFundsStore: NSObject, BaseDataStore, TransferFundsDataStore {
     var isFormValid: Bool {
         guard let amount = fromAmount,
               amount.tokenValue > 0,
-              fromFeeAmount != nil,
               selectedCurrency != nil else {
             return false
         }
