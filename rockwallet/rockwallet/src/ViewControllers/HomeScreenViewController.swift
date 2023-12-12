@@ -223,6 +223,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if UserManager.shared.profile == nil {
+            isUserLoggedInWebPro = false
+        }
+        
         if selectedSegment == .rockWallet {
             showGeneralPrompt()
         }
