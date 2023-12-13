@@ -17,47 +17,29 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     // MARK: - TransferFundsViewActions
     
     func getData(viewAction: FetchModels.Get.ViewAction) {
-        let item = AssetModels.Item(type: .card,
-                                    achEnabled: UserManager.shared.profile?.kycAccessRights.hasAchAccess ?? false)
+        dataStore?.currencies = Store.state.currenciesProWallet.filter { cur in Store.state.currencies.map { $0.code.lowercased() }.contains(cur.code.lowercased()) }
         
-        prepareCurrencies(viewAction: item)
-        getWithdrawalFixedFees()
+        let selectedCurrency: Currency? = dataStore?.currencies.first
+        dataStore?.selectedCurrency = selectedCurrency
         
-        ProSupportedCurrenciesWorker().execute { [weak self] result in
-            switch result {
-            case .success(let currencies):
-                self?.dataStore?.proSupportedCurrencies = currencies
-                let fromCurrency: Currency? = self?.dataStore?.currencies.first
-                self?.dataStore?.selectedCurrency = fromCurrency
-                
-                guard let fromCurrency else {
-                    self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
-                    return
-                }
-                
-                self?.dataStore?.fromAmount = .zero(fromCurrency)
-                guard let fromCurrency = self?.dataStore?.fromAmount else {
-                    self?.presenter?.presentError(actionResponse: .init(error: ExchangeErrors.selectAssets))
-                    return
-                }
-                
-                let balance = self?.dataStore?.currencies.compactMap {
-                    let balanceText = String(format: Constant.currencyFormat,
-                                              ExchangeFormatter.current.string(for: $0.state?.balance?.tokenValue) ?? "",
-                                              $0.code.uppercased())
-                    
-                    return balanceText
-                }
-                
-                self?.dataStore?.balance = balance?.first
-                
-                self?.presenter?.presentData(actionResponse: .init(item: Models.Item(amount: fromCurrency,
-                                                                                     balance: self?.dataStore?.balance)))
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        guard let selectedCurrency else { return }
+        
+        dataStore?.fromAmount = .zero(selectedCurrency)
+        guard let fromCurrency = dataStore?.fromAmount else { return }
+        
+        let balance = dataStore?.currencies.compactMap {
+            let balanceText = String(format: Constant.currencyFormat,
+                                      ExchangeFormatter.current.string(for: $0.state?.balance?.tokenValue) ?? "",
+                                      $0.code.uppercased())
+            
+            return balanceText
         }
+        
+        dataStore?.balance = balance?.first
+        presenter?.presentData(actionResponse: .init(item: Models.Item(amount: fromCurrency,
+                                                                             balance: dataStore?.balance)))
+        getProSupportedCurrencies()
+        getWithdrawalFixedFees()
     }
     
     func setAssetSelectionData(viewAction: AssetModels.Asset.ViewAction) {
@@ -216,20 +198,23 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
     
     // MARK: - Aditional helpers
     
-    func prepareCurrencies(viewAction: AssetModels.Item) {
-        guard let type = viewAction.type else { return }
-        
-        let currencies = SupportedCurrenciesManager.shared.supportedCurrencies(type: type)
-        
-        dataStore?.supportedCurrencies = currencies
-        dataStore?.currencies = Store.state.currenciesProWallet.filter { cur in currencies.map { $0.lowercased() }.contains(cur.code.lowercased()) }
-    }
-    
     func getWithdrawalFixedFees() {
         WithdrawalFixedFeesWorker().execute { [weak self] result in
             switch result {
             case .success(let response):
                 self?.dataStore?.fixedFees = response
+                
+            case .failure(let error):
+                self?.presenter?.presentError(actionResponse: .init(error: error))
+            }
+        }
+    }
+    
+    func getProSupportedCurrencies() {
+        ProSupportedCurrenciesWorker().execute { [weak self] result in
+            switch result {
+            case .success(let currencies):
+                self?.dataStore?.proSupportedCurrencies = currencies
                 
             case .failure(let error):
                 self?.presenter?.presentError(actionResponse: .init(error: error))
