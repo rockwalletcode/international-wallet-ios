@@ -1656,6 +1656,8 @@ internal enum L10n {
     internal enum Kyc {
       /// You must be at least 18 years old to complete Level 1 and 2 verification.
       internal static let underage = L10n.tr("Localizable", "ErrorMessages.Kyc.Underage", fallback: "You must be at least 18 years old to complete Level 1 and 2 verification.")
+      /// In order to give you access to your RockWallet USD account we need more information. Kindly enter your full SSN for verification.
+      internal static let updateSsn = L10n.tr("Localizable", "ErrorMessages.Kyc.UpdateSsn", fallback: "In order to give you access to your RockWallet USD account we need more information. Kindly enter your full SSN for verification.")
     }
     internal enum LivenessCheckLimit {
       /// You have reached the maximum attempts for Verification. Please contact customer support for more information
@@ -3722,6 +3724,10 @@ internal enum L10n {
     internal static let address = L10n.tr("Localizable", "TransactionDirection.address", fallback: "Received at this Address")
     /// (this transaction was) Sent to this address:
     internal static let to = L10n.tr("Localizable", "TransactionDirection.to", fallback: "Sent to this Address")
+  }
+  internal enum Transfer {
+    /// Your transaction has successfully been processed and will be reflected in your balance once the requisite number of confirmations are met on the blockchain.
+    internal static let successMessage = L10n.tr("Localizable", "Transfer.SuccessMessage", fallback: "Your transaction has successfully been processed and will be reflected in your balance once the requisite number of confirmations are met on the blockchain.")
   }
   internal enum TwoStep {
     /// 

@@ -131,10 +131,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
-        let isDeposit = actionResponse.isDeposit ?? false
-        let description = isDeposit ? L10n.Withdrawal.successMessage : L10n.Deposit.successMessage
-        
-        viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(description)),
+        viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(L10n.Transfer.successMessage)),
                                                               config: Presets.InfoView.verification))
         
         viewController?.displayConfirm(responseDisplay: .init())
