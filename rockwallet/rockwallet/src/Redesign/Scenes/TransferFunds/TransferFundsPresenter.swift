@@ -58,7 +58,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
                                                           balance: actionResponse.balanceValue,
                                                           maxAmount: "Max Amount")
         
-        let continueEnabled = !handleError(actionResponse: actionResponse)
+        let continueEnabled = actionResponse.isDeposit ? !actionResponse.handleErrors : !handleError(actionResponse: actionResponse)
         
         viewController?.displayAmount(responseDisplay: .init(swapCurrencyViewModel: swapCurrencyViewModel,
                                                              continueEnabled: continueEnabled))
@@ -132,10 +132,7 @@ final class TransferFundsPresenter: NSObject, Presenter, TransferFundsActionResp
     }
     
     func presentConfirm(actionResponse: Models.Confirm.ActionResponse) {
-        let isDeposit = actionResponse.isDeposit ?? false
-        let description = isDeposit ? L10n.Withdrawal.successMessage : L10n.Deposit.successMessage
-        
-        viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(description)),
+        viewController?.displayMessage(responseDisplay: .init(model: .init(description: .text(L10n.Transfer.successMessage)),
                                                               config: Presets.InfoView.verification))
         
         viewController?.displayConfirm(responseDisplay: .init())

@@ -223,6 +223,10 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if UserManager.shared.profile == nil {
+            isUserLoggedInWebPro = false
+        }
+        
         if selectedSegment == .rockWallet {
             showGeneralPrompt()
         }
@@ -788,6 +792,19 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
             self.isUserLoggedInWebPro = true
             webView.evaluateJavaScript(scriptSource, completionHandler: nil)
         })
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        if let urlString = navigationAction.request.url?.absoluteString {
+            if urlString.contains("session-expired") {
+                isUserLoggedInWebPro = false
+                backButtonPressed()
+                decisionHandler(.cancel)
+                return
+            }
+        }
+        
+        decisionHandler(.allow)
     }
     
     func setupWebView(completion: (() -> Void)? = nil) {

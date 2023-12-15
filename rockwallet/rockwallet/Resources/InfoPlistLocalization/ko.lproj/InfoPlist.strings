@@ -1515,6 +1515,8 @@
 
 "ErrorMessages.Kyc.Underage" = "You must be at least 18 years old to complete Level 1 and 2 verification.";
 
+"ErrorMessages.Kyc.UpdateSsn" = "In order to give you access to your RockWallet USD account we need more information. Kindly enter your full SSN for verification.";
+
 "ErrorMessages.LivenessCheckLimit.Description" = "You have reached the maximum attempts for Verification. Please contact customer support for more information";
 
 "ErrorMessages.LivenessCheckLimit.errorMessage" = "Biometric authentication attempts reached";
@@ -3676,6 +3678,8 @@
 
 /* (this transaction was) Sent to this address: */
 "TransactionDirection.to" = "이 주소로 보냄";
+
+"Transfer.SuccessMessage" = "Your transaction has successfully been processed and will be reflected in your balance once the requisite number of confirmations are met on the blockchain.";
 
 "TwoStep.additionalMethodsTitle" = "";
 
