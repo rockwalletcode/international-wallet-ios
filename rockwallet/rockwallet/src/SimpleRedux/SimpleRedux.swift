@@ -88,6 +88,7 @@ enum TriggerName {
     case refreshToken
     case showSell
     case showBuy
+    case sendXPubs
 }
 
 func == (lhs: TriggerName, rhs: TriggerName) -> Bool {

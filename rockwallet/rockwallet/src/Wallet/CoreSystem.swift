@@ -68,6 +68,12 @@ class CoreSystem: Subscriber {
                 }
             }
         }
+        
+        Store.subscribe(self, name: .sendXPubs) { [weak self] _ in
+            guard let account = self?.account else { return }
+            
+            self?.sendXPubs()
+        }
     }
     
     /// Creates and configures the System with the Account and BDB authentication token.
@@ -98,6 +104,61 @@ class CoreSystem: Subscriber {
         try? FileManager.default.createDirectory(atPath: Constant.coreDataDirURL.path, withIntermediateDirectories: true, attributes: nil)
         
         getCurrencyMetaData(kvStore: kvStore, client: systemClient, account: account, completion: completion)
+    }
+    
+    /// Gathers xpubs or receive addresses from all wallets and sends them
+    func sendXPubs() {
+        // TODO: check if the user is logged in. If not, return.
+        
+        let wallets = self.wallets
+        if wallets.isEmpty {
+            return
+        }
+        
+        var xPubList: [String: xPubs] = [:]
+        let xPubNetworks: Set<NetworkType> = [NetworkType.btc, NetworkType.bsv, NetworkType.bch, NetworkType.ltc, NetworkType.doge]
+        var addressesList: [String: String] = [:]
+
+        // Collect xPubs and receive addresses
+        wallets.values
+            .forEach { wallet in
+                let network =  wallet.currency.network.uids
+                
+                if xPubNetworks.contains(wallet.currency.network.type ) {
+                    let receiveXpub = keyStore.getXPubFromAccount(code: wallet.currency.code, isChange: false)
+                    let changeXpub = keyStore.getXPubFromAccount(code: wallet.currency.code, isChange: true)
+                    xPubList[network] = xPubs(receiver: receiveXpub, change: changeXpub)
+                } else {
+                    addressesList[network] = wallet.receiveAddress
+                }
+            }
+        
+        /*
+         // TODO: Prepare the JSON
+        var json : JSON.Dict = [:]
+        
+        if(!xpubs.isEmpty) {
+            var jsonxpubs: JSON.Dict = [:]
+            for (_, xpub) in xpubs.enumerated() {
+                jsonxpubs[xpub.key] = [
+                    "receive": xpub.value.receiver,
+                    "change": xpub.value.change
+                ]
+            }
+            json["xpubs"] = jsonxpubs
+        }
+        
+        if(!addresses.isEmpty) {
+            var jaddresses: JSON.Dict = [:]
+            for(_, address) in addresses.enumerated(){
+                jaddresses[address.key] = address.value
+            }
+            json["addresses"] = jaddresses
+        }
+         
+         // TODO: Prepare and Send the request to /blocksatoshi/wallet/addresses
+        */
+        
     }
     
     private func getCurrencyMetaData(kvStore: BRReplicatedKVStore, client: SystemClient? = nil, account: Account, completion: @escaping () -> Void) {
@@ -426,6 +487,8 @@ class CoreSystem: Subscriber {
         wallets = wallets
             .filter { enabledIds.contains($0.key) } // remove disabled wallets
             .merging(newWallets, uniquingKeysWith: { (_, new) in new }) // add enabled wallets
+        
+        sendXPubs()
     }
     
     /// Connect wallet managers with any enabled wallets and disconnect those with no enabled wallets.
