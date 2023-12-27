@@ -87,6 +87,14 @@ struct E {
         return url
     }
     
+    static var tradeUrl: String {
+        guard let url = Bundle.main.object(forInfoDictionaryKey: "TRADE_URL") as? String,
+              !url.isEmpty else {
+            return fail()
+        }
+        return url
+    }
+    
     static var loqateKey: String {
         guard let key = Bundle.main.object(forInfoDictionaryKey: "LOQATE_KEY") as? String, !key.isEmpty else { return fail() }
         return key
