@@ -756,8 +756,7 @@ class HomeScreenViewController: UIViewController, UITabBarDelegate, Subscriber, 
                 self?.handleRedirectedUrl(url: url)
                 
             case .failure(let error):
-                // TODO: Handle error
-                print(error)
+                self?.showErrorMessage(error.localizedDescription)
             }
         }
     }

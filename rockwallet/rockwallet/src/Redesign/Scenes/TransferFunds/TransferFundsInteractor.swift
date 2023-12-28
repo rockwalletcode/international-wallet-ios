@@ -101,8 +101,6 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
         let fromFee = isDeposit ? dataStore?.fromFixedFeeAmount : dataStore?.fromFeeAmount
         presenter?.presentConfirmation(actionResponse: .init(fromCurrency: dataStore?.selectedCurrency,
                                                              fromAmount: dataStore?.fromAmount,
-                                                             toAmount: dataStore?.toAmount,
-                                                             quote: dataStore?.quote,
                                                              fromFee: fromFee,
                                                              isDeposit: dataStore?.isDeposit))
     }
@@ -240,7 +238,6 @@ class TransferFundsInteractor: NSObject, Interactor, TransferFundsViewActions {
                                                        fromFeeBasis: dataStore?.fromFeeBasis,
                                                        fromFeeAmount: dataStore?.fromFeeAmount,
                                                        fromFeeCurrency: dataStore?.sender?.wallet.feeCurrency,
-                                                       quote: dataStore?.quote,
                                                        balanceValue: dataStore?.balance,
                                                        balanceAmount: balance,
                                                        isDeposit: isDeposit,
