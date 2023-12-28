@@ -99,7 +99,7 @@ class SignUpInteractor: NSObject, Interactor, SignUpViewActions {
             case .success(let data):
                 guard let sessionKey = data?.sessionKey, let sessionKeyHash = data?.sessionKeyHash else { return }
                 
-                UserManager.shared.setUserCredentials(email: email, sessionToken: sessionKey, sessionTokenHash: sessionKeyHash)
+                UserManager.shared.setUserCredentials(email: email, sessionToken: sessionKey, sessionTokenHash: sessionKeyHash, newAccount: true)
                 
                 UserManager.shared.refresh { _ in
                     self?.presenter?.presentNext(actionResponse: .init())

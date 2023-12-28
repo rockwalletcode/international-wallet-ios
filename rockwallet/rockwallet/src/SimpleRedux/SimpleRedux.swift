@@ -183,6 +183,8 @@ func == (lhs: TriggerName, rhs: TriggerName) -> Bool {
         return true
     case (.showBuy, .showBuy):
         return true
+    case (.sendXPubs, .sendXPubs):
+        return true
     default:
         return false
     }
