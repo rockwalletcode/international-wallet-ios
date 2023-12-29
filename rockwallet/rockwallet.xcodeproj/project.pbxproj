@@ -538,6 +538,7 @@
 		C41E9E392ABC311600AB8170 /* TransferFundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E322ABC311600AB8170 /* TransferFundsViewController.swift */; };
 		C41E9E3A2ABC311600AB8170 /* TransferFundsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9E332ABC311600AB8170 /* TransferFundsInteractor.swift */; };
 		C43EFBE829DC33620067FE70 /* LogoutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EFBE729DC33620067FE70 /* LogoutWorker.swift */; };
+		C449C06D2B3F10880009413E /* PostAddressesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449C06C2B3F10880009413E /* PostAddressesWorker.swift */; };
 		C4520F102875C726003FFB7F /* AssetSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4520F092875C726003FFB7F /* AssetSelectionViewController.swift */; };
 		C458C7CB29E6D22E00146C0D /* PaymailAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458C7C429E6D22E00146C0D /* PaymailAddressStore.swift */; };
 		C458C7CC29E6D22E00146C0D /* PaymailAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458C7C529E6D22E00146C0D /* PaymailAddressPresenter.swift */; };
@@ -1398,6 +1399,7 @@
 		C41E9E322ABC311600AB8170 /* TransferFundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsViewController.swift; sourceTree = "<group>"; };
 		C41E9E332ABC311600AB8170 /* TransferFundsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsInteractor.swift; sourceTree = "<group>"; };
 		C43EFBE729DC33620067FE70 /* LogoutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutWorker.swift; sourceTree = "<group>"; };
+		C449C06C2B3F10880009413E /* PostAddressesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAddressesWorker.swift; sourceTree = "<group>"; };
 		C4520F092875C726003FFB7F /* AssetSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSelectionViewController.swift; sourceTree = "<group>"; };
 		C458C7C429E6D22E00146C0D /* PaymailAddressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailAddressStore.swift; sourceTree = "<group>"; };
 		C458C7C529E6D22E00146C0D /* PaymailAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymailAddressPresenter.swift; sourceTree = "<group>"; };
@@ -2011,6 +2013,7 @@
 				CEBF33021DDE177F00348FC6 /* ViewModels */,
 				CE20C90F1DBE5B5100C8397A /* Views */,
 				CE7B40981FA03C9900BA4196 /* Wallet */,
+				C449C06B2B3F105E0009413E /* Workers */,
 				3A6FD41E24E4568800068ECE /* KeyStore */,
 				7EE62494295C141D00FC19CC /* main.swift */,
 				75A2A79F1DA5934300A983D8 /* Info.plist */,
@@ -3164,6 +3167,14 @@
 				C49BEBA729F2C54C002C8B7E /* ConvertBchWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		C449C06B2B3F105E0009413E /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				C449C06C2B3F10880009413E /* PostAddressesWorker.swift */,
+			);
+			name = Workers;
 			sourceTree = "<group>";
 		};
 		C4520F032875C613003FFB7F /* AssetSelection */ = {
@@ -4686,6 +4697,7 @@
 				C41E9E382ABC311600AB8170 /* TransferFundsVIP.swift in Sources */,
 				7EBC6B0D2848B81A000A301F /* CodeInputView.swift in Sources */,
 				CE36454C1E7B42850079D0CF /* WhiteDecimalPad.swift in Sources */,
+				C449C06D2B3F10880009413E /* PostAddressesWorker.swift in Sources */,
 				CE5F21D91E4A922700C47B8E /* DismissLoginAnimator.swift in Sources */,
 				7ECCA99B28744CD600F99368 /* ExchangeRateView.swift in Sources */,
 				7EC0F8B8288813EE0037145C /* SwapConfirmationView.swift in Sources */,

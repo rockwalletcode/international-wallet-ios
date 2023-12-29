@@ -118,7 +118,7 @@ class CoreSystem: Subscriber {
         var xPubList: [String: xPubs] = [:]
         let xPubNetworks: Set<NetworkType> = [NetworkType.btc, NetworkType.bsv, NetworkType.bch, NetworkType.ltc, NetworkType.doge]
         var addressesList: [String: String] = [:]
-
+        
         // Collect xPubs and receive addresses
         wallets.values
             .forEach { wallet in
@@ -133,32 +133,39 @@ class CoreSystem: Subscriber {
                 }
             }
         
-        /*
-         // TODO: Prepare the JSON
-        var json : JSON.Dict = [:]
+        // TODO: Prepare the JSON
+        var addresses: [String: String] = [:]
+        var xpubs: [String: Any] = [:]
         
-        if(!xpubs.isEmpty) {
-            var jsonxpubs: JSON.Dict = [:]
-            for (_, xpub) in xpubs.enumerated() {
-                jsonxpubs[xpub.key] = [
+        var sortedAddresses: String?
+        var sortedXpubs: String?
+        
+        if !xPubList.isEmpty {
+            for (_, xpub) in xPubList.enumerated() {
+                xpubs[xpub.key] = [
                     "receive": xpub.value.receiver,
                     "change": xpub.value.change
                 ]
             }
-            json["xpubs"] = jsonxpubs
         }
         
-        if(!addresses.isEmpty) {
-            var jaddresses: JSON.Dict = [:]
-            for(_, address) in addresses.enumerated(){
-                jaddresses[address.key] = address.value
+        if !addressesList.isEmpty {
+            for(_, address) in addressesList.enumerated() {
+                addresses[address.key] = address.value
             }
-            json["addresses"] = jaddresses
+            sortedAddresses = addresses.sorted(by: { $0.key < $1.key }).map { "\($0.key):\($0.value)" }.joined(separator: ",")
         }
-         
-         // TODO: Prepare and Send the request to /blocksatoshi/wallet/addresses
-        */
         
+        let data = PostAddressesRequestData(addresses: addresses, xpubs: xpubs, sortedXpubs: sortedXpubs, sortedAddresses: sortedAddresses)
+        PostAddressesWorker().execute(requestData: data) { [weak self] result in
+            switch result {
+            case .success:
+                print("Success")
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func getCurrencyMetaData(kvStore: BRReplicatedKVStore, client: SystemClient? = nil, account: Account, completion: @escaping () -> Void) {

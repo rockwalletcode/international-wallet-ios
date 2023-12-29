@@ -65,4 +65,27 @@ struct UserSignature {
             "Signature": signature
         ]
     }
+    
+    func getHeadersAddresses(address: String?, xpub: String?) -> [String: String] {
+        let formatter = DateFormatter()
+        formatter.locale = .init(identifier: Constant.countryUS)
+        formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss Z"
+        let dateString = formatter.string(from: Date())
+        
+        guard let address = address,
+              let xpub = xpub,
+              let data = (xpub + "," + address).data(using: .utf8)?.sha256,
+              let sessionKey = UserDefaults.sessionToken,
+              let apiKeyString = try? keychainItem(key: KeychainKey.apiAuthKey) as String?,
+              !apiKeyString.isEmpty,
+              let apiKey = Key.createFromString(asPrivate: apiKeyString),
+              let signature = CoreSigner.basicDER.sign(data32: data, using: apiKey)?.base64EncodedString()
+        else { return [:] }
+        
+        return [
+            "Authorization": sessionKey,
+            "Date": dateString,
+            "Signature": signature
+        ]
+    }
 }
