@@ -194,11 +194,13 @@
 		<string>AssetListIntent</string>
 		<string>PortfolioIntent</string>
 	</array>
-	<key>PAYMAIL_DOMAIN</key>
-	<string>$(PAYMAIL_DOMAIN)</string>
-	<key>SARDINE_CLIENT_ID</key>
-	<string>$(SARDINE_CLIENT_ID)</string>
-	<key>UIAppFonts</key>
+    <key>PAYMAIL_DOMAIN</key>
+    <string>$(PAYMAIL_DOMAIN)</string>
+    <key>SARDINE_CLIENT_ID</key>
+    <string>$(SARDINE_CLIENT_ID)</string>
+    <key>TRADE_URL</key>
+    <string>$(TRADE_URL)</string>
+    <key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Regular.otf</string>
 		<string>Roboto-Medium.otf</string>

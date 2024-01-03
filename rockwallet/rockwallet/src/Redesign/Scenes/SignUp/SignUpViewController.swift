@@ -142,7 +142,7 @@ class SignUpViewController: BaseTableViewController<AccountCoordinator,
             
             let castedCell = cell as? WrapperTableViewCell<TickboxItemView>
             castedCell?.setup { view in
-                view.didTapUrl = { [weak self] url in // TODO: update url for T&C for pro wallet when we have it
+                view.didTapUrl = { [weak self] url in
                     guard let url = url?.absoluteString else { return }
                     self?.coordinator?.showInWebView(urlString: url, title: L10n.About.terms)
                 }

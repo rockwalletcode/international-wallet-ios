@@ -47,8 +47,6 @@ enum TransferFundsModels {
         struct ActionResponse {
             var fromCurrency: Currency?
             var fromAmount: Amount?
-            var toAmount: Amount?
-            var quote: Quote?
             var fromFee: Amount?
             var toFee: Amount?
             var isDeposit: Bool?
