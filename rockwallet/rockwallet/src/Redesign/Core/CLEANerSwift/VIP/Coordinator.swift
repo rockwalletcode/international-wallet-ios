@@ -99,33 +99,6 @@ class BaseCoordinator: NSObject, Coordinatable {
         }
     }
     
-    func handleOauthLogin() {
-        decideFlow { [weak self] showScene in
-            guard showScene,
-                  let profile = UserManager.shared.profile,
-                  profile.kycAccessRights.hasSwapAccess == true else {
-                self?.handleUnverifiedOrRestrictedUser(flow: .swap, reason: .swap)
-                
-                return
-            }
-            
-            let redirectUri = DynamicLinksManager.shared.redirectUri ?? ""
-            let scope = DynamicLinksManager.shared.urlScope ?? ""
-            
-            // TODO: Localize strings
-            let model: PopupViewModel = .init(body: "Do you permit login to \(redirectUri) using scopes \(scope)",
-                                              buttons: [.init(title: L10n.Button.ok)])
-            
-            self?.showPopup(on: self?.navigationController,
-                            blurred: false,
-                            with: model,
-                            callbacks: [ { [weak self] in
-                self?.getRedirectUri()
-                self?.hidePopup()
-            }]
-            )}
-    }
-    
     func showBuy(selectedCurrency: Currency? = nil, type: PaymentCard.PaymentType, coreSystem: CoreSystem?, keyStore: KeyStore?) {
         decideFlow { [weak self] showScene in
             guard showScene,
@@ -803,31 +776,11 @@ class BaseCoordinator: NSObject, Coordinatable {
                 }
             })
             
-        case .oauth2:
-            // TODO: remove the flow if we won't use deep linking oauth login
-            // handleOauthLogin()
-            return
-            
         case .login:
             openModally(coordinator: AccountCoordinator.self, scene: Scenes.AuthorizeLogin)
-        }
-    }
-    
-    func getRedirectUri() {
-        guard let urlParameters = DynamicLinksManager.shared.urlParameters else { return }
-        
-        let sortedParameters = urlParameters.sorted(by: <).map { "\($0)=\($1)" }.joined()
-        let data = Oauth2LoginRequestData(parameters: urlParameters,
-                                          sortedParameters: sortedParameters)
-        
-        Oauth2LoginWorker().execute(requestData: data) { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.showInWebView(urlString: response?.redirectUri ?? "", title: "OAuth 2.0 login")
-            case .failure(let error):
-                // TODO: Handle error
-                print(error)
-            }
+            
+        default:
+            return
         }
     }
     
