@@ -133,7 +133,6 @@ class CoreSystem: Subscriber {
                 }
             }
         
-        // TODO: Prepare the JSON
         var addresses: [String: String] = [:]
         var xpubs: [String: Any] = [:]
         
@@ -146,6 +145,8 @@ class CoreSystem: Subscriber {
                     "receive": xpub.value.receiver,
                     "change": xpub.value.change
                 ]
+                
+                sortedXpubs = xpubs.sorted(by: { $0.key < $1.key }).map { "\($0.key):\(xpub.value.receiver)\(xpub.value.change)" }.joined(separator: ",")
             }
         }
         
@@ -153,11 +154,12 @@ class CoreSystem: Subscriber {
             for(_, address) in addressesList.enumerated() {
                 addresses[address.key] = address.value
             }
+            
             sortedAddresses = addresses.sorted(by: { $0.key < $1.key }).map { "\($0.key):\($0.value)" }.joined(separator: ",")
         }
         
         let data = PostAddressesRequestData(addresses: addresses, xpubs: xpubs, sortedXpubs: sortedXpubs, sortedAddresses: sortedAddresses)
-        PostAddressesWorker().execute(requestData: data) { [weak self] result in
+        PostAddressesWorker().execute(requestData: data) { result in
             switch result {
             case .success:
                 print("Success")

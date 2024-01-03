@@ -17,10 +17,10 @@ struct PostAddressesRequestData: RequestModelData {
     let sortedAddresses: String?
     
     func getParameters() -> [String: Any] {
-        let params = [
-            "addresses": addresses as Any,
-            "xpubs": xpubs as Any
-        ] as [String: Any]
+        let params: [String: Any?] = [
+            "addresses": addresses,
+            "xpubs": xpubs
+        ]
         
         return params.compactMapValues { $0 }
     }
@@ -28,8 +28,10 @@ struct PostAddressesRequestData: RequestModelData {
 
 class PostAddressesWorker: BaseApiWorker<PlainMapper> {
     override func getHeaders() -> [String: String] {
-        return UserSignature().getHeaders(nonce: (getParameters()["sortedAddresses"] as? String),
-                                          token: (getParameters()["sortedXpubs"] as? String))
+        let sortedAddresses = (requestData as? PostAddressesRequestData)?.sortedAddresses
+        let sortedXpubs = (requestData as? PostAddressesRequestData)?.sortedXpubs
+        
+        return UserSignature().getHeadersAddresses(address: sortedAddresses, xpub: sortedXpubs)
     }
     
     override func getParameters() -> [String: Any] {
