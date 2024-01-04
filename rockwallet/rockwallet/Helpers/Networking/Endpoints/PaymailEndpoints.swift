@@ -19,13 +19,3 @@ enum PaymailEndpoints: String, URLType {
         return String(format: Self.baseURL, rawValue)
     }
 }
-
-enum AddressesEndpoints: String, URLType {
-    static var baseURL: String = "https://"  + E.apiUrl + "blocksatoshi/wallet/%@"
-    
-    case addresses
-    
-    var url: String {
-        return String(format: Self.baseURL, rawValue)
-    }
-}
