@@ -133,7 +133,7 @@ class CoreSystem: Subscriber {
                 }
             }
         
-        var addresses: [String: String] = [:]
+        var addresses: [String: Any] = [:]
         var xpubs: [String: Any] = [:]
         
         var sortedAddresses: String?
@@ -142,8 +142,8 @@ class CoreSystem: Subscriber {
         if !xPubList.isEmpty {
             for (_, xpub) in xPubList.enumerated() {
                 xpubs[xpub.key] = [
-                    "receive": xpub.value.receiver,
-                    "change": xpub.value.change
+                    "change": xpub.value.change,
+                    "receive": xpub.value.receiver
                 ]
                 
                 sortedXpubs = xpubs.sorted(by: { $0.key < $1.key }).map { "\($0.key):\(xpub.value.receiver)\(xpub.value.change)" }.joined(separator: ",")

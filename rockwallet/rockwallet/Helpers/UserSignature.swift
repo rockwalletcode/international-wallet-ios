@@ -74,7 +74,8 @@ struct UserSignature {
         
         guard let address = address,
               let xpub = xpub,
-              let data = (xpub + "," + address).data(using: .utf8)?.sha256,
+              let data = (dateString + xpub + "," + address).data(using: .utf8)?.sha256,
+              let sessionKey = UserDefaults.sessionToken,
               let apiKeyString = try? keychainItem(key: KeychainKey.apiAuthKey) as String?,
               !apiKeyString.isEmpty,
               let apiKey = Key.createFromString(asPrivate: apiKeyString),
@@ -82,6 +83,7 @@ struct UserSignature {
         else { return [:] }
         
         return [
+            "Authorization": sessionKey,
             "Date": dateString,
             "Signature": signature
         ]
