@@ -15,6 +15,7 @@ enum AddressesEndpoints: String, URLType {
     
     case addresses
     case getAddresses = "addresses?currencyCode=%@"
+    case balance
     
     var url: String {
         return String(format: Self.baseURL, rawValue)

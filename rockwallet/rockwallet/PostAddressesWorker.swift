@@ -47,8 +47,6 @@ class PostAddressesWorker: BaseApiWorker<PlainMapper> {
     }
 }
 
-
-
 struct GetAddressesRequestData: RequestModelData {
     let currencyCode: String?
     
@@ -65,5 +63,11 @@ class GetAddressesWorker: BaseApiWorker<PlainMapper> {
         guard let currencyCode = (requestData as? GetAddressesRequestData)?.currencyCode else { return "" }
         
         return APIURLHandler.getUrl(AddressesEndpoints.getAddresses, parameters: currencyCode)
+    }
+}
+
+class GetBalanceWorker: BaseApiWorker<PlainMapper> {
+    override func getUrl() -> String {
+        return APIURLHandler.getUrl(AddressesEndpoints.balance)
     }
 }
