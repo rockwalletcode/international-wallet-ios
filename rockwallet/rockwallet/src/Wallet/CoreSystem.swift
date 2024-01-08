@@ -108,7 +108,7 @@ class CoreSystem: Subscriber {
     
     /// Gathers xpubs or receive addresses from all wallets and sends them
     func sendXPubs() {
-        // TODO: check if the user is logged in. If not, return.
+        guard UserManager.shared.profile != nil else { return }
         
         let wallets = self.wallets
         if wallets.isEmpty {

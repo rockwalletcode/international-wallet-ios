@@ -63,13 +63,17 @@ class SignInInteractor: NSObject, Interactor, SignInViewActions {
         RegistrationWorker().execute(requestData: data) { [weak self] result in
             switch result {
             case .success(let data):
-                guard let sessionKey = data?.sessionKey, let sessionKeyHash = data?.sessionKeyHash else { return }
+                guard let sessionKey = data?.sessionKey,
+                      let sessionKeyHash = data?.sessionKeyHash,
+                      let sendXPubs = UserDefaults.sendXPubs else { return }
                 
-                UserManager.shared.setUserCredentials(email: email, sessionToken: sessionKey, sessionTokenHash: sessionKeyHash)
+                UserManager.shared.setUserCredentials(email: email, sessionToken: sessionKey, sessionTokenHash: sessionKeyHash, sendXPubs: sendXPubs)
                 
                 UserManager.shared.refresh { _ in
                     self?.presenter?.presentNext(actionResponse: .init())
                 }
+                
+                UserDefaults.sendXPubs = false
                 
             case .failure(let error):
                 self?.handleNextFailure(viewAction: .init(registrationRequestData: data, error: error))

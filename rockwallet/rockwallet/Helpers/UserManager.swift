@@ -84,7 +84,7 @@ class UserManager: NSObject {
         }
     }
     
-    func setUserCredentials(email: String?, sessionToken: String?, sessionTokenHash: String?, refreshWallet: Bool = true, newAccount: Bool = false) {
+    func setUserCredentials(email: String?, sessionToken: String?, sessionTokenHash: String?, refreshWallet: Bool = true, sendXPubs: Bool = false) {
         UserDefaults.email = email
         UserDefaults.sessionToken = sessionToken
         UserDefaults.sessionTokenHash = sessionTokenHash
@@ -93,7 +93,7 @@ class UserManager: NSObject {
         guard refreshWallet else { return }
         Store.trigger(name: .refreshToken)
         
-        guard newAccount else { return }
+        guard sendXPubs else { return }
         Store.trigger(name: .sendXPubs)
     }
     

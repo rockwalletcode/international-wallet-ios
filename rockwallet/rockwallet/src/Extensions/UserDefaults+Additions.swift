@@ -57,6 +57,7 @@ private let userEmail = "registrationEmail"
 private let userPhoneNumber = "phoneNumber"
 private let isDarkModeKey = "isDarkModeKey"
 private let shouldDisplayProPopupKey = "shouldDisplayProPopupKey"
+private let sendXPubsKey = "sendXPubsKey"
 
 typealias ResettableBooleanSetting = [String: Bool]
 typealias ResettableObjectSetting = String
@@ -221,6 +222,17 @@ extension UserDefaults {
             return defaults.data(forKey: pushTokenKey)
         }
         set { defaults.set(newValue, forKey: pushTokenKey) }
+    }
+    
+    // send Xpubs on first launch
+    static var sendXPubs: Bool? {
+        get {
+            guard defaults.object(forKey: sendXPubsKey) != nil else {
+                return true
+            }
+            return defaults.bool(forKey: sendXPubsKey)
+        }
+        set { defaults.set(newValue, forKey: sendXPubsKey) }
     }
 
     static func currentRate(forCode: String) -> Rate? {

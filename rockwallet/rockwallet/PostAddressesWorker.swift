@@ -46,28 +46,3 @@ class PostAddressesWorker: BaseApiWorker<PlainMapper> {
         return .post
     }
 }
-
-struct GetAddressesRequestData: RequestModelData {
-    let currencyCode: String?
-    
-    func getParameters() -> [String: Any] {
-        let params = [
-            "currencyCode": currencyCode
-        ]
-        return params.compactMapValues { $0 }
-    }
-}
-
-class GetAddressesWorker: BaseApiWorker<PlainMapper> {
-    override func getUrl() -> String {
-        guard let currencyCode = (requestData as? GetAddressesRequestData)?.currencyCode else { return "" }
-        
-        return APIURLHandler.getUrl(AddressesEndpoints.getAddresses, parameters: currencyCode)
-    }
-}
-
-class GetBalanceWorker: BaseApiWorker<PlainMapper> {
-    override func getUrl() -> String {
-        return APIURLHandler.getUrl(AddressesEndpoints.balance)
-    }
-}
